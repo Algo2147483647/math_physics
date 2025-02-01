@@ -2,7 +2,19 @@
 
 [TOC]
 
-## Channel
+## Define
+
+$$
+Sender \xrightarrow[+ noise]{\quad \text{Channel} \quad} Receiver
+$$
+
+Communication refers to the transmission of information between the sender and the receiver through a medium called channel.
+
+- **Sender**: The origin of the information to be transmitted.
+- **Modulation**: Convert the information into a form suitable for signal transmission
+- **Channel**: The medium through which the signal travels.
+
+## Property
 
 ### Channel Capacity
 
@@ -11,7 +23,8 @@ $$
 C = \max_{\mathbb P(x)} I(X;Y)
 $$
 
-**Shannon–Hartley theorem**
+#### Shannon–Hartley theorem
+
 $$
 C = B \log_2(1 + \frac{S}{N})
 $$
