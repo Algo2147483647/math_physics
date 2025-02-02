@@ -57,37 +57,34 @@ $$
 f: N \to \{\Sigma\}
 $$
 
-**First Set**: FIRST(α)是α的所有可能推导的开头终结符或可能的ε. 计算方法:
+**First Set**: $FIRST(α)$ is the set of all terminal symbols that can start the possible derivations of α, or it may be ε if applicable. Calculation method:
 
-- 在所要求的字符产生式的右边的第一位寻找终结符，假设该字符产生式集的第一位就是终结符，那么该终结符就是所要求的first集；
-- 假设产生式的右边第一位是非终结符，那么继续寻找该非终结符的first集，直至寻找到一个终结符，即是起初所要求字符的first集；
+- Look for terminal symbols at the first position on the right-hand side of the production rules of the character in question. If the first position of the set of production rules for this character is a terminal symbol, then this terminal symbol is the FIRST set we need.
+- If the first symbol on the right-hand side of the production rule is a non-terminal symbol, then continue to find the FIRST set of this non-terminal symbol until a terminal symbol is found. This terminal symbol is the FIRST set of the character initially in question.
 
-**Follow Set**: FOLLOW(A)是所有该文法开始符推导的句型中出现在紧跟A之后的终结符或 “#”. 计算方法: 
+**Follow Set**: $FOLLOW(A)$ consists of all the terminal symbols or "#" that appear immediately after $A$ in the sentence patterns derived from the start symbol of the grammar. Calculation method:
 
-- 在产生式的右边找到相应的字符，假设紧跟其后的是一个终结符，那么该终结符就是所要求的follow集
-- 假设跟在其后的是一个非终结符，那么需要判断该非终结符是否可以为空：假如可以为空，那么将该产生式的左边的follow集加入到寻找集合当中，因为假如该非终结符为空的话，那么需要寻找产生这个非终结符的产生式左边的非终结符，因为产生式左边的非终结符的follow集就有可能是该非终结符的follow集；假如不为空，那么寻找该非终结符的first集，并将结果加入到搜索集合当中
-- 直到不再有非终结符产生，找到所有的终结符，计算结束。
+- Locate the corresponding character on the right-hand side of the production. If a terminal symbol follows it immediately, then this terminal symbol is the FOLLOW set we are looking for.
+- If a non-terminal symbol follows it, then we need to determine whether this non-terminal symbol can be ε (empty). If it can be ε, then add the FOLLOW set of the non-terminal symbol on the left - hand side of this production to the search set. Because if this non-terminal symbol is ε, then we need to find the non-terminal symbol on the left-hand side of the production that generates this non-terminal symbol, as the FOLLOW set of the non-terminal symbol on the left-hand side of the production may be the FOLLOW set of this non-terminal symbol. If it cannot be ε, then find the FIRST set of this non - terminal symbol and add the result to the search set.
+- The calculation ends when no more non-terminal symbols are generated and all terminal symbols are found.
 
 ### up-bottom parser: $LL$ parsers
 
-**Define**
+An up-bottom parser means starting from the start symbol of the grammar, deriving the most specific sentence expression downward from the most abstract initial non-terminal symbol $S$. For LL(1) parsers, the naming rule is as follows: the first 'L' represents scanning from the left, the second 'L' indicates generating the left-most derivation, and the number '1' means that only one symbol needs to be looked ahead at each step of the derivation. Any two productions $A \to \alpha | \beta$ with the same left-hand side satisfy: 
 
-up-bottom parser 是指从文法的开始符，从最抽象的起始非终结符 $S$ 向下推导出最具象的句子表达式。LL(1) parsers, 命名规则: 第一个L代表从左边开始扫描, 第二个L表示产生最左推导, 数字1表示每一步推导式只需要向后看一个符号就可以.  任何任意两个具有相同左部的产生式 $A \to \alpha | \beta$ 都满足:
+- If neither α nor β can derive ε, then $First(\alpha) \cap First(\beta) = \varnothing$.
+- At most one of α and β can derive ε.
+- If $β \Rightarrow ε$, then $FIRST(\alpha) \cap FOLLOW(A) = \varnothing$.
 
-- 如果α、β均不能推导出ε， $First(\alpha) \cap First(\beta) = \empty$
-- α 和 β 至多有一个能推导出 ε.
-- 如果 $β \Rightarrow ε$，则 FIRST(α) ∩ FOLLOW(A) = ∅
-
-即, 没有公共左因子（如果有，那么无法只读一个字符就判断如何递归）, 不含有左递归（不包含回溯）
-具体计算方法:
-
-- 求出各个非终结符的first集和follow集
-- 判断是不是LL(1)文法, 要求出select集, LL(1)判断方法：如果相同产生式左部的Select集有交集 $S’→S|ε : ε \in First(S’), and\ First(S’) \cap Follow(S’)≠\empty$, So the grammar is not LL(1)
-- 构造分析表 $f(N, \Sigma)$
+That is, there are no common left - factors (if there are, it is impossible to determine how to recurse by reading only one character), and there is no left - recursion (no backtracking is involved).
+Specific calculation methods:
+- Calculate the FIRST sets and FOLLOW sets of each non - terminal symbol.
+- To determine whether it is an LL(1) grammar, the SELECT sets need to be calculated. The LL(1) judgment method: If there is an intersection in the SELECT sets of productions with the same left - hand side, for example, for $S’→S|ε$, if $ε \in First(S’)$ and $First(S’) \cap Follow(S’)≠\varnothing$, then the grammar is not LL(1).
+- Construct the parsing table $f(N, \Sigma)$.
 
 **Eliminate Left Recursion**
 
-左递归可能导致递归下降解析器进入无限递归的情况，从而导致解析器无法正常工作。当一个非终结符的产生式中以它自己作为第一个符号出现时，就称为左递归。例如，对于产生式 A -> Aα，其中 A 是非终结符，α 是一个符号串，这就是左递归。
+Left recursion may cause the recursive-descent parser to enter an infinite recursion, rendering the parser unable to work properly. When a non-terminal symbol appears as the first symbol in its own production, it is called left recursion. For example, for the production $A \to A\alpha$, where $A$ is a non-terminal symbol and $\alpha$ is a string of symbols, this is left recursion.
 $$
 \begin{align*}
 A &\to A \alpha \\
@@ -95,7 +92,7 @@ A &\to A \alpha \\
 &\to A A \cdots A \alpha \\
 \end{align*}
 $$
-消除左递归，将左递归的产生式转换为等价的非左递归产生式。
+Eliminate left recursion by converting the left-recursive production into an equivalent non-left-recursive production.
 $$
 \begin{align*}
 A &\to A \alpha | \beta\\
@@ -105,7 +102,7 @@ A' &\to \alpha A' | \epsilon
 $$
 **Removing Common Left Factoring** 
 
-Common Left Factoring: 和数学中的公因子含义相同，就是公共的因子，而左公因子就是最左边的公因子。
+Common Left Factoring: It has the same meaning as common factors in mathematics, that is, common factors, and the left common factor is the common factor on the far left.
 $$
 \begin{align*}
 A &\to \alpha B_1 | \alpha B_2 | \cdots |\alpha B_n\\
