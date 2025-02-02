@@ -9,7 +9,7 @@ $$
 $$
 \forall x \in X, \exists_{= 1} y \in Y, f(x) = y
 $$
-Mapping, refer to a [binary relation](./Set.md) from the element of set $X$ to that of set $Y$, and satisfy any element in $X$ has a unique element in $Y$ corresponding to it (One-to-many is not allowed).
+Mapping, refer to a [binary relation](./Relation.md) from the element of set $X$ to that of set $Y$, and satisfy any element in $X$ has a unique element in $Y$ corresponding to it (One-to-many is not allowed).
 
 $X$: domain of Definition.
 

@@ -241,18 +241,6 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
 - Property
   - $\text{number}(A \times B) = \text{number}(A) \cdot \text{number}(B)$
 
-- Include
-  * Binary Relation
-    - Define  
-      $$
-      X \ R\ Y \subseteq X \times Y  \tag{Binary Relation}
-      $$
-      Binary Relation $R$ over set $X, Y$ is a subset of the Cartesian product $X \times Y$. The set $X$ is called the domain, and set $Y$ the codomain.
-
-    - Include 
-      * Mapping , Function 
-      * Partial Order & Strict Partial Order
-
 ### [Power Set](./Power_Set.md)
 
 ## Example
