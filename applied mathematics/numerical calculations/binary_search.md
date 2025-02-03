@@ -5,9 +5,9 @@
 ## Purpose  
 For a sorted array, we aim to find a target value $v$ in the array $a$.
 
-<img src="./assets/7ec7c64b0df75bdd50bcb08f0fcc54ef.png" alt="Binary Search | Binary, Linear search, Algorithm" style="zoom:25%;" />
+<img src="./assets/7ec7c64b0df75bdd50bcb08f0fcc54ef.png" alt="Binary Search | Binary, Linear search, Algorithm" style="zoom: 50%;" />
 
-## Porperty  
+## Property  
 we assume an ascending array $a = \{a_1, ..., a_n\}$, $a_i \le a_j , i \le j$, then,
 $$
 a_i < v \quad\Rightarrow\quad a_j < v, \forall a_j \in \{a_1, ..., a_i\}
