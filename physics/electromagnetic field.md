@@ -120,7 +120,15 @@ c &= \frac{1}{\sqrt{\mu_0 \epsilon_0}} \\
 \end{align*}
 $$
 
+### Energy
 
+#### Energy flow density vector: Poynting vector
+
+$$
+\boldsymbol S = \boldsymbol E \times \boldsymbol H
+$$
+
+The Poynting vector $\boldsymbol S$ ($W/m^2$) represents the direction and magnitude of the flow of electromagnetic energy per unit area per unit time.
 
 
 ## Appendix

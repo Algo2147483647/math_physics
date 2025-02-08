@@ -1,4 +1,4 @@
-# Mechanics of fluid
+# Fluid
 
 [TOC]
 
