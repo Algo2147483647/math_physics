@@ -43,6 +43,14 @@ E= E+ \frac{1}{c}H'\times V\\
 H = H' - \frac{1}{c}E'\times V\\
 $$
 
+### Conservation of charge
+
+$$
+\frac{\mathrm d Q}{\mathrm d t} = 0
+$$
+
+Charge can neither be created nor destroyed, it can only be transferred from one object to another. The net amount of electric charge within a closed system does not change.
+
 ## Action
 
 ###  Action of Electromagnetic field
@@ -76,13 +84,13 @@ $$
 ### Maxwell’s equations
 
 $$
-\partial _\mu F^{\mu\nu}=\frac{4\pi}{c}J^{\nu}\\
-\partial _\mu \bar F^{\mu\nu}=0
+\begin{align*}
+\partial _\mu F^{\mu\nu}&=\frac{4\pi}{c}J^{\nu}\\
+\partial _\mu \bar F^{\mu\nu}&=0  
+\end{align*}  \tag{Maxwell’s equations}
 $$
 
-The first equation that relates the divergence of the field strength tensor to the current density. The change in the electromagnetic field is caused by the presence of charges and currents. 
-
-The second equation expresses the **absence of magnetic monopoles**. It states that the divergence of the dual field strength tensor is zero, meaning that there are no isolated sources of the magnetic field, which is a key assumption in classical electromagnetism
+The first equation that relates the divergence of the field strength tensor to the current density. The change in the electromagnetic field is caused by the presence of charges and currents. The second equation expresses the **absence of magnetic monopoles**. It states that the divergence of the dual field strength tensor is zero, meaning that there are no isolated sources of the magnetic field, which is a key assumption in classical electromagnetism
 
 (**Vector form of Maxwell’s equations**)
 $$
@@ -120,7 +128,20 @@ c &= \frac{1}{\sqrt{\mu_0 \epsilon_0}} \\
 \end{align*}
 $$
 
-### Energy
+### Conservation of mechanics
+
+#### Moment
+
+$$
+\frac{\partial}{\partial t}(\vec{g}+\vec{g}_{mech})+\nabla\cdot\overleftrightarrow{T} = 0
+$$
+
+Maxwell's stress tensor $\overleftrightarrow{T}$ is a second-order tensor.
+$$
+T_{ij}=\epsilon_{0}(E_{i}E_{j}-\frac{1}{2}\delta_{ij}E^{2})+\frac{1}{\mu_{0}}(B_{i}B_{j}-\frac{1}{2}\delta_{ij}B^{2})
+$$
+
+- $\delta_{ij}$ is the Kronecker delta, which is equal to 1 when $i = j$ and 0 otherwise.
 
 #### Energy flow density vector: Poynting vector
 

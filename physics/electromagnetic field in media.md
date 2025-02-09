@@ -100,11 +100,13 @@ $$
 D_1^{\perp} - D_2^{\perp} &= \sigma_f \\
 B_1^{\perp} - B_2^{\perp} &= 0  \\
 E_1^{\parallel} - E_2^{\parallel} &= 0 \\
-H_1^{\parallel} - H_2^{\parallel} &= \boldsymbol K_f \times \hat n
+H_1^{\parallel} - H_2^{\parallel} &= |\boldsymbol K_f \times \boldsymbol {\hat n}|
 \end{align*}
 $$
 
 The boundary conditions can be deduced form the Maxwell's equations.
+
+- $\boldsymbol K_f$: is the free surface current density on the boundary. 
 
 ## Conductors
 
