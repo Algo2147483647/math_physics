@@ -122,7 +122,7 @@ $$
   | Skewness | $\frac{1 - 2 p}{\sqrt{p (1 - p)}}$ |
   | Kurtosis | $\frac{1 - 6 p (1 - p)}{p (1 - p)}$ |
   | Entropy | $-p \ln p - (1-p) \ln (1-p)$ |
-  |||
+
 
 #### Binomial distribution 
 

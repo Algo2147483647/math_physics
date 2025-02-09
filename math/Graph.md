@@ -2,53 +2,51 @@
 
 [TOC]
 
-## Define  
+## Define
 $$
-G = (V, E)  \tag{Graph}
-$$
-$$
-E = \{(v_i, v_j)\ |\ v_i, v_j \in V\}  \tag{Edge set}
+\begin{align*}
+G &= (V, E)  \tag{Graph} \\
+E &= \{(v_i, v_j)\ |\ v_i, v_j \in V\}  \tag{Edge set}
+\end{align*}
 $$
 
 Graph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges $w: E \to \mathbb R$.
 
-|Symbol|Means|
-|---|---|
-|$V$|Vertex set |
-|$E$|Edge set, a set of paired vertices|
-|$w: E \to \mathbb R$|weight of edge|  
-|||
+- $V$: Vertex set
+- $E$: Edge set, a set of paired vertices
+- $w: E \to \mathbb R$: weight of edge
 
-Undirected Graph, is a type of graph that does not distingush the direction of edges.
-$$
-E = \{\{v_i, v_j\}\ |\ v_i, v_j \in V\}
-$$
+### Undirected Graph & Directed Graph
 
-Directed Graph, is a type of graph that distingush the direction of edges and its edge set is a set of ordered pairs.
 $$
-E = \{(v_i, v_j)\ |\ v_i, v_j \in V\}
+\begin{align*}
+E &= \{\{v_i, v_j\}\ |\ v_i, v_j \in V\}  \tag{Undirected Graph}\\
+E &= \{(v_i, v_j)\ |\ v_i, v_j \in V\}  \tag{Directed Graph}
+\end{align*}
 $$
 
-## Property  
+Undirected Graph, is a type of graph that does not distinguish the direction of edges.
 
-### Degree  
-Degree of a node refers to the number of edges connecting this node. 
+Directed Graph, is a type of graph that distinguish the direction of edges and its edge set is a set of ordered pairs.
 
-### Representation by Adjasency Matrix  
-Due to the discreteness of vertices, we can represente the weight of edge $w: E \to \mathbb R$ by Matrix $\boldsymbol G \in \mathbb R^{n \times n}$.
+## Property
+
+### Representation by Adjacency Matrix
+Due to the discreteness of vertices, we can represent the weight of edge $w: E \to \mathbb R$ by Matrix $\boldsymbol G \in \mathbb R^{n \times n}$.
 
 $$
 \boldsymbol G = \left(\begin{matrix} w(v_1, v_1) & \cdots & w(v_1, v_n) \\ \vdots&\ddots &\vdots \\ w(v_n, v_1) & \cdots & w(v_n, v_n) \end{matrix}\right)
 $$
 
+
+### Degree
+Degree of a node refers to the number of edges connecting this node. 
+
 ### Connectivity
 
-- Problem: Determine connectivity
-  * Union-Find Sets  
-    Union-Find Sets is a data structure that maintains a collection of disjoint sets, each containing a number of elements. It provides two operations: Union and Find.
+In an undirected graph $G=(V, E)$, the graph is said to be connected if there is a path between every pair of vertices. A path is a sequence of vertices where consecutive vertices are adjacent (connected by an edge).
 
-    The Union operation takes two elements from different sets and merges them into a single set.  
-    The Find operation is used to determine which set an element belongs to. It takes an element as input and returns a representative element of the set containing that element.  
+In a directed graph $G=(V, E)$, the graph is strongly connected if for every pair of vertices $u$ and $v$, there is a directed path from $u$ to $v$ and a directed path from $v$ to $u$.
 
 ### Directivity
 
@@ -56,449 +54,57 @@ $$
 
 ### Euler Path & Euler Graph
 
-- Define  
-  Euler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. 
+#### Define
+Euler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. 
 
-  <img src="./assets/48727417-28c3d500-ec58-11e8-9715-33b168a50b7c.png" alt="theory1" style="zoom:20%;" />
-  
-- Property
-  - The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
+<img src="./assets/48727417-28c3d500-ec58-11e8-9715-33b168a50b7c.png" alt="theory1" style="zoom:20%;" />
 
+#### Property
+- The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
 
-#### *Q: Search Euler Path*
-
-- Hierholzer's algorithm 
-
-  ```python
-  def find_eulerian_path_or_cycle(graph):
-      current_vertex = next(iter(graph))
-  
-      stack = [current_vertex]
-      path = []
-  
-      while not stack.empty():
-          if not graph[current_vertex].empty():
-              stack.append(current_vertex)
-              next_vertex = graph[current_vertex].pop()
-             
-              if graph[current_vertex].empty():
-                  del graph[current_vertex]
-              current_vertex = next_vertex
-          else:
-              path.append(current_vertex)
-              current_vertex = stack.pop()
-  
-      if not graph.empty():
-          return None
-      return path
-  ```
-
-  
 
 ### Matching of Graph
 
-- Define  
-  $$
-  \forall e_i, e_j \in M \subseteq E, e_i \neq e_j \quad\Rightarrow\quad v(e_i, 1) \neq v(e_i, 2) \neq v(e_j, 1) \neq v(e_j, 2)  \tag{Matching}
-  $$
-  Matching of a graph is a set of edges $M \subseteq E$ that have no common points between any two edges.
+#### Define
 
-- Include
-  - Maximum Matching  
-    $$
-    M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
-    $$
-    Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
-  - Perfect Matching  
-    $$
-    V^{(G)} = v(M^*)
-    $$
-    Perfect Matching is a matching that all vertices of the graph are in it.
+$$
+\forall e_i, e_j \in M \subseteq E, e_i \neq e_j \quad\Rightarrow\quad v(e_i, 1) \neq v(e_i, 2) \neq v(e_j, 1) \neq v(e_j, 2)  \tag{Matching}
+$$
+Matching of a graph is a set of edges $M \subseteq E$ that have no common points between any two edges.
+
+#### Include
+
+- Maximum Matching
+  $$
+  M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
+  $$
+  Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
+  
+- Perfect Matching
+  $$
+  V^{(G)} = v(M^*)
+  $$
+  Perfect Matching is a matching that all vertices of the graph are in it.
 
 ## Include
 
 ### Complete Graph
 
-- Define  
-  Complete Graph is a undirected graph in which every pair of vertices is adjacent.  
-  
-  <img src="./assets/11-simplex_graph.svg" alt="11-simplex_graph" style="zoom:30%;" />
+#### Define
+Complete Graph is a undirected graph in which every pair of vertices is adjacent.
 
-- Property
+<img src="./assets/11-simplex_graph.svg" alt="11-simplex_graph" style="zoom:30%;" />
 
-  A complete graph containing $n$ vertices,
+#### Property
 
-  - $number(E) = \frac{n(n-1)}{2}$
-  - The degree of each vertex is $n-1$
+A complete graph containing $n$ vertices,
+
+- $number(E) = \frac{n(n-1)}{2}$
+- The degree of each vertex is $n-1$
 
 ### [Tree](./Tree.md)
 
 ### [Directed Acyclic Graph](./Directed_Acyclic_Graph.md)
 
 ### [Bipartite Graph](./Bipartite_Graph.md)
-
-## Problem
-
-### Traversal
-
-#### Depth-First Search  
-
-- Define: DFS is a graph traversal that dives as deep as possible into a graph before backtracking.
-
-- Algorithm: Depth first search is implemented based on stack or recursion.
-
-  recursion:
-
-  ```python
-  def dfs(graph, node, result):
-      if node not in result:
-          result.add(node)
-          for neighbor in graph[node]:
-              dfs(graph, neighbor, result)
-      return result
-  ```
-
-  stack :
-
-  ```python
-  def dfs(graph, start):
-      stack.push(start)
-      
-      while not stack.empty():
-          node = stack.pop()
-          result.add(node)
-          for neighbor in graph[node]:
-              stack.push(neighbor)
-      return result
-  ```
-
-#### Breadth-First Search
-
-- Define: BFS is a graph traversal that explores all of the neighbor nodes at the present depth before moving on to nodes at the next depth level.
-
-- Algorithm: Breadth-first search is implemented based on queues.
-
-  ```python
-  def bfs(graph, start):
-      queue.push(start)
-      
-      while not queue.empty():
-          node = queue.pop()
-          result.add(node)
-          for neighbor in graph[node]:
-              queue.push(neighbor)
-      return result
-  ```
-
-### Shortest Paths
-
-- Problem
-
-  For a graph $G = (V, E)$ with edge weight $w : E \to \mathbb R$, we aim to find the minimum sum of edge weights of path $P(v_s, v_e)$ from $v_s \to v_e$, 
-  $$
-  P(v_s, v_e) = \left(e_{1}^{(P)}, ..., e_{m}^{(P)} \ |\ e_{i}^{(P)} \in E, e_{1}^{(P)}[1] = v_{s}, e_{m}^{(P)}[2] = v_{e} \right) \tag{Path}
-  $$
-
-  $$
-  \begin{align*}
-  d(v_s, v_e) = \min_{P} \quad& \sum_{e_{i}^{(P)} \in P} w(e_{i}^{(P)}) \\
-  s.t. \quad& e_{1}^{(P)}[1] = v_{s}\\
-    & e_{m}^{(P)}[2] = v_{e}
-  \end{align*}
-  $$
-
-- Property
-
-    - The shortest path has no loop
-      $$
-      e_{i}^{(P)} \neq e_{j}^{(P)} \quad, \text{if } i \neq j
-      $$
-
-    - If $v_i$ and $v_j$ are relay nodes of shortest path $P_{\min}(v_1, v_k)$ between the node $v_1$ and $v_k$, then the subpath $P_{\min}(v_i, v_j) = (v_i, ..., v_j) \subset P(v_1, v_k)$ is the shortest path between the node $v_i$ and $v_j$. 
-      $$
-      P(v_i, v_j) \subset P_{\min}(v_1, v_k)  \Rightarrow  P_{\min}(v_i, v_j) = P(v_i, v_j)
-      $$
-
-    - $\forall (v_i, v_j) \in E$
-      $$
-      d(v_s, v_j) \le d(v_s, v_i) + w((v_i, v_j))
-      $$
-      because $s \to i \to j$ is also a feasible path, then $d(P_{min}) \le d(P_{s \to i \to j})$.
-
-    - estimation of the shorteset paths and distances
-      - Initial estimation  
-        $$
-        \begin{align*}
-        \tilde d(v_s, v_s) &\gets 0  \tag{estimation of the shorteset distance}\\
-        \tilde d(v_s, v_i) &\gets \inf, \quad v_i \in V - \{v_s\}\\
-        \tilde P(v_s, v_i) &\gets (v_s), \quad v_i \in V  \tag{estimation of the shorteset path}\\
-        \end{align*}
-        $$
-
-        where, $\tilde d(v_s, v_i)$ is the estimation and upper-bound of $d(v_s, v_i)$, while $\tilde P(v_s, v_i) \Leftrightarrow \tilde d(v_s, v_i) = \inf$.
-
-      - Update estimation  
-        if there is an edge $(v_i, v_j)$, make the path better $\tilde d(v_s, v_j) > \tilde d(v_s, v_i) + w((v_i, v_j))$, then,
-        $$
-        \begin{align*}
-        \tilde d(v_s, v_j) &\gets \tilde d(v_s, v_i) + w((v_i, v_j))  \\
-        \tilde P(v_s, v_j) &\gets \tilde P(v_s, v_i) + (v_j)
-        \end{align*}
-        $$
-
-        for a subgraph $G' = G - (\{v_i\}, \{(v_i, \cdot), (\cdot, v_i)\})$, we have  
-
-        $$
-        \begin{align*}
-          d^{(G)}(v_s, v_i) &= \min_{v_j \in V^{(G')}} \left(d^{(G')}(v_s, v_j) + w((v_j, v_i))\right)  \\
-          d^{(G)}(v_s, v_j) &\le d^{(G)}(v_s, v_i) + w(v_i, v_j) \quad, \forall (v_i, v_j) \in E^{(G)}  \\
-          P_{\min}^{(G)}(v_s, v_i) &= \arg\min_{P_{\min}^{(G')}(v_s, v_j)} \left(d\left(P_{\min}^{(G')}(v_s, v_j)\right)+ w((v_j, v_i))\right) + (v_i)
-        \end{align*}
-        $$
-
-
-#### Floyd's Algorithm  
-Base on danamic programming, there is a Tensor $M^{(d)}, M^{(p)} \in \mathbb R^{n \times n \times (n+1)}$, where $M_{i, j, k}$ refer to the minimum distance and path from $v_i \to v_j$ with optional intermediate vertices $\{v_1, ..., v_k\}$. When $k = 0$, $M_{i, j, 0}$ refer to the distance of direct path $(v_i, v_j)$ with no intermediate vertice. When $k = n$, $M_{i, j, n}$ is the answer of the shorest distance and path of all virtice pairs.
-$$
-\begin{align*} 
-  G &= M^{(d)}_{\cdot, \cdot, 0}  \\
-  D &= M^{(d)}_{\cdot, \cdot, n}
-\end{align*}
-$$
-
-For $k$ and optional intermediate vertices $\{v_1, ..., v_k\}$, $M^{(d)}_{\cdot, \cdot, k}$ could be obtained by $M^{(d)}_{\cdot, \cdot, k-1}$ through determines whether to select $v_k$ as the intermediate node.
-$$
-  M^{(d)}_{i, j, k} = \min \left(M^{(d)}_{i, j, k-1},\ M^{(d)}_{i, k, k-1} + M^{(d)}_{k, j, k-1}\right)
-$$
-
-```c
-dis = G;
-
-for (int k = 1; k <= N; k++)
-  for (int i = 1; i <= N; i++)
-    for (int j = 1; j <= N; j++)
-      dis(i, j) = dis(i, j) > dis(i, k) + dis(k, j) ?
-                  path(i, j) = k, dis(i, k) + dis(k, j) :
-                  dis(i, j);
-```
-
-#### Dijkstra Algorithm  
-
-- Process 
-  - Initially, we mark all nodes as unvisited and set the distance from source node to the itself to zero, and the distance to all other nodes to infinity.
-  - Select the unvisited node with the smallest distance from source node (the first selected node is source node itself), mark it as visited, and update the distance of all nodes through the new node accordingly.
-  - Repeat above step until the destination node is visited or there are no more unvisited nodes.
-
-```python
-def dijkstra(graph, start):
-    shortest_path = {vertex: float('infinity') for vertex in graph}
-    shortest_path[start] = 0
-    
-    priority_queue.push((0, start))
-    
-    while priority_queue:
-        current_distance, current_vertex = priority_queue.pop()
-        
-        if current_distance > shortest_path[current_vertex]:
-            continue
-
-        for neighbor, weight in graph[current_vertex].items():
-            distance = current_distance + weight
-
-            if distance < shortest_path[neighbor]:
-                shortest_path[neighbor] = distance
-                priority_queue.push((distance, neighbor))
-
-    return shortest_path
-```
-
-
-
-#### Bellman Ford
-
-
-### Minimum Spanning Tree
-
-- Purpose  
-  Find a Tree (acyclic subgraph) on the undirected Graph $T \subseteq G, V^{(T)} = V^{(G)}$ with the smallest sum of edge weights connected all nodes.
-
-  $$
-  \begin{align*}
-    T_{\min} =  \arg\min_{T \subseteq G} \quad & \sum_{e \in E^{(T)}} w(e)  \\
-    s.t. \quad & V^{(T)} = V^{(G)} \\
-    & T \text{ is acyclic}
-  \end{align*}
-  $$
-
-- Property
-    $$
-    \begin{align*}
-      T_{\min}^{(G)} &\Rightarrow \left(T_{\min}^{(G)} - \{v_i\}\right) \text{ is a min spanning tree of } (G - \{v_i\})  \\
-      T_{\min}^{(G - \{v_i\})} &\Rightarrow \left(T_{\min}^{(G - \{v_i\})} + \arg\min_{e \in (v_i,\cdot)} w(e) \right)  \text{ is a min spanning tree of } G
-    \end{align*}
-    $$
-
-
-#### Prim's Algorithm  
-Greed by vertices, put the shortest edge $(u,v)$ of $u$ from the searched vertices into the result edge sequence every time, and $v$ does not belong to the searched vertices. $T_{\min, k}$ refers to a sub-tree of $T_{\min}$ with $k+1$ vertices and $k$ edges.
-$$
-\begin{align*} 
-  T_{\min, 0} &= (\{v_1\}, \emptyset)  \tag{initial}\\
-  T_{\min, n} &= T_{\min}  \tag{answer}
-\end{align*}
-$$
-
-$$
-\begin{align*}
-  (v_k, e_k) = \arg\min_{e_k = (v_k, v')}\quad & w(e_k)  \\
-  s.t. \quad
-  & e_k \in E^{(G)}  \\
-  & v_k \in V^{(G)}  \\
-  & v_k \notin V^{(T_{\min, k-1})}  \\
-  & v' \in V^{(T_{\min, k-1})}
-\end{align*}
-$$
-$$T_{\min, k} = T_{\min, k-1} + (\{v_k\}, \{e_k\})$$
-
-- Property: Time complexity $O(E \cdot logV)$
-
-```python
-def prim(graph):
-    start_vertex = list(graph.keys())[0]
-    result = set()
-    visited = set([start_vertex])
-    edges = priority_queue()
-    edges.push(
-        (cost, start_vertex, to)
-        for to, cost in graph[start_vertex].items()
-    )
-
-    while not edges.empty():
-        cost, frm, to = edges.pop()
-        if to not in visited:
-            visited.add(to)
-            result.add((frm, to))
-            for to_next, cost2 in graph[to].items():
-                if to_next not in visited:
-                    edges.push((cost2, to, to_next))
-
-    return result
-```
-
-
-
-#### Kruskal's Algorithm  
-Greed by edges. $T_{\min, k}$ refers to a sub-tree of $T_{\min}$ with $k$ edges.
-$$
-\begin{align*} 
-  T_{\min, 0} &= (V^{(G)}, \emptyset)  \tag{initial}\\
-  T_{\min, n} &= T_{\min}  \tag{answer}
-\end{align*}
-$$
-
-$$
-\begin{align*}
-  e_k =& \arg\min_{e_k \in E^{(G)}}\quad w(e_k)  \\
-  &s.t. \quad \nexists \text{ path } \in T_{\min, k-1} \text{ , lets } e_k[1] \to e_k[2]
-\end{align*}
-$$
-
-$$
-T_{\min, k} = T_{\min, k-1} + (\{e_k\})
-$$
-
-- Property: Time complexity $O(E \cdot logV)$
-
-Depth first search is implemented based on union-find set.
-
-```python
-def kruskal(graph):
-    result = []
-    edges = []
-    parent = {}
-
-    for vertex in graph:
-        parent[vertex] = vertex
-        for neighbor, weight in graph[vertex].items():
-            edges.append((weight, vertex, neighbor))
-
-    edges.sort()
-
-    for edge in edges:
-        weight, vertex1, vertex2 = edge
-        root1 = find(parent, vertex1)
-        root2 = find(parent, vertex2)
-
-        if root1 != root2:
-            result.append(edge)
-            union(parent, root1, root2)
-
-    return result
-```
-
-### Network Flow Problem
-
-- Purpose
-  We set $G'$ is a sub-graph of $G$, Equal inflow and outflow of non source and sink
-  $$
-  \begin{align*}
-    w'(u, v) &\le w(u, v)  \tag{Flow constraint}\\
-    \sum_i w'(u, v_i) &= \sum_i w'(v_i, u)  \quad; u \neq s, u \neq e
-  \end{align*}
-  $$
-
-- Include
-  - Maximum Flow Problem
-    - Purpose
-    
-      Maximum flow rate at source and sink
-      $$
-      \begin{align*}
-        \max \quad & \sum_i w'(v_i, e) = w'(s, v_i) \\
-        s.t. \quad & w'(u, v) \le w(u, v) \\
-          &\sum_i w'(u, v_i) = \sum_i w'(v_i, u)  \quad ; u \neq s, u \neq e  
-      \end{align*}
-      $$
-    
-    - Dinic Algorithm
-        Dinic算法是一种用于在网络中求最大流的算法，由以色列计算机科学家Yefim (Chaim) A. Dinitz于1970年提出。算法运行在$O(V^2E)$的复杂度内，这里$V$是顶点数，$E$是边数。以下是Dinic算法的数学公式和步骤：
-
-        1. **构建层次图**：算法开始时，首先构建一个层次图。这是通过BFS（广度优先搜索）从源点$s$开始实现的，计算出每个顶点到源点的距离（层数）。
-
-        2. **阻塞流**：然后，使用DFS（深度优先搜索）找到所有增广路径，直至无法找到更多从$s$到汇点$t$的路径为止。一个阻塞流是指没有增广路径能通过未满的边进入$t$。
-
-           对于每一次DFS，流量$f$的计算遵循以下公式：
-           $$
-           f = \min(f, c(u,v) - f(u,v))
-           $$
-           其中$c(u,v)$是边$(u,v)$的容量，$f(u,v)$是当前边$(u,v)$的流量。
-
-        3. **重复构建层次图**：每当DFS无法找到新的增广路径时，算法会重新执行BFS来更新层次图，然后再次通过DFS寻找新的阻塞流。
-
-        4. **更新流量**：每找到一个阻塞流，就更新当前的流量。流量的更新遵循：
-           $$
-           f(u,v) = f(u,v) + f
-           $$
-           $$
-           f(v,u) = f(v,u) - f
-           $$
-           这里$f(u,v)$是从$u$到$v$的流量，$f$是在当前阻塞流中找到的流量。
-
-        5. **终止条件**：当无法再构建新的层次图时，即从$s$无法到达$t$，算法终止。
-
-        6. **输出最大流**：算法终止时，所有从$s$出发的流量之和即为最大流。
-
-        这是Dinic算法的一个高层次的描述和数学公式解释。实际实现时，还需要考虑一些优化，比如当前弧优化（current arc optimization）和距离标号优化（distance labeling），以提高效率。
-    
-  - Minimum Cost Problem
-
-### Travelling Salesman Problem  
-
-- Purpose  
-  Find the shortest closed path traversing all given points.
-
-### Graph Coloring Problem
-
-- Vertex coloring: a coloring of a graph almost always refers to a proper vertex coloring, namely a labeling of the graph's vertices with colors such that no two vertices sharing the same edge have the same color. Since a vertex with a loop (i.e. a connection directly back to itself) could never be properly colored, it is understood that graphs in this context are loopless.
-- Edge coloring: an assignment of colors to edges so that no vertex is incident to two edges of the same color. An edge coloring with k colors is called a k-edge-coloring and is equivalent to the problem of partitioning the edge set into k matchings. The smallest number of colors needed for an edge coloring of a graph G is the chromatic index, or edge chromatic number, χ′(G). 
 
