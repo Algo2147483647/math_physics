@@ -26,17 +26,20 @@ function RenderSvgFromDag(dag, root) {
     for (const key in dag) {
         if (dag.hasOwnProperty(key)) {
             const item = dag[key];
-            if (item.hasOwnProperty('condition')) {
-                delete item.condition;
+            if (item.hasOwnProperty('coordinate')) {
+                delete item.coordinate;
             }
         }
     }
-    BuildConditionsForDag(dag, root)
+    BuildCoordinateForDag(dag, root)
+    RenderNodeCoordinate(dag)
+    RenderByDFS(dag, svg, root, new Set());
+}
 
-
+function RenderNodeCoordinate(dag) {
     let elements_num = Array(100).fill(0);
     for (let key in dag) {
-        if (!dag[key].hasOwnProperty('condition')) {
+        if (!dag[key].hasOwnProperty('coordinate')) {
             continue
         }
 
@@ -46,7 +49,7 @@ function RenderSvgFromDag(dag, root) {
 
     let elements_num_max = Math.max(...elements_num);
     for (let key in dag) {
-        if (!dag[key].hasOwnProperty('condition')) {
+        if (!dag[key].hasOwnProperty('coordinate')) {
             continue
         }
 
@@ -55,8 +58,6 @@ function RenderSvgFromDag(dag, root) {
         dag[key]["coordinate_SVG"][1] = (elements_num_max * 50) / elements_num[coordinate[0]] * (coordinate[1] + 0.5);
         dag[key]["coordinate_SVG"][0] = (coordinate[0] + 1) * 300 - 200;
     }
-
-    RenderByDFS(dag, svg, root, new Set());
 }
 
 function RenderByDFS(dag, svg, nodeKey, visited) {
@@ -73,11 +74,10 @@ function RenderByDFS(dag, svg, nodeKey, visited) {
     });
 
     [x, y] = dag[nodeKey]["coordinate_SVG"];
-    nodeText = nodeKey.split('\\').pop().split('.')[0].replace(/_/g, ' ')
-    RenderNode(dag, svg, x, y, nodeText);
+    RenderNode(dag, svg, x, y, nodeKey);
 }
 
-function RenderNode(dag, svg, x, y, node_name) {
+function RenderNode(dag, svg, x, y, nodeKey) {
     const radius = 8;
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", x);
@@ -94,16 +94,16 @@ function RenderNode(dag, svg, x, y, node_name) {
     text.setAttribute("font-style", "italic"); // Italicize the text
     text.setAttribute("font-size", "16");
     text.setAttribute("fill", "#333"); // Darker color for text
-    text.textContent = node_name;
+    text.textContent = nodeKey.split('\\').pop().split('.')[0].replace(/_/g, ' ');
 
     const circleLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     circleLink.setAttribute("href", "javascript:void(0)");  // You can use this to prevent default link action
-    circleLink.addEventListener('click', () => render_file_graph("C:/Algo/Notes/math_physics/math/", node_name));
+    circleLink.addEventListener('click', () => render_file_graph("C:/Algo/Notes/math_physics/math/", nodeKey));
 
     const textLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     textLink.setAttribute("href", "javascript:void(0)");
     textLink.setAttribute("target", "_blank");
-    textLink.addEventListener('click', () => request("open_typora", {path: "C:/Algo/Notes/math_physics/math/" + node_name.replace(/ /g, "_") + ".md"}));
+    textLink.addEventListener('click', () => request("open_typora", {path: "C:/Algo/Notes/math_physics/math/" + nodeKey + ".md"}));
 
     circleLink.appendChild(circle);
     textLink.appendChild(text);

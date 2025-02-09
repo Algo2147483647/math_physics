@@ -21,8 +21,8 @@ class Node:
 
 def graph_to_json(graph):
     with open('../lib/math.json', 'w') as file:
-        json.dump({key: node.to_dict() for key, node in graph.items()}, file)
-    return json.dumps({key: node.to_dict() for key, node in graph.items()})
+        json.dump({key: node.to_dict() for key, node in graph.items()}, file, sort_keys=True, indent=4)
+    return json.dumps({key: node.to_dict() for key, node in graph.items()}, sort_keys=True)
 
 def build_common_root(dag):
     roots = get_all_roots(dag)

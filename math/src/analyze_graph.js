@@ -8,7 +8,7 @@ function FindRootsFromDag() {
     return Array.from(allNodes);
 }
 
-function BuildConditionsForDag(dag, root) {
+function BuildCoordinateForDag(dag, root) {
     const queue = [root];
     let level = -1;
 
@@ -17,11 +17,11 @@ function BuildConditionsForDag(dag, root) {
         level += 1;
         for (let i = 0; i < n; i++) {
             const key = queue.shift();
-            dag[key]["condition"] = [level, i];
+            dag[key]["coordinate"] = [level, i];
             dag[key].kids.forEach(kidKey => {
-                if (!dag[kidKey].hasOwnProperty('condition')) {
+                if (!dag[kidKey].hasOwnProperty('coordinate')) {
                     queue.push(kidKey);
-                    dag[kidKey]["condition"] = [-1, -1];
+                    dag[kidKey]["coordinate"] = [-1, -1];
                 }
             });
         }
