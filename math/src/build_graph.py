@@ -40,18 +40,22 @@ def build_graph_from_markdown_file(file_path, graph):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            graph[name].content = content
 
             links = re.findall(r'\]\((.*?\.md)\)', content)
             define_section = re.search(r'##\s*Define(.*?)(## \w+|$)', content, re.DOTALL)
             define_section = define_section.group(1).strip() if define_section else None
+            property_section = re.search(r'##\s*Property(.*?)(## \w+|$)', content, re.DOTALL)
+            property_section = property_section.group(1).strip() if property_section else None
+
+            graph[name].define = define_section
+            graph[name].properties = property_section
 
             for link in links:
                 link_path = os.path.abspath(os.path.join(os.path.dirname(file_path), link))
                 link_name = os.path.splitext(os.path.basename(link_path))[0]
                 build_graph_from_markdown_file(link_path, graph)
 
-                if define_section and link in define_section:
+                if define_section and link in graph[name].define:
                     graph[name].parents.add(link_name)
                     graph[link_name].kids.add(name)
                 else:

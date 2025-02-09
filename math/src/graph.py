@@ -20,6 +20,8 @@ class Node:
 
 
 def graph_to_json(graph):
+    with open('../lib/math.json', 'w') as file:
+        json.dump({key: node.to_dict() for key, node in graph.items()}, file)
     return json.dumps({key: node.to_dict() for key, node in graph.items()})
 
 def build_common_root(dag):
