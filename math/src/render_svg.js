@@ -34,6 +34,16 @@ function RenderSvgFromDag(dag, root) {
     BuildCoordinateForDag(dag, root)
     RenderNodeCoordinate(dag)
     RenderByDFS(dag, svg, root, new Set());
+
+    // 自动导出 SVG 文件
+    // const svgData = new XMLSerializer().serializeToString(svg);
+    // const blob = new Blob([svgData], { type: 'image/svg+xml' });
+    // const url = URL.createObjectURL(blob);
+    // const a = document.createElement('a');
+    // a.href = url;
+    // a.download = 'math.svg';
+    // a.click();
+    // URL.revokeObjectURL(url);
 }
 
 function RenderNodeCoordinate(dag) {
