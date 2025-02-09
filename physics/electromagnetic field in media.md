@@ -108,7 +108,13 @@ The boundary conditions can be deduced form the Maxwell's equations.
 
 - $\boldsymbol K_f$: is the free surface current density on the boundary. 
 
-## Conductors
+## Electromagnetic wave in media
 
-## Insulators
+
+
+## Special Cases
+
+### Conductors
+
+### Insulators
 

@@ -76,8 +76,10 @@ The **Lorentz force law** describing the motion of a charged particle in an elec
 
 (**Vector form of Lorentz force law**)
 $$
-\frac{\mathrm{d} \boldsymbol p}{\mathrm{d} t} = e \boldsymbol E + \frac{e}{c} \boldsymbol v \times \boldsymbol H \\
-\frac{\mathrm{d} \mathrm E_{kin}}{\mathrm{d} t} = e \boldsymbol E \cdot \boldsymbol v
+\begin{align*}
+\frac{\mathrm{d} \boldsymbol p}{\mathrm{d} t} &= e \boldsymbol E + \frac{e}{c} \boldsymbol v \times \boldsymbol H \\
+\frac{\mathrm{d} \mathrm E_{kin}}{\mathrm{d} t} &= e \boldsymbol E \cdot \boldsymbol v
+\end{align*}
 $$
 
 
@@ -118,19 +120,18 @@ $$
 
 d'Alembert's equation describes the propagation of electromagnetic waves. 
 
-#### Speed of electromagnetic waves in vacuum: Speed of Light
-
-$$
-\begin{align*}
-c &= \frac{1}{\sqrt{\mu_0 \epsilon_0}} \\
-&\approx \frac{1}{\sqrt{(4\pi \times 10^{-7} \, \text{N/A}^2)(8.854 \times 10^{-12} \, \text{F/m})}} \\
-&\approx 2.99792458 \times 10^8 \, \text{m/s}
-\end{align*}
-$$
-
 ### Conservation of mechanics
 
-#### Moment
+
+#### Energy & Energy flow density vector: Poynting vector
+
+$$
+\boldsymbol S = \boldsymbol E \times \boldsymbol H
+$$
+
+The Poynting vector $\boldsymbol S$ ($W/m^2$) represents the direction and magnitude of the flow of electromagnetic energy per unit area per unit time.
+
+#### Momentum
 
 $$
 \frac{\partial}{\partial t}(\vec{g}+\vec{g}_{mech})+\nabla\cdot\overleftrightarrow{T} = 0
@@ -143,14 +144,20 @@ $$
 
 - $\delta_{ij}$ is the Kronecker delta, which is equal to 1 when $i = j$ and 0 otherwise.
 
-#### Energy flow density vector: Poynting vector
+#### Angular momentum
+
+
+## Electromagnetic Wave
+
+#### Speed of electromagnetic waves in vacuum: Speed of light
 
 $$
-\boldsymbol S = \boldsymbol E \times \boldsymbol H
+\begin{align*}
+c &= \frac{1}{\sqrt{\mu_0 \epsilon_0}} \\
+&\approx \frac{1}{\sqrt{(4\pi \times 10^{-7} \, \text{N/A}^2)(8.854 \times 10^{-12} \, \text{F/m})}} \\
+&\approx 2.99792458 \times 10^8 \, \text{m/s}
+\end{align*}
 $$
-
-The Poynting vector $\boldsymbol S$ ($W/m^2$) represents the direction and magnitude of the flow of electromagnetic energy per unit area per unit time.
-
 
 ## Appendix
 
