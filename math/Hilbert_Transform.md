@@ -1,4 +1,4 @@
-# Hilbert Transform
+# $Hilbert\ Transform$
 
 [TOC]
 

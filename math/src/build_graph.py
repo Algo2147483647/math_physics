@@ -4,13 +4,12 @@ import json
 from pathlib import Path
 from graph import Node
 from graph import graph_to_json
-from graph import build_coordinates_of_dag
 from graph import build_common_root
 
 
 def build_graph_json_from_markdown_folder(folder_path):
     result = build_graph_from_markdown_folder(folder_path)
-    result = build_coordinates_of_dag(result)
+    result = build_common_root(result)
 
     json_file = graph_to_json(result)
     return json_file

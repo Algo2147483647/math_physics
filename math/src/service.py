@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from build_graph import build_graph_json_from_markdown_folder
+from typora import open_typora
 
 app = Flask(__name__)
 CORS(app)  # Restrict domains in production

@@ -1,17 +1,14 @@
-let Dag = {};
-
 function render_file_graph(path, root) {
     request("build_graph_json_from_markdown_folder", {"folder_path": path}).then(dag => {
         console.log(dag);
-        Dag = dag;
-        RenderDAGToSVG(dag, root)
+        RenderSvgFromDag(dag, root)
     })
     .catch(error => {
         console.error('Error fetching file graph:', error); // 捕获错误
     });
 }
 
-function RenderDAGToSVG(dag, root) {
+function RenderSvgFromDag(dag, root) {
     container = document.getElementById('main-content');
     if (container) {
         container.parentNode.removeChild(container);
@@ -25,14 +22,34 @@ function RenderDAGToSVG(dag, root) {
     svg.setAttribute("height", "10000");
     container.appendChild(svg);
 
+
+    for (const key in dag) {
+        if (dag.hasOwnProperty(key)) {
+            const item = dag[key];
+            if (item.hasOwnProperty('condition')) {
+                delete item.condition;
+            }
+        }
+    }
+    BuildConditionsForDag(dag, root)
+
+
     let elements_num = Array(100).fill(0);
     for (let key in dag) {
+        if (!dag[key].hasOwnProperty('condition')) {
+            continue
+        }
+
         let coordinate = dag[key]["coordinate"];
         elements_num[coordinate[0]] = Math.max(elements_num[coordinate[0]], coordinate[1] + 1);
     }
 
     let elements_num_max = Math.max(...elements_num);
     for (let key in dag) {
+        if (!dag[key].hasOwnProperty('condition')) {
+            continue
+        }
+
         let coordinate = dag[key]["coordinate"];
         dag[key]["coordinate_SVG"] = coordinate;
         dag[key]["coordinate_SVG"][1] = (elements_num_max * 50) / elements_num[coordinate[0]] * (coordinate[1] + 0.5);
@@ -81,11 +98,12 @@ function RenderNode(dag, svg, x, y, node_name) {
 
     const circleLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     circleLink.setAttribute("href", "javascript:void(0)");  // You can use this to prevent default link action
-    circleLink.addEventListener('click', () => RenderDAGToSVG(Dag, node_name));
+    circleLink.addEventListener('click', () => render_file_graph("C:/Algo/Notes/math_physics/math/", node_name));
 
     const textLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
-    textLink.setAttribute("href", "");
+    textLink.setAttribute("href", "javascript:void(0)");
     textLink.setAttribute("target", "_blank");
+    textLink.addEventListener('click', () => request("open_typora", {path: "C:/Algo/Notes/math_physics/math/" + node_name.replace(/ /g, "_") + ".md"}));
 
     circleLink.appendChild(circle);
     textLink.appendChild(text);
