@@ -2,13 +2,38 @@ function render_file_graph(path, root) {
     request("build_graph_json_from_markdown_folder", {"folder_path": path}).then(dag => {
         console.log(dag);
         RenderSvgFromDag(dag, root)
-    })
-    .catch(error => {
+    }).catch(error => {
         console.error('Error fetching file graph:', error); // 捕获错误
     });
 }
 
 function RenderSvgFromDag(dag, root) {
+    container = GetContainer();
+
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("width", "10000");
+    svg.setAttribute("height", "10000");
+    container.appendChild(svg);
+
+    BuildCoordinateForDag(dag, root)
+    RenderNodeCoordinate(dag)
+    RenderByDFS(dag, svg, root, new Set());
+
+    // ExportSvg(svg);
+}
+
+function ExportSvg(svg) {
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const blob = new Blob([svgData], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'math.svg';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function GetContainer() {
     container = document.getElementById('main-content');
     if (container) {
         container.parentNode.removeChild(container);
@@ -17,12 +42,10 @@ function RenderSvgFromDag(dag, root) {
     container.id = 'main-content';
     document.body.appendChild(container);
 
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("width", "10000");
-    svg.setAttribute("height", "10000");
-    container.appendChild(svg);
+    return container;
+}
 
-
+function RenderNodeCoordinate(dag) {
     for (const key in dag) {
         if (dag.hasOwnProperty(key)) {
             const item = dag[key];
@@ -31,22 +54,7 @@ function RenderSvgFromDag(dag, root) {
             }
         }
     }
-    BuildCoordinateForDag(dag, root)
-    RenderNodeCoordinate(dag)
-    RenderByDFS(dag, svg, root, new Set());
 
-    // 自动导出 SVG 文件
-    // const svgData = new XMLSerializer().serializeToString(svg);
-    // const blob = new Blob([svgData], { type: 'image/svg+xml' });
-    // const url = URL.createObjectURL(blob);
-    // const a = document.createElement('a');
-    // a.href = url;
-    // a.download = 'math.svg';
-    // a.click();
-    // URL.revokeObjectURL(url);
-}
-
-function RenderNodeCoordinate(dag) {
     let elements_num = Array(100).fill(0);
     for (let key in dag) {
         if (!dag[key].hasOwnProperty('coordinate')) {
@@ -60,7 +68,7 @@ function RenderNodeCoordinate(dag) {
     let elements_num_max = Math.max(...elements_num);
     for (let key in dag) {
         if (!dag[key].hasOwnProperty('coordinate')) {
-            continue
+            continue;
         }
 
         let coordinate = dag[key]["coordinate"];
@@ -73,6 +81,13 @@ function RenderNodeCoordinate(dag) {
 function RenderByDFS(dag, svg, nodeKey, visited) {
     visited.add(nodeKey);
     dag[nodeKey]["kids"].forEach(kidKey => {
+        if (!dag[nodeKey].hasOwnProperty('coordinate')) {
+            console.log(nodeKey);
+        }
+        if (!dag[kidKey].hasOwnProperty('coordinate')) {
+            console.log(kidKey);
+        }
+
         const radius = 8;
         RenderEdge(svg,
             dag[nodeKey]["coordinate_SVG"][0] + radius, dag[nodeKey]["coordinate_SVG"][1],
@@ -114,6 +129,11 @@ function RenderNode(dag, svg, x, y, nodeKey) {
     textLink.setAttribute("href", "javascript:void(0)");
     textLink.setAttribute("target", "_blank");
     textLink.addEventListener('click', () => request("open_typora", {path: "C:/Algo/Notes/math_physics/math/" + nodeKey + ".md"}));
+    textLink.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+        request("open_typora", {path: "C:/Algo/Notes/math_physics/math/xxxx.md"})
+    });
+
 
     circleLink.appendChild(circle);
     textLink.appendChild(text);
