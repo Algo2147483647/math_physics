@@ -15,6 +15,15 @@ function RenderSvgFromDag(dag, root) {
     svg.setAttribute("height", "10000");
     container.appendChild(svg);
 
+    for (const key in dag) {
+        if (dag.hasOwnProperty(key)) {
+            const item = dag[key];
+            if (item.hasOwnProperty('coordinate')) {
+                delete item.coordinate;
+            }
+        }
+    }
+
     BuildCoordinateForDag(dag, root)
     RenderNodeCoordinate(dag)
     RenderByDFS(dag, svg, root, new Set());
@@ -46,15 +55,6 @@ function GetContainer() {
 }
 
 function RenderNodeCoordinate(dag) {
-    for (const key in dag) {
-        if (dag.hasOwnProperty(key)) {
-            const item = dag[key];
-            if (item.hasOwnProperty('coordinate')) {
-                delete item.coordinate;
-            }
-        }
-    }
-
     let elements_num = Array(100).fill(0);
     for (let key in dag) {
         if (!dag[key].hasOwnProperty('coordinate')) {
@@ -127,7 +127,7 @@ function RenderNode(dag, svg, x, y, nodeKey) {
 
     const textLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     textLink.setAttribute("href", "javascript:void(0)");
-    textLink.setAttribute("target", "_blank");
+    //textLink.setAttribute("target", "_blank");
     textLink.addEventListener('click', () => request("open_typora", {path: "C:/Algo/Notes/math_physics/math/" + nodeKey + ".md"}));
     textLink.addEventListener('contextmenu', (event) => {
         event.preventDefault();
