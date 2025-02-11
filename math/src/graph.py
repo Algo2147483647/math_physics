@@ -30,7 +30,7 @@ def graph_to_json(graph):
     return json.dumps({key: node.to_dict() for key, node in graph.items()}, sort_keys=True)
 
 
-def graph_to_json(json_file):
+def json_to_graph(json_file):
     try:
         with open(json_file, 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -57,6 +57,8 @@ def build_common_root(dag):
     )
 
     for root in roots:
+        if root == "root":
+            continue
         build_edge(dag, "root", root, "")
 
     return dag

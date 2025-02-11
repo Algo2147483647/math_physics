@@ -15,11 +15,13 @@
 
 ### Note Format
 
-- **Entity / Concept**: Take a mathematical entity as a note.
+- **Name**: Take a mathematical entity as a note.
 - **Define**: The definition of this concept.
-- **Property**: The important properties of this concept.
+- **Properties**: The important properties of this concept.
 - **Include**: Subsets of this concept.
-- **Problem**: The classic problem derived from this concept.
+- **Parents**: The higher layer concepts of this concept.
+
+
 
 ### Knowledge Graph of Nodes
 
@@ -27,6 +29,34 @@
 - Other hyperlinks that appear are child nodes of this concept.
 - All concepts together form a directed acyclic graph.
 - Specific implementation reference `./admin/`
+
+### Operations
+
+#### Markdown $\to$ Graph (Json)
+
+```
+curl --location 'http://localhost:5000/function' \
+--header 'Content-Type: application/json' \
+--data '{
+    "function": "build_markdown_from_graph",
+    "params": {
+        "json_file": "C:/Algo/Notes/math_physics/math/lib/math.json"
+    }
+}'
+```
+
+#### Graph (Json) $\to$ Markdown
+
+```
+curl --location 'http://localhost:5000/function' \
+--header 'Content-Type: application/json' \
+--data '{
+    "function": "build_graph_json_from_markdown_folder",
+    "params": {
+        "folder_path": "C:/Algo/Notes/math_physics/math/"
+    }
+}'
+```
 
 ## Physics
 

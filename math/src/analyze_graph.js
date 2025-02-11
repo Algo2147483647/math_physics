@@ -18,7 +18,7 @@ function BuildCoordinateForDag(dag, root) {
         for (let i = 0; i < n; i++) {
             const key = queue.shift();
             dag[key]["coordinate"] = [level, i];
-            dag[key].kids.forEach(kidKey => {
+            Object.keys(dag[key].kids).forEach(kidKey => {
                 if (!dag[kidKey].hasOwnProperty('coordinate')) {
                     queue.push(kidKey);
                     dag[kidKey]["coordinate"] = [-1, -1];

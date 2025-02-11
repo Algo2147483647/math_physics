@@ -80,7 +80,7 @@ function RenderNodeCoordinate(dag) {
 
 function RenderByDFS(dag, svg, nodeKey, visited) {
     visited.add(nodeKey);
-    dag[nodeKey]["kids"].forEach(kidKey => {
+    Object.keys(dag[nodeKey]["kids"]).forEach(kidKey => {
         if (!dag[nodeKey].hasOwnProperty('coordinate')) {
             console.log(nodeKey);
         }

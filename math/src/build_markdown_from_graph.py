@@ -2,9 +2,12 @@ from graph import *
 
 
 def build_markdown_from_graph(json_file):
-    graph = graph_to_json(json_file)
+    graph = json_to_graph(json_file)
 
     for node in graph:
+        if node.name == "root":
+            continue
+
         with open("C:/Algo/Notes/math_physics/math/lib/" + node.name + ".md", 'w', encoding='utf-8') as file:
             file.write("# " + node.name.replace("_", " ") + "\n\n")
             file.write("[TOC]\n\n")

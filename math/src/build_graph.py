@@ -6,6 +6,7 @@ from graph import *
 
 
 def build_graph_json_from_markdown_folder(folder_path):
+    print(folder_path)
     result = build_graph_from_markdown_folder(folder_path)
     result = build_common_root(result)
 
@@ -43,7 +44,6 @@ def build_graph_from_markdown_file(file_path, graph):
             define_section = re.search(r'##\s*Define(.*?)(\n## \w+|$)', content, re.DOTALL)
             define_section = define_section.group(1).strip() if define_section else ""
             property_section = re.search(r'##\s*Property(.*?)(\n## \w+|$)', content, re.DOTALL)
-            print([name, property_section])
             property_section = property_section.group(1).strip() if property_section else ""
 
             graph[name].define = define_section
