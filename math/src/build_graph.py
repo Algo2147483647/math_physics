@@ -2,9 +2,7 @@ import os
 import re
 import json
 from pathlib import Path
-from graph import Node
-from graph import graph_to_json
-from graph import build_common_root
+from graph import *
 
 
 def build_graph_json_from_markdown_folder(folder_path):
@@ -42,13 +40,14 @@ def build_graph_from_markdown_file(file_path, graph):
             content = f.read()
 
             links = re.findall(r'\]\((.*?\.md)\)', content)
-            define_section = re.search(r'##\s*Define(.*?)(## \w+|$)', content, re.DOTALL)
-            define_section = define_section.group(1).strip() if define_section else None
-            property_section = re.search(r'##\s*Property(.*?)(## \w+|$)', content, re.DOTALL)
-            property_section = property_section.group(1).strip() if property_section else None
+            define_section = re.search(r'##\s*Define(.*?)(\n## \w+|$)', content, re.DOTALL)
+            define_section = define_section.group(1).strip() if define_section else ""
+            property_section = re.search(r'##\s*Property(.*?)(\n## \w+|$)', content, re.DOTALL)
+            print([name, property_section])
+            property_section = property_section.group(1).strip() if property_section else ""
 
             graph[name].define = define_section
-            graph[name].properties = property_section
+            graph[name].properties.append(property_section)
 
             for link in links:
                 link_path = os.path.abspath(os.path.join(os.path.dirname(file_path), link))
@@ -56,11 +55,9 @@ def build_graph_from_markdown_file(file_path, graph):
                 build_graph_from_markdown_file(link_path, graph)
 
                 if define_section and link in graph[name].define:
-                    graph[name].parents.add(link_name)
-                    graph[link_name].kids.add(name)
+                    build_edge(graph, link_name, name, "")
                 else:
-                    graph[name].kids.add(link_name)
-                    graph[link_name].parents.add(name)
+                    build_edge(graph, name, link_name, "")
 
             return graph[name]
 

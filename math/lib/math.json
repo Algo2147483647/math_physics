@@ -1,748 +1,888 @@
 {
     "Affine_Space": {
         "define": "$$\n(\\mathcal{A}, V, \\phi)\n$$\n\nLet $V$ be a [vector space](./Linear_Space.md) over a field $K$. An affine space $\\mathcal{A}$ over $V$ is a non-empty set of elements called points together with a function\n\n$$\n\\phi: V \\times \\mathcal{A} \\rightarrow \\mathcal{A}\n$$\n\nthat associates to each point $p \\in \\mathcal{A}$ and each vector $v \\in V$ a point $q = \\phi(v, p)$, written as $q = p + v$, such that the following axioms hold:\n\n1. For every point $p \\in \\mathcal{A}$, $p + 0 = p$, where $0$ is the zero vector in $V$.\n2. For every point $p \\in \\mathcal{A}$ and all vectors $u, v \\in V$, $p + (u + v) = (p + u) + v$.\n3. For any two points $p, q \\in \\mathcal{A}$, there exists a unique vector $v \\in V$ such that $q = p + v$.\n\n\n\n> *Affine space is extended on the basis of vector space, removing the uniqueness of the origin. Its basic idea is to liberate geometric research from specific numerical values (i.e. vector coordinates) and instead focus on the relative positions and arrangements between points.*",
-        "kids": [
-            "Polyhedron",
-            "Affine_Space"
-        ],
+        "kids": {
+            "Affine_Space": "",
+            "Polyhedron": ""
+        },
         "name": "Affine_Space",
-        "parents": [
-            "Linear_Space",
-            "Affine_Space"
-        ],
-        "properties": "#"
+        "parents": {
+            "Affine_Space": "",
+            "Linear_Space": ""
+        },
+        "properties": [
+            "### Affine Set\n\n- Define\n  Affine Set is a set such that the lines drawn by any two points in the set are still in the set.  \n\n$$\n\\forall \\boldsymbol x_i \\in C, \u03b8_i \\in R, \\sum \u03b8_i = 1 \\quad \\text{, then}\\quad \\sum \u03b8_i x_i \\in C\n$$\n\n- Property\n\n  - Affine Hull\n\n    - Define  \n      $$\n      \\text{aff}(C) = \\left\\{\\sum \u03b8_i x_i\\ |\\ x_i\\in C,theta_i \\in R, \\sum \u03b8_i = 1  \\right\\}\n      $$\n      Affine Hull is a set such that affine combinations of all points in the set constitutes an affine hull.\n\n- Include\n\n  - Convex Set\n\n    - Define\n      $$\n      \\forall \\boldsymbol x_i \\in C \\subseteq \\mathbb R^n, a_i \\in [0,1], \\sum a_i = 1 \\quad \\text{, then}\\quad \\sum a_i x_i \\in C\n      $$\n\n      A convex set $C$ is a set such that the line segment between any two points in the set is still in the set. Convex sets are a special class of [affine sets](./Affine_Space.md).\n\n    - Property\n\n      - Convex Set $C$\u7684\u4efb\u610f\u8fb9\u754c\u70b9, \u5747\u5b58\u5728\u652f\u6491\u8d85\u5e73\u9762.\n\n      - Convex Hull\n        $$\n          \\text{conv}(C) = \\left\\{\\sum \u03b8_i x_i\\ |\\ x_i\\in C, \u03b8_i \\in [0,1], \\sum \u03b8_i = 1 \\right\\}\n        $$\n\n          A convex hull is a set of points is the smallest convex polygon that contain all the input points.\n\n          The set of convex combinations of all points in the set constitutes a convex hull This convex hull is also the smallest Convex Set containing all points in a given set.\n\n        $$\n          \\mathcal X_{\\text{Convex\\ Hull}} \\subseteq \\mathcal X_{\\text{input}}\n        $$\n        $$\n        \\mathcal X_{\\text{input}} \\subseteq \\text{Polygon}(\\mathcal X_{\\text{Convex\\ Hull}})\n        $$\n\n\n\n### Cone\n- Define  \n$$\n\\forall \\boldsymbol x \\in C, \u03b8 > 0, \\quad \\text{, then}\\quad \u03b8 \\boldsymbol x \\in C\n$$\n\u4ee5\u96f6\u70b9\u4e3a\u8d77\u70b9\u7684\u5c04\u7ebf\u7684\u96c6\u5408.\n\n- Include\n  * Convex Cone\n    - Define  \n    $$\n    \\forall \\boldsymbol x_1, \\boldsymbol x_2 \\in C, \u03b8_1,\u03b8_2 \u2265 0 \\quad \\text{, then}\\quad \u03b8_1 \\boldsymbol x_1 + \u03b8_2 \\boldsymbol x_2 \\in C\n    $$\n\n### [Polyhedron](./Polyhedron.md)\n\n### Hyperplane & Half Space\n\n- Define\n  $$\n  \\begin{align*}\n    \\{\\boldsymbol x \\ |\\ \\boldsymbol a^T \\boldsymbol x = b\\}  \\tag{Hyperplane}\\\\\n    \\{\\boldsymbol x \\ |\\ \\boldsymbol a^T \\boldsymbol x \u2264 b\\}  \\tag{Half-Space}\n  \\end{align*}\n  $$\n\n- Property\n  - Hyperplane & Half-Space is Convex Set"
+        ]
     },
     "Algebra_Structure": {
         "define": "An algebraic structure consists of a nonempty set $A$ (called the underlying set, carrier set or domain), a collection of operations on $A$ (typically binary operations such as addition and multiplication), and a finite set of identities, known as axioms, that these operations must satisfy.",
-        "kids": [
-            "Ring",
-            "Lattice",
-            "Group"
-        ],
+        "kids": {
+            "Group": "",
+            "Lattice": "",
+            "Ring": ""
+        },
         "name": "Algebra_Structure",
-        "parents": [
-            "Set"
-        ],
-        "properties": "#"
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            "### Automorphism \n\nAn automorphism is simply a bijective homomorphism of a mathematical object with itself."
+        ]
     },
     "Bessel_Function": {
         "define": "[**Bessel functions**](./Function.md) are canonical solutions $y(x)$ of Bessel's differential equation\n$$\nx^{2}{\\frac {\\mathrm{d}^{2}y}{\\mathrm{d}x^{2}}}+x{\\frac {\\mathrm{d}y}{\\mathrm{d}x}}+\\left(x^{2}-\\alpha ^{2}\\right)y=0\\\\\ny(x)=c_{1}J_{\\alpha }(x)+c_{2}Y_{\\alpha }(x)\n$$\n**Bessel function of the first kind** $J_{\\alpha}(x)$, are solutions of Bessel's differential equation. For integer or positive $\u03b1$, Bessel functions of the first kind are finite at the origin $(x = 0)$; while for negative non-integer $\u03b1$, Bessel functions of the first kind diverge as x approaches zero. The Bessel function can be defined by its Taylor series expansion at $x = 0$.\n$$\nJ_{\\alpha }(x)=\\sum _{m=0}^{\\infty }{\\frac {(-1)^{m}}{m!\\Gamma (m+\\alpha +1)}}{\\left({\\frac {x}{2}}\\right)}^{2m+\\alpha}\n$$\n**Bessel functions of the second kind** $Y_{\\alpha}(x)$, \n$$\nY_{\\alpha }(x)={\\frac {J_{\\alpha }(x)\\cos(\\alpha \\pi )-J_{-\\alpha }(x)}{\\sin(\\alpha \\pi )}}\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Bessel_Function",
-        "parents": [
-            "Function"
-        ],
-        "properties": null
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Bipartite_Graph": {
         "define": "$$\n(X, Y, E)  \\tag{Bipartite Graph}\n$$\n$$\nX, Y \\subset V, X \\cup Y = V  \\tag{vertex sets}\n$$\n$$\nE = \\{(x_i, y_j) \\ |\\ x_i \\in X, y_j \\in Y\\}  \\tag{edge set}\n$$\n\nFor a Bipartite Graph, The vertex set $V$ of a graph is divided into two disjoint subsets $X, Y$. And, edges in Bipartite Graph only exist between point sets $X, Y$, not within them.\n\n<img src=\"./assets/Simple_bipartite_graph;_two_layers.svg\" alt=\"Simple_bipartite_graph;_two_layers\" style=\"zoom:20%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Bipartite_Graph",
-        "parents": [
-            "Graph"
-        ],
-        "properties": "- Representation, a bipartite graph can be represented by a matrix $M \\in \\mathbb R^{m \\times n}$ with each value $M_{ij}$ refer to the edge weight between $x_i$ and $y_j$, where $m$ is the element number of $X$ and $n$ is that of $Y$.\n  $$\n  f:(X \\times Y) \\to \\mathbb R \\quad\\Rightarrow\\quad \\mathbb R^{m \\times n}\n  $$"
+        "parents": {
+            "Graph": ""
+        },
+        "properties": [
+            "- Representation, a bipartite graph can be represented by a matrix $M \\in \\mathbb R^{m \\times n}$ with each value $M_{ij}$ refer to the edge weight between $x_i$ and $y_j$, where $m$ is the element number of $X$ and $n$ is that of $Y$.\n  $$\n  f:(X \\times Y) \\to \\mathbb R \\quad\\Rightarrow\\quad \\mathbb R^{m \\times n}\n  $$"
+        ]
     },
     "Boolean_Algebra": {
         "define": "Boolean Algebra is a [Lattice](./Lattice.md) including value and its operators,\n$$\n(\\{0, 1\\}, \\neg, \\wedge, \\vee)\n$$\n\nThe value of boolean algebra belongs to $\\{\\text{true}, \\text{false}\\}$, usually denoted $\\{1, 0\\}$. The basic operations of boolean algebra include $\\neg, \\wedge, \\vee$.\n\n- NOT $\\neg$\n  NOT is a unary operator.\n  \n  |$a$|$\\neg a$|\n  |---|---|\n  | 0 | 0 |\n  | 1 | 1 |\n  \n- AND $\\wedge$, OR $\\vee$\n  AND, OR are two binary operators.  \n  \n  |$a$|$b$|$a \\wedge b$|$a \\vee b$|\n  |:---:|:---:|:---:|:---:|\n  | 0 | 0 | 0 | 0 | \n  | 0 | 1 | 0 | 1 | \n  | 1 | 0 | 0 | 1 | \n  | 1 | 1 | 1 | 1 |",
-        "kids": [],
+        "kids": {},
         "name": "Boolean_Algebra",
-        "parents": [
-            "Lattice"
-        ],
-        "properties": "- \n\n  - $a \\wedge b = b \\wedge a$\n\n  - $a \\vee b = b \\vee a$\n\n  - $(a \\wedge b) \\wedge c = a \\wedge (b \\wedge c)$\n\n  - $(a \\vee b) \\vee c = a \\vee (b \\vee c)$\n\n  - $\\neg(a \\wedge b) = \\neg a \\vee \\neg b$\n\n  - $\\neg(a \\vee b) = \\neg a \\wedge \\neg b$\n\n  - $a \\wedge (a \\vee b) = a$\n\n  - $a \\vee (a \\wedge b) = a$\n\n  - $a \\wedge (b \\vee c) = (a \\wedge b) \\vee (a \\wedge c)$\n\n  - $a \\vee (b \\wedge c) = (a \\vee b) \\wedge (a \\vee c)$\n\n\n#"
+        "parents": {
+            "Lattice": ""
+        },
+        "properties": [
+            "- \n\n  - $a \\wedge b = b \\wedge a$\n\n  - $a \\vee b = b \\vee a$\n\n  - $(a \\wedge b) \\wedge c = a \\wedge (b \\wedge c)$\n\n  - $(a \\vee b) \\vee c = a \\vee (b \\vee c)$\n\n  - $\\neg(a \\wedge b) = \\neg a \\vee \\neg b$\n\n  - $\\neg(a \\vee b) = \\neg a \\wedge \\neg b$\n\n  - $a \\wedge (a \\vee b) = a$\n\n  - $a \\vee (a \\wedge b) = a$\n\n  - $a \\wedge (b \\vee c) = (a \\wedge b) \\vee (a \\wedge c)$\n\n  - $a \\vee (b \\wedge c) = (a \\vee b) \\wedge (a \\vee c)$\n\n\n### XOR & XNOR\n\n- Define   \n  XOR $\\oplus$, XNOR $\\odot$ are two binary operators.  \n  \n  |$a$|$b$|$a \\oplus b$|$a \\odot b$|\n  |:---:|:---:|:---:|:---:|\n  | 0 | 0 | 0 | 1 | \n  | 0 | 1 | 1 | 0 | \n  | 1 | 0 | 1 | 0 | \n  | 1 | 1 | 0 | 1 | \n  |||\n  $$a \\oplus b = \\neg(a \\odot b)$$\n  $$a \\oplus b = (a \\wedge \\neg b) \\vee (\\neg a \\wedge b)$$\n  \n- Property\n  - $x \\oplus 0 = x$\n  - $x \\oplus 1 = \\neg x$\n  - $x \\oplus \\neg x = 1$\n  - $x \\oplus x = 0$\n  - $(a \\oplus b) \\oplus c = a \\oplus (b \\oplus c)$\n\n- |\n|$f(0, 0)$|$f(0, 1) = f(1, 0)$|$f(1, 1)$|operator|\n|:---:|:---:|:---:|:---:|\n| 0 | 0 | 0 | $a \\wedge 0$ |\n| 0 | 0 | 1 | $a \\wedge b$ |\n| 0 | 1 | 0 | $a \\oplus b = (a \\wedge \\neg b) \\vee (\\neg a \\wedge b)$ |\n| 0 | 1 | 1 | $a \\vee b$ |\n| 1 | 0 | 0 | $\\neg(a \\vee b)$ |\n| 1 | 0 | 1 | $a \\odot b = (a \\vee \\neg b) \\wedge (\\neg a \\vee b)$ |\n| 1 | 1 | 0 | $\\neg(a \\wedge b)$ |\n| 1 | 1 | 1 | $a \\vee 0$ |\n|||||"
+        ]
     },
     "Complex_Field": {
         "define": "$$\n\\mathbb C\n$$\n\nThe set of complex numbers, denoted $\\mathbb{C}$, consists of all ordered pairs of [real numbers](./Real_Field.md) $(a, b)$. Each such number is usually written as $a + bi$, where $a$ is called the real part, $b$ is called the imaginary part, and $i$ is the imaginary unit with the property that $i^2 = -1$.\n$$\n\\mathbb C = \\{a + b i \\ |\\ a, b \\in \\mathbb R ,i^2  = 1\\}\n$$\nThe operations of addition and multiplication are defined as:\n- Addition: $(a + bi) + (c + di) = (a + c) + (b + d)i$.\n- Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$.\n\nThe set $\\mathbb{C}$ with these operations forms a [field](./Field.md) that satisfies all the field axioms (A1-A4, M1-M4, D). It also has the property that every non-constant polynomial equation with coefficients in $\\mathbb{C}$ has a root in $\\mathbb{C}$ (this is the statement of the Fundamental Theorem of Algebra).",
-        "kids": [
-            "Complex_Value_Function"
-        ],
+        "kids": {
+            "Complex_Value_Function": ""
+        },
         "name": "Complex_Field",
-        "parents": [
-            "Real_Field",
-            "Field"
-        ],
-        "properties": "- module and argument\n$$\n\\begin{align*}\nr &= |z| = \\sqrt{a^2 + b^2}  \\tag{module}\\\\\n\\theta &= \\arg(z) = \\arctan(b/a)  \\tag{argument}\n\\end{align*}\n$$\n$$\nz = a + b i = r (\\cos \\theta + i \\sin \\theta) = r e^{i \\theta}\n$$\n\n- Fundamental theorem of algebra\n\n  Every non-constant single-variable polynomial with complex coefficients has at least one complex root.\n\n- sub & div\n$$\n\\begin{align*}\nz_1 - z_2 &= (a - b i) + (c - d i) = (a - b) + (c - d) i  \\tag{sub}\\\\\n\\frac{z_1}{z_2} &= \\frac{a - b i}{c - d i} = \\frac{a c + b d}{c^2 + d^2} + \\frac{b c + a d}{c^2 + d^2} i  \\tag{div}\n\\end{align*}\n$$\n- conjugate: \n\n$$\n\\bar z = a - b i  \\tag{conjugate}\n$$\n- power: \n\n$$\nz^p = r^p (\\cos \u03b8 + i \\sin \u03b8)^p = r^p (\\cos (p \u03b8) + i \\sin(p \u03b8))  \\tag{De Moiver's theorem}\n$$"
+        "parents": {
+            "Field": "",
+            "Real_Field": ""
+        },
+        "properties": [
+            "- module and argument\n$$\n\\begin{align*}\nr &= |z| = \\sqrt{a^2 + b^2}  \\tag{module}\\\\\n\\theta &= \\arg(z) = \\arctan(b/a)  \\tag{argument}\n\\end{align*}\n$$\n$$\nz = a + b i = r (\\cos \\theta + i \\sin \\theta) = r e^{i \\theta}\n$$\n\n- Fundamental theorem of algebra\n\n  Every non-constant single-variable polynomial with complex coefficients has at least one complex root.\n\n- sub & div\n$$\n\\begin{align*}\nz_1 - z_2 &= (a - b i) + (c - d i) = (a - b) + (c - d) i  \\tag{sub}\\\\\n\\frac{z_1}{z_2} &= \\frac{a - b i}{c - d i} = \\frac{a c + b d}{c^2 + d^2} + \\frac{b c + a d}{c^2 + d^2} i  \\tag{div}\n\\end{align*}\n$$\n- conjugate: \n\n$$\n\\bar z = a - b i  \\tag{conjugate}\n$$\n- power: \n\n$$\nz^p = r^p (\\cos \u03b8 + i \\sin \u03b8)^p = r^p (\\cos (p \u03b8) + i \\sin(p \u03b8))  \\tag{De Moiver's theorem}\n$$"
+        ]
     },
     "Complex_Value_Function": {
         "define": "$$\nf: \\mathbb C \\to \\mathbb C\n$$\n\nA complex function $f: \\mathbb C \\to \\mathbb C$ is a [function](./Function.md) from [complex numbers](./Complex_Field.md) to complex numbers.",
-        "kids": [
-            "Gamma_Function",
-            "Riemann_Zeta_Function",
-            "Hypergeometric_Function"
-        ],
+        "kids": {
+            "Gamma_Function": "",
+            "Hypergeometric_Function": "",
+            "Riemann_Zeta_Function": ""
+        },
         "name": "Complex_Value_Function",
-        "parents": [
-            "Function",
-            "Complex_Field"
-        ],
-        "properties": "- Differentiability: Holomorphic functions (or analytic functions) are differentiable everywhere within their domain of definition. For complex functions, holomorphism and analyticity are equivalent. \n\n  Let $U$ be an open set in the complex plane $\\mathbb C$ and let $f : U \\to \\mathbb C$ be a function. The function ,is said to be analytic (or holomorphic) on $U$ if for every $z_0 \\in U$, there exists an open disk $D$ centered at $z_0$ such that $f$ is differentiable at every point in $D$.\n\n#"
+        "parents": {
+            "Complex_Field": "",
+            "Function": ""
+        },
+        "properties": [
+            "- Differentiability: Holomorphic functions (or analytic functions) are differentiable everywhere within their domain of definition. For complex functions, holomorphism and analyticity are equivalent. \n\n  Let $U$ be an open set in the complex plane $\\mathbb C$ and let $f : U \\to \\mathbb C$ be a function. The function ,is said to be analytic (or holomorphic) on $U$ if for every $z_0 \\in U$, there exists an open disk $D$ centered at $z_0$ such that $f$ is differentiable at every point in $D$.\n\n### Residue & Residue Theorem\n$$\n\\operatorname{Res}(f,a)  \\tag{Residue}\n$$\n$$\n\\oint_C f(z)\\,\\mathrm{d}z=2\\pi i\\sum_{k=1}^n \\operatorname{Res}(f,a_k)  \\tag{Residue Theorem}\n$$\n\nFor an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$ that encircles counterclockwise all the isolated singularities $a_1,a_2,\\ldots,a_n$ of $f(z)$, then the integral of $f(z)$ along $C$ can be expressed as the sum of the residues of $f(z)$ at these singularities. And $\\operatorname{Res}(f,a_k)$ denotes the residue of $f(z)$ at the point $a_k$.\n\n### Laurent Series\n\nThe Laurent series for a complex function $f(z)$ about a point $c$ is given by\n$$\nf(z) = \\sum^{\\infty}_{n=-\\infty} a_n(z-c)^n\\\\\na_n = \\frac{1}{2\\pi i} \\oint_\\gamma \\frac{f(z)}{(z-c)^{n+1}}\\mathrm{d}z\n$$\nThe path of integration $\\gamma$ is counterclockwise around a Jordan curve enclosing $c$ and lying in an annulus $A$ in which $f(z)$ is holomorphic (analytic). The expansion for $f(z)$ will then be valid anywhere inside the annulus."
+        ]
     },
     "Convolution": {
         "define": "Cross Correlation and Convolution, are a measure of similarity (through [inner product](./Inner_Poduct_Space.md)) of two functions $f, g$ of the displacement $t \\in \\mathbb R$ of one relative to the other.\n$$\n\\begin{align*}\nCorr(f(t), g(t)) \n&= \\sum_{t = -\\infty}^{\\infty} f(\\tau) g(t + \\tau)  \\tag{Cross Correlation}  \\\\\n&= \\sum_{t = -\\infty}^{\\infty} f(-t+\\tau) g(\\tau)  \\\\\n&= \\int_{-\\infty}^{\\infty} f(\\tau) g(t + \\tau) \\mathrm d \\tau   \\\\\n&= \\int_{-\\infty}^{\\infty} f(-t+\\tau) g(\\tau) \\mathrm d \\tau  \\\\\nConv(f(t), g(t)) \n&= \\sum_{t = -\\infty}^{\\infty} f(\\tau) g(t - \\tau)  \\tag{Convolution}  \\\\\n&= \\sum_{t = -\\infty}^{\\infty} f(t-\\tau) g(\\tau)  \\\\\n&= \\int_{-\\infty}^{\\infty} f(\\tau) g(t - \\tau) \\mathrm d \\tau   \\\\\n&= \\int_{-\\infty}^{\\infty} f(t-\\tau) g(\\tau) \\mathrm d \\tau  \\\\\n\\end{align*}\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Convolution",
-        "parents": [
-            "Inner_Poduct_Space"
-        ],
-        "properties": "- Commutativity & Associativity & Distributivity\n$$\n\\begin{align*}\nConv(f, g)  &= Conv(g, f)  \\tag{Commutativity}  \\\\\nConv(f, Conv(g, h))  &= Conv(Conv(f, g), h)  \\tag{Associativity}  \\\\\nConv(f, g+h)  &= Conv(f, g) + Conv(f, h)  \\tag{Distributivity}  \\\\\na\u00b7Conv(f, g)  &= Conv(a\u00b7f, g)  \\tag{Associativity with scalar multiplication}  \\\\\n\\end{align*}\n$$\n- Differential \n$$\n\\frac{\\mathrm{d}(f_1(t) * f_2(t))}{\\mathrm{d} t} = \\mathrm{d}(f_1(t) * \\frac{\\mathrm{d} f_2(t)}{\\mathrm{d} t} = \\mathrm{d}(f_2(t) * \\frac{\\mathrm{d} f_1(t)}{\\mathrm{d} t}\n$$\n- Integral \n$$\n\\int^t_{-\\infty} f_1(\u03bb) * f_2(\u03bb) \\mathrm{d} \u03bb = f_1(t) * \\int^t_{-\\infty} f_2(\u03bb) \\mathrm{d} \u03bb =  f_2(t) * \\int^t_{-\\infty} f_1(\u03bb) \\mathrm{d} \u03bb\n$$\n- Relation with impulse function\n$$\nf(t) * \u03b4^{(k)}(t - t_0) = f^{(k)}(t - t_0)\n$$\n$$\n\\begin{align*}\n\\mathrm{d}f(t) * \u03b4(t) &= f(t)\\\\\n\\mathrm{d}f(t) * \u03b4(t - t_0) &= f(t - t_0)\\\\\n\\mathrm{d}f(t) * \u03b4'(t - t_0) &= f'(t - t_0)\\\\\n\\mathrm{d}f(t) * u(t - t_0) &= f(t) * \\int^t_{-\\infty} \u03b4(\u03bb - t_0) \\mathrm{d} \u03bb = \\int^t_{-\\infty} f(\u03bb - t_0) \\mathrm{d} \u03bb\\\\\n\\end{align*}\n$$\n\n#"
+        "parents": {
+            "Inner_Poduct_Space": ""
+        },
+        "properties": [
+            "- Commutativity & Associativity & Distributivity\n$$\n\\begin{align*}\nConv(f, g)  &= Conv(g, f)  \\tag{Commutativity}  \\\\\nConv(f, Conv(g, h))  &= Conv(Conv(f, g), h)  \\tag{Associativity}  \\\\\nConv(f, g+h)  &= Conv(f, g) + Conv(f, h)  \\tag{Distributivity}  \\\\\na\u00b7Conv(f, g)  &= Conv(a\u00b7f, g)  \\tag{Associativity with scalar multiplication}  \\\\\n\\end{align*}\n$$\n- Differential \n$$\n\\frac{\\mathrm{d}(f_1(t) * f_2(t))}{\\mathrm{d} t} = \\mathrm{d}(f_1(t) * \\frac{\\mathrm{d} f_2(t)}{\\mathrm{d} t} = \\mathrm{d}(f_2(t) * \\frac{\\mathrm{d} f_1(t)}{\\mathrm{d} t}\n$$\n- Integral \n$$\n\\int^t_{-\\infty} f_1(\u03bb) * f_2(\u03bb) \\mathrm{d} \u03bb = f_1(t) * \\int^t_{-\\infty} f_2(\u03bb) \\mathrm{d} \u03bb =  f_2(t) * \\int^t_{-\\infty} f_1(\u03bb) \\mathrm{d} \u03bb\n$$\n- Relation with impulse function\n$$\nf(t) * \u03b4^{(k)}(t - t_0) = f^{(k)}(t - t_0)\n$$\n$$\n\\begin{align*}\n\\mathrm{d}f(t) * \u03b4(t) &= f(t)\\\\\n\\mathrm{d}f(t) * \u03b4(t - t_0) &= f(t - t_0)\\\\\n\\mathrm{d}f(t) * \u03b4'(t - t_0) &= f'(t - t_0)\\\\\n\\mathrm{d}f(t) * u(t - t_0) &= f(t) * \\int^t_{-\\infty} \u03b4(\u03bb - t_0) \\mathrm{d} \u03bb = \\int^t_{-\\infty} f(\u03bb - t_0) \\mathrm{d} \u03bb\\\\\n\\end{align*}\n$$\n\n### Convolution Theorem\n$$\n\\mathcal F(f_1(t) * f_2(t)) = F_1(\u03c9) \u00b7 F_2(\u03c9)\n$$\n$$\n\\mathcal F(F_1(\u03c9) * F_2(\u03c9)) = \\frac{1}{2 \u03c0} f_1(t) \u00b7 f_2(t)\n$$"
+        ]
     },
     "Cubic_Function": {
         "define": "$$\nf(x) = \\sum_{i=0}^{3} a_i x^i  \\tag{Univariate}\n$$",
-        "kids": [
-            "Elliptic_Curve"
-        ],
+        "kids": {
+            "Elliptic_Curve": ""
+        },
         "name": "Cubic_Function",
-        "parents": [
-            "Polynomial_Function"
-        ],
-        "properties": "#"
+        "parents": {
+            "Polynomial_Function": ""
+        },
+        "properties": [
+            "### Zero Set of Cubic Function , Cubic Surface   \n\n- Define\n  $$\n  \\left\\{\\boldsymbol x \\ |\\  \\right\\}\n  $$\n- Property\n  - Solution of Univariate Cubic Equation  \n    For a Univariate Cubic Equation,\n    $$\n    x^3 + px + q = 0\n    $$\n\n    The solutions are,\n    $$\n    r = \\sqrt[3]{-\\frac{q}{2}+\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}+\\sqrt[3]{-\\frac{q}{2}-\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}\n    $$\n\n- Include\n  * Fermat Cubic\n    - Define\n      $$\n      \\left\\{ x \\ |\\ \\sum_{i = 1}^{\\dim} x_i^3 = 0 \\right\\}\n      $$"
+        ]
     },
     "Dirac_Delta_Function": {
         "define": "Dirac delta function $\\delta(x)$ is a type of [generalized function](./Function.md). \n$$\n\\delta(x) = \\left\\{\\begin{matrix}+\\infty,& x = 0\\\\0, & x \\neq 0\\end{matrix}\\right.\\\\\n\\int_{-\\infty}^{\\infty}\\delta(x) \\mathrm{d} x = 1\n$$\n<img src=\"assets/Dirac_distribution_PDF.svg\" alt=\"Dirac_distribution_PDF\" style=\"zoom:15%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Dirac_Delta_Function",
-        "parents": [
-            "Function"
-        ],
-        "properties": "#"
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            "### sampling property  \n\n$$\n\\int_{-\\infty}^{\\infty} f(t) \\delta(t-T) \\mathrm{d} t = f(T)\n$$"
+        ]
     },
     "Directed_Acyclic_Graph": {
         "define": "A directed graph without loops.",
-        "kids": [],
+        "kids": {},
         "name": "Directed_Acyclic_Graph",
-        "parents": [
-            "Graph"
-        ],
-        "properties": "#"
+        "parents": {
+            "Graph": ""
+        },
+        "properties": [
+            "### Topological Sort  \n\n- Purpose  \n  Linear ordering of point sets of directed acyclic graphs, and satisfying:\n  - Each point appears only once\n  - If there is an edge from point A to point B, point A appears before point B in the sequence.\n\n- Application  \n  - Help determine whether a graph is a directed acyclic graph.  \n\n- Algorithm  \n  Iterate and delete points with 0 incoming edge on the Graph, put these points into the output sequence in turn, until all points are removed from the graph.  \n\n  If there are no more nodes in the graph that can be delete, but the number of remaining points is not 0, then the graph has loops and is not a directed acyclic graph.\n  \n  ```python\n  def topological_sort(graph):\n      in_degree = dict(int)\n      for node in graph:\n          for neighbor in graph[node]:\n              in_degree[neighbor] += 1\n  \n      queue = [node for node, degree in in_degree.items() if degree == 0]\n      result = []\n      \n      while not queue.empty():\n          node = queue.pop()\n          result.append(node)\n          \n          for neighbor in graph[node]:\n              in_degree[neighbor] -= 1\n              if in_degree[neighbor] == 0:\n                  queue.append(neighbor)\n                  \n      if result.size() == graph.size():\n          return result\n      else:\n          return None\n  ```"
+        ]
     },
     "Division_with_Remainder": {
         "define": "([Integer_Ring](./Integer_Ring.md))\n\nFor $a,b \\in \\mathbb Z, b \\neq 0$, there are unique $q,r\\in \\mathbb Z, 0 \u2264 r < b$ satisfy\n$$\na = q \\times b + r\n$$\n\nwe called $q$ is Division, $r$ is Remainder.\n$$\n\\begin{align*}\n  a / b &= q  \\tag{Division}\\\\\n  a \\% b &= r  \\tag{Remainder}\\\\\n  a &\\equiv r \\mod b\n\\end{align*}\n$$\n\nIf $r = 0$, then we called the $q$ and $b$ is two Factors of $a$, and $b$ divides $a$, $b | a$. For any $a$, $1, a$ are always Factors of $a$.\n$$\nb | a \\quad\\Leftrightarrow\\quad (\\exists c \\in \\mathbb Z) a = b \\times c\n$$",
-        "kids": [
-            "Prime"
-        ],
+        "kids": {
+            "Prime": ""
+        },
         "name": "Division_with_Remainder",
-        "parents": [
-            "Integer_Ring"
-        ],
-        "properties": "- /\n  $$\n  \\begin{align*}\n    (a + b) \\% c &= (a \\% c + b \\% c) \\% c  \\\\\n    (a - b) \\% c &= (a \\% c - b \\% c + c) \\% c  \\\\\n    (a \u00b7 b) \\% c &= ((a \\% c) \u00b7 (b \\% c)) \\% c  \\\\\n    (a / b) \\% c &= (a \u00b7 b^{-1}) \\% c = ((a \\% c) \u00b7 (b^{-1} \\% c)) \\% c  \\tag{$b^{-1}$:$b$\u7684\u9006\u5143}\n  \\end{align*}\n  $$\n\n- Inverse element\n  $(a \u00b7 c) % b = 1$, \u5219$c$\u662f$a$\u5728$mod\\ b$\u4e0b\u7684\u9006\u5143$a^{-1}$\n\n### [Prime](./Prime.md)"
+        "parents": {
+            "Integer_Ring": ""
+        },
+        "properties": [
+            "- /\n  $$\n  \\begin{align*}\n    (a + b) \\% c &= (a \\% c + b \\% c) \\% c  \\\\\n    (a - b) \\% c &= (a \\% c - b \\% c + c) \\% c  \\\\\n    (a \u00b7 b) \\% c &= ((a \\% c) \u00b7 (b \\% c)) \\% c  \\\\\n    (a / b) \\% c &= (a \u00b7 b^{-1}) \\% c = ((a \\% c) \u00b7 (b^{-1} \\% c)) \\% c  \\tag{$b^{-1}$:$b$\u7684\u9006\u5143}\n  \\end{align*}\n  $$\n\n- Inverse element\n  $(a \u00b7 c) % b = 1$, \u5219$c$\u662f$a$\u5728$mod\\ b$\u4e0b\u7684\u9006\u5143$a^{-1}$\n\n### [Prime](./Prime.md)"
+        ]
     },
     "Elliptic_Curve": {
         "define": "$$\ny^2 = x^3 + a x + b\n$$\n\nAn elliptic curve over a field $K$ is defined by an equation of the form as above. where $a, b$ are elements in $K$, and the discriminant $ \\Delta = -16(4a^3 - 27b^2) \\neq 0$. The non-vanishing of the discriminant ensures that the curve has no singularities (i.e., no cusps or self-intersections). ([Cubic Function](./Cubic_Function.md))\n\n<img src=\"assets/EllipticCurveCatalog.svg\" alt=\"EllipticCurveCatalog\" style=\"zoom: 33%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Elliptic_Curve",
-        "parents": [
-            "Cubic_Function"
-        ],
-        "properties": "- Groups formed by points on elliptic curves: The points on an elliptic curve form an Abelian group through a defined \"addition\" operation. This addition operation is related to the intersection of a line and a curve, while the unit element is represented by a point at infinity.\n\n  - Addition Operation: Given two points $P = (x_1, y_1), Q = (x_2, y_2)$ on $E$, their sum $P+Q=(x3, y3)$ is defined as follows: (Draw a straight line passing through points $P, Q$. This straight line will align with the curve at the third point $Q'$. By reflecting perpendicular to the x-axis from point $Q'$, you will obtain new points $C$, which is defined as $P + Q$.)\n\n    If $P \\neq Q$, the slope of the line through $P$ and $Q$ is:\n    $$\n    m = \\frac{y_2 - y_1}{x_2 - x_1}\n    $$\n    If $P = Q$, the slope of the tangent to the curve at $P$ is:\n    $$\n    m = \\frac{3x_1^2 + a}{2y_1}\n    $$\n    The coordinates $x_3$ and $y_3$ of $P + Q$ are given by:\n    $$\n    (x_3, y_3) = (m^2 - x_1 - x_2, m(x_1 - x_3) - y_1)\n    $$\n\n    Special cases:\n\n    if $P = O$, then $P +Q= Q$\n    if $Q = O$,then $P +Q = P$\n    if $P = (x_1, y_1), Q = (x_1, -y_1)$  (i.e., $Q$ is the reflection of $P$ over the x-axis), then $P + Q= O$.\n\n  - Unit element: The unit element of this group is a special point at infinity, usually denoted as $O$. Any point on an elliptical curve plus O is equal to itself."
+        "parents": {
+            "Cubic_Function": ""
+        },
+        "properties": [
+            "- Groups formed by points on elliptic curves: The points on an elliptic curve form an Abelian group through a defined \"addition\" operation. This addition operation is related to the intersection of a line and a curve, while the unit element is represented by a point at infinity.\n\n  - Addition Operation: Given two points $P = (x_1, y_1), Q = (x_2, y_2)$ on $E$, their sum $P+Q=(x3, y3)$ is defined as follows: (Draw a straight line passing through points $P, Q$. This straight line will align with the curve at the third point $Q'$. By reflecting perpendicular to the x-axis from point $Q'$, you will obtain new points $C$, which is defined as $P + Q$.)\n\n    If $P \\neq Q$, the slope of the line through $P$ and $Q$ is:\n    $$\n    m = \\frac{y_2 - y_1}{x_2 - x_1}\n    $$\n    If $P = Q$, the slope of the tangent to the curve at $P$ is:\n    $$\n    m = \\frac{3x_1^2 + a}{2y_1}\n    $$\n    The coordinates $x_3$ and $y_3$ of $P + Q$ are given by:\n    $$\n    (x_3, y_3) = (m^2 - x_1 - x_2, m(x_1 - x_3) - y_1)\n    $$\n\n    Special cases:\n\n    if $P = O$, then $P +Q= Q$\n    if $Q = O$,then $P +Q = P$\n    if $P = (x_1, y_1), Q = (x_1, -y_1)$  (i.e., $Q$ is the reflection of $P$ over the x-axis), then $P + Q= O$.\n\n  - Unit element: The unit element of this group is a special point at infinity, usually denoted as $O$. Any point on an elliptical curve plus O is equal to itself."
+        ]
     },
     "Euclidean_Space": {
         "define": "Euclidean space is a finite dimensional [Hilbert space](./Hilbert_Space.md) over a [real number field](./Real_Field.md), and has a standard dot product as its inner product. Let $n \\in \\mathbb{N}$ (the set of natural numbers). The $n$-dimensional Euclidean space, denoted as $\\mathbb{R}^n$, is the set of all ordered $n$-tuples of real numbers. That is,\n$$\n\\mathbb{R}^n = \\{(x_1, x_2, \\dots, x_n) : x_i \\in \\mathbb{R} \\text{ for } i = 1,2, \\dots, n\\}\n$$\n\nIn $\\mathbb{R}^n$, we define the following operations:\n\n1. **Vector Addition:** For any two vectors $\\mathbf{v} = (v_1, v_2, \\dots, v_n)$ and $\\mathbf{w} = (w_1, w_2, \\dots, w_n)$ in $\\mathbb{R}^n$, their sum is given by:\n$$\n\\mathbf{v} + \\mathbf{w} = (v_1 + w_1, v_2 + w_2, \\dots, v_n + w_n)\n$$\n\n2. **Scalar Multiplication:** For any scalar $c \\in \\mathbb{R}$ and vector $\\mathbf{v} = (v_1, v_2, \\dots, v_n)$ in $\\mathbb{R}^n$, the scalar product is:\n$$\nc \\cdot \\mathbf{v} = (c v_1, c v_2, \\dots, c v_n)\n$$\n\n3. **Inner Product (Dot Product):** The inner product of two vectors $\\mathbf{v} = (v_1, v_2, \\dots, v_n)$ and $\\mathbf{w} = (w_1, w_2, \\dots, w_n)$ in $\\mathbb{R}^n$ is defined as:\n$$\n\\mathbf{v} \\cdot \\mathbf{w} = v_1 w_1 + v_2 w_2 + \\dots + v_n w_n\n$$\n\nFrom this inner product, we can derive the **Euclidean norm** of a vector $\\mathbf{v}$ as:\n$$\n||\\mathbf{v}|| = \\sqrt{\\mathbf{v} \\cdot \\mathbf{v}}\n$$\n\nWith these operations, $\\mathbb{R}^n$ becomes a **real inner product space**. The geometry induced by the inner product is the familiar Euclidean geometry, and the distance between two vectors $\\mathbf{v}$ and $\\mathbf{w}$ is given by the norm of their difference:\n$$\nd(\\mathbf{v}, \\mathbf{w}) = ||\\mathbf{v} - \\mathbf{w}||\n$$",
-        "kids": [
-            "Manifold",
-            "Knot"
-        ],
+        "kids": {
+            "Knot": "",
+            "Manifold": ""
+        },
         "name": "Euclidean_Space",
-        "parents": [
-            "Hilbert_Space",
-            "Real_Field"
-        ],
-        "properties": ""
+        "parents": {
+            "Hilbert_Space": "",
+            "Real_Field": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Field": {
         "define": "Field is a [ring](./Ring.md) that satisfies the existence of multiplicative inverses for every nonzero element.",
-        "kids": [
-            "Rational_Number_Field",
-            "Real_Field",
-            "Complex_Field"
-        ],
+        "kids": {
+            "Complex_Field": "",
+            "Rational_Number_Field": "",
+            "Real_Field": ""
+        },
         "name": "Field",
-        "parents": [
-            "Ring"
-        ],
-        "properties": "#"
+        "parents": {
+            "Ring": ""
+        },
+        "properties": [
+            "### Field extension\n\n- Define\n\n  A field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$."
+        ]
     },
     "Forth-Order_Function": {
         "define": "$$\nf(x) = \\sum_{i=0}^{4} a_i x^i  \\tag{Univariate}\n$$\n\n$$\n\\begin{align*}\n  f(\\boldsymbol x) =& \\sum_{i_1=1}^{\\dim} \\sum_{i_2=i_1}^{\\dim} \\sum_{i_3=i_2}^{\\dim} \\sum_{i_4=i_3}^{\\dim} a_{i_1 i_2 i_3 i_4} \u00b7 x_{i_1} x_{i_2} x_{i_3} x_{i_4} +    \\\\\n  &\\sum_{i_1=1}^{\\dim} \\sum_{i_2=i_1}^{\\dim} \\sum_{i_3=i_2}^{\\dim} b_{i_1 i_2 i_3} \u00b7 x_{i_1} x_{i_2} x_{i_3} +    \\\\\n  &\\sum_{i_1=1}^{\\dim} \\sum_{i_2=i_1}^{\\dim} c_{i_1 i_2} \u00b7 x_{i_1} x_{i_2} +    \\\\\n  &\\sum_{i_1=0}^{\\dim} d_{i_1} x_{i_1} +    \\\\\n  &e  \\tag{Multivariate}  \\\\\n  =& \\sum_{i_0=0}^{\\dim} \\sum_{i_1=i_0}^{\\dim} \\sum_{i_2=i_1}^{\\dim} \\sum_{i_3=i_2}^{\\dim} \\sum_{i_4=i_3}^{\\dim} a_{i_0 i_1 i_2 i_3 i_4} \u00b7 x_{i_0} x_{i_1} x_{i_2} x_{i_3} x_{i_4}  \\quad, x_0 = 1\n\\end{align*}\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Forth-Order_Function",
-        "parents": [
-            "Polynomial_Function"
-        ],
-        "properties": "#"
+        "parents": {
+            "Polynomial_Function": ""
+        },
+        "properties": [
+            "### Zero Set of Quartic Function , Quartic Surface\n\n- Define\n\n- Property\n  - Solution of Univariate Quartic Equation  \n    For an Univariate Quartic Equation,\n    $$\n    a x^4 + b x^3 + c x^2 + d x + e = 0\n    $$\n\n    The solutions are $r_1, r_2, r_3, r_4$,\n    $$\n    \\begin{align*}\n      r_{i} &= -\\frac{b}{4 a} - S \\pm \\frac{1}{2} \\sqrt{-4 S^2 -2 p \\pm \\frac{q}{S}}  \\\\\n      p & =\\frac{8 a c-3 b^2}{8 a^2} \\\\\n      q & =\\frac{b^3-4 a b c+8 a^2 d}{8 a^3} \\\\\n      S & =\\frac{1}{2} \\sqrt{-\\frac{2}{3} p+\\frac{1}{3 a}\\left(Q+\\frac{\\Delta_0}{Q}\\right)} \\\\\n      Q & =\\sqrt[3]{\\frac{\\Delta_1+\\sqrt{\\Delta_1^2-4 \\Delta_0^3}}{2}} \\\\\n      \\Delta_0 & =c^2-3 b d+12 a e \\\\\n      \\Delta_1 & =2 c^3-9 b c d+27 b^2 e+27 a d^2-72 a c e\n    \\end{align*}\n    $$\n\n    Or representation by\n    $$\n    \\begin{align*}\n      Q_1 &= c^2 - 3bd + 12e  \\\\\n      Q_2 &= 2c^3 - 9bcd + 27d^2 + 27b^2e - 72ce  \\\\\n      Q_3 &= 8bc - 16d - 2b^3  \\\\\n      Q_4 &= 3b^2 - 8c  \\\\\n      Q_5 &= \\sqrt[3]{\\frac{Q_2}{2} + \\sqrt{\\left(\\frac{Q_2^2}{4} - Q_1^3\\right)}}   \\\\\n      Q_6 &= \\frac{Q_1}{Q_5} + Q_5  \\\\\n      Q_7 &= 2\\sqrt{\\frac{Q_4}{12} + Q_6}   \\\\\n      x_1 &= \\frac{-b - Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n      x_2 &= \\frac{-b - Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n      x_3 &= \\frac{-b + Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n      x_4 &= \\frac{-b + Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4}\n    \\end{align*}\n    $$"
+        ]
     },
     "Fractal": {
         "define": "A mathematical [set](./Set.md) $F$ is considered self similar if it can be divided into several non empty disjoint subsets, each of which is a scaled, translated, rotated (and possibly also reflective) version of $F $. Specifically, if the set $F $can be written as\n$$\nF = \\bigcup_{i=1}^{N} w_i(F)\n$$\nWhere $w_i$ is a similarity transformation with a scaling factor less than 1, then $F$ can be considered to have self similarity properties.",
-        "kids": [],
+        "kids": {},
         "name": "Fractal",
-        "parents": [
-            "Set"
-        ],
-        "properties": null
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Function": {
         "define": "$$\nf: X \\to Y  \\tag{Function}\n$$\n$$\n\\forall x \\in X, \\exists_{= 1} y \\in Y, f(x) = y\n$$\nMapping, refer to a [binary relation](./Relation.md) from the element of set $X$ to that of set $Y$, and satisfy any element in $X$ has a unique element in $Y$ corresponding to it (One-to-many is not allowed).\n\n$X$: domain of Definition.",
-        "kids": [
-            "Radon_Translation",
-            "Real_Value_Function",
-            "Dirac_Delta_Function",
-            "Linear_Transformation",
-            "Bessel_Function",
-            "Hilbert_Transform",
-            "Polynomial_Function",
-            "Complex_Value_Function",
-            "Laplace_Transform",
-            "Trigonometric_Function",
-            "Sequence"
-        ],
+        "kids": {
+            "Bessel_Function": "",
+            "Complex_Value_Function": "",
+            "Dirac_Delta_Function": "",
+            "Hilbert_Transform": "",
+            "Laplace_Transform": "",
+            "Linear_Transformation": "",
+            "Polynomial_Function": "",
+            "Radon_Translation": "",
+            "Real_Value_Function": "",
+            "Sequence": "",
+            "Trigonometric_Function": ""
+        },
         "name": "Function",
-        "parents": [
-            "Relation"
-        ],
-        "properties": null
+        "parents": {
+            "Relation": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Gamma_Function": {
         "define": "The gamma function is defined for all complex numbers except the non-positive integers. ([Complex Value Function](./Complex_Value_Function.md)) For every positive integer $n$,\n$$\n\\Gamma(n) = (n-1)!\n$$\nFor complex numbers with a positive real part, the gamma function is defined via a convergent improper integral,\n$$\n\\Gamma(z) = \\int_{0}^\\infty t^{z-1} e^{-t} \\mathrm d t \\quad, \\Re(z) > 0\n$$\n<img src=\"assets/Plot_of_gamma_function_in_complex_plane_in_3D_with_color_and_legend_and_1000_plot_points_created_with_Mathematica.svg\" alt=\"Plot_of_gamma_function_in_complex_plane_in_3D_with_color_and_legend_and_1000_plot_points_created_with_Mathematica\" style=\"zoom:12%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Gamma_Function",
-        "parents": [
-            "Complex_Value_Function"
-        ],
-        "properties": "- Recursion\n  $$\n  \\Gamma(z+1) = z \\Gamma(z)\n  $$\n  \n- Euler's reflection formula\n  $$\n  \\Gamma(1-z)\\Gamma(z) = \\frac{\\pi}{\\sin \\pi z}\n  $$\n\n- $$\n  2^{2 z-1} \\Gamma(z) \\Gamma\\left(z+ \\frac{1}{2}\\right)=\\sqrt{\\pi} \\Gamma(2 z)\n  $$\n  \n  - $$\n    \\Gamma\\left(\\frac{1}{2}\\right) = \\sqrt{\\pi}\n    $$\n  \n- Stirling's formula\n  $$\n  \\Gamma(n+1) = n! \\sim \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n\n  $$\n  \n- $$\n  \\begin{align*}\n  \\Gamma(z) &=\\lim _{n \\rightarrow \\infty} \\frac{1 \\cdot 2 \\cdots n}{z(z+1) \\cdots(z+n)} n^{z}  \\\\\n  &= \\frac{e^{-\\gamma z}}{z} \\prod_{n=1}^{\\infty}\\left(1+\\frac{z}{n}\\right)^{-1} e^{\\frac{z}{n}}\n  \\end{align*}\n  $$"
+        "parents": {
+            "Complex_Value_Function": ""
+        },
+        "properties": [
+            "- Recursion\n  $$\n  \\Gamma(z+1) = z \\Gamma(z)\n  $$\n  \n- Euler's reflection formula\n  $$\n  \\Gamma(1-z)\\Gamma(z) = \\frac{\\pi}{\\sin \\pi z}\n  $$\n\n- $$\n  2^{2 z-1} \\Gamma(z) \\Gamma\\left(z+ \\frac{1}{2}\\right)=\\sqrt{\\pi} \\Gamma(2 z)\n  $$\n  \n  - $$\n    \\Gamma\\left(\\frac{1}{2}\\right) = \\sqrt{\\pi}\n    $$\n  \n- Stirling's formula\n  $$\n  \\Gamma(n+1) = n! \\sim \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n\n  $$\n  \n- $$\n  \\begin{align*}\n  \\Gamma(z) &=\\lim _{n \\rightarrow \\infty} \\frac{1 \\cdot 2 \\cdots n}{z(z+1) \\cdots(z+n)} n^{z}  \\\\\n  &= \\frac{e^{-\\gamma z}}{z} \\prod_{n=1}^{\\infty}\\left(1+\\frac{z}{n}\\right)^{-1} e^{\\frac{z}{n}}\n  \\end{align*}\n  $$"
+        ]
     },
     "Graph": {
-        "define": "$$\n\\begin{align*}\nG &= (V, E)  \\tag{Graph} \\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Edge set}\n\\end{align*}\n$$\n\nGraph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges $w: E \\to \\mathbb R$.\n\n- $V$: Vertex set\n- $E$: Edge set, a set of paired vertices\n- $w: E \\to \\mathbb R$: weight of edge\n\n#",
-        "kids": [
-            "Bipartite_Graph",
-            "Tree",
-            "Directed_Acyclic_Graph"
-        ],
+        "define": "$$\n\\begin{align*}\nG &= (V, E)  \\tag{Graph} \\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Edge set}\n\\end{align*}\n$$\n\nGraph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges $w: E \\to \\mathbb R$.\n\n- $V$: Vertex set\n- $E$: Edge set, a set of paired vertices\n- $w: E \\to \\mathbb R$: weight of edge\n\n### Undirected Graph & Directed Graph\n\n$$\n\\begin{align*}\nE &= \\{\\{v_i, v_j\\}\\ |\\ v_i, v_j \\in V\\}  \\tag{Undirected Graph}\\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Directed Graph}\n\\end{align*}\n$$\n\nUndirected Graph, is a type of graph that does not distinguish the direction of edges.\n\nDirected Graph, is a type of graph that distinguish the direction of edges and its edge set is a set of ordered pairs.",
+        "kids": {
+            "Bipartite_Graph": "",
+            "Directed_Acyclic_Graph": "",
+            "Tree": ""
+        },
         "name": "Graph",
-        "parents": [
-            "Set"
-        ],
-        "properties": "#"
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            "### Representation by Adjacency Matrix\nDue to the discreteness of vertices, we can represent the weight of edge $w: E \\to \\mathbb R$ by Matrix $\\boldsymbol G \\in \\mathbb R^{n \\times n}$.\n\n$$\n\\boldsymbol G = \\left(\\begin{matrix} w(v_1, v_1) & \\cdots & w(v_1, v_n) \\\\ \\vdots&\\ddots &\\vdots \\\\ w(v_n, v_1) & \\cdots & w(v_n, v_n) \\end{matrix}\\right)\n$$\n\n\n### Degree\nDegree of a node refers to the number of edges connecting this node. \n\n### Connectivity\n\nIn an undirected graph $G=(V, E)$, the graph is said to be connected if there is a path between every pair of vertices. A path is a sequence of vertices where consecutive vertices are adjacent (connected by an edge).\n\nIn a directed graph $G=(V, E)$, the graph is strongly connected if for every pair of vertices $u$ and $v$, there is a directed path from $u$ to $v$ and a directed path from $v$ to $u$.\n\n### Directivity\n\n### Acyclicity\n\n### Euler Path & Euler Graph\n\n#### Define\nEuler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. \n\n<img src=\"./assets/48727417-28c3d500-ec58-11e8-9715-33b168a50b7c.png\" alt=\"theory1\" style=\"zoom:20%;\" />\n\n#### Property\n- The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).\n\n\n### Matching of Graph\n\n#### Define\n\n$$\n\\forall e_i, e_j \\in M \\subseteq E, e_i \\neq e_j \\quad\\Rightarrow\\quad v(e_i, 1) \\neq v(e_i, 2) \\neq v(e_j, 1) \\neq v(e_j, 2)  \\tag{Matching}\n$$\nMatching of a graph is a set of edges $M \\subseteq E$ that have no common points between any two edges.\n\n#### Include\n\n- Maximum Matching\n  $$\n  M^* = \\arg\\max_{M} \\quad \\text{number}(M) \\tag{Maximum Matching}\n  $$\n  Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.\n  \n- Perfect Matching\n  $$\n  V^{(G)} = v(M^*)\n  $$\n  Perfect Matching is a matching that all vertices of the graph are in it."
+        ]
     },
     "Group": {
         "define": "$$\n(G, \\cdot)\n$$\n\nGroup is an algebraic structure, where $G$ is a set, $\\cdot$ is a binary operation, and satisfy:\n\n- closure: $a, b \\in G \\Rightarrow a \\cdot b \\in G$\n- associative law $(a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$\n- exists identity element, $\\exists 1: x \\cdot 1 = 1 \\cdot x = x$\n- exists inverse element, $\\exists x^{-1}: x \\cdot x^{-1} = x^{-1} \\cdot x = 1$",
-        "kids": [
-            "Lie_Group"
-        ],
+        "kids": {
+            "Lie_Group": ""
+        },
         "name": "Group",
-        "parents": [
-            "Algebra_Structure"
-        ],
-        "properties": "- $1$ is unique\n  - Proof  \n    $$\n    1_1 = 1_1 \\cdot 1_2 = 1_2\n    $$\n- The inverse of each element is unique.\n- Absorbing Element\n  $$\n  x \\cdot 0 = 0 \\cdot x = 0  \\quad; \\forall x \\in G  \\tag{absorbing element}\n  $$\n- 1 \n  - $\\forall a \\in G, (a^{-1})^{-1} = a$\n  - $\\forall a,b \\in G, (a \\cdot b)^{-1} = b^{-1} \\cdot a^{-1}$\n  - $\\forall a,b,c \\in G, a\\cdot b = a \\cdot c  \\quad\\Rightarrow\\quad b = c$\n  - $\\forall a,b,c \\in G, b\\cdot a = c \\cdot a  \\quad\\Rightarrow\\quad b = c$ \n\n#"
+        "parents": {
+            "Algebra_Structure": ""
+        },
+        "properties": [
+            "- $1$ is unique\n  - Proof  \n    $$\n    1_1 = 1_1 \\cdot 1_2 = 1_2\n    $$\n- The inverse of each element is unique.\n- Absorbing Element\n  $$\n  x \\cdot 0 = 0 \\cdot x = 0  \\quad; \\forall x \\in G  \\tag{absorbing element}\n  $$\n- 1 \n  - $\\forall a \\in G, (a^{-1})^{-1} = a$\n  - $\\forall a,b \\in G, (a \\cdot b)^{-1} = b^{-1} \\cdot a^{-1}$\n  - $\\forall a,b,c \\in G, a\\cdot b = a \\cdot c  \\quad\\Rightarrow\\quad b = c$\n  - $\\forall a,b,c \\in G, b\\cdot a = c \\cdot a  \\quad\\Rightarrow\\quad b = c$ \n\n### Subgroup\n\n- Define  \n  $$\n  H \\subseteq G, H \\neq \\emptyset, (H, \\cdot) \\text{ is group } \\quad\\Rightarrow\\quad H \\le G  \\tag{Subgroup}\n  $$\n\n  For a group $(G, \\cdot)$ and a nonempty subset $H$ of $G$, if $(H, \\cdot)$ is also group, then $(H, \\cdot)$ is a subgroup of $(G, \\cdot)$.\n\n- Property  \n  - $1 \\le G, G \\le G$\n\n  * Coset\n    - Define\n      For a subgroup $H$ of the group $G$ and an element $g \\in G$, the left cosets of $H$ in $G$ are the sets obtained by multiplying each element of $H$ by a fixed element $g$ (where $g$ is the left factor).\n      $$\n      gH = \\{gh \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{left cosets}\n      $$\n\n      The right cosets are defined similarly, except that the element g is now a right factor.\n      $$\n      Hg = \\{hg \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{right cosets}\n      $$\n\n    - Property\n\n      - Cosets form a partition of group $G$, that is, they divide $G$ into several disjoint sets. \n\n        Each coset of subgroup $H$ have the same number of elements as the subgroup $H$. Two cosets are either identical or completely disjoint. \n\n  * The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$.\n    $$\n    |H|\\ |\\ |G|\n    $$\n\n#### Normal Subgroup\n\n- Define\n  $$\n  H \\lhd G \\quad\\Leftrightarrow\\quad  g^{-1}hg \\in H, \\forall h \\in H \\le G, g \\in  G \\tag{Normal Subgroup}\n  $$\n  Normal Subgroup is a subgroup $H \\le G$ if it is invariant under conjugation, that is, $\\forall h \\in H, g \\in G$, we have $g^{-1}hg \\in H$.\n\n- Property\n  * Quotient Group\n  \n    * Define\n  \n      Given a group $G$ and a normal subgroup $H \\lhd G$, the Quotient Group $G/H$ is a group composed of all left cosets of $H$ in $G$ as elements $\\{aH \\ |\\ a \\in G\\}$ and multiplication operations $(g_1 H) \\cdot (g_2 H) = g_1 g_2 H, \\forall g_1, g_2 \\in G$.\n      $$\n      (\\{aH \\ |\\ a \\in G\\}, \\cdot)  \\\\\n      $$\n  \n    - Property\n  \n      - The unit element of the quotient group $G/N$ is $N$ itself\n  \n      $$\n      gN \\cdot N = gN\n      $$\n  \n      - $|G/H| = \\frac{|G|}{|H|}$\n\n### Group Homomorphism\n\n- Define\n  $$\n  f: G \\to H\n  $$\n  Group Homomorphism is a function $f$ from a group $(G, \\cdot)$ to another group $(H, *)$ such that for all $u, v \\in G$ it hold that,\n  $$\n  f(u \\cdot v) = f(u) * f(v) \\quad, \\forall u, v \\in G\n  $$\n\n- Property\n  * Isomorphism of Groups  \n    If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.\n\n### Simple Group\n\n- Define\n\n  A simple group is a group $G$ whose only normal subgroups are the trivial group $\\{e\\}$ (a trivial group or zero group is a group consisting of a single element $e$) and the group itself.\n\n- Property\n\n  - Classification of finite simple groups\n\n    Every finite simple group is isomorphic to one of the following groups\n\n    - a member of one of three infinite classes of such, namely:\n      - the cyclic groups of prime order,\n      - the alternating groups of degree at least 5,\n      - the groups of Lie type,\n      - the derivative of the groups of Lie Type, such as the Tits group\n    - one of 26 groups called the \"sporadic groups\"\n  \n    <img src=\"./assets/gn5cimd92mh11.jpg\" alt=\"gn5cimd92mh11\" style=\"zoom:25%;\" />\n\n### Commutative Group , Abelian Group\n\n- Define\n  Commutative Group is a Group satisfied commutative law,\n  $$\n  a \\cdot b = b \\cdot a\n  $$\n\n### Cyclic Group\n\n- Define\n\n  A group $G$ is called cyclic if there exists an element $a \\in G$ such that every element of $G$ can be expressed as a power of $a$. ln other words, every element in $G$ is of the form $a$ for some integer $k$. The element a is called a generator of the group.\n  $$\n  \u27e8g\u27e9 = \\{g^k \\ |\\ k \\in \\mathbb Z\\}\n  $$"
+        ]
     },
     "Hilbert_Space": {
         "define": "Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Poduct_Space.md).",
-        "kids": [
-            "Euclidean_Space"
-        ],
+        "kids": {
+            "Euclidean_Space": ""
+        },
         "name": "Hilbert_Space",
-        "parents": [
-            "Inner_Poduct_Space",
-            "Metric_Space"
-        ],
-        "properties": null
+        "parents": {
+            "Inner_Poduct_Space": "",
+            "Metric_Space": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Hilbert_Transform": {
         "define": "[**Hilbert transform**](./Function.md) of $u(t)$ can be thought of as the convolution of $u(t)$ with the function $h(t) = \\frac{1}{\\pi t}$, known as the Cauchy kernel. Because $1/t$ is not integrable across $t = 0$, the integral defining the convolution does not always converge. Instead, the Hilbert transform is defined using the Cauchy principal value (denoted here by $p.v.$).\n$$\nH(u)(t) = p.v.\\frac{1}{\\pi}\\int_{-\\infty}^{+\\infty} \\frac{u(\\tau)}{t-\\tau}\\mathrm{d}\\tau\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Hilbert_Transform",
-        "parents": [
-            "Function"
-        ],
-        "properties": "- $H(H(u))(t) = u(-t)$\n- $H(\\omega) = (-i \\cdot \\text{sgn}(\\omega))\\cdot \\mathcal F_h(\\omega)$"
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            "- $H(H(u))(t) = u(-t)$\n- $H(\\omega) = (-i \\cdot \\text{sgn}(\\omega))\\cdot \\mathcal F_h(\\omega)$"
+        ]
     },
     "Hypergeometric_Function": {
         "define": "$$\n{}_pF_q(a_1, \\cdots, a_p;b_1, \\cdots, b_q;z) = \\sum_{n=0}^\\infty \\frac{(a_1)_n (a_2)_n  \\cdots (a_p)_n}{(b_1)_n (b_2)_n \\cdots (b_q)_n} \\frac{z^n}{n!}\n$$\n\nThe hypergeometric function is defined for $|z| < 1$ by the power series. ([Complex Value Function](./Complex_Value_Function.md)) It is undefined (or infinite) if c equals a non-positive integer. Here (q)n is the (rising) Pochhammer symbol, which is defined by:\n$$\n(q)_{n}={\\begin{cases}1&n=0\\\\q(q+1)\\cdots (q+n-1)&n>0\\end{cases}}\n$$\n<img src=\"assets/Plot_of_the_hypergeometric_function_2F1(a,b;_c;_z)_with_a=2_and_b=3_and_c=4_in_the_complex_plane_from_-2-2i_to_2+2i_with_colors_created_with_Mathematica_13.1_function_ComplexPlot3D.svg\" alt=\"Plot_of_the_hypergeometric_function_2F1(a,b;_c;_z)_with_a=2_and_b=3_and_c=4_in_the_complex_plane_from_-2-2i_to_2+2i_with_colors_created_with_Mathematica_13.1_function_ComplexPlot3D\" style=\"zoom:25%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Hypergeometric_Function",
-        "parents": [
-            "Complex_Value_Function"
-        ],
-        "properties": "- Differentiation formulas\n  $$\n  \\begin{align*}\n  \\frac {\\mathrm d}{\\mathrm dz} F(a,b;c;z) &= \\frac {ab}{c} F(a+1,b+1;c+1;z)  \\\\\n  \\frac {\\mathrm d^{n}}{\\mathrm dz^{n}} F(a,b;c;z) &= \\frac {(a)_{n}(b)_{n}}{(c)_{n}} F(a+n,b+n;c+n;z)\n  \\end{align*}\n  $$\n\n- Special cases\n  $$\n  \\begin{align*}\n  e^z &= F(;;-z)  \\\\\n  \\ln(1+z) &= z F(1, 1;2;-z)\\\\\n  (1+z)^\\alpha &= F(-\\alpha;;-z)  \\\\\n  \\sin z &= z F(;\\frac{3}{2};-{z^2}{4})  \\\\\n  \\cos z &= F(;\\frac{1}{2};-{z^2}{4})  \\\\\n  \\arcsin z &= z F(\\frac{1}{2}, \\frac{1}{2};\\frac{3}{2};z^2)  \\\\\n  \\arccos z &= z F(\\frac{1}{2}, 1;\\frac{3}{2};-z^2)  \\\\\n  \\end{align*}\n  $$"
+        "parents": {
+            "Complex_Value_Function": ""
+        },
+        "properties": [
+            "- Differentiation formulas\n  $$\n  \\begin{align*}\n  \\frac {\\mathrm d}{\\mathrm dz} F(a,b;c;z) &= \\frac {ab}{c} F(a+1,b+1;c+1;z)  \\\\\n  \\frac {\\mathrm d^{n}}{\\mathrm dz^{n}} F(a,b;c;z) &= \\frac {(a)_{n}(b)_{n}}{(c)_{n}} F(a+n,b+n;c+n;z)\n  \\end{align*}\n  $$\n\n- Special cases\n  $$\n  \\begin{align*}\n  e^z &= F(;;-z)  \\\\\n  \\ln(1+z) &= z F(1, 1;2;-z)\\\\\n  (1+z)^\\alpha &= F(-\\alpha;;-z)  \\\\\n  \\sin z &= z F(;\\frac{3}{2};-{z^2}{4})  \\\\\n  \\cos z &= F(;\\frac{1}{2};-{z^2}{4})  \\\\\n  \\arcsin z &= z F(\\frac{1}{2}, \\frac{1}{2};\\frac{3}{2};z^2)  \\\\\n  \\arccos z &= z F(\\frac{1}{2}, 1;\\frac{3}{2};-z^2)  \\\\\n  \\end{align*}\n  $$"
+        ]
     },
     "Inner_Poduct_Space": {
         "define": "The [Normed Linear Space](./Normed_Linear_Space.md) of inner product is defined.",
-        "kids": [
-            "Convolution",
-            "Hilbert_Space"
-        ],
+        "kids": {
+            "Convolution": "",
+            "Hilbert_Space": ""
+        },
         "name": "Inner_Poduct_Space",
-        "parents": [
-            "Normed_Linear_Space"
-        ],
-        "properties": null
+        "parents": {
+            "Normed_Linear_Space": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Integer_Ring": {
         "define": "Ring of Integers is a kind of Integral Domain (\u6574\u73af).\n$$\n\\mathbb Z\n$$\n\nAn **integer** can be defined as an equivalence class of ordered pairs of natural numbers $(a, b)$, where $a$ and $b$ are [natural numbers](./Natural_Number.md), under the following equivalence relation:\n\n- Two ordered pairs $(a, b)$ and $(c, d)$ are considered equivalent if and only if $a + d = b + c$. (the difference between two natural numbers)\n\n$$\n(\\mathbb Z, +, \\cdot)\n$$\n$$\n\\forall a, b \\in \\mathbb Z, a \\cdot b = 0 \\quad\\Rightarrow\\quad  (a = 0 \\vee b = 0)  \\tag{no zero divisor}\n$$\nIntegral ring is a nonzero commutative [ring](./Ring.md) in which the product of any two nonzero elements is nonzero.\n\n- **Addition:** To add two integers represented by $[a, b]$ and $[c, d]$, define their sum as $[a + c, b + d]$. This is equivalent to adding the two 'positive' parts and the two 'negative' parts separately.\n  \n- **Negation:** The negation of an integer represented by $[a, b]$ is $[b, a]$, reflecting the idea of $ -(a - b) = b - a $.\n  \n- **Multiplication:** To multiply two integers represented by $[a, b]$ and $[c, d]$, define their product as $[ac + bd, ad + bc]$. This captures the distributive property over the components of the ordered pairs.",
-        "kids": [
-            "Rational_Number_Field",
-            "Mobius_Function",
-            "Division_with_Remainder"
-        ],
+        "kids": {
+            "Division_with_Remainder": "",
+            "Mobius_Function": "",
+            "Rational_Number_Field": ""
+        },
         "name": "Integer_Ring",
-        "parents": [
-            "Natural_Number",
-            "Ring"
-        ],
-        "properties": "#"
+        "parents": {
+            "Natural_Number": "",
+            "Ring": ""
+        },
+        "properties": [
+            "### Division with Remainder & Factor\n\n### Multiplicative Function\n\n- Define  \n  A mapping $f: \\mathbb Z \\to \\mathbb R$, such that\n  $$\n  f(a \\times b) = f(a) f(b) \\quad \\text{when}\\ a, b \\in \\mathbb Z, gcd(a, b) = 1\n  $$\n\n- Property\n  - $f(1) = 1$\n\n- Example\n  * Eular Function\n    - Define  \n      The number of coprimes with $n$ in positive integers less than $n$.\n      $$\n      \\phi(n) = \\text{number}(\\{i\\ |\\ i \\in 1:n, \\text{GCD}(i, n) = 1\\})\n      $$\n\n    - Property\n      $$\n      \\begin{align*}\n        n &= \\prod_i p_i^{k_i}  \\\\\n        \\phi(n) &= n \\prod_{p|n} (1 - 1/p)  \n      \\end{align*}\n      $$\n\n  * [M\u00f6bius Function](./Mobius_Function.md)\n\n### Fermat's Last Theorem\n\nNo three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The cases $n = 1$ and $n = 2$ have been known since antiquity to have infinitely many solutions."
+        ]
     },
     "Knot": {
         "define": "A knot is an embedding of the circle into [three-dimensional Euclidean space](./Euclidean_Space.md) $S^1 \\to \\mathbb R^3$, or the 3-sphere $S^3$, since the 3-sphere is compact. Two knots are defined to be equivalent if there is an ambient isotopy between them.\n\n<img src=\"./assets/78a8406c7fac2177fb53bb8c5099e4d3.jpg\" alt=\"img\" style=\"zoom: 35%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Knot",
-        "parents": [
-            "Euclidean_Space"
-        ],
-        "properties": "#"
+        "parents": {
+            "Euclidean_Space": ""
+        },
+        "properties": [
+            "### Knot Diagram\n\nA knot diagram is a visual representation of a knot, which is a projection of Knot on a plane, where each crossing point is marked as \"over\" or \"under\" to indicate which part is above and which part is below.\n\n<img src=\"./assets/2048px-TrefoilKnot_01.svg.png\" alt=\"img\" style=\"zoom:4%;\" />\n\n### Knot isotopy (Ambient isotopy)\n\nTwo knots are considered equivalent if one can be deformed into the other without cutting or gluing.\n\n### Reidemeister move\n\nReidemeister move are a set of three local transformations that can be applied to a knot diagram without changing the underlying knot's equivalence class. Each move operates on a small region of the diagram and is one of three types:\n\n1. Twist and untwist in either direction.\n2. Move one loop completely over another.\n3. Move a string completely over or under a crossing.\n\n<img src=\"./assets/Reidemeister-moves-Top-Row-Reidemeister-Moves-I-and-II-Bottom-Row-Reidemeister-Move.png\" alt=\"Reidemeister moves. Top Row: Reidemeister Moves I and II. Bottom Row ...\" style=\"zoom:25%;\" />\n\n- **Unknotting Theorem**: Any knot can be transformed into its simplified form through a series of Reidemeister movements.\n\n### Knot Invariants\n\nKnot invariants are used to determine whether two knots are equivalent or not.\n\n- **Jones Polynomial**\n\n  Given an oriented link diagram $D$, the Jones polynomial $V(D)$ can be defined recursively using the following relations:\n  1. $V(\\text{Unknot}) = 1$\n  2. $t^{-1} V(L_+) - t V(L_-) = (t^{1/2} - t^{-1/2}) V(L_0)$\n\n  Where $L_+, L_-, L_0$ are link diagrams that are identical outside a small region, and within that region look like:\n\n  - $L_+$: A positive crossing.\n  - $L_-$: A negative crossing.\n  - $L_0$: The two segments are resolved without a crossing.\n\n  The above recursive relations allow for the calculation of the Jones polynomial of a given link diagram by expanding it in terms of simpler diagrams until reaching the unknot.\n\n- **HOMFLY Polynomial**"
+        ]
     },
     "Laplace_Transform": {
         "define": "Laplace Transform $f: (f: \\mathbb C \\to \\mathbb C) \\times \\mathbb C \\to \\mathbb C$\n$$\n\\mathcal L_{f(t)}(s) = \\int_0^{\\infty} f(t) e^{-st} \\mathrm d t\n$$\n\n$$\n\\mathcal L^{-1}_{F(s)}(t) = \\frac{1}{2 \\pi \\mathrm i} \\int_{\\real(s) - \\mathrm i \\infty}^{\\real(s) + \\mathrm i \\infty} F(s) e^{st} \\mathrm d s  \\tag{inverse Laplace transform}\n$$\n\nA type of [function](./Function.md)",
-        "kids": [],
+        "kids": {},
         "name": "Laplace_Transform",
-        "parents": [
-            "Function"
-        ],
-        "properties": null
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Lattice": {
         "define": "$$\n(L, \\wedge, \\vee)\n$$\n\nLattice is a concept of partially ordered sets, which is a special type of [algebraic structure](./Algebra_Structure.md) that can define minimum upper and maximum lower bounds on certain sets.\u4e00\u4e2a\u683c $L$ \u662f\u4e00\u4e2a\u96c6\u5408\uff0c\u914d\u5408\u4e24\u4e2a\u4e8c\u5143\u8fd0\u7b97meet $\\wedge$\u548c join $\\vee$\uff0c\u6ee1\u8db3\u4ee5\u4e0b\u516c\u7406\uff1a\n\n1. **\u4ea4\u6362\u5f8b**\uff1a$\\forall a, b \\in L$\uff0c\u6709 $a \\wedge b = b \\wedge a$ \u548c $a \\vee b = b \\vee a$\n2. **\u7ed3\u5408\u5f8b**\uff1a$\\forall a, b, c \\in L$\uff0c\u6709 $a \\wedge (b \\wedge c) = (a \\wedge b) \\wedge c$ \u548c $a \\vee (b \\vee c) = (a \\vee b) \\vee c$\n3. **\u5438\u6536\u5f8b**\uff1a$\\forall a, b \\in L$\uff0c\u6709 $a \\wedge (a \\vee b) = a$ \u548c $a \\vee (a \\wedge b) = a$\n4. **\u5e42\u7b49\u5f8b**\uff1a$\\forall a \\in L$\uff0c\u6709 $a \\wedge a = a$ \u548c $a \\vee a = a$\n\n\u5728\u683c\u4e2d\uff0c\u4efb\u610f\u4e24\u4e2a\u5143\u7d20 $a$ \u548c $b$ \u7684\u201cmeet\u201d $a \\wedge b$ \u662f\u5b83\u4eec\u6240\u6709\u4e0b\u754c\u7684\u6700\u5927\u8005\uff0c\u800c\u5b83\u4eec\u7684\u201cjoin\u201d $a \\vee b$ \u662f\u5b83\u4eec\u6240\u6709\u4e0a\u754c\u7684\u6700\u5c0f\u8005\u3002",
-        "kids": [
-            "Boolean_Algebra"
-        ],
+        "kids": {
+            "Boolean_Algebra": ""
+        },
         "name": "Lattice",
-        "parents": [
-            "Algebra_Structure"
-        ],
-        "properties": null
+        "parents": {
+            "Algebra_Structure": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Lie_Group": {
         "define": "A real Lie group is a [group](./Group.md) that is also a finite-dimensional real smooth [manifold](./Manifold.md), in which the group operations of multiplication and inversion are smooth maps. Smoothness of the group multiplication means that \u03bc is a smooth mapping of the product manifold G \u00d7 G into G.\n$$\n\\mu: G \\times G \\to G, \\mu(x,y) = xy\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Lie_Group",
-        "parents": [
-            "Manifold",
-            "Group"
-        ],
-        "properties": "#"
+        "parents": {
+            "Group": "",
+            "Manifold": ""
+        },
+        "properties": [
+            "### Lie Algebra"
+        ]
     },
     "Linear_Function": {
         "define": "$$\n\\begin{align*}\n  f(x) &= a x + b \\tag{Univariate}  \\\\\n  f(\\boldsymbol x) &= \\boldsymbol A \\boldsymbol x + \\boldsymbol b  \\tag{Multivariate}\n\\end{align*}\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Linear_Function",
-        "parents": [
-            "Polynomial_Function"
-        ],
-        "properties": "#"
+        "parents": {
+            "Polynomial_Function": ""
+        },
+        "properties": [
+            "### Zero Set of Linear Function & Plane & Linear Surface \n\n- Define\n  $$\n  \\{\\boldsymbol x \\ |\\ \\boldsymbol A \\boldsymbol x = \\boldsymbol b \\}\n  $$\n\n- Problem: Solving Linear Equations \n  - Purpose\n    $$\n    \\boldsymbol A \\boldsymbol x = \\boldsymbol b\n    $$\n\n    Know $\\boldsymbol A, \\boldsymbol b$ and Solve $\\boldsymbol x$. Where, $\\boldsymbol A \\in \\mathbb R^{m \\times n}$, $\\boldsymbol x \\in \\mathbb R^{n}$, $\\boldsymbol b \\in \\mathbb R^m$, $n$ is the number of unknown number, $m$ is the number of linear equations.\n\n  - Property : Existence of Solutions  \n    $$\n    \\begin{align*}\n      \\left\\{\\begin{matrix}\n        rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) &= n& \\quad \\text{Unique Solution}  \\\\\n        rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) &< n& \\quad \\text{Infinite Solutions}  \\\\\n        rank((\\boldsymbol A\\ \\boldsymbol b)) > rank(\\boldsymbol A) &&\\quad \\text{Unsolvable}\n      \\end{matrix}\\right.\n    \\end{align*}\n    $$\n\n    - Proof \n      if $rank((\\boldsymbol A\\ \\boldsymbol b)) > rank(\\boldsymbol A)$ \n      $\\Rightarrow$ $(\\boldsymbol a_1,...,\\boldsymbol a_n)$ and $b$ is linearly independent \n      $\\Rightarrow$ $\\nexists \\boldsymbol x \\in \\mathbb R^{n}$ let $x_1 \\boldsymbol a_1 + ... + x_n \\boldsymbol a_n = b$. \n      $\\Rightarrow$ Unsolvable\n\n      if $rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) < n$ \n      $\\Rightarrow$ $\\exists u \\in \\mathbb R^{n-1}, k \\in [1, n]$ let $\\boldsymbol a_k = \\sum\\limits_{i=1,i\\neq k}^n u_i \\boldsymbol a_i$ \n      $\\Rightarrow$ $\\exists c_1, c_2 \\in \\mathbb R, c_1 + c_2 = 1$ and $\\exists x^*$ is a special solution, let $b = \\left(c_1 x_k^* a_k + c_2 x_k^* \\sum\\limits_{i=1,i\\neq k}^n u_i \\boldsymbol a_i \\right) + \\sum\\limits_{i=1,i\\neq k}^n x_i^* \\boldsymbol a_i$ \n      $\\Rightarrow$ Infinite Solutions\n\n      for the same reason, if $rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) = n$ \n      $\\Rightarrow$ Unique Solution\n\n  - Solving  \n    - **Unique Solution**\n      if $rank(\\boldsymbol A) = n$ , then $\\boldsymbol A^{-1}$ exists and\n      $$\n      \\boldsymbol x = \\boldsymbol A^{-1} \\boldsymbol b\n      $$\n      \n    - **Infinite Solutions**\n      General Solution $\\boldsymbol x = \\boldsymbol A^{-^{\\{1\\}}} \\boldsymbol b + (\\boldsymbol I - \\boldsymbol A^{-^{\\{1\\}}} \\boldsymbol A) \\boldsymbol c$ \n      Special Solution $\\boldsymbol x = \\boldsymbol A^{-^{\\{1\\}}} \\boldsymbol b$  \n\n      Minimal Norm Solution. The minimum norm solution is unique.\n      $$\n      \\begin{align*}\n        \\min_{\\boldsymbol x} \\quad& ||\\boldsymbol x||_2  \\\\\n        s.t. \\quad& \\boldsymbol A \\boldsymbol x = \\boldsymbol b\n      \\end{align*}\n      $$\n      $$\n      \\boldsymbol x = \\boldsymbol A^{-^{\\{1,3\\}}} \\boldsymbol b\n      $$\n      \n    - **Unsolvable**\n      Approximate solution $\\tilde{\\boldsymbol x}$ by giving the evaluation function, such as least square,\n      $$\n      \\min_{\\tilde{\\boldsymbol x}} \\quad ||\\boldsymbol A \\tilde{\\boldsymbol x} - \\boldsymbol b||_2\n      $$\n      $$\n      \\tilde{\\boldsymbol x} = \\boldsymbol A^{-^{\\{1,4\\}}} \\boldsymbol b\n      $$\n\n      Minimal norm Approximate solution $\\tilde{\\boldsymbol x}$ by least square,\n      $$\n      \\begin{align*}\n        \\min_{\\tilde{\\boldsymbol x}} \\quad& ||\\boldsymbol A \\tilde{\\boldsymbol x} - \\boldsymbol b||_2  \\\\\n        \\min_{\\tilde{\\boldsymbol x}} \\quad& ||\\tilde{\\boldsymbol x}||_2\n      \\end{align*}\n      $$\n      \n      $$\n      \\tilde{\\boldsymbol x} = \\boldsymbol A^+ \\boldsymbol b\n      $$"
+        ]
     },
     "Linear_Space": {
         "define": "$$\n(\\mathbb R, V, +, \\cdot)  \\tag{Linear Space}\n$$\nLinear Space is a special [module](./Module.md) including non empty set $V$ with addition and scalar multiplication, and satisfying:\n\n- Additive Closure: $x+y \\in V$\n- Multiplication Closure: $k x \\in V$\n- Identity element of vector addition: $x+0=x$\n- Inverse elements of vector addition: $x+(-x) = 0$\n- Identity element of scalar multiplication: $1x = x$\n- Commutativity of vector addition: $x+y = y+x$\n- Associativity of vector addition: $x+(y+z) = (x+y) +z$\n- Compatibility of scalar multiplication with field multiplication: $a(bx) = (a b)x$\n- Distributivity of scalar multiplication with respect to vector addition: $a(x+y) = a x + a y$\n- Distributivity of scalar multiplication with respect to field addition: $(a+b)x = ax+bx$",
-        "kids": [
-            "Projective_Space",
-            "Linear_Transformation",
-            "Normed_Linear_Space",
-            "Affine_Space"
-        ],
+        "kids": {
+            "Affine_Space": "",
+            "Linear_Transformation": "",
+            "Normed_Linear_Space": "",
+            "Projective_Space": ""
+        },
         "name": "Linear_Space",
-        "parents": [
-            "Module"
-        ],
-        "properties": "#"
+        "parents": {
+            "Module": ""
+        },
+        "properties": [
+            "### Representation\n\n#### Vector\n\n##### Define\n\n$$\n\\mathbb R^{n}, n \\in \\mathbb Z\n$$\nA vector is a one-dimensional array of numbers. It can be represented as a row or a column.\n\n#### Matrix \n\n##### Define\n\n$$\n\\mathbb R^{m \\times n}, m, n \\in \\mathbb Z\n$$\n\n$$\n\\boldsymbol A = \\left(\\begin{matrix} a_{11} & \\cdots & a_{1n} \\\\ \\vdots & \\ddots & \\vdots \\\\ a_{m1} & \\cdots & a_{mn} \\end{matrix}\\right)\n$$\n\n\n\nA matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns.\n\n##### Operations\n\n- Addition:\n\n$$\n\\boldsymbol A_{m \\times n} + \\boldsymbol B_{m \\times n} = \\boldsymbol C_{m \\times n}  \\tag{addition}\n$$\n$$\nc_{ij} = a_{ij} + b_{ij}\n$$\n\n- Scalar multiplication,\n\n$$\nk \\boldsymbol A_{m \\times n} = (k a_{ij})_{m \\times n}  \\tag{scalar multiplication}\n$$\n\n\n  - multiplication\n    $$\n    \\boldsymbol A_{m \\times n} \\times \\boldsymbol B_{n \\times p} = \\boldsymbol C_{m \\times p}\n    $$\n    $$\n    c_{ij} = \\sum_{k \\in 1:n} a_{ik} b_{kj}\n    $$\n\n  - multiplication of elements, Hadamard product\n    $$\n    \\boldsymbol A_{m \\times n} \\odot \\boldsymbol B_{m \\times n} = \\boldsymbol C_{m \\times n}\n    $$\n    $$\n    c_{ij} = a_{ij} b_{ij}\n    $$\n\n### Linear Independence & Linear Dependence\n\nFor a vector group $(\\boldsymbol x_1, ... , \\boldsymbol x_n)$, we said  \n\nLinear Independence,\n$$\n\\nexists\\ \\boldsymbol a \u2260 \\boldsymbol 0 \\Rightarrow \\sum_{i=1}^n a_i \\boldsymbol x_i = \\boldsymbol 0\n$$\n\nLinear Dependence,\n$$\n\\exists\\ \\boldsymbol a \u2260 \\boldsymbol 0 \\Rightarrow \\sum_{i=1}^n a_i \\boldsymbol x_i = \\boldsymbol 0\n$$\n\n### Dimension  \nIn linear space, the maximum number of vectors contained in a linearly independent vector group.\n\n### Base \n\n#### Define\n\n$$\n\\begin{align*}\n  \\boldsymbol v \n  &= \\sum_{i=1}^n a_i \\boldsymbol x_i \\quad, \\forall \\boldsymbol v \\in V  \\\\\n  &= \\boldsymbol X \\boldsymbol a\n\\end{align*}\n$$\nBase is a linearly independent vector group $\\boldsymbol X = (\\boldsymbol x_1, ... , \\boldsymbol x_n)$, All vectors in the linear space are linear combinations of the vector group.\n\n- $\\boldsymbol x_i$: Base vector\n- $a_i$: coordinate\n\n#### Property \n\n- Base Transformation & Coordinate Transformation  \n  Base transformation, is a transformation between new bases $\\boldsymbol Y$ and old bases $\\boldsymbol X$, where $\\boldsymbol C$ is the Transformation Matrix.\n  $$\n  \\boldsymbol Y = \\boldsymbol X \\boldsymbol C\n  $$\n  \n  Coordinate Transformation, is solving a new coordinate $\\boldsymbol a_y$ in new base $\\boldsymbol Y$ from old coordinate $\\boldsymbol a_x$ in old base $\\boldsymbol X$.\n  $$\n  \\boldsymbol a_x = \\boldsymbol C \\boldsymbol a_y\n  $$\n  \n  \n  - Proof\n    $$\n    \\begin{align*}\n      \\boldsymbol v \n      &= \\boldsymbol X \\boldsymbol a_x  \\\\\n      &= \\boldsymbol Y \\boldsymbol a_y  \\\\ \n      &= \\boldsymbol X \\boldsymbol C \\boldsymbol a_y  \\\\ \n      \\Rightarrow \\boldsymbol a_x &= \\boldsymbol C \\boldsymbol a_y\n    \\end{align*}\n    $$\n\n  - Property  \n    The base transformation matrix $\\boldsymbol C$ is nonsingular.\n\n- Span\n  $$\n  Span(\\boldsymbol x_1,...,\\boldsymbol x_n) = \\left\\{\\boldsymbol v | \\boldsymbol v = \\sum_{i=1}^n a_i \\boldsymbol x_i \\right\\}\n  $$\n  A representation of a linear space given by a basis vector.\n\n### Linear Subspace\n\nA nonempty set in a linear space that is closed to linear operations.\n\n- \u52a0\u6cd5\u5c01\u95ed $x,y\\in V_1 ,\\quad x+y \\in V_1$\n- \u6570\u4e58\u5c01\u95ed $x \\in V_1, k x \\in V_1$\n\n### [Linear Transformation](./Linear_Transformation.md)"
+        ]
     },
     "Linear_Transformation": {
         "define": "$$\nT(k \\boldsymbol x + l \\boldsymbol y) = k(T \\boldsymbol x) + l(T \\boldsymbol y)\n$$\nLinear Transformation is a [mapping](./Function.md) $T: V \\to V$ for a [linear space](./Linear_Space.md) $V$, $\\forall \\boldsymbol x \\in V$ there is a unique $\\boldsymbol y \\in V$ corresponding to it, and the linear condition is satisfied.\n\n<img src=\"./assets/transformations-1694683776868-3.svg\" alt=\"transformations-1694683776868-3\" style=\"zoom: 13%;\" />\n\nWe can represent Linear Transformation by matrix $\\boldsymbol A$ and matrix multilpy, where the matrix $\\boldsymbol A$ can be obtained by the unit base vectors $(\\boldsymbol e_1, ..., \\boldsymbol e_n)$ after transformation, \n$$\nT(\\boldsymbol x) = \\boldsymbol A \\boldsymbol x\n$$\n\n$$\n\\boldsymbol A = (T(\\boldsymbol e_1), ..., T(\\boldsymbol e_n))\n$$\n\n- Proof\n  We assume $\\boldsymbol A = (T(\\boldsymbol e_1), ..., T(\\boldsymbol e_n))$, then \n\n  Proof $T(\\boldsymbol e_i) = \\boldsymbol A \\boldsymbol e_i$, \n  $$\n  \\begin{align*}\n    T(\\boldsymbol e_i) \n    &= (T(\\boldsymbol e_1), ..., T(\\boldsymbol e_n)) (0,...,0,1_i,0,...,0)^T  \\\\\n    &= \\boldsymbol A \\boldsymbol e_i\n  \\end{align*}\n  $$\n\n  Proof $T(\\boldsymbol x) = \\boldsymbol A \\boldsymbol x$,   \n  $$\n  \\begin{align*}\n    \\boldsymbol x \n    &= \\sum_{i=1}^{\\dim} x_i \\boldsymbol e_i \\\\\n    \\Rightarrow T(\\boldsymbol x)\n    &= T \\left(\\sum_{i=1}^{\\dim} x_i \\boldsymbol e_i \\right)  \\\\\n    &= \\sum_{i=1}^{\\dim} x_i T(\\boldsymbol e_i)  \\tag{Linear Transformation}\\\\\n    &= \\sum_{i=1}^{\\dim} x_i \\boldsymbol A \\boldsymbol e_i   \\tag{$T(\\boldsymbol e_i) = \\boldsymbol A \\boldsymbol e_i$}\\\\\n    &= \\boldsymbol A \\boldsymbol E \\boldsymbol x  \\\\\n    &= \\boldsymbol A \\boldsymbol x\n  \\end{align*}\n  $$",
-        "kids": [],
+        "kids": {},
         "name": "Linear_Transformation",
-        "parents": [
-            "Linear_Space",
-            "Function"
-        ],
-        "properties": "#"
+        "parents": {
+            "Function": "",
+            "Linear_Space": ""
+        },
+        "properties": [
+            "### Range \n\n$$\nRange(T)=\\{T x | x \\in V\\}\n$$\nIn linear space,  \nthe set of results of all vectors after linear transformation;   \nthe linear space after linear transformation.\n\n- Rank\n  $$\n  rank(A) = \\dim Range(A) = \\dim Range(A^T)\n  $$\n  The dimension of space after transformation.\n  The dimension of the range.\n\n### Null Space\n\n$$\nNull(T) = \\{x | T x = 0\\}\n$$\nIn linear space, the set of all original vectors that are linearly transformed into zero vectors.\n\n- $\\dim V = \\dim Range(A) + \\dim Null(A)$  \n  \u53d8\u6362\u524d\u7ebf\u6027\u7a7a\u95f4\u7ef4\u6570 = \u503c\u57df\u7ef4\u6570 + \u96f6\u7a7a\u95f4\u7ef4\u6570. \n\n\n### Invariant Subspace\n\n$$\n\\forall x \\in V_1, V_1 \\subseteq V, T x \\in V_1\n$$\n\n### Eigenvalues & Eigenvectors\n\n- Define\n  $$\n  \\boldsymbol A \\boldsymbol x = \u03bb \\boldsymbol x\n  $$\n  \n  - $x$: Eigenvectors, a vector whose direction does not change before and after linear transformation;  \n  - $\u03bb$: Eigenvalues, proportion of length change of eigenvector after linear transformation.\n\n- Property\n  * Eigenvalue Decomposition & Singular Value Decomposition\n  \n  - Characteristic polynomial\n    $$\n    \\varphi(\u03bb) = |\u03bb I - A| = \u03bb^n + a_1 \u03bb^{n-1} + ... + a_{n-1} \u03bb + a_n\n    $$\n\n  - Theorem -- Hamilton-Cayley Theorem\n    $$\n    \\varphi(A) = A^n + a_1 A^{n-1}+ ... +a_{n-1} A + a_n I = 0\n    $$\n    Matrix is the root of its characteristic polynomial.\n\n### Moore-Penrose Inverse\n\n- Define  \n  The solution satisfying the following equation,\n  $$\n    \\left\\{\\begin{matrix}\n      A X A = A\\\\\n      X A X = X\\\\\n      (A X)^H = A X\\\\\n      (X A)^H = A X\\\\\n    \\end{matrix}\\right.\n  $$\n  When the rank of cols is full, $A^+ = (A^H A)^{-1} A^H$   \n  When the rank of rows is full,  $A^+ = A^H (A A^H)^{-1}$\n\n- Property\n  - $rank(A) = rank(A^H A) = rank(A A^H)$\n  - \u6ee1\u79e9\u5206\u89e3\u7b97\u5e7f\u4e49\u9006 $A^+ = G^H (F^H A G^H)^{-1} F^H$\n\n### Similarity\n\n- Define  \n  $A$ is similar to $B$, $A ~ B$:\n  $$\n  \\exists \\text{Nonsingular Matrix}P \\Rightarrow B = P^{-1} A P\n  $$\n\n- Property \n  - $A ~ A$ \n  - $A ~ B \\Leftrightarrow B ~ A$ \n  - $A ~ B, B ~ C \\Leftrightarrow A ~ C$\n  - The eigenvalues and eigenvectors of similar matrices are the same.\n  - The trace of similar matrix is the same.\n\n### Transformation of linear transformation matrix under different bases\n\n$$\nA_Y = C^{-1} A_X C \\quad ; Y = C X\n$$\n\n- Proof\n  $$\n  \\begin{align*}\n    T Y &= Y A_Y     \\tag{Define}\\\\ \n    T X C &= X C A_Y   \\tag{$ Y = X C $}\\\\\n    X A_X C &= X C A_Y   \\tag{$ T X = X A_X $}\\\\\n    A_X C &= C A_Y  \\\\\n    A_Y &= C^{-1} A_X C\n  \\end{align*}\n  $$"
+        ]
     },
     "Logic": {
-        "define": null,
-        "kids": [],
+        "define": "",
+        "kids": {},
         "name": "Logic",
-        "parents": [],
-        "properties": "- Consistency: A system of axioms is consistent, and both if and only if there is no proposition and its negation can be proven from the axioms of that system.\n\n- Completeness: A system of axioms is complete if and only if every true proposition of the system can be proven from its axioms.\n\n\n#"
+        "parents": {
+            "root": ""
+        },
+        "properties": [
+            "- Consistency: A system of axioms is consistent, and both if and only if there is no proposition and its negation can be proven from the axioms of that system.\n\n- Completeness: A system of axioms is complete if and only if every true proposition of the system can be proven from its axioms.\n\n\n### G\u00f6del's incompleteness theorems\n\n- First Incompleteness Theorem: Any consistent formal system F within which a certain amount of elementary arithmetic can be carried out is incomplete; i.e., there are statements of the language of F which can neither be proved nor disproved in F.\n- Second Incompleteness Theorem: For any consistent system F within which a certain amount of elementary arithmetic can be carried out, the consistency of F cannot be proved in F itself."
+        ]
     },
     "Manifold": {
         "define": "Manifold $M$ is a second countable [Hausdorff space](./Topological_Space.md) that is locally homeomorphic to a [Euclidean space](./Euclidean_Space.md).\n\n- Hausdorff, $\\forall x, y \\in M$, there exists open neighborhoods $U_x, U_y \\subseteq M$ with $x \\in U_x, y \\in U_y$ and $U_x \\cap U_y = \\emptyset$.   \n- Second countable, there exits a countable collection $(U_n)_{n \\in \\mathbb N}$ of open set in $M$ such that for all $V \\subseteq M$ open, and $p \\in V$, there is some $n$ such that $p \\in U_n \\subseteq V$\n- Locally homeomorphic to a Euclidean space, every point has a neighborhood $U$ homeomorphic $\\phi: U \\to V$ to an open subset $V$ of the Euclidean space $\\mathbb R^n$ for some nonnegative integer $n$.",
-        "kids": [
-            "Lie_Group"
-        ],
+        "kids": {
+            "Lie_Group": ""
+        },
         "name": "Manifold",
-        "parents": [
-            "Topological_Space",
-            "Euclidean_Space"
-        ],
-        "properties": "#"
+        "parents": {
+            "Euclidean_Space": "",
+            "Topological_Space": ""
+        },
+        "properties": [
+            "### Geodesic\n\nA geodesic is a curve representing in some sense the shortest path between two points in a Riemannian manifold."
+        ]
     },
     "Markov_Process": {
         "define": "A [stochastic process](./Stochastic_Process.md) where the future state depends only on the current state and not on any past states.",
-        "kids": [],
+        "kids": {},
         "name": "Markov_Process",
-        "parents": [
-            "Stochastic_Process"
-        ],
-        "properties": null
+        "parents": {
+            "Stochastic_Process": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Martingale": {
         "define": "Martingale is a discrete-time [stochastic process](./Stochastic_Process.md) that satisfies for any time $n$,\n$$\n\\mathbb E(|X_n|) < \\infty\n$$\n$$\n\\mathbb E(X_{n+1} \\ |\\ X_1, ..., X_n) = X_n\n$$\n\nThe second condition means that the conditional expected value of the next observation, given all the past observations, is equal to the most recent observation.",
-        "kids": [],
+        "kids": {},
         "name": "Martingale",
-        "parents": [
-            "Stochastic_Process"
-        ],
-        "properties": "- Doob-Meyer decomposition\n\n\n#"
+        "parents": {
+            "Stochastic_Process": ""
+        },
+        "properties": [
+            "- Doob-Meyer decomposition\n\n\n### Stopping Time\n\n- Define\n  Stopping Time $\\tau: \\Sigma \\to \\bar T, \\bar T = T \\cup \\{\\infty\\}$ is a random variable defined on the filtered probability space $(\\Omega, \\mathcal F, (\\mathcal F_n)_{n \\in \\mathbb N}, P)$ with value in $T = [0, +\\infty)$, such that \n  $$\n  \\{\\tau \\le t\\} \\in \\mathcal F_t \\quad, \\forall t \\in T\n  $$\n\n- Property\n\n  - Optional stopping theorem\n\n    Consider a stochastic process $\\{X_t\\}$ and a stopping time $\\tau$ (a random variable that represents the time at which some event of interest occurs). The optional stopping theorem provides conditions under which\n    $$\n    \\mathbb E(X_\\tau) = \\mathbb E(X_0)\n    $$"
+        ]
     },
     "Measurable_Space": {
         "define": "A Measurable Space is a pair $(E, \\mathcal E)$, where $E$ is a set and $\\mathcal E$ is its [$\\sigma$-algebra](./Power_Set.md).\n\nA Measure Space is a pair $(E, \\mathcal E, \\mu)$, where $E$ is a set and $\\mathcal E$ is its $\\sigma$-algebra, $\\mu$ is a Measure on $(E, \\mathcal E)$",
-        "kids": [
-            "Probability_Space"
-        ],
+        "kids": {
+            "Probability_Space": ""
+        },
         "name": "Measurable_Space",
-        "parents": [
-            "Power_Set"
-        ],
-        "properties": null
+        "parents": {
+            "Power_Set": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Metric_Space": {
         "define": "A metric space is a pair $(X, d)$ where $X$ is a set and $d: X \\times X \\to \\mathbb R$  is a metric on $X$ satisfying the following axioms $\\forall x, y, z \\in X$:\n\n- Non-negativity, with equality if and only if $x = y$\n  $$\n  d(x, y) \\ge 0\n  $$\n- Symmetry\n  $$\n  d(x, y) = d(y, x)\n  $$\n- Triangle Inequality\n  $$\n  d(x, y) \\le d(x, z) + d(z, y)\n  $$\n\nMetric Space is a type of [Topological Space](./Topological_Space.md).",
-        "kids": [
-            "Hilbert_Space",
-            "Topological_Space"
-        ],
+        "kids": {
+            "Hilbert_Space": "",
+            "Topological_Space": ""
+        },
         "name": "Metric_Space",
-        "parents": [
-            "Topological_Space"
-        ],
-        "properties": "- Lipschitz Equivalent  \n  Metrics $d, d'$ on $X$ are said to be Lipschitz Equivalent if there are positive constants $A, B$ and $\\forall x, y \\in X$ such that\n  $$\n  A d(x, y) \\le d'(x, y) \\le B d(x, y)\n  $$\n\n- Convergence of Sequence  \n  A sequence $x_n \\in X$ is said to be converge to $x$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists K)(\\forall k > K) d(x_k, x) < \\epsilon\n  $$\n\n- Complete Metric Space  \n  A metric space $(X, d)$ is complete if all Cauchy sequences converge to a point in $X$. Cauchy sequence is a sequence satisfying \n  $$\n  (\\forall \\epsilon > 0)(\\exists N)(\\forall n, m \\ge N) d(x_n, x_m) < \\epsilon\n  $$\n\n- Continuity  \n  For metric spaces $(X, d), (X', d')$, a function $f: X \\to X'$ is continuous at $y \\in X$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d'(f(x),f(y)) < \\epsilon\n  $$\n\n- Uniform Continuity\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d(f(x),f(y)) < \\epsilon\n  $$\n\n- Lipschitz Continuity  \n  $$\n  d'(f(x), f(y)) \\le K d(x, y)\n  $$\n\n- Lipschitz Continuity $\\Rightarrow$ Uniform Continuity $\\Rightarrow$ Continuity\n\n- Contraction Mapping  \n  A mapping $f: X \\to X$ is contraction if there exists $\\lambda \\in [0, 1)$ such that\n  $$\n  d(f(x), f(y)) \\le \\lambda d(x, y)\n  $$\n\n- Contraction Mapping Theorem , Banach Fixed-point Theorem  \n  For a complete matric space, if $f: X \\to X$ is a contraction, then $f$ has a unique fixed point $x^* \\in X$,\n  $$\n  f(x^*) = x^*,\\quad \\lim\\limits_{n \\to \\infty} f^n(x_0) = x^* ,\\forall x_0 \\in X\n  $$"
+        "parents": {
+            "Topological_Space": ""
+        },
+        "properties": [
+            "- Lipschitz Equivalent  \n  Metrics $d, d'$ on $X$ are said to be Lipschitz Equivalent if there are positive constants $A, B$ and $\\forall x, y \\in X$ such that\n  $$\n  A d(x, y) \\le d'(x, y) \\le B d(x, y)\n  $$\n\n- Convergence of Sequence  \n  A sequence $x_n \\in X$ is said to be converge to $x$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists K)(\\forall k > K) d(x_k, x) < \\epsilon\n  $$\n\n- Complete Metric Space  \n  A metric space $(X, d)$ is complete if all Cauchy sequences converge to a point in $X$. Cauchy sequence is a sequence satisfying \n  $$\n  (\\forall \\epsilon > 0)(\\exists N)(\\forall n, m \\ge N) d(x_n, x_m) < \\epsilon\n  $$\n\n- Continuity  \n  For metric spaces $(X, d), (X', d')$, a function $f: X \\to X'$ is continuous at $y \\in X$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d'(f(x),f(y)) < \\epsilon\n  $$\n\n- Uniform Continuity\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d(f(x),f(y)) < \\epsilon\n  $$\n\n- Lipschitz Continuity  \n  $$\n  d'(f(x), f(y)) \\le K d(x, y)\n  $$\n\n- Lipschitz Continuity $\\Rightarrow$ Uniform Continuity $\\Rightarrow$ Continuity\n\n- Contraction Mapping  \n  A mapping $f: X \\to X$ is contraction if there exists $\\lambda \\in [0, 1)$ such that\n  $$\n  d(f(x), f(y)) \\le \\lambda d(x, y)\n  $$\n\n- Contraction Mapping Theorem , Banach Fixed-point Theorem  \n  For a complete matric space, if $f: X \\to X$ is a contraction, then $f$ has a unique fixed point $x^* \\in X$,\n  $$\n  f(x^*) = x^*,\\quad \\lim\\limits_{n \\to \\infty} f^n(x_0) = x^* ,\\forall x_0 \\in X\n  $$"
+        ]
     },
     "Mobius_Function": {
         "define": "$$\n\\mu(n) = \\left\\{\\begin{matrix}\n  1 & n = 1\\\\\n  (-1)^k & n = \\prod\\limits_{i=1}^k p_i\\ (p_i \\text{ is prime})\\\\\n  0 & other.\n\\end{matrix}\\right.  \\tag{M\u00f6bius Function}\n$$\n\nM\u00f6bius Function $f: \\mathbb Z^+ \\to \\{-1, 0, 1\\}$ is defined above. For positive integers without square factors, if $n$ has an odd number of different prime factors, then $\\mu(n) = -1$; if there are even numbers of of different prime factors, then $\\mu(n)=1$.",
-        "kids": [],
+        "kids": {},
         "name": "Mobius_Function",
-        "parents": [
-            "Integer_Ring"
-        ],
-        "properties": "- M\u00f6bius Function is a multiplicative function.\n- 1\n  $$\n  \\sum\\limits_{d|n} \\mu(d) = \\epsilon(n) = \\left\\{\\begin{matrix}\n    1 & n=1 \\\\\n    0 & n \\neq 1\\\\\n  \\end{matrix}\\right.\n  $$\n\n#"
+        "parents": {
+            "Integer_Ring": ""
+        },
+        "properties": [
+            "- M\u00f6bius Function is a multiplicative function.\n- 1\n  $$\n  \\sum\\limits_{d|n} \\mu(d) = \\epsilon(n) = \\left\\{\\begin{matrix}\n    1 & n=1 \\\\\n    0 & n \\neq 1\\\\\n  \\end{matrix}\\right.\n  $$\n\n### M\u00f6bius Inversion \n\n$$\ng(n) = \\sum_{d|n} f(d) \\quad\\Leftrightarrow\\quad f(n) = \\sum_{d|n} \\mu(d) g\\left(\\frac{n}{d}\\right)  \\tag{M\u00f6bius Inversion}\n$$\n$$\nf * \\boldsymbol 1 = g  \\quad\\Leftrightarrow\\quad f = g * \\mu\n$$\n\nWhere, $*$ is dirichlet convolution."
+        ]
     },
     "Module": {
         "define": "$$\n(R, M, +, \\cdot)\n$$\n\nSuppose that $R$ is a [ring](./Ring.md), and $1$ is its multiplicative identity. A left $R$-module $M$ consists of an abelian group $(M, +)$ and an operation $\\cdot$: $R \u00d7 M \\to M$ such that $\\forall r, s \\in R$ and $x, y \\in M$, we have\n1. $\\forall r, s \\in R$ \u548c $x, y \\in M$ \u6709 $(r + s) \\cdot x = r \\cdot x + s \\cdot x$\n2. $\\forall r \\in R$ \u548c $x, y \\in M$ \u6709 $r \\cdot (x + y) = r \\cdot x + r \\cdot y$\n3. $\\forall r, s \\in R$ \u548c $x \\in M$ \u6709 $(rs) \\cdot x = r \\cdot (s \\cdot x)$\n4. If ring $R$ \u6709\u4e00\u4e2a\u5355\u4f4d\u5143 $1_R$\uff0c\u90a3\u4e48\u5bf9\u6240\u6709 $x \\in M$ \u6709 $1_R \\cdot x = x$",
-        "kids": [
-            "Linear_Space"
-        ],
+        "kids": {
+            "Linear_Space": ""
+        },
         "name": "Module",
-        "parents": [
-            "Ring"
-        ],
-        "properties": null
+        "parents": {
+            "Ring": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Moment": {
         "define": "K-order Moment & K-order Central Moment:\n$$\n\\begin{align*}\n  \\mathbb E(X^k) &= \\sum_i x_i^k \\mathbb P_X(x_i)  \\tag{Moment (Discrete)}  \\\\\n    &= \\int_{-\\infty}^\\infty x^k f_X(x) \\mathrm d x  \\tag{Moment (Continuous)}  \\\\\n  \\mathbb E((X-\\mu_x)^k) &= \\sum_i (x_i-\\mu_x)^k \\mathbb P_X(x_i)  \\tag{Central Moment (Discrete)}  \\\\\n    &= \\int_{-\\infty}^\\infty (x-\\mu_x)^k f_X(x) \\mathrm d x  \\tag{Central Moment (Continuous)}\n\\end{align*}\n$$\n\nSymbol: $\\mu_x = \\mathbb E(X)$",
-        "kids": [],
+        "kids": {},
         "name": "Moment",
-        "parents": [
-            "Random_Variable"
-        ],
-        "properties": "#"
+        "parents": {
+            "Random_Variable": ""
+        },
+        "properties": [
+            "### Moment Generating Function\n\n#### Define\n\nLet $X$ be a random variable with CDF $F_X$, the moment generating function $M_X(t)$ of $X$ (or $F_X$) is \n$$\nM_X(t) = \\mathbb E(e^{tX})\n$$\n\n#### Property\n\n- $M_X(t)$ always exists and is equal to 1.\n\n- The moment-generating function is so named because it can be used to find the moments of the distribution. By using the moment generating function, we can calculate the various moments of the random variable $X$. Specifically, the $n$-th moment of $X$ can be obtained by the nth derivative of the moment generating function at $t=0$.\n  $$\n  E(X^n) = M_X^{(n)}(0)\n  $$\n\n- Differentiating $M_X(i)$ $i$ times with respect to $t$ and setting $t=0$, we obtain the i-th moment.\n  $$\n  \\begin{align*}\n  M_X(t) &= \\mathbb E(e^{tX}) \\\\\n   &= 1 + t E(X) + \\frac{t^2 E(X^2)}{2!} + \\cdots + \\frac{t^n E(X^n)}{n!} + \\cdots  \\\\\n   &= 1 + t m_1 + \\frac{t^2 m_2}{2!} + \\cdots + \\frac{t^n m_n}{n!} + \\cdots  \\\\\n  \\end{align*}\n  $$\n\n- If $X$ is a continuous random variable, the following relation between its moment-generating function $M_X(t)$ and the two-sided Laplace transform of its probability density function $f_X(x)$ holds:\n  $$\n  M_X(t) = \\mathcal L\\{f_X\\}(-t)\n  $$\n  since the PDF's two-sided Laplace transform is given as\n  $$\n  \\mathcal L\\{f_X\\}(s) = \\int_{-\\infty}^{+\\infty} e^{-sx} f_X(x) dx\n  $$\n  and the moment-generating function's definition expands (by the law of the unconscious statistician) to\n  $$\n  M_X(t) =  \\mathbb E(e^{tX}) = \\int_{-\\infty}^{+\\infty} e^{-tx} f_X(x) dx\n  $$"
+        ]
     },
     "Natural_Number": {
         "define": "$$\n\\mathbb N\n$$\n\nNatural numbers are formally defined by the Peano axioms, which are a set of axioms that describe the properties of natural numbers. ([Set](./Set.md))\n\n- $0$ is a natural number.\n- Every natural number has a successor in the natural numbers.\n- $0$ is not the successor of any natural number.\n- If the successor of two natural numbers is the same, then the two original numbers are the same.\n- If a set contains $0$ and the successor of every number is in the set, then the set contains the natural numbers. (Mathematical Induction)",
-        "kids": [
-            "Integer_Ring"
-        ],
+        "kids": {
+            "Integer_Ring": ""
+        },
         "name": "Natural_Number",
-        "parents": [
-            "Set"
-        ],
-        "properties": null
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Normed_Linear_Space": {
         "define": "$$\n(X, ||\u00b7||)\n$$\nThe [Linear Space](./Linear_Space.md) of Norm is defined.\n\nSymbol:\n- $X$: linear space\n- $||\u00b7||$:  Norm",
-        "kids": [
-            "Inner_Poduct_Space"
-        ],
+        "kids": {
+            "Inner_Poduct_Space": ""
+        },
         "name": "Normed_Linear_Space",
-        "parents": [
-            "Linear_Space"
-        ],
-        "properties": null
+        "parents": {
+            "Linear_Space": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Ordered_Set": {
         "define": "An ordered set, or more formally, a partially ordered set (poset), is a pair $(S, \\le)$ consisting of a set $S$ and  a binary relation $\\le$ that satisfies the following properties for all $a, b, c \\in S$:\n\n1. Reflexivity: $a \\le a$.\n2. Antisymmetry: If $a \\le b$ and $b \\le a$, then $a = b$.\n3. Transitivity: If $a \\le b$ and $b \\le c$, then $a \\le c$.",
-        "kids": [],
+        "kids": {},
         "name": "Ordered_Set",
-        "parents": [
-            "Set"
-        ],
-        "properties": "#"
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            "### Permutation\n\n- Define  \n  Permutation, is the arrangement of $k$ elements from a set of $n$ elements in a particular order. \n\n  The number of Conbination and Permutation Subsets\n  $$A(n, k) = \\frac{n!}{(n - k)!}  \\tag{Permutation}$$\n\n- Property\n  * Full Permutation\n    - Define  \n      Full Permutation refers to all possible permutations of all elements in a sequence.  \n\n    - Problem: Generate Full Permutation\n      $$\\begin{align*}\n        f(\\{a_i | i\\in 1:n\\}) \n        &= \\{(a_1, a_2, ..., a_n), (a_2, a_1, ..., a_n), (a_n, a_{n-1}, ..., a_1)\\}  \\\\\n        &= \\cup_{i=1}^n (\\{(a_i)\\} \u00d7 f(\\{a_j\\ |\\ j \u2260 i, j\\in 1:n\\}))  \\tag{$\u00d7$: \u5e8f\u5217\u5408\u5e76}  \\\\\n        f(\\{a_1\\}) &= \\{(a_1)\\}  \\tag{initial}  \\\\\n      \\end{align*}$$\n      \n    - Property\n      * Cantor Expansion  \n        - Define  \n          Cantor expansion is a bijection from a permutation sequence $a$ to a natural number $y$ that refer to the index of sequence in full permutation ordered by dictionary order. Where $f(a_i)$ is the number of elements smaller than $a_i$ and not appearing in $a_n:a_i$.\n          $$y = \\sum\\limits_{i=1}^n f(a_i) (i-1)!$$"
+        ]
     },
     "Polyhedron": {
         "define": "$$\n\\{\\boldsymbol x \\ |\\ \\boldsymbol a_j^T \\boldsymbol x \u2264 b_j, j = 1,...,m,\\ \\boldsymbol c_j^T \\boldsymbol x = d_j, j = 1,...,p\\}\n$$\n\nPolyhedron is the intersection of a finite hyperplane and a half space.",
-        "kids": [
-            "Simplex"
-        ],
+        "kids": {
+            "Simplex": ""
+        },
         "name": "Polyhedron",
-        "parents": [
-            "Affine_Space"
-        ],
-        "properties": "- Polyhedron is a convex set."
+        "parents": {
+            "Affine_Space": ""
+        },
+        "properties": [
+            "- Polyhedron is a convex set."
+        ]
     },
     "Polynomial_Function": {
         "define": "$$\\begin{align*}\n  f(x) &= \\sum_{i=0}^{n} a_i x^i  \\tag{one variable}  \\\\\n  f(\\boldsymbol x) &= \\sum_{\\boldsymbol i=(0,...,0)_n, i_j \\le i_k, \\forall j \\le k}^{(\\dim,...,\\dim)_n} \\left(a_{\\boldsymbol i} \u00b7 \\prod_{i_j \\in \\boldsymbol i, x_0 = 1}x_{i_j} \\right)  \\tag{multi-variate}  \n\\end{align*}$$\n\nPolynomial function is a kind of [function](./Function.md). ()",
-        "kids": [
-            "Forth-Order_Function",
-            "Quadratic_Function",
-            "Linear_Function",
-            "Cubic_Function"
-        ],
+        "kids": {
+            "Cubic_Function": "",
+            "Forth-Order_Function": "",
+            "Linear_Function": "",
+            "Quadratic_Function": ""
+        },
         "name": "Polynomial_Function",
-        "parents": [
-            "Function"
-        ],
-        "properties": "- For a univariate $N$-th degree equation, there is no root-finding formula composed of finite addition, subtraction, multiplication, division, and square root operations $(+, -, \\times, /, \\sqrt{\\ })$ from the fifth degree onwards.\n\n* Fundamental Theorem of Algebra\n  Every non-constant single-variable polynomial with complex coefficients has at least one complex root. \n  \n  Theorem states the field of complex numbers is algebraically closed."
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            "- For a univariate $N$-th degree equation, there is no root-finding formula composed of finite addition, subtraction, multiplication, division, and square root operations $(+, -, \\times, /, \\sqrt{\\ })$ from the fifth degree onwards.\n\n* Fundamental Theorem of Algebra\n  Every non-constant single-variable polynomial with complex coefficients has at least one complex root. \n  \n  Theorem states the field of complex numbers is algebraically closed."
+        ]
     },
     "Power_Set": {
         "define": "$$\nP(S) = \\{X \\ |\\ X \\subseteq S\\}  \\tag{Power Set}\n$$\nThe Power Set of a set $S$ is the set of all subset of $S$, including $\\emptyset$ and $S$ itself.\n\n<img src=\"./assets/Hasse_diagram_of_powerset_of_3.svg\" alt=\"Hasse_diagram_of_powerset_of_3\" style=\"zoom: 40%;\" />",
-        "kids": [
-            "Topological_Space",
-            "Measurable_Space"
-        ],
+        "kids": {
+            "Measurable_Space": "",
+            "Topological_Space": ""
+        },
         "name": "Power_Set",
-        "parents": [
-            "Set"
-        ],
-        "properties": "- The number of elements in the power set of a set $S$ is $2^n$, where $n$ is the number of elements in the set $S$.\n  $$\n  |P(S)| = 2^{|S|}\n  $$"
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            "- The number of elements in the power set of a set $S$ is $2^n$, where $n$ is the number of elements in the set $S$.\n  $$\n  |P(S)| = 2^{|S|}\n  $$"
+        ]
     },
     "Prime": {
         "define": "$$\n\\nexists a \\in (\\mathbb N - \\{1, p\\}), \\text{ let } a | p  \\tag{Prime}\n$$\nPrime is a number $p$ that can only be divided by $1$ and itself.",
-        "kids": [],
+        "kids": {},
         "name": "Prime",
-        "parents": [
-            "Division_with_Remainder"
-        ],
-        "properties": "#"
+        "parents": {
+            "Division_with_Remainder": ""
+        },
+        "properties": [
+            "### Fundamental Theorem of Arithmetic\nAny integer $n$ greater than $1$ can be uniquely expressed in the form of prime $p_i$ product.   \n$$\nn = \\prod_i p_i^{\\alpha_i} \\quad n \\in \\mathbb Z, n > 1\n$$\n\n### Fermat's Little Theorem\n\n$$\na^{p-1} \\equiv 1 \\mod p\n$$\nWhere $p$ is a prime and $a$ is an any integer that is not a multiple of $p$.\n\n- Property\n  $$\n  \\frac{a}{b} \\mod p \\equiv a \\times b^{p-2} \\mod p\n  $$\n\n  - Proof\n\n      $$\n      \\frac{a}{b} \\mod p = a \\times b^{-1} \\mod p  \\\\\n      b^{p-1} \\equiv 1 \\mod p \\\\\n      b \\times b^{p-1} \\equiv 1 \\mod p  \\\\\n      \\Rightarrow \\quad b^{-1} \\equiv b^{p-2}  \\mod p \\\\\n      \\Rightarrow \\quad \\frac{a}{b} \\mod p \\equiv a \\times b^{p-2} \\mod p\n      $$\n\n  ### Goldbach's Conjecture\n  \n  every even natural number greater than 2 is the sum of two prime numbers.\n  $$\n  \\forall n \\in \\mathbb{Z}^+ \\, (\\, n > 2 \\, \\land \\, \\text{even}(n) \\, ) \\, \\exists \\, p, q \\in \\text{Primes} \\, (\\, n = p + q \\, )\n  $$"
+        ]
     },
     "Probability_Space": {
         "define": "$$\n<\u03a9, \\mathcal F, \\mathbb P>  \\tag{Probability Space}\n$$\nProbability Space is a [measure space](./Measurable_Space.md) including, \n\n- $\u03a9$: sample space\n- $\\mathbb P$: Probability, a measure of the sample space $\u03a9$.\n- $\\mathcal F$: a $\\sigma$-algebra of the sample space $\u03a9$.",
-        "kids": [
-            "Random_Variable",
-            "Stochastic_Process"
-        ],
+        "kids": {
+            "Random_Variable": "",
+            "Stochastic_Process": ""
+        },
         "name": "Probability_Space",
-        "parents": [
-            "Measurable_Space"
-        ],
-        "properties": null
+        "parents": {
+            "Measurable_Space": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Projective_Space": {
         "define": "Given a [vector space](./Linear_Space.md) $V$ over a field $K$, the projective space $\\mathbf P(V)$ is the set of equivalence classes of $V - \\{0\\}$ under the equivalence relation $\\sim$ (equivalence relation is defined by $x \\sim y$ if there is a nonzero element $\\lambda \\in K$ such that $x = \u03bby$).",
-        "kids": [],
+        "kids": {},
         "name": "Projective_Space",
-        "parents": [
-            "Linear_Space"
-        ],
-        "properties": "- If $V$ is an $n+1$-dimensional vector space, then the corresponding projective space $\\mathbf P(V)$ is $n$-dimensional"
+        "parents": {
+            "Linear_Space": ""
+        },
+        "properties": [
+            "- If $V$ is an $n+1$-dimensional vector space, then the corresponding projective space $\\mathbf P(V)$ is $n$-dimensional"
+        ]
     },
     "Quadratic_Function": {
         "define": "$$\n\\begin{align*}\n  f(x) &= a x^2 + b x + c  \\tag{Univariate Quadratic}  \\\\\n  f(\\boldsymbol x) &= \\boldsymbol x^T \\boldsymbol A \\boldsymbol x + \\boldsymbol b \\boldsymbol x + c  \\tag{Multivariate}  \\\\\n    &= \\sum_{i=1}^{\\dim} \\sum_{j=1}^{\\dim} a_{ij} \u00b7 x_i x_j + \\sum_{i=1}^{\\dim} b_i x_i + c\n\\end{align*}\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Quadratic_Function",
-        "parents": [
-            "Polynomial_Function"
-        ],
-        "properties": "* Zero Set of Quadratic Function , Quadric Surface\n  - Define  \n    Quadric Surface is the zero set of a quadratic function,\n    $$\n    \\begin{align*}\n      &\\{ \\boldsymbol x \\ |\\ \\boldsymbol x^T \\boldsymbol A \\boldsymbol x + \\boldsymbol b \\boldsymbol x + c = 0\\} \\tag{Quadric Surface}\\\\\n    \\Leftrightarrow &\\left\\{ \\boldsymbol x' \\ |\\ \\boldsymbol x'^T \\boldsymbol A' \\boldsymbol x' = 0, \\boldsymbol x' = \\left(\\begin{matrix} \\boldsymbol x \\\\ 1 \\end{matrix}\\right)\\right\\}\n    \\end{align*}\n    $$\n\n  - Property\n    - Solution of Univariate Quadratic Equation  \n      For the given parameters $a, b, c$, and a univariate quadratic equation,\n      $$\n      f(x) = a x^2 + b x + c = 0\n      $$\n\n      The solutions of equation are, \n      $$\n      \\begin{align*}\n        x &= \\frac{- b \\pm \\sqrt{\u0394}}{2 a}\\\\\n        \u0394 &= b^2 - 4 a c\n      \\end{align*}\n      $$\n      Properties of solutions, \n      - $\u0394 > 0$, Two real roots\n      - $\u0394 = 0$, A real double root\n      - $\u0394 < 0$, Two complex roots\n\n  - Include\n    * Sphere & Spherical Surface\n      - Define  \n        For $\\boldsymbol A = \\boldsymbol I, \\boldsymbol b = \\boldsymbol 0, c = -r^2$ of a Quadratic Function,\n        $$\n        \\begin{align*}\n          &\\{ \\boldsymbol x \\ |\\ \\|\\boldsymbol x - \\boldsymbol x_c\\|_2 \\le r < 0\\}  \\tag{Sphere}\\\\\n        \\Leftrightarrow\\quad &\\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T (\\boldsymbol x - \\boldsymbol x_c) \\le r^2 < 0\\}  \\\\\n        \\Leftrightarrow\\quad &\\{ \\boldsymbol x_c + r \\boldsymbol u \\ |\\ \\|\\boldsymbol u\\|_2 \\le r < 0\\}\n        \\end{align*}\n        $$\n\n        $$\n        \\{ \\boldsymbol x \\ |\\ \\|\\boldsymbol x - \\boldsymbol x_c\\|_2 = r \\}  \\tag{Spherical Surface}\\\\\n        $$\n\n        Spherical Surface is a point set with a constant distance value $r$ from the center point $\\boldsymbol x_c$.\n\n        <img src=\"./assets/Sphere_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n        \n      - Property\n        - Sphere is a convex set\n      \n    * Ellipsoid & Ellipsoid Surface\n      - Define  \n        In a Quadratic Function, if $\\boldsymbol A = \\boldsymbol P^{-1}, \\boldsymbol b = \\boldsymbol 0, c = -1$ is a positive definite matrix, the zero set of the function is an Ellipsoid Surface,\n        $$\n        \\begin{align*}\n          &\\left\\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T \\boldsymbol P^{-1} (\\boldsymbol x - \\boldsymbol x_c) \\le 1, \\boldsymbol P = \\boldsymbol P^T \u2ab0 0 \\right\\}  \\tag{Ellipsoid}\\\\\n          \\Leftrightarrow\\quad &\\{ \\boldsymbol x_c + \\boldsymbol A \\boldsymbol u \\ |\\ \\|\\boldsymbol u\\|_2 \\le 1\\}\n        \\end{align*}\n        $$\n    \n        $$\n        \\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T \\boldsymbol P^{-1} (\\boldsymbol x - \\boldsymbol x_c) = 1, \\boldsymbol P = \\boldsymbol P^T \u2ab0 0\\}  \\tag{Ellipsoid Surface}\n        $$\n    \n        <img src=\"./assets/Ellipsoid_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n        \n      - Property\n        \n        - Ellipsoid is a convex set\n      \n    * Hyperboloid\n      - Define  \n        if $\\boldsymbol A$ is a non-positive definite matrix.\n    \n        Hyperboloid of one sheet, Hyperboloid of two sheets, Conical surface in between\n        \n        <img src=\"./assets/Hyperboloid_Of_Two_Sheets_Quadric.png\" alt=\"img\" style=\"zoom: 18%;\" /><img src=\"./assets/Hyperboloid_Of_One_Sheet_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n      \n    * Paraboloid\n      - Define \n    \n        <img src=\"./assets/Paraboloid_Quadric.png\" alt=\"img\" style=\"zoom:20%;\" /><img src=\"./assets/Hyperbolic_Paraboloid_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n      \n    * Cylinder & Cylinder Surface\n      - Define\n      \n        \n      \n        <img src=\"./assets/Elliptic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" /><img src=\"./assets/Hyperbolic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" /><img src=\"./assets/Parabolic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n    \n    - Cone\n    \n      - Define\n    \n        <img src=\"./assets/Circular_Cone_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />"
+        "parents": {
+            "Polynomial_Function": ""
+        },
+        "properties": [
+            "* Zero Set of Quadratic Function , Quadric Surface\n  - Define  \n    Quadric Surface is the zero set of a quadratic function,\n    $$\n    \\begin{align*}\n      &\\{ \\boldsymbol x \\ |\\ \\boldsymbol x^T \\boldsymbol A \\boldsymbol x + \\boldsymbol b \\boldsymbol x + c = 0\\} \\tag{Quadric Surface}\\\\\n    \\Leftrightarrow &\\left\\{ \\boldsymbol x' \\ |\\ \\boldsymbol x'^T \\boldsymbol A' \\boldsymbol x' = 0, \\boldsymbol x' = \\left(\\begin{matrix} \\boldsymbol x \\\\ 1 \\end{matrix}\\right)\\right\\}\n    \\end{align*}\n    $$\n\n  - Property\n    - Solution of Univariate Quadratic Equation  \n      For the given parameters $a, b, c$, and a univariate quadratic equation,\n      $$\n      f(x) = a x^2 + b x + c = 0\n      $$\n\n      The solutions of equation are, \n      $$\n      \\begin{align*}\n        x &= \\frac{- b \\pm \\sqrt{\u0394}}{2 a}\\\\\n        \u0394 &= b^2 - 4 a c\n      \\end{align*}\n      $$\n      Properties of solutions, \n      - $\u0394 > 0$, Two real roots\n      - $\u0394 = 0$, A real double root\n      - $\u0394 < 0$, Two complex roots\n\n  - Include\n    * Sphere & Spherical Surface\n      - Define  \n        For $\\boldsymbol A = \\boldsymbol I, \\boldsymbol b = \\boldsymbol 0, c = -r^2$ of a Quadratic Function,\n        $$\n        \\begin{align*}\n          &\\{ \\boldsymbol x \\ |\\ \\|\\boldsymbol x - \\boldsymbol x_c\\|_2 \\le r < 0\\}  \\tag{Sphere}\\\\\n        \\Leftrightarrow\\quad &\\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T (\\boldsymbol x - \\boldsymbol x_c) \\le r^2 < 0\\}  \\\\\n        \\Leftrightarrow\\quad &\\{ \\boldsymbol x_c + r \\boldsymbol u \\ |\\ \\|\\boldsymbol u\\|_2 \\le r < 0\\}\n        \\end{align*}\n        $$\n\n        $$\n        \\{ \\boldsymbol x \\ |\\ \\|\\boldsymbol x - \\boldsymbol x_c\\|_2 = r \\}  \\tag{Spherical Surface}\\\\\n        $$\n\n        Spherical Surface is a point set with a constant distance value $r$ from the center point $\\boldsymbol x_c$.\n\n        <img src=\"./assets/Sphere_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n        \n      - Property\n        - Sphere is a convex set\n      \n    * Ellipsoid & Ellipsoid Surface\n      - Define  \n        In a Quadratic Function, if $\\boldsymbol A = \\boldsymbol P^{-1}, \\boldsymbol b = \\boldsymbol 0, c = -1$ is a positive definite matrix, the zero set of the function is an Ellipsoid Surface,\n        $$\n        \\begin{align*}\n          &\\left\\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T \\boldsymbol P^{-1} (\\boldsymbol x - \\boldsymbol x_c) \\le 1, \\boldsymbol P = \\boldsymbol P^T \u2ab0 0 \\right\\}  \\tag{Ellipsoid}\\\\\n          \\Leftrightarrow\\quad &\\{ \\boldsymbol x_c + \\boldsymbol A \\boldsymbol u \\ |\\ \\|\\boldsymbol u\\|_2 \\le 1\\}\n        \\end{align*}\n        $$\n    \n        $$\n        \\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T \\boldsymbol P^{-1} (\\boldsymbol x - \\boldsymbol x_c) = 1, \\boldsymbol P = \\boldsymbol P^T \u2ab0 0\\}  \\tag{Ellipsoid Surface}\n        $$\n    \n        <img src=\"./assets/Ellipsoid_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n        \n      - Property\n        \n        - Ellipsoid is a convex set\n      \n    * Hyperboloid\n      - Define  \n        if $\\boldsymbol A$ is a non-positive definite matrix.\n    \n        Hyperboloid of one sheet, Hyperboloid of two sheets, Conical surface in between\n        \n        <img src=\"./assets/Hyperboloid_Of_Two_Sheets_Quadric.png\" alt=\"img\" style=\"zoom: 18%;\" /><img src=\"./assets/Hyperboloid_Of_One_Sheet_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n      \n    * Paraboloid\n      - Define \n    \n        <img src=\"./assets/Paraboloid_Quadric.png\" alt=\"img\" style=\"zoom:20%;\" /><img src=\"./assets/Hyperbolic_Paraboloid_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n      \n    * Cylinder & Cylinder Surface\n      - Define\n      \n        \n      \n        <img src=\"./assets/Elliptic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" /><img src=\"./assets/Hyperbolic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" /><img src=\"./assets/Parabolic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n    \n    - Cone\n    \n      - Define\n    \n        <img src=\"./assets/Circular_Cone_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />"
+        ]
     },
     "Quaternion_Ring": {
         "define": "$$\nq = a + b i + c j + d k\n$$\n\nQuaternion number system extends the complex numbers. Where $a, b, c, d \\in \\mathbb R$ are [real numbers](./Real_Field.md), and $i, j, k$ are symbols that can be interpreted as unit-vectors pointing along the three spatial axes. (Quaternion [Ring](./Ring.md)) The multiplication rules for the basis elements are:\n$$\ni^2 = j^2 = k^2 = ijk = -1\n$$\n<img src=\"assets/image-20231026023813592.png\" alt=\"image-20231026023813592\" style=\"zoom:25%;\" />\n\n<img src=\"assets/Cayley_Q8_quaternion_multiplication_graph.svg\" alt=\"Cayley_Q8_quaternion_multiplication_graph\" style=\"width:120px;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Quaternion_Ring",
-        "parents": [
-            "Ring",
-            "Real_Field"
-        ],
-        "properties": "- The conjugate of a quaternion is defined as: $q^* = a - b i - c j - d k$.\n\n- Quaternion & Rotation\n  $$\n  q = \\cos(\\frac{\\theta}{2}) + \\sin(\\frac{\\theta}{2})(xi + yj + zk)\n  $$\n  $\\theta$ is the angle of rotation, $x, y, z$ is the unit vector component of the axis of rotation.\n\n  - Spherical linear interpolation"
+        "parents": {
+            "Real_Field": "",
+            "Ring": ""
+        },
+        "properties": [
+            "- The conjugate of a quaternion is defined as: $q^* = a - b i - c j - d k$.\n\n- Quaternion & Rotation\n  $$\n  q = \\cos(\\frac{\\theta}{2}) + \\sin(\\frac{\\theta}{2})(xi + yj + zk)\n  $$\n  $\\theta$ is the angle of rotation, $x, y, z$ is the unit vector component of the axis of rotation.\n\n  - Spherical linear interpolation"
+        ]
     },
     "Radon_Translation": {
         "define": "For a function $f(\\boldsymbol x)$ that satisfies the three regularity conditions as above, **Radon Translation** $\\mathcal R f$ is is a [function](./Function.md) (integral transform) defined on the space of straight lines $L \\subset \\mathbb R^2$ by the line integral along each such line as, \n\n- $f(x)$ is continuous.\n- the double integral $\\iint \\frac{|f(x)|}{\\sqrt{x^2 + y^2}} \\mathrm{d}x\\mathrm{d}y$, extending over the whole plane, converges.\n- for any arbitrary point $(x, y)$ on the plane it holds that $\\lim\\limits_{r\\to\\infty} \\int\\limits_{0}^{2\\pi} f(x+r\\cos\\varphi, r + \\sin\\varphi) \\mathrm{d}\\varphi = 0$.\n\n$$\n\\begin{align*}\n\\mathcal R f(L) &= \\int_L f(\\boldsymbol x) |\\mathrm{d} \\boldsymbol x| \\\\\n\\mathcal R f(\\theta, r) &= \\int_{-\\infty}^{+\\infty} f(z \\sin \\theta + r \\cos \\theta, -z \\sin \\theta + r \\cos \\theta) \\mathrm{d} z\n\\end{align*}\n$$\n\n<img src=\"assets/894.png\" alt=\"img\" style=\"zoom:33%;\" />\n\n<img src=\"assets/Radon_transform_sinogram.gif\" alt=\"Radon_transform_sinogram\" style=\"zoom:33%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Radon_Translation",
-        "parents": [
-            "Function"
-        ],
-        "properties": "- The two-dimensional Fourier transform of the initial function along a line at the inclination angle is the one variable Fourier transform of the Radon transform (acquired at angle of that function.\n  $$\n  F(s\\theta)=\\int _{\\mathbb {R} }{\\mathcal {R}}f(\\theta ,r)e^{-2\\pi isr}\\,\\mathrm{d}r\n  $$\n  \n\n#"
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            "- The two-dimensional Fourier transform of the initial function along a line at the inclination angle is the one variable Fourier transform of the Radon transform (acquired at angle of that function.\n  $$\n  F(s\\theta)=\\int _{\\mathbb {R} }{\\mathcal {R}}f(\\theta ,r)e^{-2\\pi isr}\\,\\mathrm{d}r\n  $$\n  \n\n### Radon inversion formula\n\n$$\n\\begin{align*}\nf(\\mathbf {x} )&=\\int _{0}^{\\pi }(\\mathcal {R}f(\\cdot ,\\theta )*h)(\\left\\langle \\mathbf {x} ,\\mathbf {n} _{\\theta }\\right\\rangle )\\mathrm{d}\\theta\\\\\nf(x, y) &= \\int_0^\\pi (\\mathcal F_r^{-1}(\\mathcal F_r(\\mathcal R f(\\theta, r))(\\omega))\\cdot|\\omega|)(x \\sin \\theta + y \\cos \\theta)\\mathrm{d}\\theta\n\\end{align*}\n$$\n\nwhere $h$ is such that $\\hat h(k) = |k|$. The result obtained by Fourier transforming the Radon transform result $\\mathcal{R}f(\\theta, r)$ is filled into the line passing through the origin at an angle of $\\theta$, and finally the inverse Fourier transform is performed to obtain the original function $f(x, y)$.\n\n- Proof\n\n  Fourier Transform of the Radon Transform:\n  $$\n  \\begin{align*}\n  \\mathcal F_r(\\mathcal R f(\\theta, r))(\\omega) &= \\int_{-\\infty}^{+\\infty} \\mathcal R f(\\theta, r) e^{i\\omega r} \\mathrm{d} r\\\\\n  &= F(\\omega\\cos\\theta, \\omega\\sin\\theta)\\delta(\\omega)\n  \\end{align*}\n  $$\n  \n  $$\n  \\Rightarrow f(x, y) = \\int_0^\\pi (\\mathcal F_r^{-1}(\\mathcal F_r(\\mathcal R f(\\theta, s))(\\omega))\\cdot|\\omega|)(x \\sin \\theta + y \\cos \\theta)\\mathrm{d}\\theta\n  $$"
+        ]
     },
     "Random_Variable": {
         "define": "**Random Variable**:\n$$\nX: \u03a9 \\to \\mathbb R  \\tag{Random Variable}\n$$\na random variable $X$ is a function from a sample space $\u03a9$ to the real numbers $\\mathbb R$.\n\nSymbol:\n  - $\u03a9$: sample space\n  - $\\mathbb R$: the field of real numbers\n\n- Note  \n  event set $\\{\u03b6 | X(\u03b6) \u2264 x\\}$, shorthand as $\\{X \u2264 x\\}$.\n\n**Random Vector , Multivariate random variable**:\n$$\n\\boldsymbol X = (X_1, ... , X_n)^T  \\tag{Random Vector}\n$$",
-        "kids": [
-            "Moment"
-        ],
+        "kids": {
+            "Moment": ""
+        },
         "name": "Random_Variable",
-        "parents": [
-            "Probability_Space"
-        ],
-        "properties": "#"
+        "parents": {
+            "Probability_Space": ""
+        },
+        "properties": [
+            "### Probability Mass Function \n\n- Define \n  for a discrete Random Variable $X$\n  $$\n  \\mathbb P(X = x)\n  $$\n\n- Property\n  - Nonnegative\n    $$\n    \\mathbb P(X = x) > 0\n    $$\n\n  - Sums to 1\n    $$\n    \\sum_i \\mathbb P(X = x_i) = 1\n    $$\n\n### Cumulative Distribution Function\n\n- Define  \n  $$\n  \\begin{align*}\n    F_X(x) &= \\mathbb P(X \u2264 x)  \\\\\n    F_{\\boldsymbol X}(x) &= \\mathbb P(X_1 \u2264 x_1, ..., X_n \u2264 x_n) = \\mathbb P(\\boldsymbol X \u2264 \\boldsymbol x)\n  \\end{align*}\n  $$\n\n* Probability Generating Function\n  - Define  \n    For a discrete random variable $X$ taking values in the non-negative integers $x \\in \\mathbb Z$, the Probility Generating Function is  \n    $$\n    G(z) = \\mathbb E(z^x) = \\sum_{i=0}^\\infty z^x \\mathbb P(x)\n    $$\n\n  - Property\n    - $G(1) = 1$\n    - $\\mathbb P(X = x) = \\frac{G^{(k)}(0)}{x!}$\n    - $\\mathbb E(X) = G'(1)$\n    - $Var(X) = G''(1) + G'(1)(1 - G'(1))$ \n    - $\\mathbb E(X^k) = \\left(z \\frac{\\partial }{\\partial z}\\right) G(z)|_{z = 1}$\n\n\n### Probability Density Function\n\n- Define  \n  $$\n  \\begin{align*}\n    f_X(x) &= \\frac{\\mathrm d F_X(x)}{\\mathrm d x}  \\\\\n    f_{\\boldsymbol X}(\\boldsymbol x) &= \\frac{\u2202^n F_{\\boldsymbol X}(x)}{\u2202 x_1 ... \u2202 x_n}  \\\\\n    f_{X_i}(x_i) &= \\int_{-\\infty}^\\infty ... \\int_{-\\infty}^\\infty f_{\\boldsymbol X}(\\boldsymbol x) \\mathrm d x_1 ... \\mathrm d x_j ... \\mathrm d x_n |_{j \u2260 i}  \\tag{Marginal Probability Density}\n  \\end{align*}\n  $$\n\n### [Moment](./Moment.md)\n\n### Transformation Between Distributions\n\nFor one-to-one mapping of random variables $g: x \\to y$ and random vectors $g: \\boldsymbol  x \\to \\boldsymbol  y$, the transformation between distributions is like,\n$$\nf_Y(y) = \\frac{1}{|\\frac{\\mathrm d y}{\\mathrm d x}|} f_X(g^{-1}(y))\n$$\n\n$$\nf_{\\boldsymbol Y}(\\boldsymbol y) = \\frac{1}{|\\det(J_g)|} f_{\\boldsymbol X}(g^{-1}(\\boldsymbol y))\n$$\n\n\n\n- Problem: generation of random number\n* Mersenne Twister"
+        ]
     },
     "Rational_Number_Field": {
         "define": "$$\n\\mathbb{Q} = \\left\\{ \\frac{a}{b} \\mid a, b \\in \\mathbb{Z} \\text{ and } b \\neq 0 \\right\\}\n$$\n\nRational number field is a [field](./Field.md) of rational numbers is the set of all numbers that can be expressed as the quotient of two [integers](./Integer_Ring.md), where the denominator is not zero. \n\n- Addition and Multiplication are Closed\n  $$\n  \\frac{p}{q} + \\frac{r}{s} = \\frac{ps + qr}{qs}\\\\\n  \\frac{p}{q} \\times \\frac{r}{s} = \\frac{pr}{qs}\n  $$\n\n- Additive and Multiplicative Identity: $0$ is the additive identity, $1$ is the multiplicative identity.\n\n- Additive and Multiplicative Inverses: Every rational number $p/q$ has an additive inverse $-p/q$, and a multiplicative inverse $q/p$.\n\n- Additive and Multiplicative Commutativity\n  $$\n  \\frac{p}{q} + \\frac{r}{s} = \\frac{r}{s} + \\frac{p}{q}  \\\\\n  \\frac{p}{q} \\times \\frac{r}{s} = \\frac{r}{s} \\times \\frac{p}{q}\n  $$\n\n- Additive and Multiplicative Associativity\n  $$\n  \\left( \\frac{p}{q} + \\frac{r}{s} \\right) + \\frac{t}{u} = \\frac{p}{q} + \\left( \\frac{r}{s} + \\frac{t}{u} \\right)  \\\\\n  \\left( \\frac{p}{q} \\times \\frac{r}{s} \\right) \\times \\frac{t}{u} = \\frac{p}{q} \\times \\left( \\frac{r}{s} \\times \\frac{t}{u} \\right)\n  $$\n\n- Distributivity\n  $$\n  \\frac{p}{q} \\times \\left( \\frac{r}{s} + \\frac{t}{u} \\right) = \\frac{p}{q} \\times \\frac{r}{s} + \\frac{p}{q} \\times \\frac{t}{u}\n  $$",
-        "kids": [
-            "Real_Field"
-        ],
+        "kids": {
+            "Real_Field": ""
+        },
         "name": "Rational_Number_Field",
-        "parents": [
-            "Integer_Ring",
-            "Field"
-        ],
-        "properties": ""
+        "parents": {
+            "Field": "",
+            "Integer_Ring": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Real_Field": {
         "define": "$$\n\\mathbb R\n$$\n\nReal numbers is defined through the Dedekind cut of rational number sets $\\mathbb Q$. The Dedekind cut is a pair of sets A and B that divide the [rational number](./Rational_Number_Field.md) set $\\mathbb Q$ into two parts, satisfying:\n\n- $A \\neq \\empty, A \\neq \\mathbb Q$\n- if $p, q \\in \\mathbb Q, p < q, q \\in A$, then $p \\in A$. \n- No maximum element in $A$, if $q \\in A$, then there must be $p \\in \\mathbb Q, p > q$, let $p \\in A$.\n\n\nEach Dedekind cut defines a real number: if the cut represents a rational number, it is that rational number, otherwise it is an irrational number.\n\n\n\nThe set of real numbers, denoted $\\mathbb{R}$, together with the operations of addition and multiplication, is called the [field](./Field.md) of real numbers if the following axioms are satisfied:\n\n**Field Axioms**:\n- (A1) $a + b = b + a$ for all $a, b \\in \\mathbb{R}$ (Commutativity of Addition).\n- (A2) $a + (b + c) = (a + b) + c$ for all $a, b, c \\in \\mathbb{R}$ (Associativity of Addition).\n- (A3) There exists an element $0 \\in \\mathbb{R}$ such that $a + 0 = a$ for all $a \\in \\mathbb{R}$ (Existence of Additive Identity).\n- (A4) For every $a \\in \\mathbb{R}$, there exists an element $-a \\in \\mathbb{R}$ such that $a + (-a) = 0$ (Existence of Additive Inverse).\n- (M1) $a \\cdot b = b \\cdot a$ for all $a, b \\in \\mathbb{R}$ (Commutativity of Multiplication).\n- (M2) $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$ for all $a, b, c \\in \\mathbb{R}$ (Associativity of Multiplication).\n- (M3) There exists an element $1 \\in \\mathbb{R}$, $1 \\neq 0$, such that $a \\cdot 1 = a$ for all $a \\in \\mathbb{R}$ (Existence of Multiplicative Identity).\n- (M4) For every $a \\in \\mathbb{R}$ with $a \\neq 0$, there exists an element $a^{-1} \\in \\mathbb{R}$ such that $a \\cdot a^{-1} = 1$ (Existence of Multiplicative Inverse).\n- (D) $a \\cdot (b + c) = (a \\cdot b) + (a \\cdot c)$ for all $a, b, c \\in \\mathbb{R}$ (Distributive Law).\n\n**Order Axioms**:\n- (O1) For every $a, b \\in \\mathbb{R}$, exactly one of the following holds: $a < b$, $a = b$, $a > b$.\n- (O2) If $a < b$ and $b < c$, then $a < c$.\n- (O3) If $a < b$ and $c > 0$, then $a \\cdot c < b \\cdot c$.\n- (O4) If $a < b$ and $c < 0$, then $a \\cdot c > b \\cdot c$.",
-        "kids": [
-            "Real_Value_Function",
-            "Quaternion_Ring",
-            "Euclidean_Space",
-            "Complex_Field"
-        ],
+        "kids": {
+            "Complex_Field": "",
+            "Euclidean_Space": "",
+            "Quaternion_Ring": "",
+            "Real_Value_Function": ""
+        },
         "name": "Real_Field",
-        "parents": [
-            "Rational_Number_Field",
-            "Field"
-        ],
-        "properties": ""
+        "parents": {
+            "Field": "",
+            "Rational_Number_Field": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Real_Value_Function": {
         "define": "$$\nf: \\mathbb R \\to \\mathbb R\n$$\n\nA real function $f: \\mathbb R \\to \\mathbb R$ is a [function](./Function.md) from [real numbers](./Real_Field.md) to real numbers.\n\nFor multi-variate real functions:\n$$\nf: \\mathbb R^n \\to \\mathbb R\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Real_Value_Function",
-        "parents": [
-            "Function",
-            "Real_Field"
-        ],
-        "properties": "- Continuity: A function $f$ with variable $x$ is continuous at the real number $c$, if the limit of $f(a)$, as $x$ tends to $c$, is equal to $f(c)$. More formally, for any positive number $\\epsilon > 0$, if there exists a positive number $\\delta > 0$ such that whenever $|x - a| < \\delta$, $|f(x) - f(a)| < \\epsilon$, the function is said to be continuous at $a$.\n- Monotonicity\n- Boundedness\n- Differentiability: A function is said to be differentiable at a point $x = a$ if the following limit exists:\n$$\nf'(a) = \\lim_{{h \\to 0}} \\frac{f(a + h) - f(a)}{h}\n$$\n- Periodicity: $f(x + T) = f(x)$.  The number $T$ is referred to as its period.\n- Odd and Even Properties\n  - Odd function: $f(-x) = -f(x)$\n  - Even function: $f(-x) = f(x)$\n\n#"
+        "parents": {
+            "Function": "",
+            "Real_Field": ""
+        },
+        "properties": [
+            "- Continuity: A function $f$ with variable $x$ is continuous at the real number $c$, if the limit of $f(a)$, as $x$ tends to $c$, is equal to $f(c)$. More formally, for any positive number $\\epsilon > 0$, if there exists a positive number $\\delta > 0$ such that whenever $|x - a| < \\delta$, $|f(x) - f(a)| < \\epsilon$, the function is said to be continuous at $a$.\n- Monotonicity\n- Boundedness\n- Differentiability: A function is said to be differentiable at a point $x = a$ if the following limit exists:\n$$\nf'(a) = \\lim_{{h \\to 0}} \\frac{f(a + h) - f(a)}{h}\n$$\n- Periodicity: $f(x + T) = f(x)$.  The number $T$ is referred to as its period.\n- Odd and Even Properties\n  - Odd function: $f(-x) = -f(x)$\n  - Even function: $f(-x) = f(x)$\n\n### Limitation\n\n- Define\n\nfor a function $f: R \\to R$ defined on some open interval that contains the number $a$, except possibly at $a$ itself. We say that the limit of $f(x)$ as $x$ approaches $a$ is equal to $L$: If and only if for any given positive number $\\epsilon > 0$ there exists a number $\\delta > 0$ such that whenever $0 < |x- a|< \\delta$ (which means $x$ is within $\\delta$ units of $a$ but not equal to a), it follows that $| f(a) - L|< \\epsilon$.\n$$\n\\lim\\limits_{x\\to a} f(x) = L\n$$\n\n- Property\n  - Uniqueness\n  \n  - Boundedness\n  \n  - \u4fdd\u53f7\u6027\n  \n  - Squeeze theorem\n  \n    Let $I$ be an interval containing the point $a$. Let $g, f, h$ be functions defined on $I$, except possibly at a itself. Suppose that for every $x$ in $I$ not equal to $a$, we have $g(x) \\le f(x) \\le h(x)$, and also suppose that\n    $$\n    \\lim\\limits_{x\\to a} g(x) = \\lim\\limits_{x\\to a} h(x) = L \\quad \\Rightarrow\\quad \\lim\\limits_{x\\to a} f(x) = L\n    $$\n    \n\n### Derivative & Partial derivative\n\n- Define\n  $$\n  \\begin{align*}\n    \\frac{\\mathrm df}{\\mathrm dx} &= \\lim_{\u0394x \\to 0}  \\frac{ f(x + \u0394x) - f(x - \u0394x) }{ 2 \u0394x }  \\tag{First derivative}\\\\\n    \\frac{\\mathrm d^n f}{\\mathrm dx^n} &= \\lim_{\u0394x \\to 0} \\frac{ f^{(n - 1)}(x + \u0394x) - f^{(n - 1)}(x - \u0394x)} { 2 \u0394x }  \\tag{$n$-order derivative}\n  \\end{align*}\n  $$\n\nLet $f: \\mathbb{R} \\to \\mathbb{R}$ be a function. The derivative of $f$ at a point $x$ in its domain, if it exists, is given by the limit as mentioned above . If this limit exists, we say that $f$ is differentiable at $x$. The function $f'$ that assigns to each $x$ the value $f'(x)$ (where it exists) is called the derivative of $f$.\n\nFor multi-variate functions, the partial derivative is\n\n$$\n\\begin{align*}\n  \\frac{\u2202f}{\u2202x_i} &= \\frac{f(...,x_i + \u0394x_i,...) -  f(..., x_i - \u0394x_i, ...)}{2 \u0394x_i}  \\\\\n  \\frac{\u2202^2 f}{\u2202x_i^2}  \n  &= \\frac{f'(..,x_i+\u0394x_i,..) -  f'(..,x_i-\u0394x_i,..)}{\u0394x_i}   \\\\\n  &= \\frac{f(..,x_i+\u0394x_i) - 2\u00b7f(..,x) + f(..,x_i-\u0394x_i)}{\u0394x_i^2}  \\\\\n  \\frac{\u2202^2 f}{\u2202x_j \u2202x_i}  \n  &= \\frac{\\partial}{\\partial x_j} \\left(\\frac{\\partial f}{\\partial x_i} \\right)\n\\end{align*}\n$$\n\n- Property\n  - \u7ebf\u6027\u6027\n  \n  - \u4e58\u6cd5\u6cd5\u5219\n  \n  - **Chain Rule**: for the function $z(x) = z(y(x))$, then \n    $$\n    \\frac{\\mathrm d z}{\\mathrm d x} = \\frac{\\mathrm d z}{\\mathrm d y} \\cdot \\frac{\\mathrm d y}{\\mathrm d x}\n    $$\n  \n  - **L'H\u00f4pital's Rule**: if $\\lim\\limits_{x \\to a} f(x) =  \\lim\\limits_{x \\to a} g(x) = 0  \\text{ or } \\infty$ and $g'(x) \\neq 0, \\forall x \\in I \\text{ with } x \\neq a$, and $\\lim\\limits_{x \\to a} \\frac{f'(x)}{g'(x)}$ exists, then\n    $$\n    \\lim\\limits_{x \\to a} \\frac{f(x)}{g(x)} = \\lim\\limits_{x \\to a} \\frac{f'(x)}{g'(x)}\n    $$\n  \n  - **Taylor's theorem**: If a real-valued function $f(x)$ is differentiable at the point $x = a$, then \n    $$\n    f(x) = f(a) + \\sum_{i=1}^k \\frac{f^{(i)}(a)}{i!}(x-a)^i + o(|x-a|^k)\n    $$\n  \n\n\n### Gradient & Divergence & Curl\n\n- Define\n  Gradient $\\nabla (\\cdot): (f: \\mathbb R^{\\dim} \\to \\mathbb R) \\to (f: \\mathbb R^{\\dim} \\to \\mathbb R^{\\dim})$, reflects the direction of the maximum rate of change for function $f$ at point $\\boldsymbol x_0$.\n  $$\n  \\nabla f = \\sum_{i=1}^{\\dim} \\frac{\u2202f}{\u2202x_i} \\hat{\\boldsymbol x_i} = \\left(\\begin{matrix}\\frac{\u2202f}{\u2202x_1} \\\\ \\vdots \\\\ \\frac{\u2202f}{\u2202x_{\\dim}}\\end{matrix}\\right)  \\tag{Gradient}\n  $$\n  \n  Divergence $\\nabla \\cdot (\\cdot): (f: \\mathbb R^{\\dim} \\to \\mathbb R^{\\dim}) \\to (f: \\mathbb R^{\\dim} \\to \\mathbb R)$. For a vector field $\\boldsymbol f(\\boldsymbol x)$, the divergence is defined as the limit of the redio of the surface integral of $\\boldsymbol f$ out of the closed surface $S$ of a valume $V$ enclosing point $\\boldsymbol x_0$, as $V$ shrinks to $0$. The divergence represents the volume density of the outward flux of a vector field from an infinitesimal volume around a given point.\n  $$\n  \\nabla \u00b7 \\boldsymbol f = \\lim_{|V| \\to 0} \\frac{1}{|V|} \\oint_{S(V)} \\boldsymbol f \\cdot \\hat {\\boldsymbol n} \\mathrm d S \\tag{Divergence}\n  $$\n  $$\n  \\nabla \u00b7 \\boldsymbol f = \\sum_{i=1}^{\\dim} \\frac{\u2202f_{i}}{\u2202x_i}  \\tag{Cartesian coordinates}\n  $$\n  \n  Curl $\\nabla \\times (\\cdot): (f: \\mathbb R^{3} \\to \\mathbb R^{3}) \\to (f: \\mathbb R^{3} \\to \\mathbb R)$. For a vector field in three-dimensional $\\boldsymbol f(\\boldsymbol x)$, the curl is defined as the limit of the redio of the line integral of $\\boldsymbol f$ along the boundary $C$ of a area $A$ enclosing point $\\boldsymbol x_0$, as $A$ shrinks to $0$. The curl represents the circulation density at each point of the field. \u65b9\u5411\u662f\u65cb\u8f6c\u5ea6\u6700\u5927\u7684\u73af\u91cf\u7684\u65cb\u8f6c\u8f74, \u65cb\u8f6c\u7684\u65b9\u5411\u6ee1\u8db3\u53f3\u624b\u5b9a\u5219, \u5927\u5c0f\u662f\u7ed5\u8be5\u65cb\u8f6c\u8f74\u65cb\u8f6c\u7684\u73af\u91cf\u4e0e\u65cb\u8f6c\u8def\u5f84\u56f4\u6210\u7684\u9762\u5143\u9762\u79ef\u4e4b\u6bd4.\n  $$\n  \\nabla \\times \\boldsymbol f = \\lim_{A \\to 0} \\frac{1}{|A|} \\oint_{C} \\boldsymbol f \\cdot \\mathrm d \\boldsymbol r \\tag{Curl}\n  $$\n  $$\n  \\begin{align*}\n    \\nabla \\times \\boldsymbol f =& \\left(\\frac{\u2202f_z}{\u2202y} - \\frac{\u2202f_y}{\u2202z} \\right) \\hat{\\boldsymbol x} + \\\\\n    & \\left(\\frac{\u2202f_x}{\u2202z} - \\frac{\u2202f_z}{\u2202x} \\right) \\hat{\\boldsymbol y}  +\\\\\n    & \\left(\\frac{\u2202f_y}{\u2202x} - \\frac{\u2202f_x}{\u2202y} \\right) \\hat{\\boldsymbol z}  \\tag{3D Cartesian coordinates}\n  \\end{align*}\n  $$\n  \n- Property\n  - $\\nabla \\times (\\nabla \\phi) = 0$, for any scalar field $\\phi$.\n  - $\\nabla \\cdot (\\nabla \\times \\boldsymbol F) = 0$, for any vector field (in three dimensions) $\\boldsymbol F$. \n  - $\\nabla \\cdot (\\phi \\boldsymbol F) = (\\nabla \\phi) \\cdot \\boldsymbol F + \\phi (\\nabla \\cdot \\boldsymbol F)$\n  - $\\nabla \\times (\\phi \\boldsymbol F) = (\\nabla \\phi) \\times \\boldsymbol F + \\phi (\\nabla \\times \\boldsymbol F)$\n\n### Integral\n\n- Define\n\n$$\n\\int f(x) \\mathrm d x  = F(x)  + const. \\tag{Integral}\n$$\nIntegral $f: (f: \\mathbb R \\to \\mathbb R) \\to (f: \\mathbb R \\to \\mathbb R)$ represents the anti-derivative of a function $f(x)$. The indefinite integral of a function $f$ is a family of functions $F$ such that for all $x$ in the domain of $f$, $F'(x) = f(x)$. Where $const.$ is an arbitrary constant, reflecting the fact that the process of differentiation loses constant information.\n\n- Property\n\n  - Integration by part: for two continuously differentiable functions $u, v$, \n    $$\n    \\int u \\mathrm d v = uv - \\int v \\mathrm d u\n    $$\n    \n### Riemann Integra\n\n$$\n\\int_a^b f(x) \\mathrm d x = F(b) - F(a) \\tag{Definite Integral}\n$$\n\nDefinite Integral $f: (\\mathbb R, \\mathbb R, f: \\mathbb R \\to \\mathbb R) \\to \\mathbb R$ of a function f(x) over an interval $[a, b]$ is the limit of a sum of rectangular areas as the width of the rectangles approaches zero. \n\n\n### Kolmogorov-Arnold Representation Theorem  \n\n$$\nf(\\boldsymbol x) = f(x_1, ..., x_n) = \\sum_{q=0}^{2n} \\Phi_q\\left( \\sum_{p=1}^n \\phi_{q, p}(x_p) \\right)\n$$\nKolmogorov-Arnold representation theorem states that every multivariate continuous function can be represented as a superposition of the two-argument addition of continuous functions of one variable."
+        ]
     },
     "Relation": {
         "define": "$$\nR(A_1, A_2, \\cdots, A_n) \\subseteq A_1 \\times A_2 \\times \\cdots \\times A_n  \\tag{Relation}\n$$\n\nA $n$-ary **relation** $R$ in sets $A_1, A_2, \\cdots, A_n$ is a [subset](./Set.md) of their Cartesian product $A_1 \\times A_2 \\times \\cdots \\times A_n$. Relation is like a table, consists of a set of tuples (rows) and attributes (columns).\n\n- $n$ Degree: The number of attributes (columns) in a relation.\n- Cardinality: The number of tuples (rows) in a relation.",
-        "kids": [
-            "Function"
-        ],
+        "kids": {
+            "Function": ""
+        },
         "name": "Relation",
-        "parents": [
-            "Set"
-        ],
-        "properties": "#"
+        "parents": {
+            "Set": ""
+        },
+        "properties": [
+            "### Operations\n\n#### Set operations\n\nA relation is essentially a set, so it possesses the same operations as a set.\n\n- **Intersection** (\u2229): returns the rows that are common to both relations.\n\n$$\nR\\cap S=\\{t|t\\in R\\land t\\in S\\} \\text{ and } R\\cap S = R-(R - S)\n$$\n\n- **Union** (\u222a): combines the results of two relations. The relations must be union-compatible (i.e., they have the same number of columns with the same domains).\n\n$$\nR\\cup S = \\{t|t\\in R \\lor t\\in S\\}\n$$\n\n- **Set Difference** (\u2212): returns the rows that are in the first relation but not in the second.\n\n$$\nR - S = \\{t|t\\in R \\land t\\notin S\\}\n$$\n\n- **Cartesian Product** (\u00d7): combines each row of the first relation with every row of the second relation.\n\n$$\nR\\times S=\\{(r_1,r_2,\\cdots,r_m,s_1,s_2,\\cdots,s_n)|(r_1,r_2,\\cdots,r_m)\\in R\\land(s_1,s_2,\\cdots,s_n)\\in S\\}\n$$\n\n\n#### Select & Projection\n\n**Select** (\u03c3): filters rows based on a specified condition (predicate).\n$$\n\\sigma_\\text{condition}(R)=\\{t|t\\in R\\land F(t)=\\text{True}\\}\n$$\n\n**Projection** (\u03c0): selects specific columns from a relation.\n$$\n\\pi_{A}(R)=\\{t[A]|t\\in R\\}\n$$\n\n#### Join\n\n$$\nR\\Join_{A\\theta B}S=\\sigma_{A\\theta B}(R\\times S)  \\tag{join}\n$$\n\n**Join** ($\\Join$): combines related tuples from two relations based on a condition, typically a common attribute. Where A and B are groups of attributes of equal and comparable degree on R and S respectively, and $\\theta$ is a comparison operator.\n\n$$\n\\begin{align*}\nR\\Join_{L,\\theta}S &=\\{(r_1,\\cdots,r_m,s_1,\\cdots,s_n)\\mid (r_1,\\cdots,r_m)\\in R\\land((\\exists(s_1,\\cdots,s_n)\\in S: \\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n)))\\lor\\forall(s_1,\\cdots,s_n)\\in S:\\neg\\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n))\\land(s_1 = \\text{null},\\cdots,s_n=\\text{null}))\\}\\\\\nR\\Join_{R,\\theta}S &=\\{(r_1,\\cdots,r_m,s_1,\\cdots,s_n)\\mid (s_1,\\cdots,s_n)\\in S\\land((\\exists(r_1,\\cdots,r_m)\\in R: \\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n)))\\lor\\forall(r_1,\\cdots,r_m)\\in R:\\neg\\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n))\\land(r_1 = \\text{null},\\cdots,r_m=\\text{null}))\\}\\\\\nR\\Join_{\\text{full},\\theta}S &=(R\\Join_{L,\\theta}S)\\cup(R\\Join_{R,\\theta}S)\n\\end{align*}    \\tag{outer join}\n$$\n\nOuter Join (Left, Right, Full): Joins relations but retains rows from one or both relations that do not meet the join condition, filling with nulls where necessary.\n\n- **Left Outer Join ($\\Join_L$)**: Keeps all rows from the left relation. For each row $r$ in $R$, if there is a row $s$ in $S$ such that $\\theta(r, s)$ holds, then the pair $(r, s)$ is in $R\\Join_{L,\\theta}S$. If there is no such row $s$ in $S$ that satisfies $\\theta(r, s)$, then the pair $(r, (\\text{null},\\cdots,\\text{null}))$ is in $R\\Join_{L,\\theta}S$.\n- **Right Outer Join ($\\Join_R$)**: Keeps all rows from the right relation. For each row $s$ in $S$, if there is a row $r$ in $R$ such that $\\theta(r, s)$ holds, then the pair $(r, s)$ is in $R\\Join_{R,\\theta}S$. If there is no such row $r$ in $R$ that satisfies $\\theta(r, s)$, then the pair $(( \\text{null},\\cdots,\\text{null}), s)$ is in $R\\Join_{R,\\theta}S$.\n- **Full Outer Join ($\\Join_\\text{full}$)**: Keeps rows from both relations.\n\n$$\nR\\bowtie S=\\left\\{(r_1,\\cdots,r_m,s_1,\\cdots,s_n)\\mid r\\in R\\land s\\in S\\land\\bigwedge_{i = 1}^{k}(r[C_i]=s[C_i])\\right\\}/_{\\sim}  \\tag{natural join}\n$$\n\n\n\nNatural join of relations $R$ and $S$ is an special join where the join condition is defined by common attributes having equal values, combines tuples from $R$ and $S$ where the values of the common attributes are equal. \n\n- $R$: The first relation, $R$ has attributes $A_1, A_2,\\cdots, A_m$.\n- $S$: The second relation, $S$ has attributes $B_1, B_2,\\cdots, B_n$\n- $C$: the set of common attributes between $R$ and $S$. $C = \\{C_1,C_2,\\cdots,C_k\\}\\subseteq\\{A_1,\\cdots,A_m\\}\\cap\\{B_1,\\cdots,B_n\\}$.\n- $\\theta$: the join condition (a boolean valued function on the attributes of $R, S$)\n- $\\sim$: represents an equivalence relation that removes the duplicate columns of the common attributes. That is, we only keep one copy of each common attribute in the final result."
+        ]
     },
     "Riemann_Zeta_Function": {
         "define": "$$\n\\zeta(s)=\\sum_{n=1}^{\\infty} \\frac{1}{n^{s}}=\\frac{1}{\\Gamma(s)} \\int_{0}^{\\infty} \\frac{x^{s-1}}{e^{x}-1} \\mathrm{~d} x\n$$\n\nRiemann zeta function for $s$ where $\\Re(s) > 1$ is as described above ([Complex function](./Complex_Value_Function.md)). (This series is absolutely convergent in the above region.) The Riemann function is analytically extended to the complex plane, anywhere except for point $s=1$, achieved through a series of functional relationships and integral representations. At $s = 1$, the Riemannian function has a simple pole.\n\n<img src=\"assets/R.0a748464f04900f38f6f535deb08f1d1\" alt=\"img\" style=\"zoom: 20%;\" />",
-        "kids": [],
+        "kids": {},
         "name": "Riemann_Zeta_Function",
-        "parents": [
-            "Complex_Value_Function"
-        ],
-        "properties": "- the relationship with primes\n  $$\n  \\zeta(s) = \\prod_{p \\text{ is prime}} \\frac{1}{1 - p^{-s}}\n  $$\n\n- Riemann Hypothesis: Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part $\\frac{1}{2}$."
+        "parents": {
+            "Complex_Value_Function": ""
+        },
+        "properties": [
+            "- the relationship with primes\n  $$\n  \\zeta(s) = \\prod_{p \\text{ is prime}} \\frac{1}{1 - p^{-s}}\n  $$\n\n- Riemann Hypothesis: Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part $\\frac{1}{2}$."
+        ]
     },
     "Ring": {
         "define": "$$\n(G, +, \\cdot)\n$$\n\nRing is an algebraic structure, where $G$ is a set, $\\cdot$ and $+$ are binary operations, and satisfy:  \n\n- $(G, +)$ is a commutative group\n- $(G, \\cdot)$ is a monoid\n  - $(G, \\cdot)$ satisfies associative law, $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$\n  - $(G, \\cdot)$ exists multiplicative identity, $\\exist 1: 1 \\cdot x = x \\cdot 1 = x, \\forall x \\in G$\n- Distributive law: multiplication is distributive with respect to addition,\n  $$\n  \\begin{align*}\n    a \\cdot (b + c) &= a \\cdot b + a \\cdot c  \\\\\n    (b + c) \\cdot a &= b \\cdot a + c \\cdot a\n  \\end{align*}\n  $$",
-        "kids": [
-            "Quaternion_Ring",
-            "Integer_Ring",
-            "Module",
-            "Field"
-        ],
+        "kids": {
+            "Field": "",
+            "Integer_Ring": "",
+            "Module": "",
+            "Quaternion_Ring": ""
+        },
         "name": "Ring",
-        "parents": [
-            "Algebra_Structure"
-        ],
-        "properties": "#"
+        "parents": {
+            "Algebra_Structure": ""
+        },
+        "properties": [
+            "### Ideal\n\n- Define\n\n  Let $R$ be a ring and $I$ be a subring of $R$, if $\\forall i \\in I, \\forall r \\in R$, $i\\cdot r = r \\cdot i \\in I$,  we call $I$ is the ideal subring of $R$.\n\n- Property\n  - Quotient Ring\n\n- Include\n\n  - Prime Ideal\n\n    An ideal $I$ of a commutative ring $R$ is called a prime ideal if, whenever the product of two elements $a, b \\in R$ is an element of $I$, at least one of $a$ or $b$ is in $I$. Symbolically, if $I$ is a prime ideal and $ab \\in I$, then either $a \\in I$ or $b \\in I$.\n\n  - Maximal Ideal\n\n    An ideal $I$ of a ring $R$ is called a maximal ideal if it is a proper ideal (i.e., $I \\neq R$) and there are no other proper ideals properly containing $I$. In other words, there does not exist another ideal $J$ such that $I \\subsetneq J \\subsetneq R$.\n\n### Polynomial Ring\n\nThe polynomial ring $K[x]$ in $x$ over a field (or, more generally, a commutative ring) $K$ defined as the set of all polynomials in the variable $x$ with coefficients $p_i \\in K$ and a non-negative integer $n$ (representing the degree of the polynomial). \n$$\nf(x) = p_{0}+p_{1}x+p_{2}x^{2}+\\cdots +p_{n}x^{n}\n$$\n\n- **Addition**: $g(x) + f(x)$ is the polynomial whose coefficient of $x_i$ is $a_i + b_i$ for each $i$.\n- **Multiplication**: Given two polynomials $f, g$, their product $f \\cdot g$ is computed using the distributive property."
+        ]
     },
     "Sequence": {
         "define": "$$\nf: \\mathbb N \\to S  \\tag{Sequence}\n$$\n$$\n(a_1, a_2, \\cdots, a_n)  \\tag{Finite sequence}\n$$\n$$\n(a_1, a_2, \\cdots)  \\tag{Infinite sequence}\n$$\n\nA sequence $f: \\mathbb N \\to S$ can be defined as a [function](./Function.md) from natural numbers (the positions of elements in the sequence) to the elements at each position.",
-        "kids": [],
+        "kids": {},
         "name": "Sequence",
-        "parents": [
-            "Function"
-        ],
-        "properties": "#"
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            "### Limitation\n\n- Define  \n  $$\n  \\lim_{n \\to \\infty} x_n=a \\Leftrightarrow |x_n-a|<\u03b5, \\forall \u03b5>0, \\exists N \\in Z_+, n > N  \\tag{Limit of Sequence}\n  $$\n\n- Property\n  - Uniqueness\n  - Boundedness\n  - \u4fdd\u53f7\u6027\n\n### Series\n\n- Define\n\n  A series refers to the sum of the terms of a sequence. Given a sequence $a_n$, the series $S$ is given by:\n  $$\n  S = \\sum_{i=0}^\\infty a_i  \\\\\n  S_n = \\sum_{i=0}^n a_i\n  $$\n\n### Convergence of sequence\n\n### Subsequence\n\n- Define  \n  Subsequence of a sequence $(a_n)$ is $(a_{g(n)})$ where $g : \\mathbb N \\to \\mathbb N$ is strictly increasing.  \n\n- Problem \n  * Sort\n\n  * Maximum Subarray Sum\n    - Purpose  \n      For a given sequence $a$, we aim to find the maximum sum of a contiguous subarray.\n      $$\n      \\begin{align*}\n        \\max_{x \\subseteq a} \\sum x\n      \\end{align*}\n      $$\n\n    - Algorithm  \n      Dynamic Program,\n      $$\n      f_i = \\max(f_{i-1}, 0) + a_i\n      $$\n      $$\n      s^* = \\max_{i=1}^n(f_i)\n      $$\n      where $f_i$ refer to the maximum sum of a contiguous subarray ending at $a_i$. \n\n  * Longest Subsequence Problem\n  * Sequence Palindrome\n    - Include\n      * Longest Palindrome Subsequence \n        - Purpose \n          $$\n          \\begin{align*}\n            \\max_{x \\subseteq a} \\quad & n_x = \\text{number}(x)  \\\\\n            s.t. \\quad & x_i = x_{n_x - i + 1}  \\quad ; i = 1:n_x  \\tag{Palindrome}\n          \\end{align*}\n          $$\n\n        - Algorithm  \n          Dynamic programming,\n          $$\n          \\begin{align*}\n            f(s,e) &= \\left\\{\\begin{matrix}\n              f(s-1,e+1) + 2 \\quad & f(s,e) > 0 \\ \\text{and}\\  a_{s-1} = a_{e+1}  \\\\\n              0 \\quad & other.\n              \\end{matrix}\\right.  \\\\\n            f(s,s) &= 1  \\tag{initial}  \\\\\n            f(s,s+1) &= 2 \\quad ;a_s = a_{s+1}  \\\\\n          \\end{align*}\n          $$\n          $f()$: $a_{s:e}$\u7684\u56de\u6587\u5b57\u6570, \u4e0d\u662f\u56de\u6587\u5e8f\u5217\u5219\u4e3a0.\n\n      * Maximum Palindrome Prefix\n        - Purpose  \n          $$\n          \\begin{align*}\n            \\max_{x \\in 1:n_a} \\quad & x  \\\\\n            s.t. \\quad & a_i = x_{x - i + 1}  \\quad ; i = 1:x  \\tag{Palindrome}\n          \\end{align*}\n          $$\n\n  * Sequence Matching\n    - Purpose  \n      For two given sequences $a, b$, where $\\text{number}(b) \\le \\text{number}(a)$, and we aim to find the first place where $b$ matching the successive subsequence of $a$.\n      $$\n      \\begin{align*}\n        \\min\\quad& k \\\\\n        s.t.\\quad& b = a_{k:k+n_b-1}\n      \\end{align*}\n      $$\n\n    - Property  \n      - The next place possible matched is $k+i-l_i$, from the place $k$ in $a$ and $b_{1:i} = a_{k:k+i-1}$.\n\n        $$\n        l_i = \\text{length}_\\text{Longest Prefix-Suffix}(b_{1:i})\n        $$\n        $$\n        \\begin{align*}\n          b_{1:i} = a_{k:k+i-1} \\Rightarrow\n          b_{1:l_i} &= a_{k+i-l_i:k+i-1}  \\tag{match}\\\\\n          b_{1:l'} &\u2260 a_{k+i-l':k+i-1}  \\quad ; l' > l_i  \\tag{mismatch}\n        \\end{align*}\n        $$\n\n    - Algorithm\n      * Knuth-Morris-Pratt Algorithm  \n        For a place $k$ in sequence $a$ and $b_{1:i} = a_{k:k+i-1}$, we judge whether is the matched place. If not, we use the property above to arrive the place $k'$ possible matched and do the same thing, untill find the answer.\n        $$\n        \\begin{matrix}\n          k \\gets& k+i-l_i \\quad; b_{i+1} \\neq a_{k+i}\\\\\n          i \\gets& i+1 \\quad; b_{i+1} = a_{k+i}\\\\\n        \\end{matrix}\n        $$\n\n  * Dynamic Time Warping , DTW"
+        ]
     },
     "Set": {
         "define": "$$\n\\{\\cdot\\}\n$$\n\n\n\nA set $S$ is a collection of distinct objects. \n\nIf an object $x$ is a member of a set $S$, we write $x \\in S$. Otherwise, we write $x \\notin S$. The most commonly used axiomatic system for set theory is Zermelo-Fraenkel set theory with the Axiom of Choice (ZFC axiomatic system):\n\n1. **Axiom of Extensionality**: Two sets are equal if they have the same elements.\n   $$\n   \\forall A \\forall B (\\forall x (x \\in A \\leftrightarrow x \\in B) \\rightarrow A = B)\n   $$\n\n2. **Axiom of Regularity (also known as the Axiom of Foundation)**: Every non-empty set has a member that is disjoint from it. \n   $$\n   \\forall x(x \\neq \\varnothing \\rightarrow \\exists y(y \\in x \\wedge y \\cap x=\\varnothing))\n   $$\n\n3. **Axiom of Pairing**: For any two sets, there is a set that contains exactly those two sets.\n   $$\n   \\forall x \\forall y \\exists B \\forall z (z \\in B \\leftrightarrow (z = x \u2228 z = y))\n   $$\n\n4. **Axiom of Union**: For any set of sets, there is a set that contains all the elements of those sets.\n   $$\n   \\forall A \\exists B \\forall x (x \\in B \\leftrightarrow \\exists C (x \\in C \u2227 C \\in A))\n   $$\n\n5. **Axiom of Infinity**: There exists a set that contains the empty set and is closed under the operation of \"successor\" which is defined for any set $x$ as $x \\cup \\{x\\}$.\n   $$\n   \\exists A (\u2205 \\in A \u2227 \\forall x (x \\in A \\rightarrow x \u222a {x} \\in A))\n   $$\n\n6. **Axiom Schema of Separation (also known as the Axiom Schema of Comprehension)**: For any set and any property that can be defined without reference to the whole set, there is a subset containing exactly those elements of the original set that have the property.\n   $$\n   \\forall w_{1},\\ldots ,w_{n}\\,\\forall A\\,\\exists B\\,\\forall x\\,(x\\in B\\Leftrightarrow [x\\in A\\land \\varphi (x,w_{1},\\ldots ,w_{n},A)])\n   $$\n\n7. **Axiom of Power Set**: For any set, there is a set of all its subsets.\n   $$\n   \\forall A \\exists B \\forall C (C \\in B \\leftrightarrow \\forall x (x \\in C \\rightarrow x \\in A))\n   $$\n\n8. **Axiom Schema of Replacement**: If a property defines a function on a set, then the image of the set under that function is also a set.\n   $$\n   \\forall A (\\forall x \\in A \\exists !y \u03c6(x, y, p1, ..., pn) \\rightarrow \\exists B \\forall x \\in A \\exists y (y \\in B \u2227 \u03c6(x, y, p1, ..., pn)))\n   $$\n\n9. **Axiom of Choice**: For any set of non-empty sets, there exists a choice function that selects one element from each set.\n   $$\n   \\forall A (\\exists B \\forall x (x \\in B \\leftrightarrow (\\exists y (y \\in A \u2227 \\forall z (z \\in A \\rightarrow (z = y \u2228 \u00acS(z, y)))))))\n   $$",
-        "kids": [
-            "Algebra_Structure",
-            "Natural_Number",
-            "Ordered_Set",
-            "Graph",
-            "Fractal",
-            "Relation",
-            "Power_Set"
-        ],
+        "kids": {
+            "Algebra_Structure": "",
+            "Fractal": "",
+            "Graph": "",
+            "Natural_Number": "",
+            "Ordered_Set": "",
+            "Power_Set": "",
+            "Relation": ""
+        },
         "name": "Set",
-        "parents": [],
-        "properties": "#"
+        "parents": {
+            "root": ""
+        },
+        "properties": [
+            "### Cardinality & Counting\n\n- Define  \n  $$\n  |S| = \\text{number}(S)  \\tag{Cardinality}\n  $$\n  Cardinality $|S|$ is the number of elements in a set $S$.\n\n- Property\n  * Addition theorem  \n    for $S = \\cap_{i=1}^n S_i, S_i \\cap S_j = \\emptyset (i \u2260 j)$\n    $$\n    \\Rightarrow |S| = \\sum_{i=1}^n |S_i|\n    $$\n\n  * Multiplication theorem  \n    for sets $S_A, S_B$, and\n    $$\n    \\begin{align*}\n      S &= \\{(a, b) | a \\in S_A, b \\in S_B\\}  \\\\\n        &= S_A \u00d7 S_B  \\tag{Cartesian\u79ef}  \\\\\n    \\end{align*}\n    $$\n    $$\n    \\Rightarrow |S| = |S_A| \u00d7 |S_B|\n    $$\n\n    - Proof\n      $$\n      \\begin{align*}\n        S \n        &= \\{(a, b) | a \\in S_A, b \\in S_B\\}  \\\\\n        &= \\bigcap_{a_i \\in S_A} \\{(a_i, b) | b \\in S_B\\}  \\\\\n        \\Rightarrow |S| &= \\sum_{i=1}^{|S_A|} |S_B|  \\tag{Addition theorem}  \\\\\n        &= |S_A| \u00d7 |S_B|  \\\\\n      \\end{align*}\n      $$\n\n  * Principle of Inclusion-Exclusion  \n    for $A_1,...,A_n \\subseteq S$\n    $$\n    \\begin{align*}\n      \\left|\\bigcup_{i=1}^n A_i\\right| &= \\sum_{k=1}^n \\left((-1)^{k-1} \\sum_{\\substack{i_1,...,i_k \\in 1:n \\\\ i_1\u2260...\u2260i_k}} \\left|\\bigcup_{i\\in\\{i_1,...,i_k\\}} A_i\\right|\\right)\n    \\end{align*}\n    $$\n\n  - Special Counting Sequence\n    * Catalan Numbers \n      - Define  \n        $$\n        \\begin{align*}\n          f_n \n          &= \\frac{C(2n, n)}{n+1}\\quad, n \\ge 0  \\\\\n          &= C(2n, n) - C(2n, n - 1)  \\\\\n          &= C(2n, n) - C(2n, n + 1)  \\\\\n          &= \\frac{(2n)!}{(n+1)! n!}\\\\\n          &= \\left\\{\\begin{matrix}\n            \\sum\\limits_{i=1}^n f_{i-1}f_{n-i}  & n \\ge 2\\\\\n            1 & n = 0, 1\n          \\end{matrix}\\right. \\tag{recurrence form}\\\\\n          &= \\frac{4n-2}{n+1} f_{n-1}\n        \\end{align*}\n        $$\n        Catalan Numbers are a sequence of natural numbers.\n      \n  * Pigeonhole Principle  \n    for $A_1, ..., A_n \\subseteq A, |A| = n + 1$, $\\Rightarrow \\exists A_i, |A_i| \u2265 2$.\n\n### Relationship between sets\n\n* Subset & Proper Subset \n  $$\n  A \\subseteq B \\quad\\Leftrightarrow\\quad x \\in B, \\forall x \\in A \\tag{Subset}\n  $$\n  If all the elements of set $A$ are contained in a set $B$, then we say $A$ is a subset of $B$.\n\n  $$\n  A \\subset B \\Leftrightarrow x \\in B, \\forall x \\in A \\text{ and } \\exist x \\notin A, x \\in B \\tag{Proper Subset}\n  $$\n\n  A set $A$ is a proper subset of $B$, if $A \\subseteq B$, but not $A = B$.\n\n* Equal  \n  $$\n  \\begin{align*}\n    A = B &\\quad\\Leftrightarrow\\quad x \\in B, \\forall x \\in A \\text{ and } x \\in A, \\forall x \\in B  \\tag{equal}\\\\\n    &\\quad\\Leftrightarrow\\quad A \\subseteq B, B \\subseteq A\n  \\end{align*}\n  $$\n  Two sets are equal, if they contain the same elements.\n\n* Disjoint\n  $$\n  A, B \\text{ is Disjoint } \\quad\\Leftrightarrow\\quad A \\cap B = \\emptyset\n  $$\n\n### Operations\n\n#### Intersection\n\n- Define\n  $$\n  A \\cap B = \\{x \\ |\\ x \\in A, x \\in B\\}  \\tag{Intersection}\n  $$\n\n- Property\n  - idempotency law: $A \\cap A = A$\n  - commutative law: $A \\cap B = B \\cap A$  \n  - associative law: $A \\cap (B \\cap C) = (A \\cap B) \\cap C$\n\n#### Union\n\n- Define  \n  $$\n  A \\cup B = \\{x \\ |\\ x \\in A \\text{ or } x \\in B \\}  \\tag{Union}\n  $$\n\n- Property\n  - idempotency law: $A \\cup A = A$\n  - commutative law: $A \\cup B = B \\cup A$  \n  - associative law: $A \\cup (B \\cup C) = (A \\cup B) \\cup C$\n\n#### Difference\n\n- Define\n  $$\n  A - B = \\{x \\ |\\ x \\in A \\text{ and } x \\notin B\\}  \\tag{Difference}\n  $$\n\n#### Complement of A Set\n\n- Define  \n  $$\n  \\bar A = U - A = \\{x \\ |\\ x \\in U, x \\notin A\\}  \\tag{Complement of A Set}\n  $$\n\n  For a universal set $U$, the complement of a set $A$ is $U - A$.\n\n- Property\n  - $\\bar{\\bar A} = A$ \n\n  - distributive laws \n    $$\n    A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\n    $$\n    $$\n    A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\n    $$\n  - absorption laws\n    $$\n    A \\cap (A \\cup B) = A\n    $$\n    $$\n    A \\cup (A \\cap B) = A\n    $$\n  - DeMorgan's laws\n    $$\n    A - (B \\cap C) = (A - B) \\cup (A - C)\n    $$\n    $$\n    A - (B \\cup C) = (A - B) \\cap (A - C)\n    $$\n    $$\n    \\overline{A \\cap B} = \\bar A \\cup \\bar B\n    $$\n    $$\n    \\overline{A \\cup B} = \\bar A \\cap \\bar B\n    $$\n\n### Cartesian Product\n\n- Define\n  $$\n  A \\times B = \\{(a, b) \\ | a \\in A \\text{ and } b \\in B\\}\n  $$\n  For two sets $A, B$, cartesian product is the set of all ordered pairs such that the first element of the pair is an element of $A$ and the second one is from $B$.\n\n- Property\n  - $\\text{number}(A \\times B) = \\text{number}(A) \\cdot \\text{number}(B)$\n\n### [Power Set](./Power_Set.md)"
+        ]
     },
     "Simplex": {
         "define": "$$\nC = \\text{conv} (\\{v_1, ..., v_k\\}) = \\left\\{\\sum_{i=1}^k \\theta_i v_i \\ |\\ \\theta \u2ab0 0, \\boldsymbol 1^T \\theta=1 \\right\\}\n$$\n\nSimplex represents the simplest possible polytope in any given dimension. Specifically, a $k$-simplex is a $k$-dimensional polytope which is the convex hull of its $k + 1$ vertices. ([polyhedron](./Polyhedron.md))",
-        "kids": [],
+        "kids": {},
         "name": "Simplex",
-        "parents": [
-            "Polyhedron"
-        ],
-        "properties": null
+        "parents": {
+            "Polyhedron": ""
+        },
+        "properties": [
+            ""
+        ]
     },
     "Stochastic_Process": {
         "define": "A Stochastic Process $X(t, \\omega), \\omega \\in \\Omega, t \\in T$ is defined as a collection of random variables defined on a [Probability Space](./Probability_Space.md) $(\u03a9, \\mathcal F, P)$, and these random variables indexed by set $T$.\n\n- Note\n  - When the time $t$ is fixed, the random process degenerates into a random variable.\n  - When the random sample $\u03b6$ is determined, the random process degenerates into a continuous time function",
-        "kids": [
-            "Markov_Process",
-            "Martingale"
-        ],
+        "kids": {
+            "Markov_Process": "",
+            "Martingale": ""
+        },
         "name": "Stochastic_Process",
-        "parents": [
-            "Probability_Space"
-        ],
-        "properties": "* Correlation Function & Covariance Function\n  - Define  \n    $$\n    \\begin{align*} \n      Corr(X(t_1), Y(t_2)) \n      &= \\mathbb E(X(t_1) Y(t_2))  \\tag{Correlation function}\\\\\n    \n      Corr(X(t_1), X(t_2)) \n      &= \\mathbb E(X(t_1) X(t_2))  \\tag{AutoCorrelation function}\\\\\n    \n      Cov(X(t_1), Y(t_2)) \n      &= \\mathbb E((X(t_1) - \\mu_X(t_1)) (Y(t_2) - \\mu_Y(t_2)))  \\tag{Covariance function}\\\\\n      &= \\mathbb E(X(t_1) X(t_2)) - \\mu_X(t_1) \\mu_Y(t_2)  \\\\\n      &= Corr(X(t_1), Y(t_2)) - \\mu_X(t_1) \\mu_Y(t_2)  \\\\\n    \n      Cov(X(t_1), X(t_2)) \n      &= \\mathbb E((X(t_1) - \\mu(t_1)) (X(t_2) - \\mu(t_2)))  \\tag{AutoCovariance function}\\\\\n      &= \\mathbb E(X(t_1) X(t_2)) - \\mu(t_1) \\mu(t_2)  \\\\\n      &= Corr(X(t_1), X(t_2)) - \\mu(t_1) \\mu(t_2) \n    \\end{align*} \n    $$\n\n  - Property  \n    - $X, Y \\ \\text{Uncorrelated} \\Leftrightarrow Cov(X(t_1), Y(t_2)) = 0, \\quad \\forall t_1, t_2$\n\n    - $X, Y \\ \\text{Orthogonality} \\Leftrightarrow Corr(X(t_1), Y(t_2)) = 0, \\quad \\forall t_1, t_2$\n\n- Independence"
+        "parents": {
+            "Probability_Space": ""
+        },
+        "properties": [
+            "* Correlation Function & Covariance Function\n  - Define  \n    $$\n    \\begin{align*} \n      Corr(X(t_1), Y(t_2)) \n      &= \\mathbb E(X(t_1) Y(t_2))  \\tag{Correlation function}\\\\\n    \n      Corr(X(t_1), X(t_2)) \n      &= \\mathbb E(X(t_1) X(t_2))  \\tag{AutoCorrelation function}\\\\\n    \n      Cov(X(t_1), Y(t_2)) \n      &= \\mathbb E((X(t_1) - \\mu_X(t_1)) (Y(t_2) - \\mu_Y(t_2)))  \\tag{Covariance function}\\\\\n      &= \\mathbb E(X(t_1) X(t_2)) - \\mu_X(t_1) \\mu_Y(t_2)  \\\\\n      &= Corr(X(t_1), Y(t_2)) - \\mu_X(t_1) \\mu_Y(t_2)  \\\\\n    \n      Cov(X(t_1), X(t_2)) \n      &= \\mathbb E((X(t_1) - \\mu(t_1)) (X(t_2) - \\mu(t_2)))  \\tag{AutoCovariance function}\\\\\n      &= \\mathbb E(X(t_1) X(t_2)) - \\mu(t_1) \\mu(t_2)  \\\\\n      &= Corr(X(t_1), X(t_2)) - \\mu(t_1) \\mu(t_2) \n    \\end{align*} \n    $$\n\n  - Property  \n    - $X, Y \\ \\text{Uncorrelated} \\Leftrightarrow Cov(X(t_1), Y(t_2)) = 0, \\quad \\forall t_1, t_2$\n\n    - $X, Y \\ \\text{Orthogonality} \\Leftrightarrow Corr(X(t_1), Y(t_2)) = 0, \\quad \\forall t_1, t_2$\n\n- Independence"
+        ]
     },
     "Topological_Space": {
         "define": "In a [metric space](./Metric_Space.md) $(M, d)$, an open set $A$ is a set that, if $\\forall a \\in A$, there $\\exists\\epsilon > 0$ such that $\\forall b \\in M$ satisfying $d(x, y) < \\epsilon$, then $b \\in A$.\n\nTopological space $\\tau$ is a collection of subsets of $S$, that is subsets of [power set](./Power_Set.md) $P(S)$, called the Open Sets, that satisfy certain axioms,\n\n- The empty set and $S$ itself belong to $\\tau$.\n  $$\\{\\emptyset, S\\} \\subseteq \\tau$$ \n- The intersection of any finite members of $\\tau$ belongs to $\\tau$.\n- Any arbitrary (finite or infinite) union of members of $\\tau$ belongs to $\\tau$.",
-        "kids": [
-            "Manifold",
-            "Metric_Space"
-        ],
+        "kids": {
+            "Manifold": "",
+            "Metric_Space": ""
+        },
         "name": "Topological_Space",
-        "parents": [
-            "Metric_Space",
-            "Power_Set"
-        ],
-        "properties": "#"
+        "parents": {
+            "Metric_Space": "",
+            "Power_Set": ""
+        },
+        "properties": [
+            "### Homeomorphism\n\n- Define  \n  A function $f: X \\to Y$ between two topological spaces is a homeomorphism if it has the following properties,\n  - $f$ is a bijection \n  - $f$ is continuous\n  - the inverse function $f^{-1}$ is continuous ($f$ is an open mapping).\n\n### Chart\n\n- Define  \n  Chart $(U, \\phi)$ on a set is a bijection $\\phi: U \\subseteq M \\to \\phi(U) \\subseteq \\mathbb R^n$, where $U, \\phi(U)$ is open.\n\n  A chart $(U, \\phi)$ is centered at $p$ for $p \\in U$ if $\\phi(p) = 0$.\n\n### Borel $\\sigma$-algebra \n\n### Genus\n- Define  \nGenus of a non-empty connected surface is defined as the maximum number of non-intersecting simple closed curves that can be drawn on the surface without dividing it into two disconnected pieces. The genus is a topological invariant that characterizes its \"number of holes\". \n\nGenus $g$ can be defined in terms of the Euler characteristic $\\chi$, where $b$ is the number of boundary components.\n\n$$\ng = \\frac{2 - \\chi - b}{2}  \\tag{Genus}\n$$\n\n### Euler Characteristic\n- Define  \nEuler Characteristic is a topological invariant and defined as an alternating sum of the ranks of the homology groups of the space.\n\nIn a polyhedra, the Euler characteristic was classically defined for surfaces of polyhedra with the numbers of vertices $V$ (corners), edges $E$ and faces $F$. Any convex polyhedron's surface has Euler characteristic $\\chi = 2$.\n$$\n\\chi = V - E + F  \\tag{Euler Characteristic}\n$$"
+        ]
     },
     "Tree": {
         "define": "A class of Connected undirected graphs without loops.\n\n- root node: A node without forward nodes, and a tree has only one root node.\n- leaf node: A node that has no children.\n- depth: Number of edges in the simple path from node to root node. The depth of the tree is the maximum node depth in the tree.",
-        "kids": [],
+        "kids": {},
         "name": "Tree",
-        "parents": [
-            "Graph"
-        ],
-        "properties": "- There exists and only exists one single simple path between any two points of the tree.\n- $number(E) = number(V) - 1$\n- Delete an edge, the Tree will become disconnected;  \n  Add an edge, the Tree will have a loop."
+        "parents": {
+            "Graph": ""
+        },
+        "properties": [
+            "- There exists and only exists one single simple path between any two points of the tree.\n- $number(E) = number(V) - 1$\n- Delete an edge, the Tree will become disconnected;  \n  Add an edge, the Tree will have a loop."
+        ]
     },
     "Trigonometric_Function": {
         "define": "Trigonometric functions $f: \\mathbb R \\to \\mathbb R$ are a set of mathematical [functions](./Function.md) that relate angles $\\theta$ to the ratios of the sides (opposite $a$, adjacent $b$, hypotenuse $c$) of a right-angled triangle. Where hypotenuse is the length of the side opposite the right angle, opposite represents the side opposite the given angle $\\theta$, adjacent represents the side between the angle $\\theta$ and the right angle.\n\n$$\n\\begin{align*}\n  \\sin(\\theta) &= \\frac{a}{c}  \\quad\\in (-1, 1)\\tag{sine}\\\\\n  \\cos(\\theta) &= \\frac{b}{c}  \\quad\\in (-1, 1)\\tag{cosine}\\\\\n  \\tan(\\theta) &= \\frac{a}{b}  \\quad\\in (-\\infty, +\\infty)\\tag{tangent}\n\\end{align*}\n$$\n\nHyperbolic Functions $f: \\mathbb R \\to \\mathbb R$ are defined by hyperbola $x^2 - y^2 = 1$, where the angles $\\theta$ refer to twice the included angle of the ray from zero point to the point in hyperbola and positive half of x-axis, $\\sinh(\\theta)$ is the coordinate value $x$ of the point, and $\\cosh(\\theta)$ is the coordinate value $y$ of the point.\n\nFor the complex field $z \\in \\mathbb C$,\n$$\ne^{iz} = \\cos(z) + i \\sin(z)\n$$\n\n$$\n\\begin{align*}\n\\sin(z)  &= \\frac{e^{iz} - e^{-iz}}{2i}  \\tag{sine}\\\\\n\\cos(z)  &= \\frac{e^{iz} + e^{-iz}}{2}  \\tag{cosine}\\\\\n\\tan(z)  &= \\frac{e^{iz} - e^{-iz}}{ie^{iz} + ie^{-iz}}  \\tag{tangent}\\\\\n\\sinh(z) &= \\frac{e^{z} - e^{-z}}{2}  \\tag{hyperbolic sine}\\\\\n\\cosh(z) &= \\frac{e^{z} + e^{-z}}{2}  \\tag{hyperbolic cosine}\\\\\n\\sinh(z) &= \\frac{e^{-z} - e^{z}}{e^{z} + e^{-z}}  \\tag{hyperbolic tangent}\\\\\n\\end{align*}\n$$",
-        "kids": [],
+        "kids": {},
         "name": "Trigonometric_Function",
-        "parents": [
-            "Function"
-        ],
-        "properties": "- Euler's formula\n  $$\n  e^{i \\pi} + 1 = 0\n  $$\n  \n- Trigonometric functions are periodic functions. The period of $\\sin(\\cdot), \\cos(\\cdot)$ is $2 k \\pi$, period of $\\tan(\\cdot)$ is $k \\pi$, $k \\in \\mathbb Z$,\n  $$\n  \\begin{align*}\n    \\sin(\\theta + 2 k \\pi) &= \\sin(\\theta)  \\\\\n    \\cos(\\theta + 2 k \\pi) &= \\cos(\\theta)  \\\\\n    \\tan(\\theta + k \\pi) &= \\tan(\\theta)  \\\\\n  \\end{align*}\n  $$\n  \n- 1\n  $$\n  \\begin{align*}\n    \\sin(a \\pm b) &= \\sin(a) \\cos(b) \\pm \\cos(a) \\sin(b)  \\\\\n    \\cos(a \\pm b) &= \\cos(a) \\cos(b) \\mp \\sin(a) \\sin(b)  \\\\\n    \\tan(a \\pm b) &= \\frac{\\tan(a) \\pm  \\tan(b)}{1 \\mp \\tan(a) \\tan(b)}\n  \\end{align*}\n  $$\n  \n- The relationship between the addition and multiplication of two trigonometric functions,\n  $$\n  \\begin{align*}\n    \\sin(a)\\cos(b) &= \\frac{\\sin(a + b) + \\sin(a - b)}{2}  \\\\\n    \\sin(a)\\sin(b) &= \\frac{\\cos(a + b) - \\cos(a - b)}{2}  \\\\\n    \\cos(a)\\cos(b) &= \\frac{\\cos(a + b) + \\cos(a - b)}{2}  \\\\\n  \\end{align*}\n  $$\n\n- 1\n  $$\n  a \\sin(\\theta) + b \\cos(\\theta) = \\sqrt{a^2 + b^2} \\sin \\left(\\theta + \\arctan\\left(\\frac{b}{a}\\right) \\right)\n  $$"
+        "parents": {
+            "Function": ""
+        },
+        "properties": [
+            "- Euler's formula\n  $$\n  e^{i \\pi} + 1 = 0\n  $$\n  \n- Trigonometric functions are periodic functions. The period of $\\sin(\\cdot), \\cos(\\cdot)$ is $2 k \\pi$, period of $\\tan(\\cdot)$ is $k \\pi$, $k \\in \\mathbb Z$,\n  $$\n  \\begin{align*}\n    \\sin(\\theta + 2 k \\pi) &= \\sin(\\theta)  \\\\\n    \\cos(\\theta + 2 k \\pi) &= \\cos(\\theta)  \\\\\n    \\tan(\\theta + k \\pi) &= \\tan(\\theta)  \\\\\n  \\end{align*}\n  $$\n  \n- 1\n  $$\n  \\begin{align*}\n    \\sin(a \\pm b) &= \\sin(a) \\cos(b) \\pm \\cos(a) \\sin(b)  \\\\\n    \\cos(a \\pm b) &= \\cos(a) \\cos(b) \\mp \\sin(a) \\sin(b)  \\\\\n    \\tan(a \\pm b) &= \\frac{\\tan(a) \\pm  \\tan(b)}{1 \\mp \\tan(a) \\tan(b)}\n  \\end{align*}\n  $$\n  \n- The relationship between the addition and multiplication of two trigonometric functions,\n  $$\n  \\begin{align*}\n    \\sin(a)\\cos(b) &= \\frac{\\sin(a + b) + \\sin(a - b)}{2}  \\\\\n    \\sin(a)\\sin(b) &= \\frac{\\cos(a + b) - \\cos(a - b)}{2}  \\\\\n    \\cos(a)\\cos(b) &= \\frac{\\cos(a + b) + \\cos(a - b)}{2}  \\\\\n  \\end{align*}\n  $$\n\n- 1\n  $$\n  a \\sin(\\theta) + b \\cos(\\theta) = \\sqrt{a^2 + b^2} \\sin \\left(\\theta + \\arctan\\left(\\frac{b}{a}\\right) \\right)\n  $$"
+        ]
     },
     "root": {
         "define": "",
-        "kids": [
-            "Set",
-            "Logic"
-        ],
+        "kids": {
+            "Logic": "",
+            "Set": ""
+        },
         "name": "root",
-        "parents": [],
-        "properties": ""
+        "parents": {},
+        "properties": []
     }
 }
