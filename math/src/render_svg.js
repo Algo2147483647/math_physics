@@ -91,7 +91,8 @@ function RenderByDFS(dag, svg, nodeKey, visited) {
         const radius = 8;
         RenderEdge(svg,
             dag[nodeKey]["coordinate_SVG"][0] + radius, dag[nodeKey]["coordinate_SVG"][1],
-            dag[kidKey] ["coordinate_SVG"][0] - radius, dag[kidKey] ["coordinate_SVG"][1]);
+            dag[kidKey] ["coordinate_SVG"][0] - radius, dag[kidKey] ["coordinate_SVG"][1],
+            dag[nodeKey].kids[kidKey]);
 
         if (!visited.has(kidKey)) {
             RenderByDFS(dag, svg, kidKey, visited);
@@ -141,7 +142,7 @@ function RenderNode(dag, svg, x, y, nodeKey) {
     svg.appendChild(textLink);
 }
 
-function RenderEdge(svg, x1, y1, x2, y2) {
+function RenderEdge(svg, x1, y1, x2, y2, weight) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     const d = `M ${x1} ${y1} C ${(x1 + x2) / 2} ${y1} ${(x1 + x2) / 2} ${y2} ${x2} ${y2}`;
 
@@ -149,5 +150,6 @@ function RenderEdge(svg, x1, y1, x2, y2) {
     path.setAttribute("stroke", "#8888FF");
     path.setAttribute("fill", "none");
     path.setAttribute("stroke-width", "1");
+    path.addEventListener('click', () => alert(weight));
     svg.appendChild(path);
 }
