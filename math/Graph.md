@@ -91,6 +91,8 @@ Matching of a graph is a set of edges $M \subseteq E$ that have no common points
 
 - [Bipartite_Graph](./Bipartite_Graph.md): 
 
+- [Complete_Graph](./Complete_Graph.md): 
+
 - [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): 
 
 - [Tree](./Tree.md): 

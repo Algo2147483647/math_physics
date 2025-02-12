@@ -310,7 +310,6 @@ $$
   | Variance | $D(x) = 2 n$ |
   |||
 
-
 ## Include
 
 - [Moment](./Moment.md): 

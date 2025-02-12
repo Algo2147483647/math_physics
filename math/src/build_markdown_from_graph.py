@@ -23,13 +23,13 @@ def build_markdown_from_graph(graph):
 
             file.write("## Include\n\n")
             for kid, value in node.kids.items():
-                if key == "root":
+                if kid == "root":
                     continue
                 file.write("- [%s](./%s.md): %s\n\n" % (kid, kid, value))
 
             file.write("## Parents\n\n")
             for parent, value in node.parents.items():
-                if key == "root":
+                if parent == "root":
                     continue
                 file.write("- [%s](./%s.md): %s\n\n" % (parent, parent, value))
     return

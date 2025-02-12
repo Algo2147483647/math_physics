@@ -42,7 +42,7 @@ def build_graph_from_markdown_file(file_path, graph):
             links = re.findall(r'\]\((.*?\.md)\)', content)
             define_section = re.search(r'##\s*Define(.*?)(\n## \w+|$)', content, re.DOTALL)
             define_section = define_section.group(1).strip() if define_section else ""
-            property_section = re.search(r'##\s*Property(.*?)(\n## \w+|$)', content, re.DOTALL)
+            property_section = re.search(r'##\s*Properties(.*?)(\n## \w+|$)', content, re.DOTALL)
             property_section = property_section.group(1).strip() if property_section else ""
             include_section = re.search(r'##\s*Include(.*?)(\n## \w+|$)', content, re.DOTALL)
             include_section = include_section.group(1).strip() if include_section else ""
