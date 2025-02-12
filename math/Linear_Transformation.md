@@ -156,6 +156,111 @@ $$
   \end{align*}
   $$
 
+### Identity transformation
+
+- Define
+  $$
+  T x = x \quad ;(\forall x \in V)
+  $$
+
+### Zero transformation
+
+- Define  
+  $$
+  T x = 0 \quad ;(\forall x \in V)
+  $$
+
+### Orthogonal Transformation
+
+- Define
+  $$
+  <x, x> = <T x, T x>
+  $$
+  内积空间中, 保持任意向量的长度不变的线性变换.  
+  正交矩阵:  
+  $$
+    A A^T = I  \\
+    A A^H = I
+  $$
+
+* Rotation Transformation
+  - Define  
+    Rotation Transformation Matrix:  
+
+    $$
+    T_{ij} = \left(\begin{matrix}
+      \boldsymbol  I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
+    \end{matrix}\right)
+    $$
+
+    where $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
+
+* Reflection Transformation
+  - Define  
+    $$
+    y = H x = (I - 2 e_2 e_2^T) x
+    $$
+    - Proof  
+      $$
+      \begin{align*}
+        x - y &= e_2 · (e_2^T x)  \\
+        \Rightarrow y &= (I-2 e_2 e_2^T) x
+      \end{align*}
+      $$
+
+### Symmetry Transformation
+
+- Define
+  $$
+  <T x, y> = <x, T y>
+  $$
+  Symmetry Matrix:
+  $$
+    A^T = A  \\
+    A^H = A
+  $$
+
+### Projection transformation & Orthogonal Projection transformation
+
+- Define  
+  Projection transformation: 设线性空间的子空间$L$及其补$M$, 投影变换是将线性空间沿$M$到$L$的投影的变换.  
+
+  Projection matrix:  
+  $$
+  P_{L|M} = \left(\begin{matrix} X & 0 \end{matrix}\right) \left(\begin{matrix} X & Y \end{matrix}\right)^{-1}
+  $$
+
+  Orthogonal Projection transformation: 设线性空间的子空间$L$及其正交补$L_\bot$, 将线性空间沿$L_\bot$到$L$的投影的变换, 称Orthogonal projection transformation.  
+
+  Orthogonal Projection matrix:  
+  $$
+    P_L = X(X^H X)^{-1}X^H
+  $$
+    Symbol: $X = (x_1, ... , x_r)$: 投影后子空间的基.
+
+- Property  
+  - $P_{L|M}^2 = P_{L|M}$ 
+  - $P_L (a \boldsymbol x + b \boldsymbol y) = a (P_L \boldsymbol x) + b (P_L \boldsymbol y)$
+  - $x \in L \Leftrightarrow P_L x = x$
+  - $x \in L_\bot \Leftrightarrow P_L x = 0$
+  - if $H$ is a inner product space, and $L$ is a subspace of $H$ with Orthonormal Basis $\{u_1, ...u_n\}$, then the projection of $x \in H$ is
+    $$
+    \hat x = \sum_{i=1}^n \frac{u_i^T x}{u_i^T u_i} u_i
+    $$
+
+### Sheer transformation
+
+- Define  
+  斜切变换矩阵:  
+    单位矩阵的第(i,j)个元素改为斜切比率 $a_{ij}$
+
+* Scale Transformation
+  - Define  
+    Scale Transformation Matrix:
+    $$
+    T = \left(\begin{matrix} Δx_1 \\ & Δx_2 \\ & & \ddots \\ & & & Δx_n \end{matrix}\right)
+    $$
+
 ## Include
 
 ## Parents

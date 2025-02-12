@@ -149,6 +149,35 @@ Group is an algebraic structure, where $G$ is a set, $\cdot$ is a binary operati
   ⟨g⟩ = \{g^k \ |\ k \in \mathbb Z\}
   $$
 
+### Symmetric Group
+
+- Define  
+  $$
+  S_n = (\{f: X \to X\}, \circ)
+  $$
+  Symmetric group on a finite set $X$ is the group whose elements are all bijective functions $f: X \to X$ and whose group operation is that of function composition $f_1 \circ f_2 = f_1(f_2(\cdot))$. Where $n$ is the degree of symmetric group, that is, the number of elements in set $X$.
+
+- Property
+  - Cayley's theorem: every group $G$ is isomorphic to a subgroup of a symmetric group.
+
+- Example 
+  * Permutation Group
+    - Define
+      Permutation group is a group $G$ whose elements are permutations of a given set $M$ and whose group operation is the composition of permutations in $G$ (which are thought of as bijective functions from the set $M$ to itself).  
+
+    - Property
+      - every group is isomorphic to some permutation group.
+
+### Alternating Group
+
+- Define
+
+  An alternating group $A_n$ on a set of $n$ symbols is defined to be the group of all even permutations of the $n$ symbols. (The even arrangement here refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.)
+
+- Property
+  - $A_n$ is a normal group of $S_n$. $|A_n| = \frac{1}{2} |S_n|$.
+  - For $n>5$, $A_n$ is a simple group.
+
 ## Include
 
 - [Lie_Group](./Lie_Group.md): 

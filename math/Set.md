@@ -243,6 +243,26 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
 
 ### [Power Set](./Power_Set.md)
 
+### Ordered Pair
+
+- Define
+  $$
+  (a, b) = \{\{a\}, \{a, b\}\}
+  $$
+  Ordered pair $(a, b)$ is a pair of two elements $a, b$ in which order matters.
+  
+### Empty Set
+  - Define 
+    $$
+    \emptyset = \{\}  \tag{Empty Set}
+    $$
+    Empty Set is a set without any element. 
+
+  - Property 
+    - $\emptyset \in S, \forall \text{ set } S$
+    - $A \cap \emptyset = \emptyset$
+    - $A \cup \emptyset = A$
+
 ## Include
 
 - [Algebra_Structure](./Algebra_Structure.md): 
