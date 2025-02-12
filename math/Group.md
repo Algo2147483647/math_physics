@@ -130,7 +130,7 @@ Group is an algebraic structure, where $G$ is a set, $\cdot$ is a binary operati
       - the derivative of the groups of Lie Type, such as the Tits group
     - one of 26 groups called the "sporadic groups"
   
-    <img src="./assets/gn5cimd92mh11.jpg" alt="gn5cimd92mh11" style="zoom:25%;" />
+    <img src="./assets/gn5cimd92mh11.jpg" alt="gn5cimd92mh11"  />
 
 ### Commutative Group , Abelian Group
 

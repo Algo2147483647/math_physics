@@ -19,6 +19,8 @@ A class of Connected undirected graphs without loops.
 
 ## Include
 
+- [Binary_Tree](./Binary_Tree.md): 
+
 ## Parents
 
 - [Graph](./Graph.md): 

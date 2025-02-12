@@ -38,7 +38,7 @@
 curl --location 'http://localhost:5000/function' \
 --header 'Content-Type: application/json' \
 --data '{
-    "function": "build_markdown_from_graph",
+    "function": "build_markdown_from_graph_json",
     "params": {
         "json_file": "C:/Algo/Notes/math_physics/math/lib/math.json"
     }
