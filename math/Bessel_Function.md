@@ -1,4 +1,4 @@
-# $Bessel\ Function$
+# Bessel Function
 
 [TOC]
 
@@ -17,3 +17,14 @@ $$
 $$
 Y_{\alpha }(x)={\frac {J_{\alpha }(x)\cos(\alpha \pi )-J_{-\alpha }(x)}{\sin(\alpha \pi )}}
 $$
+
+## Properties
+
+
+
+## Include
+
+## Parents
+
+- [Function](./Function.md): 
+

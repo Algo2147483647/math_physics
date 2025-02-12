@@ -1,4 +1,4 @@
-# $Topological\ Space\ \&\ Open\ Set$
+# Topological Space
 
 [TOC]
 
@@ -13,13 +13,7 @@ Topological space $\tau$ is a collection of subsets of $S$, that is subsets of [
 - The intersection of any finite members of $\tau$ belongs to $\tau$.
 - Any arbitrary (finite or infinite) union of members of $\tau$ belongs to $\tau$.
 
-## Concept
-
-* Closed Set
-  - Define  
-    Closed Set is the complementary set of Open Set.  
-
-## Property
+## Properties
 
 ### Homeomorphism
 
@@ -59,12 +53,13 @@ $$
 
 ## Include
 
-### Hausdorff Space
+- [Manifold](./Manifold.md): 
 
-- Define  
-  Hausdorff Space $X$ is a topology space where, for any distinct points $x, y \in X$, there exist a neighborhood $U$ of $x$ and a neighborhood $V$ of $y$ such that $U$ and $V$ are disjoint.
-  $$U \cap V = \emptyset$$ 
+- [Metric_Space](./Metric_Space.md): 
 
-- Include
-  * Metric Space  
-  * Manifold
+## Parents
+
+- [Metric_Space](./Metric_Space.md): 
+
+- [Power_Set](./Power_Set.md): 
+

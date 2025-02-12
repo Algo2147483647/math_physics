@@ -1,8 +1,9 @@
-# $Quadratic\ Function$
+# Quadratic Function
 
 [TOC]
 
 ## Define
+
 $$
 \begin{align*}
   f(x) &= a x^2 + b x + c  \tag{Univariate Quadratic}  \\
@@ -11,7 +12,7 @@ $$
 \end{align*}
 $$
 
-## Property
+## Properties
 
 * Zero Set of Quadratic Function , Quadric Surface
   - Define  
@@ -110,3 +111,10 @@ $$
       - Define
     
         <img src="./assets/Circular_Cone_Quadric.png" alt="img" style="zoom:18%;" />
+
+## Include
+
+## Parents
+
+- [Polynomial_Function](./Polynomial_Function.md): 
+

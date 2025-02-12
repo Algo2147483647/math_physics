@@ -1,8 +1,8 @@
-# Cross Correlation & Convolution
+# Convolution
 
 [TOC]
 
-### Define
+## Define
 
 Cross Correlation and Convolution, are a measure of similarity (through [inner product](./Inner_Poduct_Space.md)) of two functions $f, g$ of the displacement $t \in \mathbb R$ of one relative to the other.
 $$
@@ -20,7 +20,8 @@ Conv(f(t), g(t))
 \end{align*}
 $$
 
-## Property
+## Properties
+
 - Commutativity & Associativity & Distributivity
 $$
 \begin{align*}
@@ -58,3 +59,10 @@ $$
 $$
 \mathcal F(F_1(ω) * F_2(ω)) = \frac{1}{2 π} f_1(t) · f_2(t)
 $$
+
+## Include
+
+## Parents
+
+- [Inner_Poduct_Space](./Inner_Poduct_Space.md): 
+

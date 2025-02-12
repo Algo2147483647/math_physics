@@ -1,8 +1,8 @@
-# $Ring$
+# Ring
 
 [TOC]
 
-## Define  
+## Define
 
 $$
 (G, +, \cdot)
@@ -22,7 +22,7 @@ Ring is an algebraic structure, where $G$ is a set, $\cdot$ and $+$ are binary o
   \end{align*}
   $$
 
-## Property
+## Properties
 
 ### Ideal
 
@@ -55,17 +55,15 @@ $$
 
 ## Include
 
-### Commutative Ring
+- [Field](./Field.md): 
 
-- Define  
-  A Ring satisfying commutative law.
-  $$
-  a \cdot b = b \cdot a \quad; \forall a, b \in G
-  $$
+- [Integer_Ring](./Integer_Ring.md): 
 
-### [Field](./Field.md)
+- [Module](./Module.md): 
 
-## Example
+- [Quaternion_Ring](./Quaternion_Ring.md): 
 
-- Integral Domain
+## Parents
+
+- [Algebra_Structure](./Algebra_Structure.md): 
 

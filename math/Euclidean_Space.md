@@ -1,4 +1,4 @@
-# $Euclidean\ Space$
+# Euclidean Space
 
 [TOC]
 
@@ -36,34 +36,19 @@ $$
 d(\mathbf{v}, \mathbf{w}) = ||\mathbf{v} - \mathbf{w}||
 $$
 
-## Property
+## Properties
 
-## Problem
 
-### Tessellation
 
-A tessellation or tiling is the covering of a surface, often a plane, using one or more geometric shapes, called tiles, with no overlaps and no gaps.
+## Include
 
-#### Convex regular polygon tiling
+- [Knot](./Knot.md): 
 
-There are three methods for dense tiling of a monohedral regular polygon in a plane: equilateral triangle, square, and regular hexagon.
+- [Manifold](./Manifold.md): 
 
-<img src="assets/1-uniform_n11.svg" alt="1-uniform_n11" style="zoom:8%;" /><img src="assets/1-uniform_n5.svg" alt="1-uniform_n5" style="zoom:20%;" /><img src="assets/1-uniform_n1.svg" alt="1-uniform_n1" style="zoom:8%;" />
+## Parents
 
-There are 17 combinations of regular convex polygons that form 21 types of plane-vertex tilings.
+- [Hilbert_Space](./Hilbert_Space.md): 
 
-<img src="assets/image-20240209012125223.png" alt="image-20240209012125223" style="zoom: 33%;" />
+- [Real_Field](./Real_Field.md): 
 
-#### Space-Filling Polyhedron
-
-<img src="assets/SpaceFillingPolyhedra_1000.svg" alt="SpaceFillingPolyhedra" style="zoom: 25%;" />
-
-#### Monohedral Pentagonal tiling
-
-<img src="assets/image-20240209013213739.png" alt="image-20240209013213739" style="zoom:20%;" />
-
-#### Penrose tiling
-
-A Penrose tiling is an example of an aperiodic tiling.
-
-<img src="assets/Penrose_Tiling_(Rhombi).svg" alt="Penrose_Tiling_(Rhombi)" style="zoom:25%;" />

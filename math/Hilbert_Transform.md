@@ -1,4 +1,4 @@
-# $Hilbert\ Transform$
+# Hilbert Transform
 
 [TOC]
 
@@ -9,7 +9,14 @@ $$
 H(u)(t) = p.v.\frac{1}{\pi}\int_{-\infty}^{+\infty} \frac{u(\tau)}{t-\tau}\mathrm{d}\tau
 $$
 
-## Property
+## Properties
 
 - $H(H(u))(t) = u(-t)$
 - $H(\omega) = (-i \cdot \text{sgn}(\omega))\cdot \mathcal F_h(\omega)$
+
+## Include
+
+## Parents
+
+- [Function](./Function.md): 
+

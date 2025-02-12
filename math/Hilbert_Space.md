@@ -1,10 +1,22 @@
-# $Complete\ Inner\ Product\ Space , Hilbert\ Space$
+# Hilbert Space
 
 [TOC]
 
-## Define  
+## Define
+
 Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Poduct_Space.md).
 
-## Include 
+## Properties
 
-* [Euclidean Space](./Euclidean_Space.md)
+
+
+## Include
+
+- [Euclidean_Space](./Euclidean_Space.md): 
+
+## Parents
+
+- [Inner_Poduct_Space](./Inner_Poduct_Space.md): 
+
+- [Metric_Space](./Metric_Space.md): 
+

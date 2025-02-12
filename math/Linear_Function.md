@@ -1,4 +1,4 @@
-# $Linear\ Function$  
+# Linear Function
 
 [TOC]
 
@@ -11,7 +11,7 @@ $$
 \end{align*}
 $$
 
-## Property
+## Properties
 
 ### Zero Set of Linear Function & Plane & Linear Surface 
 
@@ -95,3 +95,10 @@ $$
       $$
       \tilde{\boldsymbol x} = \boldsymbol A^+ \boldsymbol b
       $$
+
+## Include
+
+## Parents
+
+- [Polynomial_Function](./Polynomial_Function.md): 
+

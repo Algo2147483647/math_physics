@@ -1,4 +1,4 @@
-# $Module$
+# Module
 
 [TOC]
 
@@ -14,6 +14,15 @@ Suppose that $R$ is a [ring](./Ring.md), and $1$ is its multiplicative identity.
 3. $\forall r, s \in R$ 和 $x \in M$ 有 $(rs) \cdot x = r \cdot (s \cdot x)$
 4. If ring $R$ 有一个单位元 $1_R$，那么对所有 $x \in M$ 有 $1_R \cdot x = x$
 
-## Example
+## Properties
 
-- Linear Space
+
+
+## Include
+
+- [Linear_Space](./Linear_Space.md): 
+
+## Parents
+
+- [Ring](./Ring.md): 
+

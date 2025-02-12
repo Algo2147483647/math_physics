@@ -1,4 +1,4 @@
-# $Affine\ Space$
+# Affine Space
 
 [TOC]
 
@@ -24,8 +24,7 @@ that associates to each point $p \in \mathcal{A}$ and each vector $v \in V$ a po
 
 > *Affine space is extended on the basis of vector space, removing the uniqueness of the origin. Its basic idea is to liberate geometric research from specific numerical values (i.e. vector coordinates) and instead focus on the relative positions and arrangements between points.*
 
-
-## Property
+## Properties
 
 ### Affine Set
 
@@ -55,7 +54,7 @@ $$
       \forall \boldsymbol x_i \in C \subseteq \mathbb R^n, a_i \in [0,1], \sum a_i = 1 \quad \text{, then}\quad \sum a_i x_i \in C
       $$
 
-      A convex set $C$ is a set such that the line segment between any two points in the set is still in the set. Convex sets are a special class of [affine sets](./Affine_Space.md).
+      A convex set $C$ is a set such that the line segment between any two points in the set is still in the set. Convex sets are a special class of affine sets.
 
     - Property
 
@@ -107,3 +106,12 @@ $$
 
 - Property
   - Hyperplane & Half-Space is Convex Set
+
+## Include
+
+- [Polyhedron](./Polyhedron.md): 
+
+## Parents
+
+- [Linear_Space](./Linear_Space.md): 
+

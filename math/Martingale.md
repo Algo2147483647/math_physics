@@ -1,8 +1,9 @@
-# $Martingale$
+# Martingale
 
 [TOC]
 
-## Define  
+## Define
+
 Martingale is a discrete-time [stochastic process](./Stochastic_Process.md) that satisfies for any time $n$,
 $$
 \mathbb E(|X_n|) < \infty
@@ -13,7 +14,7 @@ $$
 
 The second condition means that the conditional expected value of the next observation, given all the past observations, is equal to the most recent observation.
 
-## Property
+## Properties
 
 - Doob-Meyer decomposition
 
@@ -34,3 +35,10 @@ The second condition means that the conditional expected value of the next obser
     $$
     \mathbb E(X_\tau) = \mathbb E(X_0)
     $$
+
+## Include
+
+## Parents
+
+- [Stochastic_Process](./Stochastic_Process.md): 
+

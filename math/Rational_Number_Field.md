@@ -1,4 +1,4 @@
-# $Rational\ Number\ Field$
+# Rational Number Field
 
 [TOC]
 
@@ -37,5 +37,17 @@ Rational number field is a [field](./Field.md) of rational numbers is the set of
   \frac{p}{q} \times \left( \frac{r}{s} + \frac{t}{u} \right) = \frac{p}{q} \times \frac{r}{s} + \frac{p}{q} \times \frac{t}{u}
   $$
 
-## Property
+## Properties
+
+
+
+## Include
+
+- [Real_Field](./Real_Field.md): 
+
+## Parents
+
+- [Field](./Field.md): 
+
+- [Integer_Ring](./Integer_Ring.md): 
 

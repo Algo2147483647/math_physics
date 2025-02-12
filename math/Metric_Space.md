@@ -1,8 +1,9 @@
-# $Metric\ Space$
+# Metric Space
 
 [TOC]
 
-## Define  
+## Define
+
 A metric space is a pair $(X, d)$ where $X$ is a set and $d: X \times X \to \mathbb R$  is a metric on $X$ satisfying the following axioms $\forall x, y, z \in X$:
 
 - Non-negativity, with equality if and only if $x = y$
@@ -20,7 +21,7 @@ A metric space is a pair $(X, d)$ where $X$ is a set and $d: X \times X \to \mat
 
 Metric Space is a type of [Topological Space](./Topological_Space.md).
 
-## Property
+## Properties
 
 - Lipschitz Equivalent  
   Metrics $d, d'$ on $X$ are said to be Lipschitz Equivalent if there are positive constants $A, B$ and $\forall x, y \in X$ such that
@@ -70,5 +71,13 @@ Metric Space is a type of [Topological Space](./Topological_Space.md).
   f(x^*) = x^*,\quad \lim\limits_{n \to \infty} f^n(x_0) = x^* ,\forall x_0 \in X
   $$
 
+## Include
 
+- [Hilbert_Space](./Hilbert_Space.md): 
+
+- [Topological_Space](./Topological_Space.md): 
+
+## Parents
+
+- [Topological_Space](./Topological_Space.md): 
 

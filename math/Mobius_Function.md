@@ -1,8 +1,9 @@
-# $Möbius\ Function$
+# Mobius Function
 
 [TOC]
 
-## Define  
+## Define
+
 $$
 \mu(n) = \left\{\begin{matrix}
   1 & n = 1\\
@@ -13,7 +14,8 @@ $$
 
 Möbius Function $f: \mathbb Z^+ \to \{-1, 0, 1\}$ is defined above. For positive integers without square factors, if $n$ has an odd number of different prime factors, then $\mu(n) = -1$; if there are even numbers of of different prime factors, then $\mu(n)=1$.
 
-## Property  
+## Properties
+
 - Möbius Function is a multiplicative function.
 - 1
   $$
@@ -33,3 +35,10 @@ f * \boldsymbol 1 = g  \quad\Leftrightarrow\quad f = g * \mu
 $$
 
 Where, $*$ is dirichlet convolution.
+
+## Include
+
+## Parents
+
+- [Integer_Ring](./Integer_Ring.md): 
+

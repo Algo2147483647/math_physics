@@ -13,7 +13,7 @@ A $n$-ary **relation** $R$ in sets $A_1, A_2, \cdots, A_n$ is a [subset](./Set.m
 - $n$ Degree: The number of attributes (columns) in a relation.
 - Cardinality: The number of tuples (rows) in a relation.
 
-## Property
+## Properties
 
 ### Operations
 
@@ -94,15 +94,11 @@ Natural join of relations $R$ and $S$ is an special join where the join conditio
 - $\theta$: the join condition (a boolean valued function on the attributes of $R, S$)
 - $\sim$: represents an equivalence relation that removes the duplicate columns of the common attributes. That is, we only keep one copy of each common attribute in the final result.
 
-
 ## Include
 
-### Binary Relation
+- [Function](./Function.md): 
 
-#### Define  
+## Parents
 
-$$
-X \ R\ Y \subseteq X \times Y  \tag{Binary Relation}
-$$
-Binary Relation $R$ over set $X, Y$ is a subset of the Cartesian product $X \times Y$. The set $X$ is called the domain, and set $Y$ the codomain.
+- [Set](./Set.md): 
 

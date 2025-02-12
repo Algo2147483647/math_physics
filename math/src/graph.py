@@ -2,7 +2,7 @@ import json
 
 
 class Node:
-    def __init__(self, name= ""):
+    def __init__(self, name=""):
         self.name = name
         self.define = ""
         self.properties = []
@@ -19,9 +19,26 @@ class Node:
         }
 
 
-def build_edge(graph, a, b, weight):
+def build_edge_in_graph(graph, a, b, weight=""):
     graph[a].kids[b] = weight
     graph[b].parents[a] = weight
+
+
+def build_node_in_graph(graph, type, a, b, weight=""):
+    if b in graph:
+        return graph[b]
+
+    if a not in graph:
+        return None
+
+    graph[b] = Node(b)
+
+    if type == "kid":
+        build_edge_in_graph(graph, a, b, weight)
+    elif type == "parent":
+        build_edge_in_graph(graph, b, a, weight)
+
+    return graph[b]
 
 
 def graph_to_json(graph):
@@ -34,14 +51,14 @@ def json_to_graph(json_file):
     try:
         with open(json_file, 'r', encoding='utf-8') as file:
             data = json.load(file)
-            graph = []
+            graph = {}
             for node_name, node_info in data.items():
                 node = Node(name=node_name)
                 node.define = node_info.get("define", "")
                 node.properties = node_info.get("properties", [])
                 node.kids = node_info.get("kids", {})
                 node.parents = node_info.get("parents", {})
-                graph.append(node)
+                graph[node_name] = node
             return graph
     except FileNotFoundError:
         print(f"文件 {json_file} 未找到。")
@@ -59,7 +76,7 @@ def build_common_root(dag):
     for root in roots:
         if root == "root":
             continue
-        build_edge(dag, "root", root, "")
+        build_edge_in_graph(dag, "root", root, "")
 
     return dag
 

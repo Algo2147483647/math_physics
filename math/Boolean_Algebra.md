@@ -1,4 +1,4 @@
-# $Boolean\ Algebra$
+# Boolean Algebra
 
 [TOC]
 
@@ -27,9 +27,9 @@ The value of boolean algebra belongs to $\{\text{true}, \text{false}\}$, usually
   | 0 | 0 | 0 | 0 | 
   | 0 | 1 | 0 | 1 | 
   | 1 | 0 | 0 | 1 | 
-  | 1 | 1 | 1 | 1 | 
+  | 1 | 1 | 1 | 1 |
 
-## Property
+## Properties
 
 - 
 
@@ -88,3 +88,10 @@ The value of boolean algebra belongs to $\{\text{true}, \text{false}\}$, usually
 | 1 | 1 | 0 | $\neg(a \wedge b)$ |
 | 1 | 1 | 1 | $a \vee 0$ |
 |||||
+
+## Include
+
+## Parents
+
+- [Lattice](./Lattice.md): 
+

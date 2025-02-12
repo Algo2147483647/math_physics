@@ -1,8 +1,9 @@
-# $Quartic\ Function$
+# Forth-Order Function
 
 [TOC]
 
 ## Define
+
 $$
 f(x) = \sum_{i=0}^{4} a_i x^i  \tag{Univariate}
 $$
@@ -18,7 +19,7 @@ $$
 \end{align*}
 $$
 
-## Property
+## Properties
 
 ### Zero Set of Quartic Function , Quartic Surface
 
@@ -63,23 +64,7 @@ $$
 
 ## Include
 
-### Torus
+## Parents
 
-#### Define
-
-$$
-\{\boldsymbol x \ |\ (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_i^2) = 0\}  \tag{Torus}
-$$
-
-<img src="./assets/torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750.gif" alt="img" style="zoom: 50%;" />
-
-### Tanglecube
-
-#### Define
-
-$$
-\left\{\boldsymbol x \ |\ \sum_{i=1}^3 \left(x_i^4 - 5 x_i^2 \right) + 11.8 = 0 \right\}  \tag{Tanglecube}
-$$
-
-<img src="./assets/Tanglecube1_700.svg" alt="Tanglecube1_700" style="zoom:67%;" />
+- [Polynomial_Function](./Polynomial_Function.md): 
 

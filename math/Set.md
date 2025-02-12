@@ -1,4 +1,4 @@
-# $Set$
+# Set
 
 [TOC]
 
@@ -59,7 +59,7 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
    \forall A (\exists B \forall x (x \in B \leftrightarrow (\exists y (y \in A ∧ \forall z (z \in A \rightarrow (z = y ∨ ¬S(z, y)))))))
    $$
 
-## Property
+## Properties
 
 ### Cardinality & Counting
 
@@ -243,27 +243,21 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
 
 ### [Power Set](./Power_Set.md)
 
-## Example
-### Ordered Pair
+## Include
 
-- Define
-  $$
-  (a, b) = \{\{a\}, \{a, b\}\}
-  $$
-  Ordered pair $(a, b)$ is a pair of two elements $a, b$ in which order matters.
-  
-### Empty Set
-  - Define 
-    $$
-    \emptyset = \{\}  \tag{Empty Set}
-    $$
-    Empty Set is a set without any element. 
+- [Algebra_Structure](./Algebra_Structure.md): 
 
-  - Property 
-    - $\emptyset \in S, \forall \text{ set } S$
-    - $A \cap \emptyset = \emptyset$
-    - $A \cup \emptyset = A$
+- [Fractal](./Fractal.md): 
 
-### [Ordered Set ](./Ordered_Set.md)
-### [Algebra Structure](./Algebra_Structure.md)
-### [Graph](./Graph.md)
+- [Graph](./Graph.md): 
+
+- [Natural_Number](./Natural_Number.md): 
+
+- [Ordered_Set](./Ordered_Set.md): 
+
+- [Power_Set](./Power_Set.md): 
+
+- [Relation](./Relation.md): 
+
+## Parents
+

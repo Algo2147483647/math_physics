@@ -1,8 +1,9 @@
-# $Exponential\ Function \ \&\ Trigonometric\ Function\ \&\ Hyperbolic\ Function$
+# Trigonometric Function
 
 [TOC]
 
-## Define  
+## Define
+
 Trigonometric functions $f: \mathbb R \to \mathbb R$ are a set of mathematical [functions](./Function.md) that relate angles $\theta$ to the ratios of the sides (opposite $a$, adjacent $b$, hypotenuse $c$) of a right-angled triangle. Where hypotenuse is the length of the side opposite the right angle, opposite represents the side opposite the given angle $\theta$, adjacent represents the side between the angle $\theta$ and the right angle.
 
 $$
@@ -31,7 +32,7 @@ $$
 \end{align*}
 $$
 
-## Property
+## Properties
 
 - Euler's formula
   $$
@@ -69,3 +70,10 @@ $$
   $$
   a \sin(\theta) + b \cos(\theta) = \sqrt{a^2 + b^2} \sin \left(\theta + \arctan\left(\frac{b}{a}\right) \right)
   $$
+
+## Include
+
+## Parents
+
+- [Function](./Function.md): 
+

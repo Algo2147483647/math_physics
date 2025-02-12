@@ -1,4 +1,4 @@
-# $Real\ Value\ Function$
+# Real Value Function
 
 [TOC]
 
@@ -15,7 +15,7 @@ $$
 f: \mathbb R^n \to \mathbb R
 $$
 
-## Property
+## Properties
 
 - Continuity: A function $f$ with variable $x$ is continuous at the real number $c$, if the limit of $f(a)$, as $x$ tends to $c$, is equal to $f(c)$. More formally, for any positive number $\epsilon > 0$, if there exists a positive number $\delta > 0$ such that whenever $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$, the function is said to be continuous at $a$.
 - Monotonicity
@@ -164,90 +164,13 @@ Definite Integral $f: (\mathbb R, \mathbb R, f: \mathbb R \to \mathbb R) \to \ma
 $$
 f(\boldsymbol x) = f(x_1, ..., x_n) = \sum_{q=0}^{2n} \Phi_q\left( \sum_{p=1}^n \phi_{q, p}(x_p) \right)
 $$
-Kolmogorov-Arnold representation theorem states that every multivariate continuous function can be represented as a superposition of the two-argument addition of continuous functions of one variable. 
+Kolmogorov-Arnold representation theorem states that every multivariate continuous function can be represented as a superposition of the two-argument addition of continuous functions of one variable.
 
+## Include
 
-## Problem
+## Parents
 
-### Differential Equation
+- [Function](./Function.md): 
 
-#### Define
-$$
-f \left(x, y, \frac{\mathrm d y}{\mathrm d x}, \frac{\mathrm d^2 y}{\mathrm dx^2}, ..., \frac{\mathrm d^n y}{\mathrm d x^n} \right) = 0  \tag{ODE}
-$$
-Ordinary differential equation (ODE) is an equation that relates an unknown function $y$ to its derivatives with respect to a single independent variable $x$.  
+- [Real_Field](./Real_Field.md): 
 
-$$
-f \left(D^k u(x), ... , D^2 u(x), u(x), x \right) = 0  \tag{PDE}
-$$
-$$
-f: \mathbb R^{n^k} \times \mathbb R^{n^{k-1}} \times \mathbb R^n \times \mathbb R \times \Omega \to \mathbb R \quad; x \in \Omega; u: \Omega \to \mathbb R
-$$
-Partial differential equation (PDE) is an equation that relates an unknown function $u$ of two or more variables to its partial derivatives with respect to those variables.
-
-#### Include
-
-##### Linear Differential Equation
-
-- Define
-  $$
-  \sum_{k=0}^K a_k(x) u^{(k)}(x) = f(x)  \tag{Linear ODE}
-  $$
-  $$
-  \sum_{k=0}^K a_k(x) D^k u(x) = f(x)  \tag{Linear PDE}
-  $$
-
-- Property
-  - The solution set of a linear differential equation constitutes a linear space.
-
-##### Second Order Nonlinear Partial Differential Equation
-
-- Define
-  $$
-  \sum_{ij} a_{ij}(x) \frac{∂^2 u}{∂ x_i ∂ x_j} + \sum_i b_i(x) \frac{∂ u}{∂ x_i} + c(x) u(x) = f(x)
-  $$
-  coefficient matrix $A(x) = (a_{ij}(x))_{m \times m}$
-
-- Include
-  * Elliptic Partial Differential Equation
-    - Define  
-      $A(x)$ is negative definite.
-
-    - Include
-      * Poisson's Equations
-        - Define
-          $$
-          -\nabla^2 \phi = f
-          $$
-        * Laplace's Equations
-          $$
-          \nabla^2 \phi = 0
-          $$
-
-  * Hyperbolic Partial Differential Equation
-    - Define  
-      eigenvalue of $A(x)$ consists of a $0$ and other negative numbers
-
-    - Include
-      * Diffusion equation
-        - Define
-          $$
-          \frac{∂u}{∂t} - a \nabla^2 u = f(x,t)
-          $$
-
-  * Parabolic Partial Differential Equation
-    - Define
-      eigenvalue of $A(x)$ consists of of a positive number and other negative numbers.
-
-    - Include
-      * Wave equation
-        - Define
-          $$
-          \frac{∂^2 u}{∂t^2} - a \nabla^2 u = f(x,t)
-          $$
-
-##### Semi-linear Partial Differential Equation
-
-##### Quasi-linear Partial Differential Equation
-
-##### Fully Nonlinear Partial Differential Equation

@@ -1,5 +1,7 @@
-# $Ring\ of\ Integers$
+# Integer Ring
+
 [TOC]
+
 ## Define
 
 Ring of Integers is a kind of Integral Domain (整环).
@@ -25,7 +27,7 @@ Integral ring is a nonzero commutative [ring](./Ring.md) in which the product of
   
 - **Multiplication:** To multiply two integers represented by $[a, b]$ and $[c, d]$, define their product as $[ac + bd, ad + bc]$. This captures the distributive property over the components of the ordered pairs.
 
-## Property
+## Properties
 
 ### Division with Remainder & Factor
 
@@ -61,3 +63,18 @@ Integral ring is a nonzero commutative [ring](./Ring.md) in which the product of
 ### Fermat's Last Theorem
 
 No three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The cases $n = 1$ and $n = 2$ have been known since antiquity to have infinitely many solutions.
+
+## Include
+
+- [Division_with_Remainder](./Division_with_Remainder.md): 
+
+- [Mobius_Function](./Mobius_Function.md): 
+
+- [Rational_Number_Field](./Rational_Number_Field.md): 
+
+## Parents
+
+- [Natural_Number](./Natural_Number.md): 
+
+- [Ring](./Ring.md): 
+

@@ -1,5 +1,7 @@
 # Radon Translation
 
+[TOC]
+
 ## Define
 
 For a function $f(\boldsymbol x)$ that satisfies the three regularity conditions as above, **Radon Translation** $\mathcal R f$ is is a [function](./Function.md) (integral transform) defined on the space of straight lines $L \subset \mathbb R^2$ by the line integral along each such line as, 
@@ -19,7 +21,7 @@ $$
 
 <img src="assets/Radon_transform_sinogram.gif" alt="Radon_transform_sinogram" style="zoom:33%;" />
 
-## Property
+## Properties
 
 - The two-dimensional Fourier transform of the initial function along a line at the inclination angle is the one variable Fourier transform of the Radon transform (acquired at angle of that function.
   $$
@@ -51,5 +53,10 @@ where $h$ is such that $\hat h(k) = |k|$. The result obtained by Fourier transfo
   $$
   \Rightarrow f(x, y) = \int_0^\pi (\mathcal F_r^{-1}(\mathcal F_r(\mathcal R f(\theta, s))(\omega))\cdot|\omega|)(x \sin \theta + y \cos \theta)\mathrm{d}\theta
   $$
-  
-  
+
+## Include
+
+## Parents
+
+- [Function](./Function.md): 
+

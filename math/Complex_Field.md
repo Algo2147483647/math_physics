@@ -1,4 +1,4 @@
-# $Complex\ Field$
+# Complex Field
 
 [TOC]
 
@@ -18,7 +18,8 @@ The operations of addition and multiplication are defined as:
 
 The set $\mathbb{C}$ with these operations forms a [field](./Field.md) that satisfies all the field axioms (A1-A4, M1-M4, D). It also has the property that every non-constant polynomial equation with coefficients in $\mathbb{C}$ has a root in $\mathbb{C}$ (this is the statement of the Fundamental Theorem of Algebra).
 
-## Property
+## Properties
+
 - module and argument
 $$
 \begin{align*}
@@ -51,3 +52,14 @@ $$
 $$
 z^p = r^p (\cos θ + i \sin θ)^p = r^p (\cos (p θ) + i \sin(p θ))  \tag{De Moiver's theorem}
 $$
+
+## Include
+
+- [Complex_Value_Function](./Complex_Value_Function.md): 
+
+## Parents
+
+- [Field](./Field.md): 
+
+- [Real_Field](./Real_Field.md): 
+

@@ -1,4 +1,4 @@
-# $\Gamma\ Function$
+# Gamma Function
 
 [TOC]
 
@@ -14,7 +14,7 @@ $$
 $$
 <img src="assets/Plot_of_gamma_function_in_complex_plane_in_3D_with_color_and_legend_and_1000_plot_points_created_with_Mathematica.svg" alt="Plot_of_gamma_function_in_complex_plane_in_3D_with_color_and_legend_and_1000_plot_points_created_with_Mathematica" style="zoom:12%;" />
 
-## Property
+## Properties
 
 - Recursion
   $$
@@ -45,5 +45,10 @@ $$
   &= \frac{e^{-\gamma z}}{z} \prod_{n=1}^{\infty}\left(1+\frac{z}{n}\right)^{-1} e^{\frac{z}{n}}
   \end{align*}
   $$
-  
+
+## Include
+
+## Parents
+
+- [Complex_Value_Function](./Complex_Value_Function.md): 
 

@@ -1,4 +1,4 @@
-# $Elliptic\ Curve$
+# Elliptic Curve
 
 [TOC]
 
@@ -12,7 +12,7 @@ An elliptic curve over a field $K$ is defined by an equation of the form as abov
 
 <img src="assets/EllipticCurveCatalog.svg" alt="EllipticCurveCatalog" style="zoom: 33%;" />
 
-## Property
+## Properties
 
 - Groups formed by points on elliptic curves: The points on an elliptic curve form an Abelian group through a defined "addition" operation. This addition operation is related to the intersection of a line and a curve, while the unit element is represented by a point at infinity.
 
@@ -38,3 +38,10 @@ An elliptic curve over a field $K$ is defined by an equation of the form as abov
     if $P = (x_1, y_1), Q = (x_1, -y_1)$  (i.e., $Q$ is the reflection of $P$ over the x-axis), then $P + Q= O$.
 
   - Unit element: The unit element of this group is a special point at infinity, usually denoted as $O$. Any point on an elliptical curve plus O is equal to itself.
+
+## Include
+
+## Parents
+
+- [Cubic_Function](./Cubic_Function.md): 
+

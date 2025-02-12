@@ -1,11 +1,12 @@
-# $Directed\ Acyclic\ Graph$
+# Directed Acyclic Graph
 
 [TOC]
 
 ## Define
+
 A directed graph without loops.
 
-## Property
+## Properties
 
 ### Topological Sort  
 
@@ -46,6 +47,10 @@ A directed graph without loops.
       else:
           return None
   ```
-  
-  
+
+## Include
+
+## Parents
+
+- [Graph](./Graph.md): 
 

@@ -1,4 +1,6 @@
-# $Quaternion\ Ring$
+# Quaternion Ring
+
+[TOC]
 
 ## Define
 
@@ -14,7 +16,7 @@ $$
 
 <img src="assets/Cayley_Q8_quaternion_multiplication_graph.svg" alt="Cayley_Q8_quaternion_multiplication_graph" style="width:120px;" />
 
-## Property
+## Properties
 
 - The conjugate of a quaternion is defined as: $q^* = a - b i - c j - d k$.
 
@@ -26,4 +28,11 @@ $$
 
   - Spherical linear interpolation
 
-  
+## Include
+
+## Parents
+
+- [Real_Field](./Real_Field.md): 
+
+- [Ring](./Ring.md): 
+

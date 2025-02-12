@@ -1,4 +1,4 @@
-# $Hypergeometric\ Function$
+# Hypergeometric Function
 
 [TOC]
 
@@ -14,7 +14,7 @@ $$
 $$
 <img src="assets/Plot_of_the_hypergeometric_function_2F1(a,b;_c;_z)_with_a=2_and_b=3_and_c=4_in_the_complex_plane_from_-2-2i_to_2+2i_with_colors_created_with_Mathematica_13.1_function_ComplexPlot3D.svg" alt="Plot_of_the_hypergeometric_function_2F1(a,b;_c;_z)_with_a=2_and_b=3_and_c=4_in_the_complex_plane_from_-2-2i_to_2+2i_with_colors_created_with_Mathematica_13.1_function_ComplexPlot3D" style="zoom:25%;" />
 
-## Property
+## Properties
 
 - Differentiation formulas
   $$
@@ -36,3 +36,10 @@ $$
   \arccos z &= z F(\frac{1}{2}, 1;\frac{3}{2};-z^2)  \\
   \end{align*}
   $$
+
+## Include
+
+## Parents
+
+- [Complex_Value_Function](./Complex_Value_Function.md): 
+

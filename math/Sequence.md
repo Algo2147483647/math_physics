@@ -1,6 +1,6 @@
-# $Sequence$
+# Sequence
 
-[TOC] 
+[TOC]
 
 ## Define
 
@@ -16,7 +16,7 @@ $$
 
 A sequence $f: \mathbb N \to S$ can be defined as a [function](./Function.md) from natural numbers (the positions of elements in the sequence) to the elements at each position.
 
-## Property
+## Properties
 
 ### Limitation
 
@@ -139,4 +139,10 @@ A sequence $f: \mathbb N \to S$ can be defined as a [function](./Function.md) fr
         $$
 
   * Dynamic Time Warping , DTW
+
+## Include
+
+## Parents
+
+- [Function](./Function.md): 
 

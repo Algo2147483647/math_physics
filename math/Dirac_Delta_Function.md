@@ -1,4 +1,4 @@
-# $Dirac\ Delta\ Function$
+# Dirac Delta Function
 
 [TOC]
 
@@ -11,11 +11,17 @@ $$
 $$
 <img src="assets/Dirac_distribution_PDF.svg" alt="Dirac_distribution_PDF" style="zoom:15%;" />
 
-## Property
+## Properties
 
 ### sampling property  
 
 $$
 \int_{-\infty}^{\infty} f(t) \delta(t-T) \mathrm{d} t = f(T)
 $$
+
+## Include
+
+## Parents
+
+- [Function](./Function.md): 
 

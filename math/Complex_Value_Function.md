@@ -1,4 +1,4 @@
-# $Complex\ Value\ Function$
+# Complex Value Function
 
 [TOC]
 
@@ -10,7 +10,7 @@ $$
 
 A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) from [complex numbers](./Complex_Field.md) to complex numbers.
 
-## Property
+## Properties
 
 - Differentiability: Holomorphic functions (or analytic functions) are differentiable everywhere within their domain of definition. For complex functions, holomorphism and analyticity are equivalent. 
 
@@ -37,39 +37,15 @@ The path of integration $\gamma$ is counterclockwise around a Jordan curve enclo
 
 ## Include
 
-### Analytic Function
+- [Gamma_Function](./Gamma_Function.md): 
 
-- Define  
-  $$
-  f(z) = \sum_{n=0}^\infty c_n (z - z_0)^n  \tag{Analytic Function}
-  $$
-  
-  Analytic function $f$ is a complex function on an open set $D$ in the real line if for any $x_0 \in D$, it can be expanded into a power series. Where the coefficients $a_i \in \mathbb R$.
+- [Hypergeometric_Function](./Hypergeometric_Function.md): 
 
-### Holomorphic Function
+- [Riemann_Zeta_Function](./Riemann_Zeta_Function.md): 
 
-- Define
-  A holomorphic function is a complex-valued function on an open set $U$ if it is complex differentiable at every point of $U$.
+## Parents
 
-- Property
-  
-  - Holomorphic functions are differentiable everywhere within their domain of definition.
-  
-  - $$
-    \frac{\partial f}{\partial \bar z} = 0
-    $$
-  
-  * Cauchy-Riemann Equations
-    
-    For a complex function $f(z) = u(x,y) + i v(x,y)$ to be differentiable (and hence analytic) at a point, where $u(x,y)$ and $v(x,y)$ are real and imaginary part respectively, the partial derivatives of $u, v$ must satisfy the Cauchy-Riemann equations at that point:
-    $$
-    \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}  \\ \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \tag{Cauchy-Riemann Equations}
-    $$
+- [Complex_Field](./Complex_Field.md): 
 
-### Meromorphic Function
-
-- Define  
-  A meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function.
-
-
+- [Function](./Function.md): 
 

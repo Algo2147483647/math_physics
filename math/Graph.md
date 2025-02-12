@@ -1,8 +1,9 @@
-# $Graph$
+# Graph
 
 [TOC]
 
 ## Define
+
 $$
 \begin{align*}
 G &= (V, E)  \tag{Graph} \\
@@ -29,7 +30,7 @@ Undirected Graph, is a type of graph that does not distinguish the direction of 
 
 Directed Graph, is a type of graph that distinguish the direction of edges and its edge set is a set of ordered pairs.
 
-## Property
+## Properties
 
 ### Representation by Adjacency Matrix
 Due to the discreteness of vertices, we can represent the weight of edge $w: E \to \mathbb R$ by Matrix $\boldsymbol G \in \mathbb R^{n \times n}$.
@@ -88,23 +89,13 @@ Matching of a graph is a set of edges $M \subseteq E$ that have no common points
 
 ## Include
 
-### Complete Graph
+- [Bipartite_Graph](./Bipartite_Graph.md): 
 
-#### Define
-Complete Graph is a undirected graph in which every pair of vertices is adjacent.
+- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): 
 
-<img src="./assets/11-simplex_graph.svg" alt="11-simplex_graph" style="zoom:30%;" />
+- [Tree](./Tree.md): 
 
-#### Property
+## Parents
 
-A complete graph containing $n$ vertices,
-
-- $number(E) = \frac{n(n-1)}{2}$
-- The degree of each vertex is $n-1$
-
-### [Tree](./Tree.md)
-
-### [Directed Acyclic Graph](./Directed_Acyclic_Graph.md)
-
-### [Bipartite Graph](./Bipartite_Graph.md)
+- [Set](./Set.md): 
 

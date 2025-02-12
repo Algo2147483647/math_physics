@@ -8,7 +8,7 @@ A knot is an embedding of the circle into [three-dimensional Euclidean space](./
 
 <img src="./assets/78a8406c7fac2177fb53bb8c5099e4d3.jpg" alt="img" style="zoom: 35%;" />
 
-## Property
+## Properties
 
 ### Knot Diagram
 
@@ -52,6 +52,9 @@ Knot invariants are used to determine whether two knots are equivalent or not.
 
 - **HOMFLY Polynomial**
 
-  
+## Include
 
-  
+## Parents
+
+- [Euclidean_Space](./Euclidean_Space.md): 
+

@@ -1,13 +1,14 @@
-# $Cubic\ Function$
+# Cubic Function
 
 [TOC]
 
 ## Define
+
 $$
 f(x) = \sum_{i=0}^{3} a_i x^i  \tag{Univariate}
 $$
 
-## Property
+## Properties
 
 ### Zero Set of Cubic Function , Cubic Surface   
 
@@ -33,3 +34,12 @@ $$
       $$
       \left\{ x \ |\ \sum_{i = 1}^{\dim} x_i^3 = 0 \right\}
       $$
+
+## Include
+
+- [Elliptic_Curve](./Elliptic_Curve.md): 
+
+## Parents
+
+- [Polynomial_Function](./Polynomial_Function.md): 
+

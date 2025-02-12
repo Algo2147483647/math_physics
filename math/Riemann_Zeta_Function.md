@@ -1,4 +1,4 @@
-# $Riemann\ \zeta\ function$
+# Riemann Zeta Function
 
 [TOC]
 
@@ -12,7 +12,7 @@ Riemann zeta function for $s$ where $\Re(s) > 1$ is as described above ([Complex
 
 <img src="assets/R.0a748464f04900f38f6f535deb08f1d1" alt="img" style="zoom: 20%;" />
 
-## Property
+## Properties
 
 - the relationship with primes
   $$
@@ -20,3 +20,10 @@ Riemann zeta function for $s$ where $\Re(s) > 1$ is as described above ([Complex
   $$
 
 - Riemann Hypothesis: Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part $\frac{1}{2}$.
+
+## Include
+
+## Parents
+
+- [Complex_Value_Function](./Complex_Value_Function.md): 
+

@@ -6,7 +6,6 @@ from graph import *
 
 
 def build_graph_json_from_markdown_folder(folder_path):
-    print(folder_path)
     result = build_graph_from_markdown_folder(folder_path)
     result = build_common_root(result)
 
@@ -45,6 +44,10 @@ def build_graph_from_markdown_file(file_path, graph):
             define_section = define_section.group(1).strip() if define_section else ""
             property_section = re.search(r'##\s*Property(.*?)(\n## \w+|$)', content, re.DOTALL)
             property_section = property_section.group(1).strip() if property_section else ""
+            include_section = re.search(r'##\s*Include(.*?)(\n## \w+|$)', content, re.DOTALL)
+            include_section = include_section.group(1).strip() if include_section else ""
+            parents_section = re.search(r'##\s*Parents(.*?)(\n## \w+|$)', content, re.DOTALL)
+            parents_section = parents_section.group(1).strip() if parents_section else ""
 
             graph[name].define = define_section
             graph[name].properties.append(property_section)
@@ -54,10 +57,15 @@ def build_graph_from_markdown_file(file_path, graph):
                 link_name = os.path.splitext(os.path.basename(link_path))[0]
                 build_graph_from_markdown_file(link_path, graph)
 
-                if define_section and link in graph[name].define:
-                    build_edge(graph, link_name, name, "")
-                else:
-                    build_edge(graph, name, link_name, "")
+                # if define_section and link in graph[name].define:
+                #     build_edge_in_graph(graph, link_name, name, "")
+                # else:
+                #     build_edge_in_graph(graph, name, link_name, "")
+
+                if parents_section and link in parents_section:
+                    build_edge_in_graph(graph, link_name, name, "")
+                elif include_section and link in include_section:
+                    build_edge_in_graph(graph, name, link_name, "")
 
             return graph[name]
 

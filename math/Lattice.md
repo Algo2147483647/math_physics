@@ -17,6 +17,15 @@ Lattice is a concept of partially ordered sets, which is a special type of [alge
 
 在格中，任意两个元素 $a$ 和 $b$ 的“meet” $a \wedge b$ 是它们所有下界的最大者，而它们的“join” $a \vee b$ 是它们所有上界的最小者。
 
-## Example
+## Properties
 
-* Boolean Algebra  
+
+
+## Include
+
+- [Boolean_Algebra](./Boolean_Algebra.md): 
+
+## Parents
+
+- [Algebra_Structure](./Algebra_Structure.md): 
+

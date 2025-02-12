@@ -1,4 +1,4 @@
-# $Real\ Field$
+# Real Field
 
 [TOC]
 
@@ -37,6 +37,24 @@ The set of real numbers, denoted $\mathbb{R}$, together with the operations of a
 - (O2) If $a < b$ and $b < c$, then $a < c$.
 - (O3) If $a < b$ and $c > 0$, then $a \cdot c < b \cdot c$.
 - (O4) If $a < b$ and $c < 0$, then $a \cdot c > b \cdot c$.
-  
 
-## Property
+## Properties
+
+
+
+## Include
+
+- [Complex_Field](./Complex_Field.md): 
+
+- [Euclidean_Space](./Euclidean_Space.md): 
+
+- [Quaternion_Ring](./Quaternion_Ring.md): 
+
+- [Real_Value_Function](./Real_Value_Function.md): 
+
+## Parents
+
+- [Field](./Field.md): 
+
+- [Rational_Number_Field](./Rational_Number_Field.md): 
+
