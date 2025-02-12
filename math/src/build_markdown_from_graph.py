@@ -12,7 +12,7 @@ def build_markdown_from_graph(graph):
         if key == "root":
             continue
 
-        with open("C:/Algo/Notes/math_physics/math/lib/" + node.name + ".md", 'w', encoding='utf-8') as file:
+        with open("C:/Algo/Notes/math_physics/math/" + node.name + ".md", 'w', encoding='utf-8') as file:
             file.write("# " + node.name.replace("_", " ") + "\n\n")
             file.write("[TOC]\n\n")
             file.write("## Define\n\n" + node.define + "\n\n")
