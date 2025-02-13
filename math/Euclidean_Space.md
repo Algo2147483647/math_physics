@@ -38,7 +38,33 @@ $$
 
 ## Properties
 
+### Tessellation
 
+A tessellation or tiling is the covering of a surface, often a plane, using one or more geometric shapes, called tiles, with no overlaps and no gaps.
+
+#### Convex regular polygon tiling
+
+There are three methods for dense tiling of a monohedral regular polygon in a plane: equilateral triangle, square, and regular hexagon.
+
+<img src="assets/1-uniform_n11.svg" alt="1-uniform_n11" style="zoom:8%;" /><img src="assets/1-uniform_n5.svg" alt="1-uniform_n5" style="zoom:20%;" /><img src="assets/1-uniform_n1.svg" alt="1-uniform_n1" style="zoom:8%;" />
+
+There are 17 combinations of regular convex polygons that form 21 types of plane-vertex tilings.
+
+<img src="assets/image-20240209012125223.png" alt="image-20240209012125223" style="zoom: 33%;" />
+
+#### Space-Filling Polyhedron
+
+<img src="assets/SpaceFillingPolyhedra_1000.svg" alt="SpaceFillingPolyhedra" style="zoom: 25%;" />
+
+#### Monohedral Pentagonal tiling
+
+<img src="assets/image-20240209013213739.png" alt="image-20240209013213739" style="zoom:20%;" />
+
+#### Penrose tiling
+
+A Penrose tiling is an example of an aperiodic tiling.
+
+<img src="assets/Penrose_Tiling_(Rhombi).svg" alt="Penrose_Tiling_(Rhombi)" style="zoom:25%;" />
 
 ## Include
 

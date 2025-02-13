@@ -35,6 +35,22 @@ a_n = \frac{1}{2\pi i} \oint_\gamma \frac{f(z)}{(z-c)^{n+1}}\mathrm{d}z
 $$
 The path of integration $\gamma$ is counterclockwise around a Jordan curve enclosing $c$ and lying in an annulus $A$ in which $f(z)$ is holomorphic (analytic). The expansion for $f(z)$ will then be valid anywhere inside the annulus.
 
+### Analytic Function
+
+$$
+f(z) = \sum_{n=0}^\infty c_n (z - z_0)^n  \tag{Analytic Function}
+$$
+
+Analytic function $f$ is a complex function on an open set $D$ in the real line if for any $x_0 \in D$, it can be expanded into a power series. Where the coefficients $a_i \in \mathbb R$.
+
+
+### Meromorphic Function
+
+A meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function.
+
+
+
+
 ## Include
 
 - [Gamma_Function](./Gamma_Function.md): 
