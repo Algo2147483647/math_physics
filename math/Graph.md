@@ -90,7 +90,7 @@ Perfect Matching is a matching that all vertices of the graph are in it.
 
 - [Complete_Graph](./Complete_Graph.md): 
 
-- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): 
+- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): directed, acyclic
 
 - [Tree](./Tree.md): 
 

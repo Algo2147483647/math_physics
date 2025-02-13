@@ -164,7 +164,7 @@
         "kids": {},
         "name": "Directed_Acyclic_Graph",
         "parents": {
-            "Graph": ""
+            "Graph": "directed, acyclic"
         },
         "properties": [
             "### Topological Sort  \n\n- Purpose  \n  Linear ordering of point sets of directed acyclic graphs, and satisfying:\n  - Each point appears only once\n  - If there is an edge from point A to point B, point A appears before point B in the sequence.\n\n- Application  \n  - Help determine whether a graph is a directed acyclic graph.  \n\n- Algorithm  \n  Iterate and delete points with 0 incoming edge on the Graph, put these points into the output sequence in turn, until all points are removed from the graph.  \n\n  If there are no more nodes in the graph that can be delete, but the number of remaining points is not 0, then the graph has loops and is not a directed acyclic graph.\n  \n  ```python\n  def topological_sort(graph):\n      in_degree = dict(int)\n      for node in graph:\n          for neighbor in graph[node]:\n              in_degree[neighbor] += 1\n  \n      queue = [node for node, degree in in_degree.items() if degree == 0]\n      result = []\n      \n      while not queue.empty():\n          node = queue.pop()\n          result.append(node)\n          \n          for neighbor in graph[node]:\n              in_degree[neighbor] -= 1\n              if in_degree[neighbor] == 0:\n                  queue.append(neighbor)\n                  \n      if result.size() == graph.size():\n          return result\n      else:\n          return None\n  ```"
@@ -285,7 +285,7 @@
         "kids": {
             "Bipartite_Graph": "",
             "Complete_Graph": "",
-            "Directed_Acyclic_Graph": "",
+            "Directed_Acyclic_Graph": "directed, acyclic",
             "Tree": ""
         },
         "name": "Graph",

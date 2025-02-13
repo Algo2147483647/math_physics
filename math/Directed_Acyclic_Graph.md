@@ -52,5 +52,5 @@ A directed graph without loops.
 
 ## Parents
 
-- [Graph](./Graph.md): 
+- [Graph](./Graph.md): directed, acyclic
 

@@ -41,23 +41,23 @@ def build_graph_from_markdown_file(file_path, graph):
             content = f.read()
 
             links = re.findall(r'\]\((.*?\.md)\)', content)
-            define_section = parse_section_in_markdown("Define")
-            property_section = parse_section_in_markdown("Properties")
-            include_section = parse_section_in_markdown("Include")
-            parents_section = parse_section_in_markdown("Parents")
+            define_section = parse_section_in_markdown(content, "Define")
+            property_section = parse_section_in_markdown(content, "Properties")
+            include_section = parse_section_in_markdown(content, "Include")
+            parents_section = parse_section_in_markdown(content, "Parents")
 
             graph[name].define = define_section
             graph[name].properties.append(property_section)
 
-            for k, v in parse_kv_links(include_section):
-                build_edge_in_graph(graph, k, name, v)
-
-            for k, v in parse_kv_links(parents_section):
-                build_edge_in_graph(graph, k, name, v)
-
             for link in links:
                 link_path = os.path.abspath(os.path.join(os.path.dirname(file_path), link))
                 build_graph_from_markdown_file(link_path, graph)
+
+            for k, v in parse_kv_links(include_section).items():
+                build_edge_in_graph(graph, name, k, v)
+
+            for k, v in parse_kv_links(parents_section).items():
+                build_edge_in_graph(graph, k, name, v)
 
             return graph[name]
 

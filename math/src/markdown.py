@@ -7,7 +7,10 @@ def parse_section_in_markdown(content, name):
 
 
 def parse_kv_links(content):
-    pattern = r'\]\((.*?)\.md\): (.*?)(?=\n- \[|$)'
-    matches = re.findall(pattern, content, re.DOTALL)
-    result = {match[0]: match[1].strip() for match in matches}
+    lines = content.splitlines()
+    result = {}
+    for line in lines:
+        match = re.match(r'- \[(.*?)\]\(.*?\):(.*?)$', line)
+        if match:
+            result[match.group(1)] = match.group(2).strip()
     return result
