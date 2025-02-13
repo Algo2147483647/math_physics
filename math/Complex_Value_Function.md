@@ -48,9 +48,6 @@ Analytic function $f$ is a complex function on an open set $D$ in the real line 
 
 A meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function.
 
-
-
-
 ## Include
 
 - [Gamma_Function](./Gamma_Function.md): 
