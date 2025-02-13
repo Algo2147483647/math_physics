@@ -51,11 +51,19 @@ $$
 \chi = V - E + F  \tag{Euler Characteristic}
 $$
 
+
+
+### Closed Set
+
+Closed Set is the complementary set of Open Set.  
+
 ## Include
 
 - [Manifold](./Manifold.md): 
 
 - [Metric_Space](./Metric_Space.md): 
+
+- [Hausdorff_Space](./Hausdorff_Space.md): 
 
 ## Parents
 

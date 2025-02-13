@@ -94,6 +94,14 @@ Natural join of relations $R$ and $S$ is an special join where the join conditio
 - $\theta$: the join condition (a boolean valued function on the attributes of $R, S$)
 - $\sim$: represents an equivalence relation that removes the duplicate columns of the common attributes. That is, we only keep one copy of each common attribute in the final result.
 
+### Binary Relation
+
+
+$$
+X \ R\ Y \subseteq X \times Y  \tag{Binary Relation}
+$$
+Binary Relation $R$ over set $X, Y$ is a subset of the Cartesian product $X \times Y$. The set $X$ is called the domain, and set $Y$ the codomain.
+
 ## Include
 
 - [Function](./Function.md): 
