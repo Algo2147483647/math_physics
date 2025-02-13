@@ -55,15 +55,15 @@ $$
 
 ### Closed Set
 
-Closed Set is the complementary set of Open Set.  
+Closed Set is the complementary set of Open Set.
 
 ## Include
+
+- [Hausdorff_Space](./Hausdorff_Space.md): 
 
 - [Manifold](./Manifold.md): 
 
 - [Metric_Space](./Metric_Space.md): 
-
-- [Hausdorff_Space](./Hausdorff_Space.md): 
 
 ## Parents
 
