@@ -3,6 +3,7 @@ import re
 import json
 from pathlib import Path
 from graph import *
+from markdown import *
 
 
 def build_graph_json_from_markdown_folder(folder_path):
@@ -40,34 +41,34 @@ def build_graph_from_markdown_file(file_path, graph):
             content = f.read()
 
             links = re.findall(r'\]\((.*?\.md)\)', content)
-            define_section = re.search(r'##\s*Define(.*?)(\n## \w+|$)', content, re.DOTALL)
-            define_section = define_section.group(1).strip() if define_section else ""
-            property_section = re.search(r'##\s*Properties(.*?)(\n## \w+|$)', content, re.DOTALL)
-            property_section = property_section.group(1).strip() if property_section else ""
-            include_section = re.search(r'##\s*Include(.*?)(\n## \w+|$)', content, re.DOTALL)
-            include_section = include_section.group(1).strip() if include_section else ""
-            parents_section = re.search(r'##\s*Parents(.*?)(\n## \w+|$)', content, re.DOTALL)
-            parents_section = parents_section.group(1).strip() if parents_section else ""
+            define_section = parse_section_in_markdown("Define")
+            property_section = parse_section_in_markdown("Properties")
+            include_section = parse_section_in_markdown("Include")
+            parents_section = parse_section_in_markdown("Parents")
 
             graph[name].define = define_section
             graph[name].properties.append(property_section)
 
+            for k, v in parse_kv_links(include_section):
+                build_edge_in_graph(graph, k, name, v)
+
+            for k, v in parse_kv_links(parents_section):
+                build_edge_in_graph(graph, k, name, v)
+
             for link in links:
                 link_path = os.path.abspath(os.path.join(os.path.dirname(file_path), link))
-                link_name = os.path.splitext(os.path.basename(link_path))[0]
                 build_graph_from_markdown_file(link_path, graph)
-
-                # if define_section and link in graph[name].define:
-                #     build_edge_in_graph(graph, link_name, name, "")
-                # else:
-                #     build_edge_in_graph(graph, name, link_name, "")
-
-                if parents_section and link in parents_section:
-                    build_edge_in_graph(graph, link_name, name, "")
-                elif include_section and link in include_section:
-                    build_edge_in_graph(graph, name, link_name, "")
 
             return graph[name]
 
     except IOError:
         return graph[name]
+
+
+
+
+
+
+
+
+

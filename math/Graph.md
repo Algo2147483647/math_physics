@@ -55,37 +55,34 @@ In a directed graph $G=(V, E)$, the graph is strongly connected if for every pai
 
 ### Euler Path & Euler Graph
 
-#### Define
 Euler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. 
 
 <img src="./assets/48727417-28c3d500-ec58-11e8-9715-33b168a50b7c.png" alt="theory1" style="zoom:20%;" />
 
 #### Property
-- The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
+The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
 
 
 ### Matching of Graph
-
-#### Define
 
 $$
 \forall e_i, e_j \in M \subseteq E, e_i \neq e_j \quad\Rightarrow\quad v(e_i, 1) \neq v(e_i, 2) \neq v(e_j, 1) \neq v(e_j, 2)  \tag{Matching}
 $$
 Matching of a graph is a set of edges $M \subseteq E$ that have no common points between any two edges.
 
-#### Include
+#### Maximum Matching
 
-- Maximum Matching
-  $$
-  M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
-  $$
-  Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
-  
-- Perfect Matching
-  $$
-  V^{(G)} = v(M^*)
-  $$
-  Perfect Matching is a matching that all vertices of the graph are in it.
+$$
+M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
+$$
+Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
+
+#### Perfect Matching
+
+$$
+V^{(G)} = v(M^*)
+$$
+Perfect Matching is a matching that all vertices of the graph are in it.
 
 ## Include
 
