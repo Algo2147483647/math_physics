@@ -157,6 +157,35 @@ function RenderEdge(svg, x1, y1, x2, y2, weight) {
     path.setAttribute("stroke", "#8888FF");
     path.setAttribute("fill", "none");
     path.setAttribute("stroke-width", "1");
-    path.addEventListener('click', () => alert(weight));
+
+    let text;
+    let container;
+
+    // 鼠标滑过事件处理函数
+    path.addEventListener('mouseover', (event) => {
+        if (!container) {
+            container = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute("x", event.offsetX);
+            text.setAttribute("y", event.offsetY);
+            text.setAttribute("fill", "#FF6347");
+            text.setAttribute("font-family", "Georgia, serif");
+            text.setAttribute("font-style", "italic");
+            text.setAttribute("font-size", "18px");
+            text.setAttribute("text-shadow", "1px 1px 2px rgba(0, 0, 0, 0.3)");
+            text.textContent = weight;
+            container.appendChild(text);
+            svg.appendChild(container);
+
+            container.addEventListener('mouseleave', () => {
+                if (container) {
+                    svg.removeChild(container);
+                    container = null;
+                    text = null;
+                }
+            });
+        }
+    });
+
     svg.appendChild(path);
 }
