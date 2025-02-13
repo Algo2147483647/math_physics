@@ -18,6 +18,8 @@ A geodesic is a curve representing in some sense the shortest path between two p
 
 ## Include
 
+- [Differential_Manifold](./Differential_Manifold.md): 
+
 - [Lie_Group](./Lie_Group.md): 
 
 ## Parents

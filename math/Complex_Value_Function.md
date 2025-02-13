@@ -39,6 +39,8 @@ The path of integration $\gamma$ is counterclockwise around a Jordan curve enclo
 
 - [Gamma_Function](./Gamma_Function.md): 
 
+- [Holomorphic_Function](./Holomorphic_Function.md): 
+
 - [Hypergeometric_Function](./Hypergeometric_Function.md): 
 
 - [Riemann_Zeta_Function](./Riemann_Zeta_Function.md): 

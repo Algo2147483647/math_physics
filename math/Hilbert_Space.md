@@ -4,7 +4,7 @@
 
 ## Define
 
-Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Poduct_Space.md).
+Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Product_Space.md).
 
 ## Properties
 
@@ -16,7 +16,7 @@ Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md)
 
 ## Parents
 
-- [Inner_Poduct_Space](./Inner_Poduct_Space.md): 
+- [Inner_Product_Space](./Inner_Product_Space.md): 
 
 - [Metric_Space](./Metric_Space.md): 
 

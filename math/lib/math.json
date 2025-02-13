@@ -100,6 +100,7 @@
         "define": "$$\nf: \\mathbb C \\to \\mathbb C\n$$\n\nA complex function $f: \\mathbb C \\to \\mathbb C$ is a [function](./Function.md) from [complex numbers](./Complex_Field.md) to complex numbers.",
         "kids": {
             "Gamma_Function": "",
+            "Holomorphic_Function": "",
             "Hypergeometric_Function": "",
             "Riemann_Zeta_Function": ""
         },
@@ -113,11 +114,11 @@
         ]
     },
     "Convolution": {
-        "define": "Cross Correlation and Convolution, are a measure of similarity (through [inner product](./Inner_Poduct_Space.md)) of two functions $f, g$ of the displacement $t \\in \\mathbb R$ of one relative to the other.\n$$\n\\begin{align*}\nCorr(f(t), g(t)) \n&= \\sum_{t = -\\infty}^{\\infty} f(\\tau) g(t + \\tau)  \\tag{Cross Correlation}  \\\\\n&= \\sum_{t = -\\infty}^{\\infty} f(-t+\\tau) g(\\tau)  \\\\\n&= \\int_{-\\infty}^{\\infty} f(\\tau) g(t + \\tau) \\mathrm d \\tau   \\\\\n&= \\int_{-\\infty}^{\\infty} f(-t+\\tau) g(\\tau) \\mathrm d \\tau  \\\\\nConv(f(t), g(t)) \n&= \\sum_{t = -\\infty}^{\\infty} f(\\tau) g(t - \\tau)  \\tag{Convolution}  \\\\\n&= \\sum_{t = -\\infty}^{\\infty} f(t-\\tau) g(\\tau)  \\\\\n&= \\int_{-\\infty}^{\\infty} f(\\tau) g(t - \\tau) \\mathrm d \\tau   \\\\\n&= \\int_{-\\infty}^{\\infty} f(t-\\tau) g(\\tau) \\mathrm d \\tau  \\\\\n\\end{align*}\n$$",
+        "define": "Cross Correlation and Convolution, are a measure of similarity (through [inner product](./Inner_Product_Space.md)) of two functions $f, g$ of the displacement $t \\in \\mathbb R$ of one relative to the other.\n$$\n\\begin{align*}\nCorr(f(t), g(t)) \n&= \\sum_{t = -\\infty}^{\\infty} f(\\tau) g(t + \\tau)  \\tag{Cross Correlation}  \\\\\n&= \\sum_{t = -\\infty}^{\\infty} f(-t+\\tau) g(\\tau)  \\\\\n&= \\int_{-\\infty}^{\\infty} f(\\tau) g(t + \\tau) \\mathrm d \\tau   \\\\\n&= \\int_{-\\infty}^{\\infty} f(-t+\\tau) g(\\tau) \\mathrm d \\tau  \\\\\nConv(f(t), g(t)) \n&= \\sum_{t = -\\infty}^{\\infty} f(\\tau) g(t - \\tau)  \\tag{Convolution}  \\\\\n&= \\sum_{t = -\\infty}^{\\infty} f(t-\\tau) g(\\tau)  \\\\\n&= \\int_{-\\infty}^{\\infty} f(\\tau) g(t - \\tau) \\mathrm d \\tau   \\\\\n&= \\int_{-\\infty}^{\\infty} f(t-\\tau) g(\\tau) \\mathrm d \\tau  \\\\\n\\end{align*}\n$$",
         "kids": {},
         "name": "Convolution",
         "parents": {
-            "Inner_Poduct_Space": ""
+            "Inner_Product_Space": ""
         },
         "properties": [
             "- Commutativity & Associativity & Distributivity\n$$\n\\begin{align*}\nConv(f, g)  &= Conv(g, f)  \\tag{Commutativity}  \\\\\nConv(f, Conv(g, h))  &= Conv(Conv(f, g), h)  \\tag{Associativity}  \\\\\nConv(f, g+h)  &= Conv(f, g) + Conv(f, h)  \\tag{Distributivity}  \\\\\na\u00b7Conv(f, g)  &= Conv(a\u00b7f, g)  \\tag{Associativity with scalar multiplication}  \\\\\n\\end{align*}\n$$\n- Differential \n$$\n\\frac{\\mathrm{d}(f_1(t) * f_2(t))}{\\mathrm{d} t} = \\mathrm{d}(f_1(t) * \\frac{\\mathrm{d} f_2(t)}{\\mathrm{d} t} = \\mathrm{d}(f_2(t) * \\frac{\\mathrm{d} f_1(t)}{\\mathrm{d} t}\n$$\n- Integral \n$$\n\\int^t_{-\\infty} f_1(\u03bb) * f_2(\u03bb) \\mathrm{d} \u03bb = f_1(t) * \\int^t_{-\\infty} f_2(\u03bb) \\mathrm{d} \u03bb =  f_2(t) * \\int^t_{-\\infty} f_1(\u03bb) \\mathrm{d} \u03bb\n$$\n- Relation with impulse function\n$$\nf(t) * \u03b4^{(k)}(t - t_0) = f^{(k)}(t - t_0)\n$$\n$$\n\\begin{align*}\n\\mathrm{d}f(t) * \u03b4(t) &= f(t)\\\\\n\\mathrm{d}f(t) * \u03b4(t - t_0) &= f(t - t_0)\\\\\n\\mathrm{d}f(t) * \u03b4'(t - t_0) &= f'(t - t_0)\\\\\n\\mathrm{d}f(t) * u(t - t_0) &= f(t) * \\int^t_{-\\infty} \u03b4(\u03bb - t_0) \\mathrm{d} \u03bb = \\int^t_{-\\infty} f(\u03bb - t_0) \\mathrm{d} \u03bb\\\\\n\\end{align*}\n$$\n\n### Convolution Theorem\n$$\n\\mathcal F(f_1(t) * f_2(t)) = F_1(\u03c9) \u00b7 F_2(\u03c9)\n$$\n$$\n\\mathcal F(F_1(\u03c9) * F_2(\u03c9)) = \\frac{1}{2 \u03c0} f_1(t) \u00b7 f_2(t)\n$$"
@@ -134,6 +135,17 @@
         },
         "properties": [
             "### Zero Set of Cubic Function , Cubic Surface   \n\n- Define\n  $$\n  \\left\\{\\boldsymbol x \\ |\\  \\right\\}\n  $$\n- Property\n  - Solution of Univariate Cubic Equation  \n    For a Univariate Cubic Equation,\n    $$\n    x^3 + px + q = 0\n    $$\n\n    The solutions are,\n    $$\n    r = \\sqrt[3]{-\\frac{q}{2}+\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}+\\sqrt[3]{-\\frac{q}{2}-\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}\n    $$\n\n- Include\n  * Fermat Cubic\n    - Define\n      $$\n      \\left\\{ x \\ |\\ \\sum_{i = 1}^{\\dim} x_i^3 = 0 \\right\\}\n      $$"
+        ]
+    },
+    "Differential_Manifold": {
+        "define": "Differential manifold $M$ of dimension $n$ is a manifold and equipped with a differentiable structure.\n\nDifferentiable Structure: There exists a collection of charts $\\{(U_\\alpha, \\varphi_\\alpha)\\}$ such that the open sets $U_\\alpha$ cover $M$ and the transition maps $\\varphi_\\beta\\circ \\varphi_\\alpha^{-1}: \\varphi_\\alpha(U_\\alpha \\cap U_\\beta) \\to \\varphi_\\beta(U_\\alpha \\cap U_\\beta)$ are differentiable functions for all overlapping charts $(U_\\alpha, \\varphi_\\alpha)$ and $(U_\\beta, \\varphi_\\beta)$. This collection of charts is called an atlas.",
+        "kids": {},
+        "name": "Differential_Manifold",
+        "parents": {
+            "Manifold": ""
+        },
+        "properties": [
+            ""
         ]
     },
     "Dirac_Delta_Function": {
@@ -220,7 +232,7 @@
             "Polynomial_Function": ""
         },
         "properties": [
-            "### Zero Set of Quartic Function , Quartic Surface\n\n\n\n### Solution of Univariate Quartic Equation  \nFor an Univariate Quartic Equation,\n$$\na x^4 + b x^3 + c x^2 + d x + e = 0\n$$\n\nThe solutions are $r_1, r_2, r_3, r_4$,\n$$\n\\begin{align*}\n  r_{i} &= -\\frac{b}{4 a} - S \\pm \\frac{1}{2} \\sqrt{-4 S^2 -2 p \\pm \\frac{q}{S}}  \\\\\n  p & =\\frac{8 a c-3 b^2}{8 a^2} \\\\\n  q & =\\frac{b^3-4 a b c+8 a^2 d}{8 a^3} \\\\\n  S & =\\frac{1}{2} \\sqrt{-\\frac{2}{3} p+\\frac{1}{3 a}\\left(Q+\\frac{\\Delta_0}{Q}\\right)} \\\\\n  Q & =\\sqrt[3]{\\frac{\\Delta_1+\\sqrt{\\Delta_1^2-4 \\Delta_0^3}}{2}} \\\\\n  \\Delta_0 & =c^2-3 b d+12 a e \\\\\n  \\Delta_1 & =2 c^3-9 b c d+27 b^2 e+27 a d^2-72 a c e\n\\end{align*}\n$$\n\nOr representation by\n$$\n\\begin{align*}\n  Q_1 &= c^2 - 3bd + 12e  \\\\\n  Q_2 &= 2c^3 - 9bcd + 27d^2 + 27b^2e - 72ce  \\\\\n  Q_3 &= 8bc - 16d - 2b^3  \\\\\n  Q_4 &= 3b^2 - 8c  \\\\\n  Q_5 &= \\sqrt[3]{\\frac{Q_2}{2} + \\sqrt{\\left(\\frac{Q_2^2}{4} - Q_1^3\\right)}}   \\\\\n  Q_6 &= \\frac{Q_1}{Q_5} + Q_5  \\\\\n  Q_7 &= 2\\sqrt{\\frac{Q_4}{12} + Q_6}   \\\\\n  x_1 &= \\frac{-b - Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_2 &= \\frac{-b - Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_3 &= \\frac{-b + Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_4 &= \\frac{-b + Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4}\n\\end{align*}\n$$"
+            "### Zero Set of Quartic Function , Quartic Surface\n\n\n\n### Solution of Univariate Quartic Equation  \nFor an Univariate Quartic Equation,\n$$\na x^4 + b x^3 + c x^2 + d x + e = 0\n$$\n\nThe solutions are $r_1, r_2, r_3, r_4$,\n$$\n\\begin{align*}\n  r_{i} &= -\\frac{b}{4 a} - S \\pm \\frac{1}{2} \\sqrt{-4 S^2 -2 p \\pm \\frac{q}{S}}  \\\\\n  p & =\\frac{8 a c-3 b^2}{8 a^2} \\\\\n  q & =\\frac{b^3-4 a b c+8 a^2 d}{8 a^3} \\\\\n  S & =\\frac{1}{2} \\sqrt{-\\frac{2}{3} p+\\frac{1}{3 a}\\left(Q+\\frac{\\Delta_0}{Q}\\right)} \\\\\n  Q & =\\sqrt[3]{\\frac{\\Delta_1+\\sqrt{\\Delta_1^2-4 \\Delta_0^3}}{2}} \\\\\n  \\Delta_0 & =c^2-3 b d+12 a e \\\\\n  \\Delta_1 & =2 c^3-9 b c d+27 b^2 e+27 a d^2-72 a c e\n\\end{align*}\n$$\n\nOr representation by\n$$\n\\begin{align*}\n  Q_1 &= c^2 - 3bd + 12e  \\\\\n  Q_2 &= 2c^3 - 9bcd + 27d^2 + 27b^2e - 72ce  \\\\\n  Q_3 &= 8bc - 16d - 2b^3  \\\\\n  Q_4 &= 3b^2 - 8c  \\\\\n  Q_5 &= \\sqrt[3]{\\frac{Q_2}{2} + \\sqrt{\\left(\\frac{Q_2^2}{4} - Q_1^3\\right)}}   \\\\\n  Q_6 &= \\frac{Q_1}{Q_5} + Q_5  \\\\\n  Q_7 &= 2\\sqrt{\\frac{Q_4}{12} + Q_6}   \\\\\n  x_1 &= \\frac{-b - Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_2 &= \\frac{-b - Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_3 &= \\frac{-b + Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_4 &= \\frac{-b + Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4}\n\\end{align*}\n$$\n\n### Torus\n\n$$\n\\{\\boldsymbol x \\ |\\ (R^2 - r^2 + \\boldsymbol x^T \\boldsymbol x)^2 - 4 R^2 (\\boldsymbol x^T \\boldsymbol x - x_i^2) = 0\\}  \\tag{Torus}\n$$\n\n<img src=\"./assets/torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750.gif\" alt=\"torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750\" style=\"zoom:50%;\" />\n\n### Tanglecube\n\n$$\n\\left\\{\\boldsymbol x \\ |\\ \\sum_{i=1}^3 \\left(x_i^4 - 5 x_i^2 \\right) + 11.8 = 0 \\right\\}  \\tag{Tanglecube}\n$$\n\n<img src=\"./assets/Tanglecube1_700.svg\" alt=\"Tanglecube1_700\" style=\"zoom:67%;\" />"
         ]
     },
     "Fractal": {
@@ -231,7 +243,7 @@
             "Set": ""
         },
         "properties": [
-            ""
+            "### Mandelbrot Set & Julia Set\n\n- Define  \n  $$\n  Z_{n+1} = Z_n^2 + C\n  $$\n  \n  $$\n  \\begin{align*}\n    S_\\text{Mandelbrot} &= \\{ C \\ |\\ Z_{n+1} \\text{ non-divergent }, Z_0 = 0 \\}  \\tag{Mandelbrot Set}\\\\\n    S_\\text{Julia, C} &= \\{ Z_0 \\ |\\ Z_{n+1} \\text{ non-divergent } \\}  \\tag{Julia Set}\n  \\end{align*}\n  $$\n  \n  Mandelbrot set is the set of all complex numbers $C$ for which the Mandelbrot iteration remains bounded with $Z_0 = 0$. (non-divergent $\\neq$ convergent, may jump back and forth at several different points)\n\n  <img src=\"./assets/Mandel_zoom_00_mandelbrot_set.jpg\" alt=\"img\" style=\"zoom:10%;\" />\n\n  Julia set is the set of all complex numbers $Z_0$ for which the Mandelbrot iteration remains bounded with a given $C$.\n  \n  <img src=\"./assets/JSr07885.gif\" alt=\"img\" style=\"zoom: 40%;\" />\n  \n- Property\n  - $|Z_n|>2$ impossible to converge. Hence, Mandelbrot Set is in the circle with a radius of 2.\n\n### Newton Fractal    \n\n- Define  \n  $$\n  z_{n+1} = z_n - \\frac{p(z_n)}{p'(z_n)}\n  $$\n\n  Newton fractal is a boundary set in the complex plane which is characterized by Newton's method applied to a fixed polynomial $p(z)$ or transcendental function. \n  \n  <img src=\"./assets/Julia-set_N_z3-1.png\" alt=\"img\" style=\"zoom:12%;\" />"
         ]
     },
     "Function": {
@@ -254,7 +266,7 @@
             "Relation": ""
         },
         "properties": [
-            ""
+            "### Injective\n\n$$\n\\forall x, x', f(x) = f(x') \\Rightarrow x = x'\n$$\nEach mapped element $y$ has a unique element $x$ corresponding to it.\n\n### Surjection\n\n$$\n\\forall y \\in Y, \\exists x \\in X, f(x) = y\n$$\nEach element $y$ in set $Y$ has a element $x$ in set $X$ corresponding to it.\n\n### Bijection , One-to-One Correspondence\n\n$$\n\\forall y \\in Y, \\exists_{= 1} x \\in X, f(x) = y\n$$\nA map that is both injective and surjective. Each element $y$ in set $Y$ has a unique element $x$ in set $X$ corresponding to it. Meanwhile, each element $x$ in set $X$ has a unique element $y$ in set $Y$ corresponding to it.\n\n<img src=\"assets/R-16983288702011.png\" alt=\"R\" style=\"zoom: 30%;\" />\n\n- Property\n  * Inverse Function\n    if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \\Leftrightarrow f(a) = b$"
         ]
     },
     "Gamma_Function": {
@@ -287,24 +299,25 @@
     "Group": {
         "define": "$$\n(G, \\cdot)\n$$\n\nGroup is an algebraic structure, where $G$ is a set, $\\cdot$ is a binary operation, and satisfy:\n\n- closure: $a, b \\in G \\Rightarrow a \\cdot b \\in G$\n- associative law $(a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$\n- exists identity element, $\\exists 1: x \\cdot 1 = 1 \\cdot x = x$\n- exists inverse element, $\\exists x^{-1}: x \\cdot x^{-1} = x^{-1} \\cdot x = 1$",
         "kids": {
-            "Lie_Group": ""
+            "Lie_Group": "",
+            "Symmetric_Group": ""
         },
         "name": "Group",
         "parents": {
             "Algebra_Structure": ""
         },
         "properties": [
-            "- $1$ is unique\n  - Proof  \n    $$\n    1_1 = 1_1 \\cdot 1_2 = 1_2\n    $$\n- The inverse of each element is unique.\n- Absorbing Element\n  $$\n  x \\cdot 0 = 0 \\cdot x = 0  \\quad; \\forall x \\in G  \\tag{absorbing element}\n  $$\n- 1 \n  - $\\forall a \\in G, (a^{-1})^{-1} = a$\n  - $\\forall a,b \\in G, (a \\cdot b)^{-1} = b^{-1} \\cdot a^{-1}$\n  - $\\forall a,b,c \\in G, a\\cdot b = a \\cdot c  \\quad\\Rightarrow\\quad b = c$\n  - $\\forall a,b,c \\in G, b\\cdot a = c \\cdot a  \\quad\\Rightarrow\\quad b = c$ \n\n### Subgroup\n\n- Define  \n  $$\n  H \\subseteq G, H \\neq \\emptyset, (H, \\cdot) \\text{ is group } \\quad\\Rightarrow\\quad H \\le G  \\tag{Subgroup}\n  $$\n\n  For a group $(G, \\cdot)$ and a nonempty subset $H$ of $G$, if $(H, \\cdot)$ is also group, then $(H, \\cdot)$ is a subgroup of $(G, \\cdot)$.\n\n- Property  \n  - $1 \\le G, G \\le G$\n\n  * Coset\n    - Define\n      For a subgroup $H$ of the group $G$ and an element $g \\in G$, the left cosets of $H$ in $G$ are the sets obtained by multiplying each element of $H$ by a fixed element $g$ (where $g$ is the left factor).\n      $$\n      gH = \\{gh \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{left cosets}\n      $$\n\n      The right cosets are defined similarly, except that the element g is now a right factor.\n      $$\n      Hg = \\{hg \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{right cosets}\n      $$\n\n    - Property\n\n      - Cosets form a partition of group $G$, that is, they divide $G$ into several disjoint sets. \n\n        Each coset of subgroup $H$ have the same number of elements as the subgroup $H$. Two cosets are either identical or completely disjoint. \n\n  * The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$.\n    $$\n    |H|\\ |\\ |G|\n    $$\n\n#### Normal Subgroup\n\n- Define\n  $$\n  H \\lhd G \\quad\\Leftrightarrow\\quad  g^{-1}hg \\in H, \\forall h \\in H \\le G, g \\in  G \\tag{Normal Subgroup}\n  $$\n  Normal Subgroup is a subgroup $H \\le G$ if it is invariant under conjugation, that is, $\\forall h \\in H, g \\in G$, we have $g^{-1}hg \\in H$.\n\n- Property\n  * Quotient Group\n  \n    * Define\n  \n      Given a group $G$ and a normal subgroup $H \\lhd G$, the Quotient Group $G/H$ is a group composed of all left cosets of $H$ in $G$ as elements $\\{aH \\ |\\ a \\in G\\}$ and multiplication operations $(g_1 H) \\cdot (g_2 H) = g_1 g_2 H, \\forall g_1, g_2 \\in G$.\n      $$\n      (\\{aH \\ |\\ a \\in G\\}, \\cdot)  \\\\\n      $$\n  \n    - Property\n  \n      - The unit element of the quotient group $G/N$ is $N$ itself\n  \n      $$\n      gN \\cdot N = gN\n      $$\n  \n      - $|G/H| = \\frac{|G|}{|H|}$\n\n### Group Homomorphism\n\n- Define\n  $$\n  f: G \\to H\n  $$\n  Group Homomorphism is a function $f$ from a group $(G, \\cdot)$ to another group $(H, *)$ such that for all $u, v \\in G$ it hold that,\n  $$\n  f(u \\cdot v) = f(u) * f(v) \\quad, \\forall u, v \\in G\n  $$\n\n- Property\n  * Isomorphism of Groups  \n    If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.\n\n### Simple Group\n\n- Define\n\n  A simple group is a group $G$ whose only normal subgroups are the trivial group $\\{e\\}$ (a trivial group or zero group is a group consisting of a single element $e$) and the group itself.\n\n- Property\n\n  - Classification of finite simple groups\n\n    Every finite simple group is isomorphic to one of the following groups\n\n    - a member of one of three infinite classes of such, namely:\n      - the cyclic groups of prime order,\n      - the alternating groups of degree at least 5,\n      - the groups of Lie type,\n      - the derivative of the groups of Lie Type, such as the Tits group\n    - one of 26 groups called the \"sporadic groups\"\n  \n    <img src=\"./assets/gn5cimd92mh11.jpg\" alt=\"gn5cimd92mh11\"  />\n\n### Commutative Group , Abelian Group\n\n- Define\n  Commutative Group is a Group satisfied commutative law,\n  $$\n  a \\cdot b = b \\cdot a\n  $$\n\n### Cyclic Group\n\n- Define\n\n  A group $G$ is called cyclic if there exists an element $a \\in G$ such that every element of $G$ can be expressed as a power of $a$. ln other words, every element in $G$ is of the form $a$ for some integer $k$. The element a is called a generator of the group.\n  $$\n  \u27e8g\u27e9 = \\{g^k \\ |\\ k \\in \\mathbb Z\\}\n  $$\n\n### Symmetric Group\n\n- Define  \n  $$\n  S_n = (\\{f: X \\to X\\}, \\circ)\n  $$\n  Symmetric group on a finite set $X$ is the group whose elements are all bijective functions $f: X \\to X$ and whose group operation is that of function composition $f_1 \\circ f_2 = f_1(f_2(\\cdot))$. Where $n$ is the degree of symmetric group, that is, the number of elements in set $X$.\n\n- Property\n  - Cayley's theorem: every group $G$ is isomorphic to a subgroup of a symmetric group.\n\n- Example \n  * Permutation Group\n    - Define\n      Permutation group is a group $G$ whose elements are permutations of a given set $M$ and whose group operation is the composition of permutations in $G$ (which are thought of as bijective functions from the set $M$ to itself).  \n\n    - Property\n      - every group is isomorphic to some permutation group.\n\n### Alternating Group\n\n- Define\n\n  An alternating group $A_n$ on a set of $n$ symbols is defined to be the group of all even permutations of the $n$ symbols. (The even arrangement here refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.)\n\n- Property\n  - $A_n$ is a normal group of $S_n$. $|A_n| = \\frac{1}{2} |S_n|$.\n  - For $n>5$, $A_n$ is a simple group."
+            "- $1$ is unique\n  - Proof  \n    $$\n    1_1 = 1_1 \\cdot 1_2 = 1_2\n    $$\n- The inverse of each element is unique.\n- Absorbing Element\n  $$\n  x \\cdot 0 = 0 \\cdot x = 0  \\quad; \\forall x \\in G  \\tag{absorbing element}\n  $$\n- 1 \n  - $\\forall a \\in G, (a^{-1})^{-1} = a$\n  - $\\forall a,b \\in G, (a \\cdot b)^{-1} = b^{-1} \\cdot a^{-1}$\n  - $\\forall a,b,c \\in G, a\\cdot b = a \\cdot c  \\quad\\Rightarrow\\quad b = c$\n  - $\\forall a,b,c \\in G, b\\cdot a = c \\cdot a  \\quad\\Rightarrow\\quad b = c$ \n\n### Subgroup\n\n- Define  \n  $$\n  H \\subseteq G, H \\neq \\emptyset, (H, \\cdot) \\text{ is group } \\quad\\Rightarrow\\quad H \\le G  \\tag{Subgroup}\n  $$\n\n  For a group $(G, \\cdot)$ and a nonempty subset $H$ of $G$, if $(H, \\cdot)$ is also group, then $(H, \\cdot)$ is a subgroup of $(G, \\cdot)$.\n\n- Property  \n  - $1 \\le G, G \\le G$\n\n  * Coset\n    - Define\n      For a subgroup $H$ of the group $G$ and an element $g \\in G$, the left cosets of $H$ in $G$ are the sets obtained by multiplying each element of $H$ by a fixed element $g$ (where $g$ is the left factor).\n      $$\n      gH = \\{gh \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{left cosets}\n      $$\n\n      The right cosets are defined similarly, except that the element g is now a right factor.\n      $$\n      Hg = \\{hg \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{right cosets}\n      $$\n\n    - Property\n\n      - Cosets form a partition of group $G$, that is, they divide $G$ into several disjoint sets. \n\n        Each coset of subgroup $H$ have the same number of elements as the subgroup $H$. Two cosets are either identical or completely disjoint. \n\n  * The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$.\n    $$\n    |H|\\ |\\ |G|\n    $$\n\n#### Normal Subgroup\n\n- Define\n  $$\n  H \\lhd G \\quad\\Leftrightarrow\\quad  g^{-1}hg \\in H, \\forall h \\in H \\le G, g \\in  G \\tag{Normal Subgroup}\n  $$\n  Normal Subgroup is a subgroup $H \\le G$ if it is invariant under conjugation, that is, $\\forall h \\in H, g \\in G$, we have $g^{-1}hg \\in H$.\n\n- Property\n  * Quotient Group\n  \n    * Define\n  \n      Given a group $G$ and a normal subgroup $H \\lhd G$, the Quotient Group $G/H$ is a group composed of all left cosets of $H$ in $G$ as elements $\\{aH \\ |\\ a \\in G\\}$ and multiplication operations $(g_1 H) \\cdot (g_2 H) = g_1 g_2 H, \\forall g_1, g_2 \\in G$.\n      $$\n      (\\{aH \\ |\\ a \\in G\\}, \\cdot)  \\\\\n      $$\n  \n    - Property\n  \n      - The unit element of the quotient group $G/N$ is $N$ itself\n  \n      $$\n      gN \\cdot N = gN\n      $$\n  \n      - $|G/H| = \\frac{|G|}{|H|}$\n\n### Group Homomorphism\n\n- Define\n  $$\n  f: G \\to H\n  $$\n  Group Homomorphism is a function $f$ from a group $(G, \\cdot)$ to another group $(H, *)$ such that for all $u, v \\in G$ it hold that,\n  $$\n  f(u \\cdot v) = f(u) * f(v) \\quad, \\forall u, v \\in G\n  $$\n\n- Property\n  * Isomorphism of Groups  \n    If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.\n\n### Simple Group\n\n- Define\n\n  A simple group is a group $G$ whose only normal subgroups are the trivial group $\\{e\\}$ (a trivial group or zero group is a group consisting of a single element $e$) and the group itself.\n\n- Property\n\n  - Classification of finite simple groups\n\n    Every finite simple group is isomorphic to one of the following groups\n\n    - a member of one of three infinite classes of such, namely:\n      - the cyclic groups of prime order,\n      - the alternating groups of degree at least 5,\n      - the groups of Lie type,\n      - the derivative of the groups of Lie Type, such as the Tits group\n    - one of 26 groups called the \"sporadic groups\"\n  \n    <img src=\"./assets/gn5cimd92mh11.jpg\" alt=\"gn5cimd92mh11\"  />\n\n### Commutative Group , Abelian Group\n\n- Define\n  Commutative Group is a Group satisfied commutative law,\n  $$\n  a \\cdot b = b \\cdot a\n  $$\n\n### Cyclic Group\n\n- Define\n\n  A group $G$ is called cyclic if there exists an element $a \\in G$ such that every element of $G$ can be expressed as a power of $a$. ln other words, every element in $G$ is of the form $a$ for some integer $k$. The element a is called a generator of the group.\n  $$\n  \u27e8g\u27e9 = \\{g^k \\ |\\ k \\in \\mathbb Z\\}\n  $$\n\n\n### Alternating Group\n\n- Define\n\n  An alternating group $A_n$ on a set of $n$ symbols is defined to be the group of all even permutations of the $n$ symbols. (The even arrangement here refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.)\n\n- Property\n  - $A_n$ is a normal group of $S_n$. $|A_n| = \\frac{1}{2} |S_n|$.\n  - For $n>5$, $A_n$ is a simple group."
         ]
     },
     "Hilbert_Space": {
-        "define": "Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Poduct_Space.md).",
+        "define": "Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Product_Space.md).",
         "kids": {
             "Euclidean_Space": ""
         },
         "name": "Hilbert_Space",
         "parents": {
-            "Inner_Poduct_Space": "",
+            "Inner_Product_Space": "",
             "Metric_Space": ""
         },
         "properties": [
@@ -322,6 +335,17 @@
             "- $H(H(u))(t) = u(-t)$\n- $H(\\omega) = (-i \\cdot \\text{sgn}(\\omega))\\cdot \\mathcal F_h(\\omega)$"
         ]
     },
+    "Holomorphic_Function": {
+        "define": "A holomorphic function is a complex-valued function on an open set $U$ if it is complex differentiable at every point of $U$.",
+        "kids": {},
+        "name": "Holomorphic_Function",
+        "parents": {
+            "Complex_Value_Function": ""
+        },
+        "properties": [
+            "Holomorphic functions are differentiable everywhere within their domain of definition.\n\n$$\n\\frac{\\partial f}{\\partial \\bar z} = 0\n$$\n\n* Cauchy-Riemann Equations\n  \n\nFor a complex function $f(z) = u(x,y) + i v(x,y)$ to be differentiable (and hence analytic) at a point, where $u(x,y)$ and $v(x,y)$ are real and imaginary part respectively, the partial derivatives of $u, v$ must satisfy the Cauchy-Riemann equations at that point:\n$$\n\\frac{\\partial u}{\\partial x} = \\frac{\\partial v}{\\partial y}  \\\\ \\quad \\frac{\\partial u}{\\partial y} = -\\frac{\\partial v}{\\partial x} \\tag{Cauchy-Riemann Equations}\n$$"
+        ]
+    },
     "Hypergeometric_Function": {
         "define": "$$\n{}_pF_q(a_1, \\cdots, a_p;b_1, \\cdots, b_q;z) = \\sum_{n=0}^\\infty \\frac{(a_1)_n (a_2)_n  \\cdots (a_p)_n}{(b_1)_n (b_2)_n \\cdots (b_q)_n} \\frac{z^n}{n!}\n$$\n\nThe hypergeometric function is defined for $|z| < 1$ by the power series. ([Complex Value Function](./Complex_Value_Function.md)) It is undefined (or infinite) if c equals a non-positive integer. Here (q)n is the (rising) Pochhammer symbol, which is defined by:\n$$\n(q)_{n}={\\begin{cases}1&n=0\\\\q(q+1)\\cdots (q+n-1)&n>0\\end{cases}}\n$$\n<img src=\"assets/Plot_of_the_hypergeometric_function_2F1(a,b;_c;_z)_with_a=2_and_b=3_and_c=4_in_the_complex_plane_from_-2-2i_to_2+2i_with_colors_created_with_Mathematica_13.1_function_ComplexPlot3D.svg\" alt=\"Plot_of_the_hypergeometric_function_2F1(a,b;_c;_z)_with_a=2_and_b=3_and_c=4_in_the_complex_plane_from_-2-2i_to_2+2i_with_colors_created_with_Mathematica_13.1_function_ComplexPlot3D\" style=\"zoom:25%;\" />",
         "kids": {},
@@ -333,18 +357,18 @@
             "- Differentiation formulas\n  $$\n  \\begin{align*}\n  \\frac {\\mathrm d}{\\mathrm dz} F(a,b;c;z) &= \\frac {ab}{c} F(a+1,b+1;c+1;z)  \\\\\n  \\frac {\\mathrm d^{n}}{\\mathrm dz^{n}} F(a,b;c;z) &= \\frac {(a)_{n}(b)_{n}}{(c)_{n}} F(a+n,b+n;c+n;z)\n  \\end{align*}\n  $$\n\n- Special cases\n  $$\n  \\begin{align*}\n  e^z &= F(;;-z)  \\\\\n  \\ln(1+z) &= z F(1, 1;2;-z)\\\\\n  (1+z)^\\alpha &= F(-\\alpha;;-z)  \\\\\n  \\sin z &= z F(;\\frac{3}{2};-{z^2}{4})  \\\\\n  \\cos z &= F(;\\frac{1}{2};-{z^2}{4})  \\\\\n  \\arcsin z &= z F(\\frac{1}{2}, \\frac{1}{2};\\frac{3}{2};z^2)  \\\\\n  \\arccos z &= z F(\\frac{1}{2}, 1;\\frac{3}{2};-z^2)  \\\\\n  \\end{align*}\n  $$"
         ]
     },
-    "Inner_Poduct_Space": {
-        "define": "The [Normed Linear Space](./Normed_Linear_Space.md) of inner product is defined.",
+    "Inner_Product_Space": {
+        "define": "The [Normed Linear Space](./Normed_Linear_Space.md) of inner product is defined.\n\n### Inner Product\n\nOperations that meet the following conditions:\n- Commutative:$\\left<x, y\\right> = \\overline{\\left<y, x\\right>}$\n- Distributive:$\\left<x, y+z\\right> = \\left<x , y\\right> + \\left<x, z\\right>$\n- Homogeneity:$\\left<k x, y\\right> = k \\left<x, y\\right>$\n- Nonnegativity:$\\left<x,x\\right> \u2265 0$, if and only if $x = 0, \\left<x,x\\right> = 0$",
         "kids": {
             "Convolution": "",
             "Hilbert_Space": ""
         },
-        "name": "Inner_Poduct_Space",
+        "name": "Inner_Product_Space",
         "parents": {
             "Normed_Linear_Space": ""
         },
         "properties": [
-            ""
+            "- $x, y \\text{orthogonal} \\Leftrightarrow \\left<x,y\\right> = 0$\n- $|\\left<x, y\\right>| \u2264 |x| |y|$\n- $\\left<x, y \\right> = x^T y = |x| |y| cos(\\theta_{x,y})$\n- Geometric Interpretation:  \n$\\left<x, y \\right>$ means the length of $x$ projection toward $y$ multiply length of $y$; or the length of $y$ projection toward $x$ multiply length of $x$.\n- Example\n  * Laplace Transform\n  * Wavelet Transform\n  * Cross Correlation & Convolution"
         ]
     },
     "Integer_Ring": {
@@ -463,6 +487,7 @@
     "Manifold": {
         "define": "Manifold $M$ is a second countable [Hausdorff space](./Topological_Space.md) that is locally homeomorphic to a [Euclidean space](./Euclidean_Space.md).\n\n- Hausdorff, $\\forall x, y \\in M$, there exists open neighborhoods $U_x, U_y \\subseteq M$ with $x \\in U_x, y \\in U_y$ and $U_x \\cap U_y = \\emptyset$.   \n- Second countable, there exits a countable collection $(U_n)_{n \\in \\mathbb N}$ of open set in $M$ such that for all $V \\subseteq M$ open, and $p \\in V$, there is some $n$ such that $p \\in U_n \\subseteq V$\n- Locally homeomorphic to a Euclidean space, every point has a neighborhood $U$ homeomorphic $\\phi: U \\to V$ to an open subset $V$ of the Euclidean space $\\mathbb R^n$ for some nonnegative integer $n$.",
         "kids": {
+            "Differential_Manifold": "",
             "Lie_Group": ""
         },
         "name": "Manifold",
@@ -497,7 +522,7 @@
         ]
     },
     "Measurable_Space": {
-        "define": "A Measurable Space is a pair $(E, \\mathcal E)$, where $E$ is a set and $\\mathcal E$ is its [$\\sigma$-algebra](./Power_Set.md).\n\nA Measure Space is a pair $(E, \\mathcal E, \\mu)$, where $E$ is a set and $\\mathcal E$ is its $\\sigma$-algebra, $\\mu$ is a Measure on $(E, \\mathcal E)$",
+        "define": "A Measurable Space is a pair $(E, \\mathcal E)$, where $E$ is a set and $\\mathcal E$ is its [$\\sigma$-algebra](./Power_Set.md).\n\nA Measure Space is a pair $(E, \\mathcal E, \\mu)$, where $E$ is a set and $\\mathcal E$ is its $\\sigma$-algebra, $\\mu$ is a Measure on $(E, \\mathcal E)$\n\n### Measurex\n\nA Measure on a measurable space $(E, \\mathcal E)$ is a function $\\mu: \\mathcal E \\to [0, \\infty)$ such that \n\n- $\\mu (\\emptyset) = 0$\n- Countable additivity: For any disjoint sequence $(A_1, ..., A_n), A_i \\in \\mathcal E$, then\n$$\n\\mu \\left(\\bigcup_i A_i\\right) = \\sum_i \\mu(A_i)\n$$",
         "kids": {
             "Probability_Space": ""
         },
@@ -506,7 +531,7 @@
             "Power_Set": ""
         },
         "properties": [
-            ""
+            "- Lebesgue Measure \n  For a measurable subset $E \\subseteq \\mathbb{R}^n$, $E$ is Lebesgue measurable, if for any $\\epsilon > 0$, there exist a finite number of open boxes $Q_1, Q_2, \\ldots, Q_m$ and their volumes $\\text{vol}(Q_i)$, such that\n  $$\n  E \\subset \\bigcup_{i=1}^m Q_i\n  $$\n  $$\n  \\sum_{i=1}^m \\text{vol}(Q_i) < \\text{vol}(E) + \\epsilon  \\tag{Lebesgue measurable}\n  $$\n\n  And Lebesgue measure $\\text{m}(E)$ of a measurable subset $E$ is defined as,\n  $$\n  \\text{m}(E) = \\inf\\left\\{\\sum_{i=1}^\\infty \\text{vol}(Q_i) \\ \\middle|\\ E \\subset \\bigcup_{i=1}^\\infty Q_i \\right\\}  \\tag{Lebesgue Measure}\n  $$\n\n- Probability"
         ]
     },
     "Metric_Space": {
@@ -574,14 +599,14 @@
     "Normed_Linear_Space": {
         "define": "$$\n(X, ||\u00b7||)\n$$\nThe [Linear Space](./Linear_Space.md) of Norm is defined.\n\nSymbol:\n- $X$: linear space\n- $||\u00b7||$:  Norm",
         "kids": {
-            "Inner_Poduct_Space": ""
+            "Inner_Product_Space": ""
         },
         "name": "Normed_Linear_Space",
         "parents": {
             "Linear_Space": ""
         },
         "properties": [
-            ""
+            "### Norm\n\n#### Include\n\n##### Vector Norm \n\n- Define   \n  A class of functions$f: X \\to \\mathbb R$ that satisfy:\n  \n  - Nonnegativity, $||A|| \u2265 0 ; ||A|| = 0 <=> A = 0$\n  - Homogeneity, $||k A|| = |k| ||A||$\n  - Trigonometric Inequality, $||A + B|| \u2264 ||A|| + ||B||$\n  \n- Example \n  - $p$-Norm\n    $$\n    \\begin{align*}\n      ||x||_{p} &= \\left(\\sum_{i=1}^n |x_i|^p \\right)^{1 / p}  \\tag{p-Norm}\\\\\n      ||x||_0 &= number(x_i \u2260 0 |_{i=1:n})  \\tag{0-Norm}\\\\\n      ||x||_1 &= \\sum_{i=1}^n |x_i|  \\tag{1-Norm}\\\\\n      ||x||_2 &= \\sqrt{\\sum_{i=1}^n x_i^2}  \\tag{2-Norm}\\\\\n      ||x||_\u221e &= \\max |x_i|  \\tag{$\u221e$-Norm}\\\\\n    \\end{align*}\n    $$\n\n  - Ellipse Norm \n    $$||x||_A = (x^T A x)^{1/2}$$\n\n##### Matrix Norm \n\n- Define   \n  A class of functions that satisfy:\n  - Nonnegativity, $||A|| \u2265 0$, if and only if $A = 0, ||A|| = 0$\n  - Homogeneity, $||k A|| = |k| ||A||$\n  - Trigonometric Inequality, $||A + B|| \u2264 ||A|| + ||B||$\n  - Consistency, $||A B|| \u2264 ||A||\\ ||B||$\n\n- Example \n  - simple\n    $$\n    \\begin{align*}\n      ||A||_{m_1} &= \\sum_{i,j} |a_{ij}|  \\\\\n      ||A||_{m_2} &= \\left(\\sum_{i,j} a_{ij}^2 \\right)^{1/2}  \\\\\n      ||A||_{m_\u221e} &= n\u00b7\\max_{i,j}|a_{ij}|  \\\\\n      ||A||_1    &= \\max_j \\sum_i |a_{ij}|  \\tag{\u5217\u548c Norm}\\\\\n      ||A||_\u221e &= \\max_i \\sum_j |a_{ij}|  \\tag{\u884c\u548c Norm}\\\\\n    \\end{align*}\n    $$\n  - Spectral Norm   \n    $$\n    ||A||_2 = \\sqrt{\\max\\ \u03bb_i}\n    $$\n    $(\u03bb_i)$ is eigenvalue of $A^H A$ .\n\n  - Frobenius Norm \n    $$\n    ||\\.A||_F = \\sqrt{\\sum_i \\sum_j |a_{ij}|^2}\n    $$\n\n#### Property\n\n- Matrix & Vector Norm Consistency\n  $$\n  ||A x||_V \u2264 ||A||_M ||x||_V\n  $$"
         ]
     },
     "Ordered_Set": {
@@ -801,7 +826,7 @@
             "Algebra_Structure": ""
         },
         "properties": [
-            "### Ideal\n\n- Define\n\n  Let $R$ be a ring and $I$ be a subring of $R$, if $\\forall i \\in I, \\forall r \\in R$, $i\\cdot r = r \\cdot i \\in I$,  we call $I$ is the ideal subring of $R$.\n\n- Property\n  - Quotient Ring\n\n- Include\n\n  - Prime Ideal\n\n    An ideal $I$ of a commutative ring $R$ is called a prime ideal if, whenever the product of two elements $a, b \\in R$ is an element of $I$, at least one of $a$ or $b$ is in $I$. Symbolically, if $I$ is a prime ideal and $ab \\in I$, then either $a \\in I$ or $b \\in I$.\n\n  - Maximal Ideal\n\n    An ideal $I$ of a ring $R$ is called a maximal ideal if it is a proper ideal (i.e., $I \\neq R$) and there are no other proper ideals properly containing $I$. In other words, there does not exist another ideal $J$ such that $I \\subsetneq J \\subsetneq R$.\n\n### Polynomial Ring\n\nThe polynomial ring $K[x]$ in $x$ over a field (or, more generally, a commutative ring) $K$ defined as the set of all polynomials in the variable $x$ with coefficients $p_i \\in K$ and a non-negative integer $n$ (representing the degree of the polynomial). \n$$\nf(x) = p_{0}+p_{1}x+p_{2}x^{2}+\\cdots +p_{n}x^{n}\n$$\n\n- **Addition**: $g(x) + f(x)$ is the polynomial whose coefficient of $x_i$ is $a_i + b_i$ for each $i$.\n- **Multiplication**: Given two polynomials $f, g$, their product $f \\cdot g$ is computed using the distributive property."
+            "### Ideal\n\n- Define\n\n  Let $R$ be a ring and $I$ be a subring of $R$, if $\\forall i \\in I, \\forall r \\in R$, $i\\cdot r = r \\cdot i \\in I$,  we call $I$ is the ideal subring of $R$.\n\n- Property\n  - Quotient Ring\n\n- Include\n\n  - Prime Ideal\n\n    An ideal $I$ of a commutative ring $R$ is called a prime ideal if, whenever the product of two elements $a, b \\in R$ is an element of $I$, at least one of $a$ or $b$ is in $I$. Symbolically, if $I$ is a prime ideal and $ab \\in I$, then either $a \\in I$ or $b \\in I$.\n\n  - Maximal Ideal\n\n    An ideal $I$ of a ring $R$ is called a maximal ideal if it is a proper ideal (i.e., $I \\neq R$) and there are no other proper ideals properly containing $I$. In other words, there does not exist another ideal $J$ such that $I \\subsetneq J \\subsetneq R$.\n\n### Polynomial Ring\n\nThe polynomial ring $K[x]$ in $x$ over a field (or, more generally, a commutative ring) $K$ defined as the set of all polynomials in the variable $x$ with coefficients $p_i \\in K$ and a non-negative integer $n$ (representing the degree of the polynomial). \n$$\nf(x) = p_{0}+p_{1}x+p_{2}x^{2}+\\cdots +p_{n}x^{n}\n$$\n\n- **Addition**: $g(x) + f(x)$ is the polynomial whose coefficient of $x_i$ is $a_i + b_i$ for each $i$.\n- **Multiplication**: Given two polynomials $f, g$, their product $f \\cdot g$ is computed using the distributive property.\n\n  \n### Commutative Ring\n\nA Ring satisfying commutative law.\n$$\na \\cdot b = b \\cdot a \\quad; \\forall a, b \\in G\n$$\n\n- Integral Domain"
         ]
     },
     "Sequence": {
@@ -842,7 +867,7 @@
             "Polyhedron": ""
         },
         "properties": [
-            ""
+            "* Point\n* Line Segment\n* Triangle\n  - Define \n  - Property\n    - judge whether a point is inside the triangle\n\n      We assume that the order of input vertices of the triangle $(\\boldsymbol a, \\boldsymbol b, \\boldsymbol c)$ is counter clockwise.\n\n      $$\n      \\left.\\begin{matrix}\n      (\\boldsymbol b-\\boldsymbol a) \\times (\\boldsymbol p-\\boldsymbol b) > 0\\\\\n      (\\boldsymbol c-\\boldsymbol b) \\times (\\boldsymbol p-\\boldsymbol c) > 0\\\\\n      (\\boldsymbol a-\\boldsymbol c) \\times (\\boldsymbol p-\\boldsymbol a) > 0\\\\\n      \\end{matrix} \\right\\} \\Leftrightarrow \\boldsymbol p \\text{ is in Triangle}(\\boldsymbol a, \\boldsymbol b, \\boldsymbol c)\n      $$\n\n  - Helen's formula\n      $$\n      S = \\sqrt{q(q-a)(q-b)(q-c)}\n      $$\n      $$\n      q = \\frac{a + b + c}{2}\n      $$\n\n* Tetrahedron\n\n- 5-cell"
         ]
     },
     "Stochastic_Process": {
@@ -857,6 +882,17 @@
         },
         "properties": [
             "* Correlation Function & Covariance Function\n  - Define  \n    $$\n    \\begin{align*} \n      Corr(X(t_1), Y(t_2)) \n      &= \\mathbb E(X(t_1) Y(t_2))  \\tag{Correlation function}\\\\\n    \n      Corr(X(t_1), X(t_2)) \n      &= \\mathbb E(X(t_1) X(t_2))  \\tag{AutoCorrelation function}\\\\\n    \n      Cov(X(t_1), Y(t_2)) \n      &= \\mathbb E((X(t_1) - \\mu_X(t_1)) (Y(t_2) - \\mu_Y(t_2)))  \\tag{Covariance function}\\\\\n      &= \\mathbb E(X(t_1) X(t_2)) - \\mu_X(t_1) \\mu_Y(t_2)  \\\\\n      &= Corr(X(t_1), Y(t_2)) - \\mu_X(t_1) \\mu_Y(t_2)  \\\\\n    \n      Cov(X(t_1), X(t_2)) \n      &= \\mathbb E((X(t_1) - \\mu(t_1)) (X(t_2) - \\mu(t_2)))  \\tag{AutoCovariance function}\\\\\n      &= \\mathbb E(X(t_1) X(t_2)) - \\mu(t_1) \\mu(t_2)  \\\\\n      &= Corr(X(t_1), X(t_2)) - \\mu(t_1) \\mu(t_2) \n    \\end{align*} \n    $$\n\n  - Property  \n    - $X, Y \\ \\text{Uncorrelated} \\Leftrightarrow Cov(X(t_1), Y(t_2)) = 0, \\quad \\forall t_1, t_2$\n\n    - $X, Y \\ \\text{Orthogonality} \\Leftrightarrow Corr(X(t_1), Y(t_2)) = 0, \\quad \\forall t_1, t_2$\n\n- Independence"
+        ]
+    },
+    "Symmetric_Group": {
+        "define": "$$\n  S_n = (\\{f: X \\to X\\}, \\circ)\n$$\n\nSymmetric group on a finite set $X$ is the group whose elements are all bijective functions $f: X \\to X$ and whose group operation is that of function composition $f_1 \\circ f_2 = f_1(f_2(\\cdot))$. Where $n$ is the degree of symmetric group, that is, the number of elements in set $X$.",
+        "kids": {},
+        "name": "Symmetric_Group",
+        "parents": {
+            "Group": ""
+        },
+        "properties": [
+            "- Cayley's theorem: every group $G$ is isomorphic to a subgroup of a symmetric group.\n\n* Permutation Group\n    - Define\n      Permutation group is a group $G$ whose elements are permutations of a given set $M$ and whose group operation is the composition of permutations in $G$ (which are thought of as bijective functions from the set $M$ to itself).  \n\n    - Property\n      - every group is isomorphic to some permutation group."
         ]
     },
     "Topological_Space": {

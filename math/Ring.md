@@ -53,6 +53,16 @@ $$
 - **Addition**: $g(x) + f(x)$ is the polynomial whose coefficient of $x_i$ is $a_i + b_i$ for each $i$.
 - **Multiplication**: Given two polynomials $f, g$, their product $f \cdot g$ is computed using the distributive property.
 
+  
+### Commutative Ring
+
+A Ring satisfying commutative law.
+$$
+a \cdot b = b \cdot a \quad; \forall a, b \in G
+$$
+
+- Integral Domain
+
 ## Include
 
 - [Field](./Field.md): 

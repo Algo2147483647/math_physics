@@ -16,7 +16,32 @@ $X$: domain of Definition.
 
 ## Properties
 
+### Injective
 
+$$
+\forall x, x', f(x) = f(x') \Rightarrow x = x'
+$$
+Each mapped element $y$ has a unique element $x$ corresponding to it.
+
+### Surjection
+
+$$
+\forall y \in Y, \exists x \in X, f(x) = y
+$$
+Each element $y$ in set $Y$ has a element $x$ in set $X$ corresponding to it.
+
+### Bijection , One-to-One Correspondence
+
+$$
+\forall y \in Y, \exists_{= 1} x \in X, f(x) = y
+$$
+A map that is both injective and surjective. Each element $y$ in set $Y$ has a unique element $x$ in set $X$ corresponding to it. Meanwhile, each element $x$ in set $X$ has a unique element $y$ in set $Y$ corresponding to it.
+
+<img src="assets/R-16983288702011.png" alt="R" style="zoom: 30%;" />
+
+- Property
+  * Inverse Function
+    if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \Leftrightarrow f(a) = b$
 
 ## Include
 

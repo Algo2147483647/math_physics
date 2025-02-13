@@ -61,6 +61,22 @@ $$
 \end{align*}
 $$
 
+### Torus
+
+$$
+\{\boldsymbol x \ |\ (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_i^2) = 0\}  \tag{Torus}
+$$
+
+<img src="./assets/torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750.gif" alt="torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750" style="zoom:50%;" />
+
+### Tanglecube
+
+$$
+\left\{\boldsymbol x \ |\ \sum_{i=1}^3 \left(x_i^4 - 5 x_i^2 \right) + 11.8 = 0 \right\}  \tag{Tanglecube}
+$$
+
+<img src="./assets/Tanglecube1_700.svg" alt="Tanglecube1_700" style="zoom:67%;" />
+
 ## Include
 
 ## Parents
