@@ -19,10 +19,9 @@ $$
 
 ### Basic properties
 
-- Continuity: A function $f$ with variable $x$ is continuous at the real number $c$, if the limit of $f(a)$, as $x$ tends to $c$, is equal to $f(c)$. More formally, for any positive number $\epsilon > 0$, if there exists a positive number $\delta > 0$ such that whenever $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$, the function is said to be continuous at $a$.
-- Monotonicity
 - Boundedness
 - Differentiability: A function is said to be differentiable at a point $x = a$ if the following limit exists:
+
 $$
 f'(a) = \lim_{{h \to 0}} \frac{f(a + h) - f(a)}{h}
 $$
@@ -79,9 +78,7 @@ $$
 
 **Limit Operation Rules of Composite Functions**: Let the function $y = f(g(x))$ be composed of the function $u = g(x)$ and $y = f(u)$. $f(g(x))$ is defined in a deleted neighborhood of the point $x_0$. If $\lim\limits_{x \to x_0}g(x)=u_0$ and there exists $\delta_0>0$ such that when $x\in U^{\circ}(x_0,\delta_0)$, $g(x)\neq u_0$. If $\lim\limits_{u \to u_0}f(u)=A$, then $\lim\limits_{x \to x_0}f(g(x))=\lim\limits_{u \to u_0}f(u)=A$.
 
-
-
-### Derivative & Partial derivative
+### Differential: Derivative & Partial derivative
 
 $$
 \begin{align*}
@@ -149,14 +146,33 @@ $$
 \lim\limits_{x \to a} \frac{f(x)}{g(x)} = \lim\limits_{x \to a} \frac{f'(x)}{g'(x)}
 $$
 
-- **Taylor's theorem**: If a real-valued function $f(x)$ is differentiable at the point $x = a$, then 
+#### Taylor's theorem
+If a real-valued function $f(x)$ is differentiable at the point $x = a$, then 
+$$
+\begin{align*}
+f(x) &= f(a) + \sum_{i=1}^k \frac{f^{(i)}(a)}{i!}(x-a)^i + o(|x-a|^k)  \\
+f(a_1 + h_1,a_2 + h_2,\cdots,a_n + h_n)&=f(a_1,a_2,\cdots,a_n)+\sum_{i = 1}^{n}\frac{\partial f(a_1,a_2,\cdots,a_n)}{\partial x_i}h_i\\
+&+\frac{1}{2!}\sum_{i = 1}^{n}\sum_{j = 1}^{n}\frac{\partial^2 f(a_1,a_2,\cdots,a_n)}{\partial x_i\partial x_j}h_ih_j+\cdots\\
+&+\frac{1}{m!}\sum_{i_1 = 1}^{n}\sum_{i_2 = 1}^{n}\cdots\sum_{i_m = 1}^{n}\frac{\partial^m f(a_1,a_2,\cdots,a_n)}{\partial x_{i_1}\partial x_{i_2}\cdots\partial x_{i_m}}h_{i_1}h_{i_2}\cdots h_{i_m}\\
+&+R_m
+\end{align*}
+$$
+
+- $R_m$ is the remainder, which usually has the form of Lagrange remainder and Peano remainder.
+
+- **Lagrangian remainder**: where $\theta\in(0,1)$.
+$$
+R_m=\frac{1}{(m + 1)!}\sum_{i_1 = 1}^{n}\sum_{i_2 = 1}^{n}\cdots\sum_{i_{m + 1}= 1}^{n}\frac{\partial^{m + 1} f(a_1+\theta h_1,a_2+\theta h_2,\cdots,a_n+\theta h_n)}{\partial x_{i_1}\partial x_{i_2}\cdots\partial x_{i_{m + 1}}}h_{i_1}h_{i_2}\cdots h_{i_{m + 1}}
+$$
+
+- **Peano-type remainder**: which holds when $\rho\to0$, indicating that the remainder is an infinitesimal of higher order than $\rho^m$.
 
 $$
-f(x) = f(a) + \sum_{i=1}^k \frac{f^{(i)}(a)}{i!}(x-a)^i + o(|x-a|^k)
+R_m = o(\rho^m)$, where $\rho=\sqrt{h_1^2 + h_2^2+\cdots+h_n^2}
 $$
 
+#### Mean Value Theorem
 **Lagrange's Mean Value Theorem**: If the function $y = f(x)$ satisfies: (1) continuous on the closed interval $[a,b]$; (2) differentiable on the open interval $(a,b)$, then there exists at least one point $\xi\in(a,b)$ such that 
-
 $$
 f(b)-f(a)=f'(\xi)(b - a)
 $$
@@ -317,6 +333,54 @@ $$
 &=\iiint\limits_{\Omega}f(r\cos\theta,r\sin\theta,z)rdrd\theta dz\\
 \end{align*}
 $$
+
+### Continuity
+
+Let the function $y = f(x)$ be defined in a certain neighborhood of the point $x_0$, if $\lim\limits_{x\rightarrow x_0}f(x)=f(x_0)$, then the function $f(x)$ is said to be continuous at the point $x_0$. Formally, for any positive number $\epsilon > 0$, if there exists a positive number $\delta > 0$ such that whenever $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$, the function is said to be continuous at $a$. Intuitively, the continuity of a function at a point means that the graph of the function is unbroken at that point.
+
+#### Discontinuity classification
+
+- **Removable Discontinuity**: If $\lim\limits_{x\rightarrow x_0^{-}}f(x)=\lim\limits_{x\rightarrow x_0^{+}}f(x) = L$, but $f(x_0)$ is either not defined or $f(x_0)\neq L$, then $x_0$ is a removable discontinuity point.
+- **Jump Discontinuity**: If $\lim\limits_{x\rightarrow x_0^{-}}f(x)=L_1$ and $\lim\limits_{x\rightarrow x_0^{+}}f(x)=L_2$, and $L_1\neq L_2$, then $x_0$ is a jump discontinuity point.
+
+ - **Second-kind Discontinuity Points**: If at least one of the one-sided limits $\lim\limits_{x\rightarrow x_0^{-}}f(x)$ and $\lim\limits_{x\rightarrow x_0^{+}}f(x)$ does not exist (including the cases where the limit is infinite), then $x_0$ is a second - kind discontinuity point. 
+
+#### Properties
+
+- **Local Boundedness**: If the function $f(x)$ is continuous at the point $x_0$, then there exists a neighborhood of $x_0$ within which $f(x)$ is bounded.
+- **Local Sign Preserving preservation**: If $f(x)$ is continuous at $x_0$ and $f(x_0)>0$ (or $f(x_0)<0$), then there exists a certain neighborhood of $x_0$ within which $f(x)>0$ (or $f(x)<0$).
+- **Properties of Arithmetic Operations**: If the functions $f(x)$ and $g(x)$ are both continuous at the point $x_0$, then $f(x)\pm g(x)$, $f(x)g(x)$, and $\frac{f(x)}{g(x)}(g(x_0)\neq0)$ are also continuous at the point $x_0$.
+
+### Monotonicity 
+
+Let the domain of the function $y = f(x)$ be $I$. For any two values of the independent variable $x_1$, $x_2$ in an interval $D$ within the domain $I$, when $x_1 < x_2$, if $f(x_1)<f(x_2)$ (or $f(x_1)>f(x_2)$), then the function $f(x)$ is said to be an increasing function (or a decreasing function) on the interval $D$.
+
+#### Determination Methods
+
+**Derivative Method**: If the function $y = f(x)$ is differentiable in the interval $(a,b)$, then a necessary and sufficient condition for $f(x)$ to be monotonically increasing in $(a,b)$ is that $f'(x)\geq0$ holds constantly in $(a,b)$, and $f'(x)$ is not constantly zero in any sub-interval of $(a,b)$. A necessary and sufficient condition for $f(x)$ to be monotonically decreasing in $(a,b)$ is that $f'(x)\leq0$ holds constantly in $(a,b)$, and $f'(x)$ is not constantly zero in any sub-interval of $(a,b)$.
+
+#### Properties
+
+- **Monotonicity of Composite Functions**: If the function $u = g(x)$ is monotonic on the interval $[a,b]$, the function $y = f(u)$ is monotonic on the interval $[c,d]$, and when $x\in[a,b]$, $u = g(x)\in[c,d]$, then the composite function $y = f(g(x))$ is monotonic on the interval $[a,b]$. When the monotonicities of the inner and outer functions are the same, the composite function is an increasing function; when the monotonicities of the inner and outer functions are different, the composite function is a decreasing function.
+
+### Concavity & Convexity
+
+$$
+\begin{align*}
+f \left(\frac{x_1 + x_2}{2} \right)<\frac{f(x_1)+f(x_2)}{2}  \tag{concave}\\
+f \left(\frac{x_1 + x_2}{2} \right)>\frac{f(x_1)+f(x_2)}{2}  \tag{convex}\\
+\end{align*}
+$$
+
+
+Let the function $f(x)$ be defined on the interval $I$. For any two points $x_1$, $x_2$ in $I$, if $f(\frac{x_1 + x_2}{2})<\frac{f(x_1)+f(x_2)}{2}$ always holds, then $f(x)$ is called a concave function on the interval $I$; if $f(\frac{x_1 + x_2}{2})>\frac{f(x_1)+f(x_2)}{2}$ always holds, then $f(x)$ is called a convex function on the interval $I$.
+
+#### Determination Methods
+
+**Derivative Method**: Suppose the function $f(x)$ has a second - derivative $f''(x)$ in the interval $(a,b)$. If $f''(x)>0$ in $(a,b)$, then the function $f(x)$ is a concave function in $(a,b)$; if $f''(x)<0$ in $(a,b)$, then the function $f(x)$ is a convex function in $(a,b)$.
+
+#### Properties
+- **Sum**: If $f(x)$ and $g(x)$ are both concave / convex on the interval $I$, then $f(x)+g(x)$ is also concave / convex on the interval $I$.
 
 ### Kolmogorov-Arnold Representation Theorem  
 
