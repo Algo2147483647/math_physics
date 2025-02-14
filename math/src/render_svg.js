@@ -149,6 +149,9 @@ function RenderNode(dag, svg, x, y, nodeKey) {
     svg.appendChild(textLink);
 }
 
+// 全局变量，用于跟踪当前显示的 container
+let currentContainer = null;
+
 function RenderEdge(svg, x1, y1, x2, y2, weight) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     const d = `M ${x1} ${y1} C ${(x1 + x2) / 2} ${y1} ${(x1 + x2) / 2} ${y2} ${x2} ${y2}`;
@@ -163,28 +166,34 @@ function RenderEdge(svg, x1, y1, x2, y2, weight) {
 
     // 鼠标滑过事件处理函数
     path.addEventListener('mouseover', (event) => {
-        if (!container) {
-            container = document.createElementNS("http://www.w3.org/2000/svg", "g");
-            text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-            text.setAttribute("x", event.offsetX);
-            text.setAttribute("y", event.offsetY);
-            text.setAttribute("fill", "#FF6347");
-            text.setAttribute("font-family", "Georgia, serif");
-            text.setAttribute("font-style", "italic");
-            text.setAttribute("font-size", "18px");
-            text.setAttribute("text-shadow", "1px 1px 2px rgba(0, 0, 0, 0.3)");
-            text.textContent = weight;
-            container.appendChild(text);
-            svg.appendChild(container);
-
-            container.addEventListener('mouseleave', () => {
-                if (container) {
-                    svg.removeChild(container);
-                    container = null;
-                    text = null;
-                }
-            });
+        // 移除之前显示的 container
+        if (currentContainer) {
+            svg.removeChild(currentContainer);
+            currentContainer = null;
         }
+
+        container = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", event.offsetX);
+        text.setAttribute("y", event.offsetY);
+        text.setAttribute("fill", "#FF6347");
+        text.setAttribute("font-family", "Georgia, serif");
+        text.setAttribute("font-style", "italic");
+        text.setAttribute("font-size", "14px");
+        text.setAttribute("text-shadow", "1px 1px 2px rgba(0, 0, 0, 0.3)");
+        text.textContent = weight;
+        container.appendChild(text);
+        svg.appendChild(container);
+
+        // 更新当前显示的 container
+        currentContainer = container;
+
+        container.addEventListener('mouseleave', () => {
+            if (currentContainer) {
+                svg.removeChild(currentContainer);
+                currentContainer = null;
+            }
+        });
     });
 
     svg.appendChild(path);

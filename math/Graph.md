@@ -88,11 +88,11 @@ Perfect Matching is a matching that all vertices of the graph are in it.
 
 - [Bipartite_Graph](./Bipartite_Graph.md): 
 
-- [Complete_Graph](./Complete_Graph.md): 
+- [Complete_Graph](./Complete_Graph.md): full connected
 
 - [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): directed, acyclic
 
-- [Tree](./Tree.md): 
+- [Tree](./Tree.md): undirected, connected, acyclic
 
 ## Parents
 

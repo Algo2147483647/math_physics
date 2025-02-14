@@ -76,7 +76,7 @@
         "kids": {},
         "name": "Complete_Graph",
         "parents": {
-            "Graph": ""
+            "Graph": "full connected"
         },
         "properties": [
             "A complete graph containing $n$ vertices,\n\n- $number(E) = \\frac{n(n-1)}{2}$\n- The degree of each vertex is $n-1$"
@@ -284,9 +284,9 @@
         "define": "$$\n\\begin{align*}\nG &= (V, E)  \\tag{Graph} \\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Edge set}\n\\end{align*}\n$$\n\nGraph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges $w: E \\to \\mathbb R$.\n\n- $V$: Vertex set\n- $E$: Edge set, a set of paired vertices\n- $w: E \\to \\mathbb R$: weight of edge\n\n### Undirected Graph & Directed Graph\n\n$$\n\\begin{align*}\nE &= \\{\\{v_i, v_j\\}\\ |\\ v_i, v_j \\in V\\}  \\tag{Undirected Graph}\\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Directed Graph}\n\\end{align*}\n$$\n\nUndirected Graph, is a type of graph that does not distinguish the direction of edges.\n\nDirected Graph, is a type of graph that distinguish the direction of edges and its edge set is a set of ordered pairs.",
         "kids": {
             "Bipartite_Graph": "",
-            "Complete_Graph": "",
+            "Complete_Graph": "full connected",
             "Directed_Acyclic_Graph": "directed, acyclic",
-            "Tree": ""
+            "Tree": "undirected, connected, acyclic"
         },
         "name": "Graph",
         "parents": {
@@ -935,13 +935,13 @@
         ]
     },
     "Tree": {
-        "define": "A class of Connected undirected graphs without loops.\n\n- root node: A node without forward nodes, and a tree has only one root node.\n- leaf node: A node that has no children.\n- depth: Number of edges in the simple path from node to root node. The depth of the tree is the maximum node depth in the tree.",
+        "define": "Tree is a class of connected undirected graphs without loops.\n\n### Rooted Tree\n\n- root node: A node without forward nodes, and a tree has only one root node.\n- leaf node: A node that has no children.\n- depth: Number of edges in the simple path from node to root node. The depth of the tree is the maximum node depth in the tree.",
         "kids": {
             "Binary_Tree": ""
         },
         "name": "Tree",
         "parents": {
-            "Graph": ""
+            "Graph": "undirected, connected, acyclic"
         },
         "properties": [
             "- There exists and only exists one single simple path between any two points of the tree.\n- $number(E) = number(V) - 1$\n- Delete an edge, the Tree will become disconnected;  \n  Add an edge, the Tree will have a loop."

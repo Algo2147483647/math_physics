@@ -4,7 +4,9 @@
 
 ## Define
 
-A class of Connected undirected graphs without loops.
+Tree is a class of connected undirected graphs without loops.
+
+### Rooted Tree
 
 - root node: A node without forward nodes, and a tree has only one root node.
 - leaf node: A node that has no children.
@@ -23,5 +25,5 @@ A class of Connected undirected graphs without loops.
 
 ## Parents
 
-- [Graph](./Graph.md): 
+- [Graph](./Graph.md): undirected, connected, acyclic
 
