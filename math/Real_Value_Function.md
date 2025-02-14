@@ -90,42 +90,86 @@ $$
 \end{align*}
 $$
 
-Let $f: \mathbb{R} \to \mathbb{R}$ be a function. The derivative of $f$ at a point $x$ in its domain, if it exists, is given by the limit as mentioned above . If this limit exists, we say that $f$ is differentiable at $x$. The function $f'$ that assigns to each $x$ the value $f'(x)$ (where it exists) is called the derivative of $f$.
-
-For multi-variate functions, the partial derivative is
-
+**Derivative**: Let $f: \mathbb{R} \to \mathbb{R}$ be a function. The derivative of $f$ at a point $x$ in its domain, if it exists, is given by the limit as mentioned above . If this limit exists, we say that $f$ is differentiable at $x$. The function $f'$ that assigns to each $x$ the value $f'(x)$ (where it exists) is called the derivative of $f$.
 $$
 \begin{align*}
-  \frac{∂f}{∂x_i} &= \frac{f(...,x_i + Δx_i,...) -  f(..., x_i - Δx_i, ...)}{2 Δx_i}  \\
-  \frac{∂^2 f}{∂x_i^2}  
-  &= \frac{f'(..,x_i+Δx_i,..) -  f'(..,x_i-Δx_i,..)}{Δx_i}   \\
-  &= \frac{f(..,x_i+Δx_i) - 2·f(..,x) + f(..,x_i-Δx_i)}{Δx_i^2}  \\
-  \frac{∂^2 f}{∂x_j ∂x_i}  
-  &= \frac{\partial}{\partial x_j} \left(\frac{\partial f}{\partial x_i} \right)
+\frac{∂f}{∂x_i} &= \lim\limits_{\Delta x_i\to0}\frac{f(...,x_{i, 0} + \Delta x_i,...) -  f(..., x_{i, 0} - \Delta x_i, ...)}{2 Δx_i}  \\
+\frac{∂^2 f}{∂x_i^2}  
+&= \lim\limits_{\Delta x_i\to0} \frac{f'(..,x_{i, 0}+\Delta x_i,..) -  f'(..,x_{i, 0}-\Delta x_i,..)}{\Delta x_i}   \\
+&= \lim\limits_{\Delta x_i\to0}\frac{f(..,x_{i, 0}+\Delta x_i) - 2·f(..,x_{i, 0}) + f(..,x_{i, 0}-Δx_i)}{\Delta x_i^2}  \\
+\frac{∂^2 f}{∂x_j ∂x_i} &= \frac{\partial}{\partial x_j} \left(\frac{\partial f}{\partial x_i} \right)
 \end{align*}
 $$
 
+**Partial derivative**: For multi-variate functions, let the function $z = f(x_{1}, \cdots,x_{i}, \cdots)$ be defined in a certain neighborhood of the point $(x_{1, 0}, \cdots,x_{i, 0}, \cdots)$. The partial derivative of $f$ with respect to $x$ at the point $(x_{1, 0}, \cdots,x_{i, 0}, \cdots)$ is list as above.
+
 #### Property
 
-- 线性性
+- **Necessary Condition for Differentiability**: If the function $z = f(x,y)$ is differentiable at the point $(x_0,y_0)$, then the partial derivatives $f_x(x_0,y_0)$ and $f_y(x_0,y_0)$ must exist.
+- **Sufficient Condition for Differentiability**: If the partial derivatives $f_x(x,y)$ and $f_y(x,y)$ of the function $z = f(x,y)$ are continuous in a certain neighborhood of the point $(x_0,y_0)$, then the function $z = f(x,y)$ is differentiable at the point $(x_0,y_0)$.
 
-- 乘法法则
+- **Arithmetic rules**: Let $u = u(x)$ and $v = v(x)$ be differentiable at point $x$. 
+
+$$
+\begin{align*}
+(u\pm v)'&=u'\pm v'\\
+(uv)' &= u'v + uv'\\
+(cu)'&=cu'\\
+\left(\frac{u}{v}\right)'&=\frac{u'v - uv'}{v^{2}} \quad (v\neq0)
+\end{align*}
+$$
 
 - **Chain Rule**: for the function $z(x) = z(y(x))$, then 
-  $$
-  \frac{\mathrm d z}{\mathrm d x} = \frac{\mathrm d z}{\mathrm d y} \cdot \frac{\mathrm d y}{\mathrm d x}
-  $$
+$$
+\frac{\mathrm d z}{\mathrm d x} = \frac{\mathrm d z}{\mathrm d y} \cdot \frac{\mathrm d y}{\mathrm d x}
+$$
+
+- **Chain Rule for Partial Derivatives**: If $z = f(u,v)$, $u = u(x,y)$, $v = v(x,y)$, then 
+
+$$
+\begin{align*}
+\frac{\partial z}{\partial x}&=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x}\\
+\frac{\partial z}{\partial y}&=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}
+\end{align*}
+$$
+
+- **Derivative Rule of Inverse Functions**: If the function $x = f(y)$ is monotonic, differentiable in the interval $I_y$ and $f'(y)\neq0$, then its inverse function $y = f^{-1}(x)$ is also differentiable in the interval $I_x=\{x|x = f(y),y\in I_y\}$, and 
+
+$$
+(f^{-1})'(x)=\frac{1}{f'(y)}
+$$
+
+- **Derivative Rule of Composite Functions**: If $u = g(x)$ is differentiable at point $x$, and $y = f(u)$ is differentiable at point $u = g(x)$, then the composite function $y = f(g(x))$ is differentiable at point $x$, and its derivative is 
+$$
+y'=f'(u)\cdot g'(x)
+$$
 
 - **L'Hôpital's Rule**: if $\lim\limits_{x \to a} f(x) =  \lim\limits_{x \to a} g(x) = 0  \text{ or } \infty$ and $g'(x) \neq 0, \forall x \in I \text{ with } x \neq a$, and $\lim\limits_{x \to a} \frac{f'(x)}{g'(x)}$ exists, then
-  $$
-  \lim\limits_{x \to a} \frac{f(x)}{g(x)} = \lim\limits_{x \to a} \frac{f'(x)}{g'(x)}
-  $$
+$$
+\lim\limits_{x \to a} \frac{f(x)}{g(x)} = \lim\limits_{x \to a} \frac{f'(x)}{g'(x)}
+$$
 
 - **Taylor's theorem**: If a real-valued function $f(x)$ is differentiable at the point $x = a$, then 
-  $$
-  f(x) = f(a) + \sum_{i=1}^k \frac{f^{(i)}(a)}{i!}(x-a)^i + o(|x-a|^k)
-  $$
 
+$$
+f(x) = f(a) + \sum_{i=1}^k \frac{f^{(i)}(a)}{i!}(x-a)^i + o(|x-a|^k)
+$$
+
+**Lagrange's Mean Value Theorem**: If the function $y = f(x)$ satisfies: (1) continuous on the closed interval $[a,b]$; (2) differentiable on the open interval $(a,b)$, then there exists at least one point $\xi\in(a,b)$ such that 
+
+$$
+f(b)-f(a)=f'(\xi)(b - a)
+$$
+
+- **Rolle's Theorem**: If the function $y = f(x)$ satisfies: (1) continuous on the closed interval $[a,b]$; (2) differentiable on the open interval $(a,b)$; (3) $f(a)=f(b)$, then there exists at least one point $\xi\in(a,b)$ such that $f'(\xi)=0$.
+
+- **Fermat's Theorem**: If the function $y = f(x)$ has a local extremum at the point $x_0$ and is differentiable at this point, then $f'(x_0)=0$.
+
+- **Cauchy's Mean Value Theorem**: If the functions $f(x)$ and $g(x)$ satisfy: (1) continuous on the closed interval $[a,b]$; (2) differentiable on the open interval $(a,b)$; (3) $g'(x)\neq0$ for any $x\in(a,b)$, then there exists at least one point $\xi\in(a,b)$ such that 
+
+$$
+\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}
+$$
 
 ### Gradient & Divergence & Curl
 
@@ -169,6 +213,26 @@ $$
 $$
 Integral $f: (f: \mathbb R \to \mathbb R) \to (f: \mathbb R \to \mathbb R)$ represents the anti-derivative of a function $f(x)$. The indefinite integral of a function $f$ is a family of functions $F$ such that for all $x$ in the domain of $f$, $F'(x) = f(x)$. Where $const.$ is an arbitrary constant, reflecting the fact that the process of differentiation loses constant information.
 
+#### Integral of multivariate functions
+
+$$
+\begin{align*}
+\iint\limits_{D}f(x,y)d\sigma&=\int_{a}^{b}dx\int_{c}^{d}f(x,y)dy=\int_{c}^{d}dy\int_{a}^{b}f(x,y)dx\\
+&=\iint\limits_{D}f(r\cos\theta,r\sin\theta)rdrd\theta=\int_{\alpha}^{\beta}d\theta\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,r\sin\theta)rdr
+\end{align*}
+$$
+
+Double Integral Conversion Formula
+
+$$
+\begin{align*}
+\iiint\limits_{\Omega}f(x,y,z)dV&=\int_{a}^{b}dx\int_{c}^{d}dy\int_{e}^{f}f(x,y,z)dz\\
+&=\iiint\limits_{\Omega}f(r\cos\theta,r\sin\theta,z)rdrd\theta dz\\
+\end{align*}
+$$
+
+Triple Integral Conversion Formula
+
 #### Property
 
 - Integration by part: for two continuously differentiable functions $u, v$, 
@@ -176,6 +240,19 @@ Integral $f: (f: \mathbb R \to \mathbb R) \to (f: \mathbb R \to \mathbb R)$ repr
   \int u \mathrm d v = uv - \int v \mathrm d u
   $$
   
+
+**Substitution Integration Formula**:
+- **First Substitution**: If $x=\varphi(t)$ is differentiable, and $\varphi^\prime(t)$ is continuous, and $f(x)$ is continuous on the corresponding interval, then 
+
+$$
+\int f(x)dx=\int f[\varphi(t)]\varphi^\prime(t)dt
+$$
+
+- **Second Substitution**: If $x=\varphi(t)$ has an inverse function $t=\varphi^{-1}(x)$, and $\varphi^\prime(t)$ is continuous and $\varphi^\prime(t)\neq0$, and $f[\varphi(t)]\varphi^\prime(t)$ has an antiderivative $F(t)$, then 
+
+$$
+\int f(x)dx = F[\varphi^{-1}(x)]+C
+$$
 
 ### Riemann Integra
 
