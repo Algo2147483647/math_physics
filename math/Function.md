@@ -51,6 +51,8 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 - [Dirac_Delta_Function](./Dirac_Delta_Function.md): 
 
+- [Exponential_Function](./Exponential_Function.md): 
+
 - [Hilbert_Transform](./Hilbert_Transform.md): 
 
 - [Laplace_Transform](./Laplace_Transform.md): 
@@ -64,8 +66,6 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 - [Real_Value_Function](./Real_Value_Function.md): 
 
 - [Sequence](./Sequence.md): 
-
-- [Exponential_Function](./Exponential_Function.md): 
 
 ## Parents
 
