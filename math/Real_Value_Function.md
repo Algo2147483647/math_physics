@@ -101,7 +101,7 @@ $$
 \end{align*}
 $$
 
-**Partial derivative**: For multi-variate functions, let the function $z = f(x_{1}, \cdots,x_{i}, \cdots)$ be defined in a certain neighborhood of the point $(x_{1, 0}, \cdots,x_{i, 0}, \cdots)$. The partial derivative of $f$ with respect to $x$ at the point $(x_{1, 0}, \cdots,x_{i, 0}, \cdots)$ is list as above.
+**Partial derivative**: For multi-variate functions, let the function $z = f(x_{1}, \cdots,x_{n})$ be defined in a certain neighborhood of the point $(x_{1, 0}, \cdots,x_{n, 0})$. The partial derivative of $f$ with respect to $x$ at the point $(x_{1, 0}, \cdots,x_{n, 0})$ is list as above.
 
 #### Property
 
@@ -173,13 +173,12 @@ $$
 
 ### Gradient & Divergence & Curl
 
-Gradient $\nabla (\cdot): (f: \mathbb R^{\dim} \to \mathbb R) \to (f: \mathbb R^{\dim} \to \mathbb R^{\dim})$, reflects the direction of the maximum rate of change for function $f$ at point $\boldsymbol x_0$.
-
 $$
 \nabla f = \sum_{i=1}^{\dim} \frac{∂f}{∂x_i} \hat{\boldsymbol x_i} = \left(\begin{matrix}\frac{∂f}{∂x_1} \\ \vdots \\ \frac{∂f}{∂x_{\dim}}\end{matrix}\right)  \tag{Gradient}
 $$
 
-Divergence $\nabla \cdot (\cdot): (f: \mathbb R^{\dim} \to \mathbb R^{\dim}) \to (f: \mathbb R^{\dim} \to \mathbb R)$. For a vector field $\boldsymbol f(\boldsymbol x)$, the divergence is defined as the limit of the redio of the surface integral of $\boldsymbol f$ out of the closed surface $S$ of a valume $V$ enclosing point $\boldsymbol x_0$, as $V$ shrinks to $0$. The divergence represents the volume density of the outward flux of a vector field from an infinitesimal volume around a given point.
+**Gradient** $\nabla (\cdot): (f: \mathbb R^{\dim} \to \mathbb R) \to (f: \mathbb R^{\dim} \to \mathbb R^{\dim})$, reflects the direction of the maximum rate of change for function $f$ at point $\boldsymbol x_0$.
+
 $$
 \nabla · \boldsymbol f = \lim_{|V| \to 0} \frac{1}{|V|} \oint_{S(V)} \boldsymbol f \cdot \hat {\boldsymbol n} \mathrm d S \tag{Divergence}
 $$
@@ -187,7 +186,8 @@ $$
 \nabla · \boldsymbol f = \sum_{i=1}^{\dim} \frac{∂f_{i}}{∂x_i}  \tag{Cartesian coordinates}
 $$
 
-Curl $\nabla \times (\cdot): (f: \mathbb R^{3} \to \mathbb R^{3}) \to (f: \mathbb R^{3} \to \mathbb R)$. For a vector field in three-dimensional $\boldsymbol f(\boldsymbol x)$, the curl is defined as the limit of the redio of the line integral of $\boldsymbol f$ along the boundary $C$ of a area $A$ enclosing point $\boldsymbol x_0$, as $A$ shrinks to $0$. The curl represents the circulation density at each point of the field. 方向是旋转度最大的环量的旋转轴, 旋转的方向满足右手定则, 大小是绕该旋转轴旋转的环量与旋转路径围成的面元面积之比.
+**Divergence** $\nabla \cdot (\cdot): (f: \mathbb R^{\dim} \to \mathbb R^{\dim}) \to (f: \mathbb R^{\dim} \to \mathbb R)$. For a vector field $\boldsymbol f(\boldsymbol x)$, the divergence is defined as the limit of the redio of the surface integral of $\boldsymbol f$ out of the closed surface $S$ of a valume $V$ enclosing point $\boldsymbol x_0$, as $V$ shrinks to $0$. The divergence represents the volume density of the outward flux of a vector field from an infinitesimal volume around a given point.
+
 $$
 \nabla \times \boldsymbol f = \lim_{A \to 0} \frac{1}{|A|} \oint_{C} \boldsymbol f \cdot \mathrm d \boldsymbol r \tag{Curl}
 $$
@@ -198,6 +198,9 @@ $$
   & \left(\frac{∂f_y}{∂x} - \frac{∂f_x}{∂y} \right) \hat{\boldsymbol z}  \tag{3D Cartesian coordinates}
 \end{align*}
 $$
+
+
+**Curl** $\nabla \times (\cdot): (f: \mathbb R^{3} \to \mathbb R^{3}) \to (f: \mathbb R^{3} \to \mathbb R)$. For a vector field in three-dimensional $\boldsymbol f(\boldsymbol x)$, the curl is defined as the limit of the redio of the line integral of $\boldsymbol f$ along the boundary $C$ of a area $A$ enclosing point $\boldsymbol x_0$, as $A$ shrinks to $0$. The curl represents the circulation density at each point of the field. 方向是旋转度最大的环量的旋转轴, 旋转的方向满足右手定则, 大小是绕该旋转轴旋转的环量与旋转路径围成的面元面积之比.
 
 #### Property
 
@@ -216,22 +219,10 @@ Integral $f: (f: \mathbb R \to \mathbb R) \to (f: \mathbb R \to \mathbb R)$ repr
 #### Integral of multivariate functions
 
 $$
-\begin{align*}
-\iint\limits_{D}f(x,y)d\sigma&=\int_{a}^{b}dx\int_{c}^{d}f(x,y)dy=\int_{c}^{d}dy\int_{a}^{b}f(x,y)dx\\
-&=\iint\limits_{D}f(r\cos\theta,r\sin\theta)rdrd\theta=\int_{\alpha}^{\beta}d\theta\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,r\sin\theta)rdr
-\end{align*}
+\int\cdots\int f(x_1,x_2,\cdots,x_n)dx_1dx_2\cdots dx_n=H(x_1,x_2,\cdots,x_n)+C
 $$
 
-Double Integral Conversion Formula
-
-$$
-\begin{align*}
-\iiint\limits_{\Omega}f(x,y,z)dV&=\int_{a}^{b}dx\int_{c}^{d}dy\int_{e}^{f}f(x,y,z)dz\\
-&=\iiint\limits_{\Omega}f(r\cos\theta,r\sin\theta,z)rdrd\theta dz\\
-\end{align*}
-$$
-
-Triple Integral Conversion Formula
+For an $n -$variable function $y = f(x_1,x_2,\cdots,x_n)$, if there exists a function $H(x_1,x_2,\cdots,x_n)$ such that $\frac{\partial H(x_1,x_2,\cdots,x_n)}{\partial x_i}=f(x_1,x_2,\cdots,x_n)$ for $i = 1,2,\cdots,n$, then $H(x_1,x_2,\cdots,x_n)$ is a primitive function of $f(x_1,x_2,\cdots,x_n)$. The indefinite integral of $f(x_1,x_2,\cdots,x_n)$ is defined as above.
 
 #### Property
 
@@ -242,6 +233,7 @@ Triple Integral Conversion Formula
   
 
 **Substitution Integration Formula**:
+
 - **First Substitution**: If $x=\varphi(t)$ is differentiable, and $\varphi^\prime(t)$ is continuous, and $f(x)$ is continuous on the corresponding interval, then 
 
 $$
@@ -254,6 +246,7 @@ $$
 \int f(x)dx = F[\varphi^{-1}(x)]+C
 $$
 
+
 ### Riemann Integra
 
 $$
@@ -262,6 +255,68 @@ $$
 
 Definite Integral $f: (\mathbb R, \mathbb R, f: \mathbb R \to \mathbb R) \to \mathbb R$ of a function f(x) over an interval $[a, b]$ is the limit of a sum of rectangular areas as the width of the rectangles approaches zero. 
 
+
+#### Riemann Integral of multivariate functions
+
+$$
+\int\cdots\int_{D}f(\mathbf{x})dV=\lim\limits_{\lambda\rightarrow0}\sum_{i = 1}^{N}f(\mathbf{\xi}_i)\Delta V_i
+$$
+
+Let $f(\mathbf{x})$ be a bounded function defined on a closed region $D$ in $n$-dimensional space $\mathbb{R}^{n}$, where $\mathbf{x}=(x_1,x_2,\cdots,x_n)$. We divide the region $D$ into $N$ small subregions $\Delta V_i$ ($i = 1,2,\cdots,N$) and let $\lambda$ be the maximum diameter of these small subregions. Arbitrarily choose a point $\mathbf{\xi}_i=(\xi_{i1},\xi_{i2},\cdots,\xi_{in})$ in each small subregion $\Delta V_i$. The $n$-dimensional integral of $f(\mathbf{x})$ over the region $D$ is then defined as above. If this limit exists, the function $f(\mathbf{x})$ is said to be integrable over the region $D$.
+
+In the context of measure theory, if $\mu$ is a measure on $\mathbb{R}^{n}$, the integral of $f$ over $D$ can also be written as $\int_{D}f(\mathbf{x})d\mu(\mathbf{x})$, where $d\mu$ represents the measure element. When $\mu$ is the Lebesgue measure, it corresponds to the usual volume measure in $\mathbb{R}^{n}$ and the above definition in terms of $\Delta V_i$ is consistent with the Lebesgue integral.
+
+#### Property
+
+- **Riemann Integral Existence Theorem**: If a function $f(x)$ is continuous on the interval $[a, b]$, or has only a finite number of first-kind discontinuities on $[a, b]$, then $f(x)$ is Riemann integrable on $[a, b]$.
+
+- **Linearity**: $\int_{a}^{b}[k_1f(x)+k_2g(x)]dx = k_1\int_{a}^{b}f(x)dx + k_2\int_{a}^{b}g(x)dx$, where $k_1,k_2$ are constants.
+- **Additivity of Intervals**: $\int_{a}^{b}f(x)dx=\int_{a}^{c}f(x)dx+\int_{c}^{b}f(x)dx$, where $a < c < b$.
+- **Comparison Theorem**: If $f(x)\leq g(x)$ on $[a, b]$, then $\int_{a}^{b}f(x)dx\leq\int_{a}^{b}g(x)dx$.
+- **Estimation Theorem**: If $m\leq f(x)\leq M$ on $[a, b]$, then $m(b - a)\leq\int_{a}^{b}f(x)dx\leq M(b - a)$.
+- **Integral Mean Value Theorem**: If $f(x)$ is continuous on $[a, b]$, then there exists $\xi\in[a, b]$ such that 
+$$
+\int_{a}^{b}f(x)dx = f(\xi)(b - a)
+$$
+
+- **Green's Theorem**: Let $D$ be a closed region in the plane bounded by a piecewise smooth simple closed curve $L$, and $P(x,y)$ and $Q(x,y)$ have continuous partial derivatives on $D$. 
+$$
+\underset{D}{\iint}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy=\oint_{L}Pdx + Qdy
+$$
+
+- **Gauss's Theorem**: Let $\varOmega$ be a closed region in space bounded by a piecewise smooth closed surface $\varSigma$, and $P(x,y,z)$, $Q(x,y,z)$, $R(x,y,z)$ have continuous partial derivatives on $\varOmega$. 
+$$
+\underset{\varOmega}{\iiint}\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\right)dxdydz=\underset{\varSigma}{∯}Pdydz + Qdzdx+Rdxdy
+$$
+
+- **Stokes' Theorem**: Let $\varSigma$ be a piecewise smooth oriented surface in space bounded by a piecewise smooth simple closed curve $L$, and $P(x,y,z)$, $Q(x,y,z)$, $R(x,y,z)$ have continuous partial derivatives on an open region containing $\varSigma$.
+$$
+underset{\varSigma}{\iint}\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)dydz+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)dzdx+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy=\oint_{L}Pdx + Qdy+Rdz
+$$
+
+- **积分中值定理**：如果函数$f(x)$在闭区间$[a,b]$上连续，则在积分区间$[a,b]$上至少存在一个点$\xi$，
+$$
+\int_{a}^{b}f(x)dx = f(\xi)(b - a)$，$a\leq\xi\leq b
+$$
+
+**Double & Triple Integral Conversion Formula**: 
+
+- Double Integral Conversion Formula
+$$
+\begin{align*}
+\iint\limits_{D}f(x,y)d\sigma&=\int_{a}^{b}dx\int_{c}^{d}f(x,y)dy=\int_{c}^{d}dy\int_{a}^{b}f(x,y)dx\\
+&=\iint\limits_{D}f(r\cos\theta,r\sin\theta)rdrd\theta=\int_{\alpha}^{\beta}d\theta\int_{r_1(\theta)}^{r_2(\theta)}f(r\cos\theta,r\sin\theta)rdr
+\end{align*}
+$$
+
+- Triple Integral Conversion Formula
+
+$$
+\begin{align*}
+\iiint\limits_{\Omega}f(x,y,z)dV&=\int_{a}^{b}dx\int_{c}^{d}dy\int_{e}^{f}f(x,y,z)dz\\
+&=\iiint\limits_{\Omega}f(r\cos\theta,r\sin\theta,z)rdrd\theta dz\\
+\end{align*}
+$$
 
 ### Kolmogorov-Arnold Representation Theorem  
 
@@ -286,72 +341,67 @@ f: \mathbb R^{n^k} \times \mathbb R^{n^{k-1}} \times \mathbb R^n \times \mathbb 
 $$
 Partial differential equation (PDE) is an equation that relates an unknown function $u$ of two or more variables to its partial derivatives with respect to those variables.
 
-#### Include
+#### Linear Differential Equation
 
-##### Linear Differential Equation
-
-- Define
-  $$
-  \sum_{k=0}^K a_k(x) u^{(k)}(x) = f(x)  \tag{Linear ODE}
-  $$
-  $$
-  \sum_{k=0}^K a_k(x) D^k u(x) = f(x)  \tag{Linear PDE}
-  $$
+$$
+\sum_{k=0}^K a_k(x) u^{(k)}(x) = f(x)  \tag{Linear ODE}
+$$
+$$
+\sum_{k=0}^K a_k(x) D^k u(x) = f(x)  \tag{Linear PDE}
+$$
 
 - Property
   - The solution set of a linear differential equation constitutes a linear space.
 
-##### Second Order Nonlinear Partial Differential Equation
+#### Second Order Nonlinear Partial Differential Equation
 
-- Define
-  $$
-  \sum_{ij} a_{ij}(x) \frac{∂^2 u}{∂ x_i ∂ x_j} + \sum_i b_i(x) \frac{∂ u}{∂ x_i} + c(x) u(x) = f(x)
-  $$
-  coefficient matrix $A(x) = (a_{ij}(x))_{m \times m}$
+$$
+\sum_{ij} a_{ij}(x) \frac{∂^2 u}{∂ x_i ∂ x_j} + \sum_i b_i(x) \frac{∂ u}{∂ x_i} + c(x) u(x) = f(x)
+$$
+coefficient matrix $A(x) = (a_{ij}(x))_{m \times m}$
 
-- Include
-  * Elliptic Partial Differential Equation
-    - Define  
-      $A(x)$ is negative definite.
+Include
+* Elliptic Partial Differential Equation
 
-    - Include
-      * Poisson's Equations
-        - Define
-          $$
-          -\nabla^2 \phi = f
-          $$
-        * Laplace's Equations
-          $$
-          \nabla^2 \phi = 0
-          $$
+  $A(x)$ is negative definite.
 
-  * Hyperbolic Partial Differential Equation
-    - Define  
-      eigenvalue of $A(x)$ consists of a $0$ and other negative numbers
-
-    - Include
-      * Diffusion equation
-        - Define
-          $$
-          \frac{∂u}{∂t} - a \nabla^2 u = f(x,t)
-          $$
-
-  * Parabolic Partial Differential Equation
+* Include
+  * Poisson's Equations
     - Define
-      eigenvalue of $A(x)$ consists of of a positive number and other negative numbers.
+      $$
+      -\nabla^2 \phi = f
+      $$
+    * Laplace's Equations
+      $$
+      \nabla^2 \phi = 0
+      $$
 
-    - Include
-      * Wave equation
-        - Define
-          $$
-          \frac{∂^2 u}{∂t^2} - a \nabla^2 u = f(x,t)
-          $$
+* Hyperbolic Partial Differential Equation
 
-##### Semi-linear Partial Differential Equation
+  eigenvalue of $A(x)$ consists of a $0$ and other negative numbers
 
-##### Quasi-linear Partial Differential Equation
+  - Include
+    * Diffusion equation
+      - Define
+        $$
+        \frac{∂u}{∂t} - a \nabla^2 u = f(x,t)
+        $$
 
-##### Fully Nonlinear Partial Differential Equation
+* Parabolic Partial Differential Equation
+
+  eigenvalue of $A(x)$ consists of of a positive number and other negative numbers.
+
+  - Include
+    * Wave equation
+      $$
+      \frac{∂^2 u}{∂t^2} - a \nabla^2 u = f(x,t)
+      $$
+
+#### Semi-linear Partial Differential Equation
+
+#### Quasi-linear Partial Differential Equation
+
+#### Fully Nonlinear Partial Differential Equation
 
 ## Include
 
