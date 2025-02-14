@@ -46,6 +46,46 @@ $$
 - **Product Rule**: $\lim\limits_{n\rightarrow\infty}(a_{n}\times b_{n})=\lim\limits_{n\rightarrow\infty}a_{n}\times\lim\limits_{n\rightarrow\infty}b_{n}$.
 - **Quotient Rule**: If $\lim\limits_{n\rightarrow\infty}b_{n}\neq0$, then $\lim\limits_{n\rightarrow\infty}\frac{a_{n}}{b_{n}}=\frac{\lim\limits_{n\rightarrow\infty}a_{n}}{\lim\limits_{n\rightarrow\infty}b_{n}}$.
 
+### Classic Sequence
+
+#### Arithmetic Sequence
+
+$$
+a_{n}-a_{n - 1}=d  \quad (n\geq2, n\in \mathbb N^+) \\
+a_{n}=a_{1}+(n - 1)d
+$$
+
+If starting from the second term of a sequence, the difference between each term and its preceding term is equal to the same constant, then this sequence is called an arithmetic sequence.
+
+- $d$: the common difference of the arithmetic sequence.
+
+##### Properties
+- **Arithmetic Mean**: If $a$, $b$, $c$ are in arithmetic sequence, then $2b = a + c$, and $b$ is called the arithmetic mean of $a$ and $c$.
+- **Sum Formula of the First $n$ Terms**: 
+$$
+S_{n}=\frac{n(a_{1}+a_{n})}{2}=na_{1}+\frac{n(n - 1)}{2}d
+$$
+- $m + n = p + q \Rightarrow a_{m}+a_{n}=a_{p}+a_{q}$
+- **Monotonicity**: When $d>0$, the sequence is an increasing sequence; when $d<0$, the sequence is a decreasing sequence; when $d = 0$, the sequence is a constant sequence.
+
+#### Geometric Sequence
+
+$$
+\frac{a_{n}}{a_{n - 1}}=q  \quad (n\geq2, n\in \mathbb N^+, q \neq 0)\\
+a_{n}=a_{1}q^{n - 1}
+$$
+
+If starting from the second term of a sequence, the ratio of each term to its preceding term is equal to the same constant, then this sequence is called a geometric sequence.
+
+- $q$: the common ratio of the geometric sequence
+
+##### Properties
+
+- **Geometric Mean**: If $a$, $b$, $c$ are in geometric sequence, then $b^{2}=ac$, and $b$ is called the geometric mean of $a$ and $c$, and $a$, $b$, $c$ are all non-zero.
+- **Sum Formula of the First $n$ Terms**: When $q = 1$, $S_{n}=na_{1}$; when $q\neq1$, $S_{n}=\frac{a_{1}(1 - q^{n})}{1 - q}=\frac{a_{1}-a_{n}q}{1 - q}$.
+- $m + n = p + q \Rightarrow a_{m}\cdot a_{n}=a_{p}\cdot a_{q}$
+- **Monotonicity**: When $a_{1}>0$, $q>1$ or $a_{1}<0$, $0<q<1$, the sequence is an increasing sequence; when $a_{1}>0$, $0<q<1$ or $a_{1}<0$, $q>1$, the sequence is a decreasing sequence; when $q = 1$, the sequence is a constant sequence; when $q<0$, the sequence is an oscillating sequence.
+
 ### Series
 
 A series refers to the sum of the terms of a sequence. Given a sequence $a_n$, the series $S$ is given by:
