@@ -20,14 +20,13 @@ Symbol: $\mu_x = \mathbb E(X)$
 
 ### Expectation
 
-- Define
-  $$
-  \begin{align*}
-    \mathbb E(X) = \mu_x &= \sum x_i \mathbb P_X(x_i)  \tag{Discrete}  \\
-      &= \int_{-\infty}^\infty x f_X(x) \mathrm d x  \tag{Continuous}  \\
-    \mathbb E(\boldsymbol X) &= \left(\begin{matrix} \bar X_i \\ \vdots \end{matrix}\right) 
-  \end{align*}
-  $$
+$$
+\begin{align*}
+  \mathbb E(X) = \mu_x &= \sum x_i \mathbb P_X(x_i)  \tag{Discrete}  \\
+    &= \int_{-\infty}^\infty x f_X(x) \mathrm d x  \tag{Continuous}  \\
+  \mathbb E(\boldsymbol X) &= \left(\begin{matrix} \bar X_i \\ \vdots \end{matrix}\right) 
+\end{align*}
+$$
 
 - Property
   $$
@@ -39,13 +38,12 @@ Symbol: $\mu_x = \mathbb E(X)$
 
 ### Variance & Standard Deviation
 
-- Define
-  $$
-  \begin{align*}
-    Var(X) = \sigma_x^2 &= \mathbb E((X - \mu_x)^2)  \tag{Variance}\\
-    \sigma_x &= \sqrt{\mathbb E((X - \mu_x)^2)}  \tag{Standard Deviation}
-  \end{align*}
-  $$
+$$
+\begin{align*}
+  Var(X) = \sigma_x^2 &= \mathbb E((X - \mu_x)^2)  \tag{Variance}\\
+  \sigma_x &= \sqrt{\mathbb E((X - \mu_x)^2)}  \tag{Standard Deviation}
+\end{align*}
+$$
 
 - Property
   - $Var(X) = \mathbb E((X - \mu_x)^2) = \mathbb E(X^2) - \mathbb E(X)^2$
@@ -117,8 +115,6 @@ $$
     - $\boldsymbol Y = \boldsymbol A \boldsymbol X \Rightarrow \boldsymbol \Sigma_{\boldsymbol Y\boldsymbol Y} = \boldsymbol A \boldsymbol \Sigma_{\boldsymbol X\boldsymbol X} \boldsymbol A^T$
 
 ### Moment Generating Function
-
-#### Define
 
 Let $X$ be a random variable with CDF $F_X$, the moment generating function $M_X(t)$ of $X$ (or $F_X$) is 
 $$
