@@ -1,4 +1,4 @@
-# Trigonometric Function
+# Exponential Function
 
 [TOC]
 

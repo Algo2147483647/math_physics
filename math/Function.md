@@ -65,7 +65,7 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 - [Sequence](./Sequence.md): 
 
-- [Trigonometric_Function](./Trigonometric_Function.md): 
+- [Exponential_Function](./Exponential_Function.md): 
 
 ## Parents
 

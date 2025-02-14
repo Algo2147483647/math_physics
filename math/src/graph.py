@@ -43,7 +43,7 @@ def build_node_in_graph(graph, type, a, b, weight=""):
 
 def graph_to_json(graph):
     with open('../lib/math.json', 'w', encoding='utf-8') as file:
-        json.dump({key: node.to_dict() for key, node in graph.items()}, file, sort_keys=True, indent=4)
+        json.dump({key: node.to_dict() for key, node in graph.items()}, file, sort_keys=True, indent=2)
     return json.dumps({key: node.to_dict() for key, node in graph.items()}, sort_keys=True)
 
 
