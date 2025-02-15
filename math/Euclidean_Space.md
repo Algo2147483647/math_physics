@@ -70,9 +70,9 @@ A Penrose tiling is an example of an aperiodic tiling.
 
 - [Knot](./Knot.md): 
 
-- [Manifold](./Manifold.md): 
-
 ## Parents
+
+- [Differential_Manifold](./Differential_Manifold.md): 
 
 - [Hilbert_Space](./Hilbert_Space.md): 
 

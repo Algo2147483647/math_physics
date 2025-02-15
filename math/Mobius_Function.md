@@ -17,13 +17,15 @@ Möbius Function $f: \mathbb Z^+ \to \{-1, 0, 1\}$ is defined above. For positiv
 ## Properties
 
 - Möbius Function is a multiplicative function.
-- 1
-  $$
-  \sum\limits_{d|n} \mu(d) = \epsilon(n) = \left\{\begin{matrix}
-    1 & n=1 \\
-    0 & n \neq 1\\
-  \end{matrix}\right.
-  $$
+
+
+
+$$
+\sum\limits_{d|n} \mu(d) = \epsilon(n) = \left\{\begin{matrix}
+1 & n=1 \\
+0 & n \neq 1\\
+\end{matrix}\right.
+$$
 
 ### Möbius Inversion 
 

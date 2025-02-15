@@ -78,8 +78,6 @@ Closed Set is the complementary set of Open Set.
 
 - [Hausdorff_Space](./Hausdorff_Space.md): 
 
-- [Manifold](./Manifold.md): 
-
 - [Metric_Space](./Metric_Space.md): 
 
 ## Parents

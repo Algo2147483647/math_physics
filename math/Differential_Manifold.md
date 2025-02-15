@@ -14,6 +14,8 @@ Differentiable Structure: There exists a collection of charts $\{(U_\alpha, \var
 
 ## Include
 
+- [Euclidean_Space](./Euclidean_Space.md): 
+
 ## Parents
 
 - [Manifold](./Manifold.md): 

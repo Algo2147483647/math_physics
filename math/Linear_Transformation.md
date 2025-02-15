@@ -7,55 +7,26 @@
 $$
 T(k \boldsymbol x + l \boldsymbol y) = k(T \boldsymbol x) + l(T \boldsymbol y)
 $$
-Linear Transformation is a [mapping](./Function.md) $T: V \to V$ for a [linear space](./Linear_Space.md) $V$, $\forall \boldsymbol x \in V$ there is a unique $\boldsymbol y \in V$ corresponding to it, and the linear condition is satisfied.
-
-<img src="./assets/transformations-1694683776868-3.svg" alt="transformations-1694683776868-3" style="zoom: 13%;" />
-
-### Matrix
+Linear Transformation is a [mapping](./Function.md) $T: V \to V$ for a [linear space](./Linear_Space.md) $V$, $\forall \boldsymbol x \in V$ there is a unique $\boldsymbol y \in V$ corresponding to it, and the linear condition is satisfied. Meanwhile, linear Transformation can represent by matrix $\boldsymbol A$ and matrix multiply, where the matrix $\boldsymbol A$ can be obtained by the unit base vectors $(\boldsymbol e_1, ..., \boldsymbol e_n)$ after transformation, 
 
 $$
-\mathbb R^{m \times n} \quad( m, n \in \mathbb Z)
-$$
-
-$$
-\boldsymbol A = \left(\begin{matrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{matrix}\right)
-$$
-
-A matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns. We can represent Linear Transformation by matrix $\boldsymbol A$ and matrix multiply, where the matrix $\boldsymbol A$ can be obtained by the unit base vectors $(\boldsymbol e_1, ..., \boldsymbol e_n)$ after transformation, 
-$$
-T(\boldsymbol x) = \boldsymbol A \boldsymbol x
-$$
-
-$$
+T(\boldsymbol x) = \boldsymbol A \boldsymbol x \\
 \boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))
 $$
 
-> **Proof**:
-> We assume $\boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))$, then 
->
-> Proof $T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$, 
+> **Proof**: $T(\boldsymbol x) = \boldsymbol A \boldsymbol x$,   
 > $$
-> \begin{align*}
->   T(\boldsymbol e_i) 
->   &= (T(\boldsymbol e_1), ..., T(\boldsymbol e_n)) (0,...,0,1_i,0,...,0)^T  \\
->   &= \boldsymbol A \boldsymbol e_i
+>\begin{align*}
+> T(\boldsymbol x)
+> &= T \left(\sum_{i=1}^{\dim} x_i \boldsymbol e_i \right) \tag{$\boldsymbol x 
+> = \sum_{i=1}^{\dim} x_i \boldsymbol e_i$} \\
+>   &= \sum_{i=1}^{\dim} x_i T(\boldsymbol e_i)  \tag{Linear Transformation}\\
+>   &= \sum_{i=1}^{\dim} x_i \boldsymbol a_i  \tag{$T(\boldsymbol e_i) = \boldsymbol a_i$}\\
+>   &= \boldsymbol A \boldsymbol x
 > \end{align*}
 > $$
->
-> Proof $T(\boldsymbol x) = \boldsymbol A \boldsymbol x$,   
-> 
-> $$
-> \begin{align*}
-> \boldsymbol x 
-> &= \sum_{i=1}^{\dim} x_i \boldsymbol e_i \\
-> \Rightarrow T(\boldsymbol x)
-> &= T \left(\sum_{i=1}^{\dim} x_i \boldsymbol e_i \right)  \\
-> &= \sum_{i=1}^{\dim} x_i T(\boldsymbol e_i)  \tag{Linear Transformation}\\
-> &= \sum_{i=1}^{\dim} x_i \boldsymbol A \boldsymbol e_i \tag{$T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$}\\
-> &= \boldsymbol A \boldsymbol E \boldsymbol x  \\
-> &= \boldsymbol A \boldsymbol x
-> \end{align*}
-> $$
+
+<img src="./assets/transformations-1694683776868-3.svg" alt="transformations-1694683776868-3" style="zoom: 13%;" />
 
 ## Properties
 
@@ -159,82 +130,84 @@ $$
   \end{align*}
   $$
 
-### Identity transformation
+### Special linear transformation
+
+#### Identity transformation
 
 $$
-T x = x \quad ;(\forall x \in V)
+T x = x \quad (\forall x \in V) \\
 $$
 
-### Zero transformation
+#### Zero transformation
 
 $$
-T x = 0 \quad ;(\forall x \in V)
+T x = 0 \quad (\forall x \in V)
 $$
 
-### Orthogonal Transformation
+#### Orthogonal Transformation
 
 $$
-<x, x> = <T x, T x>
+\langle x, x \rangle = \langle T x, T x \rangle
 $$
-内积空间中, 保持任意向量的长度不变的线性变换.  
-正交矩阵:  
+Orthogonal Transformation is a linear transformation in the inner product space that keeps the length of any vector unchanged.
+Orthogonal matrix:
 $$
-  A A^T = I  \\
-  A A^H = I
+\boldsymbol A \boldsymbol A^T = \boldsymbol I  \\
+\boldsymbol A \boldsymbol A^H = \boldsymbol I
 $$
 
-#### Rotation Transformation
+##### Rotation Transformation
 
 Rotation Transformation Matrix:  
 
 $$
-T_{ij} = \left(\begin{matrix}
-  \boldsymbol  I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
+\boldsymbol A = \left(\begin{matrix}
+\boldsymbol I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
 \end{matrix}\right)
 $$
 
-where $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
+- $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
 
-#### Reflection Transformation
+##### Reflection Transformation
 
 $$
 y = H x = (I - 2 e_2 e_2^T) x
 $$
 - Proof  
-  $$
-  \begin{align*}
-    x - y &= e_2 · (e_2^T x)  \\
-    \Rightarrow y &= (I-2 e_2 e_2^T) x
-  \end{align*}
-  $$
+$$
+\begin{align*}
+x - y &= e_2 · (e_2^T x)  \\
+\Rightarrow y &= (I-2 e_2 e_2^T) x
+\end{align*}
+$$
 
-### Symmetry Transformation
+#### Symmetry Transformation
 
 $$
-<T x, y> = <x, T y>
+\langle T x, y \rangle = \langle x, T y \rangle
 $$
 Symmetry Matrix:
 $$
-  A^T = A  \\
-  A^H = A
+\boldsymbol A^T = \boldsymbol A  \\
+\boldsymbol A^H = \boldsymbol A
 $$
 
-### Projection transformation & Orthogonal Projection transformation
+#### Projection transformation & Orthogonal Projection transformation
 
-Projection transformation: 设线性空间的子空间$L$及其补$M$, 投影变换是将线性空间沿$M$到$L$的投影的变换.  
+Projection transformation: Suppose the subspace $L$ of the linear space and its complement $M$, the projection transformation is the transformation of the projection of the linear space along $M$ to $L$.
 
 Projection matrix:  
 $$
 P_{L|M} = \left(\begin{matrix} X & 0 \end{matrix}\right) \left(\begin{matrix} X & Y \end{matrix}\right)^{-1}
 $$
 
-Orthogonal Projection transformation: 设线性空间的子空间$L$及其正交补$L_\bot$, 将线性空间沿$L_\bot$到$L$的投影的变换, 称Orthogonal projection transformation.  
+Orthogonal Projection transformation: Assume the subspace $L$ of the linear space and its orthogonal complement $L_\bot$. The transformation of the projection of the linear space along $L_\bot$ to $L$ is called orthogonal projection transformation.
 
 Orthogonal Projection matrix:  
 $$
-  P_L = X(X^H X)^{-1}X^H
+P_L = X(X^H X)^{-1}X^H
 $$
-  Symbol: $X = (x_1, ... , x_r)$: 投影后子空间的基.
+- $X = (x_1, ... , x_r)$: basis of the projected subspace.
 
 - Property  
   - $P_{L|M}^2 = P_{L|M}$ 
@@ -246,12 +219,11 @@ $$
     \hat x = \sum_{i=1}^n \frac{u_i^T x}{u_i^T u_i} u_i
     $$
 
-### Sheer transformation
+#### Sheer transformation
 
-斜切变换矩阵:  
-  单位矩阵的第(i,j)个元素改为斜切比率 $a_{ij}$
+Sheer transformation Matrix:  The $(i,j)-$th element of the identity matrix is changed to the shear ratio $a_{ij}$
 
-Scale Transformation
+##### Scale Transformation
 
 Scale Transformation Matrix:
 $$
