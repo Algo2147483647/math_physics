@@ -26,16 +26,12 @@ Linear Space is a special [module](./Module.md) including non empty set $V$ with
 
 #### Vector
 
-##### Define
-
 $$
 \mathbb R^{n}, n \in \mathbb Z
 $$
 A vector is a one-dimensional array of numbers. It can be represented as a row or a column.
 
 #### Matrix 
-
-##### Define
 
 $$
 \mathbb R^{m \times n}, m, n \in \mathbb Z
@@ -101,8 +97,6 @@ $$
 In linear space, the maximum number of vectors contained in a linearly independent vector group.
 
 ### Base 
-
-#### Define
 
 $$
 \begin{align*}

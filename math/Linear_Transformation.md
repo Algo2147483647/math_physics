@@ -11,7 +11,17 @@ Linear Transformation is a [mapping](./Function.md) $T: V \to V$ for a [linear s
 
 <img src="./assets/transformations-1694683776868-3.svg" alt="transformations-1694683776868-3" style="zoom: 13%;" />
 
-We can represent Linear Transformation by matrix $\boldsymbol A$ and matrix multilpy, where the matrix $\boldsymbol A$ can be obtained by the unit base vectors $(\boldsymbol e_1, ..., \boldsymbol e_n)$ after transformation, 
+### Matrix
+
+$$
+\mathbb R^{m \times n} \quad( m, n \in \mathbb Z)
+$$
+
+$$
+\boldsymbol A = \left(\begin{matrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{matrix}\right)
+$$
+
+A matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns. We can represent Linear Transformation by matrix $\boldsymbol A$ and matrix multiply, where the matrix $\boldsymbol A$ can be obtained by the unit base vectors $(\boldsymbol e_1, ..., \boldsymbol e_n)$ after transformation, 
 $$
 T(\boldsymbol x) = \boldsymbol A \boldsymbol x
 $$
@@ -20,74 +30,69 @@ $$
 \boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))
 $$
 
-- Proof
-  We assume $\boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))$, then 
-
-  Proof $T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$, 
-  $$
-  \begin{align*}
-    T(\boldsymbol e_i) 
-    &= (T(\boldsymbol e_1), ..., T(\boldsymbol e_n)) (0,...,0,1_i,0,...,0)^T  \\
-    &= \boldsymbol A \boldsymbol e_i
-  \end{align*}
-  $$
-
-  Proof $T(\boldsymbol x) = \boldsymbol A \boldsymbol x$,   
-  $$
-  \begin{align*}
-    \boldsymbol x 
-    &= \sum_{i=1}^{\dim} x_i \boldsymbol e_i \\
-    \Rightarrow T(\boldsymbol x)
-    &= T \left(\sum_{i=1}^{\dim} x_i \boldsymbol e_i \right)  \\
-    &= \sum_{i=1}^{\dim} x_i T(\boldsymbol e_i)  \tag{Linear Transformation}\\
-    &= \sum_{i=1}^{\dim} x_i \boldsymbol A \boldsymbol e_i   \tag{$T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$}\\
-    &= \boldsymbol A \boldsymbol E \boldsymbol x  \\
-    &= \boldsymbol A \boldsymbol x
-  \end{align*}
-  $$
+> **Proof**:
+> We assume $\boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))$, then 
+>
+> Proof $T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$, 
+> $$
+> \begin{align*}
+>   T(\boldsymbol e_i) 
+>   &= (T(\boldsymbol e_1), ..., T(\boldsymbol e_n)) (0,...,0,1_i,0,...,0)^T  \\
+>   &= \boldsymbol A \boldsymbol e_i
+> \end{align*}
+> $$
+>
+> Proof $T(\boldsymbol x) = \boldsymbol A \boldsymbol x$,   
+> 
+> $$
+> \begin{align*}
+> \boldsymbol x 
+> &= \sum_{i=1}^{\dim} x_i \boldsymbol e_i \\
+> \Rightarrow T(\boldsymbol x)
+> &= T \left(\sum_{i=1}^{\dim} x_i \boldsymbol e_i \right)  \\
+> &= \sum_{i=1}^{\dim} x_i T(\boldsymbol e_i)  \tag{Linear Transformation}\\
+> &= \sum_{i=1}^{\dim} x_i \boldsymbol A \boldsymbol e_i \tag{$T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$}\\
+> &= \boldsymbol A \boldsymbol E \boldsymbol x  \\
+> &= \boldsymbol A \boldsymbol x
+> \end{align*}
+> $$
 
 ## Properties
 
 ### Range 
-
 $$
 Range(T)=\{T x | x \in V\}
 $$
-In linear space,  
-the set of results of all vectors after linear transformation;   
+In linear space,
+the set of results of all vectors after linear transformation; 
 the linear space after linear transformation.
 
 - Rank
-  $$
+$$
   rank(A) = \dim Range(A) = \dim Range(A^T)
-  $$
+$$
   The dimension of space after transformation.
   The dimension of the range.
 
 ### Null Space
-
 $$
 Null(T) = \{x | T x = 0\}
 $$
 In linear space, the set of all original vectors that are linearly transformed into zero vectors.
 
-- $\dim V = \dim Range(A) + \dim Null(A)$  
-  变换前线性空间维数 = 值域维数 + 零空间维数. 
+- $\dim V = \dim Range(A) + \dim Null(A)$ 
 
 
 ### Invariant Subspace
-
 $$
 \forall x \in V_1, V_1 \subseteq V, T x \in V_1
 $$
-
 ### Eigenvalues & Eigenvectors
 
-- Define
-  $$
+$$
   \boldsymbol A \boldsymbol x = λ \boldsymbol x
-  $$
-  
+$$
+
   - $x$: Eigenvectors, a vector whose direction does not change before and after linear transformation;  
   - $λ$: Eigenvalues, proportion of length change of eigenvector after linear transformation.
 
@@ -95,11 +100,11 @@ $$
   * Eigenvalue Decomposition & Singular Value Decomposition
   
   - Characteristic polynomial
-    $$
+$$
     \varphi(λ) = |λ I - A| = λ^n + a_1 λ^{n-1} + ... + a_{n-1} λ + a_n
-    $$
+$$
 
-  - Theorem -- Hamilton-Cayley Theorem
+  - Hamilton-Cayley Theorem
     $$
     \varphi(A) = A^n + a_1 A^{n-1}+ ... +a_{n-1} A + a_n I = 0
     $$
@@ -107,18 +112,17 @@ $$
 
 ### Moore-Penrose Inverse
 
-- Define  
-  The solution satisfying the following equation,
-  $$
-    \left\{\begin{matrix}
-      A X A = A\\
-      X A X = X\\
-      (A X)^H = A X\\
-      (X A)^H = A X\\
-    \end{matrix}\right.
-  $$
-  When the rank of cols is full, $A^+ = (A^H A)^{-1} A^H$   
-  When the rank of rows is full,  $A^+ = A^H (A A^H)^{-1}$
+The solution satisfying the following equation,
+$$
+  \left\{\begin{matrix}
+    A X A = A\\
+    X A X = X\\
+    (A X)^H = A X\\
+    (X A)^H = A X\\
+  \end{matrix}\right.
+$$
+When the rank of cols is full, $A^+ = (A^H A)^{-1} A^H$   
+When the rank of rows is full,  $A^+ = A^H (A A^H)^{-1}$
 
 - Property
   - $rank(A) = rank(A^H A) = rank(A A^H)$
@@ -126,11 +130,10 @@ $$
 
 ### Similarity
 
-- Define  
-  $A$ is similar to $B$, $A ~ B$:
-  $$
-  \exists \text{Nonsingular Matrix}P \Rightarrow B = P^{-1} A P
-  $$
+$A$ is similar to $B$, $A ~ B$:
+$$
+\exists \text{Nonsingular Matrix}P \Rightarrow B = P^{-1} A P
+$$
 
 - Property 
   - $A ~ A$ 
@@ -158,85 +161,80 @@ $$
 
 ### Identity transformation
 
-- Define
-  $$
-  T x = x \quad ;(\forall x \in V)
-  $$
+$$
+T x = x \quad ;(\forall x \in V)
+$$
 
 ### Zero transformation
 
-- Define  
-  $$
-  T x = 0 \quad ;(\forall x \in V)
-  $$
+$$
+T x = 0 \quad ;(\forall x \in V)
+$$
 
 ### Orthogonal Transformation
 
-- Define
-  $$
-  <x, x> = <T x, T x>
-  $$
-  内积空间中, 保持任意向量的长度不变的线性变换.  
-  正交矩阵:  
-  $$
-    A A^T = I  \\
-    A A^H = I
-  $$
+$$
+<x, x> = <T x, T x>
+$$
+内积空间中, 保持任意向量的长度不变的线性变换.  
+正交矩阵:  
+$$
+  A A^T = I  \\
+  A A^H = I
+$$
 
-* Rotation Transformation
-  - Define  
-    Rotation Transformation Matrix:  
+#### Rotation Transformation
 
-    $$
-    T_{ij} = \left(\begin{matrix}
-      \boldsymbol  I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
-    \end{matrix}\right)
-    $$
+Rotation Transformation Matrix:  
 
-    where $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
+$$
+T_{ij} = \left(\begin{matrix}
+  \boldsymbol  I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
+\end{matrix}\right)
+$$
 
-* Reflection Transformation
-  - Define  
-    $$
-    y = H x = (I - 2 e_2 e_2^T) x
-    $$
-    - Proof  
-      $$
-      \begin{align*}
-        x - y &= e_2 · (e_2^T x)  \\
-        \Rightarrow y &= (I-2 e_2 e_2^T) x
-      \end{align*}
-      $$
+where $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
+
+#### Reflection Transformation
+
+$$
+y = H x = (I - 2 e_2 e_2^T) x
+$$
+- Proof  
+  $$
+  \begin{align*}
+    x - y &= e_2 · (e_2^T x)  \\
+    \Rightarrow y &= (I-2 e_2 e_2^T) x
+  \end{align*}
+  $$
 
 ### Symmetry Transformation
 
-- Define
-  $$
-  <T x, y> = <x, T y>
-  $$
-  Symmetry Matrix:
-  $$
-    A^T = A  \\
-    A^H = A
-  $$
+$$
+<T x, y> = <x, T y>
+$$
+Symmetry Matrix:
+$$
+  A^T = A  \\
+  A^H = A
+$$
 
 ### Projection transformation & Orthogonal Projection transformation
 
-- Define  
-  Projection transformation: 设线性空间的子空间$L$及其补$M$, 投影变换是将线性空间沿$M$到$L$的投影的变换.  
+Projection transformation: 设线性空间的子空间$L$及其补$M$, 投影变换是将线性空间沿$M$到$L$的投影的变换.  
 
-  Projection matrix:  
-  $$
-  P_{L|M} = \left(\begin{matrix} X & 0 \end{matrix}\right) \left(\begin{matrix} X & Y \end{matrix}\right)^{-1}
-  $$
+Projection matrix:  
+$$
+P_{L|M} = \left(\begin{matrix} X & 0 \end{matrix}\right) \left(\begin{matrix} X & Y \end{matrix}\right)^{-1}
+$$
 
-  Orthogonal Projection transformation: 设线性空间的子空间$L$及其正交补$L_\bot$, 将线性空间沿$L_\bot$到$L$的投影的变换, 称Orthogonal projection transformation.  
+Orthogonal Projection transformation: 设线性空间的子空间$L$及其正交补$L_\bot$, 将线性空间沿$L_\bot$到$L$的投影的变换, 称Orthogonal projection transformation.  
 
-  Orthogonal Projection matrix:  
-  $$
-    P_L = X(X^H X)^{-1}X^H
-  $$
-    Symbol: $X = (x_1, ... , x_r)$: 投影后子空间的基.
+Orthogonal Projection matrix:  
+$$
+  P_L = X(X^H X)^{-1}X^H
+$$
+  Symbol: $X = (x_1, ... , x_r)$: 投影后子空间的基.
 
 - Property  
   - $P_{L|M}^2 = P_{L|M}$ 
@@ -250,16 +248,15 @@ $$
 
 ### Sheer transformation
 
-- Define  
-  斜切变换矩阵:  
-    单位矩阵的第(i,j)个元素改为斜切比率 $a_{ij}$
+斜切变换矩阵:  
+  单位矩阵的第(i,j)个元素改为斜切比率 $a_{ij}$
 
-* Scale Transformation
-  - Define  
-    Scale Transformation Matrix:
-    $$
-    T = \left(\begin{matrix} Δx_1 \\ & Δx_2 \\ & & \ddots \\ & & & Δx_n \end{matrix}\right)
-    $$
+Scale Transformation
+
+Scale Transformation Matrix:
+$$
+T = \left(\begin{matrix} Δx_1 \\ & Δx_2 \\ & & \ddots \\ & & & Δx_n \end{matrix}\right)
+$$
 
 ## Include
 

@@ -14,7 +14,6 @@ Mapping, refer to a [binary relation](./Relation.md) from the element of set $X$
 
 $X$: domain of Definition.
 
-## Properties
 
 ### Injective
 
@@ -30,7 +29,7 @@ $$
 $$
 Each element $y$ in set $Y$ has a element $x$ in set $X$ corresponding to it.
 
-### Bijection , One-to-One Correspondence
+### Bijection, One-to-One Correspondence
 
 $$
 \forall y \in Y, \exists_{= 1} x \in X, f(x) = y
@@ -39,9 +38,10 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 <img src="assets/R-16983288702011.png" alt="R" style="zoom: 30%;" />
 
-- Property
-  * Inverse Function
-    if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \Leftrightarrow f(a) = b$
+## Properties
+
+* Inverse Function
+  if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \Leftrightarrow f(a) = b$
 
 ## Include
 
