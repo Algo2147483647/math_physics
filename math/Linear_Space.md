@@ -10,7 +10,7 @@ $$
 Linear Space is a special [module](./Module.md) including non empty set $V$ with addition and scalar multiplication, and satisfying:
 
 - Additive Closure: $x+y \in V$
-- Multiplication Closure: $k x \in V$
+- Scalar Multiplication Closure: $k x \in V$
 - Identity element of vector addition: $x+0=x$
 - Inverse elements of vector addition: $x+(-x) = 0$
 - Identity element of scalar multiplication: $1x = x$
@@ -110,48 +110,56 @@ Base is a linearly independent vector group $\boldsymbol X = (\boldsymbol x_1, .
 - $\boldsymbol x_i$: Base vector
 - $a_i$: coordinate
 
-#### Property 
+#### Base Transformation & Coordinate Transformation
 
-- Base Transformation & Coordinate Transformation  
-  Base transformation, is a transformation between new bases $\boldsymbol Y$ and old bases $\boldsymbol X$, where $\boldsymbol C$ is the Transformation Matrix.
-  $$
-  \boldsymbol Y = \boldsymbol X \boldsymbol C
-  $$
-  
-  Coordinate Transformation, is solving a new coordinate $\boldsymbol a_y$ in new base $\boldsymbol Y$ from old coordinate $\boldsymbol a_x$ in old base $\boldsymbol X$.
-  $$
-  \boldsymbol a_x = \boldsymbol C \boldsymbol a_y
-  $$
-  
-  
-  - Proof
-    $$
-    \begin{align*}
-      \boldsymbol v 
-      &= \boldsymbol X \boldsymbol a_x  \\
-      &= \boldsymbol Y \boldsymbol a_y  \\ 
-      &= \boldsymbol X \boldsymbol C \boldsymbol a_y  \\ 
-      \Rightarrow \boldsymbol a_x &= \boldsymbol C \boldsymbol a_y
-    \end{align*}
-    $$
+Base transformation, is a transformation between new bases $\boldsymbol Y$ and old bases $\boldsymbol X$, where $\boldsymbol C$ is the Transformation Matrix.
+$$
+\boldsymbol Y = \boldsymbol X \boldsymbol C
+$$
 
-  - Property  
-    The base transformation matrix $\boldsymbol C$ is nonsingular.
+Coordinate Transformation, is solving a new coordinate $\boldsymbol a_y$ in new base $\boldsymbol Y$ from old coordinate $\boldsymbol a_x$ in old base $\boldsymbol X$.
+$$
+\boldsymbol a_x = \boldsymbol C \boldsymbol a_y
+$$
 
-- Span
+
+- Proof
   $$
-  Span(\boldsymbol x_1,...,\boldsymbol x_n) = \left\{\boldsymbol v | \boldsymbol v = \sum_{i=1}^n a_i \boldsymbol x_i \right\}
+  \begin{align*}
+    \boldsymbol v 
+    &= \boldsymbol X \boldsymbol a_x  \\
+    &= \boldsymbol Y \boldsymbol a_y  \\ 
+    &= \boldsymbol X \boldsymbol C \boldsymbol a_y  \\ 
+    \Rightarrow \boldsymbol a_x &= \boldsymbol C \boldsymbol a_y
+  \end{align*}
   $$
-  A representation of a linear space given by a basis vector.
+
+- Property
+  The base transformation matrix $\boldsymbol C$ is nonsingular.
+
+#### Span
+$$
+Span(\boldsymbol x_1,...,\boldsymbol x_n) = \left\{\boldsymbol v | \boldsymbol v = \sum_{i=1}^n a_i \boldsymbol x_i \right\}
+$$
+A representation of a linear space given by a basis vector.
 
 ### Linear Subspace
 
 A nonempty set in a linear space that is closed to linear operations.
 
-- 加法封闭 $x,y\in V_1 ,\quad x+y \in V_1$
-- 数乘封闭 $x \in V_1, k x \in V_1$
+- Additive Closure: $x,y\in V_1 ,\quad x+y \in V_1$
+- Scalar Multiplication Closure: $x \in V_1, k x \in V_1$
 
-### [Linear Transformation](./Linear_Transformation.md)
+### Dual Space
+
+$$
+V^*=\left\{f:V\rightarrow \mathbb R \mid f \text{ is a linear map}\right\}
+$$
+
+Let $V$ be a vector space over a field $\mathbb R $, the dual space $V^*$ of $V$ is the vector space of all linear functionals from $f: V \to \mathbb R$ called dual vector. For a finite-dimensional column vector, its dual vector is in the form of a row vector.
+$$
+\left(\begin{matrix}v^*_1  & \cdots & v^*_n\end{matrix} \right) \left(\begin{matrix}v_1 \\ \vdots \\ v_n\end{matrix} \right) = a \in \mathbb R
+$$
 
 ### Matrix Decomposition
 
@@ -378,6 +386,8 @@ $$
 - [Normed_Linear_Space](./Normed_Linear_Space.md): 
 
 - [Projective_Space](./Projective_Space.md): 
+
+- [Tensor](./Tensor.md): 
 
 ## Parents
 
