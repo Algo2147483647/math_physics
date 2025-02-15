@@ -12,11 +12,6 @@ $$
 
 ## Properties
 
-Include
-
-* Metric Space  
-* Manifold
-
 ## Include
 
 - [Manifold](./Manifold.md): 
