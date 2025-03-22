@@ -4,7 +4,7 @@
 
 ## Define  
 
-**Linked List** is a directed connected graph in which each node has only one incoming edge, with the exception of the head node $a_1$, which has no incoming edge.
+**Linked List** is a [directed connected graph](../../math/graph.md) in which each node has only one incoming edge, with the exception of the head node $a_1$, which has no incoming edge.
 $$
 a_1 \to a_2 \to ... \to a_n
 $$
