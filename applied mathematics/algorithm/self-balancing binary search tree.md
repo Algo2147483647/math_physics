@@ -33,4 +33,4 @@ A Red-Black Tree is a type of self-balancing binary search tree.
 
 ## B Tree
 
-### B+ Tree
+### B$^+$ Tree

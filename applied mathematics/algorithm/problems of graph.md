@@ -126,11 +126,11 @@ $$
     \end{align*}
     $$
 
-### Solution
+### All-Pairs Shortest Paths
 
 #### Floyd's Algorithm
 
-Base on danamic programming, there is a Tensor $M^{(d)}, M^{(p)} \in \mathbb R^{n \times n \times (n+1)}$, where $M_{i, j, k}$ refer to the minimum distance and path from $v_i \to v_j$ with optional intermediate vertices $\{v_1, ..., v_k\}$. When $k = 0$, $M_{i, j, 0}$ refer to the distance of direct path $(v_i, v_j)$ with no intermediate vertice. When $k = n$, $M_{i, j, n}$ is the answer of the shorest distance and path of all virtice pairs.
+Base on danemic programming, there is a Tensor $M^{(d)}, M^{(p)} \in \mathbb R^{n \times n \times (n+1)}$, where $M_{i, j, k}$ refer to the minimum distance and path from $v_i \to v_j$ with optional intermediate vertices $\{v_1, ..., v_k\}$. When $k = 0$, $M_{i, j, 0}$ refer to the distance of direct path $(v_i, v_j)$ with no intermediate vertice. When $k = n$, $M_{i, j, n}$ is the answer of the shorest distance and path of all virtice pairs.
 $$
 \begin{align*} 
   G &= M^{(d)}_{\cdot, \cdot, 0}  \\
@@ -153,6 +153,8 @@ for (int k = 1; k <= N; k++)
                   path(i, j) = k, dis(i, k) + dis(k, j) :
                   dis(i, j);
 ```
+
+### Single-Source Shortest Paths
 
 #### Dijkstra Algorithm
 
@@ -183,7 +185,20 @@ def dijkstra(graph, start):
     return shortest_path
 ```
 
-#### Bellman Ford
+#### Bellman Ford Algorithm
+
+当图中存在负权边或需要检测负权环时，Bellman-Ford是合适的选择，否则Dijkstra或A*可能更高效。
+
+#### A* Algorithm
+
+A* Algorithm 是已知目标的启发式搜索. 结合了Dijkstra算法的最优性保证（确保找到最短路径）和贪心最佳优先搜索的高效性, 通过启发式函数引导搜索方向. The A* algorithm determines the search direction by evaluating the **comprehensive cost** of each node
+$$
+f(n) = g(n) + h(n)
+$$
+
+- $g(n)$: The actual cost from the starting point to the current node $n$ (known).
+- $h(n)$: The estimated cost from the current node $n$ to the target point (heuristic function, which must meet the acceptability).
+- $f(n)$: The comprehensive priority of the node, giving priority to expanding the node with the smallest $f(n)$.
 
 ## Minimum Spanning Tree
 
@@ -346,7 +361,7 @@ an assignment of colors to edges so that no vertex is incident to two edges of t
 
 ### Solution: Hierholzer's algorithm 
 
-```
+```python
 def find_eulerian_path_or_cycle(graph):
     current_vertex = next(iter(graph))
 
