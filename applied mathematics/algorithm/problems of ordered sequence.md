@@ -202,6 +202,31 @@ for (int i = 0; i < n-1; i++)
 }
 ```
 
-- Property
-  - Time complexity: $O(n^2)$
+Property
+- Time complexity: $O(n^2)$
 
+## Subsequence Problems
+
+### Longest Ascending Subsequence
+
+$$
+\begin{align*}
+\max_{x \subseteq a}  \quad & \text{number}(x)  \\
+s.t. \quad & x_i < x_{i+1} \quad
+\end{align*}
+$$
+
+For a given sequence $a$, find the longest non-contiguous subsequence where the subsequence is ascending.
+
+
+#### Algorithm: Greedy + Binary Search
+
+$$
+\begin{align*}
+f(n) &= \max(f(i), \max(f(j)) + 1) \quad ; j < i, a_j < a_i  \\
+f(1) &= 1  \tag{initial}
+\end{align*}
+$$
+- $f(n)$: 以$a_n$为结尾的最长上升子序列的长度.
+
+ 
