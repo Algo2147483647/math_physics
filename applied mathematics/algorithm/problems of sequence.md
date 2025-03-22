@@ -46,37 +46,40 @@ $$\text{start} > (\text{mid}-1) \text{ or } (\text{mid} + 1) > \text{end} \quad\
 
 ## Sort sequence
 
+对于元素间定义了次序的列表,  列表排序是指将列表中的所有元素, 按照彼此之间的大小次序重新定义 $\mathbb Z \to S$ 的关系, 保证 $f(a) \le f(b), \forall a \le b$.
+
 ### Quick Sort
 
-  Quick sort is a divide-and-conquer sorting algorithm. Based on the first value $a_1$, we divide the array into two sub-arrays according to whether they are greater than $a_1$ or less than $a_1$.
+Quick sort is a divide-and-conquer sorting algorithm. Based on the first value $a_1$, we divide the array into two sub-arrays according to whether they are greater than $a_1$ or less than $a_1$. We repeat the above operation for two sub-arrays just like the binary tree until the array cannot be divided.
 
-$$
-\left\{a^{(t + 1, 2 k - 1)}, \left(a^{(t, k)}_1 \right), a^{(t + 1, 2 k)} \right\} = \text{partition}\left(a^{(t, k)} \right)
-$$
 
 $$
 \begin{align*}
-  a^{(t + 1, 2 k - 1)} &\prec a^{(t, k)}_1  \\
-  a^{(t + 1, 2 k)} &\succeq a^{(t, k)}_1
+\left\{a_{s:k-1}^{t+1}, \left(a_{k}^{t+1} \right), a_{k+1:e}^{t+1} \right\} &= \text{partition}\left(a_{s:e}^{t} \right)  \\
+a_{k}^{t+1} &= a_{s}^{t}  \\
+a_{s:k-1}^{t+1} &\prec a_{s}^{t}  \\
+a_{k+1:e}^{t+1} &\succeq a_{s}^{t}
 \end{align*}
 $$
 
-We repeat the above operation for two sub-arrays untill the array cannot be devided.
+- $a^t_{s:t}$: the subsequence from $s$ to $e$ of the sequence. $t$ is the iteration number of the sequence.
 
-```
-quickSort(int[] a, int l, int r) {
-if (l >= r) 
-  return;
+![quick_sort](./assets/quick_sort.svg)
 
-int p = partition(a, l, r);
-quickSort(a, l, p - 1);
-quickSort(a, p + 1, r);
+```C
+QuickSort(int[] a, int l, int r) {
+    if (l >= r) 
+      return;
+
+    int p = Partition(a, l, r);
+    QuickSort(a, l, p - 1);
+    QuickSort(a, p + 1, r);
 }
 ```
 
   Where partition can be implemented like,
   ```c
-  void partition(int[] a, int l, int r) {
+  void Partition(int[] a, int l, int r) {
       int i = l - 1;
   
       for (int j = l ; j > r; j++) 
@@ -92,8 +95,9 @@ quickSort(a, p + 1, r);
   }
   ```
 
-- Property
-  - Time complexity: average time complexity $O(n \log n)$, worst-case time complexity $O(n^2)$
+#### Property
+
+- **Time complexity**: average time complexity $O(n \log n)$, worst-case time complexity $O(n^2)$
 
 ### Merge Sort
 

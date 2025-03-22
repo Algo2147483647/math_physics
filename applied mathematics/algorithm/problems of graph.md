@@ -2,9 +2,7 @@
 
 [TOC]
 
-## Problem
-
-### Determine connectivity
+## Determine connectivity
 
 In the connectivity problem of the graph, each connected component can be regarded as a set. When there is an edge between two nodes, the sets of the two nodes are merged. If the two nodes eventually belong to the same set, they are connected; otherwise, they are not connected. Specifically, it can be achieved by union-find.
 
@@ -13,9 +11,9 @@ Union-Find Sets is a data structure that maintains a collection of disjoint sets
 - Union operation: takes two elements from different sets and merges them into a single set.
 - Find operation: is used to determine which set an element belongs to. It takes an element as input and returns a representative element of the set containing that element.
 
-### Traversal
+## Traversal
 
-#### Depth-First Search
+### Depth-First Search
 
 DFS is a graph traversal that dives as deep as possible into a graph before backtracking. Depth first search is implemented based on stack or recursion.
 
@@ -44,7 +42,7 @@ def dfs(graph, start):
     return result
 ```
 
-#### Breadth-First Search
+### Breadth-First Search
 
 BFS is a graph traversal that explores all of the neighbor nodes at the present depth before moving on to nodes at the next depth level. Algorithm: Breadth-first search is implemented based on queues.
 
@@ -60,13 +58,11 @@ def bfs(graph, start):
     return result
 ```
 
-#### Travelling Salesman Problem
+### Travelling Salesman Problem
 
  Find the shortest closed path traversing all given points.
 
-### Shortest Paths
-
-#### Problem
+## Shortest Paths
 
 For a graph $G = (V, E)$ with edge weight $w : E \to \mathbb R$, we aim to find the minimum sum of edge weights of path $P(v_s, v_e)$ from $v_s \to v_e$, 
 $$
@@ -81,7 +77,7 @@ s.t. \quad& e_{1}^{(P)}[1] = v_{s}\\
 \end{align*}
 $$
 
-#### Property
+### Property
 
 - The shortest path has no loop
   $$
@@ -130,9 +126,9 @@ $$
     \end{align*}
     $$
 
-#### Solution
+### Solution
 
-##### Floyd's Algorithm
+#### Floyd's Algorithm
 
 Base on danamic programming, there is a Tensor $M^{(d)}, M^{(p)} \in \mathbb R^{n \times n \times (n+1)}$, where $M_{i, j, k}$ refer to the minimum distance and path from $v_i \to v_j$ with optional intermediate vertices $\{v_1, ..., v_k\}$. When $k = 0$, $M_{i, j, 0}$ refer to the distance of direct path $(v_i, v_j)$ with no intermediate vertice. When $k = n$, $M_{i, j, n}$ is the answer of the shorest distance and path of all virtice pairs.
 $$
@@ -158,7 +154,7 @@ for (int k = 1; k <= N; k++)
                   dis(i, j);
 ```
 
-##### Dijkstra Algorithm
+#### Dijkstra Algorithm
 
 - Initially, we mark all nodes as unvisited and set the distance from source node to the itself to zero, and the distance to all other nodes to infinity.
 - Select the unvisited node with the smallest distance from source node (the first selected node is source node itself), mark it as visited, and update the distance of all nodes through the new node accordingly.
@@ -187,11 +183,9 @@ def dijkstra(graph, start):
     return shortest_path
 ```
 
-##### Bellman Ford
+#### Bellman Ford
 
-### Minimum Spanning Tree
-
-#### Problem
+## Minimum Spanning Tree
 
 Find a Tree (acyclic subgraph) on the undirected Graph $T \subseteq G, V^{(T)} = V^{(G)}$ with the smallest sum of edge weights connected all nodes.
 
@@ -203,7 +197,7 @@ $$
 \end{align*}
 $$
 
-#### Property
+### Property
 
 $$
 \begin{align*}
@@ -212,9 +206,9 @@ $$
 \end{align*}
 $$
 
-#### Solution
+### Solution
 
-##### Prim's Algorithm
+#### Prim's Algorithm
 
 Greed by vertices, put the shortest edge $(u,v)$ of $u$ from the searched vertices into the result edge sequence every time, and $v$ does not belong to the searched vertices. $T_{\min, k}$ refers to a sub-tree of $T_{\min}$ with $k+1$ vertices and $k$ edges.
 $$
@@ -263,7 +257,7 @@ def prim(graph):
 
 
 
-##### Kruskal's Algorithm
+#### Kruskal's Algorithm
 Greed by edges. $T_{\min, k}$ refers to a sub-tree of $T_{\min}$ with $k$ edges.
 $$
 \begin{align*} 
@@ -312,7 +306,7 @@ def kruskal(graph):
     return result
 ```
 
-### Network Flow Problem
+## Network Flow Problem
 
 We set $G'$ is a sub-graph of $G$, Equal inflow and outflow of non source and sink
 $$
@@ -322,7 +316,7 @@ $$
 \end{align*}
 $$
 
-#### Maximum Flow Problem
+### Maximum Flow Problem
 
 Maximum flow rate at source and sink
 $$
@@ -332,25 +326,25 @@ $$
     &\sum_i w'(u, v_i) = \sum_i w'(v_i, u)  \quad ; u \neq s, u \neq e
 \end{align*}
 $$
-##### Solution: Dinic Algorithm
+#### Solution: Dinic Algorithm
 
-#### Minimum Cost Problem
+### Minimum Cost Problem
 
 
 
-### Graph Coloring Problem
+## Graph Coloring Problem
 
-#### Vertex coloring
+### Vertex coloring
 
 a coloring of a graph almost always refers to a proper vertex coloring, namely a labeling of the graph's vertices with colors such that no two vertices sharing the same edge have the same color. Since a vertex with a loop (i.e. a connection directly back to itself) could never be properly colored, it is understood that graphs in this context are loopless.
 
-#### Edge coloring
+### Edge coloring
 
 an assignment of colors to edges so that no vertex is incident to two edges of the same color. An edge coloring with k colors is called a k-edge-coloring and is equivalent to the problem of partitioning the edge set into k matchings. The smallest number of colors needed for an edge coloring of a graph G is the chromatic index, or edge chromatic number, χ′(G). 
 
-### Search Euler Path
+## Search Euler Path
 
-#### Solution: Hierholzer's algorithm 
+### Solution: Hierholzer's algorithm 
 
 ```
 def find_eulerian_path_or_cycle(graph):
