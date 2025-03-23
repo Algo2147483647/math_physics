@@ -117,6 +117,8 @@ $$
 
 <img src="./assets/Merge_sort_algorithm_diagram.svg" alt="Merge_sort_algorithm_diagram" style="zoom:50%;" />
 
+<img src="./assets/merge.svg" alt="merge" style="zoom:80%;" />
+
 ```c
 void mergeSort(int[] a, int l, int r) { 
     if (l >= r) 
@@ -133,11 +135,13 @@ Due to the the smaller parts have been sorted, the merging process is done by co
 
 Property:
 - **Time complexity**: $O(n \log n)$
-- **Space complexity**: $O(1)$ In Place.
+- **Space complexity**: $O(n)$.
 
 ### Heap Sort
 
-In [heap](./heap.md) sort, the array is first turned into a binary heap, and the root node, which is either the maximum or minimum element, is swapped with the last element of the array. The heap is then rebuilt without the last element, and the process repeats until the heap is empty. By swapping the root node with the last element, we ensure that the largest or smallest element moves to the end of the array, and the array is partially sorted.
+In [heap](./heap.md) sort, the array is first turned into a binary heap in place, and the root node, which is either the maximum or minimum element, is swapped with the last element of the array. The heap is then rebuilt without the last element, and the process repeats until the heap is empty. By swapping the root node with the last element, we ensure that the largest or smallest element moves to the end of the array, and the array is partially sorted.
+
+![heap_sort](./assets/heap_sort.svg)
 
   ```c
   void heapSort(int[] a, int n) {
@@ -151,8 +155,9 @@ In [heap](./heap.md) sort, the array is first turned into a binary heap, and the
   }
   ```
 
-- Property
-  - **Time complexity**: $O(n \log n)$
+Property
+- **Time complexity**: $O(n \log n)$
+- **Space complexity**: $O(1)$ In Place.
 
 ### Insertion Sort
 
@@ -173,22 +178,24 @@ we start from the left side of the array, and compare each element with the elem
   }
   ```
 
-- Property
-  - Time complexity: $O(n^2)$
+Property
+- **Time complexity**: $O(n^2)$
+- **Space complexity**:
 
 ### Selection Sort
 
-We repeatedly select and cut the mininum element from the original array $a$ into the sorted array $b$.
+We repeatedly select and cut the minimum element from the original array $a$ into the sorted array $b$.
 
 $$
 \begin{align*}
-b^{(0)} = \emptyset\\
-b^{(t)} = \left\{b^{(t-1)}, \min \left(a - b^{(t-1)} \right)\right\}
+b^{(0)} &= \emptyset\\
+b^{(t)} &= \left\{b^{(t-1)}, \min \left(a - b^{(t-1)} \right)\right\}
 \end{align*}
 $$
 
-- Property
-  - Time complexity: $O(n^2)$
+Property
+- **Time complexity**: $O(n^2)$
+- **Space complexity**:
 
 ### Bubble Sort
 Bubble sort works by repeatedly swapping adjacent elements if they are in the wrong order until the list is sorted.
@@ -203,7 +210,8 @@ for (int i = 0; i < n-1; i++)
 ```
 
 Property
-- Time complexity: $O(n^2)$
+- **Time complexity**: $O(n^2)$
+- **Space complexity**: $O(1)$ In Place.
 
 ## Subsequence Problems
 
