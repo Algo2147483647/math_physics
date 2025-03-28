@@ -2,7 +2,9 @@
 
 [TOC]
 
-## Determine connectivity
+## Basic properties Problems
+
+### Connectivity Detection
 
 In the connectivity problem of the graph, each connected component can be regarded as a set. When there is an edge between two nodes, the sets of the two nodes are merged. If the two nodes eventually belong to the same set, they are connected; otherwise, they are not connected. Specifically, it can be achieved by union-find.
 
@@ -10,6 +12,17 @@ Union-Find Sets is a data structure that maintains a collection of disjoint sets
 
 - Union operation: takes two elements from different sets and merges them into a single set.
 - Find operation: is used to determine which set an element belongs to. It takes an element as input and returns a representative element of the set containing that element.
+
+### Cycle Detection
+
+**Cycle detection** is the problem of finding a cycle in a sequence of iterated function values or linked list.
+
+#### Floyd Cycle Detection Algorithm
+
+Floyd cycle detection algorithm moves two pointers at different speeds through the sequence of values until they both point to equal values.
+
+- **Time Complexity**: $O(n)$
+- **Space Complexity**: $O(1)$
 
 ## Traversal
 
