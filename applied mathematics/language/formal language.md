@@ -1,10 +1,8 @@
-# Compiler
+# Formal Language
 
 [TOC]
 
-## Formal Grammar
-
-### Define  
+## Define  
 Formal grammar is a 4-tuples
 $$
 G = <N, \Sigma, P>
@@ -17,27 +15,26 @@ $$
   (\Sigma \cup N)^* N (\Sigma \cup N)^* \to (\Sigma \cup N)^*
   $$
 
-### Include
+## Include
 
 - Context-free grammar (CFG)
 
 - Context-sensitive grammar (CSG)
 
-#### Context-free grammar (CFG)
+### Context-free grammar (CFG)
 
-**Define**
 A context-free grammar (CFG) is a formal grammar whose production rules are of the form as follow, with $A$ a single nonterminal symbol, and $\alpha$ a string of terminals and/or non-terminals ($\alpha$ can be empty). A formal grammar is "context free" if its production rules can be applied regardless of the context of a nonterminal. 
+
 $$
 A \to \alpha
 $$
 
-**Include**
+#### Include
 
 * Regular grammar: They require that all production rules have at most one non-terminal symbol, and that symbol is either always at the end or always at the start of the rule's right-hand side.
 
-#### Context-sensitive grammar (CSG)
+### Context-sensitive grammar (CSG)
 
-**Define**
 A context-sensitive grammar is a formal grammar in which the left-hand sides and right-hand sides of any production rules may be surrounded by a context of terminal and nonterminal symbols.
 
 ## Lexical Analysis

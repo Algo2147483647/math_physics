@@ -12,15 +12,13 @@ $$
 \{const, var\}
 $$
 
-- operation nodes: The non-leaf nodes are the operation nodes such as functions. Meanwhile the children nodes  of a operation node are all parameters of this function.
+- Function nodes: The non-leaf nodes are the function nodes such as functions. Meanwhile the children nodes  of a operation node are all parameters of this function, and its purpose is to map child nodes and itself to a value node.
 
 $$
 f(x_1, x_2, \cdots , x_n)
 $$
 
-
-
-## Operations
+## Function nodes
 
 ### Basic operators
 
@@ -31,7 +29,7 @@ $$
 - Bitwise operations
   - bitwise and
   - bitwise or
-  - bitwise negation (unary operator)
+  - bitwise not
   - bitwise xor
   - left shift
   - right shift
@@ -49,34 +47,45 @@ $$
   - equal to
   - less than
   - less than or equal to
+  - between (open, close, left open, right open)
+- Set operators
+  - in
+  - subset
+  - number
+  - ordered set operators
+    - min / max
+    - argmin / argmax
+    - sort
+  - number set operators
+    - sum
 - Memory operators
   - get address
   - dereference (access the value pointed to by the pointer)
-- Assignment operator
+  - assignment
 
 ### Logical
 
+- Conditional Branches
 - Loop
-- Conditional Branch
 
 ### Function
 
-## Value
+Function processing process: 
+
+- Before processing
+- Execution
+- After processing
+
+## Value nodes
 
 ### Constants + Variables
 
 ### Primary Value
 
-- Integer
-  - int 8bit (char)
-  - int 16bit
-  - int 32bit
-  - int 64bit
-- Floating-point number
-  - float 32bit
-  - float 64bit
+- Null / Any
+- Integer: int 8bit (char), int 16bit, int 32bit, int 64bit
+- Floating-point number: float 32bit, float 64bit
 - Boolean: true / false
-
 - Pointer
 
 ### Data Structure
@@ -84,7 +93,8 @@ $$
 - Set
 - Map
 - Array (Vector)
+  - String
 - Matrix
-- Structure
+- Structure (Tuple)
 - Deque
 - Function
