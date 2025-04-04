@@ -958,7 +958,7 @@
     ]
   },
   "Tree": {
-    "define": "Tree is a class of connected undirected graphs without loops.\n\n### Rooted Tree\n\n- root node: A node without forward nodes, and a tree has only one root node.\n- leaf node: A node that has no children.\n- depth: Number of edges in the simple path from node to root node. The depth of the tree is the maximum node depth in the tree.",
+    "define": "Tree is a class of connected undirected graphs without loops.\n\n### Rooted Tree\n\nWhen the root node is set to a certain node of the tree, the hierarchical relationship of the entire tree and the parent-child relationship among each node will be uniquely determined.\n\n- **root node**: A node without forward nodes, and a tree has only one root node.\n- **leaf node:** A node that has no children.\n- depth: Number of edges in the simple path from node to root node. The depth of the tree is the maximum node depth in the tree.\n\n<img src=\"./assets/rooted tree.svg\" style=\"zoom:50%;\" />",
     "kids": {
       "Binary_Tree": ""
     },
