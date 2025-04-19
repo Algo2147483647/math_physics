@@ -4,6 +4,8 @@
 
 ## 心态
 
+I Am At The Center of Everything That Happens To Me. 我只能感知自我，这种隔离让人窒息。但那些远超于我的卓越思维的存在，透过文字同他们沟通共鸣，我不再孤独。
+
 ### 沉稳无我
 
 以出世的心态，尽入世的责任。

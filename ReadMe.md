@@ -1,4 +1,4 @@
-# $Mathematic\ Library$
+# Mathematic-Physics Library
 
 [TOC]
 
