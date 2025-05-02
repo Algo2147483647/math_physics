@@ -10,7 +10,11 @@ Differential manifold $M$ of dimension $n$ is a [manifold](./Manifold.md) and eq
 
 ## Properties
 
+### Continuity
 
+$f$ is a $C^r$ mapping $\Leftrightarrow$ $\forall p \in M, \psi_\beta \circ f \circ \psi_\alpha^{-1}$ is $C^r$
+
+### Diffeomorphic
 
 ### Christopher Symbol
 

@@ -12,6 +12,17 @@ Manifold $M$ is a second countable [Hausdorff space](./Hausdorff_Space.md) that 
 
 ## Properties
 
+### Manifold $\leftrightarrow \mathbb R^n$ 
+
+#### Chart & Atlas
+
+**Chart** $(U, \phi)$ on a set is a bijection $\phi: U \subseteq M \to \phi(U) \subseteq \mathbb R^n$, where $U, \phi(U)$ is open. A chart $(U, \phi)$ is centered at $p$ for $p \in U$ if $\phi(p) = 0$.
+
+**Atlas** is a set of charts $\{(U_i, \phi_i)\}$, that collectively cover a manifold $M$.
+$$
+\{(U_i, \phi_i)\}
+$$
+
 ### Geodesic
 
 A geodesic is a curve representing in some sense the shortest path between two points in a Riemannian manifold.

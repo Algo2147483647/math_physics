@@ -31,30 +31,22 @@ The elements of $\tau$ are called **open sets** in the topological space $(S,\ta
 
 ## Properties
 
-### Continuity
+### Closed Set
 
-A function $f: X\rightarrow Y$ between two topological spaces $(X, \tau_X)$ and $(Y, \tau_Y)$ is said to be continuous if the pre-image of every open set in $Y$ is an open set in $X$.
-$$
-f^{- 1}(U)\in\tau_X \quad (\forall U\subseteq \tau_Y)
-$$
+Closed Set is the complementary set of Open Set. A set can be both closed and open at the same time.
 
-- $f^{-1}(U)=\{x\in X:f(x)\in U\}$ represents the pre-image of the set $U\subseteq \tau_Y$ under the function $f$.
+### Compact
 
-### Homeomorphism
+A topological space $X$ is compact if every open cover of $X$ has a finite subcover.
 
-A function $f: X \to Y$ between two topological spaces is a homeomorphism if it has the following properties,
-- $f$ is a bijection 
-- $f$ is continuous
-- the inverse function $f^{-1}$ is continuous ($f$ is an open mapping).
+- Open cover: A collection of open sets $\{U_\alpha\}$ such that $X \subseteq \bigcup\limits_\alpha U_\alpha$.
+- Finite subcover: A finite subset $\{U_1, U_2, \cdots, U_n\}$ of the open cover that still satisfies $X \subseteq \bigcup\limits_{i=1}^n U_i$
 
-### Chart & Atlas
 
-**Chart** $(U, \phi)$ on a set is a bijection $\phi: U \subseteq M \to \phi(U) \subseteq \mathbb R^n$, where $U, \phi(U)$ is open. A chart $(U, \phi)$ is centered at $p$ for $p \in U$ if $\phi(p) = 0$.
 
-**Atlas** is a set of charts $\{(U_i, \phi_i)\}$, that collectively cover a manifold $M$.
-$$
-\{(U_i, \phi_i)\}
-$$
+Properties:
+
+- Compact space is is still a compact space under a continuous mapping.
 
 ### Borel $\sigma$-algebra 
 
@@ -68,25 +60,32 @@ g = \frac{2 - \chi - b}{2}  \tag{Genus}
 $$
 
 ### Euler Characteristic
- Euler Characteristic is a topological invariant and defined as an alternating sum of the ranks of the homology groups of the space.
 
-In a polyhedra, the Euler characteristic was classically defined for surfaces of polyhedra with the numbers of vertices $V$ (corners), edges $E$ and faces $F$. Any convex polyhedron's surface has Euler characteristic $\chi = 2$.
 $$
 \chi = V - E + F  \tag{Euler Characteristic}
 $$
 
+Euler Characteristic is a topological invariant and defined as an alternating sum of the ranks of the homology groups of the space.
 
+Euler Characteristic of sphere, in a polyhedra, the Euler characteristic was classically defined for surfaces of polyhedra with the numbers of vertices $V$ (corners), edges $E$ and faces $F$. Any convex polyhedron's surface has Euler characteristic $\chi = 2$.
 
-### Closed Set
+### Relationship between multiple topological spaces
 
-Closed Set is the complementary set of Open Set. A set can be both closed and open at the same time.
+#### Continuity
 
-### Compact
+A function $f: X\rightarrow Y$ between two topological spaces $(X, \tau_X)$ and $(Y, \tau_Y)$ is said to be continuous if the pre-image of every open set in $Y$ is an open set in $X$.
+$$
+f^{- 1}(U)\in\tau_X \quad (\forall U\subseteq \tau_Y)
+$$
 
-A topological space $X$ is compact if every open cover of $X$ has a finite subcover.
+- $f^{-1}(U)=\{x\in X:f(x)\in U\}$ represents the pre-image of the set $U\subseteq \tau_Y$ under the function $f$.
 
-- Open cover: A collection of open sets $\{U_\alpha\}$ such that $X \subseteq \bigcup\limits_\alpha U_\alpha$.
-- Finite subcover: A finite subset $\{U_1, U_2, \cdots, U_n\}$ of the open cover that still satisfies $X \subseteq \bigcup\limits_{i=1}^n U_i$
+#### Homeomorphism
+
+A function $f: X \to Y$ between two topological spaces is a homeomorphism if it has the following properties,
+- $f$ is a bijection 
+- $f$ is continuous
+- the inverse function $f^{-1}$ is continuous ($f$ is an open mapping).
 
 ## Include
 
