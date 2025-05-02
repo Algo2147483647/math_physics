@@ -64,3 +64,8 @@ The simplest explanation is usually the correct one.
 
 ---
 
+### 表相 + 本质
+
+透过表相看本质
+
+当事物本身孤立来看，不能很好定义时 —— 可以通过与这个事物相互关联的外部，实现对该事物本身的定义。

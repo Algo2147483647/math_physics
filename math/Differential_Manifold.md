@@ -10,6 +10,8 @@ Differential manifold $M$ of dimension $n$ is a [manifold](./Manifold.md) and eq
 
 ## Properties
 
+
+
 ### Christopher Symbol
 
 The Christopher Symbol can compare tensors at different locations on the manifold instead of viewing them in isolation, so the K-Schmidt symbol is also called the connection coefficient.

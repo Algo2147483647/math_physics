@@ -8,7 +8,7 @@ $$
 (S, \tau)
 $$
 
-In **Topological space** $(S, \tau)$, $\tau$ is a collection of subsets of a set $S$ called a topology on $S$, $\tau$ is subsets of [power set](./Power_Set.md) $P(S)$ and satisfy certain axioms, and the elements of $\tau$ are called **open sets** in the topological space $(X,\tau)$.
+A **Topological space** is a pair $(S, \tau)$,  where $S$ is a set and $\tau$ is a **topology** on $S$. A topology $\tau$ is a collection of subsets of a set $S$ (a subset of [power set](./Power_Set.md) $P(S)$) that satisfies the following axioms.
 
 - The empty set and the whole set $S$ itself belong to $\tau$.
 $$
@@ -24,6 +24,10 @@ $$
 $$
 \bigcup_{\alpha\in I}U_{\alpha}\in\tau
 $$
+
+### Open Set
+
+The elements of $\tau$ are called **open sets** in the topological space $(S,\tau)$, and the selection of open sets determines the topological structure of the space.
 
 ## Properties
 
@@ -43,11 +47,14 @@ A function $f: X \to Y$ between two topological spaces is a homeomorphism if it 
 - $f$ is continuous
 - the inverse function $f^{-1}$ is continuous ($f$ is an open mapping).
 
-### Chart
+### Chart & Atlas
 
-Chart $(U, \phi)$ on a set is a bijection $\phi: U \subseteq M \to \phi(U) \subseteq \mathbb R^n$, where $U, \phi(U)$ is open.
+**Chart** $(U, \phi)$ on a set is a bijection $\phi: U \subseteq M \to \phi(U) \subseteq \mathbb R^n$, where $U, \phi(U)$ is open. A chart $(U, \phi)$ is centered at $p$ for $p \in U$ if $\phi(p) = 0$.
 
-A chart $(U, \phi)$ is centered at $p$ for $p \in U$ if $\phi(p) = 0$.
+**Atlas** is a set of charts $\{(U_i, \phi_i)\}$, that collectively cover a manifold $M$.
+$$
+\{(U_i, \phi_i)\}
+$$
 
 ### Borel $\sigma$-algebra 
 
@@ -72,7 +79,14 @@ $$
 
 ### Closed Set
 
-Closed Set is the complementary set of Open Set.
+Closed Set is the complementary set of Open Set. A set can be both closed and open at the same time.
+
+### Compact
+
+A topological space $X$ is compact if every open cover of $X$ has a finite subcover.
+
+- Open cover: A collection of open sets $\{U_\alpha\}$ such that $X \subseteq \bigcup\limits_\alpha U_\alpha$.
+- Finite subcover: A finite subset $\{U_1, U_2, \cdots, U_n\}$ of the open cover that still satisfies $X \subseteq \bigcup\limits_{i=1}^n U_i$
 
 ## Include
 
