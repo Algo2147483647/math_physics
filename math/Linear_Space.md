@@ -22,7 +22,24 @@ Linear Space is a special [module](./Module.md) including non empty set $V$ with
 
 ## Properties
 
-### Representation: Base 
+### Relationship between vectors
+
+#### Linear Independence & Linear Dependence
+
+For a vector group $(\boldsymbol x_1, ... , \boldsymbol x_n)$, we said  
+
+Linear Independence,
+$$
+\nexists\ \boldsymbol a ≠ \boldsymbol 0 \Rightarrow \sum_{i=1}^n a_i \boldsymbol x_i = \boldsymbol 0
+$$
+
+Linear Dependence,
+$$
+\exists\ \boldsymbol a ≠ \boldsymbol 0 \Rightarrow \sum_{i=1}^n a_i \boldsymbol x_i = \boldsymbol 0
+$$
+
+
+### Representation of vector: Base 
 
 $$
 \begin{align*}
@@ -31,7 +48,14 @@ $$
   &= \boldsymbol X \boldsymbol a
 \end{align*}
 $$
-Base is a linearly independent vector group $\boldsymbol X = (\boldsymbol x_1, ... , \boldsymbol x_n)$, All vectors in the linear space are linear combinations of the vector group.
+Base is a linearly independent vector group $\boldsymbol X = (\boldsymbol x_1, ... , \boldsymbol x_n)$,
+
+$$
+\mathbb R^{n}, n \in \mathbb Z
+$$
+
+
+All vectors in the linear space $v \in V$ can be uniquely expressed by linear combinations of the vector group. Therefore, a vector can be represented by a one-dimensional array of the coefficients of the combination in this basis, called coordinate components.
 
 - $\boldsymbol x_i$: Base vector
 - $a_i$: coordinate
@@ -75,77 +99,6 @@ $$
 A representation of a linear space given by a basis vector.
 
 
-### Representation
-
-#### Vector
-
-$$
-\mathbb R^{n}, n \in \mathbb Z
-$$
-A vector is a one-dimensional array of numbers. It can be represented as a row or a column.
-
-#### Matrix 
-
-$$
-\mathbb R^{m \times n}, m, n \in \mathbb Z
-$$
-
-$$
-\boldsymbol A = \left(\begin{matrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{matrix}\right)
-$$
-
-
-
-A matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns.
-
-##### Operations
-
-- Addition:
-
-$$
-\boldsymbol A_{m \times n} + \boldsymbol B_{m \times n} = \boldsymbol C_{m \times n}  \tag{addition}
-$$
-$$
-c_{ij} = a_{ij} + b_{ij}
-$$
-
-- Scalar multiplication,
-
-$$
-k \boldsymbol A_{m \times n} = (k a_{ij})_{m \times n}  \tag{scalar multiplication}
-$$
-
-
-  - multiplication
-    $$
-    \boldsymbol A_{m \times n} \times \boldsymbol B_{n \times p} = \boldsymbol C_{m \times p}
-    $$
-    $$
-    c_{ij} = \sum_{k \in 1:n} a_{ik} b_{kj}
-    $$
-
-  - multiplication of elements, Hadamard product
-    $$
-    \boldsymbol A_{m \times n} \odot \boldsymbol B_{m \times n} = \boldsymbol C_{m \times n}
-    $$
-    $$
-    c_{ij} = a_{ij} b_{ij}
-    $$
-
-### Linear Independence & Linear Dependence
-
-For a vector group $(\boldsymbol x_1, ... , \boldsymbol x_n)$, we said  
-
-Linear Independence,
-$$
-\nexists\ \boldsymbol a ≠ \boldsymbol 0 \Rightarrow \sum_{i=1}^n a_i \boldsymbol x_i = \boldsymbol 0
-$$
-
-Linear Dependence,
-$$
-\exists\ \boldsymbol a ≠ \boldsymbol 0 \Rightarrow \sum_{i=1}^n a_i \boldsymbol x_i = \boldsymbol 0
-$$
-
 ### Linear Subspace
 
 A nonempty set in a linear space that is closed to linear operations.
@@ -153,7 +106,7 @@ A nonempty set in a linear space that is closed to linear operations.
 - Additive Closure: $x,y\in V_1 ,\quad x+y \in V_1$
 - Scalar Multiplication Closure: $x \in V_1, k x \in V_1$
 
-### Dual Space
+### Dual Space: $V \to\mathbb R$
 
 $$
 V^*=\left\{f:V\rightarrow \mathbb R \mid f \text{ is a linear map}\right\}
@@ -186,18 +139,18 @@ $$
 
 将对称正定矩阵化成对称的两个上下三角矩阵.
 
-- Algorithm
-  - first LU decomposition
-    Because symmetric positive definite matrix
-    $$A = L D U = L D L^T$$
-    $$
-    \begin{align*}
-      A &= L (\sqrt{D})^2 L^T  \\
-        &= (L \sqrt{D}) (\sqrt{D} L^T)  \\
-        &= (L \sqrt{D}) (L \sqrt{D})^T  \\
-        &= G G^T
-    \end{align*}
-    $$
+Algorithm:
+- first LU decomposition
+  Because symmetric positive definite matrix
+  $$A = L D U = L D L^T$$
+  $$
+  \begin{align*}
+    A &= L (\sqrt{D})^2 L^T  \\
+      &= (L \sqrt{D}) (\sqrt{D} L^T)  \\
+      &= (L \sqrt{D}) (L \sqrt{D})^T  \\
+      &= G G^T
+  \end{align*}
+  $$
 
 #### QR decomposition
 
@@ -261,10 +214,10 @@ $$
 A = F G
 $$
 
-##### Proof  
-$$
-A =P^{-1} B = \left(\begin{matrix} F & S \end{matrix}\right) \left(\begin{matrix} G\\ 0 \end{matrix}\right) = F G
-$$
+> Proof  
+> $$
+> A =P^{-1} B = \left(\begin{matrix} F & S \end{matrix}\right) \left(\begin{matrix} G\\ 0 \end{matrix}\right) = F G
+> $$
 
 ##### Algorithm  
 $$
@@ -297,21 +250,20 @@ $$
 \end{align*}
 $$
 
-##### Proof
-$$
-\boldsymbol A \boldsymbol v_i = \lambda_i \boldsymbol v_i
-$$
-
-$$
-\begin{align*}
-\Rightarrow \boldsymbol A (\boldsymbol v_1, ..., \boldsymbol v_n) &= (\boldsymbol v_1, ..., \boldsymbol v_n) \left(\begin{matrix} \lambda_1 && 0 \\ &\ddots \\ 0 && \lambda_n \end{matrix}\right)  \\
-\boldsymbol A &= (\boldsymbol v_1, ..., \boldsymbol v_n) \left(\begin{matrix} \lambda_1 && 0 \\ &\ddots \\ 0 && \lambda_n \end{matrix}\right) (\boldsymbol v_1, ..., \boldsymbol v_n)^{-1}  \\
-\boldsymbol A &= \boldsymbol Q \Lambda \boldsymbol Q^{-1}
-\end{align*}
-$$
-
-##### Note  
-The geometric significance of Eigenvalue Decomposition is that a linear transformation $\boldsymbol A \boldsymbol x$ is equivalent to (1) $\boldsymbol Q^{-1} \boldsymbol x$, convert to a new coordinate system with eigenvectors of $\boldsymbol A$ as unit bases; (2)$\boldsymbol \Lambda (\boldsymbol Q^{-1} \boldsymbol x)$, a scale transform; (3)$\boldsymbol Q (\boldsymbol \Lambda \boldsymbol Q^{-1} \boldsymbol x)$, convert to original coordinate system.
+> Proof
+> $$
+> \boldsymbol A \boldsymbol v_i = \lambda_i \boldsymbol v_i
+> $$
+> 
+> $$
+> \begin{align*}
+> \Rightarrow \boldsymbol A (\boldsymbol v_1, ..., \boldsymbol v_n) &= (\boldsymbol v_1, ..., \boldsymbol v_n) \left(\begin{matrix} \lambda_1 && 0 \\ &\ddots \\ 0 && \lambda_n \end{matrix}\right)  \\
+> \boldsymbol A &= (\boldsymbol v_1, ..., \boldsymbol v_n) \left(\begin{matrix} \lambda_1 && 0 \\ &\ddots \\ 0 && \lambda_n \end{matrix}\right) (\boldsymbol v_1, ..., \boldsymbol v_n)^{-1}  \\
+> \boldsymbol A &= \boldsymbol Q \Lambda \boldsymbol Q^{-1}
+> \end{align*}
+> $$
+> 
+> The geometric significance of Eigenvalue Decomposition is that a linear transformation $\boldsymbol A \boldsymbol x$ is equivalent to (1) $\boldsymbol Q^{-1} \boldsymbol x$, convert to a new coordinate system with eigenvectors of $\boldsymbol A$ as unit bases; (2)$\boldsymbol \Lambda (\boldsymbol Q^{-1} \boldsymbol x)$, a scale transform; (3)$\boldsymbol Q (\boldsymbol \Lambda \boldsymbol Q^{-1} \boldsymbol x)$, convert to original coordinate system.
 
 #### Singular Value Decomposition
 
@@ -323,7 +275,7 @@ $$
 - $\boldsymbol U \in \mathbb R^{m \times m}, \boldsymbol V \in \mathbb R^{n \times n}$ are unitary matrixs $\boldsymbol U^{\mathrm H} \boldsymbol U = \boldsymbol I, \boldsymbol V^{\mathrm H} \boldsymbol V = \boldsymbol I$
 - $\boldsymbol \Sigma$ is composed of nonzero singular values.
 
-##### Note
+
 $$
 \exists \text{Unitary Matrix} U, V \Rightarrow U^H A V = \left(\begin{matrix} Σ & 0 \\ 0 & 0 \end{matrix}\right)
 $$
@@ -355,30 +307,31 @@ $$
 \end{align*}
 $$
 
-##### Proof
-$$
-\begin{align*}
-A &= \left(\begin{matrix} U_{1:r} & U_{r+1:m} \end{matrix}\right) \left(\begin{matrix} Σ & 0 \\ 0 & 0 \end{matrix}\right) \left(\begin{matrix} V_{1:r}^H \\ V_{r+1:n}^H \end{matrix}\right)  \tag{定义式变形}  \\
-&= U_{1:r} Σ V_{1:r}^H
-\end{align*}
-$$
-
-$$
-\begin{align*}
-Range(A) &= \{y\ |\ A x = y\}  \\
-&= \{y\ |\ U_{1:r} (Σ V_{1:r}^H x) = y\}  \tag{代入}  \\
+> Proof
+> 
+> $$
+> \begin{align*}
+> A &= \left(\begin{matrix} U_{1:r} & U_{r+1:m} \end{matrix}\right) \left(\begin{matrix} Σ & 0 \\ 0 & 0 \end{matrix}\right) \left(\begin{matrix} V_{1:r}^H \\ V_{r+1:n}^H \end{matrix}\right)  \tag{定义式变形}  \\
+> &= U_{1:r} Σ V_{1:r}^H
+> \end{align*}
+> $$
+> 
+> $$
+> \begin{align*}
+> Range(A) &= \{y\ |\ A x = y\}  \\
+> &= \{y\ |\ U_{1:r} (Σ V_{1:r}^H x) = y\}  \tag{代入}  \\
 &\subseteq Range(U_{1:r})  \\
-Range(U_{1:r}) &= \{y\ |\ U_{1:r} x = y\}  \\
-&= \{y\ |\ A (V_{1:r} Σ^{-1} x) = y\}  \tag{$U_{1:r} = A V_{1:r} Σ^{-1}$}  \\
-&\subseteq Range(A)
-\end{align*}
-$$
-
-$$
-\begin{align*}
-\Rightarrow Range(A) = Range(U_{1:r}) = Span(u_1, ..., u_r)
-\end{align*}
-$$
+> Range(U_{1:r}) &= \{y\ |\ U_{1:r} x = y\}  \\
+> &= \{y\ |\ A (V_{1:r} Σ^{-1} x) = y\}  \tag{$U_{1:r} = A V_{1:r} \sigma^{-1}$}  \\
+> &\subseteq Range(A)
+> \end{align*}
+> $$
+> 
+> $$
+> \begin{align*}
+> \Rightarrow Range(A) = Range(U_{1:r}) = Span(u_1, ..., u_r)
+> \end{align*}
+> $$
 
 ## Include
 

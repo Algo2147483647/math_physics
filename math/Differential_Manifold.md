@@ -10,11 +10,40 @@ Differential manifold $M$ of dimension $n$ is a [manifold](./Manifold.md) and eq
 
 ## Properties
 
-### Continuity
 
-$f$ is a $C^r$ mapping $\Leftrightarrow$ $\forall p \in M, \psi_\beta \circ f \circ \psi_\alpha^{-1}$ is $C^r$
+### Relationship between multiply differential manifolds
 
-### Diffeomorphic
+#### Continuity
+
+$f: M \to M'$ is a $C^r$ mapping $\Leftrightarrow$ $\forall p \in M, \psi_\beta \circ f \circ \psi_\alpha^{-1}$ is $C^r$
+
+- $\psi_\alpha: M \to \mathbb R^{n}$
+- $\psi_\beta: M' \to \mathbb R^{n'}$
+- $f = \psi_\beta \circ f \circ \psi_\alpha^{-1}$
+
+#### Diffeomorphic
+
+$M, M'$ is Diffeomorphic $\leftrightarrow \exist f: M \to M'$ is one to one, and $f, f^{-1}$ is $C^{\infty}$
+
+### Relationship between differential manifolds and $\mathbb R^n$
+
+#### Scalar Field: $M \to \mathbb R$
+
+The function $f: M \to \mathbb R$ is intrinsically defined and unique in itself, requiring no dependence on the choice of coordinate system. When combine with a special coordinate system $(O, \psi)$, we obtain the coordinate representation of this function in the local coordinates — an n-variable function $f (x_1, \cdots, x_n)$ expressed through coordinate parameters. This coordinate-dependent representation undergoes corresponding variations depending on the chosen coordinate system.
+
+#### Curve: $\mathbb R \to M$
+
+$$
+C: (I \in \mathbb R) \to M
+$$
+
+##### Tangent vector
+
+$$
+T(f) = \frac{\mathrm d (f \circ C)}{\mathrm d t} |_{t_0}  \quad ,\forall f \in \mathcal F_M
+$$
+
+
 
 ### Christopher Symbol
 

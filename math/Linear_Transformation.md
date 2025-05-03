@@ -30,6 +30,53 @@ $$
 
 ## Properties
 
+### Representation of Linear transformation: Matrix
+
+$$
+\mathbb R^{m \times n}, m, n \in \mathbb Z
+$$
+
+$$
+\boldsymbol A = \left(\begin{matrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{matrix}\right)
+$$
+
+
+Matrix is the representation of Linear transformation. A matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns.
+
+##### Operations
+
+- Addition:
+
+$$
+\boldsymbol A_{m \times n} + \boldsymbol B_{m \times n} = \boldsymbol C_{m \times n}  \tag{addition}
+$$
+$$
+c_{ij} = a_{ij} + b_{ij}
+$$
+
+- Scalar multiplication,
+
+$$
+k \boldsymbol A_{m \times n} = (k a_{ij})_{m \times n}  \tag{scalar multiplication}
+$$
+
+
+- multiplication
+$$
+\boldsymbol A_{m \times n} \times \boldsymbol B_{n \times p} = \boldsymbol C_{m \times p}
+$$
+$$
+c_{ij} = \sum_{k \in 1:n} a_{ik} b_{kj}
+$$
+
+- multiplication of elements, Hadamard product
+$$
+\boldsymbol A_{m \times n} \odot \boldsymbol B_{m \times n} = \boldsymbol C_{m \times n}
+$$
+$$
+c_{ij} = a_{ij} b_{ij}
+$$
+
 ### Range 
 $$
 Range(T)=\{T x | x \in V\}
