@@ -40,12 +40,50 @@ $$
 ##### Tangent vector
 
 $$
-T(f) = \frac{\mathrm d (f \circ C)}{\mathrm d t} |_{t_0}  \quad ,\forall f \in \mathcal F_M
+T(f) = \frac{\mathrm d (f \circ C)}{\mathrm d t} \Big|_{t_0}  \quad ,\forall f \in \mathcal F_M
 $$
 
+Tangent vector of curce $C$ at $t_0$.
 
+### Tangent Space
 
-### Christopher Symbol
+$$
+T_pM = \left\{D:C^\infty (M) \to \mathbb R \;\Big|\; D \text{ is linear}, D(fg) = f(p) D(g) + g(p) D(f)  \right\}
+$$
+
+The tangent space $T_p M$ at a point $p$ on a differential manifold $M$ is a vector space that consists of all possible directional derivatives at $p$. Tangent space is a local linear approximation of a manifold.
+
+- $C^{\infty}$  is the space of differential real-valued functions on manifold
+- Leibniz rule: $D(fg) = f(p) D(g) + g(p) D(f)$
+
+### Metric Tensor
+
+$$
+g_p = T_p M \times T_p M \to \mathbb R
+$$
+
+Metric [tensor](./tensor.md) is a symmetric, non-degenerate, bilinear form that defines the inner product on the tangent space at each point of a manifold. For a differential manifold $M$, the metric tensor $g$ is a $(0, 2)$-tensor field that assigns to each point $p \in M$ a bilinear map.
+
+- Symmetric: $g(u, v) = g(v, u), \forall u, v$ from tangent vectors.
+- Non-degenerate: $\forall u, g(u, v) = 0 \rightarrow v = 0$
+
+In local coordinates $(x_1, \cdots, x_n)$, the metric can be express as $g = g_{ij} \mathrm d x^i \otimes \mathrm d x^j$, where $g_{ij} = g_{ji}$ and $\det(g_ij) \neq 0$.
+
+Therefore, by analogy with the inner product in Euclidean space, we can utilize the metric tensor to establish the following definition.
+
+- Length of vector: $|v| = \sqrt{|g(v, v)|}$
+- Orthogonal: $g(u, v) = 0$
+
+Symbols:
+- $T_p M$ is the tangent space at $p$.
+
+#### Classification of Metric Tensor
+
+- Positive definite / Riemannian matric tensor: $g(x, x) \ge 0$ with equality iff $x = 0$.
+- Negative definite matric tensor:
+- Lorentz metric: Diagonal element is $(-1, 1, 1, 1)$
+
+### Affine Connection: Christopher Symbol
 
 The Christopher Symbol can compare tensors at different locations on the manifold instead of viewing them in isolation, so the K-Schmidt symbol is also called the connection coefficient.
 $$
