@@ -37,14 +37,6 @@ $$
 C: (I \in \mathbb R) \to M
 $$
 
-##### Tangent vector
-
-$$
-T(f) = \frac{\mathrm d (f \circ C)}{\mathrm d t} \Big|_{t_0}  \quad ,\forall f \in \mathcal F_M
-$$
-
-Tangent vector of curce $C$ at $t_0$.
-
 ### Tangent Space
 
 $$
@@ -55,6 +47,14 @@ The tangent space $T_p M$ at a point $p$ on a differential manifold $M$ is a vec
 
 - $C^{\infty}$  is the space of differential real-valued functions on manifold
 - Leibniz rule: $D(fg) = f(p) D(g) + g(p) D(f)$
+
+#### Tangent vector
+
+$$
+T(f) = \frac{\mathrm d (f \circ C)}{\mathrm d t} \Big|_{t_0}  \quad ,\forall f \in \mathcal F_M
+$$
+
+For a function $f$, Tangent vector $X_p \in T_p M$ of curve $C$ at $t_0$.
 
 ### Metric Tensor
 
@@ -85,20 +85,50 @@ Symbols:
 
 ### Affine Connection: Christopher Symbol
 
-The Christopher Symbol can compare tensors at different locations on the manifold instead of viewing them in isolation, so the K-Schmidt symbol is also called the connection coefficient.
+#### Derivative operator
+
+$$
+\nabla: \mathcal F_M(k, l) \to \mathcal F_M(k, l + 1)
+$$
+
+For the set $\mathcal F_M$ represents the all $C^\infty \ (k, l)$-tensor field on the manifold $M$, Derivative operator
+
+- $\nabla_a (a T + b S) = a \nabla_a T + b \nabla S$
+- Leibnitz rule: $\nabla_a (TS) = T \nabla_a S + S \nabla_a T$
+- 与缩并可交换顺序
+- $v(f) = v^a \nabla_a f , \forall f \in \mathcal F_M, v \in \mathcal F_M (1, 0)$
+- torsion-free: $\nabla_a \nabla_b f = \nabla_b \nabla_a f$
+
+#### Christoffel Symbol
+
+Christoffel symbols describe how basis vectors change along a manifold and are used to define the Levi-Civita connection (a metric-compatible, torsion-free connection).
 $$
 \var A^i = -\Gamma^i_{kl} A^k \mathrm{d} x^l
 $$
-Property
+**Christoffel Symbols of the First Kind**
+$$
+\Gamma_{kij} = \frac{1}{2} \left( \frac{\partial g_{il}}{\partial x^j} + \frac{\partial g_{jl}}{\partial x^i} - \frac{\partial g_{ij}}{\partial x^l} \right)
+$$
+
+**Christoffel Symbols of the Second Kind** 
+
 $$
 \Gamma^k_{ij} = \frac{1}{2} g^{kl} \left( \frac{\partial g_{il}}{\partial x^j} + \frac{\partial g_{jl}}{\partial x^i} - \frac{\partial g_{ij}}{\partial x^l} \right)
 $$
 
-### Geodesic equation
+Christoffel Symbols of the Second Kind is components of derivative operator (connection) in local coordinate system, obtained by raising the index of the first-kind symbols using the inverse metric.
+
+- **基底向量场的协变导数**：在坐标基底 $\{\partial_i\}$ 下，联络作用于基底向量场的表达式为：$\nabla_{\partial_i} \partial_j = \Gamma^k_{ij} \partial_k$. 这表明 $\Gamma^k_{ij}$ 描述了基底向量 $\partial_j$ 沿 $\partial_i$ 方向的变化率。
+- **协变导数的分量公式**：对任意向量场 $Y = Y^j \partial_j$，沿方向 $X = X^i \partial_i$ 的协变导数为 $(\nabla_X Y)^k = X^i \left( \partial_i Y^k + \Gamma^k_{ij} Y^j \right)$
+
+
+### Geodesic
 
 $$
 \frac{d^2 x^k}{d\tau^2} + \Gamma^k_{ij} \frac{dx^i}{d\tau} \frac{dx^j}{d\tau} = 0
 $$
+
+
 
 ## Include
 
