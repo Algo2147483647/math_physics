@@ -62,7 +62,7 @@ $$
 g_p = T_p M \times T_p M \to \mathbb R
 $$
 
-Metric [tensor](./tensor.md) is a symmetric, non-degenerate, bilinear form that defines the inner product on the tangent space at each point of a manifold. For a differential manifold $M$, the metric tensor $g$ is a $(0, 2)$-tensor field that assigns to each point $p \in M$ a bilinear map.
+Metric [tensor](./Tensor.md) is a symmetric, non-degenerate, bilinear form that defines the inner product on the tangent space at each point of a manifold. For a differential manifold $M$, the metric tensor $g$ is a $(0, 2)$-tensor field that assigns to each point $p \in M$ a bilinear map.
 
 - Symmetric: $g(u, v) = g(v, u), \forall u, v$ from tangent vectors.
 - Non-degenerate: $\forall u, g(u, v) = 0 \rightarrow v = 0$
