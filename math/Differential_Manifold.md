@@ -83,7 +83,7 @@ Symbols:
 - Negative definite matric tensor:
 - Lorentz metric: Diagonal element is $(-1, 1, 1, 1)$
 
-### Affine Connection: Christopher Symbol
+### Affine Connection
 
 #### Derivative operator
 
@@ -128,7 +128,8 @@ $$
 \frac{d^2 x^k}{d\tau^2} + \Gamma^k_{ij} \frac{dx^i}{d\tau} \frac{dx^j}{d\tau} = 0
 $$
 
-
+- $\frac{d^2 x^k}{d\tau^2}$: 加速度的二阶导数项
+- $\Gamma^k_{ij} \frac{dx^i}{d\tau} \frac{dx^j}{d\tau}$: Christoffel Symbol 的修正, 坐标系弯曲或非惯性效应的修正项
 
 ## Include
 
