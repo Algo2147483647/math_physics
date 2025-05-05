@@ -1,4 +1,4 @@
-# $Convex\ Optimization\ Problem$
+# Convex Optimization Problem
 
 [TOC]
 

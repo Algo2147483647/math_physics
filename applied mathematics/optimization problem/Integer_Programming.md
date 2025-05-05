@@ -1,4 +1,4 @@
-# $Integer\ Programming\ \&\ Mixed\ Integer\ Programming$
+# Integer Programming & Mixed Integer Programming
 
 [TOC]
 
@@ -11,8 +11,7 @@ Mixed Integer Programming: A class of problems in which variables can be integer
 
 ### 0-1 Programming
 
-- Define
-  A class of problems in which variables can only be 0 or 1.
+A class of problems in which variables can only be 0 or 1.
 
 
 ## Solve

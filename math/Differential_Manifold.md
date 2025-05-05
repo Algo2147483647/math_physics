@@ -85,7 +85,7 @@ Symbols:
 
 ### Affine Connection
 
-#### Derivative operator
+#### Derivative Operator
 
 $$
 \nabla: \mathcal F_M(k, l) \to \mathcal F_M(k, l + 1)
@@ -95,9 +95,13 @@ For the set $\mathcal F_M$ represents the all $C^\infty \ (k, l)$-tensor field o
 
 - $\nabla_a (a T + b S) = a \nabla_a T + b \nabla S$
 - Leibnitz rule: $\nabla_a (TS) = T \nabla_a S + S \nabla_a T$
-- 与缩并可交换顺序
+- Swappable order with contraction.
 - $v(f) = v^a \nabla_a f , \forall f \in \mathcal F_M, v \in \mathcal F_M (1, 0)$
 - torsion-free: $\nabla_a \nabla_b f = \nabla_b \nabla_a f$
+
+Example:
+
+- $\nabla_a f = T_a$, 梯度场是一个对偶矢量场.
 
 #### Christoffel Symbol
 
@@ -114,6 +118,11 @@ $$
 
 $$
 \Gamma^k_{ij} = \frac{1}{2} g^{kl} \left( \frac{\partial g_{il}}{\partial x^j} + \frac{\partial g_{jl}}{\partial x^i} - \frac{\partial g_{ij}}{\partial x^l} \right)
+$$
+
+$$
+\nabla_\mu V = (\part_\mu V^\nu + \Gamma_{\mu\lambda}^\nu V^\lambda) \part_\nu\\
+\nabla_\mu \part_\nu = \Gamma_{\mu\nu}^ \lambda\part_ \lambda
 $$
 
 Christoffel Symbols of the Second Kind is components of derivative operator (connection) in local coordinate system, obtained by raising the index of the first-kind symbols using the inverse metric.

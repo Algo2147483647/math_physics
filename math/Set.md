@@ -88,18 +88,19 @@ Cardinality $|S|$ is the number of elements in a set $S$.
   \Rightarrow |S| = |S_A| × |S_B|
   $$
 
-  - Proof
-    $$
-    \begin{align*}
-      S 
-      &= \{(a, b) | a \in S_A, b \in S_B\}  \\
-      &= \bigcap_{a_i \in S_A} \{(a_i, b) | b \in S_B\}  \\
-      \Rightarrow |S| &= \sum_{i=1}^{|S_A|} |S_B|  \tag{Addition theorem}  \\
-      &= |S_A| × |S_B|  \\
-    \end{align*}
-    $$
+  Proof
+  $$
+  \begin{align*}
+    S 
+    &= \{(a, b) | a \in S_A, b \in S_B\}  \\
+    &= \bigcap_{a_i \in S_A} \{(a_i, b) | b \in S_B\}  \\
+    \Rightarrow |S| &= \sum_{i=1}^{|S_A|} |S_B|  \tag{Addition theorem}  \\
+    &= |S_A| × |S_B|  \\
+  \end{align*}
+  $$
 
-* Principle of Inclusion-Exclusion  
+* Principle of Inclusion-Exclusion
+
   for $A_1,...,A_n \subseteq S$
   $$
   \begin{align*}
@@ -107,24 +108,24 @@ Cardinality $|S|$ is the number of elements in a set $S$.
   \end{align*}
   $$
 
-- Special Counting Sequence
-  * Catalan Numbers 
-    $$
-    \begin{align*}
-      f_n 
-      &= \frac{C(2n, n)}{n+1}\quad, n \ge 0  \\
-      &= C(2n, n) - C(2n, n - 1)  \\
-      &= C(2n, n) - C(2n, n + 1)  \\
-      &= \frac{(2n)!}{(n+1)! n!}\\
-      &= \left\{\begin{matrix}
-        \sum\limits_{i=1}^n f_{i-1}f_{n-i}  & n \ge 2\\
-        1 & n = 0, 1
-      \end{matrix}\right. \tag{recurrence form}\\
-      &= \frac{4n-2}{n+1} f_{n-1}
-    \end{align*}
-    $$
-    Catalan Numbers are a sequence of natural numbers.
-* Pigeonhole Principle  
+- Special Counting Sequence: Catalan Numbers 
+  $$
+  \begin{align*}
+    f_n 
+    &= \frac{C(2n, n)}{n+1}\quad, n \ge 0  \\
+    &= C(2n, n) - C(2n, n - 1)  \\
+    &= C(2n, n) - C(2n, n + 1)  \\
+    &= \frac{(2n)!}{(n+1)! n!}\\
+    &= \left\{\begin{matrix}
+      \sum\limits_{i=1}^n f_{i-1}f_{n-i}  & n \ge 2\\
+      1 & n = 0, 1
+    \end{matrix}\right. \tag{recurrence form}\\
+    &= \frac{4n-2}{n+1} f_{n-1}
+  \end{align*}
+  $$
+  Catalan Numbers are a sequence of natural numbers.
+* Pigeonhole Principle
+  
   for $A_1, ..., A_n \subseteq A, |A| = n + 1$, $\Rightarrow \exists A_i, |A_i| ≥ 2$.
 
 ### Relationship between sets
@@ -163,10 +164,10 @@ $$
 A \cap B = \{x \ |\ x \in A, x \in B\}  \tag{Intersection}
 $$
 
-- Property
-  - idempotency law: $A \cap A = A$
-  - commutative law: $A \cap B = B \cap A$  
-  - associative law: $A \cap (B \cap C) = (A \cap B) \cap C$
+Property:
+- idempotency law: $A \cap A = A$
+- commutative law: $A \cap B = B \cap A$  
+- associative law: $A \cap (B \cap C) = (A \cap B) \cap C$
 
 #### Union
 
@@ -174,10 +175,10 @@ $$
 A \cup B = \{x \ |\ x \in A \text{ or } x \in B \}  \tag{Union}
 $$
 
-- Property
-  - idempotency law: $A \cup A = A$
-  - commutative law: $A \cup B = B \cup A$  
-  - associative law: $A \cup (B \cup C) = (A \cup B) \cup C$
+Property:
+- idempotency law: $A \cup A = A$
+- commutative law: $A \cup B = B \cup A$  
+- associative law: $A \cup (B \cup C) = (A \cup B) \cup C$
 
 #### Difference
 
@@ -193,36 +194,36 @@ $$
 
 For a universal set $U$, the complement of a set $A$ is $U - A$.
 
-- Property
-  - $\bar{\bar A} = A$ 
+Property:
+- $\bar{\bar A} = A$ 
 
-  - distributive laws 
-    $$
-    A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
-    $$
-    $$
-    A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
-    $$
-  - absorption laws
-    $$
-    A \cap (A \cup B) = A
-    $$
-    $$
-    A \cup (A \cap B) = A
-    $$
-  - DeMorgan's laws
-    $$
-    A - (B \cap C) = (A - B) \cup (A - C)
-    $$
-    $$
-    A - (B \cup C) = (A - B) \cap (A - C)
-    $$
-    $$
-    \overline{A \cap B} = \bar A \cup \bar B
-    $$
-    $$
-    \overline{A \cup B} = \bar A \cap \bar B
-    $$
+- distributive laws 
+  $$
+  A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
+  $$
+  $$
+  A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+  $$
+- absorption laws
+  $$
+  A \cap (A \cup B) = A
+  $$
+  $$
+  A \cup (A \cap B) = A
+  $$
+- DeMorgan's laws
+  $$
+  A - (B \cap C) = (A - B) \cup (A - C)
+  $$
+  $$
+  A - (B \cup C) = (A - B) \cap (A - C)
+  $$
+  $$
+  \overline{A \cap B} = \bar A \cup \bar B
+  $$
+  $$
+  \overline{A \cup B} = \bar A \cap \bar B
+  $$
 
 ### Cartesian Product
 
@@ -231,8 +232,8 @@ A \times B = \{(a, b) \ | a \in A \text{ and } b \in B\}
 $$
 For two sets $A, B$, cartesian product is the set of all ordered pairs such that the first element of the pair is an element of $A$ and the second one is from $B$.
 
-- Property
-  - $\text{number}(A \times B) = \text{number}(A) \cdot \text{number}(B)$
+Property:
+- $\text{number}(A \times B) = \text{number}(A) \cdot \text{number}(B)$
 
 ### [Power Set](./Power_Set.md)
 
@@ -249,10 +250,10 @@ $$
 $$
 Empty Set is a set without any element. 
 
-  - Property 
-    - $\emptyset \in S, \forall \text{ set } S$
-    - $A \cap \emptyset = \emptyset$
-    - $A \cup \emptyset = A$
+Property:
+- $\emptyset \in S, \forall \text{ set } S$
+- $A \cap \emptyset = \emptyset$
+- $A \cup \emptyset = A$
 
 ## Include
 

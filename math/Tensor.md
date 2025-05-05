@@ -30,6 +30,9 @@ $$
 
 - vector is a $(1, 0)$-Tensor, $T: V^* \to \mathbb R$
 - dual vector is a $(0, 1)$-Tensor, $T: V \to \mathbb R$
+- matrix is a $(1, 1)$-tensor, $T: V^* \times V \to \mathbb R$
+
+Matrix multiplied by vector: $\boldsymbol A \boldsymbol v = A_i^j v^i = w^j$
 
 ### Basic Operations
 

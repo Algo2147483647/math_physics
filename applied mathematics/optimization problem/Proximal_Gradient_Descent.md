@@ -1,4 +1,4 @@
-# $Proximal\ Gradient\ Descent$
+# Proximal Gradient Descent
 
 [TOC]
 

@@ -1,4 +1,4 @@
-# $Interior\ Point\ Method$
+# Interior Point Method
 
 [TOC]
 
@@ -21,7 +21,7 @@ $$
 \end{align*}
 $$
 
-Barber Function Method:  
+Barber Function Method:
 However, since the Indicator function $I_- (x)$ is non-differentiable, we use the Barrier function to approximate the Indicator function. Meanwhile, the optimal solution of the new problem $\boldsymbol x^*(t)$ is a suboptimal solution whose deviation from the original optimal solution $x^*$ within $\frac{m}{t}$, and $t \to \infty \Rightarrow \boldsymbol x^*(t) \to \boldsymbol x^*$,
 $$
 I_- (x) \simeq -\frac{1}{t} \log(-x)  \quad; t > 0
