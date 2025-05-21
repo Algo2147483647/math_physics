@@ -75,3 +75,20 @@ The simplest explanation is usually the correct one.
 数学中, 矢量、张量、函数本身是独立存在的数学实体 [本质]。—— 只是进行分析计算时, 需借助和指定基向量和坐标, 将其表现为数列、数阵、n元参数化函数的形式 [表相], 而这个形式会随着坐标选择的改变而变。
 
 因此, 需要分清本质和表象的区别, 这些数列、数阵、箭头并非是矢量的本质, 其真正本质是只要能满足线性空间以下公理的集合都是矢量. 
+
+Additive Closure: x+y \in V
+Scalar Multiplication Closure: k x \in V
+Identity element of vector addition: x+0=x
+Inverse elements of vector addition: x+(-x) = 0
+Identity element of scalar multiplication: 1x = x
+Commutativity of vector addition: x+y = y+x
+Associativity of vector addition: x+(y+z) = (x+y) +z
+Compatibility of scalar multiplication with field multiplication: a(bx) = (a b)x
+Distributivity of scalar multiplication with respect to vector addition: a(x+y) = a x + a y
+Distributivity of scalar multiplication with respect to field addition: (a+b)x = ax+bx
+
+Golang 里面的 interface 和线性空间的数学定义很像 —— 如何定义一个抽象? 定义他的行为。只要他的行为符合我们预期的标准, 那么他就属于我们定义的抽象
+
+## 工程
+
+工程的核心是解决方案：背景 - 问题 - 解法. 系统是对一个宏大工程问题的综合性解决方案。因此，系统是和环境(问题集合)长期磨合后的产物。也同样随着环境的变化而动态演变。一个优秀的系统，一定是因地制宜的，并以所处的环境为基础，正向循环演化能够解决更多的问题，适应更广的环境。

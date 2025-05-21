@@ -2,13 +2,14 @@
 
 [TOC]
 
+## Problem
 
 ## Include
 
 [Intersection_of_Ray_Surface](./Intersection_of_Ray_Surface.md)
 
 
-### segments in a 2D plane 
+### Segments in a 2D plane 
 
 #### Problem
 
