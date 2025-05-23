@@ -22,5 +22,5 @@ Iterate and delete points with 0 incoming edge on the Graph, put these points in
 
 ## Parents
 
-- [Graph](./Graph.md): directed, acyclic
+- [Graph](./Graph.md): is-a, directed, acyclic
 

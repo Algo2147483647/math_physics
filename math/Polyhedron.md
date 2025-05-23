@@ -16,7 +16,7 @@ Polyhedron is the intersection of a finite hyperplane and a half space.
 
 ## Include
 
-- [Simplex](./Simplex.md): 
+- [Simplex](./Simplex.md): is-a
 
 ## Parents
 

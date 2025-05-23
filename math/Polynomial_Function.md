@@ -22,15 +22,15 @@ Polynomial function is a kind of [function](./Function.md).
 
 ## Include
 
-- [Cubic_Function](./Cubic_Function.md): 
+- [Cubic_Function](./Cubic_Function.md): is-a
 
-- [Forth-Order_Function](./Forth-Order_Function.md): 
+- [Forth-Order_Function](./Forth-Order_Function.md): is-a
 
-- [Linear_Function](./Linear_Function.md): 
+- [Linear_Function](./Linear_Function.md): is-a
 
-- [Quadratic_Function](./Quadratic_Function.md): 
+- [Quadratic_Function](./Quadratic_Function.md): is-a
 
 ## Parents
 
-- [Function](./Function.md): 
+- [Function](./Function.md): is-a
 

@@ -281,7 +281,7 @@ $$
 
 ## Parents
 
-- [Function](./Function.md): 
+- [Function](./Function.md): is-a
 
 - [Linear_Space](./Linear_Space.md): 
 

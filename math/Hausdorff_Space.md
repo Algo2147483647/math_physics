@@ -12,11 +12,13 @@ $$
 
 ## Properties
 
+
+
 ## Include
 
-- [Manifold](./Manifold.md): 
+- [Manifold](./Manifold.md): is-a
 
 ## Parents
 
-- [Topological_Space](./Topological_Space.md): 
+- [Topological_Space](./Topological_Space.md): is-a
 

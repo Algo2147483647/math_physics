@@ -23,5 +23,5 @@ A type of [function](./Function.md)
 
 ## Parents
 
-- [Function](./Function.md): 
+- [Function](./Function.md): is-a
 

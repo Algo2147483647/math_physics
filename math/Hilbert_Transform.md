@@ -18,5 +18,5 @@ $$
 
 ## Parents
 
-- [Function](./Function.md): 
+- [Function](./Function.md): is-a
 

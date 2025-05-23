@@ -113,5 +113,5 @@ $$
 
 ## Parents
 
-- [Linear_Space](./Linear_Space.md): 
+- [Linear_Space](./Linear_Space.md): is-a
 

@@ -58,5 +58,5 @@ where $h$ is such that $\hat h(k) = |k|$. The result obtained by Fourier transfo
 
 ## Parents
 
-- [Function](./Function.md): 
+- [Function](./Function.md): is-a
 

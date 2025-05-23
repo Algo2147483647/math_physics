@@ -148,11 +148,11 @@ Property:
 
 ## Include
 
-- [Lie_Group](./Lie_Group.md): 
+- [Lie_Group](./Lie_Group.md): is-a
 
-- [Symmetric_Group](./Symmetric_Group.md): 
+- [Symmetric_Group](./Symmetric_Group.md): is-a
 
 ## Parents
 
-- [Algebra_Structure](./Algebra_Structure.md): 
+- [Algebra_Structure](./Algebra_Structure.md): is-a
 

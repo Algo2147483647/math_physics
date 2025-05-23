@@ -57,5 +57,5 @@ The Power Set of a set $S$ is the set of all subset of $S$, including $\emptyset
 
 ## Parents
 
-- [Set](./Set.md): 
+- [Set](./Set.md): is-a
 

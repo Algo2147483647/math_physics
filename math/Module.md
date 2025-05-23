@@ -20,9 +20,9 @@ Suppose that $R$ is a [ring](./Ring.md), and $1$ is its multiplicative identity.
 
 ## Include
 
-- [Linear_Space](./Linear_Space.md): 
+- [Linear_Space](./Linear_Space.md): is-a
 
 ## Parents
 
-- [Ring](./Ring.md): 
+- [Ring](./Ring.md): is-a
 

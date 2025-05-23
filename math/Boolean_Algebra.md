@@ -93,5 +93,5 @@ The value of boolean algebra belongs to $\{\text{true}, \text{false}\}$, usually
 
 ## Parents
 
-- [Lattice](./Lattice.md): 
+- [Lattice](./Lattice.md): is-a
 

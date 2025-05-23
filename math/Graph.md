@@ -86,15 +86,15 @@ Perfect Matching is a matching that all vertices of the graph are in it.
 
 ## Include
 
-- [Bipartite_Graph](./Bipartite_Graph.md): 
+- [Bipartite_Graph](./Bipartite_Graph.md): is-a
 
-- [Complete_Graph](./Complete_Graph.md): full connected
+- [Complete_Graph](./Complete_Graph.md): is-a, full connected
 
-- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): directed, acyclic
+- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): is-a, directed, acyclic
 
-- [Tree](./Tree.md): undirected, connected, acyclic
+- [Tree](./Tree.md): is-a, undirected, connected, acyclic
 
 ## Parents
 
-- [Set](./Set.md): 
+- [Set](./Set.md): is-a
 

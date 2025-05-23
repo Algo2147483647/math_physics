@@ -23,12 +23,11 @@ When the root node is set to a certain node of the tree, the hierarchical relati
 - Delete an edge, the Tree will become disconnected;  
   Add an edge, the Tree will have a loop.
 
-
 ## Include
 
-- [Binary_Tree](./Binary_Tree.md): 
+- [Binary_Tree](./Binary_Tree.md): is-a
 
 ## Parents
 
-- [Graph](./Graph.md): undirected, connected, acyclic
+- [Graph](./Graph.md): is-a, undirected, connected, acyclic
 

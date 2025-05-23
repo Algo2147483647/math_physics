@@ -25,5 +25,5 @@ Symmetric group on a finite set $X$ is the group whose elements are all bijectiv
 
 ## Parents
 
-- [Group](./Group.md): 
+- [Group](./Group.md): is-a
 

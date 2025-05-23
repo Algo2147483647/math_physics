@@ -131,5 +131,5 @@ Properties of solutions,
 
 ## Parents
 
-- [Polynomial_Function](./Polynomial_Function.md): 
+- [Polynomial_Function](./Polynomial_Function.md): is-a
 

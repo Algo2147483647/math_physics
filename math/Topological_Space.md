@@ -89,9 +89,9 @@ A function $f: X \to Y$ between two topological spaces is a homeomorphism if it 
 
 ## Include
 
-- [Hausdorff_Space](./Hausdorff_Space.md): 
+- [Hausdorff_Space](./Hausdorff_Space.md): is-a
 
-- [Metric_Space](./Metric_Space.md): 
+- [Metric_Space](./Metric_Space.md): is-a
 
 ## Parents
 

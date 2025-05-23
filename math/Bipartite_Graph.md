@@ -79,5 +79,5 @@ Connect the source point to all points on the left and all points on the right t
 
 ## Parents
 
-- [Graph](./Graph.md): 
+- [Graph](./Graph.md): is-a
 

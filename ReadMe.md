@@ -21,6 +21,10 @@
 - **Include**: Subsets of this concept.
 - **Parents**: The higher layer concepts of this concept.
 
+#### Weight of Edge
+
+- **is-a**: Inheritance. The kid concept inherits definition, properties and behaviors from the parent concept.
+- **has-a**: Composition. The parent concept contains kid concepts, building functionality by combining kid concepts.
 
 
 ### Knowledge Graph of Nodes

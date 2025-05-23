@@ -265,9 +265,9 @@ Property:
 
 - [Natural_Number](./Natural_Number.md): 
 
-- [Ordered_Set](./Ordered_Set.md): 
+- [Ordered_Set](./Ordered_Set.md): is-a
 
-- [Power_Set](./Power_Set.md): 
+- [Power_Set](./Power_Set.md): is-a
 
 - [Relation](./Relation.md): 
 

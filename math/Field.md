@@ -16,13 +16,13 @@ Field is a [ring](./Ring.md) that satisfies the existence of multiplicative inve
 
 ## Include
 
-- [Complex_Field](./Complex_Field.md): 
+- [Complex_Field](./Complex_Field.md): is-a
 
-- [Rational_Number_Field](./Rational_Number_Field.md): 
+- [Rational_Number_Field](./Rational_Number_Field.md): is-a
 
-- [Real_Field](./Real_Field.md): 
+- [Real_Field](./Real_Field.md): is-a
 
 ## Parents
 
-- [Ring](./Ring.md): 
+- [Ring](./Ring.md): is-a
 

@@ -12,11 +12,11 @@ Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md)
 
 ## Include
 
-- [Euclidean_Space](./Euclidean_Space.md): 
+- [Euclidean_Space](./Euclidean_Space.md): is-a
 
 ## Parents
 
-- [Inner_Product_Space](./Inner_Product_Space.md): 
+- [Inner_Product_Space](./Inner_Product_Space.md): is-a
 
-- [Metric_Space](./Metric_Space.md): 
+- [Metric_Space](./Metric_Space.md): is-a
 

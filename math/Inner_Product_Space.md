@@ -30,9 +30,9 @@ $\left<x, y \right>$ means the length of $x$ projection toward $y$ multiply leng
 
 - [Convolution](./Convolution.md): 
 
-- [Hilbert_Space](./Hilbert_Space.md): 
+- [Hilbert_Space](./Hilbert_Space.md): is-a
 
 ## Parents
 
-- [Normed_Linear_Space](./Normed_Linear_Space.md): 
+- [Normed_Linear_Space](./Normed_Linear_Space.md): is-a
 

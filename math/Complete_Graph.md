@@ -19,5 +19,5 @@ A complete graph containing $n$ vertices,
 
 ## Parents
 
-- [Graph](./Graph.md): full connected
+- [Graph](./Graph.md): is-a, full connected
 

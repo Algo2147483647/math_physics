@@ -34,5 +34,5 @@ $$
 
 - [Real_Field](./Real_Field.md): 
 
-- [Ring](./Ring.md): 
+- [Ring](./Ring.md): is-a
 

@@ -100,5 +100,5 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 ## Parents
 
-- [Measurable_Space](./Measurable_Space.md): 
+- [Measurable_Space](./Measurable_Space.md): is-a
 

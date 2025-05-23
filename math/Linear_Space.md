@@ -335,17 +335,17 @@ $$
 
 ## Include
 
-- [Affine_Space](./Affine_Space.md): 
+- [Affine_Space](./Affine_Space.md): is-a
 
 - [Linear_Transformation](./Linear_Transformation.md): 
 
-- [Normed_Linear_Space](./Normed_Linear_Space.md): 
+- [Normed_Linear_Space](./Normed_Linear_Space.md): is-a
 
-- [Projective_Space](./Projective_Space.md): 
+- [Projective_Space](./Projective_Space.md): is-a
 
 - [Tensor](./Tensor.md): 
 
 ## Parents
 
-- [Module](./Module.md): 
+- [Module](./Module.md): is-a
 

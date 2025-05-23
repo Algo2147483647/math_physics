@@ -6,7 +6,7 @@
     },
     "name": "Affine_Space",
     "parents": {
-      "Linear_Space": ""
+      "Linear_Space": "is-a"
     },
     "properties": [
       "### Affine Set\n\n- Define\n  Affine Set is a set such that the lines drawn by any two points in the set are still in the set.  \n\n$$\n\\forall \\boldsymbol x_i \\in C, \u03b8_i \\in R, \\sum \u03b8_i = 1 \\quad \\text{, then}\\quad \\sum \u03b8_i x_i \\in C\n$$\n\n- Property\n\n  - Affine Hull\n\n    - Define  \n      $$\n      \\text{aff}(C) = \\left\\{\\sum \u03b8_i x_i\\ |\\ x_i\\in C,theta_i \\in R, \\sum \u03b8_i = 1  \\right\\}\n      $$\n      Affine Hull is a set such that affine combinations of all points in the set constitutes an affine hull.\n\n- Include\n\n  - Convex Set\n\n    - Define\n      $$\n      \\forall \\boldsymbol x_i \\in C \\subseteq \\mathbb R^n, a_i \\in [0,1], \\sum a_i = 1 \\quad \\text{, then}\\quad \\sum a_i x_i \\in C\n      $$\n\n      A convex set $C$ is a set such that the line segment between any two points in the set is still in the set. Convex sets are a special class of affine sets.\n\n    - Property\n\n      - Convex Set $C$\u7684\u4efb\u610f\u8fb9\u754c\u70b9, \u5747\u5b58\u5728\u652f\u6491\u8d85\u5e73\u9762.\n\n      - Convex Hull\n        $$\n          \\text{conv}(C) = \\left\\{\\sum \u03b8_i x_i\\ |\\ x_i\\in C, \u03b8_i \\in [0,1], \\sum \u03b8_i = 1 \\right\\}\n        $$\n\n          A convex hull is a set of points is the smallest convex polygon that contain all the input points.\n\n          The set of convex combinations of all points in the set constitutes a convex hull This convex hull is also the smallest Convex Set containing all points in a given set.\n\n        $$\n          \\mathcal X_{\\text{Convex\\ Hull}} \\subseteq \\mathcal X_{\\text{input}}\n        $$\n        $$\n        \\mathcal X_{\\text{input}} \\subseteq \\text{Polygon}(\\mathcal X_{\\text{Convex\\ Hull}})\n        $$\n\n\n\n### Cone\n- Define  \n$$\n\\forall \\boldsymbol x \\in C, \u03b8 > 0, \\quad \\text{, then}\\quad \u03b8 \\boldsymbol x \\in C\n$$\n\u4ee5\u96f6\u70b9\u4e3a\u8d77\u70b9\u7684\u5c04\u7ebf\u7684\u96c6\u5408.\n\n- Include\n  * Convex Cone\n    - Define  \n    $$\n    \\forall \\boldsymbol x_1, \\boldsymbol x_2 \\in C, \u03b8_1,\u03b8_2 \u2265 0 \\quad \\text{, then}\\quad \u03b8_1 \\boldsymbol x_1 + \u03b8_2 \\boldsymbol x_2 \\in C\n    $$\n\n### [Polyhedron](./Polyhedron.md)\n\n### Hyperplane & Half Space\n\n- Define\n  $$\n  \\begin{align*}\n    \\{\\boldsymbol x \\ |\\ \\boldsymbol a^T \\boldsymbol x = b\\}  \\tag{Hyperplane}\\\\\n    \\{\\boldsymbol x \\ |\\ \\boldsymbol a^T \\boldsymbol x \u2264 b\\}  \\tag{Half-Space}\n  \\end{align*}\n  $$\n\n- Property\n  - Hyperplane & Half-Space is Convex Set"
@@ -15,9 +15,9 @@
   "Algebra_Structure": {
     "define": "An algebraic structure consists of a nonempty set $A$ (called the underlying set, carrier set or domain), a collection of operations on $A$ (typically binary operations such as addition and multiplication), and a finite set of identities, known as axioms, that these operations must satisfy.",
     "kids": {
-      "Group": "",
-      "Lattice": "",
-      "Ring": ""
+      "Group": "is-a",
+      "Lattice": "is-a",
+      "Ring": "is-a"
     },
     "name": "Algebra_Structure",
     "parents": {
@@ -32,7 +32,7 @@
     "kids": {},
     "name": "Bessel_Function",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       ""
@@ -43,7 +43,7 @@
     "kids": {},
     "name": "Binary_Tree",
     "parents": {
-      "Tree": ""
+      "Tree": "is-a"
     },
     "properties": [
       "### Full Binary Tree\n\nFull Binary Tree refer to node has either 0 or 2 children, and all leaf nodes are at the same level.\n\n#### Property\n\nA binary tree in which all leaf nodes have the same height.\nNumber of nodes with depth $h$: $2^h$\nNumber of nodes in a complete binary tree with depth $h$: $2^{h+1} - 1$ \nNumber of non leaf nodes: $2^h - 1$\nNumber of leaf nodes: $2^h$  \n\nProof: \n$$\n\\sum\\limits_{i=0}^h 2^i = \\frac{1 - 2^h}{1 - 2} = 2^h - 1  \\tag{geometric sequence summation}\n$$\n\n\n\n### Complete Binary Tree\n\nComplete Binary Tree refer to all levels are completely filled except possibly the last level, and all nodes are as far left as possible.\n\n### Balanced Binary Tree\n\nBalanced Binary Tree refer to the heights of the left and right subtrees of every node differ by at most 1.\n\n### Traversal\nPre-order Traversal: The root node is visited first, then the left subtree, and finally the right subtree.\nIn-order Traversal: The left subtree is visited first, then the root node, and finally the right subtree. For a binary search tree, in-order traversal visits the nodes in ascending order.\nPost-order Traversal: The left subtree is visited first, then the right subtree, and finally the root node."
@@ -54,7 +54,7 @@
     "kids": {},
     "name": "Bipartite_Graph",
     "parents": {
-      "Graph": ""
+      "Graph": "is-a"
     },
     "properties": [
       "- Representation, a bipartite graph can be represented by a matrix $M \\in \\mathbb R^{m \\times n}$ with each value $M_{ij}$ refer to the edge weight between $x_i$ and $y_j$, where $m$ is the element number of $X$ and $n$ is that of $Y$.\n  $$\n  f:(X \\times Y) \\to \\mathbb R \\quad\\Rightarrow\\quad \\mathbb R^{m \\times n}\n  $$\n\n### Maximum Matching\nThe maximum matching of bipartite graphs equivalents to a network flow model.\nConnect the source point to all points on the left and all points on the right to the sink, with a capacity of $1$. The original edge is connected from left to right, with a capacity of $1$. The maximum flow is the maximum match. \n\n\n#### Kuhn-Munkres Algorithm\n\n1. **\u521d\u59cb\u5316**\uff1a\u521b\u5efa\u4e00\u4e2a\u5339\u914d$M$\uff0c\u5f00\u59cb\u65f6$M$\u4e3a\u7a7a\u3002\n2. **\u8def\u5f84\u641c\u7d22**\uff1a\u5bf9\u4e8e$U$\u4e2d\u7684\u6bcf\u4e00\u4e2a\u672a\u5339\u914d\u8282\u70b9\uff0c\u5c1d\u8bd5\u627e\u5230\u4e00\u6761\u589e\u5e7f\u8def\u5f84\u3002\u589e\u5e7f\u8def\u5f84\u662f\u6307\u8d77\u59cb\u4e8e\u672a\u5339\u914d\u7684\u8282\u70b9\uff0c\u7ec8\u6b62\u4e8e\u672a\u5339\u914d\u7684\u8282\u70b9\uff0c\u4e14\u8def\u5f84\u4e0a\u7684\u8fb9\u4ea4\u66ff\u5730\u4e0d\u5728\u5339\u914d\u4e2d\u548c\u5728\u5339\u914d\u4e2d\u7684\u8def\u5f84\u3002\n3. **\u627e\u589e\u5e7f\u8def\u5f84**\uff1a\u4f7f\u7528\u6df1\u5ea6\u4f18\u5148\u641c\u7d22\u6216\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22\u6765\u627e\u5230\u589e\u5e7f\u8def\u5f84\u3002\u8bbe$P$\u662f\u4e00\u6761\u4ece$u$\u5230$v$\u7684\u589e\u5e7f\u8def\u5f84\uff0c\u5176\u4e2d$u \\in U$\u4e14$v \\in V$\u3002\n4. **\u66f4\u65b0\u5339\u914d**\uff1a\u5982\u679c\u627e\u5230\u589e\u5e7f\u8def\u5f84\uff0c\u66f4\u65b0\u5f53\u524d\u5339\u914d$M$\u3002\u5bf9\u4e8e\u8def\u5f84$P$\u4e0a\u7684\u6bcf\u4e00\u6761\u8fb9\uff0c\u5982\u679c\u5b83\u4e0d\u5728$M$\u4e2d\uff0c\u5c31\u52a0\u5165$M$\uff1b\u5982\u679c\u5b83\u5728$M$\u4e2d\uff0c\u5c31\u4ece$M$\u4e2d\u79fb\u9664\u3002\u8fd9\u6837\u64cd\u4f5c\u540e\uff0c$M$\u4e2d\u5339\u914d\u7684\u6570\u91cf\u589e\u52a0\u4e861\u3002\n5. **\u91cd\u590d**\uff1a\u91cd\u590d\u6b65\u9aa42\u548c3\uff0c\u76f4\u5230\u65e0\u6cd5\u627e\u5230\u589e\u5e7f\u8def\u5f84\u4e3a\u6b62\u3002\n\n\u6570\u5b66\u4e0a\uff0c\u53ef\u4ee5\u7528\u4e00\u4e2a\u77e9\u9635$A$\u6765\u8868\u793a\u56fe$G$\uff0c\u5176\u4e2d$A_{ij} = 1$\u5982\u679c$(i, j) \\in E$\uff0c\u5426\u5219$A_{ij} = 0$\u3002\u5339\u914d\u53ef\u4ee5\u7528\u4e00\u4e2a\u4e0e$A$\u5927\u5c0f\u76f8\u540c\u7684\u77e9\u9635$M$\u6765\u8868\u793a\uff0c\u5176\u4e2d$M_{ij} = 1$\u5982\u679c\u8fb9$(i, j)$\u5728\u5339\u914d$M$\u4e2d\uff0c\u5426\u5219$M_{ij} = 0$\u3002\n\n\u7b97\u6cd5\u7684\u5173\u952e\u5728\u4e8e\u627e\u5230\u589e\u5e7f\u8def\u5f84\uff0c\u8fd9\u53ef\u4ee5\u901a\u8fc7\u6784\u9020\u4e00\u4e2a\u7b49\u4ef7\u7684\u7f51\u7edc\u6d41\u95ee\u9898\u6765\u5b9e\u73b0\u3002\u5728\u7f51\u7edc\u6d41\u7684\u8868\u8ff0\u4e2d\uff0c\u6bcf\u6b21\u589e\u5e7f\u8def\u5f84\u7684\u67e5\u627e\u76f8\u5f53\u4e8e\u5728\u6b8b\u4f59\u7f51\u7edc\u4e2d\u67e5\u627e\u4ece\u6e90\u70b9\u5230\u6c47\u70b9\u7684\u8def\u5f84\u3002\n\n\n\n#### Hopcroft-Karp Algorithm\n\n\u5728\u5b9e\u9645\u5e94\u7528\u4e2d\uff0c\u5308\u7259\u5229\u7b97\u6cd5\u8fd8\u53ef\u4ee5\u901a\u8fc7\u4e00\u4e9b\u4f18\u5316\uff0c\u6bd4\u5982\u4f7f\u7528Hopcroft-Karp\u7b97\u6cd5\uff0c\u8fd9\u53ef\u4ee5\u5728\u66f4\u77ed\u7684\u65f6\u95f4\u5185\u627e\u5230\u6700\u5927\u5339\u914d\u3002Kuhn-Munkres\u7b97\u6cd5\u7684\u65f6\u95f4\u590d\u6742\u5ea6\u901a\u5e38\u4e3a$O(V^2E)$\uff0c\u4f46\u4f18\u5316\u540e\u7684\u7248\u672c\uff0c\u5982Hopcroft-Karp\u7b97\u6cd5\uff0c\u53ef\u4ee5\u8fbe\u5230$O(\\sqrt{V}E)$\u3002\n\n1. **\u521d\u59cb\u5316**\uff1a\n\n      - \u6700\u5927\u5339\u914d$M$\u5f00\u59cb\u65f6\u4e3a\u7a7a\u3002\n\n      - \u8ddd\u79bb\u51fd\u6570$dist$\u7528\u6765\u8bb0\u5f55\u641c\u7d22\u8fc7\u7a0b\u4e2d\u7684\u5c42\u7ea7\u4fe1\u606f\u3002\n\n\n2. **\u5c42\u6b21\u56fe\u6784\u5efa**\uff1a\n   - \u4f7f\u7528\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22\u6784\u5efa\u5c42\u6b21\u56fe\u3002\u5c42\u6b21\u56fe\u662f\u539f\u56fe\u7684\u5b50\u56fe\uff0c\u5176\u4e2d\u5305\u542b\u4ece$U$\u4e2d\u672a\u5339\u914d\u9876\u70b9\u51fa\u53d1\u53ef\u4ee5\u901a\u8fc7\u589e\u5e7f\u8def\u5f84\u5230\u8fbe\u7684$V$\u4e2d\u9876\u70b9\u3002\n   - \u5bf9\u4e8e\u6bcf\u4e2a$u \\in U$\uff0c\u5982\u679c$u$\u672a\u5339\u914d\uff0c$dist(u) = 0$\uff0c\u5426\u5219$dist(u) = \\infty$\u3002\n   - \u4f7f\u7528\u5e7f\u5ea6\u4f18\u5148\u641c\u7d22\u8ba1\u7b97\u5230\u6bcf\u4e2a\u9876\u70b9\u7684\u8ddd\u79bb\u3002\n\n3. **\u589e\u5e7f\u8def\u5f84\u641c\u7d22**\uff1a\n   - \u4f7f\u7528\u6df1\u5ea6\u4f18\u5148\u641c\u7d22\u5728\u5c42\u6b21\u56fe\u4e2d\u5bfb\u627e\u589e\u5e7f\u8def\u5f84\u3002\n   - \u5bf9\u4e8e\u6bcf\u4e2a$u \\in U$\uff0c\u5982\u679c$u$\u672a\u5339\u914d\uff0c\u5c1d\u8bd5\u627e\u5230\u4e00\u6761\u4ece$u$\u51fa\u53d1\u7684\u589e\u5e7f\u8def\u5f84\u3002\n\n4. **\u8def\u5f84\u589e\u5e7f**\uff1a\n   - \u5982\u679c\u627e\u5230\u4e86\u589e\u5e7f\u8def\u5f84\uff0c\u66f4\u65b0\u5339\u914d$M$\u3002\u5bf9\u4e8e\u8def\u5f84\u4e0a\u7684\u6bcf\u6761\u8fb9$(u, v)$\uff0c\u5982\u679c\u5b83\u4e0d\u5728$M$\u4e2d\uff0c\u5c31\u52a0\u5165$M$\uff1b\u5982\u679c\u5b83\u5728$M$\u4e2d\uff0c\u5c31\u4ece$M$\u4e2d\u79fb\u9664\u3002\n\n5. **\u91cd\u590d\u6784\u5efa\u548c\u641c\u7d22**\uff1a\n   - \u91cd\u590d\u6b65\u9aa42\u548c3\u76f4\u5230\u65e0\u6cd5\u627e\u5230\u66f4\u591a\u7684\u589e\u5e7f\u8def\u5f84\u4e3a\u6b62\u3002\n\n6. **\u7b97\u6cd5\u7ed3\u675f**\uff1a\n   - \u5f53\u5c42\u6b21\u56fe\u4e2d\u4e0d\u518d\u5b58\u5728\u589e\u5e7f\u8def\u5f84\u65f6\uff0c\u5f53\u524d\u5339\u914d$M$\u5c31\u662f\u6700\u5927\u5339\u914d\u3002\n\n\u5728\u6570\u5b66\u8868\u8ff0\u4e2d\uff0c\u5339\u914d$M$\u53ef\u4ee5\u8868\u793a\u4e3a\u4e00\u4e2a\u96c6\u5408\uff0c\u5176\u4e2d\u5305\u542b\u4e86\u8fb9\u7684\u96c6\u5408\u3002\u8ddd\u79bb\u51fd\u6570$dist$\u53ef\u4ee5\u88ab\u89c6\u4e3a\u4e00\u4e2a\u4ece\u9876\u70b9\u5230\u975e\u8d1f\u6574\u6570\u7684\u6620\u5c04\uff0c\u5b83\u8bb0\u5f55\u4e86\u4ece$U$\u5230$V$\u7684\u6700\u77ed\u8def\u5f84\u957f\u5ea6\u3002Hopcroft-Karp\u7b97\u6cd5\u7684\u5173\u952e\u70b9\u5728\u4e8e\uff0c\u6bcf\u6b21\u901a\u8fc7\u5c42\u6b21\u56fe\u5bfb\u627e\u589e\u5e7f\u8def\u5f84\u65f6\uff0c\u81f3\u5c11\u53ef\u4ee5\u589e\u52a0\u4e00\u4e2a\u5339\u914d\u7684\u5927\u5c0f\u3002\u800c\u4e14\uff0c\u6bcf\u6b21\u627e\u5230\u7684\u589e\u5e7f\u8def\u5f84\u90fd\u662f\u6700\u77ed\u7684\uff0c\u8fd9\u4fdd\u8bc1\u4e86\u7b97\u6cd5\u7684\u6548\u7387\u3002\u5728\u7b97\u6cd5\u7684\u5b9e\u73b0\u4e2d\uff0c\u901a\u5e38\u4f1a\u7ef4\u62a4\u4e24\u4e2a\u6570\u7ec4\u6765\u8bb0\u5f55\u5339\u914d\u5173\u7cfb\u548c\u8ddd\u79bb\uff0c\u8fd9\u4e9b\u6570\u636e\u7ed3\u6784\u4f1a\u5728\u7b97\u6cd5\u7684\u8fed\u4ee3\u8fc7\u7a0b\u4e2d\u4e0d\u65ad\u66f4\u65b0\u3002\u6700\u7ec8\uff0c\u7b97\u6cd5\u80fd\u591f\u8fd4\u56de\u6700\u5927\u5339\u914d\u7684\u5927\u5c0f\u548c\u5339\u914d\u7684\u5177\u4f53\u5185\u5bb9\u3002"
@@ -65,7 +65,7 @@
     "kids": {},
     "name": "Boolean_Algebra",
     "parents": {
-      "Lattice": ""
+      "Lattice": "is-a"
     },
     "properties": [
       "- \n\n  - $a \\wedge b = b \\wedge a$\n\n  - $a \\vee b = b \\vee a$\n\n  - $(a \\wedge b) \\wedge c = a \\wedge (b \\wedge c)$\n\n  - $(a \\vee b) \\vee c = a \\vee (b \\vee c)$\n\n  - $\\neg(a \\wedge b) = \\neg a \\vee \\neg b$\n\n  - $\\neg(a \\vee b) = \\neg a \\wedge \\neg b$\n\n  - $a \\wedge (a \\vee b) = a$\n\n  - $a \\vee (a \\wedge b) = a$\n\n  - $a \\wedge (b \\vee c) = (a \\wedge b) \\vee (a \\wedge c)$\n\n  - $a \\vee (b \\wedge c) = (a \\vee b) \\wedge (a \\vee c)$\n\n\n### XOR & XNOR\n\n- Define   \n  XOR $\\oplus$, XNOR $\\odot$ are two binary operators.  \n  \n  |$a$|$b$|$a \\oplus b$|$a \\odot b$|\n  |:---:|:---:|:---:|:---:|\n  | 0 | 0 | 0 | 1 | \n  | 0 | 1 | 1 | 0 | \n  | 1 | 0 | 1 | 0 | \n  | 1 | 1 | 0 | 1 | \n  |||\n  $$a \\oplus b = \\neg(a \\odot b)$$\n  $$a \\oplus b = (a \\wedge \\neg b) \\vee (\\neg a \\wedge b)$$\n  \n- Property\n  - $x \\oplus 0 = x$\n  - $x \\oplus 1 = \\neg x$\n  - $x \\oplus \\neg x = 1$\n  - $x \\oplus x = 0$\n  - $(a \\oplus b) \\oplus c = a \\oplus (b \\oplus c)$\n\n- |\n|$f(0, 0)$|$f(0, 1) = f(1, 0)$|$f(1, 1)$|operator|\n|:---:|:---:|:---:|:---:|\n| 0 | 0 | 0 | $a \\wedge 0$ |\n| 0 | 0 | 1 | $a \\wedge b$ |\n| 0 | 1 | 0 | $a \\oplus b = (a \\wedge \\neg b) \\vee (\\neg a \\wedge b)$ |\n| 0 | 1 | 1 | $a \\vee b$ |\n| 1 | 0 | 0 | $\\neg(a \\vee b)$ |\n| 1 | 0 | 1 | $a \\odot b = (a \\vee \\neg b) \\wedge (\\neg a \\vee b)$ |\n| 1 | 1 | 0 | $\\neg(a \\wedge b)$ |\n| 1 | 1 | 1 | $a \\vee 0$ |\n|||||"
@@ -76,7 +76,7 @@
     "kids": {},
     "name": "Complete_Graph",
     "parents": {
-      "Graph": "full connected"
+      "Graph": "is-a, full connected"
     },
     "properties": [
       "A complete graph containing $n$ vertices,\n\n- $number(E) = \\frac{n(n-1)}{2}$\n- The degree of each vertex is $n-1$"
@@ -89,8 +89,8 @@
     },
     "name": "Complex_Field",
     "parents": {
-      "Field": "",
-      "Real_Field": ""
+      "Field": "is-a",
+      "Real_Field": "is-a"
     },
     "properties": [
       "- module and argument\n$$\n\\begin{align*}\nr &= |z| = \\sqrt{a^2 + b^2}  \\tag{module}\\\\\n\\theta &= \\arg(z) = \\arctan(b/a)  \\tag{argument}\n\\end{align*}\n$$\n$$\nz = a + b i = r (\\cos \\theta + i \\sin \\theta) = r e^{i \\theta}\n$$\n\n- Fundamental theorem of algebra\n\n  Every non-constant single-variable polynomial with complex coefficients has at least one complex root.\n\n- sub & div\n$$\n\\begin{align*}\nz_1 - z_2 &= (a - b i) + (c - d i) = (a - b) + (c - d) i  \\tag{sub}\\\\\n\\frac{z_1}{z_2} &= \\frac{a - b i}{c - d i} = \\frac{a c + b d}{c^2 + d^2} + \\frac{b c + a d}{c^2 + d^2} i  \\tag{div}\n\\end{align*}\n$$\n- conjugate: \n\n$$\n\\bar z = a - b i  \\tag{conjugate}\n$$\n- power: \n\n$$\nz^p = r^p (\\cos \u03b8 + i \\sin \u03b8)^p = r^p (\\cos (p \u03b8) + i \\sin(p \u03b8))  \\tag{De Moiver's theorem}\n$$"
@@ -99,15 +99,15 @@
   "Complex_Value_Function": {
     "define": "$$\nf: \\mathbb C \\to \\mathbb C\n$$\n\nA complex function $f: \\mathbb C \\to \\mathbb C$ is a [function](./Function.md) from [complex numbers](./Complex_Field.md) to complex numbers.",
     "kids": {
-      "Gamma_Function": "",
-      "Holomorphic_Function": "",
-      "Hypergeometric_Function": "",
-      "Riemann_Zeta_Function": ""
+      "Gamma_Function": "is-a",
+      "Holomorphic_Function": "is-a",
+      "Hypergeometric_Function": "is-a",
+      "Riemann_Zeta_Function": "is-a"
     },
     "name": "Complex_Value_Function",
     "parents": {
       "Complex_Field": "",
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "- Differentiability: Holomorphic functions (or analytic functions) are differentiable everywhere within their domain of definition. For complex functions, holomorphism and analyticity are equivalent. \n\n  Let $U$ be an open set in the complex plane $\\mathbb C$ and let $f : U \\to \\mathbb C$ be a function. The function ,is said to be analytic (or holomorphic) on $U$ if for every $z_0 \\in U$, there exists an open disk $D$ centered at $z_0$ such that $f$ is differentiable at every point in $D$.\n\n### Residue & Residue Theorem\n\n$$\n\\begin{align*}\n\\Res(f, z_0) &= \\lim\\limits_{z \\to z_0} (z-z_0) f(z) \\tag{Simple Pole}\\\\\n\\Res(f, z_0) &= \\frac{1}{(m-1)!}\\lim\\limits_{z \\to z_0} \\frac{\\mathrm d^{m-1}}{\\mathrm dz^{m-1}}((z-z_0)^m f(z))  \\tag{Higher-Order Pole}\\\\\n\\end{align*}\n$$\n\nThe **residue** of a function $f(z)$ at an isolated singularity $z = a$ is the coefficient $c_{-1}$ of the $(z - a)^{-1}$ term in its Laurent series expansion around $a$. Formally, if $f(z)$ has a Laurent series expansion $f(z) = \\sum_{n=-\\infty}^{\\infty} c_n (z - a)^n$, then the residue of $f$ at $a$, denoted $\\text{Res}(f, a)$, is $c_{-1}$. Residues are defined for functions with isolated singularities (removable, poles, or essential singularities). Essential Singularity requires direct computation of the Laurent series coefficient $c_{-1}$.\n$$\n\\oint_C f(z)\\,\\mathrm{d}z=2\\pi i\\sum_{k=1}^n \\Res(f,a_k)  \\tag{Residue Theorem}\n$$\n\n**Residue Theorem**: For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$ that encircles counterclockwise all the isolated singularities $a_1,a_2,\\ldots,a_n$ of $f(z)$, then the integral of $f(z)$ along $C$ can be expressed as the sum of the residues of $f(z)$ at these singularities. And $\\operatorname{Res}(f,a_k)$ denotes the residue of $f(z)$ at the point $a_k$.\n\n### Laurent Series\n\nThe Laurent series for a complex function $f(z)$ about a point $c$ is given by\n$$\nf(z) = \\sum^{\\infty}_{n=-\\infty} a_n(z-c)^n\\\\\na_n = \\frac{1}{2\\pi i} \\oint_\\gamma \\frac{f(z)}{(z-c)^{n+1}}\\mathrm{d}z\n$$\nThe path of integration $\\gamma$ is counterclockwise around a Jordan curve enclosing $c$ and lying in an annulus $A$ in which $f(z)$ is holomorphic (analytic). The expansion for $f(z)$ will then be valid anywhere inside the annulus.\n\n### Analytic Function\n\n$$\nf(z) = \\sum_{n=0}^\\infty c_n (z - z_0)^n  \\tag{Analytic Function}\n$$\n\nAnalytic function $f$ is a complex function on an open set $D$ in the real line if for any $x_0 \\in D$, it can be expanded into a power series. Where the coefficients $a_i \\in \\mathbb R$.\n\n\n### Meromorphic Function\n\nA meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function."
@@ -131,7 +131,7 @@
     },
     "name": "Cubic_Function",
     "parents": {
-      "Polynomial_Function": ""
+      "Polynomial_Function": "is-a"
     },
     "properties": [
       "### Zero Set of Cubic Function , Cubic Surface   \n\n- Define\n  $$\n  \\left\\{\\boldsymbol x \\ |\\  \\right\\}\n  $$\n- Property\n  - Solution of Univariate Cubic Equation  \n    For a Univariate Cubic Equation,\n    $$\n    x^3 + px + q = 0\n    $$\n\n    The solutions are,\n    $$\n    r = \\sqrt[3]{-\\frac{q}{2}+\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}+\\sqrt[3]{-\\frac{q}{2}-\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}\n    $$\n\n- Include\n  * Fermat Cubic\n    - Define\n      $$\n      \\left\\{ x \\ |\\ \\sum_{i = 1}^{\\dim} x_i^3 = 0 \\right\\}\n      $$"
@@ -140,11 +140,11 @@
   "Differential_Manifold": {
     "define": "Differential manifold $M$ of dimension $n$ is a [manifold](./Manifold.md) and equipped with a differentiable structure. Differentiable structure refers to there exists a collection of charts $\\{(U_\\alpha, \\varphi_\\alpha)\\}$ such that $\\bigcup_{\\alpha}U_{\\alpha}=M$, for all overlapping charts $(U_{\\alpha},\\varphi_{\\alpha}), (U_{\\beta},\\varphi_{\\beta})$ in the atlas with $U_{\\alpha}\\cap U_{\\beta}\\neq\\varnothing$, then the transition maps $\\varphi_{\\beta}\\circ\\varphi_{\\alpha}^{-1}:\\varphi_{\\alpha}(U_{\\alpha}\\cap U_{\\beta})\\to\\varphi_{\\beta}(U_{\\alpha}\\cap U_{\\beta})$ are smooth (infinitely differentiable $C^\\infty$) map. This collection of charts is called an smooth atlas.\n\n<img src=\"./assets/Two_coordinate_charts_on_a_manifold.svg\" alt=\"Two_coordinate_charts_on_a_manifold\"  />",
     "kids": {
-      "Euclidean_Space": ""
+      "Euclidean_Space": "is-a"
     },
     "name": "Differential_Manifold",
     "parents": {
-      "Manifold": ""
+      "Manifold": "is-a"
     },
     "properties": [
       "### Relationship between multiply differential manifolds\n\n#### Continuity\n\n$f: M \\to M'$ is a $C^r$ mapping $\\Leftrightarrow$ $\\forall p \\in M, \\psi_\\beta \\circ f \\circ \\psi_\\alpha^{-1}$ is $C^r$\n\n- $\\psi_\\alpha: M \\to \\mathbb R^{n}$\n- $\\psi_\\beta: M' \\to \\mathbb R^{n'}$\n- $f = \\psi_\\beta \\circ f \\circ \\psi_\\alpha^{-1}$\n\n#### Diffeomorphic\n\n$M, M'$ is Diffeomorphic $\\leftrightarrow \\exist f: M \\to M'$ is one to one, and $f, f^{-1}$ is $C^{\\infty}$\n\n### Relationship between differential manifolds and $\\mathbb R^n$\n\n#### Scalar Field: $M \\to \\mathbb R$\n\nThe function $f: M \\to \\mathbb R$ is intrinsically defined and unique in itself, requiring no dependence on the choice of coordinate system. When combine with a special coordinate system $(O, \\psi)$, we obtain the coordinate representation of this function in the local coordinates \u2014 an n-variable function $f (x_1, \\cdots, x_n)$ expressed through coordinate parameters. This coordinate-dependent representation undergoes corresponding variations depending on the chosen coordinate system.\n\n#### Curve: $\\mathbb R \\to M$\n\n$$\nC: (I \\in \\mathbb R) \\to M\n$$\n\n### Tangent Space\n\n$$\nT_pM = \\left\\{D:C^\\infty (M) \\to \\mathbb R \\;\\Big|\\; D \\text{ is linear}, D(fg) = f(p) D(g) + g(p) D(f)  \\right\\}\n$$\n\nThe tangent space $T_p M$ at a point $p$ on a differential manifold $M$ is a vector space that consists of all possible directional derivatives at $p$. Tangent space is a local linear approximation of a manifold.\n\n- $C^{\\infty}$  is the space of differential real-valued functions on manifold\n- Leibniz rule: $D(fg) = f(p) D(g) + g(p) D(f)$\n\n#### Tangent vector\n\n$$\nT(f) = \\frac{\\mathrm d (f \\circ C)}{\\mathrm d t} \\Big|_{t_0}  \\quad ,\\forall f \\in \\mathcal F_M\n$$\n\nFor a function $f$, Tangent vector $X_p \\in T_p M$ of curve $C$ at $t_0$.\n\n### Metric Tensor\n\n$$\ng_p = T_p M \\times T_p M \\to \\mathbb R\n$$\n\nMetric [tensor](./Tensor.md) is a symmetric, non-degenerate, bilinear form that defines the inner product on the tangent space at each point of a manifold. For a differential manifold $M$, the metric tensor $g$ is a $(0, 2)$-tensor field that assigns to each point $p \\in M$ a bilinear map.\n\n- Symmetric: $g(u, v) = g(v, u), \\forall u, v$ from tangent vectors.\n- Non-degenerate: $\\forall u, g(u, v) = 0 \\rightarrow v = 0$\n\nIn local coordinates $(x_1, \\cdots, x_n)$, the metric can be express as $g = g_{ij} \\mathrm d x^i \\otimes \\mathrm d x^j$, where $g_{ij} = g_{ji}$ and $\\det(g_ij) \\neq 0$.\n\nTherefore, by analogy with the inner product in Euclidean space, we can utilize the metric tensor to establish the following definition.\n\n- Length of vector: $|v| = \\sqrt{|g(v, v)|}$\n- Orthogonal: $g(u, v) = 0$\n\nSymbols:\n- $T_p M$ is the tangent space at $p$.\n\n#### Classification of Metric Tensor\n\n- Positive definite / Riemannian matric tensor: $g(x, x) \\ge 0$ with equality iff $x = 0$.\n- Negative definite matric tensor:\n- Lorentz metric: Diagonal element is $(-1, 1, 1, 1)$\n\n### Affine Connection\n\n#### Derivative Operator\n\n$$\n\\nabla: \\mathcal F_M(k, l) \\to \\mathcal F_M(k, l + 1)\n$$\n\nFor the set $\\mathcal F_M$ represents the all $C^\\infty \\ (k, l)$-tensor field on the manifold $M$, Derivative operator\n\n- $\\nabla_a (a T + b S) = a \\nabla_a T + b \\nabla S$\n- Leibnitz rule: $\\nabla_a (TS) = T \\nabla_a S + S \\nabla_a T$\n- Swappable order with contraction.\n- $v(f) = v^a \\nabla_a f , \\forall f \\in \\mathcal F_M, v \\in \\mathcal F_M (1, 0)$\n- torsion-free: $\\nabla_a \\nabla_b f = \\nabla_b \\nabla_a f$\n\nExample:\n\n- $\\nabla_a f = T_a$, \u68af\u5ea6\u573a\u662f\u4e00\u4e2a\u5bf9\u5076\u77e2\u91cf\u573a.\n\n#### Christoffel Symbol\n\nChristoffel symbols describe how basis vectors change along a manifold and are used to define the Levi-Civita connection (a metric-compatible, torsion-free connection).\n$$\n\\var A^i = -\\Gamma^i_{kl} A^k \\mathrm{d} x^l\n$$\n**Christoffel Symbols of the First Kind**\n$$\n\\Gamma_{kij} = \\frac{1}{2} \\left( \\frac{\\partial g_{il}}{\\partial x^j} + \\frac{\\partial g_{jl}}{\\partial x^i} - \\frac{\\partial g_{ij}}{\\partial x^l} \\right)\n$$\n\n**Christoffel Symbols of the Second Kind** \n\n$$\n\\Gamma^k_{ij} = \\frac{1}{2} g^{kl} \\left( \\frac{\\partial g_{il}}{\\partial x^j} + \\frac{\\partial g_{jl}}{\\partial x^i} - \\frac{\\partial g_{ij}}{\\partial x^l} \\right)\n$$\n\n$$\n\\nabla_\\mu V = (\\part_\\mu V^\\nu + \\Gamma_{\\mu\\lambda}^\\nu V^\\lambda) \\part_\\nu\\\\\n\\nabla_\\mu \\part_\\nu = \\Gamma_{\\mu\\nu}^ \\lambda\\part_ \\lambda\n$$\n\nChristoffel Symbols of the Second Kind is components of derivative operator (connection) in local coordinate system, obtained by raising the index of the first-kind symbols using the inverse metric.\n\n- **\u57fa\u5e95\u5411\u91cf\u573a\u7684\u534f\u53d8\u5bfc\u6570**\uff1a\u5728\u5750\u6807\u57fa\u5e95 $\\{\\partial_i\\}$ \u4e0b\uff0c\u8054\u7edc\u4f5c\u7528\u4e8e\u57fa\u5e95\u5411\u91cf\u573a\u7684\u8868\u8fbe\u5f0f\u4e3a\uff1a$\\nabla_{\\partial_i} \\partial_j = \\Gamma^k_{ij} \\partial_k$. \u8fd9\u8868\u660e $\\Gamma^k_{ij}$ \u63cf\u8ff0\u4e86\u57fa\u5e95\u5411\u91cf $\\partial_j$ \u6cbf $\\partial_i$ \u65b9\u5411\u7684\u53d8\u5316\u7387\u3002\n- **\u534f\u53d8\u5bfc\u6570\u7684\u5206\u91cf\u516c\u5f0f**\uff1a\u5bf9\u4efb\u610f\u5411\u91cf\u573a $Y = Y^j \\partial_j$\uff0c\u6cbf\u65b9\u5411 $X = X^i \\partial_i$ \u7684\u534f\u53d8\u5bfc\u6570\u4e3a $(\\nabla_X Y)^k = X^i \\left( \\partial_i Y^k + \\Gamma^k_{ij} Y^j \\right)$\n\n\n### Geodesic\n\n$$\n\\frac{d^2 x^k}{d\\tau^2} + \\Gamma^k_{ij} \\frac{dx^i}{d\\tau} \\frac{dx^j}{d\\tau} = 0\n$$\n\n- $\\frac{d^2 x^k}{d\\tau^2}$: \u52a0\u901f\u5ea6\u7684\u4e8c\u9636\u5bfc\u6570\u9879\n- $\\Gamma^k_{ij} \\frac{dx^i}{d\\tau} \\frac{dx^j}{d\\tau}$: Christoffel Symbol \u7684\u4fee\u6b63, \u5750\u6807\u7cfb\u5f2f\u66f2\u6216\u975e\u60ef\u6027\u6548\u5e94\u7684\u4fee\u6b63\u9879"
@@ -155,7 +155,7 @@
     "kids": {},
     "name": "Dirac_Delta_Function",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "### sampling property  \n\n$$\n\\int_{-\\infty}^{\\infty} f(t) \\delta(t-T) \\mathrm{d} t = f(T)\n$$"
@@ -166,7 +166,7 @@
     "kids": {},
     "name": "Directed_Acyclic_Graph",
     "parents": {
-      "Graph": "directed, acyclic"
+      "Graph": "is-a, directed, acyclic"
     },
     "properties": [
       "### Topological Sort  \n\nTopological Sort aims to linear ordering of point sets of directed acyclic graphs, and satisfying as follows. Topological Sort can help determine whether a graph is a directed acyclic graph.  \n- Each point appears only once\n- If there is an edge from point A to point B, point A appears before point B in the sequence.\n\n#### Solution\n\nIterate and delete points with 0 incoming edge on the Graph, put these points into the output sequence in turn, until all points are removed from the graph. If there are no more nodes in the graph that can be delete, but the number of remaining points is not 0, then the graph has loops and is not a directed acyclic graph."
@@ -203,8 +203,8 @@
     },
     "name": "Euclidean_Space",
     "parents": {
-      "Differential_Manifold": "",
-      "Hilbert_Space": "",
+      "Differential_Manifold": "is-a",
+      "Hilbert_Space": "is-a",
       "Real_Field": ""
     },
     "properties": [
@@ -216,7 +216,7 @@
     "kids": {},
     "name": "Exponential_Function",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "- Euler's formula\n  $$\n  e^{i \\pi} + 1 = 0\n  $$\n  \n- Trigonometric functions are periodic functions. The period of $\\sin(\\cdot), \\cos(\\cdot)$ is $2 k \\pi$, period of $\\tan(\\cdot)$ is $k \\pi$, $k \\in \\mathbb Z$,\n  $$\n  \\begin{align*}\n    \\sin(\\theta + 2 k \\pi) &= \\sin(\\theta)  \\\\\n    \\cos(\\theta + 2 k \\pi) &= \\cos(\\theta)  \\\\\n    \\tan(\\theta + k \\pi) &= \\tan(\\theta)  \\\\\n  \\end{align*}\n  $$\n  \n- 1\n  $$\n  \\begin{align*}\n    \\sin(a \\pm b) &= \\sin(a) \\cos(b) \\pm \\cos(a) \\sin(b)  \\\\\n    \\cos(a \\pm b) &= \\cos(a) \\cos(b) \\mp \\sin(a) \\sin(b)  \\\\\n    \\tan(a \\pm b) &= \\frac{\\tan(a) \\pm  \\tan(b)}{1 \\mp \\tan(a) \\tan(b)}\n  \\end{align*}\n  $$\n  \n- The relationship between the addition and multiplication of two trigonometric functions,\n  $$\n  \\begin{align*}\n    \\sin(a)\\cos(b) &= \\frac{\\sin(a + b) + \\sin(a - b)}{2}  \\\\\n    \\sin(a)\\sin(b) &= \\frac{\\cos(a + b) - \\cos(a - b)}{2}  \\\\\n    \\cos(a)\\cos(b) &= \\frac{\\cos(a + b) + \\cos(a - b)}{2}  \\\\\n  \\end{align*}\n  $$\n\n- 1\n  $$\n  a \\sin(\\theta) + b \\cos(\\theta) = \\sqrt{a^2 + b^2} \\sin \\left(\\theta + \\arctan\\left(\\frac{b}{a}\\right) \\right)\n  $$"
@@ -225,13 +225,13 @@
   "Field": {
     "define": "Field is a [ring](./Ring.md) that satisfies the existence of multiplicative inverses for every nonzero element.",
     "kids": {
-      "Complex_Field": "",
-      "Rational_Number_Field": "",
-      "Real_Field": ""
+      "Complex_Field": "is-a",
+      "Rational_Number_Field": "is-a",
+      "Real_Field": "is-a"
     },
     "name": "Field",
     "parents": {
-      "Ring": ""
+      "Ring": "is-a"
     },
     "properties": [
       "### Field extension\n\n- Define\n\n  A field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$."
@@ -242,7 +242,7 @@
     "kids": {},
     "name": "Forth-Order_Function",
     "parents": {
-      "Polynomial_Function": ""
+      "Polynomial_Function": "is-a"
     },
     "properties": [
       "### Zero Set of Quartic Function , Quartic Surface\n\n\n\n### Solution of Univariate Quartic Equation  \nFor an Univariate Quartic Equation,\n$$\na x^4 + b x^3 + c x^2 + d x + e = 0\n$$\n\nThe solutions are $r_1, r_2, r_3, r_4$,\n$$\n\\begin{align*}\n  r_{i} &= -\\frac{b}{4 a} - S \\pm \\frac{1}{2} \\sqrt{-4 S^2 -2 p \\pm \\frac{q}{S}}  \\\\\n  p & =\\frac{8 a c-3 b^2}{8 a^2} \\\\\n  q & =\\frac{b^3-4 a b c+8 a^2 d}{8 a^3} \\\\\n  S & =\\frac{1}{2} \\sqrt{-\\frac{2}{3} p+\\frac{1}{3 a}\\left(Q+\\frac{\\Delta_0}{Q}\\right)} \\\\\n  Q & =\\sqrt[3]{\\frac{\\Delta_1+\\sqrt{\\Delta_1^2-4 \\Delta_0^3}}{2}} \\\\\n  \\Delta_0 & =c^2-3 b d+12 a e \\\\\n  \\Delta_1 & =2 c^3-9 b c d+27 b^2 e+27 a d^2-72 a c e\n\\end{align*}\n$$\n\nOr representation by\n$$\n\\begin{align*}\n  Q_1 &= c^2 - 3bd + 12e  \\\\\n  Q_2 &= 2c^3 - 9bcd + 27d^2 + 27b^2e - 72ce  \\\\\n  Q_3 &= 8bc - 16d - 2b^3  \\\\\n  Q_4 &= 3b^2 - 8c  \\\\\n  Q_5 &= \\sqrt[3]{\\frac{Q_2}{2} + \\sqrt{\\left(\\frac{Q_2^2}{4} - Q_1^3\\right)}}   \\\\\n  Q_6 &= \\frac{Q_1}{Q_5} + Q_5  \\\\\n  Q_7 &= 2\\sqrt{\\frac{Q_4}{12} + Q_6}   \\\\\n  x_1 &= \\frac{-b - Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_2 &= \\frac{-b - Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 - \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_3 &= \\frac{-b + Q_7 - \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4} \\\\\n  x_4 &= \\frac{-b + Q_7 + \\sqrt{4\\left(\\frac{Q_4}{6} - Q_6 + \\frac{Q_3}{Q_7}\\right)}}{4}\n\\end{align*}\n$$\n\n### Torus\n\n$$\n\\{\\boldsymbol x \\ |\\ (R^2 - r^2 + \\boldsymbol x^T \\boldsymbol x)^2 - 4 R^2 (\\boldsymbol x^T \\boldsymbol x - x_i^2) = 0\\}  \\tag{Torus}\n$$\n\n<img src=\"./assets/torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750.gif\" alt=\"torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750\" style=\"zoom:50%;\" />\n\n### Tanglecube\n\n$$\n\\left\\{\\boldsymbol x \\ |\\ \\sum_{i=1}^3 \\left(x_i^4 - 5 x_i^2 \\right) + 11.8 = 0 \\right\\}  \\tag{Tanglecube}\n$$\n\n<img src=\"./assets/Tanglecube1_700.svg\" alt=\"Tanglecube1_700\" style=\"zoom:67%;\" />"
@@ -262,21 +262,21 @@
   "Function": {
     "define": "$$\nf: X \\to Y  \\tag{Function}\n$$\n$$\n\\forall x \\in X, \\exists_{= 1} y \\in Y, f(x) = y\n$$\nMapping, refer to a [binary relation](./Relation.md) from the element of set $X$ to that of set $Y$, and satisfy any element in $X$ has a unique element in $Y$ corresponding to it (One-to-many is not allowed).\n\n$X$: domain of Definition.\n\n\n### Injective\n\n$$\n\\forall x, x', f(x) = f(x') \\Rightarrow x = x'\n$$\nEach mapped element $y$ has a unique element $x$ corresponding to it.\n\n### Surjection\n\n$$\n\\forall y \\in Y, \\exists x \\in X, f(x) = y\n$$\nEach element $y$ in set $Y$ has a element $x$ in set $X$ corresponding to it.\n\n### Bijection, One-to-One Correspondence\n\n$$\n\\forall y \\in Y, \\exists_{= 1} x \\in X, f(x) = y\n$$\nA map that is both injective and surjective. Each element $y$ in set $Y$ has a unique element $x$ in set $X$ corresponding to it. Meanwhile, each element $x$ in set $X$ has a unique element $y$ in set $Y$ corresponding to it.\n\n<img src=\"assets/R-16983288702011.png\" alt=\"R\" style=\"zoom: 30%;\" />",
     "kids": {
-      "Bessel_Function": "",
-      "Complex_Value_Function": "",
-      "Dirac_Delta_Function": "",
-      "Exponential_Function": "",
-      "Hilbert_Transform": "",
-      "Laplace_Transform": "",
-      "Linear_Transformation": "",
-      "Polynomial_Function": "",
-      "Radon_Translation": "",
-      "Real_Value_Function": "",
-      "Sequence": ""
+      "Bessel_Function": "is-a",
+      "Complex_Value_Function": "is-a",
+      "Dirac_Delta_Function": "is-a",
+      "Exponential_Function": "is-a",
+      "Hilbert_Transform": "is-a",
+      "Laplace_Transform": "is-a",
+      "Linear_Transformation": "is-a",
+      "Polynomial_Function": "is-a",
+      "Radon_Translation": "is-a",
+      "Real_Value_Function": "is-a",
+      "Sequence": "is-a"
     },
     "name": "Function",
     "parents": {
-      "Relation": ""
+      "Relation": "is-a"
     },
     "properties": [
       "* Inverse Function\n  if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \\Leftrightarrow f(a) = b$"
@@ -287,7 +287,7 @@
     "kids": {},
     "name": "Gamma_Function",
     "parents": {
-      "Complex_Value_Function": ""
+      "Complex_Value_Function": "is-a"
     },
     "properties": [
       "- Recursion\n  $$\n  \\Gamma(z+1) = z \\Gamma(z)\n  $$\n  \n- Euler's reflection formula\n  $$\n  \\Gamma(1-z)\\Gamma(z) = \\frac{\\pi}{\\sin \\pi z}\n  $$\n\n- $$\n  2^{2 z-1} \\Gamma(z) \\Gamma\\left(z+ \\frac{1}{2}\\right)=\\sqrt{\\pi} \\Gamma(2 z)\n  $$\n  \n  - $$\n    \\Gamma\\left(\\frac{1}{2}\\right) = \\sqrt{\\pi}\n    $$\n  \n- Stirling's formula\n  $$\n  \\Gamma(n+1) = n! \\sim \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n\n  $$\n  \n- $$\n  \\begin{align*}\n  \\Gamma(z) &=\\lim _{n \\rightarrow \\infty} \\frac{1 \\cdot 2 \\cdots n}{z(z+1) \\cdots(z+n)} n^{z}  \\\\\n  &= \\frac{e^{-\\gamma z}}{z} \\prod_{n=1}^{\\infty}\\left(1+\\frac{z}{n}\\right)^{-1} e^{\\frac{z}{n}}\n  \\end{align*}\n  $$"
@@ -296,10 +296,10 @@
   "Graph": {
     "define": "$$\n\\begin{align*}\nG &= (V, E)  \\tag{Graph} \\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Edge set}\n\\end{align*}\n$$\n\nGraph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges $w: E \\to \\mathbb R$.\n\n- $V$: Vertex set\n- $E$: Edge set, a set of paired vertices\n- $w: E \\to \\mathbb R$: weight of edge\n\n### Undirected Graph & Directed Graph\n\n$$\n\\begin{align*}\nE &= \\{\\{v_i, v_j\\}\\ |\\ v_i, v_j \\in V\\}  \\tag{Undirected Graph}\\\\\nE &= \\{(v_i, v_j)\\ |\\ v_i, v_j \\in V\\}  \\tag{Directed Graph}\n\\end{align*}\n$$\n\nUndirected Graph, is a type of graph that does not distinguish the direction of edges.\n\nDirected Graph, is a type of graph that distinguish the direction of edges and its edge set is a set of ordered pairs.",
     "kids": {
-      "Bipartite_Graph": "",
-      "Complete_Graph": "full connected",
-      "Directed_Acyclic_Graph": "directed, acyclic",
-      "Tree": "undirected, connected, acyclic"
+      "Bipartite_Graph": "is-a",
+      "Complete_Graph": "is-a, full connected",
+      "Directed_Acyclic_Graph": "is-a, directed, acyclic",
+      "Tree": "is-a, undirected, connected, acyclic"
     },
     "name": "Graph",
     "parents": {
@@ -313,11 +313,11 @@
     "define": "$$\n(G, \\cdot)\n$$\n\nGroup is an algebraic structure, where $G$ is a set, $\\cdot$ is a binary operation, and satisfy:\n\n- closure: $a, b \\in G \\Rightarrow a \\cdot b \\in G$\n- associative law $(a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$\n- exists identity element, $\\exists 1: x \\cdot 1 = 1 \\cdot x = x$\n- exists inverse element, $\\exists x^{-1}: x \\cdot x^{-1} = x^{-1} \\cdot x = 1$",
     "kids": {
       "Lie_Group": "",
-      "Symmetric_Group": ""
+      "Symmetric_Group": "is-a"
     },
     "name": "Group",
     "parents": {
-      "Algebra_Structure": ""
+      "Algebra_Structure": "is-a"
     },
     "properties": [
       "- $1$ is unique\n\n  > Proof\n  > $$\n  > 1_1 = 1_1 \\cdot 1_2 = 1_2\n  > $$\n\n- The inverse of each element is unique.\n\n- Absorbing Element\n  $$\n  x \\cdot 0 = 0 \\cdot x = 0  \\quad; \\forall x \\in G  \\tag{absorbing element}\n  $$\n\n- \n  - $\\forall a \\in G, (a^{-1})^{-1} = a$\n  - $\\forall a,b \\in G, (a \\cdot b)^{-1} = b^{-1} \\cdot a^{-1}$\n  - $\\forall a,b,c \\in G, a\\cdot b = a \\cdot c  \\quad\\Rightarrow\\quad b = c$\n  - $\\forall a,b,c \\in G, b\\cdot a = c \\cdot a  \\quad\\Rightarrow\\quad b = c$ \n\n### Subgroup\n\n$$\nH \\subseteq G, H \\neq \\emptyset, (H, \\cdot) \\text{ is group } \\quad\\Rightarrow\\quad H \\le G  \\tag{Subgroup}\n$$\n\nFor a group $(G, \\cdot)$ and a nonempty subset $H$ of $G$, if $(H, \\cdot)$ is also group, then $(H, \\cdot)$ is a subgroup of $(G, \\cdot)$.\n\nProperty:\n- $1 \\le G, G \\le G$\n* The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$.\n  $$\n  |H|\\ |\\ |G|\n  $$\n\n\n#### Coset\nFor a subgroup $H$ of the group $G$ and an element $g \\in G$, the left cosets of $H$ in $G$ are the sets obtained by multiplying each element of $H$ by a fixed element $g$ (where $g$ is the left factor).\n$$\ngH = \\{gh \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{left cosets}\n$$\n\nThe right cosets are defined similarly, except that the element g is now a right factor.\n$$\nHg = \\{hg \\ |\\ h \\in H\\} \\quad, \\text{for } g \\in G  \\tag{right cosets}\n$$\n\nProperty:\n\n- Cosets form a partition of group $G$, that is, they divide $G$ into several disjoint sets. Each coset of subgroup $H$ have the same number of elements as the subgroup $H$. Two cosets are either identical or completely disjoint. \n\n\n\n#### Normal Subgroup\n\n$$\nH \\lhd G \\quad\\Leftrightarrow\\quad  g^{-1}hg \\in H, \\forall h \\in H \\le G, g \\in  G \\tag{Normal Subgroup}\n$$\nNormal Subgroup is a subgroup $H \\le G$ if it is invariant under conjugation, that is, $\\forall h \\in H, g \\in G$, we have $g^{-1}hg \\in H$.\n\n##### Quotient Group\n\n$$\nG/H = (\\{aH \\ |\\ a \\in G\\}, \\cdot)  \\\\\n$$\n\nGiven a group $G$ and a normal subgroup $H \\lhd G$, the Quotient Group $G/H$ is a group composed of all left cosets of $H$ in $G$ as elements $\\{aH \\ |\\ a \\in G\\}$ and multiplication operations $(g_1 H) \\cdot (g_2 H) = g_1 g_2 H, \\forall g_1, g_2 \\in G$.\n\nProperty:\n\n- The unit element of the quotient group $G/N$ is $N$ itself\n\n$$\ngN \\cdot N = gN\n$$\n\n- $|G/H| = \\frac{|G|}{|H|}$\n\n### Group Homomorphism\n\n$$\nf: G \\to H\n$$\nGroup Homomorphism is a function $f$ from a group $(G, \\cdot)$ to another group $(H, *)$ such that for all $u, v \\in G$ it hold that,\n$$\nf(u \\cdot v) = f(u) * f(v) \\quad, \\forall u, v \\in G\n$$\nProperty:\n* Isomorphism of Groups  \n  If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.\n\n### Simple Group\n\nA simple group is a group $G$ whose only normal subgroups are the trivial group $\\{e\\}$ (a trivial group or zero group is a group consisting of a single element $e$) and the group itself.\n\nProperty:\n\nClassification of finite simple groups: Every finite simple group is isomorphic to one of the following groups\n\n- a member of one of three infinite classes of such, namely:\n  - the cyclic groups of prime order,\n  - the alternating groups of degree at least 5,\n  - the groups of Lie type,\n  - the derivative of the groups of Lie Type, such as the Tits group\n- one of 26 groups called the \"sporadic groups\"\n\n<img src=\"./assets/gn5cimd92mh11.jpg\" alt=\"gn5cimd92mh11\"  />\n\n### Commutative Group , Abelian Group\n$$\na \\cdot b = b \\cdot a\n$$\nCommutative Group is a Group satisfied commutative law,\n\n### Cyclic Group\n$$\n\u27e8g\u27e9 = \\{g^k \\ |\\ k \\in \\mathbb Z\\}\n$$\n\nA group $G$ is called cyclic if there exists an element $a \\in G$ such that every element of $G$ can be expressed as a power of $a$. ln other words, every element in $G$ is of the form $a$ for some integer $k$. The element a is called a generator of the group.\n\n### Alternating Group\n\nAn alternating group $A_n$ on a set of $n$ symbols is defined to be the group of all even permutations of the $n$ symbols. (The even arrangement here refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.)\n\nProperty:\n- $A_n$ is a normal group of $S_n$. $|A_n| = \\frac{1}{2} |S_n|$.\n- For $n>5$, $A_n$ is a simple group."
@@ -326,11 +326,11 @@
   "Hausdorff_Space": {
     "define": "Hausdorff Space $X$ is a topology space where, for any distinct points $x, y \\in X$, there exist a neighborhood $U$ of $x$ and a neighborhood $V$ of $y$ such that $U$ and $V$ are disjoint.\n\n$$\nU \\cap V = \\emptyset\n$$",
     "kids": {
-      "Manifold": ""
+      "Manifold": "is-a"
     },
     "name": "Hausdorff_Space",
     "parents": {
-      "Topological_Space": ""
+      "Topological_Space": "is-a"
     },
     "properties": [
       ""
@@ -339,12 +339,12 @@
   "Hilbert_Space": {
     "define": "Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Product_Space.md).",
     "kids": {
-      "Euclidean_Space": ""
+      "Euclidean_Space": "is-a"
     },
     "name": "Hilbert_Space",
     "parents": {
-      "Inner_Product_Space": "",
-      "Metric_Space": ""
+      "Inner_Product_Space": "is-a",
+      "Metric_Space": "is-a"
     },
     "properties": [
       ""
@@ -355,7 +355,7 @@
     "kids": {},
     "name": "Hilbert_Transform",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "- $H(H(u))(t) = u(-t)$\n- $H(\\omega) = (-i \\cdot \\text{sgn}(\\omega))\\cdot \\mathcal F_h(\\omega)$"
@@ -366,7 +366,7 @@
     "kids": {},
     "name": "Holomorphic_Function",
     "parents": {
-      "Complex_Value_Function": ""
+      "Complex_Value_Function": "is-a"
     },
     "properties": [
       "Holomorphic functions are differentiable everywhere within their domain of definition.\n\n$$\n\\frac{\\partial f}{\\partial \\bar z} = 0\n$$\n\n### Cauchy-Riemann Equations\n\nFor a complex function $f(z) = u(x,y) + i v(x,y)$ to be differentiable (and hence analytic) at a point, where $u(x,y)$ and $v(x,y)$ are real and imaginary part respectively, the partial derivatives of $u, v$ must satisfy the Cauchy-Riemann equations at that point.\n$$\n\\frac{\\partial u}{\\partial x} = \\frac{\\partial v}{\\partial y}  \\\\ \\quad \\frac{\\partial u}{\\partial y} = -\\frac{\\partial v}{\\partial x} \\tag{Cauchy-Riemann Equations}\n$$"
@@ -377,7 +377,7 @@
     "kids": {},
     "name": "Hypergeometric_Function",
     "parents": {
-      "Complex_Value_Function": ""
+      "Complex_Value_Function": "is-a"
     },
     "properties": [
       "- Differentiation formulas\n  $$\n  \\begin{align*}\n  \\frac {\\mathrm d}{\\mathrm dz} F(a,b;c;z) &= \\frac {ab}{c} F(a+1,b+1;c+1;z)  \\\\\n  \\frac {\\mathrm d^{n}}{\\mathrm dz^{n}} F(a,b;c;z) &= \\frac {(a)_{n}(b)_{n}}{(c)_{n}} F(a+n,b+n;c+n;z)\n  \\end{align*}\n  $$\n\n- Special cases\n  $$\n  \\begin{align*}\n  e^z &= F(;;-z)  \\\\\n  \\ln(1+z) &= z F(1, 1;2;-z)\\\\\n  (1+z)^\\alpha &= F(-\\alpha;;-z)  \\\\\n  \\sin z &= z F(;\\frac{3}{2};-{z^2}{4})  \\\\\n  \\cos z &= F(;\\frac{1}{2};-{z^2}{4})  \\\\\n  \\arcsin z &= z F(\\frac{1}{2}, \\frac{1}{2};\\frac{3}{2};z^2)  \\\\\n  \\arccos z &= z F(\\frac{1}{2}, 1;\\frac{3}{2};-z^2)  \\\\\n  \\end{align*}\n  $$"
@@ -387,11 +387,11 @@
     "define": "The [Normed Linear Space](./Normed_Linear_Space.md) of inner product is defined.\n\n### Inner Product\n\nOperations that meet the following conditions:\n- Commutative:$\\left<x, y\\right> = \\overline{\\left<y, x\\right>}$\n- Distributive:$\\left<x, y+z\\right> = \\left<x , y\\right> + \\left<x, z\\right>$\n- Homogeneity:$\\left<k x, y\\right> = k \\left<x, y\\right>$\n- Nonnegativity:$\\left<x,x\\right> \u2265 0$, if and only if $x = 0, \\left<x,x\\right> = 0$",
     "kids": {
       "Convolution": "",
-      "Hilbert_Space": ""
+      "Hilbert_Space": "is-a"
     },
     "name": "Inner_Product_Space",
     "parents": {
-      "Normed_Linear_Space": ""
+      "Normed_Linear_Space": "is-a"
     },
     "properties": [
       "- $x, y \\text{orthogonal} \\Leftrightarrow \\left<x,y\\right> = 0$\n- $|\\left<x, y\\right>| \u2264 |x| |y|$\n- $\\left<x, y \\right> = x^T y = |x| |y| cos(\\theta_{x,y})$\n- Geometric Interpretation:  \n$\\left<x, y \\right>$ means the length of $x$ projection toward $y$ multiply length of $y$; or the length of $y$ projection toward $x$ multiply length of $x$.\n- Example\n  * Laplace Transform\n  * Wavelet Transform\n  * Cross Correlation & Convolution"
@@ -407,7 +407,7 @@
     "name": "Integer_Ring",
     "parents": {
       "Natural_Number": "",
-      "Ring": ""
+      "Ring": "is-a"
     },
     "properties": [
       "### Division with Remainder & Factor\n\n### Multiplicative Function\n\n- Define  \n  A mapping $f: \\mathbb Z \\to \\mathbb R$, such that\n  $$\n  f(a \\times b) = f(a) f(b) \\quad \\text{when}\\ a, b \\in \\mathbb Z, gcd(a, b) = 1\n  $$\n\n- Property\n  - $f(1) = 1$\n\n- Example\n  * Eular Function\n    - Define  \n      The number of coprimes with $n$ in positive integers less than $n$.\n      $$\n      \\phi(n) = \\text{number}(\\{i\\ |\\ i \\in 1:n, \\text{GCD}(i, n) = 1\\})\n      $$\n\n    - Property\n      $$\n      \\begin{align*}\n        n &= \\prod_i p_i^{k_i}  \\\\\n        \\phi(n) &= n \\prod_{p|n} (1 - 1/p)  \n      \\end{align*}\n      $$\n\n  * [M\u00f6bius Function](./Mobius_Function.md)\n\n### Fermat's Last Theorem\n\nNo three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The cases $n = 1$ and $n = 2$ have been known since antiquity to have infinitely many solutions."
@@ -429,7 +429,7 @@
     "kids": {},
     "name": "Laplace_Transform",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       ""
@@ -438,11 +438,11 @@
   "Lattice": {
     "define": "$$\n(L, \\wedge, \\vee)\n$$\n\nLattice is a concept of partially ordered sets, which is a special type of [algebraic structure](./Algebra_Structure.md) that can define minimum upper and maximum lower bounds on certain sets.\u4e00\u4e2a\u683c $L$ \u662f\u4e00\u4e2a\u96c6\u5408\uff0c\u914d\u5408\u4e24\u4e2a\u4e8c\u5143\u8fd0\u7b97meet $\\wedge$\u548c join $\\vee$\uff0c\u6ee1\u8db3\u4ee5\u4e0b\u516c\u7406\uff1a\n\n1. **\u4ea4\u6362\u5f8b**\uff1a$\\forall a, b \\in L$\uff0c\u6709 $a \\wedge b = b \\wedge a$ \u548c $a \\vee b = b \\vee a$\n2. **\u7ed3\u5408\u5f8b**\uff1a$\\forall a, b, c \\in L$\uff0c\u6709 $a \\wedge (b \\wedge c) = (a \\wedge b) \\wedge c$ \u548c $a \\vee (b \\vee c) = (a \\vee b) \\vee c$\n3. **\u5438\u6536\u5f8b**\uff1a$\\forall a, b \\in L$\uff0c\u6709 $a \\wedge (a \\vee b) = a$ \u548c $a \\vee (a \\wedge b) = a$\n4. **\u5e42\u7b49\u5f8b**\uff1a$\\forall a \\in L$\uff0c\u6709 $a \\wedge a = a$ \u548c $a \\vee a = a$\n\n\u5728\u683c\u4e2d\uff0c\u4efb\u610f\u4e24\u4e2a\u5143\u7d20 $a$ \u548c $b$ \u7684\u201cmeet\u201d $a \\wedge b$ \u662f\u5b83\u4eec\u6240\u6709\u4e0b\u754c\u7684\u6700\u5927\u8005\uff0c\u800c\u5b83\u4eec\u7684\u201cjoin\u201d $a \\vee b$ \u662f\u5b83\u4eec\u6240\u6709\u4e0a\u754c\u7684\u6700\u5c0f\u8005\u3002",
     "kids": {
-      "Boolean_Algebra": ""
+      "Boolean_Algebra": "is-a"
     },
     "name": "Lattice",
     "parents": {
-      "Algebra_Structure": ""
+      "Algebra_Structure": "is-a"
     },
     "properties": [
       ""
@@ -465,7 +465,7 @@
     "kids": {},
     "name": "Linear_Function",
     "parents": {
-      "Polynomial_Function": ""
+      "Polynomial_Function": "is-a"
     },
     "properties": [
       "### Zero Set of Linear Function & Plane & Linear Surface \n\n$$\n\\{\\boldsymbol x \\ |\\ \\boldsymbol A \\boldsymbol x = \\boldsymbol b \\}\n$$\n\n### Problem: Solving Linear Equations \n\n$$\n\\boldsymbol A \\boldsymbol x = \\boldsymbol b\n$$\n\nKnow $\\boldsymbol A, \\boldsymbol b$ and Solve $\\boldsymbol x$. Where, $\\boldsymbol A \\in \\mathbb R^{m \\times n}$, $\\boldsymbol x \\in \\mathbb R^{n}$, $\\boldsymbol b \\in \\mathbb R^m$, $n$ is the number of unknown number, $m$ is the number of linear equations.\n\n#### Property: Existence of Solutions  \n\n$$\n\\begin{align*}\n  \\left\\{\\begin{matrix}\n    rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) &= n& \\quad \\text{Unique Solution}  \\\\\n    rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) &< n& \\quad \\text{Infinite Solutions}  \\\\\n    rank((\\boldsymbol A\\ \\boldsymbol b)) > rank(\\boldsymbol A) &&\\quad \\text{Unsolvable}\n  \\end{matrix}\\right.\n\\end{align*}\n$$\n\n- Proof \n  if $rank((\\boldsymbol A\\ \\boldsymbol b)) > rank(\\boldsymbol A)$ \n  $\\Rightarrow$ $(\\boldsymbol a_1,...,\\boldsymbol a_n)$ and $b$ is linearly independent \n  $\\Rightarrow$ $\\nexists \\boldsymbol x \\in \\mathbb R^{n}$ let $x_1 \\boldsymbol a_1 + ... + x_n \\boldsymbol a_n = b$. \n  $\\Rightarrow$ Unsolvable\n\n  if $rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) < n$ \n  $\\Rightarrow$ $\\exists u \\in \\mathbb R^{n-1}, k \\in [1, n]$ let $\\boldsymbol a_k = \\sum\\limits_{i=1,i\\neq k}^n u_i \\boldsymbol a_i$ \n  $\\Rightarrow$ $\\exists c_1, c_2 \\in \\mathbb R, c_1 + c_2 = 1$ and $\\exists x^*$ is a special solution, let $b = \\left(c_1 x_k^* a_k + c_2 x_k^* \\sum\\limits_{i=1,i\\neq k}^n u_i \\boldsymbol a_i \\right) + \\sum\\limits_{i=1,i\\neq k}^n x_i^* \\boldsymbol a_i$ \n  $\\Rightarrow$ Infinite Solutions\n\n  for the same reason, if $rank((\\boldsymbol A\\ \\boldsymbol b)) = rank(\\boldsymbol A) = n$ \n  $\\Rightarrow$ Unique Solution\n\n#### Solving  \n\n- **Unique Solution**\n  if $rank(\\boldsymbol A) = n$ , then $\\boldsymbol A^{-1}$ exists and\n  $$\n  \\boldsymbol x = \\boldsymbol A^{-1} \\boldsymbol b\n  $$\n  \n- **Infinite Solutions**\n  General Solution $\\boldsymbol x = \\boldsymbol A^{-^{\\{1\\}}} \\boldsymbol b + (\\boldsymbol I - \\boldsymbol A^{-^{\\{1\\}}} \\boldsymbol A) \\boldsymbol c$ \n  Special Solution $\\boldsymbol x = \\boldsymbol A^{-^{\\{1\\}}} \\boldsymbol b$  \n\n  Minimal Norm Solution. The minimum norm solution is unique.\n  $$\n  \\begin{align*}\n    \\min_{\\boldsymbol x} \\quad& ||\\boldsymbol x||_2  \\\\\n    s.t. \\quad& \\boldsymbol A \\boldsymbol x = \\boldsymbol b\n  \\end{align*}\n  $$\n  $$\n  \\boldsymbol x = \\boldsymbol A^{-^{\\{1,3\\}}} \\boldsymbol b\n  $$\n  \n- **Unsolvable**\n  Approximate solution $\\tilde{\\boldsymbol x}$ by giving the evaluation function, such as least square,\n  $$\n  \\min_{\\tilde{\\boldsymbol x}} \\quad ||\\boldsymbol A \\tilde{\\boldsymbol x} - \\boldsymbol b||_2\n  $$\n  $$\n  \\tilde{\\boldsymbol x} = \\boldsymbol A^{-^{\\{1,4\\}}} \\boldsymbol b\n  $$\n\n  Minimal norm Approximate solution $\\tilde{\\boldsymbol x}$ by least square,\n  $$\n  \\begin{align*}\n    \\min_{\\tilde{\\boldsymbol x}} \\quad& ||\\boldsymbol A \\tilde{\\boldsymbol x} - \\boldsymbol b||_2  \\\\\n    \\min_{\\tilde{\\boldsymbol x}} \\quad& ||\\tilde{\\boldsymbol x}||_2\n  \\end{align*}\n  $$\n  \n  $$\n  \\tilde{\\boldsymbol x} = \\boldsymbol A^+ \\boldsymbol b\n  $$"
@@ -474,15 +474,15 @@
   "Linear_Space": {
     "define": "$$\n(\\mathbb R, V, +, \\cdot)  \\tag{Linear Space}\n$$\nLinear Space is a special [module](./Module.md) including non empty set $V$ with addition and scalar multiplication, and satisfying:\n\n- Additive Closure: $x+y \\in V$\n- Scalar Multiplication Closure: $k x \\in V$\n- Identity element of vector addition: $x+0=x$\n- Inverse elements of vector addition: $x+(-x) = 0$\n- Identity element of scalar multiplication: $1x = x$\n- Commutativity of vector addition: $x+y = y+x$\n- Associativity of vector addition: $x+(y+z) = (x+y) +z$\n- Compatibility of scalar multiplication with field multiplication: $a(bx) = (a b)x$\n- Distributivity of scalar multiplication with respect to vector addition: $a(x+y) = a x + a y$\n- Distributivity of scalar multiplication with respect to field addition: $(a+b)x = ax+bx$",
     "kids": {
-      "Affine_Space": "",
+      "Affine_Space": "is-a",
       "Linear_Transformation": "",
-      "Normed_Linear_Space": "",
-      "Projective_Space": "",
+      "Normed_Linear_Space": "is-a",
+      "Projective_Space": "is-a",
       "Tensor": ""
     },
     "name": "Linear_Space",
     "parents": {
-      "Module": ""
+      "Module": "is-a"
     },
     "properties": [
       "### Relationship between vectors\n\n#### Linear Independence & Linear Dependence\n\nFor a vector group $(\\boldsymbol x_1, ... , \\boldsymbol x_n)$, we said  \n\nLinear Independence,\n$$\n\\nexists\\ \\boldsymbol a \u2260 \\boldsymbol 0 \\Rightarrow \\sum_{i=1}^n a_i \\boldsymbol x_i = \\boldsymbol 0\n$$\n\nLinear Dependence,\n$$\n\\exists\\ \\boldsymbol a \u2260 \\boldsymbol 0 \\Rightarrow \\sum_{i=1}^n a_i \\boldsymbol x_i = \\boldsymbol 0\n$$\n\n\n### Representation of vector: Base \n\n$$\n\\begin{align*}\n  \\boldsymbol v \n  &= \\sum_{i=1}^n a_i \\boldsymbol x_i \\quad, \\forall \\boldsymbol v \\in V  \\\\\n  &= \\boldsymbol X \\boldsymbol a\n\\end{align*}\n$$\nBase is a linearly independent vector group $\\boldsymbol X = (\\boldsymbol x_1, ... , \\boldsymbol x_n)$,\n\n$$\n\\mathbb R^{n}, n \\in \\mathbb Z\n$$\n\n\nAll vectors in the linear space $v \\in V$ can be uniquely expressed by linear combinations of the vector group. Therefore, a vector can be represented by a one-dimensional array of the coefficients of the combination in this basis, called coordinate components.\n\n- $\\boldsymbol x_i$: Base vector\n- $a_i$: coordinate\n\n#### Base Transformation & Coordinate Transformation\n\nBase transformation, is a transformation between new bases $\\boldsymbol Y$ and old bases $\\boldsymbol X$, where $\\boldsymbol C$ is the Transformation Matrix.\n$$\n\\boldsymbol Y = \\boldsymbol X \\boldsymbol C\n$$\n\nCoordinate Transformation, is solving a new coordinate $\\boldsymbol a_y$ in new base $\\boldsymbol Y$ from old coordinate $\\boldsymbol a_x$ in old base $\\boldsymbol X$.\n$$\n\\boldsymbol a_x = \\boldsymbol C \\boldsymbol a_y\n$$\n\n> Proof\n> \n> $$\n> \\begin{align*}\n>   \\boldsymbol v \n>   &= \\boldsymbol X \\boldsymbol a_x  \\\\\n>   &= \\boldsymbol Y \\boldsymbol a_y  \\\\ \n>   &= \\boldsymbol X \\boldsymbol C \\boldsymbol a_y  \\\\ \n>   \\Rightarrow \\boldsymbol a_x &= \\boldsymbol C \\boldsymbol a_y\n> \\end{align*}\n> $$\n\n\n- Property\n  The base transformation matrix $\\boldsymbol C$ is nonsingular.\n\n\n#### Dimension  \nIn linear space, the maximum number of vectors contained in a linearly independent vector group.\n\n#### Span\n$$\nSpan(\\boldsymbol x_1,...,\\boldsymbol x_n) = \\left\\{\\boldsymbol v | \\boldsymbol v = \\sum_{i=1}^n a_i \\boldsymbol x_i \\right\\}\n$$\nA representation of a linear space given by a basis vector.\n\n\n### Linear Subspace\n\nA nonempty set in a linear space that is closed to linear operations.\n\n- Additive Closure: $x,y\\in V_1 ,\\quad x+y \\in V_1$\n- Scalar Multiplication Closure: $x \\in V_1, k x \\in V_1$\n\n### Dual Space: $V \\to\\mathbb R$\n\n$$\nV^*=\\left\\{f:V\\rightarrow \\mathbb R \\mid f \\text{ is a linear map}\\right\\}\n$$\n\nLet $V$ be a vector space over a field $\\mathbb R $, the dual space $V^*$ of $V$ is the vector space of all linear functionals from $f: V \\to \\mathbb R$ called dual vector. For a finite-dimensional column vector, its dual vector is in the form of a row vector.\n$$\n\\left(\\begin{matrix}v^*_1  & \\cdots & v^*_n\\end{matrix} \\right) \\left(\\begin{matrix}v_1 \\\\ \\vdots \\\\ v_n\\end{matrix} \\right) = a \\in \\mathbb R\n$$\n\n### Matrix Decomposition\n\n#### LU decomposition\n\n$$\nA = L R\n$$\n\nThe matrix $A$ is decomposed into the product of upper triangular matrix $R$ and lower triangular matrix $L$.\n\n#### Upper and lower triangular diagonal decomposition\n\n\u5c06\u77e9\u9635A\u5316\u6210\u4e0a\u4e09\u89d2\u77e9\u9635R, \u5bf9\u89d2\u77e9\u9635D, \u4e0b\u4e09\u89d2\u77e9\u9635L\u7684\u4e58\u79ef.$A = L D R$\n\n#### Symmetric triangular decomposition\n\n$$\nA = G G^T\n$$\n\n\u5c06\u5bf9\u79f0\u6b63\u5b9a\u77e9\u9635\u5316\u6210\u5bf9\u79f0\u7684\u4e24\u4e2a\u4e0a\u4e0b\u4e09\u89d2\u77e9\u9635.\n\nAlgorithm:\n- first LU decomposition\n  Because symmetric positive definite matrix\n  $$A = L D U = L D L^T$$\n  $$\n  \\begin{align*}\n    A &= L (\\sqrt{D})^2 L^T  \\\\\n      &= (L \\sqrt{D}) (\\sqrt{D} L^T)  \\\\\n      &= (L \\sqrt{D}) (L \\sqrt{D})^T  \\\\\n      &= G G^T\n  \\end{align*}\n  $$\n\n#### QR decomposition\n\n$$\nA = Q R\n$$\n\nThe nonsingular matrix A is decomposed into the product of orthogonal matrix Q and nonsingular upper triangular matrix R\n\n##### Algorithm\n\n- Schmidt Orthogonalization method\n  - $A = (a_1, ..., a_n)$\n  - Schmidt Orthogonalization\n    $$\n    b_i = a_i - \\sum_{k=1}^{i-1} \\frac{<a_i,b_j>}{<b_j,b_j>}b_j\n    $$\n    \n    $$\n    \\begin{align*}\n      Q &= ( \\frac{b_1}{|b_1|}, ... , \\frac{b_n}{|b_n|} )  \\\\\n      R &= \\left(\\begin{matrix} |b_1|\\\\ & \\ddots\\\\ && |b_n| \\end{matrix}\\right) \\left(\\begin{matrix} 1 & k_{21} & ... & k_{n1} \\\\ & 1 & ... & k_{n2} \\\\& & \\ddots & \\vdots \\\\& & & 1 \\end{matrix}\\right) \\quad; k_{ij} = \\frac{<a_i,b_j>}{<b_j,b_j>}  \\\\\n      A &= Q R\n    \\end{align*}\n    $$\n\n- \u521d\u7b49\u65cb\u8f6c\u53d8\u6362\u65b9\u6cd5\n  - \u5bf9\u7b2c1\u5217, \u521d\u7b49\u65cb\u8f6c\u53d8\u6362\u4f7f\u5176\u53d8\u4e3a $T_i a_1 = (b_{11}, 0,...,0)$\n  - $T_i = \\prod_{i=0}^{n-1} T_{i(n-1-j)}$\n  - \u91cd\u590d\u4e0a\u9762\u6b65\u9aa4, \u76f4\u81f3\u5c06 $A_i$ \u5316\u4e3a\u4e0a\u4e09\u89d2\u77e9\u9635\n    $$\n    \\begin{align*}\n      R &= A_{n-1}\n      Q &= \\left(\\prod_{i=0}^{n-1} T_{n-1-i} \\right)^T\n      A &= Q R\n    \\end{align*}\n    $$\n\n- \u521d\u7b49\u53cd\u5c04\u53d8\u6362\u65b9\u6cd5\n  - \u5bf9\u7b2c1\u5217, \u521d\u7b49\u65cb\u8f6c\u53d8\u6362\u4f7f\u5176\u53d8\u4e3a $H_i a_1 = (b_{11}, 0,...,0)$\n    $$\n    \\begin{align*}\n      u_i &= \\frac{b_i - |b_i|}{| b_i - |b_i| |}\n      H_i &= I - 2 u u^T\n      A_{i+1} &= H_i A_i\n    \\end{align*}\n    $$\n\n  - Repeat the above steps, until $A_i$ into upper triangular matrix\n    $$\n    \\begin{align*}\n      R &= A_{n-1}\n      Q &= \\left(\\prod_{i=0}^{n-1} H_{n-1-i} \\right)^T\n      A &= Q R\n    \\end{align*}\n    $$\n\n#### Full Rank decomposition\n\n$$\nA = F G\n$$\n\n> Proof  \n> $$\n> A =P^{-1} B = \\left(\\begin{matrix} F & S \\end{matrix}\\right) \\left(\\begin{matrix} G\\\\ 0 \\end{matrix}\\right) = F G\n> $$\n\n##### Algorithm  \n$$\nA = F G\n$$\n\u521d\u7b49\u884c\u53d8\u6362, \u53d6A\u5de6\u4fa7rank(A)\u5217\u4f5c\u4e3aF, \u5219\n$$\nA \\to \\left(\\begin{matrix} G \\\\ 0 \\end{matrix}\\right)\n$$\n\n#### Eigenvalue Decomposition\n\nEigenvalue Decomposition, for a square matrix $\\boldsymbol A \\in \\mathbb R^{n \\times n}$, \n\n$$\n\\begin{align*}\n  \\boldsymbol A \n  &= \\boldsymbol Q \\boldsymbol \\Lambda \\boldsymbol Q^{-1}  \\\\\n  &= \\boldsymbol Q \\boldsymbol \\Lambda \\boldsymbol Q^{\\mathrm T}  \\\\\n\\end{align*}\n$$\n\n- $\\boldsymbol Q$ is an orthogonal matrix $\\boldsymbol Q^{\\mathrm T} \\boldsymbol Q = \\boldsymbol I$ composed of eigenvectors $\\boldsymbol v$\n- $\\Lambda$ is composed of eigenvalues $\\lambda$, \n\n$$\n\\begin{align*}\n  \\boldsymbol Q &= (\\boldsymbol v_1, ..., \\boldsymbol v_n)  \\\\\n  \\boldsymbol \\Lambda &= \\left(\\begin{matrix} \\lambda_1 && 0 \\\\ &\\ddots \\\\ 0 && \\lambda_n \\end{matrix}\\right)\n\\end{align*}\n$$\n\n> Proof\n> $$\n> \\boldsymbol A \\boldsymbol v_i = \\lambda_i \\boldsymbol v_i\n> $$\n> \n> $$\n> \\begin{align*}\n> \\Rightarrow \\boldsymbol A (\\boldsymbol v_1, ..., \\boldsymbol v_n) &= (\\boldsymbol v_1, ..., \\boldsymbol v_n) \\left(\\begin{matrix} \\lambda_1 && 0 \\\\ &\\ddots \\\\ 0 && \\lambda_n \\end{matrix}\\right)  \\\\\n> \\boldsymbol A &= (\\boldsymbol v_1, ..., \\boldsymbol v_n) \\left(\\begin{matrix} \\lambda_1 && 0 \\\\ &\\ddots \\\\ 0 && \\lambda_n \\end{matrix}\\right) (\\boldsymbol v_1, ..., \\boldsymbol v_n)^{-1}  \\\\\n> \\boldsymbol A &= \\boldsymbol Q \\Lambda \\boldsymbol Q^{-1}\n> \\end{align*}\n> $$\n> \n> The geometric significance of Eigenvalue Decomposition is that a linear transformation $\\boldsymbol A \\boldsymbol x$ is equivalent to (1) $\\boldsymbol Q^{-1} \\boldsymbol x$, convert to a new coordinate system with eigenvectors of $\\boldsymbol A$ as unit bases; (2)$\\boldsymbol \\Lambda (\\boldsymbol Q^{-1} \\boldsymbol x)$, a scale transform; (3)$\\boldsymbol Q (\\boldsymbol \\Lambda \\boldsymbol Q^{-1} \\boldsymbol x)$, convert to original coordinate system.\n\n#### Singular Value Decomposition\n\nfor a matrix $\\boldsymbol A \\in \\mathbb R^{m \\times n}$,  \n$$\n\\boldsymbol A = \\boldsymbol U \\left(\\begin{matrix} \\boldsymbol \\Sigma & \\boldsymbol 0 \\\\ \\boldsymbol 0 & \\boldsymbol 0 \\end{matrix}\\right) \\boldsymbol V^{\\mathrm H}\n$$\n\n- $\\boldsymbol U \\in \\mathbb R^{m \\times m}, \\boldsymbol V \\in \\mathbb R^{n \\times n}$ are unitary matrixs $\\boldsymbol U^{\\mathrm H} \\boldsymbol U = \\boldsymbol I, \\boldsymbol V^{\\mathrm H} \\boldsymbol V = \\boldsymbol I$\n- $\\boldsymbol \\Sigma$ is composed of nonzero singular values.\n\n\n$$\n\\exists \\text{Unitary Matrix} U, V \\Rightarrow U^H A V = \\left(\\begin{matrix} \u03a3 & 0 \\\\ 0 & 0 \\end{matrix}\\right)\n$$\n\n##### Algorithm  \n$A^{\\mathrm T} A$ \u8ba1\u7b97\u7279\u5f81\u503c $\u03bb$, \u7279\u5f81\u5411\u91cf$v'$, \u5e76\u5f52\u4e00\u5316\u6c42\u5f97 $\\boldsymbol V, \\boldsymbol \u03a3, \\boldsymbol U$,\n\n$$\n(\\boldsymbol A^{\\mathrm T} \\boldsymbol A) \\boldsymbol v'_i = \\lambda_i \\boldsymbol v'_i\n$$\n\n$$\n\\begin{align*}\n  \\boldsymbol V &= \\left(\\frac{\\boldsymbol v'_1}{\\|\\boldsymbol v'_1\\|_2}, ... ,\\frac{\\boldsymbol v'_n}{\\|\\boldsymbol v'_n\\|_2} \\right)  \\\\\n  \\boldsymbol \u03a3 &= \\text{diag}\\left(\\sqrt{\u03bb_1}, ... ,\\sqrt{\u03bb_n}\\right)  \\\\\n  \\boldsymbol U' &= \\boldsymbol A \\boldsymbol V \\boldsymbol \u03a3^{-1}  \\\\\n  \\boldsymbol U &= \\left(\\frac{\\boldsymbol u'_1}{\\|\\boldsymbol u'_1\\|_2}, ... ,\\frac{\\boldsymbol u'_n}{\\|\\boldsymbol u'_n\\|_2} \\right)  \n\\end{align*}\n$$\n\n##### Property\n$$\n\\begin{align*}\n  Range(A) &= Span(u_1, ..., u_r)  \\\\\n  Null (A) &= Span(v_{r+1}, ... , v_n)  \\\\\n  Range(A^{\\mathrm T}) &= Span(v_1, ..., v_r)  \\\\\n  Null (A^{\\mathrm T}) &= Span(u_{r+1}, ... , u_m)  \\\\\n  A &= \\sum_{i=1}^{r} \u03c3_i u_i v_i^H\n\\end{align*}\n$$\n\n> Proof\n> \n> $$\n> \\begin{align*}\n> A &= \\left(\\begin{matrix} U_{1:r} & U_{r+1:m} \\end{matrix}\\right) \\left(\\begin{matrix} \u03a3 & 0 \\\\ 0 & 0 \\end{matrix}\\right) \\left(\\begin{matrix} V_{1:r}^H \\\\ V_{r+1:n}^H \\end{matrix}\\right)  \\tag{\u5b9a\u4e49\u5f0f\u53d8\u5f62}  \\\\\n> &= U_{1:r} \u03a3 V_{1:r}^H\n> \\end{align*}\n> $$\n> \n> $$\n> \\begin{align*}\n> Range(A) &= \\{y\\ |\\ A x = y\\}  \\\\\n> &= \\{y\\ |\\ U_{1:r} (\u03a3 V_{1:r}^H x) = y\\}  \\tag{\u4ee3\u5165}  \\\\\n&\\subseteq Range(U_{1:r})  \\\\\n> Range(U_{1:r}) &= \\{y\\ |\\ U_{1:r} x = y\\}  \\\\\n> &= \\{y\\ |\\ A (V_{1:r} \u03a3^{-1} x) = y\\}  \\tag{$U_{1:r} = A V_{1:r} \\sigma^{-1}$}  \\\\\n> &\\subseteq Range(A)\n> \\end{align*}\n> $$\n> \n> $$\n> \\begin{align*}\n> \\Rightarrow Range(A) = Range(U_{1:r}) = Span(u_1, ..., u_r)\n> \\end{align*}\n> $$"
@@ -493,7 +493,7 @@
     "kids": {},
     "name": "Linear_Transformation",
     "parents": {
-      "Function": "",
+      "Function": "is-a",
       "Linear_Space": ""
     },
     "properties": [
@@ -514,12 +514,12 @@
   "Manifold": {
     "define": "Manifold $M$ is a second countable [Hausdorff space](./Hausdorff_Space.md) that is locally homeomorphic to a [Euclidean space](./Euclidean_Space.md).\n\n- Hausdorff, $\\forall x, y \\in M$, there exists open neighborhoods $U_x, U_y \\subseteq M$ with $x \\in U_x, y \\in U_y$ and $U_x \\cap U_y = \\emptyset$.   \n- Second countable, there exits a countable collection $(U_n)_{n \\in \\mathbb N}$ of open set in $M$ such that for all $V \\subseteq M$ open, and $p \\in V$, there is some $n$ such that $p \\in U_n \\subseteq V$\n- Locally homeomorphic to a Euclidean space, every point has a neighborhood $U$ homeomorphic $\\phi: U \\to V$ to an open subset $V$ of the Euclidean space $\\mathbb R^n$ for some nonnegative integer $n$.",
     "kids": {
-      "Differential_Manifold": "",
+      "Differential_Manifold": "is-a",
       "Lie_Group": ""
     },
     "name": "Manifold",
     "parents": {
-      "Hausdorff_Space": ""
+      "Hausdorff_Space": "is-a"
     },
     "properties": [
       "### Manifold $\\leftrightarrow \\mathbb R^n$ \n\n#### Chart & Atlas\n\n**Chart** $(U, \\phi)$ on a set is a bijection $\\phi: U \\subseteq M \\to \\phi(U) \\subseteq \\mathbb R^n$, where $U, \\phi(U)$ is open. A chart $(U, \\phi)$ is centered at $p$ for $p \\in U$ if $\\phi(p) = 0$.\n\n**Atlas** is a set of charts $\\{(U_i, \\phi_i)\\}$, that collectively cover a manifold $M$.\n$$\n\\{(U_i, \\phi_i)\\}\n$$\n\n### Geodesic\n\nA geodesic is a curve representing in some sense the shortest path between two points in a Riemannian manifold."
@@ -530,7 +530,7 @@
     "kids": {},
     "name": "Markov_Process",
     "parents": {
-      "Stochastic_Process": ""
+      "Stochastic_Process": "is-a"
     },
     "properties": [
       "### Brownian Process, Wiener Process \n\nThe Wiener process $\\{W(t) \\ |\\ t \\ge 0\\}$ is a stochastic process such that,\n- $W(0) = 0$\n- $W$ has independent increments, $\\forall t > s \\ge 0$, i.e. the future increments $W(t+\\Delta t) - W(t), \\Delta t \\ge 0$ are independent of the past values $W_s$.\n- $W(t) - W(s) \\sim \\mathcal N(0, \\sigma^2(t-s)) \\quad; \\forall t > s \\ge 0, \\sigma > 0$\n- $W$ has continuous paths, $W(t)$ is continuous in $t$ \n\nNote:\nRandom walk is a discrete version of Wiener Process, and Wiener process is a limit of random walk.\n\nProperty:\n$$\n\\mathbb E(W(t)) = 0\n$$\n$$\nVar_{W}(t) = \\sigma^2 t\n$$\n$$\nCorr_{W}(t_1, t_2) = Cov_W(t_1, t_2) = \\sigma^2 \\min \\{t_1, t_2\\} \\quad; t_1, t_2 \\ge 0\n$$\n\n### Poisson Process\n\n$$\nN(t) = \\sum_{n=1}^\\infty u(t - T(n)) \\quad; f_T(t;n) = \\frac{(\u03bb t)^{n-1}}{(n-1)!} \u03bb e^{-\u03bb t} u(t)\n$$\n\n### Markov Chain\n\nMarkov Chain is a discrete-time and discrete-state stochastic process that consists of a sequence of Random Variables $(X_0, X_1, ..., X_n)$, taking values in a discrete state space $\\{1, ..., M\\}$, where the transition of states $X_{n-1} \\to X_{n}$ only depend on the value of the last state $X_{n-1}$.\n\n$$\n\\mathbb P(X_n = x_n \\ |\\ X_{n-1} = x_{n-1}, ..., X_{0} = x_{0}) = \\mathbb P(X_n = x_n \\ |\\ X_{n-1} = x_{n-1})  \\tag{Tansition Probability}\n$$\n\nThe probability of the Tansition from state $X_{n-1} \\to X_{n}$ is called Tansition Probability.\n\n#### Property\n\n##### Transition Matrix\n\n$$\nT_{i,j} = \\mathbb P(X_n = j\\ |\\ X_{n-1} = i)  \\tag{$i \\to j$}\n$$\n$$\n\\begin{align*}\n  \\boldsymbol T_{M \\times M} &= \\left(\\begin{matrix}\n    \\mathbb P(X_n = 1\\ |\\ X_{n-1} = 1) & \\mathbb P(X_n = 2\\ |\\ X_{n-1} = 1) & ... & \\mathbb P(X_n = M\\ |\\ X_{n-1} = 1)  \\\\\n    \\vdots & \\vdots & \\ddots & \\vdots \\\\\n    \\mathbb P(X_n = 1\\ |\\ X_{n-1} = M) & \\mathbb P(X_n = 2\\ |\\ X_{n-1} = M) & ... & \\mathbb P(X_n = M\\ |\\ X_{n-1} = M)  \\\\\n  \\end{matrix}\\right) \\tag{Tansition Matrix} \\\\\n  \\boldsymbol p_{n} &= \\boldsymbol T_{M \\times M} \\boldsymbol p_{n-1}  \\\\\n  &= \\left(\\begin{matrix} \\mathbb P(X_n = 1) \\\\ \\mathbb P(X_n = 2) \\\\ \\vdots \\\\ \\mathbb P(X_n = M) \\end{matrix}\\right)  \\\\\n  &= \\left(\\begin{matrix}\n  \\mathbb P(X_n = 1\\ |\\ X_{n-1} = 1) & ... & \\mathbb P(X_n = M\\ |\\ X_{n-1} = 1)  \\\\\n  \\vdots & \\ddots & \\vdots \\\\\n  \\mathbb P(X_n = 1\\ |\\ X_{n-1} = M) & ... & \\mathbb P(X_n = M\\ |\\ X_{n-1} = M)  \\\\\n  \\end{matrix}\\right)\n  \\left(\\begin{matrix} \\mathbb P(X_{n-1} = 1) \\\\ \\mathbb P(X_{n-1} = 2) \\\\ \\vdots \\\\ \\mathbb P(X_{n-1} = M) \\end{matrix}\\right)  \\tag{Tansition of Probability Distribution}\n\\end{align*}\n$$\n\n$k$-step Tansition Matrix\n$$\n\\begin{align*}\nT^{(k)}_{ij} &= \\mathbb P(X_n = j\\ |\\ X_{n-k} = i)  \\tag{element of $k$-step Tansition Matrix}\\\\\n  \\boldsymbol p_{n} &= \\boldsymbol T^{(k)} \\boldsymbol p_{n-k}  \\\\\n\\end{align*}\n$$\n$$\nT^{(k)} = T^k\n$$\n\n- Property\n  - simple\n    $$\n    \\begin{align*}\n      T_{i,j} &\\ge 0\\\\\n      \\sum_{j=1}^M T_{i,j} &= 1  \\\\\n    \\end{align*}\n    $$\n\n  * Stationary Distribution\n    $$\n    \\boldsymbol p_{\\pi} = \\boldsymbol T \\boldsymbol p_{\\pi}  \\tag{$p_{\\pi}$: Stationary Distribution}\n    $$\n\n#### Example\n\n##### Random Walk\nFor a squence $\\{Y_i\\}$ of iid. random variable with value $\\{-1, +1\\}$ and probability $\\{1-p, p\\}$, then the 1-dimensional random walk is the squence $\\{X_0, X_1, ...\\}, X_0 = 0$ of random variable such that\n$$\nX_t = \\sum_{i=1}^t Y_i\n$$\n##### Branching Process \nBranching Process are used to medel population growth by reproduction. At the beginning, there is only one individual $Z_0 = 1$. In the next generation $n+1$, each offspring will reproduce randomly according to iid. random variable $X_{n,i}$. In branching process, the expected number of individuals in a particular $\\mathbb E(Z_n)$ and the probability of ultimate extinction $\\mathbb P(Z_n = 0)$ are central questions. The recurrence equation of branching process is \n$$\nZ_{n+1} = \\sum_{i=1}^{Z_n} X_{n, i}\n$$\n$Z_{n+1}$: the size of generation $n$ with $Z_0 = 1$.  \n$X_{n, i}$: a random variable denoting the number of direct successors of member $i$ in generation $n$. And $X_{n,i}$ are iid. over all $n$ and $i$."
@@ -550,7 +550,7 @@
   "Measurable_Space": {
     "define": "A Measurable Space is a pair $(E, \\mathcal E)$, where $E$ is a set and $\\mathcal E$ is its [$\\sigma$-algebra](./Power_Set.md).\n\nA Measure Space is a pair $(E, \\mathcal E, \\mu)$, where $E$ is a set and $\\mathcal E$ is its $\\sigma$-algebra, $\\mu$ is a Measure on $(E, \\mathcal E)$\n\n### Measurex\n\nA Measure on a measurable space $(E, \\mathcal E)$ is a function $\\mu: \\mathcal E \\to [0, \\infty)$ such that \n\n- $\\mu (\\emptyset) = 0$\n- Countable additivity: For any disjoint sequence $(A_1, ..., A_n), A_i \\in \\mathcal E$, then\n$$\n\\mu \\left(\\bigcup_i A_i\\right) = \\sum_i \\mu(A_i)\n$$",
     "kids": {
-      "Probability_Space": ""
+      "Probability_Space": "is-a"
     },
     "name": "Measurable_Space",
     "parents": {
@@ -563,11 +563,11 @@
   "Metric_Space": {
     "define": "A metric space is a pair $(X, d)$ where $X$ is a set and $d: X \\times X \\to \\mathbb R$  is a metric on $X$ satisfying the following axioms $\\forall x, y, z \\in X$:\n\n- Non-negativity, with equality if and only if $x = y$\n  $$\n  d(x, y) \\ge 0\n  $$\n- Symmetry\n  $$\n  d(x, y) = d(y, x)\n  $$\n- Triangle Inequality\n  $$\n  d(x, y) \\le d(x, z) + d(z, y)\n  $$\n\nMetric Space is a type of [Topological Space](./Topological_Space.md).",
     "kids": {
-      "Hilbert_Space": ""
+      "Hilbert_Space": "is-a"
     },
     "name": "Metric_Space",
     "parents": {
-      "Topological_Space": ""
+      "Topological_Space": "is-a"
     },
     "properties": [
       "- Lipschitz Equivalent  \n  Metrics $d, d'$ on $X$ are said to be Lipschitz Equivalent if there are positive constants $A, B$ and $\\forall x, y \\in X$ such that\n  $$\n  A d(x, y) \\le d'(x, y) \\le B d(x, y)\n  $$\n\n- Convergence of Sequence  \n  A sequence $x_n \\in X$ is said to be converge to $x$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists K)(\\forall k > K) d(x_k, x) < \\epsilon\n  $$\n\n- Complete Metric Space  \n  A metric space $(X, d)$ is complete if all Cauchy sequences converge to a point in $X$. Cauchy sequence is a sequence satisfying \n  $$\n  (\\forall \\epsilon > 0)(\\exists N)(\\forall n, m \\ge N) d(x_n, x_m) < \\epsilon\n  $$\n\n- Continuity  \n  For metric spaces $(X, d), (X', d')$, a function $f: X \\to X'$ is continuous at $y \\in X$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d'(f(x),f(y)) < \\epsilon\n  $$\n\n- Uniform Continuity\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d(f(x),f(y)) < \\epsilon\n  $$\n\n- Lipschitz Continuity  \n  $$\n  d'(f(x), f(y)) \\le K d(x, y)\n  $$\n\n- Lipschitz Continuity $\\Rightarrow$ Uniform Continuity $\\Rightarrow$ Continuity\n\n- Contraction Mapping  \n  A mapping $f: X \\to X$ is contraction if there exists $\\lambda \\in [0, 1)$ such that\n  $$\n  d(f(x), f(y)) \\le \\lambda d(x, y)\n  $$\n\n- Contraction Mapping Theorem , Banach Fixed-point Theorem  \n  For a complete matric space, if $f: X \\to X$ is a contraction, then $f$ has a unique fixed point $x^* \\in X$,\n  $$\n  f(x^*) = x^*,\\quad \\lim\\limits_{n \\to \\infty} f^n(x_0) = x^* ,\\forall x_0 \\in X\n  $$"
@@ -587,11 +587,11 @@
   "Module": {
     "define": "$$\n(R, M, +, \\cdot)\n$$\n\nSuppose that $R$ is a [ring](./Ring.md), and $1$ is its multiplicative identity. A left $R$-module $M$ consists of an abelian group $(M, +)$ and an operation $\\cdot$: $R \u00d7 M \\to M$ such that $\\forall r, s \\in R$ and $x, y \\in M$, we have\n1. $\\forall r, s \\in R$ \u548c $x, y \\in M$ \u6709 $(r + s) \\cdot x = r \\cdot x + s \\cdot x$\n2. $\\forall r \\in R$ \u548c $x, y \\in M$ \u6709 $r \\cdot (x + y) = r \\cdot x + r \\cdot y$\n3. $\\forall r, s \\in R$ \u548c $x \\in M$ \u6709 $(rs) \\cdot x = r \\cdot (s \\cdot x)$\n4. If ring $R$ \u6709\u4e00\u4e2a\u5355\u4f4d\u5143 $1_R$\uff0c\u90a3\u4e48\u5bf9\u6240\u6709 $x \\in M$ \u6709 $1_R \\cdot x = x$",
     "kids": {
-      "Linear_Space": ""
+      "Linear_Space": "is-a"
     },
     "name": "Module",
     "parents": {
-      "Ring": ""
+      "Ring": "is-a"
     },
     "properties": [
       ""
@@ -624,11 +624,11 @@
   "Normed_Linear_Space": {
     "define": "$$\n(X, ||\u00b7||)\n$$\nThe [Linear Space](./Linear_Space.md) of Norm is defined.\n\nSymbol:\n- $X$: linear space\n- $||\u00b7||$:  Norm",
     "kids": {
-      "Inner_Product_Space": ""
+      "Inner_Product_Space": "is-a"
     },
     "name": "Normed_Linear_Space",
     "parents": {
-      "Linear_Space": ""
+      "Linear_Space": "is-a"
     },
     "properties": [
       "### Norm\n\n#### Include\n\n##### Vector Norm \n\n- Define   \n  A class of functions$f: X \\to \\mathbb R$ that satisfy:\n  \n  - Nonnegativity, $||A|| \u2265 0 ; ||A|| = 0 <=> A = 0$\n  - Homogeneity, $||k A|| = |k| ||A||$\n  - Trigonometric Inequality, $||A + B|| \u2264 ||A|| + ||B||$\n  \n- Example \n  - $p$-Norm\n    $$\n    \\begin{align*}\n      ||x||_{p} &= \\left(\\sum_{i=1}^n |x_i|^p \\right)^{1 / p}  \\tag{p-Norm}\\\\\n      ||x||_0 &= number(x_i \u2260 0 |_{i=1:n})  \\tag{0-Norm}\\\\\n      ||x||_1 &= \\sum_{i=1}^n |x_i|  \\tag{1-Norm}\\\\\n      ||x||_2 &= \\sqrt{\\sum_{i=1}^n x_i^2}  \\tag{2-Norm}\\\\\n      ||x||_\u221e &= \\max |x_i|  \\tag{$\u221e$-Norm}\\\\\n    \\end{align*}\n    $$\n\n  - Ellipse Norm \n    $$||x||_A = (x^T A x)^{1/2}$$\n\n##### Matrix Norm \n\n- Define   \n  A class of functions that satisfy:\n  - Nonnegativity, $||A|| \u2265 0$, if and only if $A = 0, ||A|| = 0$\n  - Homogeneity, $||k A|| = |k| ||A||$\n  - Trigonometric Inequality, $||A + B|| \u2264 ||A|| + ||B||$\n  - Consistency, $||A B|| \u2264 ||A||\\ ||B||$\n\n- Example \n  - simple\n    $$\n    \\begin{align*}\n      ||A||_{m_1} &= \\sum_{i,j} |a_{ij}|  \\\\\n      ||A||_{m_2} &= \\left(\\sum_{i,j} a_{ij}^2 \\right)^{1/2}  \\\\\n      ||A||_{m_\u221e} &= n\u00b7\\max_{i,j}|a_{ij}|  \\\\\n      ||A||_1    &= \\max_j \\sum_i |a_{ij}|  \\tag{\u5217\u548c Norm}\\\\\n      ||A||_\u221e &= \\max_i \\sum_j |a_{ij}|  \\tag{\u884c\u548c Norm}\\\\\n    \\end{align*}\n    $$\n  - Spectral Norm   \n    $$\n    ||A||_2 = \\sqrt{\\max\\ \u03bb_i}\n    $$\n    $(\u03bb_i)$ is eigenvalue of $A^H A$ .\n\n  - Frobenius Norm \n    $$\n    ||\\.A||_F = \\sqrt{\\sum_i \\sum_j |a_{ij}|^2}\n    $$\n\n#### Property\n\n- Matrix & Vector Norm Consistency\n  $$\n  ||A x||_V \u2264 ||A||_M ||x||_V\n  $$"
@@ -639,7 +639,7 @@
     "kids": {},
     "name": "Ordered_Set",
     "parents": {
-      "Set": ""
+      "Set": "is-a"
     },
     "properties": [
       "* Least Element & Greatest Element\n    $$\n    m \\le a \\quad, m \\in S, \\forall a \\in S  \\tag{Least element}\n    $$\n    $$\n    a \\le g \\quad, g \\in S, \\forall a \\in S  \\tag{Greatest element}\n    $$\n    \n  * Minimal Element & Maximal Element  \n    $$\n    \\nexists a \\in S, \\text{ let } a < m \\quad, m \\in S \\tag{Minimal element}\n    $$\n    $$\n    \\nexists a \\in S, \\text{ let } g < a \\quad, g \\in S \\tag{Maximal element}\n    $$\n    \n  * Infimum & Supremum\n    Infimum (greatest lower bound) of a subset $S$ of a partially ordered set $(P, \\le)$ is an element $a^*\\in P$ such that,\n    $$\n    a \\le x \\quad, \\forall x \\in S  \\tag{lower bounds}\n    $$\n    $$\n    a \\le a^*, \\forall a \\tag{Infimum}\n    $$\n    \n    Supremum (least upper bound) of a subset $S$ of a partially ordered set $(P, \\le)$ is an element $b^* \\in P$ such that,\n    $$\n    x \\le b \\quad, \\forall x \\in S  \\tag{upper bounds}\n    $$\n    $$\n    b^* \\le b, \\forall b \\tag{Supremum}\n    $$\n\nInclude\n* Total Order \n  Total Order is a partial order in which any two elements are comparable, such that, \n  - strongly connected, formerly called total: $a \\le b$ or $b \\le a$.\n\n\n### Permutation\n\n- Define  \n  Permutation, is the arrangement of $k$ elements from a set of $n$ elements in a particular order. \n\n  The number of Conbination and Permutation Subsets\n  $$A(n, k) = \\frac{n!}{(n - k)!}  \\tag{Permutation}$$\n\n- Property\n  * Full Permutation\n    - Define  \n      Full Permutation refers to all possible permutations of all elements in a sequence.  \n\n    - Problem: Generate Full Permutation\n      $$\\begin{align*}\n        f(\\{a_i | i\\in 1:n\\}) \n        &= \\{(a_1, a_2, ..., a_n), (a_2, a_1, ..., a_n), (a_n, a_{n-1}, ..., a_1)\\}  \\\\\n        &= \\cup_{i=1}^n (\\{(a_i)\\} \u00d7 f(\\{a_j\\ |\\ j \u2260 i, j\\in 1:n\\}))  \\tag{$\u00d7$: \u5e8f\u5217\u5408\u5e76}  \\\\\n        f(\\{a_1\\}) &= \\{(a_1)\\}  \\tag{initial}  \\\\\n      \\end{align*}$$\n      \n    - Property\n      * Cantor Expansion  \n        - Define  \n          Cantor expansion is a bijection from a permutation sequence $a$ to a natural number $y$ that refer to the index of sequence in full permutation ordered by dictionary order. Where $f(a_i)$ is the number of elements smaller than $a_i$ and not appearing in $a_n:a_i$.\n          $$y = \\sum\\limits_{i=1}^n f(a_i) (i-1)!$$"
@@ -648,7 +648,7 @@
   "Polyhedron": {
     "define": "$$\n\\{\\boldsymbol x \\ |\\ \\boldsymbol a_j^T \\boldsymbol x \u2264 b_j, j = 1,...,m,\\ \\boldsymbol c_j^T \\boldsymbol x = d_j, j = 1,...,p\\}\n$$\n\nPolyhedron is the intersection of a finite hyperplane and a half space.",
     "kids": {
-      "Simplex": ""
+      "Simplex": "is-a"
     },
     "name": "Polyhedron",
     "parents": {
@@ -661,14 +661,14 @@
   "Polynomial_Function": {
     "define": "$$\\begin{align*}\n  f(x) &= \\sum_{i=0}^{n} a_i x^i  \\tag{one variable}  \\\\\n  f(\\boldsymbol x) &= \\sum_{\\boldsymbol i=(0,...,0)_n, i_j \\le i_k, \\forall j \\le k}^{(\\dim,...,\\dim)_n} \\left(a_{\\boldsymbol i} \u00b7 \\prod_{i_j \\in \\boldsymbol i, x_0 = 1}x_{i_j} \\right)  \\tag{multi-variate}  \n\\end{align*}$$\n\nPolynomial function is a kind of [function](./Function.md).",
     "kids": {
-      "Cubic_Function": "",
-      "Forth-Order_Function": "",
-      "Linear_Function": "",
-      "Quadratic_Function": ""
+      "Cubic_Function": "is-a",
+      "Forth-Order_Function": "is-a",
+      "Linear_Function": "is-a",
+      "Quadratic_Function": "is-a"
     },
     "name": "Polynomial_Function",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "- For a univariate $N$-th degree equation, there is no root-finding formula composed of finite addition, subtraction, multiplication, division, and square root operations $(+, -, \\times, /, \\sqrt{\\ })$ from the fifth degree onwards.\n\n* Fundamental Theorem of Algebra\n  Every non-constant single-variable polynomial with complex coefficients has at least one complex root. \n  \n  Theorem states the field of complex numbers is algebraically closed."
@@ -683,7 +683,7 @@
     },
     "name": "Power_Set",
     "parents": {
-      "Set": ""
+      "Set": "is-a"
     },
     "properties": [
       "- The number of elements in the power set of a set $S$ is $2^n$, where $n$ is the number of elements in the set $S$.\n  $$\n  |P(S)| = 2^{|S|}\n  $$\n\n\n### Combination\n\n- Define\n  $$\n  f_\\text{Conbination}(S, k) = \\{ X \\ |\\ X \\subseteq S , |X| = k\\}  \\tag{Conbination}\n  $$\n  Combination, is the selection of $k$ elements from a set of $n$ elements without any regard to the order in which they are chosen.\n\n  The number of Combination $C(n, r)$,\n  $$\n  C(n, r) = |f_\\text{Conbination}(S, k)| = \\frac{n!}{(n - m)! m!}  \\tag{number of Conbination}\n  $$\n\n- Property    \n  - $C(n,r) = C(n-1,r-1) + C(n-1,r)$\n  - $C(n,r) = C(n,n-r)$\n  - The union of all Combination of a set $S$ is the power set $P(S)$ of the set $S$.\n    $$\n    \\bigcup_{k=0}^n f_\\text{Conbination}(S, k) = P(S)\n    $$\n    $$\n    \\begin{align*}\n      \\sum_{i=0}^n C(n,i) &= 2^n  \\\\\n      \\sum_{i=0}^n C(n,i)^2 &= C(2n, n)  \\\\\n      \\sum_{i=0}^n C(k+i,k)^2 &= C(n+k+1, k+1) \n    \\end{align*}\n    $$"
@@ -708,7 +708,7 @@
     },
     "name": "Probability_Space",
     "parents": {
-      "Measurable_Space": ""
+      "Measurable_Space": "is-a"
     },
     "properties": [
       "### Large number theorem\n\n$$\n\\begin{align*}\n\\lim\\limits_{n \\to \u221e} \\mathbb P \\left(\\left|\\frac{1}{N} \\sum_{k=1}^n X_k-\u03bc \\right|<\u03b5 \\right) = 1  \\tag{Weak large number theorem}\\\\\n\\lim\\limits_{n \\to \u221e} \\mathbb P\\left(\\left|\\frac{f_A}{n}-p \\right|<\u03b5\\right) = 1  \\tag{Bernoulli large number theorem}\n\\end{align*}\n$$\n\n### Central Limit Theorem\n\n$$\n\\begin{align*}\n  \\lim\\limits_{n \\to \u221e} F_n(x) &= \\lim\\limits_{n \\to \u221e} \\mathbb P \\left(\\frac{\\sum\\limits_{k=1}^n X_k - n \u03bc}{\\sqrt{n} \u03c3} \u2264 x \\right)  \\\\\n  &= \\int_{-\u221e}^x \\frac{1}{\\sqrt{2 \u03c0}} e^{-t^2 / 2} \\mathrm d t  \\\\\n  &= \\Phi(x)\n\\end{align*}\n$$\n\n### Joint Probability\n\n$$\n\\mathbb P(A B)\n$$\nThe probability of A and B occurring together.\n\n### Conditional Probability\n\n$$\n\\mathbb P(B | A)\n$$\nProbability of occurrence of $B$ under the condition that $A$ occurs.\n\n#### Property\n\n- Independence \n  $$\n  Independence \\Leftrightarrow \\mathbb P(A B) = \\mathbb P(A) \\mathbb P(B)\n  $$\n  The occurrence of $A$ and $B$ does not affect each other.\n\n- relationship between Joint \\& Conditional probability\n  $$\n  \\begin{align*}\n    \\mathbb P(B | A) &= \\frac{\\mathbb P(A B)}{\\mathbb P(A)}  \\\\\n    \\mathbb P(A B) &= \\mathbb P(B | A) \\mathbb P(A) = \\mathbb P(A | B) \\mathbb P(B)\n  \\end{align*}\n  $$\n\n- Theorem -- Total Probability Theorem\n  $$\n  \\mathbb P(A) = \\sum_i \\mathbb P(A|B_i) \\mathbb P(B_i) \\quad; \\sum_i A_i = \u03a9\n  $$\n\n- Bayes formula\n  $$\n  \\begin{align*}\n    \\mathbb P(A | B) &= \\frac{\\mathbb P(B | A) \\mathbb P(A)}{\\mathbb P(B)}  \\\\\n    \\mathbb P(A_i | B) &= \\frac{\\mathbb P(B | A_i) \\mathbb P(A_i)}{\\sum\\limits_j \\mathbb P(B|A_j) \\mathbb P(A_j)}; \\sum_j A_j = \u03a9\n  \\end{align*}\n  $$"
@@ -719,7 +719,7 @@
     "kids": {},
     "name": "Projective_Space",
     "parents": {
-      "Linear_Space": ""
+      "Linear_Space": "is-a"
     },
     "properties": [
       "- If $V$ is an $n+1$-dimensional vector space, then the corresponding projective space $\\mathbf P(V)$ is $n$-dimensional"
@@ -730,7 +730,7 @@
     "kids": {},
     "name": "Quadratic_Function",
     "parents": {
-      "Polynomial_Function": ""
+      "Polynomial_Function": "is-a"
     },
     "properties": [
       "### Zero Set of Quadratic Function , Quadric Surface\n\n#### Define  \nQuadric Surface is the zero set of a quadratic function,\n$$\n\\begin{align*}\n  &\\{ \\boldsymbol x \\ |\\ \\boldsymbol x^T \\boldsymbol A \\boldsymbol x + \\boldsymbol b \\boldsymbol x + c = 0\\} \\tag{Quadric Surface}\\\\\n\\Leftrightarrow &\\left\\{ \\boldsymbol x' \\ |\\ \\boldsymbol x'^T \\boldsymbol A' \\boldsymbol x' = 0, \\boldsymbol x' = \\left(\\begin{matrix} \\boldsymbol x \\\\ 1 \\end{matrix}\\right)\\right\\}\n\\end{align*}\n$$\n\n#### Solution of Univariate Quadratic Equation  \nFor the given parameters $a, b, c$, and a univariate quadratic equation,\n$$\nf(x) = a x^2 + b x + c = 0\n$$\n\nThe solutions of equation are, \n$$\n\\begin{align*}\n  x &= \\frac{- b \\pm \\sqrt{\u0394}}{2 a}\\\\\n  \u0394 &= b^2 - 4 a c\n\\end{align*}\n$$\nProperties of solutions, \n- $\u0394 > 0$, Two real roots\n- $\u0394 = 0$, A real double root\n- $\u0394 < 0$, Two complex roots\n\n#### Include\n\n##### Sphere & Spherical Surface\n\n- Define  \n  For $\\boldsymbol A = \\boldsymbol I, \\boldsymbol b = \\boldsymbol 0, c = -r^2$ of a Quadratic Function,\n  $$\n  \\begin{align*}\n    &\\{ \\boldsymbol x \\ |\\ \\|\\boldsymbol x - \\boldsymbol x_c\\|_2 \\le r < 0\\}  \\tag{Sphere}\\\\\n  \\Leftrightarrow\\quad &\\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T (\\boldsymbol x - \\boldsymbol x_c) \\le r^2 < 0\\}  \\\\\n  \\Leftrightarrow\\quad &\\{ \\boldsymbol x_c + r \\boldsymbol u \\ |\\ \\|\\boldsymbol u\\|_2 \\le r < 0\\}\n  \\end{align*}\n  $$\n\n  $$\n  \\{ \\boldsymbol x \\ |\\ \\|\\boldsymbol x - \\boldsymbol x_c\\|_2 = r \\}  \\tag{Spherical Surface}\\\\\n  $$\n\n  Spherical Surface is a point set with a constant distance value $r$ from the center point $\\boldsymbol x_c$.\n\n<img src=\"./assets/Sphere_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n- Property\n  - Sphere is a convex set\n\n##### Ellipsoid & Ellipsoid Surface\n\n- Define  \n  In a Quadratic Function, if $\\boldsymbol A = \\boldsymbol P^{-1}, \\boldsymbol b = \\boldsymbol 0, c = -1$ is a positive definite matrix, the zero set of the function is an Ellipsoid Surface,\n  $$\n  \\begin{align*}\n    &\\left\\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T \\boldsymbol P^{-1} (\\boldsymbol x - \\boldsymbol x_c) \\le 1, \\boldsymbol P = \\boldsymbol P^T \u2ab0 0 \\right\\}  \\tag{Ellipsoid}\\\\\n    \\Leftrightarrow\\quad &\\{ \\boldsymbol x_c + \\boldsymbol A \\boldsymbol u \\ |\\ \\|\\boldsymbol u\\|_2 \\le 1\\}\n  \\end{align*}\n  $$\n\n  $$\n  \\{ \\boldsymbol x \\ |\\ (\\boldsymbol x - \\boldsymbol x_c)^T \\boldsymbol P^{-1} (\\boldsymbol x - \\boldsymbol x_c) = 1, \\boldsymbol P = \\boldsymbol P^T \u2ab0 0\\}  \\tag{Ellipsoid Surface}\n  $$\n\n<img src=\"./assets/Ellipsoid_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n- Property\n  \n  - Ellipsoid is a convex set\n\n##### Hyperboloid\n\n- Define\n  if $\\boldsymbol A$ is a non-positive definite matrix.\n\n  Hyperboloid of one sheet, Hyperboloid of two sheets, Conical surface in between\n  \n\n<img src=\"./assets/Hyperboloid_Of_Two_Sheets_Quadric.png\" alt=\"img\" style=\"zoom: 18%;\" />\n\n<img src=\"./assets/Hyperboloid_Of_One_Sheet_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n##### Paraboloid\n\n- Define \n\n<img src=\"./assets/Paraboloid_Quadric.png\" alt=\"img\" style=\"zoom:20%;\" />\n\n<img src=\"./assets/Hyperbolic_Paraboloid_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n##### Cylinder & Cylinder Surface\n\n- Define\n\n  \n\n<img src=\"./assets/Elliptic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n<img src=\"./assets/Hyperbolic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n<img src=\"./assets/Parabolic_Cylinder_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />\n\n##### Cone\n\n- Define\n\n<img src=\"./assets/Circular_Cone_Quadric.png\" alt=\"img\" style=\"zoom:18%;\" />"
@@ -742,7 +742,7 @@
     "name": "Quaternion_Ring",
     "parents": {
       "Real_Field": "",
-      "Ring": ""
+      "Ring": "is-a"
     },
     "properties": [
       "- The conjugate of a quaternion is defined as: $q^* = a - b i - c j - d k$.\n\n- Quaternion & Rotation\n  $$\n  q = \\cos(\\frac{\\theta}{2}) + \\sin(\\frac{\\theta}{2})(xi + yj + zk)\n  $$\n  $\\theta$ is the angle of rotation, $x, y, z$ is the unit vector component of the axis of rotation.\n\n  - Spherical linear interpolation"
@@ -753,7 +753,7 @@
     "kids": {},
     "name": "Radon_Translation",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "- The two-dimensional Fourier transform of the initial function along a line at the inclination angle is the one variable Fourier transform of the Radon transform (acquired at angle of that function.\n  $$\n  F(s\\theta)=\\int _{\\mathbb {R} }{\\mathcal {R}}f(\\theta ,r)e^{-2\\pi isr}\\,\\mathrm{d}r\n  $$\n  \n\n### Radon inversion formula\n\n$$\n\\begin{align*}\nf(\\mathbf {x} )&=\\int _{0}^{\\pi }(\\mathcal {R}f(\\cdot ,\\theta )*h)(\\left\\langle \\mathbf {x} ,\\mathbf {n} _{\\theta }\\right\\rangle )\\mathrm{d}\\theta\\\\\nf(x, y) &= \\int_0^\\pi (\\mathcal F_r^{-1}(\\mathcal F_r(\\mathcal R f(\\theta, r))(\\omega))\\cdot|\\omega|)(x \\sin \\theta + y \\cos \\theta)\\mathrm{d}\\theta\n\\end{align*}\n$$\n\nwhere $h$ is such that $\\hat h(k) = |k|$. The result obtained by Fourier transforming the Radon transform result $\\mathcal{R}f(\\theta, r)$ is filled into the line passing through the origin at an angle of $\\theta$, and finally the inverse Fourier transform is performed to obtain the original function $f(x, y)$.\n\n- Proof\n\n  Fourier Transform of the Radon Transform:\n  $$\n  \\begin{align*}\n  \\mathcal F_r(\\mathcal R f(\\theta, r))(\\omega) &= \\int_{-\\infty}^{+\\infty} \\mathcal R f(\\theta, r) e^{i\\omega r} \\mathrm{d} r\\\\\n  &= F(\\omega\\cos\\theta, \\omega\\sin\\theta)\\delta(\\omega)\n  \\end{align*}\n  $$\n  \n  $$\n  \\Rightarrow f(x, y) = \\int_0^\\pi (\\mathcal F_r^{-1}(\\mathcal F_r(\\mathcal R f(\\theta, s))(\\omega))\\cdot|\\omega|)(x \\sin \\theta + y \\cos \\theta)\\mathrm{d}\\theta\n  $$"
@@ -779,7 +779,7 @@
     },
     "name": "Rational_Number_Field",
     "parents": {
-      "Field": "",
+      "Field": "is-a",
       "Integer_Ring": ""
     },
     "properties": [
@@ -789,14 +789,14 @@
   "Real_Field": {
     "define": "$$\n\\mathbb R\n$$\n\nReal numbers is defined through the Dedekind cut of rational number sets $\\mathbb Q$. The Dedekind cut is a pair of sets A and B that divide the [rational number](./Rational_Number_Field.md) set $\\mathbb Q$ into two parts, satisfying:\n\n- $A \\neq \\empty, A \\neq \\mathbb Q$\n- if $p, q \\in \\mathbb Q, p < q, q \\in A$, then $p \\in A$. \n- No maximum element in $A$, if $q \\in A$, then there must be $p \\in \\mathbb Q, p > q$, let $p \\in A$.\n\n\nEach Dedekind cut defines a real number: if the cut represents a rational number, it is that rational number, otherwise it is an irrational number.\n\n\n\nThe set of real numbers, denoted $\\mathbb{R}$, together with the operations of addition and multiplication, is called the [field](./Field.md) of real numbers if the following axioms are satisfied:\n\n**Field Axioms**:\n- (A1) $a + b = b + a$ for all $a, b \\in \\mathbb{R}$ (Commutativity of Addition).\n- (A2) $a + (b + c) = (a + b) + c$ for all $a, b, c \\in \\mathbb{R}$ (Associativity of Addition).\n- (A3) There exists an element $0 \\in \\mathbb{R}$ such that $a + 0 = a$ for all $a \\in \\mathbb{R}$ (Existence of Additive Identity).\n- (A4) For every $a \\in \\mathbb{R}$, there exists an element $-a \\in \\mathbb{R}$ such that $a + (-a) = 0$ (Existence of Additive Inverse).\n- (M1) $a \\cdot b = b \\cdot a$ for all $a, b \\in \\mathbb{R}$ (Commutativity of Multiplication).\n- (M2) $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$ for all $a, b, c \\in \\mathbb{R}$ (Associativity of Multiplication).\n- (M3) There exists an element $1 \\in \\mathbb{R}$, $1 \\neq 0$, such that $a \\cdot 1 = a$ for all $a \\in \\mathbb{R}$ (Existence of Multiplicative Identity).\n- (M4) For every $a \\in \\mathbb{R}$ with $a \\neq 0$, there exists an element $a^{-1} \\in \\mathbb{R}$ such that $a \\cdot a^{-1} = 1$ (Existence of Multiplicative Inverse).\n- (D) $a \\cdot (b + c) = (a \\cdot b) + (a \\cdot c)$ for all $a, b, c \\in \\mathbb{R}$ (Distributive Law).\n\n**Order Axioms**:\n- (O1) For every $a, b \\in \\mathbb{R}$, exactly one of the following holds: $a < b$, $a = b$, $a > b$.\n- (O2) If $a < b$ and $b < c$, then $a < c$.\n- (O3) If $a < b$ and $c > 0$, then $a \\cdot c < b \\cdot c$.\n- (O4) If $a < b$ and $c < 0$, then $a \\cdot c > b \\cdot c$.",
     "kids": {
-      "Complex_Field": "",
+      "Complex_Field": "is-a",
       "Euclidean_Space": "",
       "Quaternion_Ring": "",
       "Real_Value_Function": ""
     },
     "name": "Real_Field",
     "parents": {
-      "Field": "",
+      "Field": "is-a",
       "Rational_Number_Field": ""
     },
     "properties": [
@@ -808,7 +808,7 @@
     "kids": {},
     "name": "Real_Value_Function",
     "parents": {
-      "Function": "",
+      "Function": "is-a",
       "Real_Field": ""
     },
     "properties": [
@@ -818,7 +818,7 @@
   "Relation": {
     "define": "$$\nR(A_1, A_2, \\cdots, A_n) \\subseteq A_1 \\times A_2 \\times \\cdots \\times A_n  \\tag{Relation}\n$$\n\nA $n$-ary **relation** $R$ in sets $A_1, A_2, \\cdots, A_n$ is a [subset](./Set.md) of their Cartesian product $A_1 \\times A_2 \\times \\cdots \\times A_n$. Relation is like a table, consists of a set of tuples (rows) and attributes (columns).\n\n- $n$ Degree: The number of attributes (columns) in a relation.\n- Cardinality: The number of tuples (rows) in a relation.",
     "kids": {
-      "Function": ""
+      "Function": "is-a"
     },
     "name": "Relation",
     "parents": {
@@ -833,7 +833,7 @@
     "kids": {},
     "name": "Riemann_Zeta_Function",
     "parents": {
-      "Complex_Value_Function": ""
+      "Complex_Value_Function": "is-a"
     },
     "properties": [
       "- the relationship with primes\n  $$\n  \\zeta(s) = \\prod_{p \\text{ is prime}} \\frac{1}{1 - p^{-s}}\n  $$\n\n- Riemann Hypothesis: Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part $\\frac{1}{2}$."
@@ -842,14 +842,14 @@
   "Ring": {
     "define": "$$\n(G, +, \\cdot)\n$$\n\nRing is an algebraic structure, where $G$ is a set, $\\cdot$ and $+$ are binary operations, and satisfy:  \n\n- $(G, +)$ is a commutative group\n- $(G, \\cdot)$ is a monoid\n  - $(G, \\cdot)$ satisfies associative law, $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$\n  - $(G, \\cdot)$ exists multiplicative identity, $\\exist 1: 1 \\cdot x = x \\cdot 1 = x, \\forall x \\in G$\n- Distributive law: multiplication is distributive with respect to addition,\n  $$\n  \\begin{align*}\n    a \\cdot (b + c) &= a \\cdot b + a \\cdot c  \\\\\n    (b + c) \\cdot a &= b \\cdot a + c \\cdot a\n  \\end{align*}\n  $$",
     "kids": {
-      "Field": "",
-      "Integer_Ring": "",
-      "Module": "",
-      "Quaternion_Ring": ""
+      "Field": "is-a",
+      "Integer_Ring": "is-a",
+      "Module": "is-a",
+      "Quaternion_Ring": "is-a"
     },
     "name": "Ring",
     "parents": {
-      "Algebra_Structure": ""
+      "Algebra_Structure": "is-a"
     },
     "properties": [
       "### Ideal\n\n- Define\n\n  Let $R$ be a ring and $I$ be a subring of $R$, if $\\forall i \\in I, \\forall r \\in R$, $i\\cdot r = r \\cdot i \\in I$,  we call $I$ is the ideal subring of $R$.\n\n- Property\n  - Quotient Ring\n\n- Include\n\n  - Prime Ideal\n\n    An ideal $I$ of a commutative ring $R$ is called a prime ideal if, whenever the product of two elements $a, b \\in R$ is an element of $I$, at least one of $a$ or $b$ is in $I$. Symbolically, if $I$ is a prime ideal and $ab \\in I$, then either $a \\in I$ or $b \\in I$.\n\n  - Maximal Ideal\n\n    An ideal $I$ of a ring $R$ is called a maximal ideal if it is a proper ideal (i.e., $I \\neq R$) and there are no other proper ideals properly containing $I$. In other words, there does not exist another ideal $J$ such that $I \\subsetneq J \\subsetneq R$.\n\n### Polynomial Ring\n\nThe polynomial ring $K[x]$ in $x$ over a field (or, more generally, a commutative ring) $K$ defined as the set of all polynomials in the variable $x$ with coefficients $p_i \\in K$ and a non-negative integer $n$ (representing the degree of the polynomial). \n$$\nf(x) = p_{0}+p_{1}x+p_{2}x^{2}+\\cdots +p_{n}x^{n}\n$$\n\n- **Addition**: $g(x) + f(x)$ is the polynomial whose coefficient of $x_i$ is $a_i + b_i$ for each $i$.\n- **Multiplication**: Given two polynomials $f, g$, their product $f \\cdot g$ is computed using the distributive property.\n\n  \n\n### Commutative Ring\n\nA Ring satisfying commutative law.\n$$\na \\cdot b = b \\cdot a \\quad; \\forall a, b \\in G\n$$"
@@ -860,7 +860,7 @@
     "kids": {},
     "name": "Sequence",
     "parents": {
-      "Function": ""
+      "Function": "is-a"
     },
     "properties": [
       "### Limitation\n\n$$\n\\lim_{n \\to \\infty} x_n=L \\Leftrightarrow |x_n-L|<\\epsilon, \\forall epsilon>0, \\exists N \\in Z_+, n > N  \\tag{Limit of Sequence}\n$$\n\nthe limit of the sequence $\\{x_{n}\\}$ as $n$ approaches infinity is $L$, written as $\\lim\\limits_{n\\rightarrow\\infty}x_{n} = L$ if for every positive number $\\epsilon> 0$, there exists a positive integer $N$ such that for all $n > N$, we have $\\vert a_{n}-L\\vert<\\epsilon$. If such a number $L$ exists, we say the sequence converges; otherwise, we say the sequence diverges.\n\n#### Basic Properties\n\n- **Uniqueness**:  If a sequence $\\{a_{n}\\}$ converges, then its limit is unique.\n\n$$\n\\lim_{n\\rightarrow\\infty}a_{n}=L_{1}, \\lim_{n\\rightarrow\\infty}a_{n}=L_{2} \\Rightarrow L_{1} = L_{2}\n$$\n\n- **Boundedness**: If a sequence $\\{a_{n}\\}$ converges, then the sequence is bounded. There exists a positive number $M$ such that $\\vert a_{n}\\vert\\leq M$ for all $n$. However, the converse is not necessarily true. A bounded sequence may not converge. \n- **Sign preservation**: If $\\lim\\limits_{n\\rightarrow\\infty}a_{n}=L$ and $L>0$ (or $L<0$), then there exists a positive integer $N$ such that for all $n > N$, $a_{n}>0$ (or $a_{n}<0$).\n\n- **Comparison Theorem**: If $a_{n}\\leq b_{n}$ for all $n$, then $\\lim\\limits_{n\\rightarrow\\infty}a_{n}\\leq \\lim\\limits_{n\\rightarrow\\infty}b_{n}$.\n- **Squeeze Theorem**: If $a_{n}\\leq c_{n}\\leq b_{n}$ for all $n$ and $\\lim\\limits_{n\\rightarrow\\infty}a_{n}=\\lim\\limits_{n\\rightarrow\\infty}b_{n}=L$, then $\\lim\\limits_{n\\rightarrow\\infty}c_{n}=L$.\n- **Subsequences of a Convergent Sequence**: If $\\lim\\limits_{n\\rightarrow\\infty}a_{n}=L$, the subsequence $\\{a_{n_k}\\}$ is also convergent and converges to the same limit $L$.\n\n#### Algebraic Properties\n- **Sum & DifferenceRule**: $\\lim\\limits_{n\\rightarrow\\infty}(a_{n} \\pm b_{n})=\\lim\\limits_{n\\rightarrow\\infty}a_{n} \\pm \\lim\\limits_{n\\rightarrow\\infty}b_{n}$.\n- **Product Rule**: $\\lim\\limits_{n\\rightarrow\\infty}(a_{n}\\times b_{n})=\\lim\\limits_{n\\rightarrow\\infty}a_{n}\\times\\lim\\limits_{n\\rightarrow\\infty}b_{n}$.\n- **Quotient Rule**: If $\\lim\\limits_{n\\rightarrow\\infty}b_{n}\\neq0$, then $\\lim\\limits_{n\\rightarrow\\infty}\\frac{a_{n}}{b_{n}}=\\frac{\\lim\\limits_{n\\rightarrow\\infty}a_{n}}{\\lim\\limits_{n\\rightarrow\\infty}b_{n}}$.\n\n### Classic Sequence\n\n#### Arithmetic Sequence\n\n$$\na_{n}-a_{n - 1}=d  \\quad (n\\geq2, n\\in \\mathbb N^+) \\\\\na_{n}=a_{1}+(n - 1)d\n$$\n\nIf starting from the second term of a sequence, the difference between each term and its preceding term is equal to the same constant, then this sequence is called an arithmetic sequence.\n\n- $d$: the common difference of the arithmetic sequence.\n\n##### Properties\n- **Arithmetic Mean**: If $a$, $b$, $c$ are in arithmetic sequence, then $2b = a + c$, and $b$ is called the arithmetic mean of $a$ and $c$.\n- **Sum Formula of the First $n$ Terms**: \n$$\nS_{n}=\\frac{n(a_{1}+a_{n})}{2}=na_{1}+\\frac{n(n - 1)}{2}d\n$$\n- $m + n = p + q \\Rightarrow a_{m}+a_{n}=a_{p}+a_{q}$\n- **Monotonicity**: When $d>0$, the sequence is an increasing sequence; when $d<0$, the sequence is a decreasing sequence; when $d = 0$, the sequence is a constant sequence.\n\n#### Geometric Sequence\n\n$$\n\\frac{a_{n}}{a_{n - 1}}=q  \\quad (n\\geq2, n\\in \\mathbb N^+, q \\neq 0)\\\\\na_{n}=a_{1}q^{n - 1}\n$$\n\nIf starting from the second term of a sequence, the ratio of each term to its preceding term is equal to the same constant, then this sequence is called a geometric sequence.\n\n- $q$: the common ratio of the geometric sequence\n\n##### Properties\n\n- **Geometric Mean**: If $a$, $b$, $c$ are in geometric sequence, then $b^{2}=ac$, and $b$ is called the geometric mean of $a$ and $c$, and $a$, $b$, $c$ are all non-zero.\n- **Sum Formula of the First $n$ Terms**: When $q = 1$, $S_{n}=na_{1}$; when $q\\neq1$, $S_{n}=\\frac{a_{1}(1 - q^{n})}{1 - q}=\\frac{a_{1}-a_{n}q}{1 - q}$.\n- $m + n = p + q \\Rightarrow a_{m}\\cdot a_{n}=a_{p}\\cdot a_{q}$\n- **Monotonicity**: When $a_{1}>0$, $q>1$ or $a_{1}<0$, $0<q<1$, the sequence is an increasing sequence; when $a_{1}>0$, $0<q<1$ or $a_{1}<0$, $q>1$, the sequence is a decreasing sequence; when $q = 1$, the sequence is a constant sequence; when $q<0$, the sequence is an oscillating sequence.\n\n### Series\n\nA series refers to the sum of the terms of a sequence. Given a sequence $a_n$, the series $S$ is given by:\n$$\nS = \\sum_{i=0}^\\infty a_i  \\\\\nS_n = \\sum_{i=0}^n a_i\n$$\n\n### Subsequence\n\nSubsequence of a sequence $(a_n)$ is $(a_{g(n)})$ where $g : \\mathbb N \\to \\mathbb N$ is strictly increasing.  \n\nProblem:\n* Sort\n\n* Maximum Subarray Sum\n  - Purpose  \n    For a given sequence $a$, we aim to find the maximum sum of a contiguous subarray.\n    $$\n    \\begin{align*}\n      \\max_{x \\subseteq a} \\sum x\n    \\end{align*}\n    $$\n\n  - Algorithm  \n    Dynamic Program,\n    $$\n    f_i = \\max(f_{i-1}, 0) + a_i\n    $$\n    $$\n    s^* = \\max_{i=1}^n(f_i)\n    $$\n    where $f_i$ refer to the maximum sum of a contiguous subarray ending at $a_i$. \n\n* Longest Subsequence Problem\n* Sequence Palindrome\n  - Include\n    * Longest Palindrome Subsequence \n      - Purpose \n        $$\n        \\begin{align*}\n          \\max_{x \\subseteq a} \\quad & n_x = \\text{number}(x)  \\\\\n          s.t. \\quad & x_i = x_{n_x - i + 1}  \\quad ; i = 1:n_x  \\tag{Palindrome}\n        \\end{align*}\n        $$\n\n      - Algorithm  \n        Dynamic programming,\n        $$\n        \\begin{align*}\n          f(s,e) &= \\left\\{\\begin{matrix}\n            f(s-1,e+1) + 2 \\quad & f(s,e) > 0 \\ \\text{and}\\  a_{s-1} = a_{e+1}  \\\\\n            0 \\quad & other.\n            \\end{matrix}\\right.  \\\\\n          f(s,s) &= 1  \\tag{initial}  \\\\\n          f(s,s+1) &= 2 \\quad ;a_s = a_{s+1}  \\\\\n        \\end{align*}\n        $$\n        $f()$: $a_{s:e}$\u7684\u56de\u6587\u5b57\u6570, \u4e0d\u662f\u56de\u6587\u5e8f\u5217\u5219\u4e3a0.\n\n    * Maximum Palindrome Prefix\n      - Purpose  \n        $$\n        \\begin{align*}\n          \\max_{x \\in 1:n_a} \\quad & x  \\\\\n          s.t. \\quad & a_i = x_{x - i + 1}  \\quad ; i = 1:x  \\tag{Palindrome}\n        \\end{align*}\n        $$\n\n* Sequence Matching\n  - Purpose  \n    For two given sequences $a, b$, where $\\text{number}(b) \\le \\text{number}(a)$, and we aim to find the first place where $b$ matching the successive subsequence of $a$.\n    $$\n    \\begin{align*}\n      \\min\\quad& k \\\\\n      s.t.\\quad& b = a_{k:k+n_b-1}\n    \\end{align*}\n    $$\n\n  - Property  \n    - The next place possible matched is $k+i-l_i$, from the place $k$ in $a$ and $b_{1:i} = a_{k:k+i-1}$.\n\n      $$\n      l_i = \\text{length}_\\text{Longest Prefix-Suffix}(b_{1:i})\n      $$\n      $$\n      \\begin{align*}\n        b_{1:i} = a_{k:k+i-1} \\Rightarrow\n        b_{1:l_i} &= a_{k+i-l_i:k+i-1}  \\tag{match}\\\\\n        b_{1:l'} &\u2260 a_{k+i-l':k+i-1}  \\quad ; l' > l_i  \\tag{mismatch}\n      \\end{align*}\n      $$\n\n  - Algorithm\n    * Knuth-Morris-Pratt Algorithm  \n      For a place $k$ in sequence $a$ and $b_{1:i} = a_{k:k+i-1}$, we judge whether is the matched place. If not, we use the property above to arrive the place $k'$ possible matched and do the same thing, untill find the answer.\n      $$\n      \\begin{matrix}\n        k \\gets& k+i-l_i \\quad; b_{i+1} \\neq a_{k+i}\\\\\n        i \\gets& i+1 \\quad; b_{i+1} = a_{k+i}\\\\\n      \\end{matrix}\n      $$\n\n* Dynamic Time Warping , DTW"
@@ -873,8 +873,8 @@
       "Fractal": "",
       "Graph": "",
       "Natural_Number": "",
-      "Ordered_Set": "",
-      "Power_Set": "",
+      "Ordered_Set": "is-a",
+      "Power_Set": "is-a",
       "Relation": ""
     },
     "name": "Set",
@@ -901,7 +901,7 @@
     "kids": {},
     "name": "Simplex",
     "parents": {
-      "Polyhedron": ""
+      "Polyhedron": "is-a"
     },
     "properties": [
       "* Point\n* Line Segment\n* Triangle\n  - Define \n  - Property\n    - judge whether a point is inside the triangle\n\n      We assume that the order of input vertices of the triangle $(\\boldsymbol a, \\boldsymbol b, \\boldsymbol c)$ is counter clockwise.\n\n      $$\n      \\left.\\begin{matrix}\n      (\\boldsymbol b-\\boldsymbol a) \\times (\\boldsymbol p-\\boldsymbol b) > 0\\\\\n      (\\boldsymbol c-\\boldsymbol b) \\times (\\boldsymbol p-\\boldsymbol c) > 0\\\\\n      (\\boldsymbol a-\\boldsymbol c) \\times (\\boldsymbol p-\\boldsymbol a) > 0\\\\\n      \\end{matrix} \\right\\} \\Leftrightarrow \\boldsymbol p \\text{ is in Triangle}(\\boldsymbol a, \\boldsymbol b, \\boldsymbol c)\n      $$\n\n  - Helen's formula\n      $$\n      S = \\sqrt{q(q-a)(q-b)(q-c)}\n      $$\n      $$\n      q = \\frac{a + b + c}{2}\n      $$\n\n* Tetrahedron\n\n- 5-cell"
@@ -910,7 +910,7 @@
   "Stochastic_Process": {
     "define": "A Stochastic Process $X(t, \\omega), \\omega \\in \\Omega, t \\in T$ is defined as a collection of random variables defined on a [Probability Space](./Probability_Space.md) $(\u03a9, \\mathcal F, P)$, and these random variables indexed by set $T$.\n\nNote\n- When the time $t$ is fixed, the random process degenerates into a random variable.\n- When the random sample $\u03b6$ is determined, the random process degenerates into a continuous time function",
     "kids": {
-      "Markov_Process": "",
+      "Markov_Process": "is-a",
       "Martingale": ""
     },
     "name": "Stochastic_Process",
@@ -926,7 +926,7 @@
     "kids": {},
     "name": "Symmetric_Group",
     "parents": {
-      "Group": ""
+      "Group": "is-a"
     },
     "properties": [
       "- Cayley's theorem: every group $G$ is isomorphic to a subgroup of a symmetric group.\n\n* Permutation Group\n    - Define\n      Permutation group is a group $G$ whose elements are permutations of a given set $M$ and whose group operation is the composition of permutations in $G$ (which are thought of as bijective functions from the set $M$ to itself).  \n\n    - Property\n      - every group is isomorphic to some permutation group."
@@ -946,8 +946,8 @@
   "Topological_Space": {
     "define": "$$\n(S, \\tau)\n$$\n\nA **Topological space** is a pair $(S, \\tau)$,  where $S$ is a set and $\\tau$ is a **topology** on $S$. A topology $\\tau$ is a collection of subsets of a set $S$ (a subset of [power set](./Power_Set.md) $P(S)$) that satisfies the following axioms.\n\n- The empty set and the whole set $S$ itself belong to $\\tau$.\n$$\n\\{\\emptyset, S\\} \\subseteq \\tau\n$$\n\n- The intersection of any finite members of $\\tau$ belongs to $\\tau$. If $U_{1},U_{2},\\cdots,U_{n}$ are sets in $\\tau$, then \n$$\n\\bigcap_{i = 1}^{n}U_{i}\\in\\tau\n$$\n\n- Any arbitrary (finite or infinite) union of members of $\\tau$ belongs to $\\tau$. If $\\{U_{\\alpha}\\}_{\\alpha\\in I}$ is an arbitrary collection of sets in $\\tau$, where $I$ is an index set, then \n$$\n\\bigcup_{\\alpha\\in I}U_{\\alpha}\\in\\tau\n$$\n\n### Open Set\n\nThe elements of $\\tau$ are called **open sets** in the topological space $(S,\\tau)$, and the selection of open sets determines the topological structure of the space.",
     "kids": {
-      "Hausdorff_Space": "",
-      "Metric_Space": ""
+      "Hausdorff_Space": "is-a",
+      "Metric_Space": "is-a"
     },
     "name": "Topological_Space",
     "parents": {
@@ -960,11 +960,11 @@
   "Tree": {
     "define": "Tree is a class of connected undirected graphs without loops.\n\n### Rooted Tree\n\nWhen the root node is set to a certain node of the tree, the hierarchical relationship of the entire tree and the parent-child relationship among each node will be uniquely determined.\n\n- **root node**: A node without forward nodes, and a tree has only one root node.\n- **leaf node:** A node that has no children.\n- depth: Number of edges in the simple path from node to root node. The depth of the tree is the maximum node depth in the tree.\n\n<img src=\"./assets/rooted tree.svg\" style=\"zoom:50%;\" />",
     "kids": {
-      "Binary_Tree": ""
+      "Binary_Tree": "is-a"
     },
     "name": "Tree",
     "parents": {
-      "Graph": "undirected, connected, acyclic"
+      "Graph": "is-a, undirected, connected, acyclic"
     },
     "properties": [
       "- There exists and only exists one single simple path between any two points of the tree.\n- $number(E) = number(V) - 1$\n- Delete an edge, the Tree will become disconnected;  \n  Add an edge, the Tree will have a loop."

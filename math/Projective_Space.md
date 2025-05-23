@@ -14,5 +14,5 @@ Given a [vector space](./Linear_Space.md) $V$ over a field $K$, the projective s
 
 ## Parents
 
-- [Linear_Space](./Linear_Space.md): 
+- [Linear_Space](./Linear_Space.md): is-a
 

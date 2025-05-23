@@ -47,7 +47,7 @@ Rational number field is a [field](./Field.md) of rational numbers is the set of
 
 ## Parents
 
-- [Field](./Field.md): 
+- [Field](./Field.md): is-a
 
 - [Integer_Ring](./Integer_Ring.md): 
 

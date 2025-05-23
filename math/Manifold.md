@@ -29,11 +29,11 @@ A geodesic is a curve representing in some sense the shortest path between two p
 
 ## Include
 
-- [Differential_Manifold](./Differential_Manifold.md): 
+- [Differential_Manifold](./Differential_Manifold.md): is-a
 
 - [Lie_Group](./Lie_Group.md): 
 
 ## Parents
 
-- [Hausdorff_Space](./Hausdorff_Space.md): 
+- [Hausdorff_Space](./Hausdorff_Space.md): is-a
 

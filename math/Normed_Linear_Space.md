@@ -83,9 +83,9 @@ Symbol:
 
 ## Include
 
-- [Inner_Product_Space](./Inner_Product_Space.md): 
+- [Inner_Product_Space](./Inner_Product_Space.md): is-a
 
 ## Parents
 
-- [Linear_Space](./Linear_Space.md): 
+- [Linear_Space](./Linear_Space.md): is-a
 

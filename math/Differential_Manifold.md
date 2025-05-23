@@ -10,7 +10,6 @@ Differential manifold $M$ of dimension $n$ is a [manifold](./Manifold.md) and eq
 
 ## Properties
 
-
 ### Relationship between multiply differential manifolds
 
 #### Continuity
@@ -142,9 +141,9 @@ $$
 
 ## Include
 
-- [Euclidean_Space](./Euclidean_Space.md): 
+- [Euclidean_Space](./Euclidean_Space.md): is-a
 
 ## Parents
 
-- [Manifold](./Manifold.md): 
+- [Manifold](./Manifold.md): is-a
 

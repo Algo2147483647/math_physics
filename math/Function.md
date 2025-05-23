@@ -45,29 +45,29 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 ## Include
 
-- [Bessel_Function](./Bessel_Function.md): 
+- [Bessel_Function](./Bessel_Function.md): is-a
 
-- [Complex_Value_Function](./Complex_Value_Function.md): 
+- [Complex_Value_Function](./Complex_Value_Function.md): is-a
 
-- [Dirac_Delta_Function](./Dirac_Delta_Function.md): 
+- [Dirac_Delta_Function](./Dirac_Delta_Function.md): is-a
 
-- [Exponential_Function](./Exponential_Function.md): 
+- [Exponential_Function](./Exponential_Function.md): is-a
 
-- [Hilbert_Transform](./Hilbert_Transform.md): 
+- [Hilbert_Transform](./Hilbert_Transform.md): is-a
 
-- [Laplace_Transform](./Laplace_Transform.md): 
+- [Laplace_Transform](./Laplace_Transform.md): is-a
 
-- [Linear_Transformation](./Linear_Transformation.md): 
+- [Linear_Transformation](./Linear_Transformation.md): is-a
 
-- [Polynomial_Function](./Polynomial_Function.md): 
+- [Polynomial_Function](./Polynomial_Function.md): is-a
 
-- [Radon_Translation](./Radon_Translation.md): 
+- [Radon_Translation](./Radon_Translation.md): is-a
 
-- [Real_Value_Function](./Real_Value_Function.md): 
+- [Real_Value_Function](./Real_Value_Function.md): is-a
 
-- [Sequence](./Sequence.md): 
+- [Sequence](./Sequence.md): is-a
 
 ## Parents
 
-- [Relation](./Relation.md): 
+- [Relation](./Relation.md): is-a
 

@@ -73,9 +73,9 @@ Metric Space is a type of [Topological Space](./Topological_Space.md).
 
 ## Include
 
-- [Hilbert_Space](./Hilbert_Space.md): 
+- [Hilbert_Space](./Hilbert_Space.md): is-a
 
 ## Parents
 
-- [Topological_Space](./Topological_Space.md): 
+- [Topological_Space](./Topological_Space.md): is-a
 

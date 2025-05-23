@@ -64,15 +64,15 @@ $$
 
 ## Include
 
-- [Field](./Field.md): 
+- [Field](./Field.md): is-a
 
-- [Integer_Ring](./Integer_Ring.md): 
+- [Integer_Ring](./Integer_Ring.md): is-a
 
-- [Module](./Module.md): 
+- [Module](./Module.md): is-a
 
-- [Quaternion_Ring](./Quaternion_Ring.md): 
+- [Quaternion_Ring](./Quaternion_Ring.md): is-a
 
 ## Parents
 
-- [Algebra_Structure](./Algebra_Structure.md): 
+- [Algebra_Structure](./Algebra_Structure.md): is-a
 

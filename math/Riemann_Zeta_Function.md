@@ -25,5 +25,5 @@ Riemann zeta function for $s$ where $\Re(s) > 1$ is as described above ([Complex
 
 ## Parents
 
-- [Complex_Value_Function](./Complex_Value_Function.md): 
+- [Complex_Value_Function](./Complex_Value_Function.md): is-a
 

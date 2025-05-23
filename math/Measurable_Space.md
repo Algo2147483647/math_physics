@@ -38,7 +38,7 @@ $$
 
 ## Include
 
-- [Probability_Space](./Probability_Space.md): 
+- [Probability_Space](./Probability_Space.md): is-a
 
 ## Parents
 
