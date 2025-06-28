@@ -1,6 +1,0 @@
-# Tessellation
-
-[TOC]
-
-### Pentagonal tiling
-

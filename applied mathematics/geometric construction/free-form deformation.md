@@ -1,5 +1,9 @@
 # Free-Form Deformation
 
+## Problem
+
+## Resolution
+
 
 ### Principle of Free-Form Deformation (FFD)
 

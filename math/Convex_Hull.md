@@ -11,7 +11,7 @@ A set of points in a Euclidean space is defined to be convex if it contains the 
 - The set of all convex combinations of points in $S$
 - The union of all simplices with vertices in $S$
 
-<img src="./assets/600px-Jarvis_algorithm.svg.png" alt="File:Jarvis algorithm.svg" style="zoom:33%;" />
+<img src="./assets/Jarvis_algorithm.svg" alt="Jarvis_algorithm" style="zoom: 33%;" />
 
 ## Properties
 

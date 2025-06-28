@@ -1,14 +1,20 @@
-# Perlin Noise
+# Noise Generation
 
 [TOC]
 
-## Define
+## Problem
+
+Noise generation refers to the process of introducing controlled randomness or perturbations into geometric data (e.g., points, curves, surfaces, or meshes) to simulate natural imperfections, enhance realism, test algorithmic robustness, or generate complex procedural content.
+
+## Resolution
+
+### Perlin Noise
 
 Perlin noise is a type of gradient noise.
 
 <img src="assets/Perlin_noise_example.png" alt="undefined" style="zoom:12%;" />
 
-## Process
+#### Process
 
 1. **Grid Initialization:** Start with a regular grid of random gradient vectors. These vectors serve as the basis for the noise generation.
 2. **Gradient Dot Products:** For each point in the grid, calculate the dot product between the gradient vector and the vector from the grid point to the target point. This determines how much influence the gradient has on the noise value at that point.
@@ -17,7 +23,7 @@ Perlin noise is a type of gradient noise.
 
 <img src="assets/1024px-PerlinNoiseGradientGrid.svg.png" alt="img" style="zoom:25%;" /><img src="assets/1024px-PerlinNoiseDotProducts.svg.png" alt="img" style="zoom:25%;" /><img src="assets/1024px-PerlinNoiseInterpolated.svg.png" alt="img" style="zoom:25%;" />
 
-### Implementation
+**Implementation**: 
 
 ```c
 #include <math.h>
@@ -101,16 +107,25 @@ float perlin(float x, float y) {
 }
 ```
 
-## Property
+#### Property
 
 1. **Smoothness:** Perlin noise is known for its smooth and continuous appearance. It avoids the grid-like artifacts present in simpler noise functions.
 2. **Gradient Noise:** Unlike simple random noise functions, Perlin noise is a gradient noise function. It computes values based on gradients at each point, resulting in smoother transitions between values.
 3. **Interpolation:** Perlin noise involves interpolation between grid points. This interpolation is what contributes to the smoothness of the generated noise.
 4. **Multi-dimensional:** Perlin noise can be generated in multiple dimensions, such as 1D, 2D, 3D, and even higher dimensions. The extension to higher dimensions allows for the creation of complex and varied patterns.
 
-## Applications
+### Diamond-Square Algorithm
 
-1. **Terrain Generation:** Perlin noise is frequently used to generate realistic-looking terrains by mapping noise values to elevation levels.
-2. **Procedural Textures:** It is employed to create diverse and natural textures for applications like graphics rendering and game development.
-3. **Animation:** Perlin noise can be used to add natural-looking randomness to animations, simulating effects like fire, clouds, or turbulent water.
-4. **Procedural Generation:** In procedural content generation, Perlin noise helps create varied and interesting landscapes, structures, and patterns.
+The diamond-square algorithm is a method for generating heightmaps for computer graphics. It is a slightly better algorithm than the three-dimensional implementation of the midpoint displacement algorithm, which produces two-dimensional landscapes. It is also known as the random midpoint displacement fractal, the cloud fractal or the plasma fractal, because of the plasma effect produced when applied.
+
+The diamond-square algorithm begins with a two-dimensional square array of width and height $2^n + 1$. The four corner points of the array must first be set to initial values. The diamond and square steps are then performed alternately until all array values have been set.
+
+- The diamond step: For each square in the array, set the midpoint of that square to be the average of the four corner points plus a random value.
+
+- The square step: For each diamond in the array, set the midpoint of that diamond to be the average of the four corner points plus a random value.
+
+Each random value is multiplied by a scale constant, which decreases with each iteration by a factor of 2−h, where h is a value between 0.0 and 1.0 (lower values produce rougher terrain).
+
+During the square steps, points located on the edges of the array will have only three adjacent values set, rather than four. There are a number of ways to handle this complication - the simplest being to take the average of just the three adjacent values. Another option is to 'wrap around', taking the fourth value from the other side of the array. When used with consistent initial corner values, this method also allows generated fractals to be stitched together without discontinuities.
+
+![img](assets/200px-Plasmafractal.gif)

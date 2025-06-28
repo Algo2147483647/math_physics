@@ -1,9 +1,9 @@
-# Marching Cubes
+# Contour Surface
 
 [TOC]
 
 ## Problem
-The problem of reconstructing a smooth, continuous surface from a discrete set of 3D scalar field data points. Constructing an iso-surface $f(x, y, z) = a$ of a 3D scalar field $f: \mathbb R^3 \to \mathbb R$ with triangle surface set.
+The problem of reconstructing a smooth, continuous surface from a discrete set of 3D scalar field data points or a 3D scalar field. Constructing an iso-surface $f(x, y, z) = a$ of a 3D scalar field $f: \mathbb R^3 \to \mathbb R$ with triangle surface set.
 $$
 S = \{(x, y, z)\ |\ f(x, y, z) = a\}
 $$
