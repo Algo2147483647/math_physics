@@ -148,7 +148,7 @@ Property:
 
 ## Include
 
-- [Lie_Group](./Lie_Group.md): is-a
+- [Lie_Group](./Lie_Group.md): 
 
 - [Symmetric_Group](./Symmetric_Group.md): is-a
 

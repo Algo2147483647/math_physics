@@ -70,6 +70,8 @@ A Penrose tiling is an example of an aperiodic tiling.
 
 - [Knot](./Knot.md): 
 
+- [Convex_Hull](./Convex_Hull.md): 
+
 ## Parents
 
 - [Differential_Manifold](./Differential_Manifold.md): is-a

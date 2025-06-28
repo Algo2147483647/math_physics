@@ -2,13 +2,15 @@
 
 [TOC]
 
-## Purpose
-Constructing an isosurface $f(x, y, z) = a$ of a 3D scalar field $f: \mathbb R^3 \to \mathbb R$ with triangle surface set.
+## Problem
+The problem of reconstructing a smooth, continuous surface from a discrete set of 3D scalar field data points. Constructing an iso-surface $f(x, y, z) = a$ of a 3D scalar field $f: \mathbb R^3 \to \mathbb R$ with triangle surface set.
 $$
 S = \{(x, y, z)\ |\ f(x, y, z) = a\}
 $$
 
-## Algorithm
+## Resolution
+
+### Marching Cubes
 
 <img src="./assets/polygonise3.gif" alt="img" style="zoom:33%;" />
 
@@ -178,7 +180,7 @@ $$
 | 11111110 | (0, 3, 8) || 11111111 | () |
 ||
 
-## Implementation
+#### Implementation
 
 ```python
 def marching_cubes(f, st, ed, N):

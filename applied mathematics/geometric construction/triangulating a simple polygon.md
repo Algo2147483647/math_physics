@@ -1,23 +1,25 @@
-# Ear Clipping
+# Triangulating a simple polygon
 [TOC]
-## Purpose
-The ear clipping algorithm is a simple and efficient method for triangulating simple polygon. The algorithm takes as input an $n$-sided polygon and produces a list of $n-2$ triangular faces that form the triangulated polygon.
+## Problem
+Triangulating a simple polygon means dividing a single polygon (without holes or self-intersections) into a set of non-overlapping triangles that exactly cover the polygon's interior.
+
+## Resolution
+
+### Ear Clipping
+
+Ear Clipping solves the problem of triangulating a simple polygon. The algorithm takes as input an $n$-sided polygon and produces a list of $n-2$ triangular faces that form the triangulated polygon.
 
 - Input: a polygon (represented by a set of points).
 
 - Output: a set of triangles.
-  
-## Idea
 
 - **Ear**: An ears is a triangle form by three consecutive vertices of the polygon, such that the triangle is entirely contained whitin the polygon and no other vertices of the polygon are inside the triangle.
 
 - Identify and remove "ears" from the polygon. 
 
-## Process
-
 <img src="./assets/Ear-Clipping-Process13.png" alt="Ear Clipping Process[13] " style="zoom: 30%;" />
 
-### Find an Ear
+#### Find an Ear
 
 - Start with any vertex of the polygon
 
@@ -56,11 +58,14 @@ The ear clipping algorithm is a simple and efficient method for triangulating si
   
   
 
-### Remove the Ear
+#### Remove the Ear
 
 Once we find an "ear," we remove the vertex from the polygon and create a triangle. The resulting polygon has one fewer vertex.
 
-### Repeat
+#### Repeat
 
 Continue the process with the updated polygon (with one less vertex) until no vertices are left. The algorithm terminates when the entire polygon has been triangulated.
 
+#### Property
+
+- O(n²) complexity (where `n` is the number of vertices)

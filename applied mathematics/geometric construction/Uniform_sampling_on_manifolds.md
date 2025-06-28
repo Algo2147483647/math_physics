@@ -2,7 +2,7 @@
 
 [TOC]
 
-## Question
+## Problem
 
 "uniform sampling on manifolds" refers to the process of generating points on a manifold in a way that ensures each region of the manifold has an approximately equal probability of being sampled. 
 
@@ -14,7 +14,7 @@ $$
 
 where $P(A)$ is the probability of sampling a point in $A$, and $\text{Vol}_M(A)$ is the volume of $A$ with respect to the intrinsic geometry of the manifold $M$.
 
-## Answer
+## Resolution
 
 给定参数化方程，导出逆采样表达式，
 
@@ -31,7 +31,7 @@ $$
 
 ### Grid sampling: [Fibonacci Lattice](./Fibonacci_Lattice.md)
 
-## Example
+## Include
 
 ### Uniform sampling of spherical surfaces
 

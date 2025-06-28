@@ -40,5 +40,5 @@ Property:
 
 ## Parents
 
-- [Stochastic_Process](./Stochastic_Process.md): is-a
+- [Stochastic_Process](./Stochastic_Process.md): 
 
