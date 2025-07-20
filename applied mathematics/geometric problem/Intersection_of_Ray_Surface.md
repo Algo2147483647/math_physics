@@ -19,7 +19,7 @@ $$
 
 ## Include
 
-### ray & Surface
+### ray & surface
 
 
 
@@ -65,7 +65,7 @@ v &= \frac{(\boldsymbol x_0 - \boldsymbol v_1) × \boldsymbol e_1· \hat{\boldsy
 \end{align*}
 $$
 
-有交点条件: $u ≥ 0, v ≥ 0, u + v ≤ 1$
+- **Intersection Condition**: $u ≥ 0, v ≥ 0, u + v ≤ 1$
 
 > Proof
 > $$
@@ -122,7 +122,7 @@ $$
 \end{align*}
 $$
 
-若$Δ≥0$有交点; 若$Δ<0$无交点.
+- **Intersection Condition**: 若$Δ≥0$有交点; 若$Δ<0$无交点.
 
 > Proof
 > $$
@@ -146,7 +146,7 @@ $$
 > t = \frac{-b ± \sqrt{Δ}}{2a}
 > $$
 >
-### ray & surface of ellipsoid
+### ray & surface of Ellipsoid
 
 $$
 (\boldsymbol x - \boldsymbol c)^T \boldsymbol P^{-1} (\boldsymbol x - \boldsymbol c) = 1 \tag{surface of ellipsoid}
@@ -162,7 +162,7 @@ t &= \frac{-b ± \sqrt{Δ}}{2a}  \\
 \end{align*}
 $$
 
-若$Δ≥0$有交点; 若$Δ<0$无交点.
+- **Intersection Condition**: 若$Δ≥0$有交点; 若$Δ<0$无交点.
 
 > Proof
 > $$
@@ -214,15 +214,52 @@ t_\text{exit}  &\quad\text{if } t_\text{enter} \le t_\text{exit} \text{ and } t_
 $$
 
 
-### ray & surface of fourth order
+### ray & surface of Fourth order polynomial equation
 
-
-
-### ray & surface of Ring
-
+Solution: 通过将 $f(\boldsymbol x_0 + t \hat{\boldsymbol d})= 0$ 规范化为四次多项式方程求解问题.
 $$
-(R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_i^2) = 0  \\
-f = 0  \\
-(R^2 - r^2 + (\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}))^2 - 4 R^2 ((\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}) - (\boldsymbol x_0 + t \hat{\boldsymbol d})_i^2) = 0  \\
+t^{4} + b t^{3} + c t^{2} + d t + e = 0
 $$
 
+$$
+\begin{align*}
+Q_1 &= c^{2} - 3 b d + 12 e \\
+Q_2 &= 2 c^{3} - 9 b c d + 27 d^{2} + 27 b^{2} e - 72 c e \\
+Q_3 &= 8 b c - 16 d - 2 b^{3} \\
+Q_4 &= 3 b^{2} - 8 c \\
+Q_5 &= \left( \dfrac{Q_2}{2} + \sqrt{ \dfrac{Q_2^{2}}{4} - Q_1^{3} } \right)^{1/3} \\
+Q_6 &= \dfrac{1}{3} \left( \dfrac{Q_1}{Q_5} + Q_5 \right) \\
+Q_7 &= 2 \sqrt{ \dfrac{Q_4}{12} + Q_6 } \\
+\text{root} &= \left(\begin{matrix}
+\dfrac{ -b - Q_7 - \sqrt{ \dfrac{4 Q_4}{6} - 4 Q_6 - \dfrac{Q_3}{Q_7} } }{4} \\
+\dfrac{ -b - Q_7 + \sqrt{ \dfrac{4 Q_4}{6} - 4 Q_6 - \dfrac{Q_3}{Q_7} } }{4} \\
+\dfrac{ -b + Q_7 - \sqrt{ \dfrac{4 Q_4}{6} - 4 Q_6 + \dfrac{Q_3}{Q_7} } }{4} \\
+\dfrac{ -b + Q_7 + \sqrt{ \dfrac{4 Q_4}{6} - 4 Q_6 + \dfrac{Q_3}{Q_7} } }{4}
+\end{matrix}\right)
+\end{align*}
+$$
+
+
+#### ray & surface of Ring
+
+$$
+\begin{align*}
+f(\boldsymbol x) &= (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_k^2) = 0  \\
+f(\boldsymbol x_0 + t \hat{\boldsymbol d}) &= (R^2 - r^2 + (\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}))^2 - 4 R^2 ((\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}) - (\boldsymbol x_0 + t \hat{\boldsymbol d})_k^2) = 0
+\end{align*}
+$$
+
+Solution: 通过规范化为四次多项式方程求解问题.
+$$
+\begin{align*}
+t^{4} + B t^{3} + C t^{2} + D t + E &= 0 \\
+a &= 4R^{2} \\
+b &= 2(x_0 d_x + y_0 d_y + z_0 d_z) \\
+c &= x_0^{2} + y_0^{2} + z_0^{2} + R^{2} - r^{2} \\
+A &= 1 \\
+B &= 2b \\
+C &= b^{2} + 2c - a(dx^{2} + dy^{2}) \\
+D &= 2b \cdot c - 2a(x_0 dx + y_0 dy) \\
+E &= c^{2} - a(x_0^{2} + y_0^{2}) \\
+\end{align*}
+$$
