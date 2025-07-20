@@ -11,8 +11,6 @@
 
 ### Segments in a 2D plane 
 
-#### Problem
-
 For two given segments in a 2D plane $l_1: (\boldsymbol v_1, \boldsymbol v_2), l_2: (\boldsymbol v_3, \boldsymbol v_4)$
 
 #### Algorithm

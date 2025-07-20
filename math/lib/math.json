@@ -114,7 +114,7 @@
     ]
   },
   "Convex_Hull": {
-    "define": "A set of points in a Euclidean space is defined to be convex if it contains the line segments connecting each pair of its points. The convex hull of a given set $S$ may be defined as\n\n- The (unique) minimal convex set containing $S$\n- The intersection of all convex sets containing $S$\n- The set of all convex combinations of points in $S$\n- The union of all simplices with vertices in $S$\n\n<img src=\"./assets/600px-Jarvis_algorithm.svg.png\" alt=\"File:Jarvis algorithm.svg\" style=\"zoom:33%;\" />",
+    "define": "A set of points in a Euclidean space is defined to be convex if it contains the line segments connecting each pair of its points. The convex hull of a given set $S$ may be defined as\n\n- The (unique) minimal convex set containing $S$\n- The intersection of all convex sets containing $S$\n- The set of all convex combinations of points in $S$\n- The union of all simplices with vertices in $S$\n\n<img src=\"./assets/Jarvis_algorithm.svg\" alt=\"Jarvis_algorithm\" style=\"zoom: 33%;\" />",
     "kids": {},
     "name": "Convex_Hull",
     "parents": {
