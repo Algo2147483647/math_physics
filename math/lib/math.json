@@ -102,7 +102,8 @@
       "Gamma_Function": "is-a",
       "Holomorphic_Function": "is-a",
       "Hypergeometric_Function": "is-a",
-      "Riemann_Zeta_Function": "is-a"
+      "Riemann_Zeta_Function": "is-a",
+      "Spherical_Harmonics": ""
     },
     "name": "Complex_Value_Function",
     "parents": {
@@ -917,6 +918,17 @@
     },
     "properties": [
       "* Point\n* Line Segment\n* Triangle\n  - Define \n  - Property\n    - judge whether a point is inside the triangle\n\n      We assume that the order of input vertices of the triangle $(\\boldsymbol a, \\boldsymbol b, \\boldsymbol c)$ is counter clockwise.\n\n      $$\n      \\left.\\begin{matrix}\n      (\\boldsymbol b-\\boldsymbol a) \\times (\\boldsymbol p-\\boldsymbol b) > 0\\\\\n      (\\boldsymbol c-\\boldsymbol b) \\times (\\boldsymbol p-\\boldsymbol c) > 0\\\\\n      (\\boldsymbol a-\\boldsymbol c) \\times (\\boldsymbol p-\\boldsymbol a) > 0\\\\\n      \\end{matrix} \\right\\} \\Leftrightarrow \\boldsymbol p \\text{ is in Triangle}(\\boldsymbol a, \\boldsymbol b, \\boldsymbol c)\n      $$\n\n  - Helen's formula\n      $$\n      S = \\sqrt{q(q-a)(q-b)(q-c)}\n      $$\n      $$\n      q = \\frac{a + b + c}{2}\n      $$\n\n* Tetrahedron\n\n- 5-cell"
+    ]
+  },
+  "Spherical_Harmonics": {
+    "define": "$$\nY_l^m(\\theta, \\phi) = \\sqrt{\\frac{(2l+1)}{4\\pi} \\frac{(l-m)!}{(l+m)!}}  P_l^m(\\cos \\theta)  e^{im\\phi}\n$$\n\n**Spherical harmonics** $Y_l^m(\\theta, \\phi)$ are a set of complex-valued functions defined on the unit sphere $S^2$, form an orthogonal basis of functions. They serve as the eigenfunctions of the angular part of Laplace's equation $\\nabla^2 f = 0$ in spherical coordinates and constitute a complete set of simultaneous eigenfunctions for the squared angular momentum operator $\\hat{L}^2$ and the z-component angular momentum operator $\\hat{L}_z$. The associated Legendre polynomials $ P_l^m(\\cos \\theta) $ constitute the polar angle ($\\theta$) component of these functions.\n\n- $l$: Degree, non-negative integer $l = 0, 1, 2, \\ldots$, determines the angular \"frequency\" or scale of variation of the function, analogous to the harmonic order in a Fourier series.\n- $m$: Order, integer $|m| \\leq l$, determines the dependence or pattern of variation of the function in the azimuthal $\\phi$ direction.\n- $\\theta$: Polar angle, $0 \\leq \\theta \\leq \\pi$, defined as the angle down from the positive $z$-axis (North Pole).\n- $\\phi$: Azimuthal angle, $0 \\leq \\phi < 2\\pi$, defined as the angle of rotation around the $z$-axis within the $xy$-plane.\n- $(-1)^m$: Phase factor, known as the Condon-Shortley phase (commonly used in physics), is included in the standard definition of the associated Legendre functions $P_l^m$.\n\n![Sphericalfunctions](./assets/Sphericalfunctions.svg)\n\n### Associated Legendre Polynomials\n\n$$\n\\begin{align*}\nP_l(x) &= \\frac{1}{2^l l!} \\frac{\\mathrm d^l}{\\mathrm dx^l} (x^2 - 1)^l  \\tag{Legendre}\\\\\nP_l^m(x) &= (-1)^m (1 - x^2)^{m/2} \\frac{\\mathrm d^m}{\\mathrm dx^m} P_l(x) \\tag{Associated Legendre}\n\\end{align*}\n$$\n\n**Legendre Polynomials** are defined as an orthogonal system with respect to the weight function $w(x) = 1$ over the interval $[\u22121,1]$. They satisfy Legendre's differential equation:\n$$\n\\begin{align*}\n\\int_{-1}^{1} P_m(x) P_n(x)  dx &= \\frac{2}{2n+1} \\delta_{mn}\\\\\n(1 - x^2) \\frac{d^2 y}{dx^2} - 2x \\frac{dy}{dx} + n(n+1) y &= 0  \\tag{Legendre's differential equation}  \\\\\n\\frac{1}{\\sqrt{1 - 2xt + t^2}} &= \\sum_{n=0}^{\\infty} P_n(x) t^n, \\quad |t| < 1 \\tag{Generating Function}\n\\end{align*}\n$$\n\n$$\n(l+1) P_{l+1}(x) = (2l+1) x P_l(x) - l P_{l-1}(x) \\\\\nP_0(x) = 1\\\\\nP_1(x) = x  \\tag{Recurrence Relation}\n$$\n\n**Associated Legendre polynomials** $P_l^m(x)$ are a set of real-valued functions defined on the interval $[-1, 1]$, which can be derived from the Legendre polynomials $P_l(x)$.\n$$\n(l-m) P_l^m(x) = x (2l-1) P_{l-1}^m(x) - (l+m-1) P_{l-2}^m(x)\n$$\n\n\n- $x \\in [-1, 1]$, $x = \\cos \\theta$\n- $\\delta_{mn}$ is the Kronecker delta.",
+    "kids": {},
+    "name": "Spherical_Harmonics",
+    "parents": {
+      "Complex_Value_Function": ""
+    },
+    "properties": [
+      "Rotational invariance: \n\nOrthogonality:\n$$\n\\int_0^{2\\pi} \\int_0^\\pi Y_l^m(\\theta, \\phi)  \\left[ Y_{l'}^{m'}(\\theta, \\phi)\\right]^*  \\sin\\theta  \\mathrm d\\theta \\mathrm  d\\phi = \\delta_{ll'} \\delta_{mm'}\n$$\n\nCompleteness: \u5bf9\u4e8e\u4efb\u610f\u4e0e\u7403\u4f53\u540c\u80da\u7684\u51fd\u6570, \u53ef\u4ee5\u901a\u8fc7\u7403\u8c10\u51fd\u6570\u4f5c\u4e3a\u6807\u51c6\u6b63\u4ea4\u57fa\u5b9e\u73b0\u7ea7\u6570\u5c55\u5f00.\n$$\n\\begin{align*}\nf(\\theta,\\phi) &= \\sum_{l=0}^{\\infty} \\sum_{m=-l}^{l} c_{lm} Y_l^m(\\theta,\\phi)\\\\\nc_l^m &= \\int_{S^2} f(\\theta, \\phi) Y_l^{m*}(\\theta, \\phi) \\, d\\Omega\n\\end{align*}\n$$\n\n\n\nAssociated Legendre Polynomials\n$$\nP_n(-x) = (-1)^n P_n(x)\n$$\n\n\n$$\nP_l^{-m}(x) = (-1)^m \\frac{(l-m)!}{(l+m)!} P_l^m(x)\n$$\n\nOrthogonality:\n$$\n\\begin{align*}\n\\int_{-1}^1 P_l(x) P_{l'}(x) \\mathrm dx &= \\frac{2}{2l+1} \\delta_{ll'}\\\\\n\\int_{-1}^{1} P_k^m(x) P_l^m(x)  \\mathrm  dx &= \\frac{2}{2l + 1} \\frac{(l + m)!}{(l - m)!} \\delta_{kl}  \\\\\n\\end{align*}\n$$\n\n***\\*Roots\\****: All $n$ roots of $P_n(x)$ are real, distinct, and lie in (-1, 1)."
     ]
   },
   "Stochastic_Process": {

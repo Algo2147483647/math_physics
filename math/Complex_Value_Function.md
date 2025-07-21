@@ -64,6 +64,8 @@ A meromorphic function on an open subset $D$ of the complex plane is a function 
 
 - [Riemann_Zeta_Function](./Riemann_Zeta_Function.md): is-a
 
+- [Spherical_Harmonics](./Spherical_Harmonics.md): 
+
 ## Parents
 
 - [Complex_Field](./Complex_Field.md): 
