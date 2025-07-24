@@ -88,7 +88,7 @@ $$
 \end{align*}
 $$
 
-***\*Roots\****: All $n$ roots of $P_n(x)$ are real, distinct, and lie in (-1, 1).
+Roots: All $n$ roots of $P_n(x)$ are real, distinct, and lie in (-1, 1).
 
 ## Include
 
