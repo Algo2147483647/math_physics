@@ -29,7 +29,7 @@ The **Real Field** $\mathbb{R}$ is a set equipped with addition $+$ and multipli
 
 - **Completeness Axiom (Continuity of real numbers)**: Every non-empty subset of $\mathbb R$ that is bounded above has a least upper bound (supremum). 
 
-> Proof for the Equivalence of Completeness Axiom & Continuity of real numbers
+> **Proof**: the equivalence of completeness axiom & continuity of real numbers
 >
 > **Completeness Axiom $\Rightarrow$ Continuity of real numbers**
 >
