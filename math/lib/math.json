@@ -244,7 +244,7 @@
     },
     "name": "Field",
     "parents": {
-      "Ring": "is-a"
+      "Integer_Ring": "is-a"
     },
     "properties": [
       "### Field extension\n\n$$\nE/F\n$$\n\nA field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$.\n\n### Field Automorphism\n\n$$\n\\begin{align*}\nf(a + b) &= f(a) + f(b) \\\\\nf(a \\cdot b) &= f(a) \\cdot f(b)\n\\end{align*}\n$$\n\n\n\n### Galois Group\n\n$$\nGal(K/F) = \\{\\phi: K \\to K \\ |\\ \\phi(a) = a, \\forall a \\in F\\}\n$$\n\n**Galois group** of a field extension $K/F$, is the group of all field automorphisms of $K$ that fix $F$ pointwise."
@@ -413,6 +413,7 @@
     "define": "Ring of Integers is a kind of Integral Domain (\u6574\u73af).\n$$\n\\mathbb Z\n$$\n\nAn **integer** can be defined as an equivalence class of ordered pairs of natural numbers $(a, b)$, where $a$ and $b$ are [natural numbers](./Natural_Number.md), under the following equivalence relation:\n\n- Two ordered pairs $(a, b)$ and $(c, d)$ are considered equivalent if and only if $a + d = b + c$. (the difference between two natural numbers)\n\n$$\n(\\mathbb Z, +, \\cdot)\n$$\n$$\n\\forall a, b \\in \\mathbb Z, a \\cdot b = 0 \\quad\\Rightarrow\\quad  (a = 0 \\vee b = 0)  \\tag{no zero divisor}\n$$\nIntegral ring is a nonzero commutative [ring](./Ring.md) in which the product of any two nonzero elements is nonzero.\n\n- **Addition:** To add two integers represented by $[a, b]$ and $[c, d]$, define their sum as $[a + c, b + d]$. This is equivalent to adding the two 'positive' parts and the two 'negative' parts separately.\n  \n- **Negation:** The negation of an integer represented by $[a, b]$ is $[b, a]$, reflecting the idea of $ -(a - b) = b - a $.\n  \n- **Multiplication:** To multiply two integers represented by $[a, b]$ and $[c, d]$, define their product as $[ac + bd, ad + bc]$. This captures the distributive property over the components of the ordered pairs.",
     "kids": {
       "Division_with_Remainder": "",
+      "Field": "is-a",
       "Mobius_Function": "",
       "Rational_Number_Field": ""
     },
@@ -854,7 +855,6 @@
   "Ring": {
     "define": "$$\n(G, +, \\cdot)\n$$\n\nRing is an algebraic structure, where $G$ is a set, $\\cdot$ and $+$ are binary operations, and satisfy:  \n\n- $(G, +)$ is a commutative group\n- $(G, \\cdot)$ is a monoid\n  - $(G, \\cdot)$ satisfies associative law, $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$\n  - $(G, \\cdot)$ exists multiplicative identity, $\\exist 1: 1 \\cdot x = x \\cdot 1 = x, \\forall x \\in G$\n- Distributive law: multiplication is distributive with respect to addition,\n  $$\n  \\begin{align*}\n    a \\cdot (b + c) &= a \\cdot b + a \\cdot c  \\\\\n    (b + c) \\cdot a &= b \\cdot a + c \\cdot a\n  \\end{align*}\n  $$",
     "kids": {
-      "Field": "is-a",
       "Integer_Ring": "is-a",
       "Module": "is-a",
       "Quaternion_Ring": "is-a"

@@ -61,5 +61,5 @@ $$
 
 ## Parents
 
-- [Ring](./Ring.md): is-a
+- [Integer_Ring](./Integer_Ring.md): is-a
 

@@ -78,8 +78,6 @@ $$
 
 ## Include
 
-- [Field](./Field.md): is-a
-
 - [Integer_Ring](./Integer_Ring.md): is-a
 
 - [Module](./Module.md): is-a
