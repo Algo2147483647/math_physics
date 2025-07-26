@@ -47,28 +47,44 @@ For a group $(G, \cdot)$ and a nonempty subset $H$ of $G$, if $(H, \cdot)$ is al
 
 Property:
 - $1 \le G, G \le G$
-* The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$.
+* **Lagrange's Theorem**: The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$. *(Proofed by Coset.)*
   $$
   |H|\ |\ |G|
   $$
 
-
 #### Coset
-For a subgroup $H$ of the group $G$ and an element $g \in G$, the left cosets of $H$ in $G$ are the sets obtained by multiplying each element of $H$ by a fixed element $g$ (where $g$ is the left factor).
-$$
-gH = \{gh \ |\ h \in H\} \quad, \text{for } g \in G  \tag{left cosets}
-$$
 
-The right cosets are defined similarly, except that the element g is now a right factor.
+For a subgroup $H$ of the group $G$ and an element $g \in G$, the left cosets of $H$ in $G$ are the sets obtained by multiplying each element of $H$ by a fixed element $g$ (where $g$ is the left factor). The right cosets are defined similarly, except that the element g is now a right factor.
 $$
+\begin{align*}
+gH = \{gh \ |\ h \in H\} \quad, \text{for } g \in G  \tag{left cosets}  \\
 Hg = \{hg \ |\ h \in H\} \quad, \text{for } g \in G  \tag{right cosets}
+\end{align*}
 $$
 
-Property:
+Properties:
 
-- Cosets form a partition of group $G$, that is, they divide $G$ into several disjoint sets. Each coset of subgroup $H$ have the same number of elements as the subgroup $H$. Two cosets are either identical or completely disjoint. 
+Cosets form a partition of group $G$, they divide $G$ into several same size disjoint sets. 
 
+- **Same size**: Each coset of subgroup $H$ have the same number of elements as the subgroup $H$, $|gH|=|H|$. 
+- **Covering**: $\forall g \in G : g \in g H$, because $g = g \cdot e$
+- **Disjointness**: Two cosets are either identical or completely disjoint. 
 
+> **Proof**: Disjointness
+>
+> if $aH \cap bH \neq \emptyset$, then
+> $$
+> \begin{align*}
+> \exist h_1, h_2 \in H : a h_1 &= b h_2 \quad\\
+> \Rightarrow aH &= \{b h_1^{-1} h_2 h \ |\ h \in H \}  \\
+> \because h_1^{-1} h_2 h &\in H \tag{closure}\\
+> \Rightarrow b h_1^{-1} h_2 h &\in b H, aH \subseteq bH  \\ 
+> \text{similarly}\quad  bH &\subseteq aH  \\
+> \Rightarrow aH &= bH
+> \end{align*}
+> $$
+> Two cosets are either identical or completely disjoint. 
+> $\square$
 
 #### Normal Subgroup
 
