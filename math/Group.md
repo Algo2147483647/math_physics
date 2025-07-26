@@ -47,9 +47,11 @@ For a group $(G, \cdot)$ and a nonempty subset $H$ of $G$, if $(H, \cdot)$ is al
 
 Property:
 - $1 \le G, G \le G$
-* **Lagrange's Theorem**: The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$. *(Proofed by Coset.)*
+* **Lagrange's Theorem**: The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$, $|H| \ |\ |G|$. *(Proofed by Coset.)*
   $$
-  |H|\ |\ |G|
+  \begin{align*}
+  \text{number of coset}(G, H) &= \frac{|G|}{|H|}
+  \end{align*}
   $$
 
 #### Coset
@@ -64,11 +66,11 @@ $$
 
 Properties:
 
-Cosets form a partition of group $G$, they divide $G$ into several same size disjoint sets. 
+Cosets form a partition of group $G$, they divide $G$ into several equal-sized disjoint sets. 
 
-- **Same size**: Each coset of subgroup $H$ have the same number of elements as the subgroup $H$, $|gH|=|H|$. 
+- **Equal-sized**: Each coset of subgroup $H$ have the same number of elements as the subgroup $H$, $|gH|=|H|$. 
 - **Covering**: $\forall g \in G : g \in g H$, because $g = g \cdot e$
-- **Disjointness**: Two cosets are either identical or completely disjoint. 
+- **Disjointness**: Two cosets are either identical or completely disjoint. $aH \neq bH : aH \cap bH = \emptyset$
 
 > **Proof**: Disjointness
 >
@@ -89,27 +91,31 @@ Cosets form a partition of group $G$, they divide $G$ into several same size dis
 #### Normal Subgroup
 
 $$
-H \lhd G \quad\Leftrightarrow\quad  g^{-1}hg \in H, \forall h \in H \le G, g \in  G \tag{Normal Subgroup}
+N \lhd G \quad\Leftrightarrow\quad  g^{-1}ng \in N, \forall n \in N \le G, g \in  G \tag{Normal Subgroup}
 $$
-Normal Subgroup is a subgroup $H \le G$ if it is invariant under conjugation, that is, $\forall h \in H, g \in G$, we have $g^{-1}hg \in H$.
+Normal Subgroup is a subgroup $N \le G$ if it is invariant under conjugation $g^{-1}ng \in H$.
+
+Properties:
+
+- Without normal subgroups, coset multiplication cannot form a well-defined group operation (Quotient Group). The existence of normal subgroups allows us to "quotient/mod out" the information/symmetry represented by the subgroup $N$, yielding a new group (Quotient Group) $G/N$ whose structure may be simpler compared to the original group.
+- $gN = Ng$, The left coset and the right coset of normal subgroup are consistent.
 
 ##### Quotient Group
 
 $$
-G/H = (\{aH \ |\ a \in G\}, \cdot)  \\
+\begin{align*}
+G/N &= (\{a N \ |\ a \in G\}, \cdot)  \\
+(g_1 N) \cdot (g_2 N) &= g_1 g_2 N \quad, \forall g_1, g_2 \in G
+\end{align*}
 $$
 
-Given a group $G$ and a normal subgroup $H \lhd G$, the Quotient Group $G/H$ is a group composed of all left cosets of $H$ in $G$ as elements $\{aH \ |\ a \in G\}$ and multiplication operations $(g_1 H) \cdot (g_2 H) = g_1 g_2 H, \forall g_1, g_2 \in G$.
+For a group $G$ and a normal subgroup $N \lhd G$, the Quotient Group $G/N$ is a group composed of all left cosets of $N$ in $G$ as elements and multiplication operations.
+- identity element is $N$ itself, $gN \cdot N = gN$
+- inverse element is $g^{-1} N$
 
-Property:
+Properties:
 
-- The unit element of the quotient group $G/N$ is $N$ itself
-
-$$
-gN \cdot N = gN
-$$
-
-- $|G/H| = \frac{|G|}{|H|}$
+- $|G/N| = \frac{|G|}{|N|}$
 
 ### Group Homomorphism
 
@@ -121,8 +127,7 @@ $$
 f(u \cdot v) = f(u) * f(v) \quad, \forall u, v \in G
 $$
 Property:
-* Isomorphism of Groups  
-  If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.
+* Isomorphism of Groups: If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.
 
 ### Simple Group
 
@@ -141,7 +146,7 @@ Classification of finite simple groups: Every finite simple group is isomorphic 
 
 <img src="./assets/gn5cimd92mh11.jpg" alt="gn5cimd92mh11"  />
 
-### Commutative Group , Abelian Group
+### Commutative Group, Abelian Group
 $$
 a \cdot b = b \cdot a
 $$
@@ -149,16 +154,38 @@ Commutative Group is a Group satisfied commutative law,
 
 ### Cyclic Group
 $$
-⟨g⟩ = \{g^k \ |\ k \in \mathbb Z\}
+\begin{align*}
+G = ⟨g⟩ &= (\{g^k \ |\ k \in \mathbb Z\}, \cdot) \\ 
+G = ⟨g⟩ &= (\{k \cdot g \ |\ k \in \mathbb Z\}, +)
+\end{align*}
 $$
 
 A group $G$ is called cyclic if there exists an element $a \in G$ such that every element of $G$ can be expressed as a power of $a$. ln other words, every element in $G$ is of the form $a$ for some integer $k$. The element a is called a generator of the group.
 
+Properties:
+
+- Each cyclic group is Abelian group.
+
+### Symmetric Group
+
+$$
+S_n = \left(\{\sigma: X \to X\}, \circ \right)
+$$
+
+For a finite set $X$ with $n$ elements, Symmetric Group is a group with all bijective functions (called permutations) on $X$, and compound operator $\circ$.
+
+- identity element is $\sigma(x) = x$.
+
+Properties:
+
+- $|S_n| = n!$
+- Any finite group is isomorphic to a subgroup of some symmetric group.
+
 ### Alternating Group
 
-An alternating group $A_n$ on a set of $n$ symbols is defined to be the group of all even permutations of the $n$ symbols. (The even arrangement here refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.)
+An alternating group $A_n$ on a set with $n$ elements is a group of all even permutations of the $n$ elements. The even arrangement refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.
 
-Property:
+Properties:
 - $A_n$ is a normal group of $S_n$. $|A_n| = \frac{1}{2} |S_n|$.
 - For $n>5$, $A_n$ is a simple group.
 
