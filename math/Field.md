@@ -43,6 +43,14 @@ $$
 
 
 
+### Galois Group
+
+$$
+Gal(K/F) = \{\phi: K \to K \ |\ \phi(a) = a, \forall a \in F\}
+$$
+
+**Galois group** of a field extension $K/F$, is the group of all field automorphisms of $K$ that fix $F$ pointwise.
+
 ## Include
 
 - [Complex_Field](./Complex_Field.md): is-a

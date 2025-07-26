@@ -247,7 +247,7 @@
       "Ring": "is-a"
     },
     "properties": [
-      "### Field extension\n\n$$\nE/F\n$$\n\nA field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$.\n\n### Field Automorphism\n\n$$\n\\begin{align*}\nf(a + b) &= f(a) + f(b) \\\\\nf(a \\cdot b) &= f(a) \\cdot f(b)\n\\end{align*}\n$$"
+      "### Field extension\n\n$$\nE/F\n$$\n\nA field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$.\n\n### Field Automorphism\n\n$$\n\\begin{align*}\nf(a + b) &= f(a) + f(b) \\\\\nf(a \\cdot b) &= f(a) \\cdot f(b)\n\\end{align*}\n$$\n\n\n\n### Galois Group\n\n$$\nGal(K/F) = \\{\\phi: K \\to K \\ |\\ \\phi(a) = a, \\forall a \\in F\\}\n$$\n\n**Galois group** of a field extension $K/F$, is the group of all field automorphisms of $K$ that fix $F$ pointwise."
     ]
   },
   "Forth-Order_Function": {
