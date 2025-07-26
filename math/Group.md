@@ -172,28 +172,32 @@ $$
 S_n = \left(\{\sigma: X \to X\}, \circ \right)
 $$
 
-For a finite set $X$ with $n$ elements, Symmetric Group is a group with all bijective functions (called permutations) on $X$, and compound operator $\circ$.
+Symmetric group on a finite set $X$ with $n$ elements is a group whose elements are all bijective functions (called permutations) on $X$, and group operation is function composition operator $\circ$.
 
 - identity element is $\sigma(x) = x$.
+
+- $n$: the degree of symmetric group, and the number of elements in set $X$.
 
 Properties:
 
 - $|S_n| = n!$
-- Any finite group is isomorphic to a subgroup of some symmetric group.
+- **Cayley's theorem**: Any finite group is isomorphic to a subgroup of some symmetric group.
+- Permutation Group: Permutation group is a group $G$ whose elements are permutations of a given set $M$ and whose group operation is the composition of permutations in $G$ (which are thought of as bijective functions from the set $M$ to itself).  
+  - every group is isomorphic to some permutation group.
+
 
 ### Alternating Group
 
-An alternating group $A_n$ on a set with $n$ elements is a group of all even permutations of the $n$ elements. The even arrangement refers to an arrangement that can be obtained from an identical arrangement through even number of exchanges.
+An alternating group $A_n$ on a set with $n$ elements is a group of all even permutations of the $n$ elements. The even permutation refers to a permutation that can be decomposed into the product of an even number of permutation.
 
 Properties:
-- $A_n$ is a normal group of $S_n$. $|A_n| = \frac{1}{2} |S_n|$.
+- $A_n$ is a normal subgroup of $S_n$. $|A_n| = \frac{1}{2} |S_n|$.
 - For $n>5$, $A_n$ is a simple group.
 
 ## Include
 
 - [Lie_Group](./Lie_Group.md): 
 
-- [Symmetric_Group](./Symmetric_Group.md): is-a
 
 ## Parents
 
