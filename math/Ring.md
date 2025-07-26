@@ -26,22 +26,36 @@ Ring is an algebraic structure, where $G$ is a set, $\cdot$ and $+$ are binary o
 
 ### Ideal
 
-- Define
+For a ring $R = (R, +, \cdot)$ and a subring $I$ of $R$, if $I$ satisfies two following conditions, we call $I$ is the ideal subring of $R$.
 
-  Let $R$ be a ring and $I$ be a subring of $R$, if $\forall i \in I, \forall r \in R$, $i\cdot r = r \cdot i \in I$,  we call $I$ is the ideal subring of $R$.
+- **Closure under Addition:** $\forall a, b \in I : a + b \in I$
+- **Absorption of Multiplication:** $\forall a \in I, \forall r \in R : a \cdot r \in I, r \cdot a \in I$
 
-- Property
-  - Quotient Ring
+#### Quotient Ring
 
-- Include
+For a ring $R = (R, +, \cdot)$ and a ideal $I$ of $R$, quotient ring $R / I$ is the set of cosets $a + I = \{a +i \ |\ i \in I\}$ of $I$ in $R$ under addition, with addition and multiplication defined as follows.
 
-  - Prime Ideal
+- **Elements**: Cosets $a + I = \{a +i \ |\ i \in I\}$
+- **Addition**: $(a + I) + (b + I) = (a + b) + I$
+- **Multiplication**: $(a + I) \cdot (b + I) = (a \cdot b) + I$
 
-    An ideal $I$ of a commutative ring $R$ is called a prime ideal if, whenever the product of two elements $a, b \in R$ is an element of $I$, at least one of $a$ or $b$ is in $I$. Symbolically, if $I$ is a prime ideal and $ab \in I$, then either $a \in I$ or $b \in I$.
+#### Prime Ideal
 
-  - Maximal Ideal
+For a commutative ring $R$, an ideal $P \subset R \ (P \neq R)$ is a prime ideal if $\forall a ,b \in R, a \cdot b \in P: a \in P \text{ or } b \in P$.
 
-    An ideal $I$ of a ring $R$ is called a maximal ideal if it is a proper ideal (i.e., $I \neq R$) and there are no other proper ideals properly containing $I$. In other words, there does not exist another ideal $J$ such that $I \subsetneq J \subsetneq R$.
+Properties:
+
+- $P$ is a prime ideal $\iff$ the quotient ring $R / P$ is an integral domain (no zero divisors).
+- Every maximal ideal is prime, but the converse is false.
+
+#### Maximal Ideal
+
+For a commutative ring $R$, an ideal $M \subset R \ (M \neq R)$ is a Maximal Ideal if there exists no other proper ideals $J$ properly containing $M$, $M \subsetneq J \subsetneq R$.
+
+Properties:
+
+- $P$ is a maximal ideal $\iff$ the quotient ring $R / P$ is a field (every nonzero element has a multiplicative inverse).
+- Maximal ideals exist in nonzero commutative rings (by Zorn’s Lemma).
 
 ### Polynomial Ring
 

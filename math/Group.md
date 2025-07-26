@@ -127,7 +127,8 @@ $$
 f(u \cdot v) = f(u) * f(v) \quad, \forall u, v \in G
 $$
 Property:
-* Isomorphism of Groups: If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.
+
+**Isomorphism** of Groups: If Group Homomorphism of $G, H$ is a Bijection, the groups $G, H$ are called isomorphic.
 
 ### Simple Group
 
