@@ -189,7 +189,7 @@ Properties:
 
 ### Alternating Group
 
-An alternating group $A_n$ on a set with $n$ elements is a group of all even permutations of the $n$ elements. The even permutation refers to a permutation that can be decomposed into the product of an even number of permutation.
+An alternating group $A_n$ on a set with $n$ elements is a group of all even permutations of the $n$ elements. The even permutation refers to a permutation that can be decomposed into the product of an even number of Swap (swaps the positions of two elements while leaving the other elements unchanged).
 
 Properties:
 - $A_n$ is a normal subgroup of $S_n$. $|A_n| = \frac{1}{2} |S_n|$.
