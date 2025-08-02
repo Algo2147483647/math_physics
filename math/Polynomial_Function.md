@@ -39,14 +39,14 @@ For a univariate $N$-th degree equation, there is no root-finding formula compos
 > $$
 >
 >
-> - The symmetry of root corresponding the Galois group $\text{GAL}(K/\mathbb{R})$. 因为系数及其所在域 $\mathbb R$ 保持不变, 而根对称变换是扩域的域自同构操作. 从分裂域K到自己的所有保持系数域元素不变的**域同构**全体记为**Gal(K/F)**.
+> - The symmetry of root corresponding the Galois group $\text{Gal}(K/F)$. Because the coefficients and their domain $F$ remain unchanged, and root symmetry transformations are domain automorphisms of the expanded domain, all domain isomorphisms from the splitting field K to itself that preserve the coefficient field elements are $\text{Gal}(K/F)$.
 >   
-> - **Definition of Solvable Group**: A group $G$ is **solvable** if and only if there exists a chain of normal subgroups
+> - **Definition of Solvable Group**: A group $G$ is solvable if and only if there exists a chain of normal subgroups
 >   $$
 >   G = G_0 \triangleright G_1 \triangleright \cdots \triangleright G_k = \{e\}
 >   $$
 >
-> **Gal(K/F)** is actually a subgroup of Sn. When $n \ge 5$, the subgroup chain of *S*5 is $S_n \triangleright A_n \triangleright \{e\}$, where $A_n$ is a simple group and non-commutative. Therefore, the chain does not satisfy the solvability condition, and no radical solution is found.
+> $Gal(K/F)$ is a subgroup of $S_n$. When $n \ge 5$, the subgroup chain is $S_n \triangleright A_n \triangleright \{e\}$, where $A_n$ is a simple group and non-commutative. Therefore, the chain does not satisfy the solvability condition, and no radical solution is found.
 >
 > Q. E. D.
 
