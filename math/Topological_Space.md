@@ -8,7 +8,7 @@ $$
 (S, \tau)
 $$
 
-A **Topological space** is a pair $(S, \tau)$,  where $S$ is a set and $\tau$ is a **topology** on $S$. A topology $\tau$ is a collection of subsets of a set $S$ (a subset of [power set](./Power_Set.md) $P(S)$) that satisfies the following axioms.
+A **Topological space** is a pair $(S, \tau)$,  where $S$ is a set and $\tau$ is a **topology** on $S$. A topology $\tau$ is a collection of subsets of a set $S$ (so $\tau$ is a subset of [power set](./Power_Set.md) $P(S)$) that satisfies the following axioms. The elements of $\tau$ are called **open sets** of the topological space, and the selection of open sets determines the topological structure on $S$. Thus, a topological space fundamentally defines which subsets of $S$ are considered open.
 
 - The empty set and the whole set $S$ itself belong to $\tau$.
 $$
@@ -25,9 +25,17 @@ $$
 \bigcup_{\alpha\in I}U_{\alpha}\in\tau
 $$
 
-### Open Set
+```
+import Set
+import CompleteBooleanAlgebra
 
-The elements of $\tau$ are called **open sets** in the topological space $(S,\tau)$, and the selection of open sets determines the topological structure of the space.
+class TopologicalSpace (X : Type u) where
+  IsOpen : Set X → Prop
+  
+  isOpen_univ : IsOpen univ
+  isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
+  isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
+```
 
 ## Properties
 

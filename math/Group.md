@@ -15,6 +15,21 @@ Group is an algebraic structure, where $G$ is a set, $\cdot$ is a binary operati
 - exists identity element, $\exists 1: x \cdot 1 = 1 \cdot x = x$
 - exists inverse element, $\exists x^{-1}: x \cdot x^{-1} = x^{-1} \cdot x = 1$
 
+
+```lean
+structure Group where
+  G : Type
+  mul : G → G → G
+  one : G
+  inv : G → G
+  
+  -- Group axioms
+  mul_assoc : ∀ (a b c : G), mul (mul a b) c = mul a (mul b c)
+  one_mul : ∀ (a : G), mul one a = a
+  mul_one : ∀ (a : G), mul a one = a
+  mul_left_inv : ∀ (a : G), mul (inv a) a = one
+```
+
 ## Properties
 
 - $1$ is unique

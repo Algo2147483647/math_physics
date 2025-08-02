@@ -17,6 +17,21 @@ Graph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges
 - $E$: Edge set, a set of paired vertices
 - $w: E \to \mathbb R$: weight of edge
 
+```lean
+import Set
+import Symmetric
+
+structure Graph (α β : Type*) where
+  vertexSet : Set α
+  IsLink : β → α → α → Prop
+  edgeSet : Set β := {e | ∃ x y, IsLink e x y}
+  
+  isLink_symm : ∀ ⦃e⦄, e ∈ edgeSet → (Symmetric <| IsLink e)
+  eq_or_eq_of_isLink_of_isLink : ∀ ⦃e x y v w⦄, IsLink e x y → IsLink e v w → x = v ∨ x = w
+  edge_mem_iff_exists_isLink : ∀ e, e ∈ edgeSet ↔ ∃ x y, IsLink e x y := by exact fun _ ↦ Iff.rfl
+  left_mem_of_isLink : ∀ ⦃e x y⦄, IsLink e x y → x ∈ vertexSet
+```
+
 ### Undirected Graph & Directed Graph
 
 $$
