@@ -137,7 +137,7 @@
     ]
   },
   "Cubic_Function": {
-    "define": "$$\nf(x) = \\sum_{i=0}^{3} a_i x^i  \\tag{Univariate}\n$$",
+    "define": "$$\n\\begin{align*}\nf(x) &= \\sum_{i=0}^{3} a_i x^i  \\tag{Univariate} \\\\\nf(\\boldsymbol x) &= \\sum\\limits_{i_1=0}^{\\dim} \\sum\\limits_{i_2=i_1}^{\\dim} \\sum\\limits_{i_3=i_2}^{\\dim}a_{i_1 i_2 i_3} \\cdot x_{i_1} x_{i_2} x_{i_3}  \\quad \\text{where } x_0 = 1 \\\\\n\\end{align*}\n$$",
     "kids": {
       "Elliptic_Curve": ""
     },
@@ -146,7 +146,7 @@
       "Polynomial_Function": "is-a"
     },
     "properties": [
-      "### Zero Set of Cubic Function , Cubic Surface   \n\n- Define\n  $$\n  \\left\\{\\boldsymbol x \\ |\\  \\right\\}\n  $$\n- Property\n  - Solution of Univariate Cubic Equation  \n    For a Univariate Cubic Equation,\n    $$\n    x^3 + px + q = 0\n    $$\n\n    The solutions are,\n    $$\n    r = \\sqrt[3]{-\\frac{q}{2}+\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}+\\sqrt[3]{-\\frac{q}{2}-\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}\n    $$\n\n- Include\n  * Fermat Cubic\n    - Define\n      $$\n      \\left\\{ x \\ |\\ \\sum_{i = 1}^{\\dim} x_i^3 = 0 \\right\\}\n      $$"
+      "### Zero Set of Cubic Function, Cubic Surface\n\n$$\n\\left\\{\\boldsymbol x \\ \\Bigg|\\ \\sum\\limits_{i_1=0}^{\\dim} \\sum\\limits_{i_2=i_1}^{\\dim} \\sum\\limits_{i_3=i_2}^{\\dim}a_{i_1 i_2 i_3} \\cdot x_{i_1} x_{i_2} x_{i_3}, \\text{where } x_0 = 1 \\right\\}\n$$\n\n#### Solution of Univariate Cubic Equation  \nFor a Univariate Cubic Equation,\n$$\nx^3 + px + q = 0\n$$\n\nThe solutions are,\n$$\nr = \\sqrt[3]{-\\frac{q}{2}+\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}+\\sqrt[3]{-\\frac{q}{2}-\\sqrt{\\frac{q^2}{4}+\\frac{p^3}{27}}}\n$$\n\n#### Property\n\n- There are exactly 27 straight lines on each smooth cubic algebraic surface in the complex field.\n\n#### Fermat Cubic\n\n$$\n\\left\\{ x \\ \\Bigg|\\ \\sum_{i = 1}^{\\dim} x_i^3 = 0 \\right\\}\n$$\n\n#### Whitney Umbrella\n\n$$\nx^2 z -a y^2 = 0\n$$\n\n$$\n\\left\\{\\begin{align*}\nx &= uv\\\\\ny&= u\\\\\nz &= v^2\n\\end{align*}\\right.\n$$\n\n![WhitneysUmbrella_700](./assets/WhitneysUmbrella_700.svg)\n\n#### Clebsch Diagonal Cubic\n\n$$\nx^3 + y^3 + z^3 + w^3 + (x + y + z + w)^3 = 0\n$$\n\nClebsch diagonal cubic is a hyperplane cross-section in the complex projective space $\\mathbb {P}^4$. It is the only smooth cubic surface with all 27 real lines in the real number field.\n\n\n<img src=\"./assets/clebsch_diagonal_cubic-1-1.gif\" alt=\"clebsch_diagonal_cubic-1-1\" style=\"zoom:50%;\" />"
     ]
   },
   "Differential_Manifold": {
