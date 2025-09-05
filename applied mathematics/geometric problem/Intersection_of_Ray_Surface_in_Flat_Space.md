@@ -1,29 +1,26 @@
-# Intersection of Ray & Surface
+# Intersection of Ray-Surface in Flat Space
 
 [TOC]
 
 ## Problem
-Intersection points of Ray & Surface refer to the solution of ray and surface equation system
 
 $$
-\boldsymbol x(t) = \boldsymbol x_0 + t \hat{\boldsymbol d} \tag{ray}
-$$
-$$
-f(\boldsymbol x) = 0 \tag{surface}
+\begin{align*}
+\boldsymbol x(t) &= \boldsymbol x_0 + t \hat{\boldsymbol d} \tag{ray} \\
+f(\boldsymbol x) &= 0 \tag{surface} \\
+\\
+\Rightarrow \quad f(\boldsymbol x_0 + t \hat{\boldsymbol d}) &= 0
+\end{align*}
 $$
 
-For a ray and a surface, we want to connect two equations and solve $t = \text{distance}(\text{ray}, \text{surface})$.
-$$
-f(\boldsymbol x_0 + t \hat{\boldsymbol d}) = 0
-$$
+Intersection points of Ray-Surface refer to the solution of ray and surface equation system. For a ray and a surface, we want to connect two equations and solve $t = \text{distance}(\text{ray}, \text{surface})$.
+
+- $t$: The distance from the origin of the ray to the intersection of ray-surface.
+
 
 ## Include
 
-### ray & surface
-
-
-
-### ray & plane
+### Ray-Plane
 
 $$
 \boldsymbol a^T \boldsymbol x = b  \tag{plane}
@@ -49,7 +46,7 @@ $$
 > \end{align*}
 > $$
 
-### ray & triangle
+### Ray-Triangle
 
 For three vertices of a given triangle $\{\boldsymbol v_1, \boldsymbol v_2, \boldsymbol v_3\}$
 
@@ -95,17 +92,39 @@ $$
 > $$
 >
 
-### ray & quadric surface
+
+### Ray-Surface of Cuboid
+
+任意方向的矩形体（通常称为 OBB，Oriented Bounding Box) 通过旋转矩阵简化为 Ray-surface of Axis-Aligned Bounding Box 问题.
+
+<img src="assets/RayObb21.png" alt="RayObb21" style="zoom: 33%;" />
+
+#### Ray-Surface of Axis-Aligned Bounding Box
+
+An Axis-Aligned Bounding Box (AABB) can be defined by its minimum and maximum vertices $\{\boldsymbol v_{max}, \boldsymbol v_{min}\}$. The problem of detecting intersections between a ray and an AABB can be decomposed into determining intersections with the individual dimensional "slabs" (i.e., the spaces bounded by pairs of parallel planes aligned with the coordinate axes). 
+
+- For each coordinate dimension, compute the ray parameter $t$ values where the ray enters and exits the corresponding slab. The sign of the ray's directional component in a given dimension determines which face it initially intersects: if the component is positive, the ray first encounters the plane defined by $\boldsymbol{v}_{\text{min}}$; if negative, it first encounters the plane defined by $\boldsymbol{v}_{\text{max}}$. Consequently, the $t$ value for slab entry $t_\text{enter, i}$ will always be less than the $t$ value for slab exit $t_\text{exit, i}$ for that dimension. 
+
+- The ray enters the AABB only when it has penetrated *all* slabs. This corresponds to the *maximum* value among all the per-dimension entry $t$ values. The ray exits the AABB as soon as it leaves *any single* slab. This corresponds to the *minimum* value among all the per-dimension exit $t$ values. 
+
+- **Non-Intersection Condition**: If t_enter exceeds t_exit (t_enter > t_exit), it signifies that the ray exits at least one slab before it has managed to enter all others. Therefore, no valid intersection exists between the ray and the AABB.
 
 $$
-f(\boldsymbol x) = \boldsymbol x^T \boldsymbol A \boldsymbol x + \boldsymbol b \boldsymbol x + \boldsymbol c \tag{quadric surface}
+\begin{align*}
+t_{\text{v\_min},i} &= \dfrac{v_{\min,i} - s_i}{d_i}, \\
+t_{\text{v\_max},i} &= \dfrac{v_{\max,i} - s_i}{d_i} \\ 
+t_\text{enter} &= \max(\min(t_{\text{v\_min},i}, t_{\text{v\_max},i}), \cdots)  \\
+t_\text{exit} &= \min(\max(t_{\text{v\_min},i}, t_{\text{v\_max},i}), \cdots)  \\
+t^* &= \begin{cases}
+t_\text{enter}  &\quad\text{if } t_\text{enter} \le t_\text{exit} \text{ and } t_\text{enter} \ge 0 \\
+t_\text{exit}  &\quad\text{if } t_\text{enter} \le t_\text{exit} \text{ and } t_\text{enter} < 0 \\
++\infty &\quad\text{if }t_\text{enter} > t_\text{exit} \text{ or } t_\text{exit} < 0
+\end{cases}
+\end{align*}
 $$
 
-$$
-f(\boldsymbol x_0 + t \hat{\boldsymbol d}) = (\boldsymbol x_0 + t \hat{\boldsymbol d})^T \boldsymbol A (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol b (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol c = 0
-$$
 
-### ray & surface of sphere
+### Ray-Surface of Sphere
 
 $$
 ||\boldsymbol x - \boldsymbol c||_2 - R = 0 \tag{surface of sphere}
@@ -146,7 +165,20 @@ $$
 > t = \frac{-b ± \sqrt{Δ}}{2a}
 > $$
 >
-### ray & surface of Ellipsoid
+
+### Ray-Quadric Surface
+
+$$
+f(\boldsymbol x) = \boldsymbol x^T \boldsymbol A \boldsymbol x + \boldsymbol b \boldsymbol x + \boldsymbol c \tag{quadric surface}
+$$
+
+$$
+f(\boldsymbol x_0 + t \hat{\boldsymbol d}) = (\boldsymbol x_0 + t \hat{\boldsymbol d})^T \boldsymbol A (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol b (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol c = 0
+$$
+
+Solution: 通过规范化为 Quadric Equations 求解问题.
+
+#### Ray-Surface of Ellipsoid
 
 $$
 (\boldsymbol x - \boldsymbol c)^T \boldsymbol P^{-1} (\boldsymbol x - \boldsymbol c) = 1 \tag{surface of ellipsoid}
@@ -183,38 +215,10 @@ $$
 > t = \frac{-b ± \sqrt{Δ}}{2a}
 > $$
 >
-### ray & surface of Cuboid
-
-任意方向的矩形体（通常称为 OBB，Oriented Bounding Box) 通过旋转矩阵简化为 ray & surface of Axis-Aligned Bounding Box 问题.
-
-<img src="assets/RayObb21.png" alt="RayObb21" style="zoom: 33%;" />
-
-#### ray & surface of Axis-Aligned Bounding Box
-
-An Axis-Aligned Bounding Box (AABB) can be defined by its minimum and maximum vertices $\{\boldsymbol v_{max}, \boldsymbol v_{min}\}$. The problem of detecting intersections between a ray and an AABB can be decomposed into determining intersections with the individual dimensional "slabs" (i.e., the spaces bounded by pairs of parallel planes aligned with the coordinate axes). 
-
-- For each coordinate dimension, compute the ray parameter $t$ values where the ray enters and exits the corresponding slab. The sign of the ray's directional component in a given dimension determines which face it initially intersects: if the component is positive, the ray first encounters the plane defined by $\boldsymbol{v}_{\text{min}}$; if negative, it first encounters the plane defined by $\boldsymbol{v}_{\text{max}}$. Consequently, the $t$ value for slab entry $t_\text{enter, i}$ will always be less than the $t$ value for slab exit $t_\text{exit, i}$ for that dimension. 
-
-- The ray enters the AABB only when it has penetrated *all* slabs. This corresponds to the *maximum* value among all the per-dimension entry $t$ values. The ray exits the AABB as soon as it leaves *any single* slab. This corresponds to the *minimum* value among all the per-dimension exit $t$ values. 
-
-- **Non-Intersection Condition**: If t_enter exceeds t_exit (t_enter > t_exit), it signifies that the ray exits at least one slab before it has managed to enter all others. Therefore, no valid intersection exists between the ray and the AABB.
-
-$$
-\begin{align*}
-t_{\text{v\_min},i} &= \dfrac{v_{\min,i} - s_i}{d_i}, \\
-t_{\text{v\_max},i} &= \dfrac{v_{\max,i} - s_i}{d_i} \\ 
-t_\text{enter} &= \max(\min(t_{\text{v\_min},i}, t_{\text{v\_max},i}), \cdots)  \\
-t_\text{exit} &= \min(\max(t_{\text{v\_min},i}, t_{\text{v\_max},i}), \cdots)  \\
-t^* &= \begin{cases}
-t_\text{enter}  &\quad\text{if } t_\text{enter} \le t_\text{exit} \text{ and } t_\text{enter} \ge 0 \\
-t_\text{exit}  &\quad\text{if } t_\text{enter} \le t_\text{exit} \text{ and } t_\text{enter} < 0 \\
-+\infty &\quad\text{if }t_\text{enter} > t_\text{exit} \text{ or } t_\text{exit} < 0
-\end{cases}
-\end{align*}
-$$
 
 
-### ray & surface of Fourth order polynomial equation
+
+### Ray-Surface of Fourth-order Polynomial Equation
 
 Solution: 通过将 $f(\boldsymbol x_0 + t \hat{\boldsymbol d})= 0$ 规范化为四次多项式方程求解问题.
 $$
@@ -240,7 +244,7 @@ Q_7 &= 2 \sqrt{ \dfrac{Q_4}{12} + Q_6 } \\
 $$
 
 
-#### ray & surface of Ring
+#### Ray-surface of Ring
 
 $$
 \begin{align*}
@@ -263,3 +267,4 @@ D &= 2b \cdot c - 2a(x_0 dx + y_0 dy) \\
 E &= c^{2} - a(x_0^{2} + y_0^{2}) \\
 \end{align*}
 $$
+

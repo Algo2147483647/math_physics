@@ -6,14 +6,12 @@
 
 ## Include
 
-[Intersection_of_Ray_Surface](./Intersection_of_Ray_Surface.md)
-
 
 ### Segments in a 2D plane 
 
 For two given segments in a 2D plane $l_1: (\boldsymbol v_1, \boldsymbol v_2), l_2: (\boldsymbol v_3, \boldsymbol v_4)$
 
-#### Algorithm
+**Solution**:
 
 First, we judge a segment whether crosses the line where the other segment are located through cross product. If two segments cross each other's line, there is a point of intersection.
 $$
