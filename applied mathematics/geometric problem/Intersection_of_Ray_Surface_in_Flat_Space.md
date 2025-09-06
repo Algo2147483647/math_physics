@@ -6,7 +6,7 @@
 
 $$
 \begin{align*}
-\boldsymbol x(t) &= \boldsymbol x_0 + t \hat{\boldsymbol d} \tag{ray} \\
+\boldsymbol x(t) &= \boldsymbol x_0 + t \hat{\boldsymbol d} \tag{ray in flat space} \\
 f(\boldsymbol x) &= 0 \tag{surface} \\
 \\
 \Rightarrow \quad f(\boldsymbol x_0 + t \hat{\boldsymbol d}) &= 0
@@ -28,8 +28,7 @@ $$
 
 <img src="assets/3-s2.0-B978155860594750014X-f11-01-9781558605947.jpg" alt="3-s2.0-B978155860594750014X-f11-01-9781558605947" style="zoom: 50%;" />
 
-Solution: 
-
+**Solution:** 
 $$
 \begin{align*}
   t &= \frac{\boldsymbol a^T \boldsymbol x_0 - b}{\boldsymbol a^T \hat{\boldsymbol d}}  \\
@@ -50,8 +49,7 @@ $$
 
 For three vertices of a given triangle $\{\boldsymbol v_1, \boldsymbol v_2, \boldsymbol v_3\}$
 
-Solution: 
-
+**Solution:** 
 $$
 \begin{align*}
 t &= \frac{(\boldsymbol x_0 - \boldsymbol v_1) × \boldsymbol e_1·\boldsymbol e_2}{\hat{\boldsymbol d} × \boldsymbol e_2·\boldsymbol e_1}  \\
@@ -95,19 +93,19 @@ $$
 
 ### Ray-Surface of Cuboid
 
-任意方向的矩形体（通常称为 OBB，Oriented Bounding Box) 通过旋转矩阵简化为 Ray-surface of Axis-Aligned Bounding Box 问题.
+The Cuboid in any direction is simplified into a Ray surface of Axis Aligned Bounding Box problem by rotating the matrix
 
 <img src="assets/RayObb21.png" alt="RayObb21" style="zoom: 33%;" />
 
 #### Ray-Surface of Axis-Aligned Bounding Box
 
-An Axis-Aligned Bounding Box (AABB) can be defined by its minimum and maximum vertices $\{\boldsymbol v_{max}, \boldsymbol v_{min}\}$. The problem of detecting intersections between a ray and an AABB can be decomposed into determining intersections with the individual dimensional "slabs" (i.e., the spaces bounded by pairs of parallel planes aligned with the coordinate axes). 
+$$
+(\boldsymbol v_\min, \boldsymbol v_\max)
+$$
 
-- For each coordinate dimension, compute the ray parameter $t$ values where the ray enters and exits the corresponding slab. The sign of the ray's directional component in a given dimension determines which face it initially intersects: if the component is positive, the ray first encounters the plane defined by $\boldsymbol{v}_{\text{min}}$; if negative, it first encounters the plane defined by $\boldsymbol{v}_{\text{max}}$. Consequently, the $t$ value for slab entry $t_\text{enter, i}$ will always be less than the $t$ value for slab exit $t_\text{exit, i}$ for that dimension. 
+An Axis-Aligned Bounding Box (AABB) can be defined by its minimum and maximum vertices $\{\boldsymbol v_{max}, \boldsymbol v_{min}\}$. The problem of detecting intersections between a ray and an AABB can be decomposed into determining intersections with the individual dimensional "slabs" (i.e., the spaces bounded by pairs of parallel planes aligned with the coordinate axes).
 
-- The ray enters the AABB only when it has penetrated *all* slabs. This corresponds to the *maximum* value among all the per-dimension entry $t$ values. The ray exits the AABB as soon as it leaves *any single* slab. This corresponds to the *minimum* value among all the per-dimension exit $t$ values. 
-
-- **Non-Intersection Condition**: If t_enter exceeds t_exit (t_enter > t_exit), it signifies that the ray exits at least one slab before it has managed to enter all others. Therefore, no valid intersection exists between the ray and the AABB.
+**Solution:**
 
 $$
 \begin{align*}
@@ -123,6 +121,12 @@ t_\text{exit}  &\quad\text{if } t_\text{enter} \le t_\text{exit} \text{ and } t_
 \end{align*}
 $$
 
+- For each coordinate dimension, compute the ray parameter $t$ values where the ray enters and exits the corresponding slab. The sign of the ray's directional component in a given dimension determines which face it initially intersects: if the component is positive, the ray first encounters the plane defined by $\boldsymbol{v}_{\text{min}}$; if negative, it first encounters the plane defined by $\boldsymbol{v}_{\text{max}}$. Consequently, the $t$ value for slab entry $t_\text{enter, i}$ will always be less than the $t$ value for slab exit $t_\text{exit, i}$ for that dimension. 
+
+- The ray enters the AABB only when it has penetrated *all* slabs. This corresponds to the *maximum* value among all the per-dimension entry $t$ values. The ray exits the AABB as soon as it leaves *any single* slab. This corresponds to the *minimum* value among all the per-dimension exit $t$ values. 
+
+- **Non-Intersection Condition**: If t_enter exceeds t_exit (t_enter > t_exit), it signifies that the ray exits at least one slab before it has managed to enter all others. Therefore, no valid intersection exists between the ray and the AABB.
+
 
 ### Ray-Surface of Sphere
 
@@ -130,8 +134,7 @@ $$
 ||\boldsymbol x - \boldsymbol c||_2 - R = 0 \tag{surface of sphere}
 $$
 
-Solution: 
-
+**Solution:** 
 $$
 \begin{align*}
   t &= \frac{-b ± \sqrt{Δ}}{2a}  \\
@@ -141,7 +144,7 @@ $$
 \end{align*}
 $$
 
-- **Intersection Condition**: 若$Δ≥0$有交点; 若$Δ<0$无交点.
+- **Intersection Condition**: If Δ ≥ 0, there are intersection points; if Δ < 0, there are no intersection points.
 
 > Proof
 > $$
@@ -159,7 +162,7 @@ $$
 > \end{align*}
 > $$
 >
-> 若$Δ≥0$有交点; 若$Δ<0$无交点.
+> If Δ ≥ 0, there are intersection points; if Δ < 0, there are no intersection points.
 >
 > $$
 > t = \frac{-b ± \sqrt{Δ}}{2a}
@@ -169,14 +172,26 @@ $$
 ### Ray-Quadric Surface
 
 $$
-f(\boldsymbol x) = \boldsymbol x^T \boldsymbol A \boldsymbol x + \boldsymbol b \boldsymbol x + \boldsymbol c \tag{quadric surface}
+\begin{align*}
+f(\boldsymbol x) &= \boldsymbol x^T \boldsymbol A \boldsymbol x + \boldsymbol b \boldsymbol x + \boldsymbol c \tag{quadric surface} \\
+f(\boldsymbol x_0 + t \hat{\boldsymbol d}) &= (\boldsymbol x_0 + t \hat{\boldsymbol d})^T \boldsymbol A (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol b (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol c = 0
+\end{align*}
 $$
 
-$$
-f(\boldsymbol x_0 + t \hat{\boldsymbol d}) = (\boldsymbol x_0 + t \hat{\boldsymbol d})^T \boldsymbol A (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol b (\boldsymbol x_0 + t \hat{\boldsymbol d}) + \boldsymbol c = 0
-$$
+- $\boldsymbol A \in \mathbb R^{\dim \times \dim}$
 
-Solution: 通过规范化为 Quadric Equations 求解问题.
+**Solution:**
+
+Solve the problem by obtaining a standard quadric polynomial equation in $t$ from $f(\boldsymbol{x}_0 + t\hat{\boldsymbol{d}}) = 0$.
+
+$$
+\begin{align*}
+a t^2 + bt+c &= 0 \\
+a &= \boldsymbol d^T \boldsymbol A \boldsymbol d\\
+b &= 2 \boldsymbol x_0^T \boldsymbol A \boldsymbol d + \boldsymbol b^T \boldsymbol d \\
+c &=  2 \boldsymbol x_0^T \boldsymbol A \boldsymbol x_0 + \boldsymbol b^T \boldsymbol x_0 + c 
+\end{align*}
+$$
 
 #### Ray-Surface of Ellipsoid
 
@@ -184,8 +199,7 @@ $$
 (\boldsymbol x - \boldsymbol c)^T \boldsymbol P^{-1} (\boldsymbol x - \boldsymbol c) = 1 \tag{surface of ellipsoid}
 $$
 
-Solution: 
-
+**Solution:** 
 $$
 \begin{align*}
 t &= \frac{-b ± \sqrt{Δ}}{2a}  \\
@@ -194,7 +208,7 @@ t &= \frac{-b ± \sqrt{Δ}}{2a}  \\
 \end{align*}
 $$
 
-- **Intersection Condition**: 若$Δ≥0$有交点; 若$Δ<0$无交点.
+- **Intersection Condition**: If Δ ≥ 0, there are intersection points; if Δ < 0, there are no intersection points.
 
 > Proof
 > $$
@@ -210,7 +224,7 @@ $$
 > &= (2 \hat{\boldsymbol d}^T \boldsymbol P^{-1} (\boldsymbol x_0 - \boldsymbol c))^2 - 4 (\hat{\boldsymbol d}^T \boldsymbol P^{-1} \hat{\boldsymbol d}) ((\boldsymbol x_0 - \boldsymbol c)^T \boldsymbol P^{-1} (\boldsymbol x_0 - \boldsymbol c) - 1)
 > \end{align*}
 > $$
-> 若$Δ≥0$有交点; 若$Δ<0$无交点.
+> If Δ ≥ 0, there are intersection points; if Δ < 0, there are no intersection points.
 > $$
 > t = \frac{-b ± \sqrt{Δ}}{2a}
 > $$
@@ -220,10 +234,33 @@ $$
 
 ### Ray-Surface of Fourth-order Polynomial Equation
 
-Solution: 通过将 $f(\boldsymbol x_0 + t \hat{\boldsymbol d})= 0$ 规范化为四次多项式方程求解问题.
+$$
+f(\boldsymbol x) = \sum\limits_{i_1=0}^{\dim} \sum\limits_{i_2=i_1}^{\dim} \sum\limits_{i_3=i_2}^{\dim} \sum\limits_{i_4=i_3}^{\dim} a_{i_1 i_2 i_3 i_4} \cdot x_{i_1} x_{i_2} x_{i_3} x_{i_4}  \tag{Fourth-order Polynomial}
+$$
+
+- $A \in \mathbb R^{(\dim+1)\times\cdots\times(\dim+1)}$: The coefficient tensor.
+- $x_0 = 1$
+
+**Solution:** 
+
+Solve the problem by obtaining a standard quartic polynomial in $t$ from $f(\boldsymbol{x}_0 + t\hat{\boldsymbol{d}}) = 0$.
+
 $$
 t^{4} + b t^{3} + c t^{2} + d t + e = 0
 $$
+
+The coefficients $a, b, c, d, e$ are computed by expanding the product of linear terms from the ray. For each tensor element $a_{i_1 i_2 i_3 i_4}$, the contribution to the polynomial is follows, where each $u_i(t)$ is a linear function in $t$. Since each term in this sum is a product of four linear functions, it expands into a quartic polynomial in $t$. The final polynomial $at^4 + bt^3 + ct^2 + dt + e = 0$ is obtained by summing the contributions of these quartic terms over all indices $i, j, k, l$ of the tensor.
+$$
+\begin{align*}
+a_{i_1 i_2 i_3 i_4} \cdot& \prod_{\alpha \in \{i_1 i_2 i_3 i_4\}} u_\alpha(t) \\
+a_{i_1 i_2 i_3 i_4} \cdot& \prod_{\alpha \in \{i_1 i_2 i_3 i_4\}} \begin{cases}
+1 & \text{if } \alpha = 0, \\
+(\boldsymbol{x}_0)_\alpha + t d_\alpha & \text{if } \alpha > 0
+\end{cases}
+\end{align*}
+$$
+
+Solving fourth degree polynomial equations: 
 
 $$
 \begin{align*}
@@ -248,12 +285,14 @@ $$
 
 $$
 \begin{align*}
-f(\boldsymbol x) &= (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_k^2) = 0  \\
-f(\boldsymbol x_0 + t \hat{\boldsymbol d}) &= (R^2 - r^2 + (\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}))^2 - 4 R^2 ((\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}) - (\boldsymbol x_0 + t \hat{\boldsymbol d})_k^2) = 0
+f(\boldsymbol x) = (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_k^2) = 0  \tag{Ring} \\
 \end{align*}
 $$
 
-Solution: 通过规范化为四次多项式方程求解问题.
+Solve the problem by obtaining a standard quartic polynomial in $t$ from $f(\boldsymbol{x}_0 + t\hat{\boldsymbol{d}}) = 0$.
+$$
+f(\boldsymbol x_0 + t \hat{\boldsymbol d}) = (R^2 - r^2 + (\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}))^2 - 4 R^2 ((\boldsymbol x_0 + t \hat{\boldsymbol d})^T (\boldsymbol x_0 + t \hat{\boldsymbol d}) - (\boldsymbol x_0 + t \hat{\boldsymbol d})_k^2) = 0
+$$
 $$
 \begin{align*}
 t^{4} + B t^{3} + C t^{2} + D t + E &= 0 \\
