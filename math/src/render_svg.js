@@ -124,18 +124,18 @@ function RenderNode(dag, svg, x, y, nodeKey) {
 
     const circleLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     circleLink.setAttribute("href", "javascript:void(0)");  // You can use this to prevent default link action
-    circleLink.addEventListener('click', () => render_file_graph("C:/Algo/Notes/math_physics/math/", nodeKey));
+    circleLink.addEventListener('click', () => render_file_graph("D:/Algo/Notes/math_physics/math/", nodeKey));
 
     const textLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     textLink.setAttribute("href", "javascript:void(0)");
     //textLink.setAttribute("target", "_blank");
-    textLink.addEventListener('click', () => request("open_typora", {path: "C:/Algo/Notes/math_physics/math/" + nodeKey + ".md"}));
+    textLink.addEventListener('click', () => request("open_typora", {path: "D:/Algo/Notes/math_physics/math/" + nodeKey + ".md"}));
     textLink.addEventListener('contextmenu', (event) => {
         event.preventDefault();
         const kid_name = prompt('请输入 kid_name 的值');
         if (kid_name !== null && kid_name.trim()!== '') {
             request("add_kid_for_graph", {
-                json_file: "C:/Algo/Notes/math_physics/math/lib/math.json",
+                json_file: "D:/Algo/Notes/math_physics/math/lib/math.json",
                 name: nodeKey,
                 kid_name: kid_name
             });
