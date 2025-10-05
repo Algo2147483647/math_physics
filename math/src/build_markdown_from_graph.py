@@ -12,8 +12,8 @@ def build_markdown_from_graph(graph):
         if key == "root":
             continue
 
-        with open("C:/Algo/Notes/math_physics/math/" + node.name + ".md", 'w', encoding='utf-8') as file:
-            file.write("# " + node.name.replace("_", " ") + "\n\n")
+        with open("D:/Algo/Notes/math_physics/math/" + node.key + ".md", 'w', encoding='utf-8') as file:
+            file.write("# " + node.key.replace("_", " ") + "\n\n")
             file.write("[TOC]\n\n")
             file.write("## Define\n\n" + node.define + "\n\n")
 
@@ -35,8 +35,8 @@ def build_markdown_from_graph(graph):
     return
 
 
-def add_kid_for_graph(json_file, name, kid_name):
+def add_kid_for_graph(json_file, key, kid_key):
     graph = json_to_graph(json_file)
-    build_node_in_graph(graph, "kid", name, kid_name, "")
+    build_node_in_graph(graph, "kid", key, kid_key, "")
     graph_to_json(graph)
     build_markdown_from_graph(graph)

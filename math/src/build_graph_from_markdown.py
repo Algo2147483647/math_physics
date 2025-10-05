@@ -28,12 +28,12 @@ def build_graph_from_markdown_folder(folder_path):
 def build_graph_from_markdown_file(file_path, graph):
     file_path = os.path.abspath(file_path)
 
-    name = os.path.splitext(os.path.basename(file_path))[0]
-    if name in graph:
-        return graph[name]
+    key = os.path.splitext(os.path.basename(file_path))[0]
+    if key in graph:
+        return graph[key]
 
-    graph[name] = Node(
-        name=name,
+    graph[key] = Node(
+        key=key,
     )
 
     try:
@@ -46,23 +46,23 @@ def build_graph_from_markdown_file(file_path, graph):
             include_section = parse_section_in_markdown(content, "Include")
             parents_section = parse_section_in_markdown(content, "Parents")
 
-            graph[name].define = define_section
-            graph[name].properties.append(property_section)
+            graph[key].define = define_section
+            graph[key].properties.append(property_section)
 
             for link in links:
                 link_path = os.path.abspath(os.path.join(os.path.dirname(file_path), link))
                 build_graph_from_markdown_file(link_path, graph)
 
             for k, v in parse_kv_links(include_section).items():
-                build_edge_in_graph(graph, name, k, v)
+                build_edge_in_graph(graph, key, k, v)
 
             for k, v in parse_kv_links(parents_section).items():
-                build_edge_in_graph(graph, k, name, v)
+                build_edge_in_graph(graph, k, key, v)
 
-            return graph[name]
+            return graph[key]
 
     except IOError:
-        return graph[name]
+        return graph[key]
 
 
 

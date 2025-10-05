@@ -2,8 +2,8 @@ import json
 
 
 class Node:
-    def __init__(self, name=""):
-        self.name = name
+    def __init__(self, key=""):
+        self.key = key
         self.define = ""
         self.properties = []
         self.kids = {}
@@ -11,7 +11,7 @@ class Node:
 
     def to_dict(self):
         return {
-            "name": self.name,
+            "key": self.key,
             "define": self.define,
             "properties": self.properties,
             "kids": self.kids,
@@ -52,13 +52,13 @@ def json_to_graph(json_file):
         with open(json_file, 'r', encoding='utf-8') as file:
             data = json.load(file)
             graph = {}
-            for node_name, node_info in data.items():
-                node = Node(name=node_name)
+            for node_key, node_info in data.items():
+                node = Node(key=node_key)
                 node.define = node_info.get("define", "")
                 node.properties = node_info.get("properties", [])
                 node.kids = node_info.get("kids", {})
                 node.parents = node_info.get("parents", {})
-                graph[node_name] = node
+                graph[node_key] = node
             return graph
     except FileNotFoundError:
         print(f"文件 {json_file} 未找到。")
@@ -70,7 +70,7 @@ def json_to_graph(json_file):
 def build_common_root(dag):
     roots = get_all_roots(dag)
     dag["root"] = Node(
-        name="root",
+        key="root",
     )
 
     for root in roots:
