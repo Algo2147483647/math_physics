@@ -6,6 +6,8 @@
 
 ## Principles
 
+**Measurement Postulate and Wave Function Collapse**: When a measurement is performed on a system, the system randomly "collapses" into one of the **eigenstates** of the measurement operator. The measurement outcome is the corresponding **eigenvalue** of that eigenstate. The collapse is random and nondeterministic.
+
 
 ### Heisenberg uncertainty principle
 
