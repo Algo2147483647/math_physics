@@ -216,7 +216,7 @@
       "Real_Value_Function": ""
     },
     "properties": [
-      "### Jacobi Elliptic Functions\n\n$$\n\\text{sn}(u, k) = \\sin(\\phi)\\\\\n\\text{cn}(u, k) = \\cos(\\phi)\\\\\n\\text{dn}(u, k) = \\sqrt{1 - k^2 \\text{sn}^2 (u, k)}\n$$"
+      "### Jacobi Elliptic Functions\n\nFor $u = F(\\phi, k)$\n$$\n\\text{sn}(u, k) = \\sin(\\phi)\\\\\n\\text{cn}(u, k) = \\cos(\\phi)\\\\\n\\text{dn}(u, k) = \\sqrt{1 - k^2 \\text{sn}^2 (u, k)}\n$$\n\n$$\n\\text{sn}^2(a) + \\text{cn}^2(a) = 1 \\\\\n\\text{dn}^2(a) + k^2 \\text{sn}^2(a) = 1\n$$"
     ]
   },
   "Euclidean_Space": {

@@ -20,12 +20,17 @@ $$
 
 ### Jacobi Elliptic Functions
 
+For $u = F(\phi, k)$
 $$
 \text{sn}(u, k) = \sin(\phi)\\
 \text{cn}(u, k) = \cos(\phi)\\
 \text{dn}(u, k) = \sqrt{1 - k^2 \text{sn}^2 (u, k)}
 $$
 
+$$
+\text{sn}^2(a) + \text{cn}^2(a) = 1 \\
+\text{dn}^2(a) + k^2 \text{sn}^2(a) = 1
+$$
 
 
 ## Include
