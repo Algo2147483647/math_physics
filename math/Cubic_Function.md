@@ -11,8 +11,6 @@ f(\boldsymbol x) &= \sum\limits_{i_1=0}^{\dim} \sum\limits_{i_2=i_1}^{\dim} \sum
 \end{align*}
 $$
 
-
-
 ## Properties
 
 ### Zero Set of Cubic Function, Cubic Surface

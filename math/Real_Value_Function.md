@@ -469,6 +469,8 @@ Include
 
 ## Include
 
+- [Elliptic_Integral](./Elliptic_Integral.md): 
+
 ## Parents
 
 - [Function](./Function.md): is-a

@@ -136,8 +136,8 @@ function RenderNode(dag, svg, x, y, nodeKey) {
         if (kid_name !== null && kid_name.trim()!== '') {
             request("add_kid_for_graph", {
                 json_file: "D:/Algo/Notes/math_physics/math/lib/math.json",
-                name: nodeKey,
-                kid_name: kid_name
+                key: nodeKey,
+                kid_key: kid_name
             });
         }
     });

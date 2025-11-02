@@ -208,6 +208,17 @@
       "Groups formed by points on elliptic curves: The points on an elliptic curve form an Abelian group through a defined \"addition\" operation. This addition operation is related to the intersection of a line and a curve, while the unit element is represented by a point at infinity.\n\n- Addition Operation: Given two points $P = (x_1, y_1), Q = (x_2, y_2)$ on $E$, their sum $P+Q=(x3, y3)$ is defined as follows: (Draw a straight line passing through points $P, Q$. This straight line will align with the curve at the third point $Q'$. By reflecting perpendicular to the x-axis from point $Q'$, you will obtain new points $C$, which is defined as $P + Q$.)\n\n  If $P \\neq Q$, the slope of the line through $P$ and $Q$ is:\n  $$\n  m = \\frac{y_2 - y_1}{x_2 - x_1}\n  $$\n  If $P = Q$, the slope of the tangent to the curve at $P$ is:\n  $$\n  m = \\frac{3x_1^2 + a}{2y_1}\n  $$\n  The coordinates $x_3$ and $y_3$ of $P + Q$ are given by:\n  $$\n  (x_3, y_3) = (m^2 - x_1 - x_2, m(x_1 - x_3) - y_1)\n  $$\n\n  Special cases:\n\n  if $P = O$, then $P +Q= Q$\n  if $Q = O$,then $P +Q = P$\n  if $P = (x_1, y_1), Q = (x_1, -y_1)$  (i.e., $Q$ is the reflection of $P$ over the x-axis), then $P + Q= O$.\n\n- Unit element: The unit element of this group is a special point at infinity, usually denoted as $O$. Any point on an elliptical curve plus O is equal to itself."
     ]
   },
+  "Elliptic_Integral": {
+    "define": "",
+    "key": "Elliptic_Integral",
+    "kids": {},
+    "parents": {
+      "Real_Value_Function": ""
+    },
+    "properties": [
+      ""
+    ]
+  },
   "Euclidean_Space": {
     "define": "Euclidean space is a finite dimensional [Hilbert space](./Hilbert_Space.md) over a [real number field](./Real_Field.md), and has a standard dot product as its inner product. Let $n \\in \\mathbb{N}$ (the set of natural numbers). The $n$-dimensional Euclidean space, denoted as $\\mathbb{R}^n$, is the set of all ordered $n$-tuples of real numbers. That is,\n$$\n\\mathbb{R}^n = \\{(x_1, x_2, \\dots, x_n) : x_i \\in \\mathbb{R} \\text{ for } i = 1,2, \\dots, n\\}\n$$\n\nIn $\\mathbb{R}^n$, we define the following operations:\n\n1. **Vector Addition:** For any two vectors $\\mathbf{v} = (v_1, v_2, \\dots, v_n)$ and $\\mathbf{w} = (w_1, w_2, \\dots, w_n)$ in $\\mathbb{R}^n$, their sum is given by:\n$$\n\\mathbf{v} + \\mathbf{w} = (v_1 + w_1, v_2 + w_2, \\dots, v_n + w_n)\n$$\n\n2. **Scalar Multiplication:** For any scalar $c \\in \\mathbb{R}$ and vector $\\mathbf{v} = (v_1, v_2, \\dots, v_n)$ in $\\mathbb{R}^n$, the scalar product is:\n$$\nc \\cdot \\mathbf{v} = (c v_1, c v_2, \\dots, c v_n)\n$$\n\n3. **Inner Product (Dot Product):** The inner product of two vectors $\\mathbf{v} = (v_1, v_2, \\dots, v_n)$ and $\\mathbf{w} = (w_1, w_2, \\dots, w_n)$ in $\\mathbb{R}^n$ is defined as:\n$$\n\\mathbf{v} \\cdot \\mathbf{w} = v_1 w_1 + v_2 w_2 + \\dots + v_n w_n\n$$\n\nFrom this inner product, we can derive the **Euclidean norm** of a vector $\\mathbf{v}$ as:\n$$\n||\\mathbf{v}|| = \\sqrt{\\mathbf{v} \\cdot \\mathbf{v}}\n$$\n\nWith these operations, $\\mathbb{R}^n$ becomes a **real inner product space**. The geometry induced by the inner product is the familiar Euclidean geometry, and the distance between two vectors $\\mathbf{v}$ and $\\mathbf{w}$ is given by the norm of their difference:\n$$\nd(\\mathbf{v}, \\mathbf{w}) = ||\\mathbf{v} - \\mathbf{w}||\n$$",
     "key": "Euclidean_Space",
@@ -819,7 +830,9 @@
   "Real_Value_Function": {
     "define": "$$\nf: \\mathbb R \\to \\mathbb R\n$$\n\nA real function $f: \\mathbb R \\to \\mathbb R$ is a [function](./Function.md) from [real numbers](./Real_Field.md) to real numbers.\n\nFor multi-variate real functions:\n$$\nf: \\mathbb R^n \\to \\mathbb R\n$$",
     "key": "Real_Value_Function",
-    "kids": {},
+    "kids": {
+      "Elliptic_Integral": ""
+    },
     "parents": {
       "Function": "is-a",
       "Real_Field": ""

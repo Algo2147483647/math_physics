@@ -65,8 +65,7 @@ The **Real Field** $\mathbb{R}$ is a set equipped with addition $+$ and multipli
 **Defined by Cauchy Sequences**: A Cauchy sequence of rational numbers $(a_1, a_2, a_3, \dots), a_n \in \mathbb{Q}$ satisfy $\forall \varepsilon \in \mathbb Q, \varepsilon > 0, \exist \mathbb N : \forall m, n > N$, $|a_m - a_n| < \varepsilon$. Two Cauchy sequences $(a_n), (b_n)$ are defined to be equivalent $(a_n) \sim (b_n) \iff \lim\limits_{n \to \infty} (a_n - b_n) = 0$.   The set of real numbers $\mathbb{R}$ is the collection of all equivalence classes of Cauchy sequences.
 
 - The equivalence class of a constant sequence $(r, r, r, \dots)$ represents the rational number $r$.  
-- The equivalence class of a Cauchy sequence that does not converge in $\mathbb{Q}$ represents an irrational number.  
-
+- The equivalence class of a Cauchy sequence that does not converge in $\mathbb{Q}$ represents an irrational number.
 
 ## Properties
 

@@ -214,7 +214,6 @@ Properties:
 
 - [Lie_Group](./Lie_Group.md): 
 
-
 ## Parents
 
 - [Algebra_Structure](./Algebra_Structure.md): is-a

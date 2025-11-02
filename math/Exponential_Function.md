@@ -39,10 +39,7 @@ $$
 \end{align*}
 $$
 
-
-
 ## Properties
-
 
 ### Periodicity
 
@@ -167,9 +164,6 @@ $$
 \int \frac{1}{\tan(x)} \, dx &= \ln|\sin(x)| + C \\
 \end{align*}
 $$
-
-
-
 
 ## Include
 
