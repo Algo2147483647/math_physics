@@ -209,14 +209,14 @@
     ]
   },
   "Elliptic_Integral": {
-    "define": "",
+    "define": "Elliptic integrals are integrals that cannot be expressed in terms of elementary functions. Elliptic integrals are most commonly expressed in three fundamental types, known as the Legendre canonical forms.\n$$\n\\begin{align*}\nF(\\phi, k) &= \\int_0^\\phi \\frac{\\mathrm d \\theta}{\\sqrt{1 - k^2 \\sin \\theta}} = \\int_0^t \\frac{\\mathrm d t}{\\sqrt{(1-t^2)(1 - k^2 t^2)}} \\tag{First Kind}\\\\\nE(\\phi, k) &= \\int_0^\\phi \\sqrt{1 - k^2 \\sin \\theta} \\mathrm d \\theta \\tag{Second Kind}\\\\\n\\Pi(n;\\phi, k) &= \\int_0^\\phi \\frac{\\mathrm d \\theta}{(1-n\\sin^2\\theta)\\sqrt{1 - k^2 \\sin \\theta}} \\tag{Third Kind}\\\\\n\\end{align*}\n$$",
     "key": "Elliptic_Integral",
     "kids": {},
     "parents": {
       "Real_Value_Function": ""
     },
     "properties": [
-      ""
+      "### Jacobi Elliptic Functions\n\n$$\n\\text{sn}(u, k) = \\sin(\\phi)\\\\\n\\text{cn}(u, k) = \\cos(\\phi)\\\\\n\\text{dn}(u, k) = \\sqrt{1 - k^2 \\text{sn}^2 (u, k)}\n$$"
     ]
   },
   "Euclidean_Space": {

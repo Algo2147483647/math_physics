@@ -8,6 +8,8 @@ $$
 
 - $B_\nu(T)$: the spectral radiance at the template $T$.
 
+<img src="./assets/Black_body.svg" alt="Black_body" style="zoom: 50%;" />
+
 > ***Proof:***
 >
 > 1. Total radiation density: $u(\nu, T) = N(\nu) \langle E\rangle$
@@ -36,7 +38,4 @@ $$
 > &= \frac{2h \nu^3}{c^2} \frac{1}{e^{\frac{h\nu}{k_B T}}-1} 
 > \end{align*}
 > $$
-
-
-<img src="./assets/Black_body.svg" alt="Black_body" style="zoom: 50%;" />
 
