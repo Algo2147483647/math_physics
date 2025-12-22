@@ -14,47 +14,47 @@ A set $S$ is a collection of distinct objects.
 
 If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we write $x \notin S$. The most commonly used axiomatic system for set theory is Zermelo-Fraenkel set theory with the Axiom of Choice (ZFC axiomatic system):
 
-1. **Axiom of Extensionality**: Two sets are equal if they have the same elements.
+1. **Axiom of Extensionality**: Two sets $A, B$ are equal if they have the same elements.
    $$
    \forall A \forall B (\forall x (x \in A \leftrightarrow x \in B) \rightarrow A = B)
    $$
 
-2. **Axiom of Regularity (also known as the Axiom of Foundation)**: Every non-empty set has a member that is disjoint from it. 
+2. **Axiom of Regularity (also known as the Axiom of Foundation)**: Every non-empty set $\varnothing$ has a member that is disjoint from it. 
    $$
    \forall x(x \neq \varnothing \rightarrow \exists y(y \in x \wedge y \cap x=\varnothing))
    $$
 
-3. **Axiom of Pairing**: For any two sets, there is a set that contains exactly those two sets.
+3. **Axiom of Pairing**: For any two sets, there is a set $B$ that contains exactly those two sets.
    $$
    \forall x \forall y \exists B \forall z (z \in B \leftrightarrow (z = x ∨ z = y))
    $$
 
-4. **Axiom of Union**: For any set of sets, there is a set that contains all the elements of those sets.
+4. **Axiom of Union**: For any set of sets $A$, there is a set $B$ that contains all the elements of those sets.
    $$
    \forall A \exists B \forall x (x \in B \leftrightarrow \exists C (x \in C ∧ C \in A))
    $$
 
-5. **Axiom of Infinity**: There exists a set that contains the empty set and is closed under the operation of "successor" which is defined for any set $x$ as $x \cup \{x\}$.
+5. **Axiom of Infinity**: There exists a set $A$ that contains the empty set $\varnothing$ and is closed under the operation of "successor" which is defined for any set $x$ as $x \cup \{x\}$.
    $$
-   \exists A (∅ \in A ∧ \forall x (x \in A \rightarrow x ∪ {x} \in A))
+   \exists A (\varnothing \in A ∧ \forall x (x \in A \rightarrow x ∪ \{x\} \in A))
    $$
 
-6. **Axiom Schema of Separation (also known as the Axiom Schema of Comprehension)**: For any set and any property that can be defined without reference to the whole set, there is a subset containing exactly those elements of the original set that have the property.
+6. **Axiom Schema of Separation (also known as the Axiom Schema of Comprehension)**: For any set $A$ and any property $\varphi$ that can be defined without reference to the whole set, there is a subset $B$ containing exactly those elements of the original set $A$ that have the property $\varphi$.
    $$
    \forall w_{1},\ldots ,w_{n}\,\forall A\,\exists B\,\forall x\,(x\in B\Leftrightarrow [x\in A\land \varphi (x,w_{1},\ldots ,w_{n},A)])
    $$
 
-7. **Axiom of Power Set**: For any set, there is a set of all its subsets.
+7. **Axiom of Power Set**: For any set $A$, there is a set $B$ of all its subsets.
    $$
    \forall A \exists B \forall C (C \in B \leftrightarrow \forall x (x \in C \rightarrow x \in A))
    $$
 
-8. **Axiom Schema of Replacement**: If a property defines a function on a set, then the image of the set under that function is also a set.
+8. **Axiom Schema of Replacement**: If a property $\varphi$ defines a function on a set $A$, then the image of the set $B$ under that function is also a set.
    $$
-   \forall A (\forall x \in A \exists !y φ(x, y, p1, ..., pn) \rightarrow \exists B \forall x \in A \exists y (y \in B ∧ φ(x, y, p1, ..., pn)))
+   \forall A (\forall x \in A \exists !y φ(x, y, p_1, ..., p_n) \rightarrow \exists B \forall x \in A \exists y (y \in B ∧ φ(x, y, p_1, ..., p_n)))
    $$
 
-9. **Axiom of Choice**: For any set of non-empty sets, there exists a choice function that selects one element from each set.
+9. **Axiom of Choice (also known as the Axiom of well-ordering)**: For any set of non-empty sets, there exists a choice function that selects one element from each set.
    $$
    \forall A (\exists B \forall x (x \in B \leftrightarrow (\exists y (y \in A ∧ \forall z (z \in A \rightarrow (z = y ∨ ¬S(z, y)))))))
    $$
