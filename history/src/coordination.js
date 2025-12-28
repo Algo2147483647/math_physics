@@ -1,18 +1,20 @@
 // Calculate horizontal positions for time ranges and single points to avoid conflicts using DFS
 function calculateHorizontalPositions(events, margin) {
   const minSpacing = 16; // Minimum spacing between events
-  
+
   // Create a map of all events for easy lookup
   const allEventsMap = new Map();
   events.forEach(event => allEventsMap.set(event.key, event));
+
+  console.log(allEventsMap)
   
   const roots = []; // Events without parents, Populate children map and find root nodes
-  timeRanges.forEach(event => {
-    if (!event.parents || event.parents.length == 0) {
+  events.forEach(event => {
+    if (!event.parents || event.parents.length == 0 || event.parents[0] === '') {
       roots.push(event);
     }
   });
-  
+
   // Sort root nodes by vertical position
   roots.sort((a, b) => a.startY - b.startY);
   
@@ -27,19 +29,25 @@ function calculateHorizontalPositions(events, margin) {
 function processEventDFS(event, baseX, minSpacing, allEventsMap, positionedEvents) {
   // Find a non-conflicting x position for the current event
   event.x = findNonConflictingXPositionForEvent(event, positionedEvents, baseX, minSpacing);
-  
+
   // Add the current event to positioned events
   positionedEvents.push(event);
   
   // Get children of the current event
   const kids = event.kids || [];
   if (!kids || kids.length == 0) return; // No children to process
-  
-  kids.sort((a, b) => a.startY - b.startY);
+
+  console.log(kids)
+
+  kids.sort((a, b) => {
+    console.log(a, allEventsMap[a]);
+    console.log(b, allEventsMap[b]);
+    return allEventsMap[a].startTime - allEventsMap[b].startTime;
+  });
   
   // Process all children of the current event
   kids.forEach(kid => {
-    processEventDFS(allEventsMap[kid.key], event.x + minSpacing, minSpacing, allEventsMap, positionedEvents);
+    processEventDFS(allEventsMap[kid], event.x + minSpacing, minSpacing, allEventsMap, positionedEvents);
   });
 }
 
@@ -69,31 +77,8 @@ function findNonConflictingXPositionForEvent(currentEvent, positionedEvents, ini
 
 // Helper function to determine if two events conflict at a given x position
 function doesConflict(currentEvent, otherEvent, currentX, minSpacing) {
-  // For time ranges, we need to consider the full height of the rectangle
-  let currentTop, currentBottom;
-
-  if (currentEvent.isTimeRange) {
-    currentTop = Math.min(currentEvent.startY, currentEvent.endY);
-    currentBottom = Math.max(currentEvent.startY, currentEvent.endY);
-  } else {
-    // For single points, consider the point position with some tolerance
-    currentTop = currentEvent.startY;
-    currentBottom = currentEvent.startY;
-  }
-
-  let otherTop, otherBottom;
-
-  if (otherEvent.isTimeRange) {
-    otherTop = Math.min(otherEvent.startY, otherEvent.endY);
-    otherBottom = Math.max(otherEvent.startY, otherEvent.endY);
-  } else {
-    // For single points, consider the point position with some tolerance
-    otherTop = otherEvent.startY;
-    otherBottom = otherEvent.startY;
-  }
-
   // Check if the y-ranges overlap
-  const yOverlap = !(currentBottom < otherTop || currentTop > otherBottom);
+  const yOverlap = !(currentEvent.endTime < otherEvent.startTime || currentEvent.startTime > otherEvent.endTime);
 
   // Check if x-positions are too close
   const xTooClose = Math.abs(currentX - otherEvent.x) < minSpacing;

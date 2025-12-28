@@ -1,60 +1,55 @@
 // 对所有事件 timelineData 的父子关系进行对齐，缺少的话补充上去，即保证每个节点的parent和kids都是对的，不缺少的
 function alignParentChildRelationships(events) {
-  // 首先，清空所有事件的 kids 数组
   events.forEach(event => {
-    if (!event.kids) {
-      event.kids = [];
-    }
-  });
-
-  // 遍历所有事件，建立正确的父子关系
-  events.forEach(event => {
-    // 确保 parents 数组存在
     if (!event.parents || !Array.isArray(event.parents)) {
       event.parents = [];
     }
 
-    // 遍历当前事件的每个 parent
+    if (!event.kids || !Array.isArray(event.kids)) {
+      event.kids = [];
+    }
+
+
+    parents = []
     event.parents.forEach(parentKey => {
       if (parentKey && parentKey.trim() !== "") {
-        // 在 events 中查找该 parent 事件
+        parents.push(parentKey);
+
         const parentEvent = events.find(e => e.key === parentKey);
 
         if (parentEvent) {
-          // 确保 parent 事件的 kids 数组存在
           if (!parentEvent.kids || !Array.isArray(parentEvent.kids)) {
             parentEvent.kids = [];
           }
 
-          // 检查是否已经存在于 parent 的 kids 数组中
           if (!parentEvent.kids.includes(event.key)) {
             parentEvent.kids.push(event.key);
           }
         }
       }
-    });
+    })
+    event.parents = parents;
 
-    // 同样，遍历当前事件的每个 kid
-    if (event.kids && Array.isArray(event.kids)) {
-      event.kids.forEach(kidKey => {
-        if (kidKey && kidKey.trim() !== "") {
-          // 在 events 中查找该 kid 事件
-          const kidEvent = events.find(e => e.key === kidKey);
 
-          if (kidEvent) {
-            // 确保 kid 事件的 parents 数组存在
-            if (!kidEvent.parents || !Array.isArray(kidEvent.parents)) {
-              kidEvent.parents = [];
-            }
+    kids = []
+    event.kids.forEach(kidKey => {
+      if (kidKey && kidKey.trim() !== "") {
+        kids.push(kidKey);
 
-            // 检查是否已经存在于 kid 的 parents 数组中
-            if (!kidEvent.parents.includes(event.key)) {
-              kidEvent.parents.push(event.key);
-            }
+        const kidEvent = events.find(e => e.key === kidKey);
+
+        if (kidEvent) {
+          if (!kidEvent.parents || !Array.isArray(kidEvent.parents)) {
+            kidEvent.parents = [];
+          }
+
+          if (!kidEvent.parents.includes(event.key)) {
+            kidEvent.parents.push(event.key);
           }
         }
-      });
-    }
+      }
+    })
+    event.kids = kids
   });
 }
 
