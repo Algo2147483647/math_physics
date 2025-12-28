@@ -22,7 +22,7 @@
   {
     "key": "classical_mechanics",
     "time": [
-      "1564",
+      "1543",
       "1788"
     ],
     "space": [
@@ -527,7 +527,6 @@
       ]
     },
     "parents": [
-      "electromagnetism"
     ],
     "kids": []
   },

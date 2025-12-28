@@ -1,5 +1,4 @@
 
-
 // Truncate text to fit space
 function truncateText(text, maxLength) {
   if (!text) return '';
@@ -17,5 +16,12 @@ function getRandomColor() {
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
+// Function to generate soft colors for timeline ranges
+function getSoftColor() {
+  // Generate soft pastel colors with more consistency
+  const hue = Math.floor(Math.random() * 360);
+  const saturation = 20 + Math.floor(Math.random() * 30); // Lower saturation for softer look
+  const lightness = 80 + Math.floor(Math.random() * 15); // Higher lightness for softer look
 
-
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+}

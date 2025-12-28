@@ -135,8 +135,8 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
         rectWidth = 16;
       }
 
-      // Generate random color for time range rectangle
-      const randomColor = getRandomColor();
+      // Generate softer color for time range rectangle
+      const softColor = getSoftColor();
 
       // Time range rectangle
       const rangeRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -144,8 +144,8 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       rangeRect.setAttribute('y', rectY);
       rangeRect.setAttribute('width', rectWidth);
       rangeRect.setAttribute('height', rectHeight);
-      rangeRect.setAttribute('fill', randomColor);
-      rangeRect.setAttribute('stroke', '#3949ab');
+      rangeRect.setAttribute('fill', softColor);
+      rangeRect.setAttribute('stroke', '#a0aec0');
       rangeRect.setAttribute('stroke-width', 1);
       rangeRect.setAttribute('class', 'timeline-range');
       svgElement.appendChild(rangeRect);
@@ -159,6 +159,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
         const cardBg = cardGroup.querySelector('.event-card-bg');
         const yearLabel = cardGroup.querySelector('.event-year');
         const personsElement = cardGroup.querySelector('.event-persons');
+        const paperElement = cardGroup.querySelector('.event-paper');
 
         if (cardBg) cardBg.style.display = 'block';
         if (yearLabel) yearLabel.style.display = 'block';
@@ -190,7 +191,7 @@ function drawSinglePoints(singlePoints, margin, height) {
       connector.setAttribute('y1', event.startY);
       connector.setAttribute('x2', x - 10);
       connector.setAttribute('y2', event.startY);
-      connector.setAttribute('stroke', '#3949ab');
+      connector.setAttribute('stroke', '#a0aec0');
       connector.setAttribute('stroke-width', 1);
       connector.setAttribute('stroke-dasharray', '4,2');
       svgElement.appendChild(connector);
@@ -212,6 +213,7 @@ function drawSinglePoints(singlePoints, margin, height) {
         const cardBg = cardGroup.querySelector('.event-card-bg');
         const yearLabel = cardGroup.querySelector('.event-year');
         const personsElement = cardGroup.querySelector('.event-persons');
+        const paperElement = cardGroup.querySelector('.event-paper');
 
         if (cardBg) cardBg.style.display = 'block';
         if (yearLabel) yearLabel.style.display = 'block';
