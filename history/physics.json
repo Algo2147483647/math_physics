@@ -361,7 +361,7 @@
         "Polarization"
       ]
     },
-    "parents": [],
+    "parents": ["classical_mechanics"],
     "kids": []
   },
   {
@@ -1185,7 +1185,166 @@
       "significance": "Law describing the relationship between angles of incidence and refraction when light passes through different media"
     },
     "parents": [
-      "wave_optics"
+      "classical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "bose_einstein_statistics",
+    "time": [
+      "1924"
+    ],
+    "space": [
+      "India",
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Satyendra Nath Bose",
+        "Albert Einstein"
+      ],
+      "event": "Bose-Einstein Statistics",
+      "concepts": [
+        "Bose-Einstein statistics",
+        "Bosons"
+      ],
+      "significance": "Statistical description for particles that can share the same quantum state, leading to understanding of bosons"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": [
+      "bose_einstein_condensate"
+    ]
+  },
+  {
+    "key": "fermi_dirac_statistics",
+    "time": [
+      "1926"
+    ],
+    "space": [
+      "Italy",
+      "United Kingdom"
+    ],
+    "data": {
+      "persons": [
+        "Enrico Fermi",
+        "Paul Dirac"
+      ],
+      "event": "Fermi-Dirac Statistics",
+      "concepts": [
+        "Fermi-Dirac statistics",
+        "Fermions",
+        "Pauli exclusion principle"
+      ],
+      "significance": "Statistical description for particles that cannot share the same quantum state, leading to understanding of fermions"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "pi_mesons",
+    "time": [
+      "1947"
+    ],
+    "space": [
+      "United Kingdom"
+    ],
+    "data": {
+      "persons": [
+        "Cecil Powell",
+        "César Lattes",
+        "Giuseppe Occhialini"
+      ],
+      "event": "Discovery of Pi Mesons",
+      "concepts": [
+        "Pi mesons",
+        "Pion",
+        "Strong nuclear force"
+      ],
+      "significance": "First true mesons discovered, confirming Yukawa's prediction of force-carrying particles between nucleons"
+    },
+    "parents": [
+      "yukawa_prediction"
+    ],
+    "kids": []
+  },
+  {
+    "key": "kaon_discovery",
+    "time": [
+      "1947"
+    ],
+    "space": [
+      "United Kingdom"
+    ],
+    "data": {
+      "persons": [
+        "G. D. Rochester",
+        "C. C. Butler"
+      ],
+      "event": "Discovery of Kaon Mesons",
+      "concepts": [
+        "Kaon",
+        "K meson",
+        "Strange particles"
+      ],
+      "significance": "Discovery of strange particles, leading to understanding of strangeness quantum number"
+    },
+    "parents": [
+      "pi_mesons"
+    ],
+    "kids": []
+  },
+  {
+    "key": "phi_mesons",
+    "time": [
+      "1952"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Samuel G. B. Brush"
+      ],
+      "event": "Discovery of Phi Mesons",
+      "concepts": [
+        "Phi meson",
+        "Vector meson",
+        "Strange quark"
+      ],
+      "significance": "Discovery of phi meson, composed of strange and anti-strange quarks"
+    },
+    "parents": [
+      "kaon_discovery"
+    ],
+    "kids": []
+  },
+  {
+    "key": "j_psi_discovery",
+    "time": [
+      "1974"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Samuel C. C. Ting",
+        "Burton Richter"
+      ],
+      "event": "Discovery of J/Psi Meson",
+      "concepts": [
+        "J/Psi meson",
+        "Charmonium",
+        "Charm quark"
+      ],
+      "significance": "Discovery of J/Psi meson, confirming existence of charm quark, leading to 'November Revolution' in particle physics"
+    },
+    "parents": [
+      "charmonium_prediction"
     ],
     "kids": []
   }
