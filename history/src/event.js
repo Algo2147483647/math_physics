@@ -52,7 +52,7 @@ function createEventCard(event, x, y, isTimeRange = false) {
   cardGroup.setAttribute('class', 'event-card');
   cardGroup.addEventListener('click', () => showEventDetails(event));
 
-  // Card background
+  // Card background (initially hidden)
   const cardBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
   cardBg.setAttribute('x', x + 20);
   cardBg.setAttribute('y', y - 30);
@@ -63,9 +63,11 @@ function createEventCard(event, x, y, isTimeRange = false) {
   cardBg.setAttribute('fill', 'white');
   cardBg.setAttribute('stroke', '#e0e0e0');
   cardBg.setAttribute('stroke-width', 1);
+  cardBg.setAttribute('class', 'event-card-bg');
+  cardBg.style.display = 'none'; // Initially hidden
   cardGroup.appendChild(cardBg);
 
-  // Event title
+  // Event title (always visible)
   const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
   title.setAttribute('x', x + 120);
   title.setAttribute('y', y - 15);
@@ -74,32 +76,54 @@ function createEventCard(event, x, y, isTimeRange = false) {
   title.textContent = truncateText(event.key || 'N/A', 25);
   cardGroup.appendChild(title);
 
-  // Year label
+  // Year label (initially hidden)
   const yearLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
   yearLabel.setAttribute('x', x + 120);
   yearLabel.setAttribute('y', y + 5);
   yearLabel.setAttribute('text-anchor', 'middle');
   yearLabel.setAttribute('class', 'event-year');
+  yearLabel.style.display = 'none'; // Initially hidden
 
   let yearDisplay;
   if (isTimeRange) {
-    yearDisplay = `${event.startTime < 0 ? `-${Math.abs(event.startTime)}` : `+${event.startTime}`} - ${event.endTime < 0 ? `-${Math.abs(event.endTime)}` : `+${event.endTime}`}`;
+    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) + ' - ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : '+' + event.endTime) : '+' + event.startTime + ' - ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : '+' + event.endTime);
   } else {
-    yearDisplay = event.startTime < 0 ? `-${Math.abs(event.startTime)}` : `+${event.startTime}`;
+    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) : '+' + event.startTime;
   }
   yearLabel.textContent = yearDisplay;
   cardGroup.appendChild(yearLabel);
 
-  // Person information
+  // Person information (initially hidden)
+  let personsElement = null;
   if (event.data.persons) {
-    const persons = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    persons.setAttribute('x', x + 120);
-    persons.setAttribute('y', y + 20);
-    persons.setAttribute('text-anchor', 'middle');
-    persons.setAttribute('class', 'event-persons');
-    persons.textContent = truncateText(Array.isArray(event.data.persons) ? event.data.persons.join(', ') : event.data.persons, 25);
-    cardGroup.appendChild(persons);
+    personsElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    personsElement.setAttribute('x', x + 120);
+    personsElement.setAttribute('y', y + 20);
+    personsElement.setAttribute('text-anchor', 'middle');
+    personsElement.setAttribute('class', 'event-persons');
+    personsElement.style.display = 'none'; // Initially hidden
+    personsElement.textContent = truncateText(Array.isArray(event.data.persons) ? event.data.persons.join(', ') : event.data.persons, 25);
+    cardGroup.appendChild(personsElement);
   }
+
+  // Add event listeners for hover effect
+  cardGroup.addEventListener('mouseenter', () => {
+    // Show all elements
+    cardBg.style.display = 'block';
+    yearLabel.style.display = 'block';
+    if (personsElement) {
+      personsElement.style.display = 'block';
+    }
+  });
+
+  cardGroup.addEventListener('mouseleave', () => {
+    // Hide all elements except the title
+    cardBg.style.display = 'none';
+    yearLabel.style.display = 'none';
+    if (personsElement) {
+      personsElement.style.display = 'none';
+    }
+  });
 
   return cardGroup;
 }
@@ -132,6 +156,27 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       // Event card - position it at the start of the time range
       const cardGroup = createEventCard(event, x, event.startY, true);
       svgElement.appendChild(cardGroup);
+      
+      // Add hover effect to the range rectangle to show/hide the card
+      rangeRect.addEventListener('mouseenter', () => {
+        const cardBg = cardGroup.querySelector('.event-card-bg');
+        const yearLabel = cardGroup.querySelector('.event-year');
+        const personsElement = cardGroup.querySelector('.event-persons');
+        
+        if (cardBg) cardBg.style.display = 'block';
+        if (yearLabel) yearLabel.style.display = 'block';
+        if (personsElement) personsElement.style.display = 'block';
+      });
+      
+      rangeRect.addEventListener('mouseleave', () => {
+        const cardBg = cardGroup.querySelector('.event-card-bg');
+        const yearLabel = cardGroup.querySelector('.event-year');
+        const personsElement = cardGroup.querySelector('.event-persons');
+        
+        if (cardBg) cardBg.style.display = 'none';
+        if (yearLabel) yearLabel.style.display = 'none';
+        if (personsElement) personsElement.style.display = 'none';
+      });
     }
   });
 }
@@ -164,6 +209,27 @@ function drawSinglePoints(singlePoints, margin, height) {
       // Event card
       const cardGroup = createEventCard(event, x, event.startY, false);
       svgElement.appendChild(cardGroup);
+      
+      // Add hover effect to the marker to show/hide the card
+      marker.addEventListener('mouseenter', () => {
+        const cardBg = cardGroup.querySelector('.event-card-bg');
+        const yearLabel = cardGroup.querySelector('.event-year');
+        const personsElement = cardGroup.querySelector('.event-persons');
+        
+        if (cardBg) cardBg.style.display = 'block';
+        if (yearLabel) yearLabel.style.display = 'block';
+        if (personsElement) personsElement.style.display = 'block';
+      });
+      
+      marker.addEventListener('mouseleave', () => {
+        const cardBg = cardGroup.querySelector('.event-card-bg');
+        const yearLabel = cardGroup.querySelector('.event-year');
+        const personsElement = cardGroup.querySelector('.event-persons');
+        
+        if (cardBg) cardBg.style.display = 'none';
+        if (yearLabel) yearLabel.style.display = 'none';
+        if (personsElement) personsElement.style.display = 'none';
+      });
     }
   });
 }
