@@ -43,9 +43,9 @@ function createEventCard(event, x, y, isTimeRange = false) {
 
   let yearDisplay;
   if (isTimeRange) {
-    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) + ' - ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : '+' + event.endTime) : '+' + event.startTime + ' - ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : '+' + event.endTime);
+    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) + ' ~ ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : event.endTime) : event.startTime + ' ~ ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : event.endTime);
   } else {
-    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) : '+' + event.startTime;
+    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) : event.startTime;
   }
   yearLabel.textContent = yearDisplay;
   cardGroup.appendChild(yearLabel);
