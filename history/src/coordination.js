@@ -1,56 +1,91 @@
-// Calculate horizontal positions for time ranges and single points to avoid conflicts
+// Calculate horizontal positions for time ranges and single points to avoid conflicts using DFS
 function calculateHorizontalPositions(timeRanges, singlePoints, margin) {
-  // Sort events by vertical position to process them in order
-  timeRanges.sort((a, b) => a.startY - b.startY);
-  singlePoints.sort((a, b) => a.startY - b.startY);
-
   const minSpacing = 16; // Minimum spacing between events
-
-  // Process time ranges first
-  for (let i = 0; i < timeRanges.length; i++) {
-    const currentEvent = timeRanges[i];
-    // Find the minimal x position that doesn't conflict with already positioned events
-    currentEvent.x = findNonConflictingXPositionForEvent(currentEvent, timeRanges.slice(0, i), singlePoints, margin.left + 40, minSpacing);
-  }
-
-  // Process single points
-  for (let i = 0; i < singlePoints.length; i++) {
-    const currentEvent = singlePoints[i];
-    
-    // Check if the current event has a parent
-    if (currentEvent.parents && currentEvent.parents.length > 0) {
-      // Find parent events among all processed events (time ranges and previous single points)
-      const positionedEvents = [...timeRanges, ...singlePoints.slice(0, i)];
-      const parentEvent = findParentEvent(currentEvent.parents[0], positionedEvents);
-      
-      if (parentEvent) {
-        // Position the current event at the same x as its parent
-        currentEvent.x = parentEvent.x;
-        
-        // Check for other single events that have the same parent and are at similar time
-        // If there are other events with the same parent at the same time, offset left by 10 pixels
-        const sameParentSameTimeEvents = singlePoints
-          .slice(0, i) // Only consider already processed events
-          .filter(event => 
-            event.parents && 
-            event.parents.length > 0 && 
-            event.parents[0] === currentEvent.parents[0] &&
-            Math.abs(event.startY - currentEvent.startY) < 10 // Same time (with small tolerance)
-          );
-          
-        if (sameParentSameTimeEvents.length > 0) {
-          // Offset each additional event by 10 pixels to the left
-          currentEvent.x = parentEvent.x - (sameParentSameTimeEvents.length * 10);
+  
+  // Create a map of all events for easy lookup
+  const allEventsMap = new Map();
+  [...timeRanges, ...singlePoints].forEach(event => allEventsMap.set(event.key, event));
+  
+  // Build parent-child relationships
+  const childrenMap = new Map(); // Maps parent key to array of children
+  const roots = []; // Events without parents
+  
+  // Initialize children map
+  [...timeRanges, ...singlePoints].forEach(event => {
+    childrenMap.set(event.key, { timeRanges: [], singlePoints: [] });
+  });
+  
+  // Populate children map and find root nodes
+  timeRanges.forEach(event => {
+    if (event.parents && event.parents.length > 0) {
+      const parentKey = event.parents[0]; // Assuming single parent for now
+      if (parentKey && parentKey.trim() !== "" && allEventsMap.has(parentKey)) {
+        const parentChildren = childrenMap.get(parentKey);
+        if (parentChildren) {
+          parentChildren.timeRanges.push(event);
         }
       } else {
-        // If parent not found among positioned events, use normal positioning
-        currentEvent.x = findNonConflictingXPositionForEvent(currentEvent, timeRanges, singlePoints.slice(0, i), margin.left + 40, minSpacing);
+        roots.push(event); // No parent, so it's a root
       }
     } else {
-      // For events without parents, use normal positioning
-      currentEvent.x = findNonConflictingXPositionForEvent(currentEvent, timeRanges, singlePoints.slice(0, i), margin.left + 40, minSpacing);
+      roots.push(event); // No parent, so it's a root
     }
-  }
+  });
+  
+  singlePoints.forEach(event => {
+    if (event.parents && event.parents.length > 0) {
+      const parentKey = event.parents[0]; // Assuming single parent for now
+      if (parentKey && parentKey.trim() !== "" && allEventsMap.has(parentKey)) {
+        const parentChildren = childrenMap.get(parentKey);
+        if (parentChildren) {
+          parentChildren.singlePoints.push(event);
+        }
+      } else {
+        roots.push(event); // No parent, so it's a root
+      }
+    } else {
+      roots.push(event); // No parent, so it's a root
+    }
+  });
+  
+  // Sort root nodes by vertical position
+  roots.sort((a, b) => a.startY - b.startY);
+  
+  // Process root nodes using DFS and store all positioned events
+  const positionedEvents = [];
+  
+  roots.forEach(root => {
+    processEventDFS(root, margin.left + 40, minSpacing, allEventsMap, childrenMap, positionedEvents);
+  });
+}
+
+// Process an event and its children using DFS
+function processEventDFS(event, baseX, minSpacing, allEventsMap, childrenMap, positionedEvents) {
+  // Find a non-conflicting x position for the current event
+  event.x = findNonConflictingXPositionForEvent(event, 
+    positionedEvents.filter(e => e.isTimeRange), 
+    positionedEvents.filter(e => !e.isTimeRange), 
+    baseX, minSpacing);
+  
+  // Add the current event to positioned events
+  positionedEvents.push(event);
+  
+  // Get children of the current event
+  const children = childrenMap.get(event.key);
+  if (!children) return; // No children to process
+  
+  // Sort children by vertical position to process them in order
+  const allChildren = [...children.timeRanges, ...children.singlePoints];
+  allChildren.sort((a, b) => a.startY - b.startY);
+  
+  // Process all children of the current event
+  allChildren.forEach(child => {
+    // Child should be positioned to the right of parent, with some offset
+    const childBaseX = event.x + minSpacing; // Leave space for parent
+    
+    // Process this child and its descendants recursively
+    processEventDFS(child, childBaseX, minSpacing, allEventsMap, childrenMap, positionedEvents);
+  });
 }
 
 // Helper function to find a parent event by key
@@ -67,8 +102,8 @@ function findNonConflictingXPositionForEvent(currentEvent, positionedTimeRanges,
   const allPositionedEvents = [...positionedTimeRanges, ...positionedSinglePoints];
 
   // Check against all existing positioned events to avoid conflicts
-  let hasConflict = true;
-  while (hasConflict) {
+  let hasConflict;
+  do {
     hasConflict = false;
 
     for (const positionedEvent of allPositionedEvents) {
@@ -79,7 +114,7 @@ function findNonConflictingXPositionForEvent(currentEvent, positionedTimeRanges,
         break;
       }
     }
-  }
+  } while (hasConflict);
 
   return x;
 }
