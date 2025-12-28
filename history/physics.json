@@ -1,87 +1,5 @@
 [
   {
-    "key": "ancient_cosmology",
-    "time": ["-3000", "-500"],
-    "space": ["Mesopotamia", "Egypt", "India", "China"],
-    "data": {
-      "event": "Ancient Cosmological Theories",
-      "concepts": ["Earth-centered models", "Elemental theories", "Celestial observations"]
-    },
-    "parents": [""],
-    "kids": ["greek_philosophy"]
-  },
-  {
-    "key": "greek_philosophy",
-    "time": ["-600", "-300"],
-    "space": ["Greece", "Ionia"],
-    "data": {
-      "persons": ["Thales", "Pythagoras", "Democritus", "Empedocles"],
-      "event": "Greek Natural Philosophy",
-      "concepts": ["Atoms", "Four elements", "Mathematical harmony"]
-    },
-    "parents": ["ancient_cosmology"],
-    "kids": ["aristotelian_physics", "archimedes_principles"]
-  },
-  {
-    "key": "aristotelian_physics",
-    "time": ["-350"],
-    "space": ["Greece"],
-    "data": {
-      "persons": ["Aristotle"],
-      "works": ["Physics", "On the Heavens"],
-      "concepts": ["Four causes", "Natural motion", "Celestial spheres", "Geocentric cosmology"]
-    },
-    "parents": ["greek_philosophy"],
-    "kids": ["medieval_scholasticism", "impetus_theory"]
-  },
-  {
-    "key": "archimedes_principles",
-    "time": ["-240"],
-    "space": ["Syracuse"],
-    "data": {
-      "persons": ["Archimedes"],
-      "concepts": ["Buoyancy principle", "Lever principle", "Center of gravity", "Hydrostatics"]
-    },
-    "parents": ["greek_philosophy"],
-    "kids": ["renaissance_mechanics"]
-  },
-  {
-    "key": "medieval_scholasticism",
-    "time": ["1100", "1400"],
-    "space": ["Europe", "Islamic World"],
-    "data": {
-      "persons": ["Ibn al-Haytham", "Avicenna", "Averroes", "Thomas Aquinas"],
-      "event": "Medieval Physics Development",
-      "concepts": ["Optics", "Motion analysis", "Astronomy"]
-    },
-    "parents": ["aristotelian_physics"],
-    "kids": ["impetus_theory"]
-  },
-  {
-    "key": "impetus_theory",
-    "time": ["1350"],
-    "space": ["France"],
-    "data": {
-      "persons": ["Jean Buridan"],
-      "event": "Theory of Impetus",
-      "concepts": ["Precursor to inertia", "Projectile motion"]
-    },
-    "parents": ["aristotelian_physics", "medieval_scholasticism"],
-    "kids": ["renaissance_mechanics"]
-  },
-  {
-    "key": "renaissance_mechanics",
-    "time": ["1500", "1600"],
-    "space": ["Italy"],
-    "data": {
-      "persons": ["Leonardo da Vinci", "Simon Stevin"],
-      "event": "Renaissance Mechanical Studies",
-      "concepts": ["Practical mechanics", "Engineering principles"]
-    },
-    "parents": ["archimedes_principles", "impetus_theory"],
-    "kids": ["galilean_physics"]
-  },
-  {
     "key": "heliocentrism",
     "time": ["1543"],
     "space": ["Poland"],
@@ -386,28 +304,5 @@
     },
     "parents": ["standard_model"],
     "kids": ["beyond_standard_model"]
-  },
-  {
-    "key": "quantum_supremacy",
-    "time": ["2019"],
-    "space": ["United States"],
-    "data": {
-      "persons": ["Google AI Quantum"],
-      "event": "First demonstration of quantum supremacy",
-      "device": "Sycamore processor"
-    },
-    "parents": ["quantum_computing"],
-    "kids": ["fault_tolerant_quantum"]
-  },
-  {
-    "key": "modern_cosmology",
-    "time": ["2000", "2020"],
-    "space": ["Worldwide"],
-    "data": {
-      "missions": ["WMAP", "Planck", "James Webb Space Telescope"],
-      "concepts": ["Precision cosmology", "ΛCDM model", "Cosmic inflation evidence"]
-    },
-    "parents": ["bigbang_cosmology", "dark_matter_dark_energy"],
-    "kids": ["cosmological_puzzles"]
   }
 ]
