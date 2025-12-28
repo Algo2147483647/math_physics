@@ -106,4 +106,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # python json_excel_converter.py excel2json physics.xlsx physics.json
+    # python json_excel_converter.py json2excel math.json math.xlsx
+    # python json_excel_converter.py excel2json math.xlsx math.json
+    # python json_excel_converter.py json2excel pysics.json pysics.xlsx
+    # python json_excel_converter.py excel2json pysics.xlsx pysics.json
