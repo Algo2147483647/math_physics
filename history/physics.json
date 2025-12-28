@@ -103,6 +103,34 @@
     ]
   },
   {
+    "key": "galilean_mechanics",
+    "time": [
+      "1632"
+    ],
+    "space": [
+      "Italy"
+    ],
+    "data": {
+      "persons": [
+        "Galileo Galilei"
+      ],
+      "works": [
+        "Dialogue Concerning the Two Chief World Systems"
+      ],
+      "concepts": [
+        "Principle of inertia",
+        "Relativity of uniform motion",
+        "Kinematics independent of dynamics"
+      ]
+    },
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
     "key": "huygens_mechanics",
     "time": [
       "1673"
@@ -148,6 +176,39 @@
     },
     "parents": [
       "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "analytical_mechanics",
+    "time": [
+      "1743",
+      "1788"
+    ],
+    "space": [
+      "France",
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Leonhard Euler",
+        "Joseph-Louis Lagrange",
+        "Jean le Rond d'Alembert"
+      ],
+      "works": [
+        "Mécanique Analytique"
+      ],
+      "concepts": [
+        "Generalized coordinates",
+        "Variational principles",
+        "Lagrangian mechanics",
+        "D'Alembert's principle"
+      ]
+    },
+    "parents": [
+      "newtonian_mechanics"
     ],
     "kids": [
       ""
@@ -440,6 +501,34 @@
     },
     "parents": [
       "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "hamiltonian_mechanics",
+    "time": [
+      "1834"
+    ],
+    "space": [
+      "Ireland"
+    ],
+    "data": {
+      "persons": [
+        "William Rowan Hamilton"
+      ],
+      "works": [
+        "On a General Method in Dynamics"
+      ],
+      "concepts": [
+        "Hamiltonian formalism",
+        "Phase space",
+        "Canonical transformations"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
     ],
     "kids": [
       ""
