@@ -93,6 +93,31 @@
     "kids": []
   },
   {
+    "key": "snells_law",
+    "time": [
+      "1621"
+    ],
+    "space": [
+      "Netherlands"
+    ],
+    "data": {
+      "persons": [
+        "Willebrord Snellius"
+      ],
+      "event": "Snell's Law of Refraction",
+      "concepts": [
+        "Refraction of light",
+        "Optics",
+        "n1 sinθ1 = n2 sinθ2"
+      ],
+      "significance": "Law describing the relationship between angles of incidence and refraction when light passes through different media"
+    },
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "galilean_mechanics",
     "time": [
       "1632"
@@ -361,7 +386,9 @@
         "Polarization"
       ]
     },
-    "parents": ["classical_mechanics"],
+    "parents": [
+      "classical_mechanics"
+    ],
     "kids": []
   },
   {
@@ -928,6 +955,86 @@
     "kids": []
   },
   {
+    "key": "schwarzschild_solution",
+    "time": [
+      "1916"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Karl Schwarzschild"
+      ],
+      "work": "Exact solution to Einstein field equations",
+      "concepts": [
+        "Schwarzschild metric",
+        "Black hole solution",
+        "Event horizon",
+        "Singularity"
+      ]
+    },
+    "parents": [
+      "relativity"
+    ],
+    "kids": []
+  },
+  {
+    "key": "bose_einstein_statistics",
+    "time": [
+      "1924"
+    ],
+    "space": [
+      "India",
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Satyendra Nath Bose",
+        "Albert Einstein"
+      ],
+      "event": "Bose-Einstein Statistics",
+      "concepts": [
+        "Bose-Einstein statistics",
+        "Bosons"
+      ],
+      "significance": "Statistical description for particles that can share the same quantum state, leading to understanding of bosons"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": [
+      "bose_einstein_condensate"
+    ]
+  },
+  {
+    "key": "fermi_dirac_statistics",
+    "time": [
+      "1926"
+    ],
+    "space": [
+      "Italy",
+      "United Kingdom"
+    ],
+    "data": {
+      "persons": [
+        "Enrico Fermi",
+        "Paul Dirac"
+      ],
+      "event": "Fermi-Dirac Statistics",
+      "concepts": [
+        "Fermi-Dirac statistics",
+        "Fermions",
+        "Pauli exclusion principle"
+      ],
+      "significance": "Statistical description for particles that cannot share the same quantum state, leading to understanding of fermions"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "quantum_electrodynamics",
     "time": [
       "1927",
@@ -1016,235 +1123,6 @@
     "kids": []
   },
   {
-    "key": "standard_model",
-    "time": [
-      "1961",
-      "1973"
-    ],
-    "space": [
-      "United States",
-      "England",
-      "Pakistan"
-    ],
-    "data": {
-      "persons": [
-        "Sheldon Glashow",
-        "Steven Weinberg",
-        "Abdus Salam"
-      ],
-      "concepts": [
-        "Electroweak unification",
-        "Quark model",
-        "Gauge theories",
-        "Quantum flavor dynamics"
-      ]
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "string_theory",
-    "time": [
-      "1968",
-      "1984"
-    ],
-    "space": [
-      "Italy",
-      "United States"
-    ],
-    "data": {
-      "persons": [
-        "Gabriele Veneziano",
-        "John Schwarz",
-        "Michael Green",
-        "Edward Witten"
-      ],
-      "concepts": [
-        "String duality",
-        "M-theory",
-        "Extra dimensions",
-        "Holographic principle"
-      ]
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "quantum_computing",
-    "time": [
-      "1980",
-      "1994"
-    ],
-    "space": [
-      "United States",
-      "England"
-    ],
-    "data": {
-      "persons": [
-        "Richard Feynman",
-        "David Deutsch",
-        "Peter Shor"
-      ],
-      "concepts": [
-        "Quantum algorithms",
-        "Quantum entanglement",
-        "Quantum error correction"
-      ]
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "higgs_discovery",
-    "time": [
-      "2012"
-    ],
-    "space": [
-      "Switzerland"
-    ],
-    "data": {
-      "persons": [
-        "ATLAS and CMS collaborations"
-      ],
-      "event": "Higgs boson discovery at LHC"
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "schwarzschild_solution",
-    "time": [
-      "1916"
-    ],
-    "space": [
-      "Germany"
-    ],
-    "data": {
-      "persons": [
-        "Karl Schwarzschild"
-      ],
-      "work": "Exact solution to Einstein field equations",
-      "concepts": [
-        "Schwarzschild metric",
-        "Black hole solution",
-        "Event horizon",
-        "Singularity"
-      ]
-    },
-    "parents": [
-      "relativity"
-    ],
-    "kids": []
-  },
-  {
-    "key": "gravitational_waves",
-    "time": [
-      "2015"
-    ],
-    "space": [
-      "United States"
-    ],
-    "data": {
-      "persons": [
-        "LIGO Scientific Collaboration"
-      ],
-      "event": "First direct detection",
-      "source": "Binary black hole merger"
-    },
-    "parents": [
-      "relativity"
-    ],
-    "kids": []
-  },
-  {
-    "key": "snells_law",
-    "time": [
-      "1621"
-    ],
-    "space": [
-      "Netherlands"
-    ],
-    "data": {
-      "persons": [
-        "Willebrord Snellius"
-      ],
-      "event": "Snell's Law of Refraction",
-      "concepts": [
-        "Refraction of light",
-        "Optics",
-        "n1 sinθ1 = n2 sinθ2"
-      ],
-      "significance": "Law describing the relationship between angles of incidence and refraction when light passes through different media"
-    },
-    "parents": [
-      "classical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "bose_einstein_statistics",
-    "time": [
-      "1924"
-    ],
-    "space": [
-      "India",
-      "Switzerland"
-    ],
-    "data": {
-      "persons": [
-        "Satyendra Nath Bose",
-        "Albert Einstein"
-      ],
-      "event": "Bose-Einstein Statistics",
-      "concepts": [
-        "Bose-Einstein statistics",
-        "Bosons"
-      ],
-      "significance": "Statistical description for particles that can share the same quantum state, leading to understanding of bosons"
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": [
-      "bose_einstein_condensate"
-    ]
-  },
-  {
-    "key": "fermi_dirac_statistics",
-    "time": [
-      "1926"
-    ],
-    "space": [
-      "Italy",
-      "United Kingdom"
-    ],
-    "data": {
-      "persons": [
-        "Enrico Fermi",
-        "Paul Dirac"
-      ],
-      "event": "Fermi-Dirac Statistics",
-      "concepts": [
-        "Fermi-Dirac statistics",
-        "Fermions",
-        "Pauli exclusion principle"
-      ],
-      "significance": "Statistical description for particles that cannot share the same quantum state, leading to understanding of fermions"
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": []
-  },
-  {
     "key": "pi_mesons",
     "time": [
       "1947"
@@ -1323,6 +1201,64 @@
     "kids": []
   },
   {
+    "key": "standard_model",
+    "time": [
+      "1961",
+      "1973"
+    ],
+    "space": [
+      "United States",
+      "England",
+      "Pakistan"
+    ],
+    "data": {
+      "persons": [
+        "Sheldon Glashow",
+        "Steven Weinberg",
+        "Abdus Salam"
+      ],
+      "concepts": [
+        "Electroweak unification",
+        "Quark model",
+        "Gauge theories",
+        "Quantum flavor dynamics"
+      ]
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "string_theory",
+    "time": [
+      "1968",
+      "1984"
+    ],
+    "space": [
+      "Italy",
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Gabriele Veneziano",
+        "John Schwarz",
+        "Michael Green",
+        "Edward Witten"
+      ],
+      "concepts": [
+        "String duality",
+        "M-theory",
+        "Extra dimensions",
+        "Holographic principle"
+      ]
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "j_psi_discovery",
     "time": [
       "1974"
@@ -1345,6 +1281,72 @@
     },
     "parents": [
       "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "quantum_computing",
+    "time": [
+      "1980",
+      "1994"
+    ],
+    "space": [
+      "United States",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Richard Feynman",
+        "David Deutsch",
+        "Peter Shor"
+      ],
+      "concepts": [
+        "Quantum algorithms",
+        "Quantum entanglement",
+        "Quantum error correction"
+      ]
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "higgs_discovery",
+    "time": [
+      "2012"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "ATLAS and CMS collaborations"
+      ],
+      "event": "Higgs boson discovery at LHC"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "gravitational_waves",
+    "time": [
+      "2015"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "LIGO Scientific Collaboration"
+      ],
+      "event": "First direct detection",
+      "source": "Binary black hole merger"
+    },
+    "parents": [
+      "relativity"
     ],
     "kids": []
   }
