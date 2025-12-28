@@ -884,7 +884,7 @@
     "key": "relativity",
     "time": [
       "1905",
-      "1915"
+      "1916"
     ],
     "space": [
       "Switzerland"
@@ -1120,6 +1120,31 @@
     "kids": []
   },
   {
+    "key": "schwarzschild_solution",
+    "time": [
+      "1916"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Karl Schwarzschild"
+      ],
+      "work": "Exact solution to Einstein field equations",
+      "concepts": [
+        "Schwarzschild metric",
+        "Black hole solution",
+        "Event horizon",
+        "Singularity"
+      ]
+    },
+    "parents": [
+      "relativity"
+    ],
+    "kids": []
+  },
+  {
     "key": "gravitational_waves",
     "time": [
       "2015"
@@ -1136,6 +1161,31 @@
     },
     "parents": [
       "relativity"
+    ],
+    "kids": []
+  },
+  {
+    "key": "snells_law",
+    "time": [
+      "1621"
+    ],
+    "space": [
+      "Netherlands"
+    ],
+    "data": {
+      "persons": [
+        "Willebrord Snellius"
+      ],
+      "event": "Snell's Law of Refraction",
+      "concepts": [
+        "Refraction of light",
+        "Optics",
+        "n1 sinθ1 = n2 sinθ2"
+      ],
+      "significance": "Law describing the relationship between angles of incidence and refraction when light passes through different media"
+    },
+    "parents": [
+      "wave_optics"
     ],
     "kids": []
   }
