@@ -1,313 +1,413 @@
 [
   {
-    "key": "early_physics",
-    "time": ["-3000", "1500"],
-    "space": [],
+    "key": "ancient_cosmology",
+    "time": ["-3000", "-500"],
+    "space": ["Mesopotamia", "Egypt", "India", "China"],
     "data": {
-      "event": "Early Physics Observations"
+      "event": "Ancient Cosmological Theories",
+      "concepts": ["Earth-centered models", "Elemental theories", "Celestial observations"]
     },
     "parents": [""],
-    "kids": ["aristotelian_physics"]
+    "kids": ["greek_philosophy"]
+  },
+  {
+    "key": "greek_philosophy",
+    "time": ["-600", "-300"],
+    "space": ["Greece", "Ionia"],
+    "data": {
+      "persons": ["Thales", "Pythagoras", "Democritus", "Empedocles"],
+      "event": "Greek Natural Philosophy",
+      "concepts": ["Atoms", "Four elements", "Mathematical harmony"]
+    },
+    "parents": ["ancient_cosmology"],
+    "kids": ["aristotelian_physics", "archimedes_principles"]
   },
   {
     "key": "aristotelian_physics",
     "time": ["-350"],
-    "space": [],
+    "space": ["Greece"],
     "data": {
       "persons": ["Aristotle"],
-      "event": "Aristotelian Physics"
+      "works": ["Physics", "On the Heavens"],
+      "concepts": ["Four causes", "Natural motion", "Celestial spheres", "Geocentric cosmology"]
     },
-    "parents": ["early_physics"]
+    "parents": ["greek_philosophy"],
+    "kids": ["medieval_scholasticism", "impetus_theory"]
   },
   {
-    "key": "free_fall_law",
+    "key": "archimedes_principles",
     "time": ["-240"],
-    "space": [],
+    "space": ["Syracuse"],
     "data": {
       "persons": ["Archimedes"],
-      "event": "Principle of Buoyancy"
+      "concepts": ["Buoyancy principle", "Lever principle", "Center of gravity", "Hydrostatics"]
     },
-    "parents": ["early_physics"]
+    "parents": ["greek_philosophy"],
+    "kids": ["renaissance_mechanics"]
+  },
+  {
+    "key": "medieval_scholasticism",
+    "time": ["1100", "1400"],
+    "space": ["Europe", "Islamic World"],
+    "data": {
+      "persons": ["Ibn al-Haytham", "Avicenna", "Averroes", "Thomas Aquinas"],
+      "event": "Medieval Physics Development",
+      "concepts": ["Optics", "Motion analysis", "Astronomy"]
+    },
+    "parents": ["aristotelian_physics"],
+    "kids": ["impetus_theory"]
+  },
+  {
+    "key": "impetus_theory",
+    "time": ["1350"],
+    "space": ["France"],
+    "data": {
+      "persons": ["Jean Buridan"],
+      "event": "Theory of Impetus",
+      "concepts": ["Precursor to inertia", "Projectile motion"]
+    },
+    "parents": ["aristotelian_physics", "medieval_scholasticism"],
+    "kids": ["renaissance_mechanics"]
+  },
+  {
+    "key": "renaissance_mechanics",
+    "time": ["1500", "1600"],
+    "space": ["Italy"],
+    "data": {
+      "persons": ["Leonardo da Vinci", "Simon Stevin"],
+      "event": "Renaissance Mechanical Studies",
+      "concepts": ["Practical mechanics", "Engineering principles"]
+    },
+    "parents": ["archimedes_principles", "impetus_theory"],
+    "kids": ["galilean_physics"]
   },
   {
     "key": "heliocentrism",
     "time": ["1543"],
-    "space": [],
+    "space": ["Poland"],
     "data": {
-      "persons": ["Copernicus"],
+      "persons": ["Nicolaus Copernicus"],
+      "work": "De revolutionibus orbium coelestium",
       "event": "Heliocentric Model"
     },
-    "parents": []
+    "parents": ["aristotelian_physics"],
+    "kids": ["tycho_observations"]
+  },
+  {
+    "key": "tycho_observations",
+    "time": ["1576"],
+    "space": ["Denmark"],
+    "data": {
+      "persons": ["Tycho Brahe"],
+      "event": "Precise Astronomical Observations",
+      "data": ["Planetary positions", "Supernova 1572"]
+    },
+    "parents": ["heliocentrism"],
+    "kids": ["planetary_motion"]
   },
   {
     "key": "planetary_motion",
-    "time": ["1609"],
-    "space": [],
+    "time": ["1609", "1619"],
+    "space": ["Germany"],
     "data": {
-      "persons": ["Kepler"],
-      "event": "Laws of Planetary Motion"
+      "persons": ["Johannes Kepler"],
+      "works": ["Astronomia Nova", "Harmonices Mundi"],
+      "event": "Kepler's Laws of Planetary Motion"
     },
-    "parents": []
+    "parents": ["tycho_observations"],
+    "kids": ["newtonian_mechanics"]
   },
   {
-    "key": "galilean_relativity",
-    "time": ["1632"],
-    "space": [],
+    "key": "galilean_physics",
+    "time": ["1589", "1638"],
+    "space": ["Italy"],
     "data": {
       "persons": ["Galileo Galilei"],
-      "event": "Principle of Relativity"
+      "works": ["Two New Sciences", "Dialogue Concerning the Two Chief World Systems"],
+      "concepts": ["Inertia", "Acceleration", "Projectile motion", "Telescopic observations"]
     },
-    "parents": []
+    "parents": ["renaissance_mechanics"],
+    "kids": ["newtonian_mechanics", "huygens_mechanics"]
   },
   {
     "key": "newtonian_mechanics",
     "time": ["1687"],
-    "space": [],
+    "space": ["England"],
     "data": {
       "persons": ["Isaac Newton"],
-      "paper": "Principia Mathematica",
-      "event": "Laws of Motion and Universal Gravitation"
+      "work": "Philosophiæ Naturalis Principia Mathematica",
+      "concepts": ["Three laws of motion", "Universal gravitation", "Calculus (concurrent with Leibniz)"]
     },
-    "parents": []
+    "parents": ["planetary_motion", "galilean_physics"],
+    "kids": ["classical_mechanics", "celestial_mechanics"]
   },
   {
-    "key": "wave_theory_of_light",
-    "time": ["1690"],
-    "space": [],
+    "key": "huygens_mechanics",
+    "time": ["1673"],
+    "space": ["Netherlands"],
     "data": {
       "persons": ["Christiaan Huygens"],
-      "event": "Wave Theory of Light"
+      "concepts": ["Centrifugal force", "Wave theory of light", "Pendulum clock"]
     },
-    "parents": []
+    "parents": ["galilean_physics"],
+    "kids": ["wave_optics"]
   },
   {
-    "key": "calculus_mechanics",
-    "time": ["1743"],
-    "space": [],
+    "key": "classical_mechanics",
+    "time": ["1743", "1788"],
+    "space": ["France", "Switzerland"],
     "data": {
-      "persons": ["d'Alembert", "Euler", "Lagrange"],
-      "event": "Analytical Mechanics"
+      "persons": ["Leonhard Euler", "Joseph-Louis Lagrange", "Jean le Rond d'Alembert"],
+      "work": "Analytical Mechanics",
+      "concepts": ["Lagrangian mechanics", "Euler equations", "D'Alembert's principle"]
     },
-    "parents": []
+    "parents": ["newtonian_mechanics"],
+    "kids": ["hamiltonian_mechanics", "continuum_mechanics"]
   },
   {
-    "key": "heat_theory",
-    "time": ["1798"],
-    "space": [],
+    "key": "celestial_mechanics",
+    "time": ["1799"],
+    "space": ["France"],
     "data": {
-      "persons": ["Benjamin Thompson"],
-      "event": "Kinetic Theory of Heat"
+      "persons": ["Pierre-Simon Laplace"],
+      "work": "Mécanique Céleste",
+      "concepts": ["Deterministic universe", "Perturbation theory"]
     },
-    "parents": []
+    "parents": ["newtonian_mechanics"],
+    "kids": ["statistical_mechanics"]
   },
   {
-    "key": "electromagnetism",
-    "time": ["1820"],
-    "space": [],
+    "key": "wave_optics",
+    "time": ["1801", "1818"],
+    "space": ["England", "France"],
     "data": {
-      "persons": ["Hans Christian Oersted", "Michael Faraday", "James Clerk Maxwell"],
-      "event": "Electromagnetic Theory"
+      "persons": ["Thomas Young", "Augustin-Jean Fresnel"],
+      "concepts": ["Wave interference", "Diffraction", "Polarization"]
     },
-    "parents": []
+    "parents": ["huygens_mechanics"],
+    "kids": ["electromagnetic_waves"]
   },
   {
     "key": "thermodynamics",
-    "time": ["1850"],
-    "space": [],
+    "time": ["1824", "1850"],
+    "space": ["France", "Germany", "England"],
     "data": {
-      "persons": ["Carnot", "Kelvin", "Clausius"],
-      "event": "Laws of Thermodynamics"
+      "persons": ["Sadi Carnot", "Rudolf Clausius", "William Thomson (Lord Kelvin)"],
+      "concepts": ["Second law", "Entropy", "Absolute temperature"]
     },
-    "parents": []
+    "parents": ["heat_engines"],
+    "kids": ["statistical_mechanics"]
   },
   {
-    "key": "atomic_theory",
-    "time": ["1897"],
-    "space": [],
+    "key": "heat_engines",
+    "time": ["1798"],
+    "space": ["England"],
     "data": {
-      "persons": ["J.J. Thomson"],
-      "event": "Discovery of the Electron"
+      "persons": ["Benjamin Thompson (Count Rumford)"],
+      "event": "Heat as Motion"
     },
-    "parents": []
+    "parents": [""],
+    "kids": ["thermodynamics"]
   },
   {
-    "key": "quantum_theory",
-    "time": ["1900"],
-    "space": [],
+    "key": "electromagnetism",
+    "time": ["1820", "1865"],
+    "space": ["Denmark", "England", "France"],
     "data": {
-      "persons": ["Max Planck"],
-      "event": "Quantum Hypothesis"
+      "persons": ["Hans Christian Ørsted", "Michael Faraday", "James Clerk Maxwell"],
+      "concepts": ["Electromagnetic induction", "Field theory", "Maxwell's equations"]
     },
-    "parents": []
+    "parents": ["wave_optics"],
+    "kids": ["electromagnetic_waves", "special_relativity"]
+  },
+  {
+    "key": "statistical_mechanics",
+    "time": ["1859", "1902"],
+    "space": ["Scotland", "Austria", "United States"],
+    "data": {
+      "persons": ["James Clerk Maxwell", "Ludwig Boltzmann", "Josiah Willard Gibbs"],
+      "concepts": ["Kinetic theory", "Statistical ensemble", "H-theorem"]
+    },
+    "parents": ["thermodynamics", "celestial_mechanics"],
+    "kids": ["brownian_motion", "quantum_statistics"]
+  },
+  {
+    "key": "electromagnetic_waves",
+    "time": ["1887"],
+    "space": ["Germany"],
+    "data": {
+      "persons": ["Heinrich Hertz"],
+      "event": "Experimental confirmation of electromagnetic waves"
+    },
+    "parents": ["electromagnetism", "wave_optics"],
+    "kids": ["special_relativity"]
+  },
+  {
+    "key": "michelson_morley",
+    "time": ["1887"],
+    "space": ["United States"],
+    "data": {
+      "persons": ["Albert Michelson", "Edward Morley"],
+      "event": "Michelson-Morley experiment",
+      "significance": "Null result for ether drift"
+    },
+    "parents": ["electromagnetic_waves"],
+    "kids": ["special_relativity"]
+  },
+  {
+    "key": "atomic_structure",
+    "time": ["1897", "1911"],
+    "space": ["England"],
+    "data": {
+      "persons": ["J.J. Thomson", "Ernest Rutherford"],
+      "concepts": ["Electron discovery", "Nuclear atom model"]
+    },
+    "parents": ["electromagnetism"],
+    "kids": ["bohr_atom", "quantum_mechanics"]
+  },
+  {
+    "key": "quantum_mechanics",
+    "time": ["1900", "1928"],
+    "space": ["Germany", "Denmark", "Austria", "England", "Switzerland"],
+    "data": {
+      "persons": ["Max Planck", "Niels Bohr", "Werner Heisenberg", "Erwin Schrödinger", "Paul Dirac"],
+      "concepts": ["Quantization", "Wave-particle duality", "Matrix mechanics", "Wave mechanics", "Spin"]
+    },
+    "parents": ["atomic_structure", "statistical_mechanics"],
+    "kids": ["quantum_field_theory", "quantum_chemistry"]
   },
   {
     "key": "special_relativity",
     "time": ["1905"],
-    "space": [],
+    "space": ["Switzerland"],
     "data": {
       "persons": ["Albert Einstein"],
-      "event": "Special Theory of Relativity"
+      "concepts": ["Constancy of light speed", "Relativity of simultaneity", "Mass-energy equivalence"]
     },
-    "parents": []
-  },
-  {
-    "key": "brownian_motion",
-    "time": ["1905"],
-    "space": [],
-    "data": {
-      "persons": ["Albert Einstein"],
-      "event": "Statistical Explanation of Brownian Motion"
-    },
-    "parents": []
-  },
-  {
-    "key": "photoelectric_effect",
-    "time": ["1905"],
-    "space": [],
-    "data": {
-      "persons": ["Albert Einstein"],
-      "event": "Photon Theory of Light"
-    },
-    "parents": []
-  },
-  {
-    "key": "bohr_atom",
-    "time": ["1913"],
-    "space": [],
-    "data": {
-      "persons": ["Niels Bohr"],
-      "event": "Bohr Model of Atom"
-    },
-    "parents": []
+    "parents": ["electromagnetism", "michelson_morley"],
+    "kids": ["general_relativity", "relativistic_quantum_mechanics"]
   },
   {
     "key": "general_relativity",
     "time": ["1915"],
-    "space": [],
+    "space": ["Germany"],
     "data": {
       "persons": ["Albert Einstein"],
-      "event": "General Theory of Relativity"
+      "concepts": ["Curved spacetime", "Einstein field equations", "Gravitational waves"]
     },
-    "parents": []
+    "parents": ["special_relativity"],
+    "kids": ["cosmology", "gravitational_waves"]
   },
   {
-    "key": "wave_mechanics",
-    "time": ["1924"],
-    "space": [],
+    "key": "quantum_field_theory",
+    "time": ["1927", "1949"],
+    "space": ["England", "United States", "Japan"],
     "data": {
-      "persons": ["Louis de Broglie"],
-      "event": "Wave-Particle Duality"
+      "persons": ["Paul Dirac", "Richard Feynman", "Julian Schwinger", "Sin-Itiro Tomonaga", "Freeman Dyson"],
+      "concepts": ["Quantum electrodynamics", "Feynman diagrams", "Renormalization"]
     },
-    "parents": []
-  },
-  {
-    "key": "matrix_mechanics",
-    "time": ["1925"],
-    "space": [],
-    "data": {
-      "persons": ["Heisenberg", "Born", "Jordan"],
-      "event": "Matrix Mechanics"
-    },
-    "parents": []
-  },
-  {
-    "key": "schrodinger_equation",
-    "time": ["1926"],
-    "space": [],
-    "data": {
-      "persons": ["Erwin Schrödinger"],
-      "event": "Schrödinger Equation"
-    },
-    "parents": []
-  },
-  {
-    "key": "uncertainty_principle",
-    "time": ["1927"],
-    "space": [],
-    "data": {
-      "persons": ["Werner Heisenberg"],
-      "event": "Uncertainty Principle"
-    },
-    "parents": []
-  },
-  {
-    "key": "dirac_equation",
-    "time": ["1928"],
-    "space": [],
-    "data": {
-      "persons": ["Paul Dirac"],
-      "event": "Relativistic Wave Equation"
-    },
-    "parents": []
-  },
-  {
-    "key": "higgs_mechanism",
-    "time": ["1964"],
-    "space": [],
-    "data": {
-      "persons": ["Peter Higgs", "François Englert", "Robert Brout"],
-      "event": "Higgs Mechanism"
-    },
-    "parents": []
+    "parents": ["quantum_mechanics", "special_relativity"],
+    "kids": ["standard_model", "quantum_chromodynamics"]
   },
   {
     "key": "standard_model",
-    "time": ["1970"],
-    "space": [],
+    "time": ["1961", "1973"],
+    "space": ["United States", "England", "Pakistan"],
     "data": {
-      "persons": ["Sheldon Glashow", "Abdus Salam", "Steven Weinberg"],
-      "event": "Standard Model of Particle Physics"
+      "persons": ["Sheldon Glashow", "Steven Weinberg", "Abdus Salam"],
+      "concepts": ["Electroweak unification", "Quark model", "Gauge theories"]
     },
-    "parents": []
+    "parents": ["quantum_field_theory"],
+    "kids": ["higgs_discovery", "particle_physics"]
+  },
+  {
+    "key": "bigbang_cosmology",
+    "time": ["1927", "1965"],
+    "space": ["Belgium", "United States"],
+    "data": {
+      "persons": ["Georges Lemaître", "George Gamow", "Arno Penzias", "Robert Wilson"],
+      "concepts": ["Expanding universe", "Cosmic microwave background", "Big Bang theory"]
+    },
+    "parents": ["general_relativity"],
+    "kids": ["cosmic_inflation", "structure_formation"]
+  },
+  {
+    "key": "quantum_computing",
+    "time": ["1980", "1994"],
+    "space": ["United States", "England"],
+    "data": {
+      "persons": ["Richard Feynman", "David Deutsch", "Peter Shor"],
+      "concepts": ["Quantum algorithms", "Quantum entanglement", "Quantum error correction"]
+    },
+    "parents": ["quantum_mechanics", "information_theory"],
+    "kids": ["quantum_internet", "quantum_supremacy"]
+  },
+  {
+    "key": "dark_matter_dark_energy",
+    "time": ["1970", "1998"],
+    "space": ["United States", "Switzerland"],
+    "data": {
+      "persons": ["Vera Rubin", "Saul Perlmutter", "Brian Schmidt", "Adam Riess"],
+      "concepts": ["Galaxy rotation curves", "Accelerating universe", "Cosmological constant"]
+    },
+    "parents": ["bigbang_cosmology"],
+    "kids": ["modern_cosmology"]
   },
   {
     "key": "string_theory",
-    "time": ["1970"],
-    "space": [],
+    "time": ["1968", "1984"],
+    "space": ["Italy", "United States"],
     "data": {
-      "persons": ["G. Veneziano", "J. Scherk", "J.H. Schwarz"],
-      "event": "String Theory"
+      "persons": ["Gabriele Veneziano", "John Schwarz", "Michael Green", "Edward Witten"],
+      "concepts": ["String duality", "M-theory", "Extra dimensions", "Holographic principle"]
     },
-    "parents": []
-  },
-  {
-    "key": "cosmic_inflation",
-    "time": ["1980"],
-    "space": [],
-    "data": {
-      "persons": ["Alan Guth"],
-      "event": "Cosmic Inflation Theory"
-    },
-    "parents": []
-  },
-  {
-    "key": "bose_einstein_condensate",
-    "time": ["1995"],
-    "space": [],
-    "data": {
-      "persons": ["Eric Cornell", "Carl Wieman", "Wolfgang Ketterle"],
-      "event": "Bose-Einstein Condensate"
-    },
-    "parents": []
-  },
-  {
-    "key": "higgs_boson_discovery",
-    "time": ["2012"],
-    "space": [],
-    "data": {
-      "persons": ["CERN LHC"],
-      "event": "Discovery of Higgs Boson"
-    },
-    "parents": []
+    "parents": ["quantum_field_theory", "general_relativity"],
+    "kids": ["ads_cft", "quantum_gravity"]
   },
   {
     "key": "gravitational_waves",
     "time": ["2015"],
-    "space": [],
+    "space": ["United States"],
     "data": {
       "persons": ["LIGO Scientific Collaboration"],
-      "event": "Direct Detection of Gravitational Waves"
+      "event": "First direct detection",
+      "source": "Binary black hole merger"
     },
-    "parents": []
+    "parents": ["general_relativity"],
+    "kids": ["multi_messenger_astronomy"]
+  },
+  {
+    "key": "higgs_discovery",
+    "time": ["2012"],
+    "space": ["Switzerland"],
+    "data": {
+      "persons": ["ATLAS and CMS collaborations"],
+      "event": "Higgs boson discovery at LHC"
+    },
+    "parents": ["standard_model"],
+    "kids": ["beyond_standard_model"]
+  },
+  {
+    "key": "quantum_supremacy",
+    "time": ["2019"],
+    "space": ["United States"],
+    "data": {
+      "persons": ["Google AI Quantum"],
+      "event": "First demonstration of quantum supremacy",
+      "device": "Sycamore processor"
+    },
+    "parents": ["quantum_computing"],
+    "kids": ["fault_tolerant_quantum"]
+  },
+  {
+    "key": "modern_cosmology",
+    "time": ["2000", "2020"],
+    "space": ["Worldwide"],
+    "data": {
+      "missions": ["WMAP", "Planck", "James Webb Space Telescope"],
+      "concepts": ["Precision cosmology", "ΛCDM model", "Cosmic inflation evidence"]
+    },
+    "parents": ["bigbang_cosmology", "dark_matter_dark_energy"],
+    "kids": ["cosmological_puzzles"]
   }
 ]

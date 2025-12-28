@@ -16,7 +16,7 @@ function getRandomColor() {
 // Load data from math.json
 async function loadMathHistoryData() {
   try {
-    const response = await fetch('example.json');
+    const response = await fetch('physics.json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
