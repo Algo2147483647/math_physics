@@ -1223,5 +1223,30 @@
     "kids": [
       ""
     ]
+  },
+  {
+    "key": "poisson_bracket",
+    "time": [
+      "1809"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Siméon Denis Poisson"
+      ],
+      "concepts": [
+        "Poisson bracket",
+        "Canonical equations",
+        "Integrability conditions"
+      ],
+      "work": "Sur les invariants differentiels des equations des corps solides"
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": [
+    ]
   }
 ]
