@@ -17,9 +17,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "classical_mechanics",
@@ -44,12 +42,8 @@
         "D'Alembert's principle"
       ]
     },
-    "parents": [
-      ""
-    ],
-    "kids": [
-      ""
-    ]
+    "parents": [],
+    "kids": []
   },
   {
     "key": "tycho_observations",
@@ -72,9 +66,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "planetary_motion",
@@ -98,9 +90,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "galilean_mechanics",
@@ -126,9 +116,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "huygens_mechanics",
@@ -151,9 +139,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "newtonian_mechanics",
@@ -177,9 +163,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "analytical_mechanics",
@@ -210,9 +194,7 @@
     "parents": [
       "newtonian_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "coulomb_law",
@@ -234,9 +216,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "electromagnetism",
@@ -244,18 +224,10 @@
       "1785",
       "1865"
     ],
-    "space": [
-      ""
-    ],
-    "data": [
-      ""
-    ],
-    "parents": [
-      ""
-    ],
-    "kids": [
-      ""
-    ]
+    "space": [],
+    "data": [],
+    "parents": [],
+    "kids": []
   },
   {
     "key": "heat_engines",
@@ -274,9 +246,7 @@
     "parents": [
       "thermodynamics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "celestial_mechanics",
@@ -299,9 +269,7 @@
     "parents": [
       "classical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "voltaic_pile",
@@ -321,9 +289,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "wave_optics",
@@ -346,12 +312,8 @@
         "Polarization"
       ]
     },
-    "parents": [
-      ""
-    ],
-    "kids": [
-      ""
-    ]
+    "parents": [],
+    "kids": []
   },
   {
     "key": "oersted_discovery",
@@ -373,9 +335,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "biot_savart_law",
@@ -397,9 +357,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "electric_motor_generator",
@@ -423,9 +381,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "ampere_law",
@@ -447,9 +403,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "thermodynamics",
@@ -474,12 +428,8 @@
         "Absolute temperature"
       ]
     },
-    "parents": [
-      ""
-    ],
-    "kids": [
-      ""
-    ]
+    "parents": [],
+    "kids": []
   },
   {
     "key": "faraday_induction",
@@ -502,9 +452,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "hamiltonian_mechanics",
@@ -530,9 +478,7 @@
     "parents": [
       "analytical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "gauss_laws",
@@ -555,9 +501,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "statistical_mechanics",
@@ -585,9 +529,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "maxwell_equations",
@@ -616,9 +558,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "electromagnetic_waves",
@@ -641,9 +581,7 @@
     "parents": [
       "electromagnetism"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "michelson_morley",
@@ -664,9 +602,7 @@
     "parents": [
       "relativity"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "lorentz_transformations",
@@ -690,9 +626,7 @@
     "parents": [
       "relativity"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "atomic_structure",
@@ -714,11 +648,9 @@
       ]
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "quantum_mechanics",
@@ -750,11 +682,9 @@
       ]
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "special_relativity",
@@ -779,9 +709,7 @@
     "parents": [
       "relativity"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "relativity",
@@ -804,12 +732,8 @@
         "Relativistic electrodynamics"
       ]
     },
-    "parents": [
-      ""
-    ],
-    "kids": [
-      ""
-    ]
+    "parents": [],
+    "kids": []
   },
   {
     "key": "general_relativity",
@@ -832,9 +756,7 @@
     "parents": [
       "relativity"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "quantum_electrodynamics",
@@ -864,11 +786,9 @@
       ]
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "quantum_field_theory",
@@ -896,11 +816,9 @@
       ]
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "bigbang_cosmology",
@@ -928,9 +846,7 @@
     "parents": [
       "relativity"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "standard_model",
@@ -957,11 +873,9 @@
       ]
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "string_theory",
@@ -988,11 +902,9 @@
       ]
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "quantum_computing",
@@ -1017,11 +929,9 @@
       ]
     },
     "parents": [
-      ""
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "higgs_discovery",
@@ -1038,11 +948,9 @@
       "event": "Higgs boson discovery at LHC"
     },
     "parents": [
-      "quantum mechanics"
+      "quantum_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "gravitational_waves",
@@ -1062,9 +970,7 @@
     "parents": [
       "relativity"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "d'alembert_principle",
@@ -1165,9 +1071,7 @@
     "parents": [
       "analytical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "hamilton_jacobi_theory",
@@ -1192,9 +1096,7 @@
     "parents": [
       "analytical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "action_angle_variables",
@@ -1220,9 +1122,7 @@
     "parents": [
       "analytical_mechanics"
     ],
-    "kids": [
-      ""
-    ]
+    "kids": []
   },
   {
     "key": "poisson_bracket",

@@ -2,6 +2,8 @@
 function calculateHorizontalPositions(events, margin) {
   const minSpacing = 16; // Minimum spacing between events
 
+  console.log('events:', events)
+
   // Create a map of all events for easy lookup
   const allEventsMap = new Map();
   events.forEach(event => allEventsMap.set(event.key, event));
