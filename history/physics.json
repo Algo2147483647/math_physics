@@ -36,6 +36,41 @@
     "kids": ["newtonian_mechanics"]
   },
   {
+    "key": "early_electromagnetism",
+    "time": ["1600", "1660"],
+    "space": ["England"],
+    "data": {
+      "persons": ["William Gilbert", "Otto von Guericke"],
+      "works": ["De Magnete", "First electrostatic generator"],
+      "concepts": ["Magnetism", "Static electricity"]
+    },
+    "parents": [""],
+    "kids": ["coulomb_law"]
+  },
+  {
+    "key": "coulomb_law",
+    "time": ["1785"],
+    "space": ["France"],
+    "data": {
+      "persons": ["Charles-Augustin de Coulomb"],
+      "concepts": ["Inverse-square law for electric force", "Torsion balance"]
+    },
+    "parents": ["early_electromagnetism"],
+    "kids": ["voltaic_pile"]
+  },
+  {
+    "key": "voltaic_pile",
+    "time": ["1800"],
+    "space": ["Italy"],
+    "data": {
+      "persons": ["Alessandro Volta"],
+      "event": "First electric battery",
+      "significance": "Continuous electric current"
+    },
+    "parents": ["coulomb_law"],
+    "kids": ["oersted_discovery"]
+  },
+  {
     "key": "galilean_physics",
     "time": ["1589", "1638"],
     "space": ["Italy"],
@@ -48,6 +83,63 @@
     "kids": ["newtonian_mechanics", "huygens_mechanics"]
   },
   {
+    "key": "oersted_discovery",
+    "time": ["1820"],
+    "space": ["Denmark"],
+    "data": {
+      "persons": ["Hans Christian Ørsted"],
+      "event": "Electric current creates magnetic field",
+      "concepts": ["Electromagnetism connection"]
+    },
+    "parents": ["voltaic_pile"],
+    "kids": ["ampere_law", "biot_savart_law"]
+  },
+  {
+    "key": "ampere_law",
+    "time": ["1823"],
+    "space": ["France"],
+    "data": {
+      "persons": ["André-Marie Ampère"],
+      "concepts": ["Force between current-carrying wires", "Electrodynamics"]
+    },
+    "parents": ["oersted_discovery"],
+    "kids": ["faraday_induction"]
+  },
+  {
+    "key": "biot_savart_law",
+    "time": ["1820"],
+    "space": ["France"],
+    "data": {
+      "persons": ["Jean-Baptiste Biot", "Félix Savart"],
+      "concepts": ["Magnetic field from current element"]
+    },
+    "parents": ["oersted_discovery"],
+    "kids": ["faraday_induction"]
+  },
+  {
+    "key": "faraday_induction",
+    "time": ["1831"],
+    "space": ["England"],
+    "data": {
+      "persons": ["Michael Faraday"],
+      "event": "Electromagnetic induction",
+      "concepts": ["Magnetic field lines", "Field theory concept"]
+    },
+    "parents": ["ampere_law", "biot_savart_law"],
+    "kids": ["maxwell_equations", "electric_motor_generator"]
+  },
+  {
+    "key": "electric_motor_generator",
+    "time": ["1821", "1832"],
+    "space": ["England"],
+    "data": {
+      "persons": ["Michael Faraday", "Hippolyte Pixii"],
+      "inventions": ["First electric motor", "First dynamo"]
+    },
+    "parents": ["faraday_induction"],
+    "kids": ["telegraphy"]
+  },
+  {
     "key": "newtonian_mechanics",
     "time": ["1687"],
     "space": ["England"],
@@ -58,6 +150,30 @@
     },
     "parents": ["planetary_motion", "galilean_physics"],
     "kids": ["classical_mechanics", "celestial_mechanics"]
+  },
+  {
+    "key": "gauss_laws",
+    "time": ["1835", "1867"],
+    "space": ["Germany"],
+    "data": {
+      "persons": ["Carl Friedrich Gauss"],
+      "concepts": ["Gauss's law for electricity", "Gauss's law for magnetism"]
+    },
+    "parents": ["coulomb_law"],
+    "kids": ["maxwell_equations"]
+  },
+  {
+    "key": "maxwell_equations",
+    "time": ["1861", "1865"],
+    "space": ["Scotland"],
+    "data": {
+      "persons": ["James Clerk Maxwell"],
+      "works": ["On Physical Lines of Force", "A Dynamical Theory of the Electromagnetic Field"],
+      "achievement": "Maxwell's equations unified electricity, magnetism, and light",
+      "concepts": ["Displacement current", "Electromagnetic waves prediction", "Light as electromagnetic wave"]
+    },
+    "parents": ["faraday_induction", "gauss_laws", "ampere_law"],
+    "kids": ["electromagnetic_waves", "special_relativity"]
   },
   {
     "key": "huygens_mechanics",
@@ -128,15 +244,16 @@
     "kids": ["thermodynamics"]
   },
   {
-    "key": "electromagnetism",
-    "time": ["1820", "1865"],
-    "space": ["Denmark", "England", "France"],
+    "key": "electromagnetic_waves",
+    "time": ["1887"],
+    "space": ["Germany"],
     "data": {
-      "persons": ["Hans Christian Ørsted", "Michael Faraday", "James Clerk Maxwell"],
-      "concepts": ["Electromagnetic induction", "Field theory", "Maxwell's equations"]
+      "persons": ["Heinrich Hertz"],
+      "event": "Experimental confirmation of electromagnetic waves",
+      "experiments": ["Spark gap transmitter", "Receiver detection"]
     },
-    "parents": ["wave_optics"],
-    "kids": ["electromagnetic_waves", "special_relativity"]
+    "parents": ["maxwell_equations", "wave_optics"],
+    "kids": ["michelson_morley", "radio_communication"]
   },
   {
     "key": "statistical_mechanics",
@@ -148,17 +265,6 @@
     },
     "parents": ["thermodynamics", "celestial_mechanics"],
     "kids": ["brownian_motion", "quantum_statistics"]
-  },
-  {
-    "key": "electromagnetic_waves",
-    "time": ["1887"],
-    "space": ["Germany"],
-    "data": {
-      "persons": ["Heinrich Hertz"],
-      "event": "Experimental confirmation of electromagnetic waves"
-    },
-    "parents": ["electromagnetism", "wave_optics"],
-    "kids": ["special_relativity"]
   },
   {
     "key": "michelson_morley",
@@ -173,6 +279,17 @@
     "kids": ["special_relativity"]
   },
   {
+    "key": "lorentz_transformations",
+    "time": ["1892", "1904"],
+    "space": ["Netherlands"],
+    "data": {
+      "persons": ["Hendrik Lorentz"],
+      "concepts": ["Lorentz transformations", "Local time", "Length contraction"]
+    },
+    "parents": ["maxwell_equations", "michelson_morley"],
+    "kids": ["special_relativity"]
+  },
+  {
     "key": "atomic_structure",
     "time": ["1897", "1911"],
     "space": ["England"],
@@ -180,8 +297,20 @@
       "persons": ["J.J. Thomson", "Ernest Rutherford"],
       "concepts": ["Electron discovery", "Nuclear atom model"]
     },
-    "parents": ["electromagnetism"],
+    "parents": ["electromagnetic_waves"],
     "kids": ["bohr_atom", "quantum_mechanics"]
+  },
+  {
+    "key": "special_relativity",
+    "time": ["1905"],
+    "space": ["Switzerland"],
+    "data": {
+      "persons": ["Albert Einstein"],
+      "work": "On the Electrodynamics of Moving Bodies",
+      "concepts": ["Constancy of light speed", "Relativity of simultaneity", "Mass-energy equivalence", "Relativistic electrodynamics"]
+    },
+    "parents": ["maxwell_equations", "michelson_morley", "lorentz_transformations"],
+    "kids": ["general_relativity", "relativistic_quantum_mechanics"]
   },
   {
     "key": "quantum_mechanics",
@@ -195,17 +324,6 @@
     "kids": ["quantum_field_theory", "quantum_chemistry"]
   },
   {
-    "key": "special_relativity",
-    "time": ["1905"],
-    "space": ["Switzerland"],
-    "data": {
-      "persons": ["Albert Einstein"],
-      "concepts": ["Constancy of light speed", "Relativity of simultaneity", "Mass-energy equivalence"]
-    },
-    "parents": ["electromagnetism", "michelson_morley"],
-    "kids": ["general_relativity", "relativistic_quantum_mechanics"]
-  },
-  {
     "key": "general_relativity",
     "time": ["1915"],
     "space": ["Germany"],
@@ -217,12 +335,12 @@
     "kids": ["cosmology", "gravitational_waves"]
   },
   {
-    "key": "quantum_field_theory",
+    "key": "quantum_electrodynamics",
     "time": ["1927", "1949"],
     "space": ["England", "United States", "Japan"],
     "data": {
       "persons": ["Paul Dirac", "Richard Feynman", "Julian Schwinger", "Sin-Itiro Tomonaga", "Freeman Dyson"],
-      "concepts": ["Quantum electrodynamics", "Feynman diagrams", "Renormalization"]
+      "concepts": ["Quantum electrodynamics (QED)", "Feynman diagrams", "Renormalization", "Lamb shift", "Anomalous magnetic moment"]
     },
     "parents": ["quantum_mechanics", "special_relativity"],
     "kids": ["standard_model", "quantum_chromodynamics"]
@@ -233,9 +351,9 @@
     "space": ["United States", "England", "Pakistan"],
     "data": {
       "persons": ["Sheldon Glashow", "Steven Weinberg", "Abdus Salam"],
-      "concepts": ["Electroweak unification", "Quark model", "Gauge theories"]
+      "concepts": ["Electroweak unification", "Quark model", "Gauge theories", "Quantum flavor dynamics"]
     },
-    "parents": ["quantum_field_theory"],
+    "parents": ["quantum_electrodynamics"],
     "kids": ["higgs_discovery", "particle_physics"]
   },
   {
@@ -304,5 +422,28 @@
     },
     "parents": ["standard_model"],
     "kids": ["beyond_standard_model"]
+  },
+  {
+    "key": "quantum_field_theory",
+    "time": ["1927", "1949"],
+    "space": ["England", "United States", "Japan"],
+    "data": {
+      "persons": ["Paul Dirac", "Richard Feynman", "Julian Schwinger", "Sin-Itiro Tomonaga", "Freeman Dyson"],
+      "concepts": ["Quantum electrodynamics", "Feynman diagrams", "Renormalization"]
+    },
+    "parents": ["quantum_mechanics", "special_relativity"],
+    "kids": ["standard_model", "quantum_chromodynamics"]
+  },
+  {
+    "key": "radio_communication",
+    "time": ["1895", "1901"],
+    "space": ["Italy", "England"],
+    "data": {
+      "persons": ["Guglielmo Marconi"],
+      "event": "First transatlantic radio transmission",
+      "significance": "Practical application of electromagnetic waves"
+    },
+    "parents": ["electromagnetic_waves"],
+    "kids": ["wireless_technology"]
   }
 ]
