@@ -9,7 +9,7 @@ function calculateDimensions() {
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
   const width = 1200;
-  const height = Math.max(2000, (maxYear - minYear) * 15);
+  const height = Math.max(2000, (maxYear - minYear) * 20);
   svgElement.setAttribute('height', height);
   const margin = { top: 50, right: 50, bottom: 50, left: 150 };
   const innerWidth = width - margin.left - margin.right;
@@ -18,60 +18,6 @@ function calculateDimensions() {
   return { minYear, maxYear, width, height, margin, innerWidth, innerHeight };
 }
 
-// Create year-to-position mapping function
-function createYearScale(minYear, maxYear, margin, innerHeight) {
-  return (year) => {
-    return margin.top + ((year - minYear) / (maxYear - minYear)) * innerHeight;
-  };
-}
-
-// Draw vertical timeline
-function drawVerticalTimeline(height, margin) {
-  const timelineLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-  timelineLine.setAttribute('x1', margin.left);
-  timelineLine.setAttribute('y1', margin.top);
-  timelineLine.setAttribute('x2', margin.left);
-  timelineLine.setAttribute('y2', height - margin.bottom);
-  timelineLine.setAttribute('class', 'timeline-line');
-  svgElement.appendChild(timelineLine);
-}
-
-// Add year ticks to timeline
-function addYearTicks(minYear, maxYear, yearScale, margin, height) {
-  const yearInterval = 10;
-  let firstYear = Math.ceil(minYear / 10) * 10;
-  if (firstYear > maxYear) {
-    firstYear = Math.floor(minYear / 10) * 10;
-  }
-  
-  for (let year = firstYear; year <= maxYear; year += yearInterval) {
-    const y = yearScale(year);
-
-    if (y >= margin.top && y <= height - margin.bottom) {
-      // 刻度线
-      const tickLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      tickLine.setAttribute('x1', margin.left - 5);
-      tickLine.setAttribute('y1', y);
-      tickLine.setAttribute('x2', margin.left + 5);
-      tickLine.setAttribute('y2', y);
-      tickLine.setAttribute('stroke', '#7986cb');
-      tickLine.setAttribute('stroke-width', 1);
-      svgElement.appendChild(tickLine);
-
-      // Year label - use plus/minus signs instead of BC/AD
-      const yearLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      yearLabel.setAttribute('x', margin.left - 10);
-      yearLabel.setAttribute('y', y + 4);
-      yearLabel.setAttribute('text-anchor', 'end');
-      yearLabel.setAttribute('font-size', '10');
-      yearLabel.setAttribute('fill', '#555');
-
-      let yearDisplay = year < 0 ? `-${Math.abs(year)}` : `${year}`;
-      yearLabel.textContent = yearDisplay;
-      svgElement.appendChild(yearLabel);
-    }
-  }
-}
 
 // Process events to determine if they are single points or time ranges
 function processEvents(yearScale) {
@@ -220,37 +166,4 @@ function drawSinglePoints(singlePoints, margin, height) {
       svgElement.appendChild(cardGroup);
     }
   });
-}
-
-// Render SVG timeline
-function renderTimeline() {
-  // Clear SVG
-  clearSVG();
-
-  // Calculate dimensions
-  const { minYear, maxYear, width, height, margin, innerWidth, innerHeight } = calculateDimensions();
-
-  // Calculate year-to-position mapping
-  const yearScale = createYearScale(minYear, maxYear, margin, innerHeight);
-
-  // Draw vertical timeline
-  drawVerticalTimeline(height, margin);
-
-  // Add year ticks
-  addYearTicks(minYear, maxYear, yearScale, margin, height);
-
-  // Process events
-  timelineData = processEvents(yearScale);
-
-  // Separate time ranges and single points
-  const { timeRanges, singlePoints } = separateEvents(timelineData);
-
-  // Calculate horizontal positions for time ranges and single points to avoid conflicts
-  calculateHorizontalPositions(timeRanges, singlePoints, margin);
-
-  // Draw time ranges first
-  drawTimeRanges(timeRanges, margin, height, yearScale);
-
-  // Draw single points separately
-  drawSinglePoints(singlePoints, margin, height);
 }
