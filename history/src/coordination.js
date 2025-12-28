@@ -6,8 +6,6 @@ function calculateHorizontalPositions(events, margin) {
   const allEventsMap = new Map();
   events.forEach(event => allEventsMap.set(event.key, event));
 
-  console.log(allEventsMap)
-  
   const roots = []; // Events without parents, Populate children map and find root nodes
   events.forEach(event => {
     if (!event.parents || event.parents.length == 0 || event.parents[0] === '') {
@@ -37,17 +35,14 @@ function processEventDFS(event, baseX, minSpacing, allEventsMap, positionedEvent
   const kids = event.kids || [];
   if (!kids || kids.length == 0) return; // No children to process
 
-  console.log(kids)
-
-  kids.sort((a, b) => {
-    console.log(a, allEventsMap[a]);
-    console.log(b, allEventsMap[b]);
-    return allEventsMap[a].startTime - allEventsMap[b].startTime;
-  });
+  kids.sort((a, b) => allEventsMap.get(a).startTime - allEventsMap.get(b).startTime);
   
   // Process all children of the current event
   kids.forEach(kid => {
-    processEventDFS(allEventsMap[kid], event.x + minSpacing, minSpacing, allEventsMap, positionedEvents);
+    const kidEvent = allEventsMap.get(kid);
+    if (kidEvent) {
+      processEventDFS(kidEvent, event.x + minSpacing, minSpacing, allEventsMap, positionedEvents);
+    }
   });
 }
 
@@ -77,6 +72,11 @@ function findNonConflictingXPositionForEvent(currentEvent, positionedEvents, ini
 
 // Helper function to determine if two events conflict at a given x position
 function doesConflict(currentEvent, otherEvent, currentX, minSpacing) {
+  // Handle case where otherEvent might be undefined
+  if (!otherEvent) {
+    return false; // No conflict if other event doesn't exist
+  }
+  
   // Check if the y-ranges overlap
   const yOverlap = !(currentEvent.endTime < otherEvent.startTime || currentEvent.startTime > otherEvent.endTime);
 
