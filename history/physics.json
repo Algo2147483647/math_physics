@@ -1,0 +1,313 @@
+[
+  {
+    "key": "early_physics",
+    "time": ["-3000", "1500"],
+    "space": [],
+    "data": {
+      "event": "Early Physics Observations"
+    },
+    "parents": [""],
+    "kids": ["aristotelian_physics"]
+  },
+  {
+    "key": "aristotelian_physics",
+    "time": ["-350"],
+    "space": [],
+    "data": {
+      "persons": ["Aristotle"],
+      "event": "Aristotelian Physics"
+    },
+    "parents": ["early_physics"]
+  },
+  {
+    "key": "free_fall_law",
+    "time": ["-240"],
+    "space": [],
+    "data": {
+      "persons": ["Archimedes"],
+      "event": "Principle of Buoyancy"
+    },
+    "parents": ["early_physics"]
+  },
+  {
+    "key": "heliocentrism",
+    "time": ["1543"],
+    "space": [],
+    "data": {
+      "persons": ["Copernicus"],
+      "event": "Heliocentric Model"
+    },
+    "parents": []
+  },
+  {
+    "key": "planetary_motion",
+    "time": ["1609"],
+    "space": [],
+    "data": {
+      "persons": ["Kepler"],
+      "event": "Laws of Planetary Motion"
+    },
+    "parents": []
+  },
+  {
+    "key": "galilean_relativity",
+    "time": ["1632"],
+    "space": [],
+    "data": {
+      "persons": ["Galileo Galilei"],
+      "event": "Principle of Relativity"
+    },
+    "parents": []
+  },
+  {
+    "key": "newtonian_mechanics",
+    "time": ["1687"],
+    "space": [],
+    "data": {
+      "persons": ["Isaac Newton"],
+      "paper": "Principia Mathematica",
+      "event": "Laws of Motion and Universal Gravitation"
+    },
+    "parents": []
+  },
+  {
+    "key": "wave_theory_of_light",
+    "time": ["1690"],
+    "space": [],
+    "data": {
+      "persons": ["Christiaan Huygens"],
+      "event": "Wave Theory of Light"
+    },
+    "parents": []
+  },
+  {
+    "key": "calculus_mechanics",
+    "time": ["1743"],
+    "space": [],
+    "data": {
+      "persons": ["d'Alembert", "Euler", "Lagrange"],
+      "event": "Analytical Mechanics"
+    },
+    "parents": []
+  },
+  {
+    "key": "heat_theory",
+    "time": ["1798"],
+    "space": [],
+    "data": {
+      "persons": ["Benjamin Thompson"],
+      "event": "Kinetic Theory of Heat"
+    },
+    "parents": []
+  },
+  {
+    "key": "electromagnetism",
+    "time": ["1820"],
+    "space": [],
+    "data": {
+      "persons": ["Hans Christian Oersted", "Michael Faraday", "James Clerk Maxwell"],
+      "event": "Electromagnetic Theory"
+    },
+    "parents": []
+  },
+  {
+    "key": "thermodynamics",
+    "time": ["1850"],
+    "space": [],
+    "data": {
+      "persons": ["Carnot", "Kelvin", "Clausius"],
+      "event": "Laws of Thermodynamics"
+    },
+    "parents": []
+  },
+  {
+    "key": "atomic_theory",
+    "time": ["1897"],
+    "space": [],
+    "data": {
+      "persons": ["J.J. Thomson"],
+      "event": "Discovery of the Electron"
+    },
+    "parents": []
+  },
+  {
+    "key": "quantum_theory",
+    "time": ["1900"],
+    "space": [],
+    "data": {
+      "persons": ["Max Planck"],
+      "event": "Quantum Hypothesis"
+    },
+    "parents": []
+  },
+  {
+    "key": "special_relativity",
+    "time": ["1905"],
+    "space": [],
+    "data": {
+      "persons": ["Albert Einstein"],
+      "event": "Special Theory of Relativity"
+    },
+    "parents": []
+  },
+  {
+    "key": "brownian_motion",
+    "time": ["1905"],
+    "space": [],
+    "data": {
+      "persons": ["Albert Einstein"],
+      "event": "Statistical Explanation of Brownian Motion"
+    },
+    "parents": []
+  },
+  {
+    "key": "photoelectric_effect",
+    "time": ["1905"],
+    "space": [],
+    "data": {
+      "persons": ["Albert Einstein"],
+      "event": "Photon Theory of Light"
+    },
+    "parents": []
+  },
+  {
+    "key": "bohr_atom",
+    "time": ["1913"],
+    "space": [],
+    "data": {
+      "persons": ["Niels Bohr"],
+      "event": "Bohr Model of Atom"
+    },
+    "parents": []
+  },
+  {
+    "key": "general_relativity",
+    "time": ["1915"],
+    "space": [],
+    "data": {
+      "persons": ["Albert Einstein"],
+      "event": "General Theory of Relativity"
+    },
+    "parents": []
+  },
+  {
+    "key": "wave_mechanics",
+    "time": ["1924"],
+    "space": [],
+    "data": {
+      "persons": ["Louis de Broglie"],
+      "event": "Wave-Particle Duality"
+    },
+    "parents": []
+  },
+  {
+    "key": "matrix_mechanics",
+    "time": ["1925"],
+    "space": [],
+    "data": {
+      "persons": ["Heisenberg", "Born", "Jordan"],
+      "event": "Matrix Mechanics"
+    },
+    "parents": []
+  },
+  {
+    "key": "schrodinger_equation",
+    "time": ["1926"],
+    "space": [],
+    "data": {
+      "persons": ["Erwin Schrödinger"],
+      "event": "Schrödinger Equation"
+    },
+    "parents": []
+  },
+  {
+    "key": "uncertainty_principle",
+    "time": ["1927"],
+    "space": [],
+    "data": {
+      "persons": ["Werner Heisenberg"],
+      "event": "Uncertainty Principle"
+    },
+    "parents": []
+  },
+  {
+    "key": "dirac_equation",
+    "time": ["1928"],
+    "space": [],
+    "data": {
+      "persons": ["Paul Dirac"],
+      "event": "Relativistic Wave Equation"
+    },
+    "parents": []
+  },
+  {
+    "key": "higgs_mechanism",
+    "time": ["1964"],
+    "space": [],
+    "data": {
+      "persons": ["Peter Higgs", "François Englert", "Robert Brout"],
+      "event": "Higgs Mechanism"
+    },
+    "parents": []
+  },
+  {
+    "key": "standard_model",
+    "time": ["1970"],
+    "space": [],
+    "data": {
+      "persons": ["Sheldon Glashow", "Abdus Salam", "Steven Weinberg"],
+      "event": "Standard Model of Particle Physics"
+    },
+    "parents": []
+  },
+  {
+    "key": "string_theory",
+    "time": ["1970"],
+    "space": [],
+    "data": {
+      "persons": ["G. Veneziano", "J. Scherk", "J.H. Schwarz"],
+      "event": "String Theory"
+    },
+    "parents": []
+  },
+  {
+    "key": "cosmic_inflation",
+    "time": ["1980"],
+    "space": [],
+    "data": {
+      "persons": ["Alan Guth"],
+      "event": "Cosmic Inflation Theory"
+    },
+    "parents": []
+  },
+  {
+    "key": "bose_einstein_condensate",
+    "time": ["1995"],
+    "space": [],
+    "data": {
+      "persons": ["Eric Cornell", "Carl Wieman", "Wolfgang Ketterle"],
+      "event": "Bose-Einstein Condensate"
+    },
+    "parents": []
+  },
+  {
+    "key": "higgs_boson_discovery",
+    "time": ["2012"],
+    "space": [],
+    "data": {
+      "persons": ["CERN LHC"],
+      "event": "Discovery of Higgs Boson"
+    },
+    "parents": []
+  },
+  {
+    "key": "gravitational_waves",
+    "time": ["2015"],
+    "space": [],
+    "data": {
+      "persons": ["LIGO Scientific Collaboration"],
+      "event": "Direct Detection of Gravitational Waves"
+    },
+    "parents": []
+  }
+]
