@@ -20,79 +20,19 @@ function renderTimeline() {
   timelineData = processEvents(yearScale);
 
   // 对所有事件 timelineData 的父子关系进行对齐，缺少的话补充上去，即保证每个节点的parent和kids都是对的，不缺少的
-  alignParentChildRelationships();
+  alignParentChildRelationships(timelineData);
+
+  // Calculate horizontal positions for time ranges and single points to avoid conflicts
+  calculateHorizontalPositions(timelineData, margin);
 
   // Separate time ranges and single points
   const { timeRanges, singlePoints } = separateEvents(timelineData);
-
-  // Calculate horizontal positions for time ranges and single points to avoid conflicts
-  calculateHorizontalPositions(timeRanges, singlePoints, margin);
 
   // Draw time ranges first
   drawTimeRanges(timeRanges, margin, height, yearScale);
 
   // Draw single points separately
   drawSinglePoints(singlePoints, margin, height);
-}
-
-// 对所有事件 timelineData 的父子关系进行对齐，缺少的话补充上去，即保证每个节点的parent和kids都是对的，不缺少的
-function alignParentChildRelationships() {
-  // 首先，清空所有事件的 kids 数组
-  timelineData.forEach(event => {
-    if (!event.kids) {
-      event.kids = [];
-    }
-  });
-
-  // 遍历所有事件，建立正确的父子关系
-  timelineData.forEach(event => {
-    // 确保 parents 数组存在
-    if (!event.parents || !Array.isArray(event.parents)) {
-      event.parents = [];
-    }
-    
-    // 遍历当前事件的每个 parent
-    event.parents.forEach(parentKey => {
-      if (parentKey && parentKey.trim() !== "") {
-        // 在 timelineData 中查找该 parent 事件
-        const parentEvent = timelineData.find(e => e.key === parentKey);
-        
-        if (parentEvent) {
-          // 确保 parent 事件的 kids 数组存在
-          if (!parentEvent.kids || !Array.isArray(parentEvent.kids)) {
-            parentEvent.kids = [];
-          }
-          
-          // 检查是否已经存在于 parent 的 kids 数组中
-          if (!parentEvent.kids.includes(event.key)) {
-            parentEvent.kids.push(event.key);
-          }
-        }
-      }
-    });
-    
-    // 同样，遍历当前事件的每个 kid
-    if (event.kids && Array.isArray(event.kids)) {
-      event.kids.forEach(kidKey => {
-        if (kidKey && kidKey.trim() !== "") {
-          // 在 timelineData 中查找该 kid 事件
-          const kidEvent = timelineData.find(e => e.key === kidKey);
-          
-          if (kidEvent) {
-            // 确保 kid 事件的 parents 数组存在
-            if (!kidEvent.parents || !Array.isArray(kidEvent.parents)) {
-              kidEvent.parents = [];
-            }
-            
-            // 检查是否已经存在于 kid 的 parents 数组中
-            if (!kidEvent.parents.includes(event.key)) {
-              kidEvent.parents.push(event.key);
-            }
-          }
-        }
-      });
-    }
-  });
 }
 
 // Draw vertical timeline
