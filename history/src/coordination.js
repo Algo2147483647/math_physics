@@ -1,4 +1,3 @@
-
 // Calculate horizontal positions for time ranges and single points to avoid conflicts
 function calculateHorizontalPositions(timeRanges, singlePoints, margin) {
   // Sort events by vertical position to process them in order
@@ -17,9 +16,46 @@ function calculateHorizontalPositions(timeRanges, singlePoints, margin) {
   // Process single points
   for (let i = 0; i < singlePoints.length; i++) {
     const currentEvent = singlePoints[i];
-    // Find the minimal x position that doesn't conflict with all positioned events
-    currentEvent.x = findNonConflictingXPositionForEvent(currentEvent, timeRanges, singlePoints.slice(0, i), margin.left + 40, minSpacing);
+    
+    // Check if the current event has a parent
+    if (currentEvent.parents && currentEvent.parents.length > 0) {
+      // Find parent events among all processed events (time ranges and previous single points)
+      const positionedEvents = [...timeRanges, ...singlePoints.slice(0, i)];
+      const parentEvent = findParentEvent(currentEvent.parents[0], positionedEvents);
+      
+      if (parentEvent) {
+        // Position the current event at the same x as its parent
+        currentEvent.x = parentEvent.x;
+        
+        // Check for other single events that have the same parent and are at similar time
+        // If there are other events with the same parent at the same time, offset left by 10 pixels
+        const sameParentSameTimeEvents = singlePoints
+          .slice(0, i) // Only consider already processed events
+          .filter(event => 
+            event.parents && 
+            event.parents.length > 0 && 
+            event.parents[0] === currentEvent.parents[0] &&
+            Math.abs(event.startY - currentEvent.startY) < 10 // Same time (with small tolerance)
+          );
+          
+        if (sameParentSameTimeEvents.length > 0) {
+          // Offset each additional event by 10 pixels to the left
+          currentEvent.x = parentEvent.x - (sameParentSameTimeEvents.length * 10);
+        }
+      } else {
+        // If parent not found among positioned events, use normal positioning
+        currentEvent.x = findNonConflictingXPositionForEvent(currentEvent, timeRanges, singlePoints.slice(0, i), margin.left + 40, minSpacing);
+      }
+    } else {
+      // For events without parents, use normal positioning
+      currentEvent.x = findNonConflictingXPositionForEvent(currentEvent, timeRanges, singlePoints.slice(0, i), margin.left + 40, minSpacing);
+    }
   }
+}
+
+// Helper function to find a parent event by key
+function findParentEvent(parentKey, allEvents) {
+  return allEvents.find(event => event.key === parentKey);
 }
 
 // Helper function to find a non-conflicting x position for an event
