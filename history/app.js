@@ -58,7 +58,7 @@ function renderTimeline() {
   
   // Set SVG dimensions and margins - increase height to 5 times the original
   const width = 1200;
-  const height = Math.max(2000, (maxYear - minYear) * 10); // 根据年份范围调整高度，至少4000px
+  const height = Math.max(2000, (maxYear - minYear) * 15); // 根据年份范围调整高度，至少4000px，间距扩大1.5倍
   svgElement.setAttribute('height', height);
   
   const margin = { top: 50, right: 50, bottom: 50, left: 150 }; // Increase left margin to accommodate timeline
