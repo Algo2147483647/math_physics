@@ -56,22 +56,25 @@ def excel_to_json(excel_path: str, json_path: str):
         item = {}
         for col in df.columns:
             value = row[col]
-            
-            # 如果单元格内容是字符串且以{或[开头，尝试解析为JSON
-            if isinstance(value, str) and value.startswith(('{', '[')):
-                try:
-                    item[col] = json.loads(value)
-                except json.JSONDecodeError:
-                    # 如果解析失败，保持为字符串
-                    item[col] = value
-            # 如果值是NaN，设置为适当的默认值
-            elif pd.isna(value):
-                item[col] = ""
-            # 如果值包含逗号，且原始JSON中可能为数组，则拆分为列表
-            elif isinstance(value, str) and ',' in value and col in ['time', 'space', 'parents', 'kids', 'persons', 'works', 'concepts', 'inventions']:
-                item[col] = [x.strip() for x in value.split(',')]
-            else:
+
+            if col == "key":
                 item[col] = value
+            else:
+                # 如果单元格内容是字符串且以{或[开头，尝试解析为JSON
+                if isinstance(value, str) and value.startswith(('{', '[')):
+                    try:
+                        item[col] = json.loads(value)
+                    except json.JSONDecodeError:
+                        # 如果解析失败，保持为字符串
+                        item[col] = value
+                # 如果值是NaN，设置为适当的默认值
+                elif pd.isna(value):
+                    item[col] = [""]
+                # 如果值包含逗号，且原始JSON中可能为数组，则拆分为列表
+                elif isinstance(value, str) and ',' in value and col in ['time', 'space', 'parents', 'kids', 'persons', 'works', 'concepts', 'inventions']:
+                    item[col] = [x.strip() for x in value.split(',')]
+                else:
+                    item[col] = [value]
         json_data.append(item)
 
     # 保存为JSON文件
@@ -103,4 +106,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    # python json_excel_converter.py json2excel physics.json physics.xlsx
+    # python json_excel_converter.py excel2json physics.xlsx physics.json

@@ -1,449 +1,980 @@
 [
   {
     "key": "heliocentrism",
-    "time": ["1543"],
-    "space": ["Poland"],
+    "time": [
+      "1543"
+    ],
+    "space": [
+      "Poland"
+    ],
     "data": {
-      "persons": ["Nicolaus Copernicus"],
+      "persons": [
+        "Nicolaus Copernicus"
+      ],
       "work": "De revolutionibus orbium coelestium",
       "event": "Heliocentric Model"
     },
-    "parents": ["aristotelian_physics"],
-    "kids": ["tycho_observations"]
-  },
-  {
-    "key": "tycho_observations",
-    "time": ["1576"],
-    "space": ["Denmark"],
-    "data": {
-      "persons": ["Tycho Brahe"],
-      "event": "Precise Astronomical Observations",
-      "data": ["Planetary positions", "Supernova 1572"]
-    },
-    "parents": ["heliocentrism"],
-    "kids": ["planetary_motion"]
-  },
-  {
-    "key": "planetary_motion",
-    "time": ["1609", "1619"],
-    "space": ["Germany"],
-    "data": {
-      "persons": ["Johannes Kepler"],
-      "works": ["Astronomia Nova", "Harmonices Mundi"],
-      "event": "Kepler's Laws of Planetary Motion"
-    },
-    "parents": ["tycho_observations"],
-    "kids": ["newtonian_mechanics"]
-  },
-  {
-    "key": "early_electromagnetism",
-    "time": ["1600", "1660"],
-    "space": ["England"],
-    "data": {
-      "persons": ["William Gilbert", "Otto von Guericke"],
-      "works": ["De Magnete", "First electrostatic generator"],
-      "concepts": ["Magnetism", "Static electricity"]
-    },
-    "parents": [""],
-    "kids": ["coulomb_law"]
-  },
-  {
-    "key": "coulomb_law",
-    "time": ["1785"],
-    "space": ["France"],
-    "data": {
-      "persons": ["Charles-Augustin de Coulomb"],
-      "concepts": ["Inverse-square law for electric force", "Torsion balance"]
-    },
-    "parents": ["early_electromagnetism"],
-    "kids": ["voltaic_pile"]
-  },
-  {
-    "key": "voltaic_pile",
-    "time": ["1800"],
-    "space": ["Italy"],
-    "data": {
-      "persons": ["Alessandro Volta"],
-      "event": "First electric battery",
-      "significance": "Continuous electric current"
-    },
-    "parents": ["coulomb_law"],
-    "kids": ["oersted_discovery"]
-  },
-  {
-    "key": "galilean_physics",
-    "time": ["1589", "1638"],
-    "space": ["Italy"],
-    "data": {
-      "persons": ["Galileo Galilei"],
-      "works": ["Two New Sciences", "Dialogue Concerning the Two Chief World Systems"],
-      "concepts": ["Inertia", "Acceleration", "Projectile motion", "Telescopic observations"]
-    },
-    "parents": ["renaissance_mechanics"],
-    "kids": ["newtonian_mechanics", "huygens_mechanics"]
-  },
-  {
-    "key": "oersted_discovery",
-    "time": ["1820"],
-    "space": ["Denmark"],
-    "data": {
-      "persons": ["Hans Christian Ørsted"],
-      "event": "Electric current creates magnetic field",
-      "concepts": ["Electromagnetism connection"]
-    },
-    "parents": ["voltaic_pile"],
-    "kids": ["ampere_law", "biot_savart_law"]
-  },
-  {
-    "key": "ampere_law",
-    "time": ["1823"],
-    "space": ["France"],
-    "data": {
-      "persons": ["André-Marie Ampère"],
-      "concepts": ["Force between current-carrying wires", "Electrodynamics"]
-    },
-    "parents": ["oersted_discovery"],
-    "kids": ["faraday_induction"]
-  },
-  {
-    "key": "biot_savart_law",
-    "time": ["1820"],
-    "space": ["France"],
-    "data": {
-      "persons": ["Jean-Baptiste Biot", "Félix Savart"],
-      "concepts": ["Magnetic field from current element"]
-    },
-    "parents": ["oersted_discovery"],
-    "kids": ["faraday_induction"]
-  },
-  {
-    "key": "faraday_induction",
-    "time": ["1831"],
-    "space": ["England"],
-    "data": {
-      "persons": ["Michael Faraday"],
-      "event": "Electromagnetic induction",
-      "concepts": ["Magnetic field lines", "Field theory concept"]
-    },
-    "parents": ["ampere_law", "biot_savart_law"],
-    "kids": ["maxwell_equations", "electric_motor_generator"]
-  },
-  {
-    "key": "electric_motor_generator",
-    "time": ["1821", "1832"],
-    "space": ["England"],
-    "data": {
-      "persons": ["Michael Faraday", "Hippolyte Pixii"],
-      "inventions": ["First electric motor", "First dynamo"]
-    },
-    "parents": ["faraday_induction"],
-    "kids": ["telegraphy"]
-  },
-  {
-    "key": "newtonian_mechanics",
-    "time": ["1687"],
-    "space": ["England"],
-    "data": {
-      "persons": ["Isaac Newton"],
-      "work": "Philosophiæ Naturalis Principia Mathematica",
-      "concepts": ["Three laws of motion", "Universal gravitation", "Calculus (concurrent with Leibniz)"]
-    },
-    "parents": ["planetary_motion", "galilean_physics"],
-    "kids": ["classical_mechanics", "celestial_mechanics"]
-  },
-  {
-    "key": "gauss_laws",
-    "time": ["1835", "1867"],
-    "space": ["Germany"],
-    "data": {
-      "persons": ["Carl Friedrich Gauss"],
-      "concepts": ["Gauss's law for electricity", "Gauss's law for magnetism"]
-    },
-    "parents": ["coulomb_law"],
-    "kids": ["maxwell_equations"]
-  },
-  {
-    "key": "maxwell_equations",
-    "time": ["1861", "1865"],
-    "space": ["Scotland"],
-    "data": {
-      "persons": ["James Clerk Maxwell"],
-      "works": ["On Physical Lines of Force", "A Dynamical Theory of the Electromagnetic Field"],
-      "achievement": "Maxwell's equations unified electricity, magnetism, and light",
-      "concepts": ["Displacement current", "Electromagnetic waves prediction", "Light as electromagnetic wave"]
-    },
-    "parents": ["faraday_induction", "gauss_laws", "ampere_law"],
-    "kids": ["electromagnetic_waves", "special_relativity"]
-  },
-  {
-    "key": "huygens_mechanics",
-    "time": ["1673"],
-    "space": ["Netherlands"],
-    "data": {
-      "persons": ["Christiaan Huygens"],
-      "concepts": ["Centrifugal force", "Wave theory of light", "Pendulum clock"]
-    },
-    "parents": ["galilean_physics"],
-    "kids": ["wave_optics"]
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "classical_mechanics",
-    "time": ["1743", "1788"],
-    "space": ["France", "Switzerland"],
+    "time": [
+      "1564",
+      "1788"
+    ],
+    "space": [
+      "France",
+      "Switzerland"
+    ],
     "data": {
-      "persons": ["Leonhard Euler", "Joseph-Louis Lagrange", "Jean le Rond d'Alembert"],
+      "persons": [
+        "Leonhard Euler",
+        "Joseph-Louis Lagrange",
+        "Jean le Rond d'Alembert"
+      ],
       "work": "Analytical Mechanics",
-      "concepts": ["Lagrangian mechanics", "Euler equations", "D'Alembert's principle"]
+      "concepts": [
+        "Lagrangian mechanics",
+        "Euler equations",
+        "D'Alembert's principle"
+      ]
     },
-    "parents": ["newtonian_mechanics"],
-    "kids": ["hamiltonian_mechanics", "continuum_mechanics"]
+    "parents": [
+      ""
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
-    "key": "celestial_mechanics",
-    "time": ["1799"],
-    "space": ["France"],
+    "key": "tycho_observations",
+    "time": [
+      "1576"
+    ],
+    "space": [
+      "Denmark"
+    ],
     "data": {
-      "persons": ["Pierre-Simon Laplace"],
-      "work": "Mécanique Céleste",
-      "concepts": ["Deterministic universe", "Perturbation theory"]
+      "persons": [
+        "Tycho Brahe"
+      ],
+      "event": "Precise Astronomical Observations",
+      "data": [
+        "Planetary positions",
+        "Supernova 1572"
+      ]
     },
-    "parents": ["newtonian_mechanics"],
-    "kids": ["statistical_mechanics"]
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
-    "key": "wave_optics",
-    "time": ["1801", "1818"],
-    "space": ["England", "France"],
+    "key": "planetary_motion",
+    "time": [
+      "1609",
+      "1619"
+    ],
+    "space": [
+      "Germany"
+    ],
     "data": {
-      "persons": ["Thomas Young", "Augustin-Jean Fresnel"],
-      "concepts": ["Wave interference", "Diffraction", "Polarization"]
+      "persons": [
+        "Johannes Kepler"
+      ],
+      "works": [
+        "Astronomia Nova",
+        "Harmonices Mundi"
+      ],
+      "event": "Kepler's Laws of Planetary Motion"
     },
-    "parents": ["huygens_mechanics"],
-    "kids": ["electromagnetic_waves"]
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
-    "key": "thermodynamics",
-    "time": ["1824", "1850"],
-    "space": ["France", "Germany", "England"],
+    "key": "huygens_mechanics",
+    "time": [
+      "1673"
+    ],
+    "space": [
+      "Netherlands"
+    ],
     "data": {
-      "persons": ["Sadi Carnot", "Rudolf Clausius", "William Thomson (Lord Kelvin)"],
-      "concepts": ["Second law", "Entropy", "Absolute temperature"]
+      "persons": [
+        "Christiaan Huygens"
+      ],
+      "concepts": [
+        "Centrifugal force",
+        "Wave theory of light",
+        "Pendulum clock"
+      ]
     },
-    "parents": ["heat_engines"],
-    "kids": ["statistical_mechanics"]
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "newtonian_mechanics",
+    "time": [
+      "1687"
+    ],
+    "space": [
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Isaac Newton"
+      ],
+      "work": "Philosophiæ Naturalis Principia Mathematica",
+      "concepts": [
+        "Three laws of motion",
+        "Universal gravitation",
+        "Calculus (concurrent with Leibniz)"
+      ]
+    },
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "coulomb_law",
+    "time": [
+      "1785"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Charles-Augustin de Coulomb"
+      ],
+      "concepts": [
+        "Inverse-square law for electric force",
+        "Torsion balance"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "electromagnetism",
+    "time": [
+      "1785",
+      "1865"
+    ],
+    "space": [
+      ""
+    ],
+    "data": [
+      ""
+    ],
+    "parents": [
+      ""
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "heat_engines",
-    "time": ["1798"],
-    "space": ["England"],
+    "time": [
+      "1798"
+    ],
+    "space": [
+      "England"
+    ],
     "data": {
-      "persons": ["Benjamin Thompson (Count Rumford)"],
+      "persons": [
+        "Benjamin Thompson (Count Rumford)"
+      ],
       "event": "Heat as Motion"
     },
-    "parents": [""],
-    "kids": ["thermodynamics"]
+    "parents": [
+      "thermodynamics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
-    "key": "electromagnetic_waves",
-    "time": ["1887"],
-    "space": ["Germany"],
+    "key": "celestial_mechanics",
+    "time": [
+      "1799"
+    ],
+    "space": [
+      "France"
+    ],
     "data": {
-      "persons": ["Heinrich Hertz"],
-      "event": "Experimental confirmation of electromagnetic waves",
-      "experiments": ["Spark gap transmitter", "Receiver detection"]
+      "persons": [
+        "Pierre-Simon Laplace"
+      ],
+      "work": "Mécanique Céleste",
+      "concepts": [
+        "Deterministic universe",
+        "Perturbation theory"
+      ]
     },
-    "parents": ["maxwell_equations", "wave_optics"],
-    "kids": ["michelson_morley", "radio_communication"]
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "voltaic_pile",
+    "time": [
+      "1800"
+    ],
+    "space": [
+      "Italy"
+    ],
+    "data": {
+      "persons": [
+        "Alessandro Volta"
+      ],
+      "event": "First electric battery",
+      "significance": "Continuous electric current"
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "wave_optics",
+    "time": [
+      "1801",
+      "1818"
+    ],
+    "space": [
+      "England",
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Thomas Young",
+        "Augustin-Jean Fresnel"
+      ],
+      "concepts": [
+        "Wave interference",
+        "Diffraction",
+        "Polarization"
+      ]
+    },
+    "parents": [
+      ""
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "oersted_discovery",
+    "time": [
+      "1820"
+    ],
+    "space": [
+      "Denmark"
+    ],
+    "data": {
+      "persons": [
+        "Hans Christian Ørsted"
+      ],
+      "event": "Electric current creates magnetic field",
+      "concepts": [
+        "Electromagnetism connection"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "biot_savart_law",
+    "time": [
+      "1820"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Jean-Baptiste Biot",
+        "Félix Savart"
+      ],
+      "concepts": [
+        "Magnetic field from current element"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "electric_motor_generator",
+    "time": [
+      "1821",
+      "1832"
+    ],
+    "space": [
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Michael Faraday",
+        "Hippolyte Pixii"
+      ],
+      "inventions": [
+        "First electric motor",
+        "First dynamo"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "ampere_law",
+    "time": [
+      "1823"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "André-Marie Ampère"
+      ],
+      "concepts": [
+        "Force between current-carrying wires",
+        "Electrodynamics"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "thermodynamics",
+    "time": [
+      "1824",
+      "1850"
+    ],
+    "space": [
+      "France",
+      "Germany",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Sadi Carnot",
+        "Rudolf Clausius",
+        "William Thomson (Lord Kelvin)"
+      ],
+      "concepts": [
+        "Second law",
+        "Entropy",
+        "Absolute temperature"
+      ]
+    },
+    "parents": [
+      ""
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "faraday_induction",
+    "time": [
+      "1831"
+    ],
+    "space": [
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Michael Faraday"
+      ],
+      "event": "Electromagnetic induction",
+      "concepts": [
+        "Magnetic field lines",
+        "Field theory concept"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "gauss_laws",
+    "time": [
+      "1835",
+      "1867"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Carl Friedrich Gauss"
+      ],
+      "concepts": [
+        "Gauss's law for electricity",
+        "Gauss's law for magnetism"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "statistical_mechanics",
-    "time": ["1859", "1902"],
-    "space": ["Scotland", "Austria", "United States"],
+    "time": [
+      "1859",
+      "1902"
+    ],
+    "space": [
+      "Scotland",
+      "Austria",
+      "United States"
+    ],
     "data": {
-      "persons": ["James Clerk Maxwell", "Ludwig Boltzmann", "Josiah Willard Gibbs"],
-      "concepts": ["Kinetic theory", "Statistical ensemble", "H-theorem"]
+      "persons": [
+        "James Clerk Maxwell",
+        "Ludwig Boltzmann",
+        "Josiah Willard Gibbs"
+      ],
+      "concepts": [
+        "Kinetic theory",
+        "Statistical ensemble",
+        "H-theorem"
+      ]
     },
-    "parents": ["thermodynamics", "celestial_mechanics"],
-    "kids": ["brownian_motion", "quantum_statistics"]
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "maxwell_equations",
+    "time": [
+      "1861",
+      "1865"
+    ],
+    "space": [
+      "Scotland"
+    ],
+    "data": {
+      "persons": [
+        "James Clerk Maxwell"
+      ],
+      "works": [
+        "On Physical Lines of Force",
+        "A Dynamical Theory of the Electromagnetic Field"
+      ],
+      "achievement": "Maxwell's equations unified electricity, magnetism, and light",
+      "concepts": [
+        "Displacement current",
+        "Electromagnetic waves prediction",
+        "Light as electromagnetic wave"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "electromagnetic_waves",
+    "time": [
+      "1887"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Heinrich Hertz"
+      ],
+      "event": "Experimental confirmation of electromagnetic waves",
+      "experiments": [
+        "Spark gap transmitter",
+        "Receiver detection"
+      ]
+    },
+    "parents": [
+      "electromagnetism"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "michelson_morley",
-    "time": ["1887"],
-    "space": ["United States"],
+    "time": [
+      "1887"
+    ],
+    "space": [
+      "United States"
+    ],
     "data": {
-      "persons": ["Albert Michelson", "Edward Morley"],
+      "persons": [
+        "Albert Michelson",
+        "Edward Morley"
+      ],
       "event": "Michelson-Morley experiment",
       "significance": "Null result for ether drift"
     },
-    "parents": ["electromagnetic_waves"],
-    "kids": ["special_relativity"]
+    "parents": [
+      "relativity"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "lorentz_transformations",
-    "time": ["1892", "1904"],
-    "space": ["Netherlands"],
+    "time": [
+      "1892",
+      "1904"
+    ],
+    "space": [
+      "Netherlands"
+    ],
     "data": {
-      "persons": ["Hendrik Lorentz"],
-      "concepts": ["Lorentz transformations", "Local time", "Length contraction"]
+      "persons": [
+        "Hendrik Lorentz"
+      ],
+      "concepts": [
+        "Lorentz transformations",
+        "Local time",
+        "Length contraction"
+      ]
     },
-    "parents": ["maxwell_equations", "michelson_morley"],
-    "kids": ["special_relativity"]
+    "parents": [
+      "relativity"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "atomic_structure",
-    "time": ["1897", "1911"],
-    "space": ["England"],
+    "time": [
+      "1897",
+      "1911"
+    ],
+    "space": [
+      "England"
+    ],
     "data": {
-      "persons": ["J.J. Thomson", "Ernest Rutherford"],
-      "concepts": ["Electron discovery", "Nuclear atom model"]
+      "persons": [
+        "J.J. Thomson",
+        "Ernest Rutherford"
+      ],
+      "concepts": [
+        "Electron discovery",
+        "Nuclear atom model"
+      ]
     },
-    "parents": ["electromagnetic_waves"],
-    "kids": ["bohr_atom", "quantum_mechanics"]
-  },
-  {
-    "key": "special_relativity",
-    "time": ["1905"],
-    "space": ["Switzerland"],
-    "data": {
-      "persons": ["Albert Einstein"],
-      "work": "On the Electrodynamics of Moving Bodies",
-      "concepts": ["Constancy of light speed", "Relativity of simultaneity", "Mass-energy equivalence", "Relativistic electrodynamics"]
-    },
-    "parents": ["maxwell_equations", "michelson_morley", "lorentz_transformations"],
-    "kids": ["general_relativity", "relativistic_quantum_mechanics"]
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "quantum_mechanics",
-    "time": ["1900", "1928"],
-    "space": ["Germany", "Denmark", "Austria", "England", "Switzerland"],
+    "time": [
+      "1900",
+      "1928"
+    ],
+    "space": [
+      "Germany",
+      "Denmark",
+      "Austria",
+      "England",
+      "Switzerland"
+    ],
     "data": {
-      "persons": ["Max Planck", "Niels Bohr", "Werner Heisenberg", "Erwin Schrödinger", "Paul Dirac"],
-      "concepts": ["Quantization", "Wave-particle duality", "Matrix mechanics", "Wave mechanics", "Spin"]
+      "persons": [
+        "Max Planck",
+        "Niels Bohr",
+        "Werner Heisenberg",
+        "Erwin Schrödinger",
+        "Paul Dirac"
+      ],
+      "concepts": [
+        "Quantization",
+        "Wave-particle duality",
+        "Matrix mechanics",
+        "Wave mechanics",
+        "Spin"
+      ]
     },
-    "parents": ["atomic_structure", "statistical_mechanics"],
-    "kids": ["quantum_field_theory", "quantum_chemistry"]
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "special_relativity",
+    "time": [
+      "1905"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein"
+      ],
+      "work": "On the Electrodynamics of Moving Bodies",
+      "concepts": [
+        "Constancy of light speed",
+        "Relativity of simultaneity",
+        "Mass-energy equivalence",
+        "Relativistic electrodynamics"
+      ]
+    },
+    "parents": [
+      "relativity"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "relativity",
+    "time": [
+      "1905",
+      "1915"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein"
+      ],
+      "work": "On the Electrodynamics of Moving Bodies",
+      "concepts": [
+        "Constancy of light speed",
+        "Relativity of simultaneity",
+        "Mass-energy equivalence",
+        "Relativistic electrodynamics"
+      ]
+    },
+    "parents": [
+      ""
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "general_relativity",
-    "time": ["1915"],
-    "space": ["Germany"],
+    "time": [
+      "1915"
+    ],
+    "space": [
+      "Germany"
+    ],
     "data": {
-      "persons": ["Albert Einstein"],
-      "concepts": ["Curved spacetime", "Einstein field equations", "Gravitational waves"]
+      "persons": [
+        "Albert Einstein"
+      ],
+      "concepts": [
+        "Curved spacetime",
+        "Einstein field equations",
+        "Gravitational waves"
+      ]
     },
-    "parents": ["special_relativity"],
-    "kids": ["cosmology", "gravitational_waves"]
+    "parents": [
+      "relativity"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "quantum_electrodynamics",
-    "time": ["1927", "1949"],
-    "space": ["England", "United States", "Japan"],
+    "time": [
+      "1927",
+      "1949"
+    ],
+    "space": [
+      "England",
+      "United States",
+      "Japan"
+    ],
     "data": {
-      "persons": ["Paul Dirac", "Richard Feynman", "Julian Schwinger", "Sin-Itiro Tomonaga", "Freeman Dyson"],
-      "concepts": ["Quantum electrodynamics (QED)", "Feynman diagrams", "Renormalization", "Lamb shift", "Anomalous magnetic moment"]
+      "persons": [
+        "Paul Dirac",
+        "Richard Feynman",
+        "Julian Schwinger",
+        "Sin-Itiro Tomonaga",
+        "Freeman Dyson"
+      ],
+      "concepts": [
+        "Quantum electrodynamics (QED)",
+        "Feynman diagrams",
+        "Renormalization",
+        "Lamb shift",
+        "Anomalous magnetic moment"
+      ]
     },
-    "parents": ["quantum_mechanics", "special_relativity"],
-    "kids": ["standard_model", "quantum_chromodynamics"]
-  },
-  {
-    "key": "standard_model",
-    "time": ["1961", "1973"],
-    "space": ["United States", "England", "Pakistan"],
-    "data": {
-      "persons": ["Sheldon Glashow", "Steven Weinberg", "Abdus Salam"],
-      "concepts": ["Electroweak unification", "Quark model", "Gauge theories", "Quantum flavor dynamics"]
-    },
-    "parents": ["quantum_electrodynamics"],
-    "kids": ["higgs_discovery", "particle_physics"]
-  },
-  {
-    "key": "bigbang_cosmology",
-    "time": ["1927", "1965"],
-    "space": ["Belgium", "United States"],
-    "data": {
-      "persons": ["Georges Lemaître", "George Gamow", "Arno Penzias", "Robert Wilson"],
-      "concepts": ["Expanding universe", "Cosmic microwave background", "Big Bang theory"]
-    },
-    "parents": ["general_relativity"],
-    "kids": ["cosmic_inflation", "structure_formation"]
-  },
-  {
-    "key": "quantum_computing",
-    "time": ["1980", "1994"],
-    "space": ["United States", "England"],
-    "data": {
-      "persons": ["Richard Feynman", "David Deutsch", "Peter Shor"],
-      "concepts": ["Quantum algorithms", "Quantum entanglement", "Quantum error correction"]
-    },
-    "parents": ["quantum_mechanics", "information_theory"],
-    "kids": ["quantum_internet", "quantum_supremacy"]
-  },
-  {
-    "key": "dark_matter_dark_energy",
-    "time": ["1970", "1998"],
-    "space": ["United States", "Switzerland"],
-    "data": {
-      "persons": ["Vera Rubin", "Saul Perlmutter", "Brian Schmidt", "Adam Riess"],
-      "concepts": ["Galaxy rotation curves", "Accelerating universe", "Cosmological constant"]
-    },
-    "parents": ["bigbang_cosmology"],
-    "kids": ["modern_cosmology"]
-  },
-  {
-    "key": "string_theory",
-    "time": ["1968", "1984"],
-    "space": ["Italy", "United States"],
-    "data": {
-      "persons": ["Gabriele Veneziano", "John Schwarz", "Michael Green", "Edward Witten"],
-      "concepts": ["String duality", "M-theory", "Extra dimensions", "Holographic principle"]
-    },
-    "parents": ["quantum_field_theory", "general_relativity"],
-    "kids": ["ads_cft", "quantum_gravity"]
-  },
-  {
-    "key": "gravitational_waves",
-    "time": ["2015"],
-    "space": ["United States"],
-    "data": {
-      "persons": ["LIGO Scientific Collaboration"],
-      "event": "First direct detection",
-      "source": "Binary black hole merger"
-    },
-    "parents": ["general_relativity"],
-    "kids": ["multi_messenger_astronomy"]
-  },
-  {
-    "key": "higgs_discovery",
-    "time": ["2012"],
-    "space": ["Switzerland"],
-    "data": {
-      "persons": ["ATLAS and CMS collaborations"],
-      "event": "Higgs boson discovery at LHC"
-    },
-    "parents": ["standard_model"],
-    "kids": ["beyond_standard_model"]
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
     "key": "quantum_field_theory",
-    "time": ["1927", "1949"],
-    "space": ["England", "United States", "Japan"],
+    "time": [
+      "1927",
+      "1949"
+    ],
+    "space": [
+      "England",
+      "United States",
+      "Japan"
+    ],
     "data": {
-      "persons": ["Paul Dirac", "Richard Feynman", "Julian Schwinger", "Sin-Itiro Tomonaga", "Freeman Dyson"],
-      "concepts": ["Quantum electrodynamics", "Feynman diagrams", "Renormalization"]
+      "persons": [
+        "Paul Dirac",
+        "Richard Feynman",
+        "Julian Schwinger",
+        "Sin-Itiro Tomonaga",
+        "Freeman Dyson"
+      ],
+      "concepts": [
+        "Quantum electrodynamics",
+        "Feynman diagrams",
+        "Renormalization"
+      ]
     },
-    "parents": ["quantum_mechanics", "special_relativity"],
-    "kids": ["standard_model", "quantum_chromodynamics"]
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
   },
   {
-    "key": "radio_communication",
-    "time": ["1895", "1901"],
-    "space": ["Italy", "England"],
+    "key": "bigbang_cosmology",
+    "time": [
+      "1927",
+      "1965"
+    ],
+    "space": [
+      "Belgium",
+      "United States"
+    ],
     "data": {
-      "persons": ["Guglielmo Marconi"],
-      "event": "First transatlantic radio transmission",
-      "significance": "Practical application of electromagnetic waves"
+      "persons": [
+        "Georges Lemaître",
+        "George Gamow",
+        "Arno Penzias",
+        "Robert Wilson"
+      ],
+      "concepts": [
+        "Expanding universe",
+        "Cosmic microwave background",
+        "Big Bang theory"
+      ]
     },
-    "parents": ["electromagnetic_waves"],
-    "kids": ["wireless_technology"]
+    "parents": [
+      "relativity"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "standard_model",
+    "time": [
+      "1961",
+      "1973"
+    ],
+    "space": [
+      "United States",
+      "England",
+      "Pakistan"
+    ],
+    "data": {
+      "persons": [
+        "Sheldon Glashow",
+        "Steven Weinberg",
+        "Abdus Salam"
+      ],
+      "concepts": [
+        "Electroweak unification",
+        "Quark model",
+        "Gauge theories",
+        "Quantum flavor dynamics"
+      ]
+    },
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "string_theory",
+    "time": [
+      "1968",
+      "1984"
+    ],
+    "space": [
+      "Italy",
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Gabriele Veneziano",
+        "John Schwarz",
+        "Michael Green",
+        "Edward Witten"
+      ],
+      "concepts": [
+        "String duality",
+        "M-theory",
+        "Extra dimensions",
+        "Holographic principle"
+      ]
+    },
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "quantum_computing",
+    "time": [
+      "1980",
+      "1994"
+    ],
+    "space": [
+      "United States",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Richard Feynman",
+        "David Deutsch",
+        "Peter Shor"
+      ],
+      "concepts": [
+        "Quantum algorithms",
+        "Quantum entanglement",
+        "Quantum error correction"
+      ]
+    },
+    "parents": [
+      ""
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "higgs_discovery",
+    "time": [
+      "2012"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "ATLAS and CMS collaborations"
+      ],
+      "event": "Higgs boson discovery at LHC"
+    },
+    "parents": [
+      "quantum mechanics"
+    ],
+    "kids": [
+      ""
+    ]
+  },
+  {
+    "key": "gravitational_waves",
+    "time": [
+      "2015"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "LIGO Scientific Collaboration"
+      ],
+      "event": "First direct detection",
+      "source": "Binary black hole merger"
+    },
+    "parents": [
+      "relativity"
+    ],
+    "kids": [
+      ""
+    ]
   }
 ]
