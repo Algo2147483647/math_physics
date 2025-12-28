@@ -80,7 +80,7 @@ function doesConflict(currentEvent, otherEvent, currentX, minSpacing) {
   }
   
   // Check if the y-ranges overlap
-  const yOverlap = !(currentEvent.endTime < otherEvent.startTime || currentEvent.startTime > otherEvent.endTime);
+  const yOverlap = currentEvent.endTime >= otherEvent.startTime && currentEvent.startTime <= otherEvent.endTime;
 
   // Check if x-positions are too close
   const xTooClose = Math.abs(currentX - otherEvent.x) < minSpacing;

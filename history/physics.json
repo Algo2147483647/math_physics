@@ -166,10 +166,34 @@
     "kids": []
   },
   {
+    "key": "d'alembert_principle",
+    "time": [
+      "1743"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Jean le Rond d'Alembert"
+      ],
+      "work": "Traité de Dynamique",
+      "concepts": [
+        "D'Alembert's principle",
+        "Virtual work",
+        "Reduction of dynamical problems to static ones"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "analytical_mechanics",
     "time": [
       "1743",
-      "1788"
+      "1866"
     ],
     "space": [
       "France",
@@ -227,6 +251,31 @@
     "space": [],
     "data": [],
     "parents": [],
+    "kids": []
+  },
+  {
+    "key": "lagrangian_mechanics",
+    "time": [
+      "1788"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Joseph-Louis Lagrange"
+      ],
+      "work": "Mécanique Analytique",
+      "concepts": [
+        "Lagrangian function",
+        "Euler-Lagrange equations",
+        "Generalized coordinates",
+        "Principle of least action"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
     "kids": []
   },
   {
@@ -313,6 +362,30 @@
       ]
     },
     "parents": [],
+    "kids": []
+  },
+  {
+    "key": "poisson_bracket",
+    "time": [
+      "1809"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Siméon Denis Poisson"
+      ],
+      "concepts": [
+        "Poisson bracket",
+        "Canonical equations",
+        "Integrability conditions"
+      ],
+      "work": "Sur les invariants differentiels des equations des corps solides"
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
     "kids": []
   },
   {
@@ -481,6 +554,31 @@
     "kids": []
   },
   {
+    "key": "canonical_transformations",
+    "time": [
+      "1835",
+      "1840"
+    ],
+    "space": [
+      "Ireland"
+    ],
+    "data": {
+      "persons": [
+        "William Rowan Hamilton"
+      ],
+      "concepts": [
+        "Canonical transformations",
+        "Generating functions",
+        "Hamilton equations",
+        "Phase space formalism"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "gauss_laws",
     "time": [
       "1835",
@@ -500,6 +598,55 @@
     },
     "parents": [
       "electromagnetism"
+    ],
+    "kids": []
+  },
+  {
+    "key": "hamilton_jacobi_theory",
+    "time": [
+      "1837",
+      "1866"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Carl Gustav Jacobi"
+      ],
+      "concepts": [
+        "Hamilton-Jacobi equation",
+        "Canonical transformation to cyclic coordinates",
+        "Separation of variables in mechanics"
+      ],
+      "work": "Vorlesungen über Dynamik"
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "liouville_theorem",
+    "time": [
+      "1838",
+      "1853"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Joseph Liouville"
+      ],
+      "concepts": [
+        "Liouville's theorem",
+        "Phase space volume conservation",
+        "Invariant integral"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
     ],
     "kids": []
   },
@@ -526,8 +673,7 @@
         "H-theorem"
       ]
     },
-    "parents": [
-    ],
+    "parents": [],
     "kids": []
   },
   {
@@ -556,6 +702,32 @@
     },
     "parents": [
       "electromagnetism"
+    ],
+    "kids": []
+  },
+  {
+    "key": "action_angle_variables",
+    "time": [
+      "1866",
+      "1916"
+    ],
+    "space": [
+      "Germany",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Carl Gustav Jacobi",
+        "Albert Einstein"
+      ],
+      "concepts": [
+        "Action-angle variables",
+        "Adiabatic invariants",
+        "Quantization conditions"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
     ],
     "kids": []
   },
@@ -655,7 +827,7 @@
     "key": "quantum_mechanics",
     "time": [
       "1900",
-      "1928"
+      "1994"
     ],
     "space": [
       "Germany",
@@ -680,8 +852,7 @@
         "Spin"
       ]
     },
-    "parents": [
-    ],
+    "parents": [],
     "kids": []
   },
   {
@@ -841,9 +1012,7 @@
         "Big Bang theory"
       ]
     },
-    "parents": [
-      "relativity"
-    ],
+    "parents": [],
     "kids": []
   },
   {
@@ -969,182 +1138,5 @@
       "relativity"
     ],
     "kids": []
-  },
-  {
-    "key": "d'alembert_principle",
-    "time": [
-      "1743"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Jean le Rond d'Alembert"
-      ],
-      "work": "Traité de Dynamique",
-      "concepts": [
-        "D'Alembert's principle",
-        "Virtual work",
-        "Reduction of dynamical problems to static ones"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
-  },
-  {
-    "key": "lagrangian_mechanics",
-    "time": [
-      "1788"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Joseph-Louis Lagrange"
-      ],
-      "work": "Mécanique Analytique",
-      "concepts": [
-        "Lagrangian function",
-        "Euler-Lagrange equations",
-        "Generalized coordinates",
-        "Principle of least action"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
-  },
-  {
-    "key": "canonical_transformations",
-    "time": [
-      "1835",
-      "1840"
-    ],
-    "space": [
-      "Ireland"
-    ],
-    "data": {
-      "persons": [
-        "William Rowan Hamilton"
-      ],
-      "concepts": [
-        "Canonical transformations",
-        "Generating functions",
-        "Hamilton equations",
-        "Phase space formalism"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
-  },
-  {
-    "key": "liouville_theorem",
-    "time": [
-      "1838",
-      "1853"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Joseph Liouville"
-      ],
-      "concepts": [
-        "Liouville's theorem",
-        "Phase space volume conservation",
-        "Invariant integral"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "hamilton_jacobi_theory",
-    "time": [
-      "1837",
-      "1866"
-    ],
-    "space": [
-      "Germany"
-    ],
-    "data": {
-      "persons": [
-        "Carl Gustav Jacobi"
-      ],
-      "concepts": [
-        "Hamilton-Jacobi equation",
-        "Canonical transformation to cyclic coordinates",
-        "Separation of variables in mechanics"
-      ],
-      "work": "Vorlesungen über Dynamik"
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "action_angle_variables",
-    "time": [
-      "1866",
-      "1916"
-    ],
-    "space": [
-      "Germany",
-      "England"
-    ],
-    "data": {
-      "persons": [
-        "Carl Gustav Jacobi",
-        "Albert Einstein"
-      ],
-      "concepts": [
-        "Action-angle variables",
-        "Adiabatic invariants",
-        "Quantization conditions"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "poisson_bracket",
-    "time": [
-      "1809"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Siméon Denis Poisson"
-      ],
-      "concepts": [
-        "Poisson bracket",
-        "Canonical equations",
-        "Integrability conditions"
-      ],
-      "work": "Sur les invariants differentiels des equations des corps solides"
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
   }
 ]

@@ -69,7 +69,7 @@ def excel_to_json(excel_path: str, json_path: str):
                         item[col] = value
                 # 如果值是NaN，设置为适当的默认值
                 elif pd.isna(value):
-                    item[col] = [""]
+                    item[col] = []
                 # 如果值包含逗号，且原始JSON中可能为数组，则拆分为列表
                 elif isinstance(value, str) and ',' in value and col in ['time', 'space', 'parents', 'kids', 'persons', 'works', 'concepts', 'inventions']:
                     item[col] = [x.strip() for x in value.split(',')]
