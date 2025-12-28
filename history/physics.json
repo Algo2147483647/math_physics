@@ -1267,7 +1267,7 @@
       "significance": "First true mesons discovered, confirming Yukawa's prediction of force-carrying particles between nucleons"
     },
     "parents": [
-      "yukawa_prediction"
+      "quantum_mechanics"
     ],
     "kids": []
   },
@@ -1293,7 +1293,7 @@
       "significance": "Discovery of strange particles, leading to understanding of strangeness quantum number"
     },
     "parents": [
-      "pi_mesons"
+      "quantum_mechanics"
     ],
     "kids": []
   },
@@ -1318,7 +1318,7 @@
       "significance": "Discovery of phi meson, composed of strange and anti-strange quarks"
     },
     "parents": [
-      "kaon_discovery"
+      "quantum_mechanics"
     ],
     "kids": []
   },
@@ -1344,7 +1344,7 @@
       "significance": "Discovery of J/Psi meson, confirming existence of charm quark, leading to 'November Revolution' in particle physics"
     },
     "parents": [
-      "charmonium_prediction"
+      "quantum_mechanics"
     ],
     "kids": []
   }
