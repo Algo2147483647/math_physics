@@ -1,5 +1,5 @@
 // Define global variables to store data
-let mathHistoryData = [];
+let historyData = [];
 let svgElement;
 let timelineData = [];
 
@@ -67,10 +67,10 @@ function setupEventListeners() {
 // Initialize page
 document.addEventListener('DOMContentLoaded', async function() {
   // 加载数据
-  mathHistoryData = await loadData();
+  historyData = await loadData();
 
   // 按时间排序
-  mathHistoryData.sort((a, b) => parseInt(a.time[0]) - parseInt(b.time[0]));
+  historyData.sort((a, b) => parseInt(a.time[0]) - parseInt(b.time[0]));
 
   // 初始化SVG
   svgElement = document.getElementById('timeline-svg');

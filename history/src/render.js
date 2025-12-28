@@ -1,30 +1,32 @@
-
-// Render SVG timeline
-function renderTimeline() {
-  // Clear SVG
+// Clear SVG element
+function clearSVG() {
   svgElement.innerHTML = '';
+}
 
-  // Get year range
-  const years = mathHistoryData.map(event => parseInt(event.time[0]));
+// Calculate year range and dimensions
+function calculateDimensions() {
+  const years = historyData.map(event => parseInt(event.time[0]));
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
-
-  // Set SVG dimensions and margins - increase height to 5 times the original
   const width = 1200;
-  const height = Math.max(2000, (maxYear - minYear) * 15); // 根据年份范围调整高度，至少4000px，间距扩大1.5倍
+  const height = Math.max(2000, (maxYear - minYear) * 15);
   svgElement.setAttribute('height', height);
-
-  const margin = { top: 50, right: 50, bottom: 50, left: 150 }; // Increase left margin to accommodate timeline
+  const margin = { top: 50, right: 50, bottom: 50, left: 150 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
-  // Calculate year-to-position mapping - extend mapping to accommodate longer timeline
-  const yearScale = (year) => {
-    // Use linear mapping, extend timeline
+  return { minYear, maxYear, width, height, margin, innerWidth, innerHeight };
+}
+
+// Create year-to-position mapping function
+function createYearScale(minYear, maxYear, margin, innerHeight) {
+  return (year) => {
     return margin.top + ((year - minYear) / (maxYear - minYear)) * innerHeight;
   };
+}
 
-  // Draw vertical timeline
+// Draw vertical timeline
+function drawVerticalTimeline(height, margin) {
   const timelineLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
   timelineLine.setAttribute('x1', margin.left);
   timelineLine.setAttribute('y1', margin.top);
@@ -32,19 +34,19 @@ function renderTimeline() {
   timelineLine.setAttribute('y2', height - margin.bottom);
   timelineLine.setAttribute('class', 'timeline-line');
   svgElement.appendChild(timelineLine);
+}
 
-  // Add year ticks - mark every ten years
-  const yearInterval = 10; // Fixed interval of 10 years
-  // Calculate the first marked year to be a multiple of 10
+// Add year ticks to timeline
+function addYearTicks(minYear, maxYear, yearScale, margin, height) {
+  const yearInterval = 10;
   let firstYear = Math.ceil(minYear / 10) * 10;
-  // If the first year is out of range, adjust to the first multiple of 10 within the range
   if (firstYear > maxYear) {
     firstYear = Math.floor(minYear / 10) * 10;
   }
+  
   for (let year = firstYear; year <= maxYear; year += yearInterval) {
     const y = yearScale(year);
 
-    // 只在可见范围内绘制刻度
     if (y >= margin.top && y <= height - margin.bottom) {
       // 刻度线
       const tickLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
@@ -64,18 +66,19 @@ function renderTimeline() {
       yearLabel.setAttribute('font-size', '10');
       yearLabel.setAttribute('fill', '#555');
 
-      let yearDisplay = year < 0 ? `-${Math.abs(year)}` : `+${year}`;
+      let yearDisplay = year < 0 ? `-${Math.abs(year)}` : `${year}`;
       yearLabel.textContent = yearDisplay;
       svgElement.appendChild(yearLabel);
     }
   }
+}
 
-  // Process events to determine if they are single points or time ranges
-  timelineData = mathHistoryData.map((event, index) => {
-    const isTimeRange = event.time.length > 1; // If more than one time value, it's a time range
+// Process events to determine if they are single points or time ranges
+function processEvents(yearScale) {
+  return historyData.map((event, index) => {
+    const isTimeRange = event.time.length > 1;
     const startTime = parseInt(event.time[0]);
     const endTime = isTimeRange ? parseInt(event.time[1]) : startTime;
-
     const startY = yearScale(startTime);
     const endY = yearScale(endTime);
 
@@ -88,102 +91,111 @@ function renderTimeline() {
       endY
     };
   });
+}
 
-  // Separate time ranges and single points to handle horizontal positioning properly
+// Separate time ranges and single points
+function separateEvents(timelineData) {
   const timeRanges = timelineData.filter(event => event.isTimeRange);
   const singlePoints = timelineData.filter(event => !event.isTimeRange);
+  return { timeRanges, singlePoints };
+}
 
-  // Calculate horizontal positions for time ranges and single points to avoid conflicts
-  calculateHorizontalPositions(timeRanges, singlePoints, margin);
+// Create event card SVG group
+function createEventCard(event, x, y, isTimeRange = false) {
+  const cardGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  cardGroup.setAttribute('class', 'event-card');
+  cardGroup.addEventListener('click', () => showEventDetails(event));
 
-  // Draw time ranges first
+  // Card background
+  const cardBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  cardBg.setAttribute('x', x + 20);
+  cardBg.setAttribute('y', y - 30);
+  cardBg.setAttribute('width', 200);
+  cardBg.setAttribute('height', 60);
+  cardBg.setAttribute('rx', 8);
+  cardBg.setAttribute('ry', 8);
+  cardBg.setAttribute('fill', 'white');
+  cardBg.setAttribute('stroke', '#e0e0e0');
+  cardBg.setAttribute('stroke-width', 1);
+  cardGroup.appendChild(cardBg);
+
+  // Event title
+  const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  title.setAttribute('x', x + 120);
+  title.setAttribute('y', y - 15);
+  title.setAttribute('text-anchor', 'middle');
+  title.setAttribute('class', 'event-title');
+  title.textContent = truncateText(event.key || 'N/A', 25);
+  cardGroup.appendChild(title);
+
+  // Year label
+  const yearLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  yearLabel.setAttribute('x', x + 120);
+  yearLabel.setAttribute('y', y + 5);
+  yearLabel.setAttribute('text-anchor', 'middle');
+  yearLabel.setAttribute('class', 'event-year');
+
+  let yearDisplay;
+  if (isTimeRange) {
+    yearDisplay = `${event.startTime < 0 ? `-${Math.abs(event.startTime)}` : `+${event.startTime}`} - ${event.endTime < 0 ? `-${Math.abs(event.endTime)}` : `+${event.endTime}`}`;
+  } else {
+    yearDisplay = event.startTime < 0 ? `-${Math.abs(event.startTime)}` : `+${event.startTime}`;
+  }
+  yearLabel.textContent = yearDisplay;
+  cardGroup.appendChild(yearLabel);
+
+  // Person information
+  if (event.data.persons) {
+    const persons = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    persons.setAttribute('x', x + 120);
+    persons.setAttribute('y', y + 20);
+    persons.setAttribute('text-anchor', 'middle');
+    persons.setAttribute('class', 'event-persons');
+    persons.textContent = truncateText(Array.isArray(event.data.persons) ? event.data.persons.join(', ') : event.data.persons, 25);
+    cardGroup.appendChild(persons);
+  }
+
+  return cardGroup;
+}
+
+// Draw time ranges
+function drawTimeRanges(timeRanges, margin, height, yearScale) {
   timeRanges.forEach((event) => {
-    const x = event.x; // Use pre-calculated x position
+    const x = event.x;
 
-    // Only draw events within the visible range
     if (event.startY >= margin.top && event.startY <= height - margin.bottom) {
-      if (event.isTimeRange) {
-        // For time ranges, draw a narrow rectangle
-        const rectHeight = Math.abs(event.endY - event.startY);
-        const rectY = Math.min(event.startY, event.endY);
+      // For time ranges, draw a narrow rectangle
+      const rectHeight = Math.abs(event.endY - event.startY);
+      const rectY = Math.min(event.startY, event.endY);
 
-        // Generate random color for time range rectangle
-        const randomColor = getRandomColor();
+      // Generate random color for time range rectangle
+      const randomColor = getRandomColor();
 
-        // Time range rectangle
-        const rangeRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        rangeRect.setAttribute('x', x - 8); // Narrow rectangle
-        rangeRect.setAttribute('y', rectY);
-        rangeRect.setAttribute('width', 16);
-        rangeRect.setAttribute('height', rectHeight);
-        rangeRect.setAttribute('fill', randomColor);
-        rangeRect.setAttribute('stroke', '#3949ab');
-        rangeRect.setAttribute('stroke-width', 1);
+      // Time range rectangle
+      const rangeRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rangeRect.setAttribute('x', x - 8);
+      rangeRect.setAttribute('y', rectY);
+      rangeRect.setAttribute('width', 16);
+      rangeRect.setAttribute('height', rectHeight);
+      rangeRect.setAttribute('fill', randomColor);
+      rangeRect.setAttribute('stroke', '#3949ab');
+      rangeRect.setAttribute('stroke-width', 1);
+      rangeRect.setAttribute('class', 'timeline-range');
+      svgElement.appendChild(rangeRect);
 
-        rangeRect.setAttribute('class', 'timeline-range');
-        svgElement.appendChild(rangeRect);
-
-        // Event card - position it at the start of the time range
-        const cardGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        cardGroup.setAttribute('class', 'event-card');
-        cardGroup.addEventListener('click', () => showEventDetails(event));
-
-        // Card background
-        const cardBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        cardBg.setAttribute('x', x + 20);
-        cardBg.setAttribute('y', event.startY - 30);
-        cardBg.setAttribute('width', 200);
-        cardBg.setAttribute('height', 60);
-        cardBg.setAttribute('rx', 8);
-        cardBg.setAttribute('ry', 8);
-        cardBg.setAttribute('fill', 'white');
-        cardBg.setAttribute('stroke', '#e0e0e0');
-        cardBg.setAttribute('stroke-width', 1);
-        cardGroup.appendChild(cardBg);
-
-        // Event title
-        const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        title.setAttribute('x', x + 120);
-        title.setAttribute('y', event.startY - 15);
-        title.setAttribute('text-anchor', 'middle');
-        title.setAttribute('class', 'event-title');
-        title.textContent = truncateText(event.key || 'N/A', 25);
-        cardGroup.appendChild(title);
-
-        // Year range label
-        const yearLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        yearLabel.setAttribute('x', x + 120);
-        yearLabel.setAttribute('y', event.startY + 5);
-        yearLabel.setAttribute('text-anchor', 'middle');
-        yearLabel.setAttribute('class', 'event-year');
-
-        let yearDisplay = `${event.startTime < 0 ? `-${Math.abs(event.startTime)}` : `+${event.startTime}`} - ${event.endTime < 0 ? `-${Math.abs(event.endTime)}` : `+${event.endTime}`}`;
-        yearLabel.textContent = yearDisplay;
-        cardGroup.appendChild(yearLabel);
-
-        // Person information
-        if (event.data.persons) {
-          const persons = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-          persons.setAttribute('x', x + 120);
-          persons.setAttribute('y', event.startY + 20);
-          persons.setAttribute('text-anchor', 'middle');
-          persons.setAttribute('class', 'event-persons');
-          persons.textContent = truncateText(Array.isArray(event.data.persons) ? event.data.persons.join(', ') : event.data.persons, 25);
-          cardGroup.appendChild(persons);
-        }
-
-        svgElement.appendChild(cardGroup);
-      }
+      // Event card - position it at the start of the time range
+      const cardGroup = createEventCard(event, x, event.startY, true);
+      svgElement.appendChild(cardGroup);
     }
   });
+}
 
-  // Draw single points separately
+// Draw single points
+function drawSinglePoints(singlePoints, margin, height) {
   singlePoints.forEach((event) => {
-    const x = event.x; // Use pre-calculated x position
+    const x = event.x;
 
-    // Only draw events within the visible range
     if (event.startY >= margin.top && event.startY <= height - margin.bottom) {
-      // For single points, draw a circle
       // Draw event connector line
       const connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       connector.setAttribute('x1', margin.left);
@@ -204,55 +216,41 @@ function renderTimeline() {
       svgElement.appendChild(marker);
 
       // Event card
-      const cardGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-      cardGroup.setAttribute('class', 'event-card');
-      cardGroup.addEventListener('click', () => showEventDetails(event));
-
-      // Card background
-      const cardBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      cardBg.setAttribute('x', x + 20);
-      cardBg.setAttribute('y', event.startY - 30);
-      cardBg.setAttribute('width', 200);
-      cardBg.setAttribute('height', 60);
-      cardBg.setAttribute('rx', 8);
-      cardBg.setAttribute('ry', 8);
-      cardBg.setAttribute('fill', 'white');
-      cardBg.setAttribute('stroke', '#e0e0e0');
-      cardBg.setAttribute('stroke-width', 1);
-      cardGroup.appendChild(cardBg);
-
-      // Event title
-      const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      title.setAttribute('x', x + 120);
-      title.setAttribute('y', event.startY - 15);
-      title.setAttribute('text-anchor', 'middle');
-      title.setAttribute('class', 'event-title');
-      title.textContent = truncateText(event.key || 'N/A', 25);
-      cardGroup.appendChild(title);
-
-      // Year label - use plus/minus signs
-      const yearLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      yearLabel.setAttribute('x', x + 120);
-      yearLabel.setAttribute('y', event.startY + 5);
-      yearLabel.setAttribute('text-anchor', 'middle');
-      yearLabel.setAttribute('class', 'event-year');
-
-      let yearDisplay = event.startTime < 0 ? `-${Math.abs(event.startTime)}` : `+${event.startTime}`;
-      yearLabel.textContent = yearDisplay;
-      cardGroup.appendChild(yearLabel);
-
-      // Person information
-      if (event.data.persons) {
-        const persons = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        persons.setAttribute('x', x + 120);
-        persons.setAttribute('y', event.startY + 20);
-        persons.setAttribute('text-anchor', 'middle');
-        persons.setAttribute('class', 'event-persons');
-        persons.textContent = truncateText(Array.isArray(event.data.persons) ? event.data.persons.join(', ') : event.data.persons, 25);
-        cardGroup.appendChild(persons);
-      }
-
+      const cardGroup = createEventCard(event, x, event.startY, false);
       svgElement.appendChild(cardGroup);
     }
   });
+}
+
+// Render SVG timeline
+function renderTimeline() {
+  // Clear SVG
+  clearSVG();
+
+  // Calculate dimensions
+  const { minYear, maxYear, width, height, margin, innerWidth, innerHeight } = calculateDimensions();
+
+  // Calculate year-to-position mapping
+  const yearScale = createYearScale(minYear, maxYear, margin, innerHeight);
+
+  // Draw vertical timeline
+  drawVerticalTimeline(height, margin);
+
+  // Add year ticks
+  addYearTicks(minYear, maxYear, yearScale, margin, height);
+
+  // Process events
+  timelineData = processEvents(yearScale);
+
+  // Separate time ranges and single points
+  const { timeRanges, singlePoints } = separateEvents(timelineData);
+
+  // Calculate horizontal positions for time ranges and single points to avoid conflicts
+  calculateHorizontalPositions(timeRanges, singlePoints, margin);
+
+  // Draw time ranges first
+  drawTimeRanges(timeRanges, margin, height, yearScale);
+
+  // Draw single points separately
+  drawSinglePoints(singlePoints, margin, height);
 }
