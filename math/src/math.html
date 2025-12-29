@@ -10,10 +10,82 @@
             height: 100%;
             overflow: auto;
         }
+        
+        /* 悬浮设置按钮样式 */
+        #floating-settings {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .settings-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #a0aec0; /* 柔和的灰色-蓝色调 */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .settings-btn:hover {
+            background-color: #718096; /* 稍深一点的柔和色调 */
+        }
+        
+        .settings-panel {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            background-color: #f8fafc; /* 柔和背景色 */
+            border: 1px solid #e2e8f0; /* 柔和边框色 */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 8px; /* 更紧凑的内边距 */
+            min-width: 140px; /* 稍微紧凑一些 */
+            display: none;
+        }
+        
+        .settings-panel.show {
+            display: block;
+        }
+        
+        .settings-panel button {
+            display: block;
+            width: 100%;
+            padding: 6px; /* 更紧凑的按钮内边距 */
+            margin: 3px 0; /* 更紧凑的按钮间距 */
+            border: 1px solid #e2e8f0; /* 柔和边框 */
+            border-radius: 4px;
+            background-color: #edf2f7; /* 柔和背景色 */
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Georgia', 'Times New Roman', serif; /* 与节点文本一致的字体 */
+            color: #2d3748; /* 柔和文字色 */
+        }
+        
+        .settings-panel button:hover {
+            background-color: #e2e8f0; /* 柔和悬停色 */
+        }
     </style>
 </head>
 <body>
     <div id="main-content"></div>
+    
+    <!-- 悬浮设置按钮 -->
+    <div id="floating-settings">
+        <button class="settings-btn" id="settingsBtn">⚙</button>
+        <div class="settings-panel" id="settingsPanel">
+            <button id="downloadSvgBtn">Download SVG</button>
+        </div>
+    </div>
+    
     <script src="./render_svg.js"></script>
     <script src="./request.js"></script>
     <script src="./analyze_graph.js"></script>
@@ -23,6 +95,36 @@
                 render_file_graph("D:/Algo/Notes/math_physics/math/", "root");
             }, 100);
         }
+        
+        // 悬浮设置按钮功能
+        document.getElementById('settingsBtn').addEventListener('click', function() {
+            const panel = document.getElementById('settingsPanel');
+            panel.classList.toggle('show');
+        });
+        
+        // 点击下载SVG
+        document.getElementById('downloadSvgBtn').addEventListener('click', function() {
+            const svgElement = document.querySelector('#main-content svg');
+            if (svgElement) {
+                // 调用 render_svg.js 中的 ExportSvg 函数
+                ExportSvg(svgElement);
+            } else {
+                alert('No SVG found to download');
+            }
+            
+            // 隐藏设置面板
+            document.getElementById('settingsPanel').classList.remove('show');
+        });
+        
+        // 点击其他地方隐藏设置面板
+        document.addEventListener('click', function(event) {
+            const settingsBtn = document.getElementById('settingsBtn');
+            const settingsPanel = document.getElementById('settingsPanel');
+            
+            if (!settingsBtn.contains(event.target) && !settingsPanel.contains(event.target)) {
+                settingsPanel.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>

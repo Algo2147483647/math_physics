@@ -31,7 +31,7 @@ function RenderSvgFromDag(dag, root) {
     // ExportSvg(svg);
 }
 
-function ExportSvg(svg) {
+window.ExportSvg = function(svg) {
     const svgData = new XMLSerializer().serializeToString(svg);
     const blob = new Blob([svgData], { type: 'image/svg+xml' });
     const url = URL.createObjectURL(blob);
@@ -40,7 +40,7 @@ function ExportSvg(svg) {
     a.download = 'math.svg';
     a.click();
     URL.revokeObjectURL(url);
-}
+};
 
 function GetContainer() {
     container = document.getElementById('main-content');
