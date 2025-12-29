@@ -46,6 +46,120 @@ function showEventDetails(event) {
   alert(details);
 }
 
+// Create and show event card
+function showEventCard(event, x, y) {
+  const eventCard = document.getElementById('event-card');
+  
+  // Create content for the card
+  let content = `<h3>${event.key || 'N/A'}</h3>`;
+  
+  // Add year (time)
+  content += `<div class="event-year">${event.time.join(' ~ ')}</div>`;
+  
+  // Add space (location)
+  if (event.space && event.space.length > 0) {
+    content += `<div class="event-space">${event.space.join(', ')}</div>`;
+  }
+  
+  // Add data fields
+  if (event.data) {
+    content += '<div class="event-data">';
+    for (const [key, value] of Object.entries(event.data)) {
+      if (Array.isArray(value)) {
+        content += `<div><strong>${key}:</strong> ${value.join(', ')}</div>`;
+      } else {
+        content += `<div><strong>${key}:</strong> ${value}</div>`;
+      }
+    }
+    content += '</div>';
+  }
+  
+  eventCard.innerHTML = content;
+  eventCard.style.display = 'block';
+  
+  // Store mouse coordinates for scroll updates
+  eventCard.setAttribute('data-mouse-x', x);
+  eventCard.setAttribute('data-mouse-y', y);
+  
+  // Position the card near the mouse, making sure it stays within the viewport
+  const cardWidth = eventCard.offsetWidth;
+  const cardHeight = eventCard.offsetHeight;
+  
+  // Adjust position to prevent card from going off-screen
+  let adjustedX = x + 10;
+  let adjustedY = y + 10;
+  
+  // Check if card would go off right edge
+  if (adjustedX + cardWidth > window.innerWidth) {
+    adjustedX = x - cardWidth - 10;
+  }
+  
+  // Check if card would go off bottom edge
+  if (adjustedY + cardHeight > window.innerHeight) {
+    adjustedY = y - cardHeight - 10;
+  }
+  
+  // Ensure card doesn't go off left or top edge
+  if (adjustedX < 0) {
+    adjustedX = 0;
+  }
+  
+  if (adjustedY < 0) {
+    adjustedY = 0;
+  }
+  
+  eventCard.style.left = adjustedX + 'px';
+  eventCard.style.top = adjustedY + 'px';
+}
+
+// Hide event card
+function hideEventCard() {
+  const eventCard = document.getElementById('event-card');
+  eventCard.style.display = 'none';
+  eventCard.removeAttribute('data-mouse-x');
+  eventCard.removeAttribute('data-mouse-y');
+}
+
+// Update event card position when scrolling
+function updateEventCardPosition(x, y) {
+  const eventCard = document.getElementById('event-card');
+  if (eventCard.style.display !== 'none') {
+    // Store mouse coordinates for scroll updates
+    eventCard.setAttribute('data-mouse-x', x);
+    eventCard.setAttribute('data-mouse-y', y);
+    
+    // Position the card near the mouse, making sure it stays within the viewport
+    const cardWidth = eventCard.offsetWidth;
+    const cardHeight = eventCard.offsetHeight;
+    
+    // Adjust position to prevent card from going off-screen
+    let adjustedX = x + 10;
+    let adjustedY = y + 10;
+    
+    // Check if card would go off right edge
+    if (adjustedX + cardWidth > window.innerWidth) {
+      adjustedX = x - cardWidth - 10;
+    }
+    
+    // Check if card would go off bottom edge
+    if (adjustedY + cardHeight > window.innerHeight) {
+      adjustedY = y - cardHeight - 10;
+    }
+    
+    // Ensure card doesn't go off left or top edge
+    if (adjustedX < 0) {
+      adjustedX = 0;
+    }
+    
+    if (adjustedY < 0) {
+      adjustedY = 0;
+    }
+    
+    eventCard.style.left = adjustedX + 'px';
+    eventCard.style.top = adjustedY + 'px';
+  }
+}
+
 // Set up event listeners
 function setupEventListeners() {
   // Download SVG button
@@ -62,6 +176,24 @@ function setupEventListeners() {
     scale = Math.max(scale / 1.2, 0.5);
     svgElement.style.transform = `scale(${scale})`;
   });
+  
+  // Add scroll event listener to update card position
+  window.addEventListener('scroll', updateCardPositionOnScroll, { passive: true });
+  window.addEventListener('resize', updateCardPositionOnScroll, { passive: true });
+}
+
+// Function to update card position when scrolling occurs
+function updateCardPositionOnScroll() {
+  const eventCard = document.getElementById('event-card');
+  if (eventCard.style.display !== 'none') {
+    // Re-position the card using stored mouse coordinates
+    const storedMouseX = eventCard.getAttribute('data-mouse-x');
+    const storedMouseY = eventCard.getAttribute('data-mouse-y');
+    
+    if (storedMouseX && storedMouseY) {
+      updateEventCardPosition(parseInt(storedMouseX), parseInt(storedMouseY));
+    }
+  }
 }
 
 // Initialize page

@@ -23,7 +23,7 @@ function renderTimeline() {
   alignParentChildRelationships(timelineData);
 
   // Calculate horizontal positions for time ranges and single points to avoid conflicts
-  calculateHorizontalPositions(timelineData, margin);
+  calculateHorizontalPositions(timelineData);
 
   // Separate time ranges and single points
   const { timeRanges, singlePoints } = separateEvents(timelineData);
