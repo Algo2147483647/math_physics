@@ -1980,5 +1980,112 @@
       "relativity"
     ],
     "kids": []
+  },
+  {
+    "key": "zeeman_effect",
+    "time": [
+      "1896"
+    ],
+    "space": [
+      "Netherlands"
+    ],
+    "data": {
+      "persons": [
+        "Pieter Zeeman"
+      ],
+      "event": "Discovery of Zeeman Effect",
+      "concepts": [
+        "Atomic spectral lines splitting in magnetic field",
+        "Normal Zeeman effect",
+        "Anomalous Zeeman effect",
+        "First experimental hint for spin concept"
+      ],
+      "significance": "Discovered that atomic spectral lines split into multiple components when placed in a strong magnetic field. Lorentz's classical electron theory could only explain the normal Zeeman effect (splitting into three lines), but failed completely for the more complex splitting (anomalous Zeeman effect) observed in many atoms. This became the first strong experimental indication for the introduction of the spin concept."
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "stern_gerlach_experiment",
+    "time": [
+      "1922"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Otto Stern",
+        "Walther Gerlach"
+      ],
+      "event": "Stern-Gerlach Experiment",
+      "concepts": [
+        "Space quantization",
+        "Intrinsic magnetic moment",
+        "Discrete orientations",
+        "Direct evidence for spin"
+      ],
+      "significance": "Demonstrated that silver atoms have an inherent magnetic moment that can only take two discrete orientations in an external magnetic field, providing the first direct experimental evidence for electron spin. Silver atom beams passing through an inhomogeneous magnetic field showed two clear, discrete deposition lines on the screen instead of the continuous distribution predicted by classical theory."
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "electron_spin_hypothesis",
+    "time": [
+      "1925"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "George Uhlenbeck",
+        "Samuel Goudsmit"
+      ],
+      "event": "Electron Spin Hypothesis",
+      "concepts": [
+        "Intrinsic angular momentum",
+        "Spin angular momentum",
+        "Intrinsic magnetic moment",
+        "Quantum property"
+      ],
+      "significance": "Proposed that electrons possess an intrinsic angular momentum (spin) with magnitude ħ/2 to explain the anomalous Zeeman effect and the Stern-Gerlach experiment. The spin has a projection of ±ħ/2 in space and an associated intrinsic magnetic moment. This was the formal birth of the spin concept, initially viewed as an electron \"self-rotation\" but quickly recognized as a purely quantum property."
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "giant_magnetoresistance",
+    "time": [
+      "1988"
+    ],
+    "space": [
+      "France",
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Albert Fert",
+        "Peter Grünberg"
+      ],
+      "event": "Discovery of Giant Magnetoresistance",
+      "concepts": [
+        "Spin-dependent scattering",
+        "Magnetoresistance",
+        "Spintronics"
+      ],
+      "significance": "Discovered that material resistance can change dramatically with magnetic field, with the physical basis being spin-dependent scattering. This directly gave rise to spintronics and drove the revolution in high-density hard disk read heads, earning the 2007 Nobel Prize in Physics."
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
   }
 ]
