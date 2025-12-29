@@ -5,8 +5,17 @@ function calculateHorizontalPositions(events, margin) {
   events.forEach(event => allEventsMap.set(event.key, event));
 
   const roots = getRoots(events);
+
+  virtualRoot = {
+    key: 'virtualRoot',
+    parents: [],
+    kids: roots.map(root => root.key),
+    startTime: -Infinity,
+    endTime: Infinity,
+  };
+
   const positionedEvents = [];
-  processEventDFS(root, allEventsMap, positionedEvents);
+  processEventDFS(virtualRoot, allEventsMap, positionedEvents);
 }
 
 // Process an event and its children using DFS
@@ -19,6 +28,8 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
     positionedEvents.push(event);
     return;
   }
+
+  console.log(event.key,  kids)
 
   kids.sort((a, b) => allEventsMap.get(a).startTime - allEventsMap.get(b).startTime);
   
@@ -65,7 +76,7 @@ function findNonConflictingXPositionForEvent(event, positionedEvents) {
     hasConflict = false;
 
     for (const item of positionedEvents) {
-      if (isConflict(currentEvent, item, x)) {
+      if (isConflict(event, item, x)) {
         x = item.x + item.width; // Move x position past the conflicting event
         hasConflict = true;
         break;
@@ -73,7 +84,7 @@ function findNonConflictingXPositionForEvent(event, positionedEvents) {
     }
   } while (hasConflict);
 
-  position.x = x;
+  event.x = x;
 }
 
 // Helper function to determine if two events conflict at a given x position
