@@ -1658,5 +1658,33 @@
       "quantum_mechanics"
     ],
     "kids": []
+  },
+  {
+    "key": "noether_theorem",
+    "time": [
+      "1918"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Emmy Noether"
+      ],
+      "event": "Noether's Theorem",
+      "concepts": [
+        "Continuous symmetry",
+        "Conservation laws",
+        "Time translation symmetry → Energy conservation",
+        "Space translation symmetry → Momentum conservation",
+        "Space rotation symmetry → Angular momentum conservation",
+        "Variational principles"
+      ],
+      "significance": "Proved the one-to-one correspondence between continuous symmetries and conservation laws, at the heart of analytical mechanics (variational principles), unifying physics' two pillars - symmetry and conservation laws - with impact throughout modern physics"
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
   }
 ]
