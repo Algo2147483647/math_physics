@@ -73,6 +73,30 @@
         .settings-panel button:hover {
             background-color: #e2e8f0; /* 柔和悬停色 */
         }
+        
+        .setting-item {
+            margin-bottom: 10px;
+        }
+        
+        .setting-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #2d3748;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        .setting-item input[type="text"] {
+            width: 100%;
+            padding: 6px;
+            margin: 5px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #2d3748;
+            background-color: #f8fafc;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +106,11 @@
     <div id="floating-settings">
         <button class="settings-btn" id="settingsBtn">⚙</button>
         <div class="settings-panel" id="settingsPanel">
+            <div class="setting-item">
+                <label for="path-input">Path:</label>
+                <input type="text" id="path-input" value="D:/Algo/Notes/math_physics/math/" style="width: 100%; padding: 5px; margin: 5px 0; border: 1px solid #e2e8f0; border-radius: 4px;">
+            </div>
+            <button id="refreshBtn">Refresh</button>
             <button id="downloadSvgBtn">Download SVG</button>
         </div>
     </div>
@@ -114,6 +143,25 @@
             
             // 隐藏设置面板
             document.getElementById('settingsPanel').classList.remove('show');
+        });
+        
+        // 刷新功能
+        document.getElementById('refreshBtn').addEventListener('click', function() {
+            const newPath = document.getElementById('path-input').value;
+            if (newPath) {
+                render_file_graph(newPath, "root");
+                // 隐藏设置面板
+                document.getElementById('settingsPanel').classList.remove('show');
+            } else {
+                alert('Please enter a valid path');
+            }
+        });
+        
+        // 路径输入框回车事件
+        document.getElementById('path-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('refreshBtn').click();
+            }
         });
         
         // 点击其他地方隐藏设置面板
