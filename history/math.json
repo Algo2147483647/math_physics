@@ -1,12 +1,11 @@
 [
   {
-    "key": "early_math",
-    "time": ["-495","1800"],
+    "key": "group_theory",
+    "time": ["1824","1980"],
     "space": [],
     "data": {
     },
-    "parents": [""],
-    "kids": ["pythagorean_theorem"]
+    "parents": []
   },
   {
     "key": "early_math2",
@@ -14,8 +13,7 @@
     "space": [],
     "data": {
     },
-    "parents": [""],
-    "kids": ["pythagorean_theorem"]
+    "parents": [""]
   },
   {
     "key": "pythagorean_theorem",
