@@ -1,37 +1,51 @@
 [
   {
     "key": "pythagorean_theorem",
-    "time": ["-495"],
+    "time": [
+      "-495"
+    ],
     "space": [],
     "data": {
-      "persons": ["Πυθαγόρας"],
+      "persons": [
+        "Πυθαγόρας"
+      ],
       "event": "Pythagorean Theorem"
     },
     "parents": []
   },
   {
-    "key": "irrational_numbers",
-    "time": ["-450"],
-    "space": [],
-    "data": {
-      "persons": ["Hippasus of Metapontum"],
-      "event": "Irrational Numbers"
-    },
-    "parents": []
-  },
-  {
     "key": "cone_volume_formula",
-    "time": ["-460"],
+    "time": [
+      "-460"
+    ],
     "space": [],
     "data": {
-      "persons": ["Δημόκριτος"],
+      "persons": [
+        "Δημόκριτος"
+      ],
       "event": "Cone Volume Formula"
     },
     "parents": []
   },
   {
+    "key": "irrational_numbers",
+    "time": [
+      "-450"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Hippasus of Metapontum"
+      ],
+      "event": "Irrational Numbers"
+    },
+    "parents": []
+  },
+  {
     "key": "doubling_the_cube",
-    "time": ["-429"],
+    "time": [
+      "-429"
+    ],
     "space": [],
     "data": {
       "event": "Doubling the Cube Problem"
@@ -40,20 +54,28 @@
   },
   {
     "key": "platonic_solids_proof",
-    "time": ["-425"],
+    "time": [
+      "-425"
+    ],
     "space": [],
     "data": {
-      "persons": ["Plato"],
+      "persons": [
+        "Plato"
+      ],
       "event": "Proof that regular polyhedra can only have 4,6,8,20,12 faces"
     },
     "parents": []
   },
   {
     "key": "euclidean_geometry",
-    "time": ["-265"],
+    "time": [
+      "-265"
+    ],
     "space": [],
     "data": {
-      "persons": ["Εὐκλείδης"],
+      "persons": [
+        "Εὐκλείδης"
+      ],
       "paper": "Elements",
       "event": "Euclidean Geometry"
     },
@@ -61,17 +83,23 @@
   },
   {
     "key": "conic_sections",
-    "time": ["-200"],
+    "time": [
+      "-200"
+    ],
     "space": [],
     "data": {
-      "persons": ["Apollonius of Perga"],
+      "persons": [
+        "Apollonius of Perga"
+      ],
       "event": "Conic Sections"
     },
     "parents": []
   },
   {
     "key": "heron_qin_formula",
-    "time": ["0060"],
+    "time": [
+      60
+    ],
     "space": [],
     "data": {
       "paper": "Metrica",
@@ -81,20 +109,28 @@
   },
   {
     "key": "pi_calculation",
-    "time": ["0429"],
+    "time": [
+      429
+    ],
     "space": [],
     "data": {
-      "persons": ["Zu Chongzhi"],
+      "persons": [
+        "Zu Chongzhi"
+      ],
       "event": "Pi Calculation 3.1415926"
     },
     "parents": []
   },
   {
     "key": "fibonacci_sequence",
-    "time": ["1202"],
+    "time": [
+      "1202"
+    ],
     "space": [],
     "data": {
-      "persons": ["Fibonacci"],
+      "persons": [
+        "Fibonacci"
+      ],
       "paper": "Liber Abaci",
       "event": "Fibonacci Sequence"
     },
@@ -102,20 +138,28 @@
   },
   {
     "key": "cubic_equation",
-    "time": ["1545"],
+    "time": [
+      "1545"
+    ],
     "space": [],
     "data": {
-      "persons": ["Cardano"],
+      "persons": [
+        "Cardano"
+      ],
       "event": "Cubic Equation Formula"
     },
     "parents": []
   },
   {
     "key": "logarithms",
-    "time": ["1614"],
+    "time": [
+      "1614"
+    ],
     "space": [],
     "data": {
-      "persons": ["Napier"],
+      "persons": [
+        "Napier"
+      ],
       "paper": "A Description of the Wonderful Rule of Logarithms",
       "event": "Logarithms"
     },
@@ -123,7 +167,9 @@
   },
   {
     "key": "vieta_formula",
-    "time": ["1615"],
+    "time": [
+      "1615"
+    ],
     "space": [],
     "data": {
       "event": "Vieta's Formula"
@@ -132,17 +178,23 @@
   },
   {
     "key": "euler_polyhedron_formula",
-    "time": ["1619"],
+    "time": [
+      "1619"
+    ],
     "space": [],
     "data": {
-      "persons": ["Euler"],
+      "persons": [
+        "Euler"
+      ],
       "event": "V+F-E=2"
     },
     "parents": []
   },
   {
     "key": "fermats_last_theorem",
-    "time": ["1637"],
+    "time": [
+      "1637"
+    ],
     "space": [],
     "data": {
       "event": "Fermat's Last Theorem"
@@ -151,37 +203,52 @@
   },
   {
     "key": "analytic_geometry",
-    "time": ["1637"],
+    "time": [
+      "1637"
+    ],
     "space": [],
     "data": {
-      "persons": ["René Descartes"],
+      "persons": [
+        "René Descartes"
+      ],
       "event": "Analytic Geometry"
     },
     "parents": []
   },
   {
     "key": "imaginary_number",
-    "time": ["1650"],
+    "time": [
+      "1650"
+    ],
     "space": [],
     "data": {
-      "persons": ["René Descartes"],
+      "persons": [
+        "René Descartes"
+      ],
       "event": "Imaginary Number i"
     },
     "parents": []
   },
   {
     "key": "expectation",
-    "time": ["1654"],
+    "time": [
+      "1654"
+    ],
     "space": [],
     "data": {
-      "persons": ["Fermat", "Pascal"],
+      "persons": [
+        "Fermat",
+        "Pascal"
+      ],
       "event": "Mathematical Expectation"
     },
     "parents": []
   },
   {
     "key": "pascal_yang_hui_triangle",
-    "time": ["1654"],
+    "time": [
+      "1654"
+    ],
     "space": [],
     "data": {
       "event": "Pascal's Triangle"
@@ -189,121 +256,324 @@
     "parents": []
   },
   {
-    "key": "infinity_symbol",
-    "time": ["1655"],
+    "key": "probability_theory_birth",
+    "time": [
+      "1654"
+    ],
     "space": [],
     "data": {
-      "persons": ["John Wallis"],
+      "persons": [
+        "Blaise Pascal",
+        "Pierre de Fermat"
+      ],
+      "event": "Birth of Probability Theory: Expectation and Combinatorics",
+      "significance": "Correspondence around the 'problem of points' systematically studied expected values in random gambling, using combinatorial mathematics to calculate probabilities. Marked the beginning of probability theory as a mathematical branch."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "probability_theory",
+    "time": [
+      "1654",
+      "2025"
+    ],
+    "space": [],
+    "data": {
+      "event": "Probability Theory"
+    },
+    "parents": []
+  },
+  {
+    "key": "infinity_symbol",
+    "time": [
+      "1655"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "John Wallis"
+      ],
       "event": "∞"
     },
     "parents": []
   },
   {
-    "key": "binary_system",
-    "time": ["1679"],
+    "key": "newton_fluxions",
+    "time": [
+      "1665",
+      "1666"
+    ],
     "space": [],
     "data": {
-      "persons": ["Leibniz"],
+      "persons": [
+        "Isaac Newton"
+      ],
+      "event": "Method of Fluxions (Differentiation and Integration)",
+      "significance": "Proposed \"fluxions and fluents\", studied rates of change and area problems, establishing the core ideas of calculus."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "leibniz_notation",
+    "time": [
+      "1675",
+      "1684"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Gottfried Leibniz"
+      ],
+      "event": "Differential and Integral Notation",
+      "significance": "Introduced the d/dx and ∫ notations, established the operational system, the notation system is still in use today."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "binary_system",
+    "time": [
+      "1679"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Leibniz"
+      ],
       "event": "Binary System"
     },
     "parents": []
   },
   {
     "key": "euler_number",
-    "time": ["1683"],
+    "time": [
+      "1683"
+    ],
     "space": [],
     "data": {
-      "persons": ["Jacob Bernoulli"],
+      "persons": [
+        "Jacob Bernoulli"
+      ],
       "event": "Euler's Number e"
     },
     "parents": []
   },
   {
     "key": "calculus",
-    "time": ["1684", "1854"],
+    "time": [
+      "1684",
+      "1854"
+    ],
     "space": [],
     "data": {
-      "persons": ["Newton", "Leibniz"],
+      "persons": [
+        "Newton",
+        "Leibniz"
+      ],
       "event": "Calculus"
     },
     "parents": []
   },
   {
     "key": "lhopitals_rule",
-    "time": ["1696"],
+    "time": [
+      "1696"
+    ],
     "space": [],
     "data": {
-      "persons": ["Johann Bernoulli"],
+      "persons": [
+        "Johann Bernoulli"
+      ],
       "event": "L'Hôpital's Rule"
     },
     "parents": []
   },
   {
-    "key": "law_of_large_numbers",
-    "time": ["1713"],
+    "key": "brachistochrone_problem",
+    "time": [
+      "1696"
+    ],
     "space": [],
     "data": {
-      "persons": ["Jacob Bernoulli"],
+      "persons": [
+        "Johann Bernoulli"
+      ],
+      "event": "Brachistochrone Problem",
+      "significance": "Demonstrated that calculus could solve entirely new types of problems, leading to the calculus of variations."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "euler_higher_derivatives",
+    "time": [
+      "1700",
+      "1750"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Euler"
+      ],
+      "event": "Higher Derivatives and Series",
+      "significance": "Systematically studied Taylor series, exponential functions, and trigonometric functions."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "law_of_large_numbers",
+    "time": [
+      "1713"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Jacob Bernoulli"
+      ],
       "event": "Law of Large Numbers"
     },
     "parents": []
   },
   {
-    "key": "taylor_theorem",
-    "time": ["1715"],
+    "key": "ars_conjectandi_law_of_large_numbers",
+    "time": [
+      "1713"
+    ],
     "space": [],
     "data": {
-      "persons": ["Taylor"],
+      "persons": [
+        "Jacob Bernoulli"
+      ],
+      "event": "Ars Conjectandi Publication and Law of Large Numbers Prototype",
+      "significance": "In his posthumously published work, he proposed the first law of large numbers (Bernoulli's law): frequency converges in probability to the actual probability. This was a key step in probability theory's transition from static combinatorics to dynamic limit theory."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "taylor_theorem",
+    "time": [
+      "1715"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Taylor"
+      ],
       "event": "Taylor's theorem"
     },
     "parents": []
   },
   {
     "key": "normal_distribution",
-    "time": ["1718"],
+    "time": [
+      "1718"
+    ],
     "space": [],
     "data": {
-      "persons": ["Abraham de Moivre"],
+      "persons": [
+        "Abraham de Moivre"
+      ],
       "event": "Normal distribution"
     },
     "parents": []
   },
   {
-    "key": "graph_theory_bridges",
-    "time": ["1736"],
+    "key": "euler_function_concept",
+    "time": [
+      "1730",
+      "1740"
+    ],
     "space": [],
     "data": {
-      "persons": ["Leonhard Euler"],
+      "persons": [
+        "Euler"
+      ],
+      "event": "Function Concept and Analysis",
+      "significance": "Clarified the \"function\" concept, systematically organized differentiation and integration calculation rules, making calculus an independent branch of analysis."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "normal_distribution_derivation",
+    "time": [
+      "1733"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Abraham de Moivre"
+      ],
+      "event": "First Derivation of Normal Distribution",
+      "significance": "As an approximation to the binomial distribution, he first derived the normal (Gaussian) distribution curve, laying the foundation for the later discovery of the central limit theorem."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "graph_theory_bridges",
+    "time": [
+      "1736"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Leonhard Euler"
+      ],
       "event": "Graph Theory, Seven Bridges of Königsberg"
     },
     "parents": []
   },
   {
     "key": "goldbach_conjecture",
-    "time": ["1742"],
+    "time": [
+      "1742"
+    ],
     "space": [],
     "data": {
-      "persons": ["Goldbach"],
+      "persons": [
+        "Goldbach"
+      ],
       "event": "Goldbach's conjecture"
     },
     "parents": []
   },
   {
     "key": "wave_equation",
-    "time": ["1743"],
+    "time": [
+      "1743"
+    ],
     "space": [],
     "data": {
-      "persons": ["d'Alembert"],
+      "persons": [
+        "d'Alembert"
+      ],
       "event": "Wave Equation"
     },
     "parents": []
   },
   {
     "key": "euler_formula",
-    "time": ["1748"],
+    "time": [
+      "1748"
+    ],
     "space": [],
     "data": {
-      "persons": ["Leonhard Euler"],
+      "persons": [
+        "Leonhard Euler"
+      ],
       "paper": "Introductio in analysin infinitorum",
       "event": "Euler's Formula"
     },
@@ -311,172 +581,218 @@
   },
   {
     "key": "calculus_of_variations",
-    "time": ["1755"],
+    "time": [
+      "1755"
+    ],
     "space": [],
     "data": {
-      "persons": ["Lagrange"],
+      "persons": [
+        "Lagrange"
+      ],
       "event": "Calculus of Variations"
     },
     "parents": []
   },
   {
     "key": "bayes_theorem",
-    "time": ["1763"],
+    "time": [
+      "1763"
+    ],
     "space": [],
     "data": {
-      "persons": ["Bayes"],
+      "persons": [
+        "Bayes"
+      ],
       "event": "Bayes' theorem"
     },
     "parents": []
   },
   {
     "key": "least_squares",
-    "time": ["1795"],
+    "time": [
+      "1795"
+    ],
     "space": [],
     "data": {
-      "persons": ["Gauß"],
+      "persons": [
+        "Gauß"
+      ],
       "event": "Least Squares Method"
     },
     "parents": []
   },
   {
     "key": "heptadecagon",
-    "time": ["1795"],
+    "time": [
+      "1795"
+    ],
     "space": [],
     "data": {
-      "persons": ["Gauß"],
+      "persons": [
+        "Gauß"
+      ],
       "event": "Heptadecagon Construction with Ruler and Compass"
     },
     "parents": []
   },
   {
     "key": "lagrange_interpolation",
-    "time": ["1795"],
+    "time": [
+      "1795"
+    ],
     "space": [],
     "data": {
-      "persons": ["Lagrange"],
+      "persons": [
+        "Lagrange"
+      ],
       "event": "Lagrange Interpolation"
     },
     "parents": []
   },
   {
     "key": "prime_number_theorem",
-    "time": ["1798"],
+    "time": [
+      "1798"
+    ],
     "space": [],
     "data": {
-      "persons": ["Legendre"],
+      "persons": [
+        "Legendre"
+      ],
       "event": "Prime Number Theorem"
     },
     "parents": []
   },
   {
     "key": "fundamental_theorem_of_algebra",
-    "time": ["1799"],
+    "time": [
+      "1799"
+    ],
     "space": [],
     "data": {
-      "persons": ["Gauß"],
+      "persons": [
+        "Gauß"
+      ],
       "event": "Fundamental Theorem of Algebra"
     },
     "parents": []
   },
   {
     "key": "central_limit_theorem",
-    "time": ["1810"],
+    "time": [
+      "1810"
+    ],
     "space": [],
     "data": {
-      "persons": ["Laplace"],
+      "persons": [
+        "Laplace"
+      ],
       "event": "Central Limit Theorem"
     },
     "parents": []
   },
   {
-    "key": "limit_definition",
-    "time": ["1820"],
+    "key": "analytical_theory_of_probabilities",
+    "time": [
+      "1812"
+    ],
     "space": [],
     "data": {
-      "persons": ["Cauchy"],
+      "persons": [
+        "Pierre-Simon Laplace"
+      ],
+      "event": "Analytical Theory of Probabilities and Systematization of Classical Probability",
+      "significance": "A magnum opus that systematically summarized classical probability theory and introduced powerful tools such as the Laplace transform and generating functions. He clearly articulated the necessity of probability in a deterministic universe and developed an early form of the central limit theorem."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "limit_definition",
+    "time": [
+      "1820"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cauchy"
+      ],
       "event": "Limit Definition"
     },
     "parents": []
   },
   {
-    "key": "fourier_series",
-    "time": ["1822"],
+    "key": "cauchy_limit_definition",
+    "time": [
+      "1821"
+    ],
     "space": [],
     "data": {
-      "persons": ["Fourier"],
+      "persons": [
+        "Cauchy"
+      ],
+      "event": "Analysis Rigorization: Limit Definition",
+      "significance": "In \"Cours d'analyse\" defined derivatives and integrals based on limits, reducing dependence on intuition."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "fourier_series",
+    "time": [
+      "1822"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Fourier"
+      ],
       "event": "Fourier series"
     },
     "parents": []
   },
   {
     "key": "abel_galois_theory",
-    "time": ["1824","1846"],
+    "time": [
+      "1824",
+      "1846"
+    ],
     "space": [],
     "data": {
-      "persons": ["Abel", "Galois"],
+      "persons": [
+        "Abel",
+        "Galois"
+      ],
       "event": "Group Theory - Equation Solvability Problem",
       "significance": "Abel proved that general equations of degree five and above have no radical solutions. Galois (the decisive contribution) introduced the concept of 'group' (though not explicitly defined), relating equations to the permutation group of roots (Galois group), and proved that an equation is solvable by radicals if and only if its Galois group is a solvable group. This marks the birth of group theory as an independent branch of mathematics, and its ideas were far ahead of its time."
     },
-    "parents": ["group_theory"]
-  },
-  {
-    "key": "abstract_group_axioms",
-    "time": ["1854"],
-    "space": [],
-    "data": {
-      "persons": ["Cayley"],
-      "event": "Axiomatic Definition of Abstract Group",
-      "significance": "It is the first to give a modern definition of an abstract finite group: a set and operations that satisfy closure, associativity, identity, and inverse. This liberates group theory from concrete transformations (permutations, geometric symmetries) and allows it to focus on purely mathematical objects."
-    },
-    "parents": ["group_theory"]
-  },
-  {
-    "key": "erlangen_program",
-    "time": ["1872"],
-    "space": [],
-    "data": {
-      "persons": ["Klein"],
-      "event": "Erlangen Program - Unifying Geometry via Group Theory",
-      "significance": "Geometry studies properties that remain invariant under a given transformation group. For example, Euclidean geometry studies invariants under a rigid body motion group; projective geometry studies invariants under a projective transformation group. This elevates groups (especially continuous transformation groups) to the core principle of unified geometry."
-    },
-    "parents": ["group_theory"]
-  },
-  {
-    "key": "lie_groups_lie_algebras",
-    "time": ["1880","1894"],
-    "space": [],
-    "data": {
-      "persons": ["Lie"],
-      "event": "Continuous Groups (Lie Groups) and Lie Algebras",
-      "significance": "To systematically study the integrability and symmetry of differential equations, the theory of continuous transformation groups (later called Lie groups) and Lie algebras composed of infinitesimal generators were established. This provides a powerful tool for analyzing continuous systems (such as mechanics and field theory) using symmetry.。"
-    },
-    "parents": ["group_theory"]
-  },
-  {
-    "key": "finite_simple_groups_classification",
-    "time": ["1896","1980"],
-    "space": [],
-    "data": {
-      "persons": ["Burnside", "et al."],
-      "event": "Finite Simple Groups Classification",
-      "significance": "The systematic study of finite simple groups (the 'atoms' of a group) began. Bernside proposed the famous Bernside conjecture, which propelled the development of representation theory. This launched a century-long project to classify finite simple groups. In 1980, the classification theorem for finite simple groups was announced: all finite simple groups can be divided into 18 infinite families (such as cyclic groups and alternating groups) and 26 scattered simple groups (such as the giant 'magic group'). This was the most massive collaborative proof in the history of mathematics, hailed as the 'Mozara of mathematics'."
-    },
-    "parents": ["group_theory"]
+    "parents": [
+      "group_theory"
+    ]
   },
   {
     "key": "group_theory",
-    "time": ["1824","1980"],
+    "time": [
+      "1824",
+      "1980"
+    ],
     "space": [],
     "data": {
-      "persons": ["Galois", "Abel"],
+      "persons": [
+        "Galois",
+        "Abel"
+      ],
       "event": "Group Theory"
     },
     "parents": []
   },
   {
     "key": "green_theorem",
-    "time": ["1828"],
+    "time": [
+      "1828"
+    ],
     "space": [],
     "data": {
       "event": "Green's Theorem"
@@ -485,67 +801,210 @@
   },
   {
     "key": "hyperbolic_geometry",
-    "time": ["1829"],
+    "time": [
+      "1829"
+    ],
     "space": [],
     "data": {
-      "persons": ["Lobachevsky"],
+      "persons": [
+        "Lobachevsky"
+      ],
       "event": "Hyperbolic Geometry"
     },
     "parents": []
   },
   {
-    "key": "quaternions",
-    "time": ["1843"],
+    "key": "non_euclidean_geometry_topology",
+    "time": [
+      "1830"
+    ],
     "space": [],
     "data": {
-      "persons": ["Hamilton"],
+      "persons": [
+        "Nikolai Ivanovich Lobachevsky"
+      ],
+      "event": "Independent Discovery and First Public Exposition of Non-Euclidean Geometry",
+      "significance": "He first abandoned attempts to prove the parallel postulate, instead replacing it with an opposite postulate: through a point outside a line, at least two lines parallel to the given line exist. Based on this, he established a logically consistent, completely contradiction-free new geometry, and published it for the first time in 1829. This was the first time humans publicly, systematically proposed and defended a non-Euclidean geometry, so this geometry is called Lobachevsky geometry."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "topology",
+    "time": [
+      "1830",
+      "2003"
+    ],
+    "space": [],
+    "data": {
+      "event": "Topology"
+    },
+    "parents": []
+  },
+  {
+    "key": "quaternions",
+    "time": [
+      "1843"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Hamilton"
+      ],
       "event": "Quaternion"
     },
     "parents": []
   },
   {
     "key": "transcendental_numbers",
-    "time": ["1844"],
+    "time": [
+      "1844"
+    ],
     "space": [],
     "data": {
-      "persons": ["Liouville"],
+      "persons": [
+        "Liouville"
+      ],
       "event": "Transcendental Numbers"
     },
     "parents": []
   },
   {
     "key": "boolean_algebra",
-    "time": ["1847"],
+    "time": [
+      "1847"
+    ],
     "space": [],
     "data": {
-      "persons": ["George Boole"],
+      "persons": [
+        "George Boole"
+      ],
       "event": "Boolean algebra"
     },
     "parents": []
   },
   {
-    "key": "manifold",
-    "time": ["1854"],
+    "key": "orientability_connectivity_concepts",
+    "time": [
+      "1847",
+      "1858"
+    ],
     "space": [],
     "data": {
-      "persons": ["Riemann"],
+      "persons": [
+        "Johann Listing",
+        "August Möbius"
+      ],
+      "event": "Concepts of Orientability and Connectivity Order",
+      "significance": "Listing first introduced the term 'Topology'. Möbius (independently of Listing) discovered the Möbius strip, revealing the existence of one-sided orientable surfaces, intuitively demonstrating topological properties."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "riemann_surfaces_manifolds",
+    "time": [
+      "1850s"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Bernhard Riemann"
+      ],
+      "event": "Germination of Riemann Surfaces and Manifold Concepts",
+      "significance": "While studying the multi-valued nature of complex functions, he introduced the concept of Riemann surfaces. This was essentially a one-dimensional complex manifold, where its genus (number of holes) became a key topological invariant. He brought topological thinking into the core of analysis."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "abstract_group_axioms",
+    "time": [
+      "1854"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cayley"
+      ],
+      "event": "Axiomatic Definition of Abstract Group",
+      "significance": "It is the first to give a modern definition of an abstract finite group: a set and operations that satisfy closure, associativity, identity, and inverse. This liberates group theory from concrete transformations (permutations, geometric symmetries) and allows it to focus on purely mathematical objects."
+    },
+    "parents": [
+      "group_theory"
+    ]
+  },
+  {
+    "key": "manifold",
+    "time": [
+      "1854"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Riemann"
+      ],
       "event": "Manifold"
     },
     "parents": []
   },
   {
-    "key": "matrix_theory",
-    "time": ["1858"],
+    "key": "riemann_integral",
+    "time": [
+      "1854"
+    ],
     "space": [],
     "data": {
-      "persons": ["Cayley"],
+      "persons": [
+        "Bernhard Riemann"
+      ],
+      "event": "Riemann Integral",
+      "significance": "Defined integration using interval partitions, generalized the concept of integration, laying the foundation for real analysis."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "weierstrass_epsilon_delta",
+    "time": [
+      "1854",
+      "1872"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Weierstrass"
+      ],
+      "event": "Establishment of ε–δ Language",
+      "significance": "Completely formalized limits and continuity, establishing the modern rigorous foundation of calculus."
+    },
+    "parents": [
+      "calculus"
+    ]
+  },
+  {
+    "key": "matrix_theory",
+    "time": [
+      "1858"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cayley"
+      ],
       "event": "Matrix"
     },
     "parents": []
   },
   {
     "key": "riemann_hypothesis",
-    "time": ["1859"],
+    "time": [
+      "1859"
+    ],
     "space": [],
     "data": {
       "event": "Riemann Hypothesis"
@@ -554,71 +1013,40 @@
   },
   {
     "key": "demorgans_law",
-    "time": ["1871"],
+    "time": [
+      "1871"
+    ],
     "space": [],
     "data": {
-      "persons": ["De Morgan"],
+      "persons": [
+        "De Morgan"
+      ],
       "event": "De Morgan's Laws"
     },
     "parents": []
   },
   {
-    "key": "set_theory",
-    "time": ["1874", "1963"],
+    "key": "erlangen_program",
+    "time": [
+      "1872"
+    ],
     "space": [],
     "data": {
-      "persons": ["Cantor"],
-      "event": "Set Theory"
+      "persons": [
+        "Klein"
+      ],
+      "event": "Erlangen Program - Unifying Geometry via Group Theory",
+      "significance": "Geometry studies properties that remain invariant under a given transformation group. For example, Euclidean geometry studies invariants under a rigid body motion group; projective geometry studies invariants under a projective transformation group. This elevates groups (especially continuous transformation groups) to the core principle of unified geometry."
     },
-    "parents": []
-  },
-  {
-    "key": "uncountable_sets_discovery",
-    "time": ["1874"],
-    "space": [],
-    "data": {
-      "persons": ["Georg Cantor"],
-      "event": "Uncountable Sets Discovery",
-      "significance": "Proved real numbers are uncountable, first distinguished different sizes of infinity, marking the formal birth of set theory."
-    },
-    "parents": ["set_theory"]
-  },
-  {
-    "key": "set_equipotence_cardinal_numbers",
-    "time": ["1878"],
-    "space": [],
-    "data": {
-      "persons": ["Cantor"],
-      "event": "Set Equipotence and Cardinal Numbers",
-      "significance": "Introduced 'one-to-one correspondence' to define set sizes (cardinals), laying strict foundations for comparing infinite sets."
-    },
-    "parents": ["set_theory"]
-  },
-  {
-    "key": "diagonal_method",
-    "time": ["1891"],
-    "space": [],
-    "data": {
-      "persons": ["Cantor"],
-      "event": "Diagonal Method",
-      "significance": "Proposed diagonal argument, proved that the power set of any set is strictly larger than the original set, establishing infinite hierarchy structure."
-    },
-    "parents": ["set_theory"]
-  },
-  {
-    "key": "transfinite_numbers_ordinal_theory",
-    "time": ["1895", "1897"],
-    "space": [],
-    "data": {
-      "persons": ["Cantor"],
-      "event": "Transfinite Numbers and Ordinal Theory",
-      "significance": "Systematically established ordinal and cardinal number theory, forming the early naive set theory system."
-    },
-    "parents": ["set_theory"]
+    "parents": [
+      "group_theory"
+    ]
   },
   {
     "key": "lie_group",
-    "time": ["1873"],
+    "time": [
+      "1873"
+    ],
     "space": [],
     "data": {
       "event": "Lie group"
@@ -626,83 +1054,227 @@
     "parents": []
   },
   {
-    "key": "equivalent_forms_of_axiom_of_choice",
-    "time": ["1930"],
+    "key": "uncountable_sets_discovery",
+    "time": [
+      "1874"
+    ],
     "space": [],
     "data": {
-      "persons": ["Hausdorff", "Zorn", "et al."],
-      "event": "Equivalent Forms of Axiom of Choice",
-      "significance": "Proved axiom of choice is equivalent to Zorn's lemma and well-ordering theorem, widely affecting algebra and analysis."
+      "persons": [
+        "Georg Cantor"
+      ],
+      "event": "Uncountable Sets Discovery",
+      "significance": "Proved real numbers are uncountable, first distinguished different sizes of infinity, marking the formal birth of set theory."
     },
-    "parents": ["set_theory"]
-  },
-    {
-    "key": "axiomatic_set_theory_1st",
-    "time": ["1908"],
-    "space": [],
-    "data": {
-      "persons": ["Ernst Zermelo"],
-      "event": "Axiomatic Set Theory (Zermelo)",
-      "significance": "Proposed the first axiomatic system of set theory (Z) to limit set construction and resolve paradoxes."
-    },
-    "parents": ["set_theory"]
-  },
-    {
-    "key": "zermelo_fraenkel_axioms",
-    "time": ["1922"],
-    "space": [],
-    "data": {
-      "persons": ["Fraenkel", "Skolem"],
-      "event": "Zermelo-Fraenkel Axioms (ZF)",
-      "significance": "Introduced replacement axiom and others, forming the core framework of modern set theory."
-    },
-    "parents": ["set_theory"]
+    "parents": [
+      "set_theory"
+    ]
   },
   {
-    "key": "independence_of_axiom_of_choice",
-    "time": ["1963"],
+    "key": "point_set_topology_cantor",
+    "time": [
+      "1874"
+    ],
     "space": [],
     "data": {
-      "persons": ["Cohen"],
-      "event": "Independence of Axiom of Choice",
-      "significance": "Proved that the Axiom of Choice can neither be proved nor disproved from ZF."
+      "persons": [
+        "Georg Cantor"
+      ],
+      "event": "Beginning of Point-Set Topology: Set Theory and Space",
+      "significance": "Founded set theory, providing language for defining abstract 'spaces'. He began studying point-set structures of objects like real number sets and derived sets, laying the foundation for point-set topology."
     },
-    "parents": ["set_theory"]
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "set_theory",
+    "time": [
+      "1874",
+      "1963"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cantor"
+      ],
+      "event": "Set Theory"
+    },
+    "parents": []
+  },
+  {
+    "key": "set_equipotence_cardinal_numbers",
+    "time": [
+      "1878"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cantor"
+      ],
+      "event": "Set Equipotence and Cardinal Numbers",
+      "significance": "Introduced 'one-to-one correspondence' to define set sizes (cardinals), laying strict foundations for comparing infinite sets."
+    },
+    "parents": [
+      "set_theory"
+    ]
+  },
+  {
+    "key": "lie_groups_lie_algebras",
+    "time": [
+      "1880",
+      "1894"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Lie"
+      ],
+      "event": "Continuous Groups (Lie Groups) and Lie Algebras",
+      "significance": "To systematically study the integrability and symmetry of differential equations, the theory of continuous transformation groups (later called Lie groups) and Lie algebras composed of infinitesimal generators were established. This provides a powerful tool for analyzing continuous systems (such as mechanics and field theory) using symmetry.。"
+    },
+    "parents": [
+      "group_theory"
+    ]
+  },
+  {
+    "key": "diagonal_method",
+    "time": [
+      "1891"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cantor"
+      ],
+      "event": "Diagonal Method",
+      "significance": "Proposed diagonal argument, proved that the power set of any set is strictly larger than the original set, establishing infinite hierarchy structure."
+    },
+    "parents": [
+      "set_theory"
+    ]
+  },
+  {
+    "key": "analysis_situs_algebraic_topology",
+    "time": [
+      "1895"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Henri Poincaré"
+      ],
+      "event": "'Analysis Situs' and Birth of Combinatorial Topology",
+      "significance": "Published a groundbreaking paper, systematically establishing combinatorial topology (predecessor of algebraic topology). Introduced core concepts and computational methods such as homology and fundamental groups (first homotopy groups) to achieve algebraic classification of topological spaces. He proposed the famous Poincaré conjecture."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "transfinite_numbers_ordinal_theory",
+    "time": [
+      "1895",
+      "1897"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Cantor"
+      ],
+      "event": "Transfinite Numbers and Ordinal Theory",
+      "significance": "Systematically established ordinal and cardinal number theory, forming the early naive set theory system."
+    },
+    "parents": [
+      "set_theory"
+    ]
+  },
+  {
+    "key": "finite_simple_groups_classification",
+    "time": [
+      "1896",
+      "1980"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Burnside",
+        "et al."
+      ],
+      "event": "Finite Simple Groups Classification",
+      "significance": "The systematic study of finite simple groups (the 'atoms' of a group) began. Bernside proposed the famous Bernside conjecture, which propelled the development of representation theory. This launched a century-long project to classify finite simple groups. In 1980, the classification theorem for finite simple groups was announced: all finite simple groups can be divided into 18 infinite families (such as cyclic groups and alternating groups) and 26 scattered simple groups (such as the giant 'magic group'). This was the most massive collaborative proof in the history of mathematics, hailed as the 'Mozara of mathematics'."
+    },
+    "parents": [
+      "group_theory"
+    ]
   },
   {
     "key": "chi_square_test",
-    "time": ["1900"],
+    "time": [
+      "1900"
+    ],
     "space": [],
     "data": {
-      "persons": ["Pearson"],
+      "persons": [
+        "Pearson"
+      ],
       "event": "Chi-Square Test"
     },
     "parents": []
   },
-{
-    "key": "russells_paradox",
-    "time": ["1901"],
+  {
+    "key": "brownian_motion_modeling",
+    "time": [
+      "1900"
+    ],
     "space": [],
     "data": {
-      "persons": ["Bertrand Russell"],
+      "persons": [
+        "Louis Bachelier"
+      ],
+      "event": "Mathematical Modeling of Brownian Motion",
+      "significance": "In his doctoral thesis, he first used random walk to model stock price fluctuations and proposed the mathematical description of Brownian motion, predating Einstein. This was the beginning of financial mathematics and stochastic process theory, though its value was not recognized for half a century."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "russells_paradox",
+    "time": [
+      "1901"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Bertrand Russell"
+      ],
       "event": "Russell's Paradox",
       "significance": "\"Set of sets that do not contain themselves\" leads to contradiction, revealing inconsistency of naive set theory."
     },
-    "parents": ["set_theory"]
+    "parents": [
+      "set_theory"
+    ]
   },
   {
     "key": "measure_theory",
-    "time": ["1904"],
+    "time": [
+      "1904"
+    ],
     "space": [],
     "data": {
-      "persons": ["Lebesgue"],
+      "persons": [
+        "Lebesgue"
+      ],
       "event": "Measure Theory"
     },
     "parents": []
   },
   {
     "key": "poincare_conjecture",
-    "time": ["1904"],
+    "time": [
+      "1904"
+    ],
     "space": [],
     "data": {
       "event": "Poincaré Conjecture"
@@ -710,8 +1282,27 @@
     "parents": []
   },
   {
+    "key": "jordan_curve_theorem",
+    "time": [
+      "1905"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Camille Jordan"
+      ],
+      "event": "Proof of Jordan Curve Theorem",
+      "significance": "Proved that a simple closed curve on a plane divides the plane into two regions. This seemingly intuitive theorem requires rigorous topological proof, highlighting the need for rigor in topology."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
     "key": "markov_process",
-    "time": ["1906"],
+    "time": [
+      "1906"
+    ],
     "space": [],
     "data": {
       "event": "Markov Process, Stochastic Process"
@@ -719,182 +1310,278 @@
     "parents": []
   },
   {
-    "key": "topology",
-    "time": ["1830", "2003"],
+    "key": "hilbert_space_l2",
+    "time": [
+      "1906"
+    ],
     "space": [],
     "data": {
-      "event": "Topology"
+      "persons": [
+        "David Hilbert"
+      ],
+      "event": "Hilbert Space Precursor: l² Space",
+      "significance": "In studying integral equations, Hilbert systematically studied the space of square-summable sequences (later called l²) and introduced the concept of spectrum. His student Schmidt developed the geometric language (orthogonality, projection), essentially creating the first concrete infinite-dimensional inner product space."
+    },
+    "parents": [
+      "functional_analysis"
+    ]
+  },
+  {
+    "key": "functional_analysis",
+    "time": [
+      "1906",
+      "1930"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "David Hilbert",
+        "Frigyes Riesz",
+        "Stefan Banach",
+        "John von Neumann"
+      ],
+      "event": "Functional Analysis"
     },
     "parents": []
   },
   {
-    "key": "non_euclidean_geometry_topology",
-    "time": ["1830"],
+    "key": "lebesgue_integration_lp_spaces",
+    "time": [
+      "1907"
+    ],
     "space": [],
     "data": {
-      "persons": ["Nikolai Ivanovich Lobachevsky"],
-      "event": "Independent Discovery and First Public Exposition of Non-Euclidean Geometry",
-      "significance": "He first abandoned attempts to prove the parallel postulate, instead replacing it with an opposite postulate: through a point outside a line, at least two lines parallel to the given line exist. Based on this, he established a logically consistent, completely contradiction-free new geometry, and published it for the first time in 1829. This was the first time humans publicly, systematically proposed and defended a non-Euclidean geometry, so this geometry is called Lobachevsky geometry."
+      "persons": [
+        "Henri Lebesgue",
+        "Frigyes Riesz"
+      ],
+      "event": "Lebesgue Integration and L^p Spaces",
+      "significance": "Lebesgue integration breakthroughs the limitations of Riemann integration, making function space theory possible. Riesz and others systematically studied L^p spaces (spaces of p-integrable functions), proving their completeness and providing another core concrete model for functional analysis."
     },
-    "parents": ["topology"]
+    "parents": [
+      "functional_analysis"
+    ]
   },
   {
-    "key": "orientability_connectivity_concepts",
-    "time": ["1847", "1858"],
+    "key": "riesz_representation_theorem",
+    "time": [
+      "1907"
+    ],
     "space": [],
     "data": {
-      "persons": ["Johann Listing", "August Möbius"],
-      "event": "Concepts of Orientability and Connectivity Order",
-      "significance": "Listing first introduced the term 'Topology'. Möbius (independently of Listing) discovered the Möbius strip, revealing the existence of one-sided orientable surfaces, intuitively demonstrating topological properties."
+      "persons": [
+        "Frigyes Riesz"
+      ],
+      "event": "Riesz Representation Theorem",
+      "significance": "Proved that continuous linear functionals on L^p spaces can all be represented by an L^q function (1/p + 1/q = 1). This was the first important manifestation of the dual space concept, revealing profound connections between a space and its dual, and is one of the fundamental theorems of functional analysis."
     },
-    "parents": ["topology"]
+    "parents": [
+      "functional_analysis"
+    ]
   },
   {
-    "key": "riemann_surfaces_manifolds",
-    "time": ["1850s"],
+    "key": "axiomatic_set_theory_1st",
+    "time": [
+      "1908"
+    ],
     "space": [],
     "data": {
-      "persons": ["Bernhard Riemann"],
-      "event": "Germination of Riemann Surfaces and Manifold Concepts",
-      "significance": "While studying the multi-valued nature of complex functions, he introduced the concept of Riemann surfaces. This was essentially a one-dimensional complex manifold, where its genus (number of holes) became a key topological invariant. He brought topological thinking into the core of analysis."
+      "persons": [
+        "Ernst Zermelo"
+      ],
+      "event": "Axiomatic Set Theory (Zermelo)",
+      "significance": "Proposed the first axiomatic system of set theory (Z) to limit set construction and resolve paradoxes."
     },
-    "parents": ["topology"]
+    "parents": [
+      "set_theory"
+    ]
   },
   {
-    "key": "point_set_topology_cantor",
-    "time": ["1874"],
+    "key": "linear_operators_abstract_definition",
+    "time": [
+      "1910"
+    ],
     "space": [],
     "data": {
-      "persons": ["Georg Cantor"],
-      "event": "Beginning of Point-Set Topology: Set Theory and Space",
-      "significance": "Founded set theory, providing language for defining abstract 'spaces'. He began studying point-set structures of objects like real number sets and derived sets, laying the foundation for point-set topology."
+      "persons": [
+        "Erhard Schmidt"
+      ],
+      "event": "Abstract Definition of Linear Operators",
+      "significance": "First clearly defined linear operators from one function space to another function space, and introduced the concept of operator norm. Operators began to be studied as independent research objects."
     },
-    "parents": ["topology"]
-  },
-  {
-    "key": "analysis_situs_algebraic_topology",
-    "time": ["1895"],
-    "space": [],
-    "data": {
-      "persons": ["Henri Poincaré"],
-      "event": "'Analysis Situs' and Birth of Combinatorial Topology",
-      "significance": "Published a groundbreaking paper, systematically establishing combinatorial topology (predecessor of algebraic topology). Introduced core concepts and computational methods such as homology and fundamental groups (first homotopy groups) to achieve algebraic classification of topological spaces. He proposed the famous Poincaré conjecture."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "jordan_curve_theorem",
-    "time": ["1905"],
-    "space": [],
-    "data": {
-      "persons": ["Camille Jordan"],
-      "event": "Proof of Jordan Curve Theorem",
-      "significance": "Proved that a simple closed curve on a plane divides the plane into two regions. This seemingly intuitive theorem requires rigorous topological proof, highlighting the need for rigor in topology."
-    },
-    "parents": ["topology"]
+    "parents": [
+      "functional_analysis"
+    ]
   },
   {
     "key": "hausdorff_topology",
-    "time": ["1914"],
+    "time": [
+      "1914"
+    ],
     "space": [],
     "data": {
-      "persons": ["Felix Hausdorff"],
+      "persons": [
+        "Felix Hausdorff"
+      ],
       "event": "Axiomatization of Hausdorff Spaces",
       "significance": "In 'Foundations of Set Theory', he rigorously defined topological spaces (later called Hausdorff spaces) using neighborhood axioms. This marked the maturity of point-set topology as an independent branch."
     },
-    "parents": ["topology"]
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "normed_linear_spaces_banach_spaces",
+    "time": [
+      "1920",
+      "1922"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Stefan Banach",
+        "Hans Hahn",
+        "Eduard Helly"
+      ],
+      "event": "Axiomatization of Normed Linear Spaces and Banach Spaces",
+      "significance": "Banach systematically proposed the complete axiomatic system of normed linear spaces (complete ones called Banach spaces) in his doctoral thesis. This marked the transition of functional analysis from studying concrete spaces to studying abstract spaces and their general theory, becoming an independent branch of mathematics."
+    },
+    "parents": [
+      "functional_analysis"
+    ]
+  },
+  {
+    "key": "zermelo_fraenkel_axioms",
+    "time": [
+      "1922"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Fraenkel",
+        "Skolem"
+      ],
+      "event": "Zermelo-Fraenkel Axioms (ZF)",
+      "significance": "Introduced replacement axiom and others, forming the core framework of modern set theory."
+    },
+    "parents": [
+      "set_theory"
+    ]
+  },
+  {
+    "key": "measure_theory_introduction",
+    "time": [
+      "1923"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Andrey Kolmogorov"
+      ],
+      "event": "Introduction of Measure Theory",
+      "significance": "In his early work, he was the first to systematically apply Lebesgue measure theory to probability theory, paving the way for its axiomatization."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "dual_spaces_weak_topology",
+    "time": [
+      "1927",
+      "1929"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Hans Hahn",
+        "Stefan Banach"
+      ],
+      "event": "Dual Spaces and Weak Topology",
+      "significance": "The Hahn-Banach theorem (norm-preserving extension theorem) was proved. Banach systematically studied dual spaces and introduced weak topology and weak* topology, providing key tools for studying convergence and compactness in infinite-dimensional spaces."
+    },
+    "parents": [
+      "functional_analysis"
+    ]
+  },
+  {
+    "key": "axiomatic_hilbert_spaces_quantum_mechanics",
+    "time": [
+      "1927",
+      "1930"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "John von Neumann"
+      ],
+      "event": "Axiomatization of Hilbert Spaces and Mathematical Foundation of Quantum Mechanics",
+      "significance": "Von Neumann independently of the Hilbert school gave the modern axiomatic definition of Hilbert spaces (complete inner product spaces) and systematically developed operator theory on them (especially spectral theory of unbounded self-adjoint operators). He explicitly stated that the state space of quantum mechanics is precisely Hilbert space, and observables are self-adjoint operators. This made functional analysis an indispensable rigorous mathematical framework for quantum mechanics."
+    },
+    "parents": [
+      "functional_analysis"
+    ]
+  },
+  {
+    "key": "equivalent_forms_of_axiom_of_choice",
+    "time": [
+      "1930"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Hausdorff",
+        "Zorn",
+        "et al."
+      ],
+      "event": "Equivalent Forms of Axiom of Choice",
+      "significance": "Proved axiom of choice is equivalent to Zorn's lemma and well-ordering theorem, widely affecting algebra and analysis."
+    },
+    "parents": [
+      "set_theory"
+    ]
+  },
+  {
+    "key": "stochastic_processes_theory",
+    "time": [
+      "1930"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Andrey Kolmogorov",
+        "William Feller",
+        "Paul Lévy"
+      ],
+      "event": "Establishment of Stochastic Processes Theory",
+      "significance": "On the basis of axiomatization, Kolmogorov established the general theory of Markov processes (Kolmogorov equations). Feller and Lévy studied and classified the sample paths of stochastic processes from analytical and intuitive perspectives respectively."
+    },
+    "parents": [
+      "probability_theory"
+    ]
   },
   {
     "key": "covering_spaces_theory",
-    "time": ["1931"],
+    "time": [
+      "1931"
+    ],
     "space": [],
     "data": {
-      "persons": ["Heinz Hopf"],
+      "persons": [
+        "Heinz Hopf"
+      ],
       "event": "Covering Spaces and Lifting Theorems",
       "significance": "Systematically studied covering space theory, establishing a perfect correspondence between fundamental groups and covering spaces (the manifestation of Galois correspondence in topology), deepening understanding of the relationship between local and global properties of spaces."
     },
-    "parents": ["topology"]
-  },
-  {
-    "key": "cohomology_theory",
-    "time": ["1935"],
-    "space": [],
-    "data": {
-      "persons": ["André Weil", "Lev Pontryagin", "et al."],
-      "event": "Introduction of Cohomology Theory",
-      "significance": "To overcome limitations of homology theory (such as inconvenience in handling products), they introduced cohomology rings. Cohomology has rich multiplicative structures, becoming a more powerful tool, and naturally connects to differential forms (de Rham theorem)."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "homotopy_groups_study",
-    "time": ["1935", "1936"],
-    "space": [],
-    "data": {
-      "persons": ["Witold Hurewicz"],
-      "event": "Systematic Study of Homotopy Groups",
-      "significance": "Defined higher homotopy groups and established the Hurewicz theorem (connecting homotopy and homology). Discovered that higher homotopy groups are very complex and difficult to compute, revealing the deep complexity of topological spaces."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "category_theory_introduction",
-    "time": ["1942"],
-    "space": [],
-    "data": {
-      "persons": ["Samuel Eilenberg", "Saunders Mac Lane"],
-      "event": "Introduction of Categories and Functors",
-      "significance": "To clarify complex natural transformations in algebraic topology, they created category theory. This was not only a revolution in topology but also a structural revolution in all modern mathematics, providing a unified language to describe mathematical objects and their relationships."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "sheaf_theory_beginning",
-    "time": ["1944"],
-    "space": [],
-    "data": {
-      "persons": ["Jean Leray"],
-      "event": "Beginning of Sheaf Theory",
-      "significance": "To study the topology of fiber bundles and analytic continuation on complex manifolds, he introduced the concept of sheaves. Sheaves became sophisticated tools connecting local and global geometry, and are core to modern algebraic geometry and complex geometry."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "spectral_sequences_invention",
-    "time": ["1952"],
-    "space": [],
-    "data": {
-      "persons": ["Jean Leray"],
-      "event": "Invention of Spectral Sequences",
-      "significance": "To compute the homology of the total space of fiber bundles, he invented spectral sequences as a powerful computational tool, greatly advancing homotopy theory and complex space research."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "milnor_exotic_spheres",
-    "time": ["1956"],
-    "space": [],
-    "data": {
-      "persons": ["John Milnor"],
-      "event": "Discovery of Milnor Exotic Spheres",
-      "significance": "Discovered that the seven-dimensional sphere has multiple distinct differential structures (diffeomorphic but not differentiably homeomorphic to the standard structure). This revealed profound differences between topology, differential geometry and algebraic topology, creating the new branch of differential topology."
-    },
-    "parents": ["topology"]
-  },
-  {
-    "key": "poincare_conjecture_geometrization_proof",
-    "time": ["2002", "2003"],
-    "space": [],
-    "data": {
-      "persons": ["Grigori Perelman"],
-      "event": "Proof of Poincaré Conjecture and Geometrization Conjecture",
-      "significance": "Using Ricci flow analysis, proved Thurston's geometrization conjecture, thus solving the century-old Poincaré conjecture as a corollary. This is one of the greatest mathematical achievements of the early 21st century."
-    },
-    "parents": ["topology"]
+    "parents": [
+      "topology"
+    ]
   },
   {
     "key": "godel_incompleteness",
-    "time": ["1931"],
+    "time": [
+      "1931"
+    ],
     "space": [],
     "data": {
       "event": "Gödel's Incompleteness Theorems"
@@ -903,37 +1590,312 @@
   },
   {
     "key": "axiomatic_probability",
-    "time": ["1931"],
+    "time": [
+      "1931"
+    ],
     "space": [],
     "data": {
-      "persons": ["Kolmogorov"],
+      "persons": [
+        "Kolmogorov"
+      ],
       "event": "Axiomatic Probability Theory"
     },
     "parents": []
   },
   {
-    "key": "martingale",
-    "time": ["1934"],
+    "key": "strong_law_of_large_numbers",
+    "time": [
+      "1931"
+    ],
     "space": [],
     "data": {
-      "persons": ["Lévy"],
+      "persons": [
+        "Andrey Kolmogorov"
+      ],
+      "event": "Strong Law of Large Numbers",
+      "significance": "Under integrability conditions, he proved the strong law of large numbers (frequency almost surely converges to expectation), completing the work of Bernoulli and Borel, demonstrating the power of measure-theoretic tools."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "axiomatic_probability_theory",
+    "time": [
+      "1933"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Andrey Kolmogorov"
+      ],
+      "event": "Axiomatization of Probability Theory",
+      "significance": "Published the classic work 'Foundations of the Theory of Probability', presenting the modern axiomatic system of probability theory based on measure theory: probability is a measure that satisfies normalization and countable additivity. Random variables are measurable functions, and expectations are integrals. This laid the cornerstone for probability theory to become a rigorous mathematical branch and marked its modernization."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "martingale",
+    "time": [
+      "1934"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Lévy"
+      ],
       "event": "Martingale"
     },
     "parents": []
   },
   {
-    "key": "nash_equilibrium",
-    "time": ["1950"],
+    "key": "stationary_processes_ergodic_theory",
+    "time": [
+      "1934"
+    ],
     "space": [],
     "data": {
-      "persons": ["Nash"],
+      "persons": [
+        "Aleksandr Khinchin"
+      ],
+      "event": "Stationary Processes and Ergodic Theory",
+      "significance": "Introduced the concept of stationary random processes and developed the ergodic theorem, providing a theoretical foundation for statistical mechanics and signal processing, connecting time averages with space averages."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "cohomology_theory",
+    "time": [
+      "1935"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "André Weil",
+        "Lev Pontryagin",
+        "et al."
+      ],
+      "event": "Introduction of Cohomology Theory",
+      "significance": "To overcome limitations of homology theory (such as inconvenience in handling products), they introduced cohomology rings. Cohomology has rich multiplicative structures, becoming a more powerful tool, and naturally connects to differential forms (de Rham theorem)."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "homotopy_groups_study",
+    "time": [
+      "1935",
+      "1936"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Witold Hurewicz"
+      ],
+      "event": "Systematic Study of Homotopy Groups",
+      "significance": "Defined higher homotopy groups and established the Hurewicz theorem (connecting homotopy and homology). Discovered that higher homotopy groups are very complex and difficult to compute, revealing the deep complexity of topological spaces."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "martingale_theory",
+    "time": [
+      "1940"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Joseph Doob"
+      ],
+      "event": "Creation of Martingale Theory",
+      "significance": "Systematically created martingale theory. Martingales are mathematical models of 'fair games', whose core property is that the conditional expectation of the future equals the current value. Doob's work unified previous research on various stochastic processes and became a core tool in modern stochastic analysis, financial mathematics, and filtering theory."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "category_theory_introduction",
+    "time": [
+      "1942"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Samuel Eilenberg",
+        "Saunders Mac Lane"
+      ],
+      "event": "Introduction of Categories and Functors",
+      "significance": "To clarify complex natural transformations in algebraic topology, they created category theory. This was not only a revolution in topology but also a structural revolution in all modern mathematics, providing a unified language to describe mathematical objects and their relationships."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "itos_calculus",
+    "time": [
+      "1942"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Kiyosi Itô"
+      ],
+      "event": "Creation of Itô Integral",
+      "significance": "To provide a rigorous mathematical foundation for stochastic differential equations, he defined the stochastic integral with respect to Brownian motion (Itô integral) and established Itô's lemma (the chain rule of stochastic calculus). This opened the door to nonlinear stochastic analysis and became a revolutionary tool for handling continuous-time random dynamical systems."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "sheaf_theory_beginning",
+    "time": [
+      "1944"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Jean Leray"
+      ],
+      "event": "Beginning of Sheaf Theory",
+      "significance": "To study the topology of fiber bundles and analytic continuation on complex manifolds, he introduced the concept of sheaves. Sheaves became sophisticated tools connecting local and global geometry, and are core to modern algebraic geometry and complex geometry."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "generalized_functions_distribution_theory",
+    "time": [
+      "1948"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Laurent Schwartz"
+      ],
+      "event": "Generalized Functions (Distribution Theory)",
+      "significance": "To solve difficulties in partial differential equations and Fourier transforms, Schwartz systematically established distribution theory. He strictly defined objects such as the Dirac delta function as continuous linear functionals on a certain function space (the space of test functions), i.e., generalized functions. This greatly extended the function concept and revolutionized analysis."
+    },
+    "parents": [
+      "functional_analysis"
+    ]
+  },
+  {
+    "key": "nash_equilibrium",
+    "time": [
+      "1950"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Nash"
+      ],
       "event": "Nash Equilibrium"
     },
     "parents": []
   },
   {
+    "key": "stochastic_differential_equations",
+    "time": [
+      "1951"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Kiyosi Itô"
+      ],
+      "event": "Stochastic Differential Equations Theory",
+      "significance": "Based on his integral theory, he systematically established the existence and uniqueness of solutions to stochastic differential equations, their Markov property, and other theory. SDEs became the standard language for describing evolution processes subject to random disturbances in physics, biology, and finance."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "spectral_sequences_invention",
+    "time": [
+      "1952"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Jean Leray"
+      ],
+      "event": "Invention of Spectral Sequences",
+      "significance": "To compute the homology of the total space of fiber bundles, he invented spectral sequences as a powerful computational tool, greatly advancing homotopy theory and complex space research."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "markov_chain_monte_carlo",
+    "time": [
+      "1953"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Nicholas Metropolis",
+        "et al."
+      ],
+      "event": "Markov Chain Monte Carlo Method",
+      "significance": "In the Manhattan Project, to calculate integrals, they proposed the prototype of the MCMC algorithm (Metropolis algorithm). It later developed into the most powerful tool for sampling from complex probability distributions and became the cornerstone of computational statistics, Bayesian inference, and machine learning."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
+    "key": "milnor_exotic_spheres",
+    "time": [
+      "1956"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "John Milnor"
+      ],
+      "event": "Discovery of Milnor Exotic Spheres",
+      "significance": "Discovered that the seven-dimensional sphere has multiple distinct differential structures (diffeomorphic but not differentiably homeomorphic to the standard structure). This revealed profound differences between topology, differential geometry and algebraic topology, creating the new branch of differential topology."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "generalized_stochastic_integration",
+    "time": [
+      "1960"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Claude Dellacherie",
+        "et al."
+      ],
+      "event": "Modern Martingale Theory and Generalization of Stochastic Integration",
+      "significance": "Extended Itô integration to integration with respect to general local martingales and semimartingales, establishing a complete modern framework of stochastic analysis, making it applicable to a wider range of stochastic processes."
+    },
+    "parents": [
+      "probability_theory"
+    ]
+  },
+  {
     "key": "butterfly_effect",
-    "time": ["1961"],
+    "time": [
+      "1961"
+    ],
     "space": [],
     "data": {
       "event": "Butterfly Effect, Attractor"
@@ -941,383 +1903,66 @@
     "parents": []
   },
   {
-    "key": "fermat_last_theorem_proof",
-    "time": ["1995"],
+    "key": "independence_of_axiom_of_choice",
+    "time": [
+      "1963"
+    ],
     "space": [],
     "data": {
-      "persons": ["Wiles"],
+      "persons": [
+        "Cohen"
+      ],
+      "event": "Independence of Axiom of Choice",
+      "significance": "Proved that the Axiom of Choice can neither be proved nor disproved from ZF."
+    },
+    "parents": [
+      "set_theory"
+    ]
+  },
+  {
+    "key": "fermat_last_theorem_proof",
+    "time": [
+      "1995"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Wiles"
+      ],
       "event": "Proof of Fermat's Last Theorem"
     },
     "parents": []
   },
   {
-    "key": "poincare_conjecture_proof",
-    "time": ["2003"],
+    "key": "poincare_conjecture_geometrization_proof",
+    "time": [
+      "2002",
+      "2003"
+    ],
     "space": [],
     "data": {
-      "persons": ["Perelman"],
+      "persons": [
+        "Grigori Perelman"
+      ],
+      "event": "Proof of Poincaré Conjecture and Geometrization Conjecture",
+      "significance": "Using Ricci flow analysis, proved Thurston's geometrization conjecture, thus solving the century-old Poincaré conjecture as a corollary. This is one of the greatest mathematical achievements of the early 21st century."
+    },
+    "parents": [
+      "topology"
+    ]
+  },
+  {
+    "key": "poincare_conjecture_proof",
+    "time": [
+      "2003"
+    ],
+    "space": [],
+    "data": {
+      "persons": [
+        "Perelman"
+      ],
       "event": "Proof of Poincaré Conjecture"
     },
     "parents": []
-  },
-  {
-    "key": "hilbert_space_l2",
-    "time": ["1906"],
-    "space": [],
-    "data": {
-      "persons": ["David Hilbert"],
-      "event": "Hilbert Space Precursor: l² Space",
-      "significance": "In studying integral equations, Hilbert systematically studied the space of square-summable sequences (later called l²) and introduced the concept of spectrum. His student Schmidt developed the geometric language (orthogonality, projection), essentially creating the first concrete infinite-dimensional inner product space."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "lebesgue_integration_lp_spaces",
-    "time": ["1907"],
-    "space": [],
-    "data": {
-      "persons": ["Henri Lebesgue", "Frigyes Riesz"],
-      "event": "Lebesgue Integration and L^p Spaces",
-      "significance": "Lebesgue integration breakthroughs the limitations of Riemann integration, making function space theory possible. Riesz and others systematically studied L^p spaces (spaces of p-integrable functions), proving their completeness and providing another core concrete model for functional analysis."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "riesz_representation_theorem",
-    "time": ["1907"],
-    "space": [],
-    "data": {
-      "persons": ["Frigyes Riesz"],
-      "event": "Riesz Representation Theorem",
-      "significance": "Proved that continuous linear functionals on L^p spaces can all be represented by an L^q function (1/p + 1/q = 1). This was the first important manifestation of the dual space concept, revealing profound connections between a space and its dual, and is one of the fundamental theorems of functional analysis."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "linear_operators_abstract_definition",
-    "time": ["1910"],
-    "space": [],
-    "data": {
-      "persons": ["Erhard Schmidt"],
-      "event": "Abstract Definition of Linear Operators",
-      "significance": "First clearly defined linear operators from one function space to another function space, and introduced the concept of operator norm. Operators began to be studied as independent research objects."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "normed_linear_spaces_banach_spaces",
-    "time": ["1920","1922"],
-    "space": [],
-    "data": {
-      "persons": ["Stefan Banach", "Hans Hahn", "Eduard Helly"],
-      "event": "Axiomatization of Normed Linear Spaces and Banach Spaces",
-      "significance": "Banach systematically proposed the complete axiomatic system of normed linear spaces (complete ones called Banach spaces) in his doctoral thesis. This marked the transition of functional analysis from studying concrete spaces to studying abstract spaces and their general theory, becoming an independent branch of mathematics."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "dual_spaces_weak_topology",
-    "time": ["1927","1929"],
-    "space": [],
-    "data": {
-      "persons": ["Hans Hahn", "Stefan Banach"],
-      "event": "Dual Spaces and Weak Topology",
-      "significance": "The Hahn-Banach theorem (norm-preserving extension theorem) was proved. Banach systematically studied dual spaces and introduced weak topology and weak* topology, providing key tools for studying convergence and compactness in infinite-dimensional spaces."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "axiomatic_hilbert_spaces_quantum_mechanics",
-    "time": ["1927","1930"],
-    "space": [],
-    "data": {
-      "persons": ["John von Neumann"],
-      "event": "Axiomatization of Hilbert Spaces and Mathematical Foundation of Quantum Mechanics",
-      "significance": "Von Neumann independently of the Hilbert school gave the modern axiomatic definition of Hilbert spaces (complete inner product spaces) and systematically developed operator theory on them (especially spectral theory of unbounded self-adjoint operators). He explicitly stated that the state space of quantum mechanics is precisely Hilbert space, and observables are self-adjoint operators. This made functional analysis an indispensable rigorous mathematical framework for quantum mechanics."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "generalized_functions_distribution_theory",
-    "time": ["1948"],
-    "space": [],
-    "data": {
-      "persons": ["Laurent Schwartz"],
-      "event": "Generalized Functions (Distribution Theory)",
-      "significance": "To solve difficulties in partial differential equations and Fourier transforms, Schwartz systematically established distribution theory. He strictly defined objects such as the Dirac delta function as continuous linear functionals on a certain function space (the space of test functions), i.e., generalized functions. This greatly extended the function concept and revolutionized analysis."
-    },
-    "parents": ["functional_analysis"]
-  },
-  {
-    "key": "functional_analysis",
-    "time": ["1906","1930"],
-    "space": [],
-    "data": {
-      "persons": ["David Hilbert", "Frigyes Riesz", "Stefan Banach", "John von Neumann"],
-      "event": "Functional Analysis"
-    },
-    "parents": []
-  },
-  {
-    "key": "probability_theory",
-    "time": ["1654", "2025"],
-    "space": [],
-    "data": {
-      "event": "Probability Theory"
-    },
-    "parents": []
-  },
-  {
-    "key": "probability_theory_birth",
-    "time": ["1654"],
-    "space": [],
-    "data": {
-      "persons": ["Blaise Pascal", "Pierre de Fermat"],
-      "event": "Birth of Probability Theory: Expectation and Combinatorics",
-      "significance": "Correspondence around the 'problem of points' systematically studied expected values in random gambling, using combinatorial mathematics to calculate probabilities. Marked the beginning of probability theory as a mathematical branch."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "ars_conjectandi_law_of_large_numbers",
-    "time": ["1713"],
-    "space": [],
-    "data": {
-      "persons": ["Jacob Bernoulli"],
-      "event": "Ars Conjectandi Publication and Law of Large Numbers Prototype",
-      "significance": "In his posthumously published work, he proposed the first law of large numbers (Bernoulli's law): frequency converges in probability to the actual probability. This was a key step in probability theory's transition from static combinatorics to dynamic limit theory."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "normal_distribution_derivation",
-    "time": ["1733"],
-    "space": [],
-    "data": {
-      "persons": ["Abraham de Moivre"],
-      "event": "First Derivation of Normal Distribution",
-      "significance": "As an approximation to the binomial distribution, he first derived the normal (Gaussian) distribution curve, laying the foundation for the later discovery of the central limit theorem."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "analytical_theory_of_probabilities",
-    "time": ["1812"],
-    "space": [],
-    "data": {
-      "persons": ["Pierre-Simon Laplace"],
-      "event": "Analytical Theory of Probabilities and Systematization of Classical Probability",
-      "significance": "A magnum opus that systematically summarized classical probability theory and introduced powerful tools such as the Laplace transform and generating functions. He clearly articulated the necessity of probability in a deterministic universe and developed an early form of the central limit theorem."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "brownian_motion_modeling",
-    "time": ["1900"],
-    "space": [],
-    "data": {
-      "persons": ["Louis Bachelier"],
-      "event": "Mathematical Modeling of Brownian Motion",
-      "significance": "In his doctoral thesis, he first used random walk to model stock price fluctuations and proposed the mathematical description of Brownian motion, predating Einstein. This was the beginning of financial mathematics and stochastic process theory, though its value was not recognized for half a century."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "measure_theory_introduction",
-    "time": ["1923"],
-    "space": [],
-    "data": {
-      "persons": ["Andrey Kolmogorov"],
-      "event": "Introduction of Measure Theory",
-      "significance": "In his early work, he was the first to systematically apply Lebesgue measure theory to probability theory, paving the way for its axiomatization."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "strong_law_of_large_numbers",
-    "time": ["1931"],
-    "space": [],
-    "data": {
-      "persons": ["Andrey Kolmogorov"],
-      "event": "Strong Law of Large Numbers",
-      "significance": "Under integrability conditions, he proved the strong law of large numbers (frequency almost surely converges to expectation), completing the work of Bernoulli and Borel, demonstrating the power of measure-theoretic tools."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "axiomatic_probability_theory",
-    "time": ["1933"],
-    "space": [],
-    "data": {
-      "persons": ["Andrey Kolmogorov"],
-      "event": "Axiomatization of Probability Theory",
-      "significance": "Published the classic work 'Foundations of the Theory of Probability', presenting the modern axiomatic system of probability theory based on measure theory: probability is a measure that satisfies normalization and countable additivity. Random variables are measurable functions, and expectations are integrals. This laid the cornerstone for probability theory to become a rigorous mathematical branch and marked its modernization."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "stochastic_processes_theory",
-    "time": ["1930"],
-    "space": [],
-    "data": {
-      "persons": ["Andrey Kolmogorov", "William Feller", "Paul Lévy"],
-      "event": "Establishment of Stochastic Processes Theory",
-      "significance": "On the basis of axiomatization, Kolmogorov established the general theory of Markov processes (Kolmogorov equations). Feller and Lévy studied and classified the sample paths of stochastic processes from analytical and intuitive perspectives respectively."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "stationary_processes_ergodic_theory",
-    "time": ["1934"],
-    "space": [],
-    "data": {
-      "persons": ["Aleksandr Khinchin"],
-      "event": "Stationary Processes and Ergodic Theory",
-      "significance": "Introduced the concept of stationary random processes and developed the ergodic theorem, providing a theoretical foundation for statistical mechanics and signal processing, connecting time averages with space averages."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "martingale_theory",
-    "time": ["1940"],
-    "space": [],
-    "data": {
-      "persons": ["Joseph Doob"],
-      "event": "Creation of Martingale Theory",
-      "significance": "Systematically created martingale theory. Martingales are mathematical models of 'fair games', whose core property is that the conditional expectation of the future equals the current value. Doob's work unified previous research on various stochastic processes and became a core tool in modern stochastic analysis, financial mathematics, and filtering theory."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "itos_calculus",
-    "time": ["1942"],
-    "space": [],
-    "data": {
-      "persons": ["Kiyosi Itô"],
-      "event": "Creation of Itô Integral",
-      "significance": "To provide a rigorous mathematical foundation for stochastic differential equations, he defined the stochastic integral with respect to Brownian motion (Itô integral) and established Itô's lemma (the chain rule of stochastic calculus). This opened the door to nonlinear stochastic analysis and became a revolutionary tool for handling continuous-time random dynamical systems."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "stochastic_differential_equations",
-    "time": ["1951"],
-    "space": [],
-    "data": {
-      "persons": ["Kiyosi Itô"],
-      "event": "Stochastic Differential Equations Theory",
-      "significance": "Based on his integral theory, he systematically established the existence and uniqueness of solutions to stochastic differential equations, their Markov property, and other theory. SDEs became the standard language for describing evolution processes subject to random disturbances in physics, biology, and finance."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "markov_chain_monte_carlo",
-    "time": ["1953"],
-    "space": [],
-    "data": {
-      "persons": ["Nicholas Metropolis", "et al."],
-      "event": "Markov Chain Monte Carlo Method",
-      "significance": "In the Manhattan Project, to calculate integrals, they proposed the prototype of the MCMC algorithm (Metropolis algorithm). It later developed into the most powerful tool for sampling from complex probability distributions and became the cornerstone of computational statistics, Bayesian inference, and machine learning."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "generalized_stochastic_integration",
-    "time": ["1960"],
-    "space": [],
-    "data": {
-      "persons": ["Claude Dellacherie", "et al."],
-      "event": "Modern Martingale Theory and Generalization of Stochastic Integration",
-      "significance": "Extended Itô integration to integration with respect to general local martingales and semimartingales, establishing a complete modern framework of stochastic analysis, making it applicable to a wider range of stochastic processes."
-    },
-    "parents": ["probability_theory"]
-  },
-  {
-    "key": "newton_fluxions",
-    "time": ["1665", "1666"],
-    "space": [],
-    "data": {
-      "persons": ["Isaac Newton"],
-      "event": "Method of Fluxions (Differentiation and Integration)",
-      "significance": "Proposed \"fluxions and fluents\", studied rates of change and area problems, establishing the core ideas of calculus."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "leibniz_notation",
-    "time": ["1675", "1684"],
-    "space": [],
-    "data": {
-      "persons": ["Gottfried Leibniz"],
-      "event": "Differential and Integral Notation",
-      "significance": "Introduced the d/dx and ∫ notations, established the operational system, the notation system is still in use today."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "brachistochrone_problem",
-    "time": ["1696"],
-    "space": [],
-    "data": {
-      "persons": ["Johann Bernoulli"],
-      "event": "Brachistochrone Problem",
-      "significance": "Demonstrated that calculus could solve entirely new types of problems, leading to the calculus of variations."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "euler_higher_derivatives",
-    "time": ["1700", "1750"],
-    "space": [],
-    "data": {
-      "persons": ["Euler"],
-      "event": "Higher Derivatives and Series",
-      "significance": "Systematically studied Taylor series, exponential functions, and trigonometric functions."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "euler_function_concept",
-    "time": ["1730", "1740"],
-    "space": [],
-    "data": {
-      "persons": ["Euler"],
-      "event": "Function Concept and Analysis",
-      "significance": "Clarified the \"function\" concept, systematically organized differentiation and integration calculation rules, making calculus an independent branch of analysis."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "cauchy_limit_definition",
-    "time": ["1821"],
-    "space": [],
-    "data": {
-      "persons": ["Cauchy"],
-      "event": "Analysis Rigorization: Limit Definition",
-      "significance": "In \"Cours d'analyse\" defined derivatives and integrals based on limits, reducing dependence on intuition."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "weierstrass_epsilon_delta",
-    "time": ["1854", "1872"],
-    "space": [],
-    "data": {
-      "persons": ["Weierstrass"],
-      "event": "Establishment of ε–δ Language",
-      "significance": "Completely formalized limits and continuity, establishing the modern rigorous foundation of calculus."
-    },
-    "parents": ["calculus"]
-  },
-  {
-    "key": "riemann_integral",
-    "time": ["1854"],
-    "space": [],
-    "data": {
-      "persons": ["Bernhard Riemann"],
-      "event": "Riemann Integral",
-      "significance": "Defined integration using interval partitions, generalized the concept of integration, laying the foundation for real analysis."
-    },
-    "parents": ["calculus"]
   }
 ]
