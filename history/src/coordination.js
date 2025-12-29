@@ -2,24 +2,13 @@
 function calculateHorizontalPositions(events, margin) {
   const minSpacing = 16; // Minimum spacing between events
 
-  console.log('events:', events)
-
   // Create a map of all events for easy lookup
   const allEventsMap = new Map();
   events.forEach(event => allEventsMap.set(event.key, event));
 
-  const roots = []; // Events without parents, Populate children map and find root nodes
-  events.forEach(event => {
-    if (!event.parents || event.parents.length == 0 || event.parents[0] === '') {
-      roots.push(event);
-    }
-  });
-
-  // Sort root nodes by vertical position
-  roots.sort((a, b) => a.startY - b.startY);
-  
   // Process root nodes using DFS and store all positioned events
   const positionedEvents = [];
+  const roots = getRoots(events);
   roots.forEach(root => {
     processEventDFS(root, margin.left + 40, minSpacing, allEventsMap, positionedEvents);
   });
@@ -80,7 +69,7 @@ function doesConflict(currentEvent, otherEvent, currentX, minSpacing) {
   }
   
   // Check if the y-ranges overlap
-  const yOverlap = !(currentEvent.endTime < otherEvent.startTime || currentEvent.startTime > otherEvent.endTime);
+  const yOverlap = currentEvent.endTime >= otherEvent.startTime && currentEvent.startTime <= otherEvent.endTime;
 
   // Check if x-positions are too close
   const xTooClose = Math.abs(currentX - otherEvent.x) < minSpacing;

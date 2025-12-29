@@ -1,3 +1,17 @@
+function getRoots(events) {
+  const roots = [];
+  events.forEach(event => {
+    if (!event.parents || event.parents.length == 0 || event.parents[0] === '') {
+      roots.push(event);
+    }
+  });
+
+  // Sort root nodes by vertical position
+  roots.sort((a, b) => a.startTime - b.startTime);
+  return roots;
+}
+
+
 // 对所有事件 timelineData 的父子关系进行对齐，缺少的话补充上去，即保证每个节点的parent和kids都是对的，不缺少的
 function alignParentChildRelationships(events) {
   events.forEach(event => {

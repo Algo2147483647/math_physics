@@ -22,7 +22,7 @@
   {
     "key": "classical_mechanics",
     "time": [
-      "1564",
+      "1543",
       "1788"
     ],
     "space": [
@@ -86,6 +86,31 @@
         "Harmonices Mundi"
       ],
       "event": "Kepler's Laws of Planetary Motion"
+    },
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "snells_law",
+    "time": [
+      "1621"
+    ],
+    "space": [
+      "Netherlands"
+    ],
+    "data": {
+      "persons": [
+        "Willebrord Snellius"
+      ],
+      "event": "Snell's Law of Refraction",
+      "concepts": [
+        "Refraction of light",
+        "Optics",
+        "n1 sinθ1 = n2 sinθ2"
+      ],
+      "significance": "Law describing the relationship between angles of incidence and refraction when light passes through different media"
     },
     "parents": [
       "classical_mechanics"
@@ -166,10 +191,35 @@
     "kids": []
   },
   {
+    "key": "d'alembert_principle",
+    "time": [
+      "1743"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Jean le Rond d'Alembert"
+      ],
+      "paper": "Traité de Dynamique",
+      "work": "In his work *Traité de Dynamique*, he proposed formally transforming dynamic problems into static problems: ∑(Fᵢ - mᵢaᵢ)·δrᵢ = 0. This is a crucial step from vector mechanics to analytical mechanics, introducing the concept of \"virtual displacement\".",
+      "concepts": [
+        "D'Alembert's principle",
+        "Virtual work",
+        "Reduction of dynamical problems to static ones"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "analytical_mechanics",
     "time": [
       "1743",
-      "1788"
+      "1866"
     ],
     "space": [
       "France",
@@ -227,6 +277,32 @@
     "space": [],
     "data": [],
     "parents": [],
+    "kids": []
+  },
+  {
+    "key": "lagrangian_mechanics",
+    "time": [
+      "1788"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Joseph-Louis Lagrange"
+      ],
+      "paper": "Mécanique Analytique",
+      "work": "Published his epoch-making work, *Mécanique Analytique*. The entire book uses no geometric diagrams, relying entirely on mathematical analysis. 1. Introduced generalized coordinates (qᵢ), freeing it from the constraints of Cartesian coordinates. 2. Defined the Lagrange function L = T - V. 3. Derived the Lagrange equation from d'Alembert's principle: d/dt(∂L/∂qᵢ) - ∂L/∂qᵢ = 0. This marked the formal birth of analytical mechanics, providing a universal method for dealing with complex constrained systems.",
+      "concepts": [
+        "Lagrangian function",
+        "Euler-Lagrange equations",
+        "Generalized coordinates",
+        "Principle of least action"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
     "kids": []
   },
   {
@@ -312,7 +388,33 @@
         "Polarization"
       ]
     },
-    "parents": [],
+    "parents": [
+      "classical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "poisson_bracket",
+    "time": [
+      "1809"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Siméon Denis Poisson"
+      ],
+      "concepts": [
+        "Poisson bracket",
+        "Canonical equations",
+        "Integrability conditions"
+      ],
+      "work": "Sur les invariants differentiels des equations des corps solides. Introducing the Poisson bracket operation for the Hamiltonian system: {f, g} = ∑ (∂f/∂qᵢ ∂g/∂pᵢ - ∂f/∂pᵢ ∂g/∂qᵢ). The canonical equations can be written as q̇ = {q, H}, ṗ = {p, H}. This operation profoundly reveals the algebraic structure of mechanical quantities and serves as a crucial bridge between classical mechanics and quantum mechanics (corresponding to commutators in quantum mechanics)."
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
     "kids": []
   },
   {
@@ -406,6 +508,32 @@
     "kids": []
   },
   {
+    "key": "carnot_theorem",
+    "time": [
+      "1824"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Sadi Carnot"
+      ],
+      "event": "Carnot's Theorem and Ideal Heat Engine",
+      "concepts": [
+        "Carnot cycle",
+        "Carnot theorem",
+        "Maximum efficiency of heat engines",
+        "Reversible heat engines"
+      ],
+      "significance": "Published 'Reflections on the Motive Power of Fire', establishing that all heat engines operating between the same hot and cold reservoirs have maximum efficiency when reversible, revealing the fundamental limit of heat-to-work conversion, a precursor to the second law of thermodynamics"
+    },
+    "parents": [
+      "thermodynamics"
+    ],
+    "kids": []
+  },
+  {
     "key": "thermodynamics",
     "time": [
       "1824",
@@ -467,12 +595,37 @@
         "William Rowan Hamilton"
       ],
       "works": [
-        "On a General Method in Dynamics"
+        "Hamilton's principle (the principle of steady action) is proposed: the true trajectory of motion causes the action S = ∫ L dt to reach an extreme value. This is the highest-level axiomatic statement in mechanics (and even physics). Introducing the conjugate momentum pᵢ = ∂L/∂q̇ᵢ, and through the Legendre transformation, the Hamiltonian function H(q,p,t) = ∑pᵢq̇ᵢ - L is obtained from the Lagrange function. The Hamiltonian canonical equations are derived: q̇ᵢ = ∂H/∂pᵢ, ṗᵢ = -∂H/∂qᵢ. The form is symmetrical and elegant, describing the state of the mechanical system as a point in the phase space (q, p)."
       ],
       "concepts": [
         "Hamiltonian formalism",
         "Phase space",
         "Canonical transformations"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "canonical_transformations",
+    "time": [
+      "1835",
+      "1840"
+    ],
+    "space": [
+      "Ireland"
+    ],
+    "data": {
+      "persons": [
+        "William Rowan Hamilton"
+      ],
+      "concepts": [
+        "Canonical transformations",
+        "Generating functions",
+        "Hamilton equations",
+        "Phase space formalism"
       ]
     },
     "parents": [
@@ -504,10 +657,118 @@
     "kids": []
   },
   {
+    "key": "hamilton_jacobi_theory",
+    "time": [
+      "1837",
+      "1866"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Carl Gustav Jacobi"
+      ],
+      "concepts": [
+        "Hamilton-Jacobi equation",
+        "Canonical transformation to cyclic coordinates",
+        "Separation of variables in mechanics"
+      ],
+      "work": "Vorlesungen über Dynamik. Building upon Hamilton's work, the Hamilton-Jacobi equation was proposed: H(q, ∂S/∂q, t) + ∂S/∂t = 0. Solving this partial differential equation yields the principal function S, transforming the solution of mechanical problems into finding a specific canonical transformation that makes the new Hamiltonian zero. This represents the pinnacle of analytical mechanics and serves as a mathematical link between classical mechanics and wave mechanics (the Schrödinger equation can be viewed as a quantization of the H-J equation)."
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "liouville_theorem",
+    "time": [
+      "1838",
+      "1853"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Joseph Liouville"
+      ],
+      "concepts": [
+        "Liouville's theorem",
+        "Phase space volume conservation",
+        "Invariant integral"
+      ],
+      "work": "Within the Hamiltonian framework, it is proven that the density of representative points in phase space is conserved during motion, i.e., dρ/dt = 0. This lays a solid mathematical foundation for statistical mechanics (Gibbs ensemble theory) and is a fundamental theorem connecting micromechanics and macroscopic statistics."
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "first_law_thermodynamics",
+    "time": [
+      "1840"
+    ],
+    "space": [
+      "Germany",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Julius Robert Mayer",
+        "James Prescott Joule",
+        "Hermann von Helmholtz"
+      ],
+      "event": "First Law of Thermodynamics",
+      "concepts": [
+        "Heat as energy",
+        "Energy conservation",
+        "Energy conversion",
+        "ΔU = Q - W"
+      ],
+      "significance": "Through different approaches (physiological, mechanical, electromagnetic), proved that heat is a form of energy and established the universal law of conservation and transformation of energy, providing the first cornerstone of thermodynamics"
+    },
+    "parents": [
+      "thermodynamics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "second_law_thermodynamics",
+    "time": [
+      "1850",
+      "1851"
+    ],
+    "space": [
+      "Germany",
+      "Scotland"
+    ],
+    "data": {
+      "persons": [
+        "Rudolf Clausius",
+        "William Thomson (Lord Kelvin)"
+      ],
+      "event": "Second Law of Thermodynamics",
+      "concepts": [
+        "Clausius statement",
+        "Kelvin statement",
+        "Directionality of natural processes",
+        "Irreversibility"
+      ],
+      "significance": "Clausius statement: Heat cannot spontaneously flow from cold to hot. Kelvin statement: It is impossible to convert heat completely into work without other effects. Together they define the directionality and irreversibility of natural processes"
+    },
+    "parents": [
+      "thermodynamics"
+    ],
+    "kids": []
+  },
+  {
     "key": "statistical_mechanics",
     "time": [
       "1859",
-      "1902"
+      "1905"
     ],
     "space": [
       "Scotland",
@@ -526,9 +787,7 @@
         "H-theorem"
       ]
     },
-    "parents": [
-      "electromagnetism"
-    ],
+    "parents": [],
     "kids": []
   },
   {
@@ -557,6 +816,162 @@
     },
     "parents": [
       "electromagnetism"
+    ],
+    "kids": []
+  },
+  {
+    "key": "entropy_concept",
+    "time": [
+      "1865"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Rudolf Clausius"
+      ],
+      "event": "Birth of Entropy Concept",
+      "concepts": [
+        "Entropy (S)",
+        "Mathematical formulation of second law",
+        "Entropy increase principle",
+        "Quantification of irreversibility"
+      ],
+      "significance": "Introduced the state function 'entropy' and gave the mathematical formulation of the second law: for an isolated system, dS ≥ 0, quantifying irreversibility and becoming a core concept in understanding the arrow of time and information theory"
+    },
+    "parents": [
+      "thermodynamics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "action_angle_variables",
+    "time": [
+      "1866",
+      "1916"
+    ],
+    "space": [
+      "Germany",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Carl Gustav Jacobi",
+        "Albert Einstein"
+      ],
+      "concepts": [
+        "Action-angle variables",
+        "Adiabatic invariants",
+        "Quantization conditions"
+      ]
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "boltzmann_equation",
+    "time": [
+      "1870"
+    ],
+    "space": [
+      "Austria"
+    ],
+    "data": {
+      "persons": [
+        "Ludwig Boltzmann"
+      ],
+      "event": "Molecular Kinetic Theory and H-Theorem",
+      "concepts": [
+        "Boltzmann equation",
+        "H-theorem",
+        "Molecular collisions",
+        "Statistical interpretation of entropy"
+      ],
+      "significance": "From statistical assumptions about molecular collisions, derived the Boltzmann equation and H-theorem, attempting to prove that entropy increase corresponds to increased molecular disorder (probability), providing a microscopic statistical interpretation of entropy"
+    },
+    "parents": [
+      "statistical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "maxwell_demon",
+    "time": [
+      "1870"
+    ],
+    "space": [
+      "Scotland"
+    ],
+    "data": {
+      "persons": [
+        "James Clerk Maxwell"
+      ],
+      "event": "Maxwell's Demon Thought Experiment",
+      "concepts": [
+        "Hypothetical demon",
+        "Challenging second law",
+        "Information and entropy",
+        "Information-entropy relationship"
+      ],
+      "significance": "Proposed a hypothetical 'demon' that could challenge the second law of thermodynamics, sparking a century-long debate about the relationship between information, entropy, and energy, eventually leading to the concept of information entropy"
+    },
+    "parents": [
+      "statistical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "boltzmann_entropy_formula",
+    "time": [
+      "1877"
+    ],
+    "space": [
+      "Austria"
+    ],
+    "data": {
+      "persons": [
+        "Ludwig Boltzmann"
+      ],
+      "event": "Statistical Interpretation of Entropy: S = k log W",
+      "concepts": [
+        "Entropy S",
+        "Number of microstates W",
+        "Boltzmann constant k_B",
+        "S = k_B ln W"
+      ],
+      "significance": "Proposed the famous formula: the entropy S of a system is proportional to the logarithm of the number of microstates W, establishing S = k_B ln W, bridging macroscopic thermodynamics and microscopic statistics, becoming the cornerstone of statistical mechanics"
+    },
+    "parents": [
+      "statistical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "stefan_boltzmann_law",
+    "time": [
+      "1884"
+    ],
+    "space": [
+      "Austria"
+    ],
+    "data": {
+      "persons": [
+        "Ludwig Boltzmann"
+      ],
+      "event": "Stefan-Boltzmann Law",
+      "concepts": [
+        "Blackbody radiation",
+        "Total radiant intensity",
+        "Temperature to fourth power",
+        "J = σT⁴"
+      ],
+      "significance": "Derived from thermodynamic theory that the total radiation of a blackbody is proportional to the fourth power of temperature (J = σT⁴), unifying Josef Stefan's experimental discovery and demonstrating the power of statistical theory"
+    },
+    "parents": [
+      "statistical_mechanics"
     ],
     "kids": []
   },
@@ -653,10 +1068,35 @@
     "kids": []
   },
   {
+    "key": "quantum_hypothesis",
+    "time": [
+      "1900"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Max Planck"
+      ],
+      "event": "Quantum Hypothesis",
+      "concepts": [
+        "Energy quantization",
+        "Discrete energy packets",
+        "Blackbody radiation"
+      ],
+      "significance": "Energy can only be emitted or absorbed in discrete packets called quanta, marking the birth of quantum physics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "quantum_mechanics",
     "time": [
       "1900",
-      "1928"
+      "1994"
     ],
     "space": [
       "Germany",
@@ -681,7 +1121,33 @@
         "Spin"
       ]
     },
+    "parents": [],
+    "kids": []
+  },
+  {
+    "key": "statistical_ensemble_theory",
+    "time": [
+      "1902"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Josiah Willard Gibbs"
+      ],
+      "event": "Statistical Ensemble Theory",
+      "concepts": [
+        "Statistical ensemble",
+        "Microcanonical ensemble",
+        "Canonical ensemble",
+        "Grand canonical ensemble",
+        "Ensemble average"
+      ],
+      "significance": "Published 'Elementary Principles in Statistical Mechanics', establishing systematic and elegant statistical ensemble theory, shifting the focus from molecular motion models to ensemble averages of system states, making the theory more universal and mathematically rigorous, becoming the standard framework of modern statistical mechanics"
+    },
     "parents": [
+      "statistical_mechanics"
     ],
     "kids": []
   },
@@ -711,10 +1177,61 @@
     "kids": []
   },
   {
+    "key": "light_quantum_hypothesis",
+    "time": [
+      "1905"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein"
+      ],
+      "event": "Light Quantum Hypothesis",
+      "concepts": [
+        "Photons",
+        "Photoelectric effect",
+        "Energy quantization of light"
+      ],
+      "significance": "Proposed light consists of discrete energy packets (photons), successfully explaining the photoelectric effect and reinforcing the concept of energy quantization"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "brownian_motion_theory",
+    "time": [
+      "1905"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein"
+      ],
+      "event": "Brownian Motion Theory",
+      "concepts": [
+        "Molecular collision statistics",
+        "Random processes",
+        "Statistical fluctuations",
+        "Atomic existence"
+      ],
+      "significance": "Explained Brownian motion using statistical theory of molecular collisions and provided prediction formulas, later verified by Jean Perrin's experiments, providing the most direct evidence for the real existence of atoms and molecules, and opening the study of random processes"
+    },
+    "parents": [
+      "statistical_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "relativity",
     "time": [
       "1905",
-      "1915"
+      "1916"
     ],
     "space": [
       "Switzerland"
@@ -732,6 +1249,57 @@
       ]
     },
     "parents": [],
+    "kids": []
+  },
+  {
+    "key": "third_law_thermodynamics",
+    "time": [
+      "1906"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Walther Nernst"
+      ],
+      "event": "Third Law of Thermodynamics (Nernst's Theorem)",
+      "concepts": [
+        "Absolute zero",
+        "Perfect crystal",
+        "Entropy at absolute zero",
+        "Unattainability principle"
+      ],
+      "significance": "Proposed: at absolute zero, the entropy change of a perfect crystal of pure substance is zero, meaning absolute zero cannot be reached in finite steps, solving the problem of entropy calculation baseline at low temperatures"
+    },
+    "parents": [
+      "thermodynamics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "bohr_atomic_model",
+    "time": [
+      "1913"
+    ],
+    "space": [
+      "Denmark"
+    ],
+    "data": {
+      "persons": [
+        "Niels Bohr"
+      ],
+      "event": "Bohr Atomic Model",
+      "concepts": [
+        "Quantized electron orbits",
+        "Electron transitions",
+        "Atomic spectra"
+      ],
+      "significance": "Introduced quantum conditions to atomic structure, proposing electrons orbit in specific paths and emit/absorb light at specific frequencies during transitions, explaining atomic spectra"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
     "kids": []
   },
   {
@@ -754,6 +1322,269 @@
     },
     "parents": [
       "relativity"
+    ],
+    "kids": []
+  },
+  {
+    "key": "schwarzschild_solution",
+    "time": [
+      "1916"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Karl Schwarzschild"
+      ],
+      "work": "Exact solution to Einstein field equations",
+      "concepts": [
+        "Schwarzschild metric",
+        "Black hole solution",
+        "Event horizon",
+        "Singularity"
+      ]
+    },
+    "parents": [
+      "relativity"
+    ],
+    "kids": []
+  },
+  {
+    "key": "noether_theorem",
+    "time": [
+      "1918"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Emmy Noether"
+      ],
+      "event": "Noether's Theorem",
+      "concepts": [
+        "Continuous symmetry",
+        "Conservation laws",
+        "Time translation symmetry → Energy conservation",
+        "Space translation symmetry → Momentum conservation",
+        "Space rotation symmetry → Angular momentum conservation",
+        "Variational principles"
+      ],
+      "significance": "Proved the one-to-one correspondence between continuous symmetries and conservation laws, at the heart of analytical mechanics (variational principles), unifying physics' two pillars - symmetry and conservation laws - with impact throughout modern physics"
+    },
+    "parents": [
+      "analytical_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "matter_wave_hypothesis",
+    "time": [
+      "1924"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Louis de Broglie"
+      ],
+      "event": "Matter Wave Hypothesis",
+      "concepts": [
+        "Wave-particle duality",
+        "de Broglie wavelength λ=h/p",
+        "Matter waves"
+      ],
+      "significance": "Proposed all matter (like electrons) exhibits wave-particle duality, laying the foundation for wave mechanics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "bose_einstein_statistics",
+    "time": [
+      "1924"
+    ],
+    "space": [
+      "India",
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Satyendra Nath Bose",
+        "Albert Einstein"
+      ],
+      "event": "Bose-Einstein Statistics",
+      "concepts": [
+        "Bose-Einstein statistics",
+        "Identical particles",
+        "Bose-Einstein condensation",
+        "Quantum statistics for bosons"
+      ],
+      "significance": "Bose proposed new statistical method for photon gas, Einstein extended to identical particles, predicting Bose-Einstein condensation, revealing quantum statistical behavior of particles that do not obey Pauli exclusion principle (bosons)"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "matrix_mechanics",
+    "time": [
+      "1925"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Werner Heisenberg",
+        "Max Born",
+        "Pascual Jordan"
+      ],
+      "event": "Matrix Mechanics",
+      "concepts": [
+        "Matrix mathematics",
+        "Quantum mechanical formalism",
+        "Non-commuting quantities"
+      ],
+      "significance": "Created the first complete quantum mechanics formalism using matrix mathematics to describe physical quantities"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "wave_mechanics",
+    "time": [
+      "1926"
+    ],
+    "space": [
+      "Austria"
+    ],
+    "data": {
+      "persons": [
+        "Erwin Schrödinger"
+      ],
+      "event": "Wave Mechanics",
+      "concepts": [
+        "Schrödinger equation",
+        "Wave function",
+        "Mathematical equivalence to matrix mechanics"
+      ],
+      "significance": "Provided a more intuitive framework by proposing the Schrödinger equation and proving its mathematical equivalence to matrix mechanics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "fermi_dirac_statistics",
+    "time": [
+      "1926"
+    ],
+    "space": [
+      "Italy",
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Enrico Fermi",
+        "Paul Dirac"
+      ],
+      "event": "Fermi-Dirac Statistics",
+      "concepts": [
+        "Fermi-Dirac statistics",
+        "Pauli exclusion principle",
+        "Quantum statistics for fermions",
+        "Electron behavior in metals"
+      ],
+      "significance": "Independently proposed quantum statistical method for particles obeying Pauli exclusion principle (fermions, like electrons), successfully explaining problems like electron specific heat in metals, fundamental to understanding solid state physics and stellar evolution"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "uncertainty_principle",
+    "time": [
+      "1927"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Werner Heisenberg"
+      ],
+      "event": "Uncertainty Principle",
+      "concepts": [
+        "Δx·Δp ≥ ħ/2",
+        "Conjugate variables",
+        "Fundamental measurement limits"
+      ],
+      "significance": "Established that conjugate variables like position and momentum cannot be simultaneously measured precisely, a core feature of quantum mechanics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "complementarity_principle",
+    "time": [
+      "1927"
+    ],
+    "space": [
+      "Denmark"
+    ],
+    "data": {
+      "persons": [
+        "Niels Bohr"
+      ],
+      "event": "Complementarity Principle",
+      "concepts": [
+        "Wave-particle duality",
+        "Complementary concepts",
+        "Copenhagen interpretation"
+      ],
+      "significance": "Stated that classical concepts like wave and particle nature are mutually exclusive yet complementary, becoming a philosophical foundation of the Copenhagen interpretation"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "solvay_conference_1927",
+    "time": [
+      "1927"
+    ],
+    "space": [
+      "Belgium"
+    ],
+    "data": {
+      "persons": [
+        "Multiple physicists",
+        "Albert Einstein",
+        "Niels Bohr"
+      ],
+      "event": "Fifth Solvay Conference on Electrons and Photons",
+      "concepts": [
+        "Quantum mechanics debates",
+        "Einstein-Bohr debates",
+        "Quantum completeness"
+      ],
+      "significance": "Einstein and Bohr began their first public debate about quantum mechanics completeness, profoundly influencing the field"
+    },
+    "parents": [
+      "quantum_mechanics"
     ],
     "kids": []
   },
@@ -842,8 +1673,136 @@
         "Big Bang theory"
       ]
     },
+    "parents": [],
+    "kids": []
+  },
+  {
+    "key": "dirac_equation",
+    "time": [
+      "1928"
+    ],
+    "space": [
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Paul Dirac"
+      ],
+      "event": "Dirac Equation",
+      "concepts": [
+        "Relativistic quantum mechanics",
+        "Electron description",
+        "Prediction of antimatter"
+      ],
+      "significance": "Combined quantum mechanics with special relativity to describe electrons and predicted the existence of antimatter (positrons)"
+    },
     "parents": [
-      "relativity"
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "erp_paradox",
+    "time": [
+      "1935"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein",
+        "Boris Podolsky",
+        "Nathan Rosen"
+      ],
+      "event": "EPR Paradox",
+      "concepts": [
+        "Quantum entanglement",
+        "Non-classical correlations",
+        "Quantum mechanics completeness"
+      ],
+      "significance": "Famous thought experiment arguing for quantum mechanics incompleteness, with quantum entanglement as the core non-classical correlation"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "pi_mesons",
+    "time": [
+      "1947"
+    ],
+    "space": [
+      "United Kingdom"
+    ],
+    "data": {
+      "persons": [
+        "Cecil Powell",
+        "César Lattes",
+        "Giuseppe Occhialini"
+      ],
+      "event": "Discovery of Pi Mesons",
+      "concepts": [
+        "Pi mesons",
+        "Pion",
+        "Strong nuclear force"
+      ],
+      "significance": "First true mesons discovered, confirming Yukawa's prediction of force-carrying particles between nucleons"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "kaon_discovery",
+    "time": [
+      "1947"
+    ],
+    "space": [
+      "United Kingdom"
+    ],
+    "data": {
+      "persons": [
+        "G. D. Rochester",
+        "C. C. Butler"
+      ],
+      "event": "Discovery of Kaon Mesons",
+      "concepts": [
+        "Kaon",
+        "K meson",
+        "Strange particles"
+      ],
+      "significance": "Discovery of strange particles, leading to understanding of strangeness quantum number"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "phi_mesons",
+    "time": [
+      "1952"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Samuel G. B. Brush"
+      ],
+      "event": "Discovery of Phi Mesons",
+      "concepts": [
+        "Phi meson",
+        "Vector meson",
+        "Strange quark"
+      ],
+      "significance": "Discovery of phi meson, composed of strange and anti-strange quarks"
+    },
+    "parents": [
+      "quantum_mechanics"
     ],
     "kids": []
   },
@@ -877,6 +1836,31 @@
     "kids": []
   },
   {
+    "key": "bell_inequality",
+    "time": [
+      "1964"
+    ],
+    "space": [
+      "Northern Ireland"
+    ],
+    "data": {
+      "persons": [
+        "John Bell"
+      ],
+      "event": "Bell's Inequality",
+      "concepts": [
+        "Local hidden variables",
+        "Experimental test for quantum mechanics",
+        "Mathematical inequality"
+      ],
+      "significance": "Proposed a mathematically testable inequality that, if violated, would confirm quantum mechanics over local hidden variable theories"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
     "key": "string_theory",
     "time": [
       "1968",
@@ -899,6 +1883,32 @@
         "Extra dimensions",
         "Holographic principle"
       ]
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "j_psi_discovery",
+    "time": [
+      "1974"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Samuel C. C. Ting",
+        "Burton Richter"
+      ],
+      "event": "Discovery of J/Psi Meson",
+      "concepts": [
+        "J/Psi meson",
+        "Charmonium",
+        "Charm quark"
+      ],
+      "significance": "Discovery of J/Psi meson, confirming existence of charm quark, leading to 'November Revolution' in particle physics"
     },
     "parents": [
       "quantum_mechanics"
@@ -970,182 +1980,5 @@
       "relativity"
     ],
     "kids": []
-  },
-  {
-    "key": "d'alembert_principle",
-    "time": [
-      "1743"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Jean le Rond d'Alembert"
-      ],
-      "work": "Traité de Dynamique",
-      "concepts": [
-        "D'Alembert's principle",
-        "Virtual work",
-        "Reduction of dynamical problems to static ones"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
-  },
-  {
-    "key": "lagrangian_mechanics",
-    "time": [
-      "1788"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Joseph-Louis Lagrange"
-      ],
-      "work": "Mécanique Analytique",
-      "concepts": [
-        "Lagrangian function",
-        "Euler-Lagrange equations",
-        "Generalized coordinates",
-        "Principle of least action"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
-  },
-  {
-    "key": "canonical_transformations",
-    "time": [
-      "1835",
-      "1840"
-    ],
-    "space": [
-      "Ireland"
-    ],
-    "data": {
-      "persons": [
-        "William Rowan Hamilton"
-      ],
-      "concepts": [
-        "Canonical transformations",
-        "Generating functions",
-        "Hamilton equations",
-        "Phase space formalism"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
-  },
-  {
-    "key": "liouville_theorem",
-    "time": [
-      "1838",
-      "1853"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Joseph Liouville"
-      ],
-      "concepts": [
-        "Liouville's theorem",
-        "Phase space volume conservation",
-        "Invariant integral"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "hamilton_jacobi_theory",
-    "time": [
-      "1837",
-      "1866"
-    ],
-    "space": [
-      "Germany"
-    ],
-    "data": {
-      "persons": [
-        "Carl Gustav Jacobi"
-      ],
-      "concepts": [
-        "Hamilton-Jacobi equation",
-        "Canonical transformation to cyclic coordinates",
-        "Separation of variables in mechanics"
-      ],
-      "work": "Vorlesungen über Dynamik"
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "action_angle_variables",
-    "time": [
-      "1866",
-      "1916"
-    ],
-    "space": [
-      "Germany",
-      "England"
-    ],
-    "data": {
-      "persons": [
-        "Carl Gustav Jacobi",
-        "Albert Einstein"
-      ],
-      "concepts": [
-        "Action-angle variables",
-        "Adiabatic invariants",
-        "Quantization conditions"
-      ]
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "poisson_bracket",
-    "time": [
-      "1809"
-    ],
-    "space": [
-      "France"
-    ],
-    "data": {
-      "persons": [
-        "Siméon Denis Poisson"
-      ],
-      "concepts": [
-        "Poisson bracket",
-        "Canonical equations",
-        "Integrability conditions"
-      ],
-      "work": "Sur les invariants differentiels des equations des corps solides"
-    },
-    "parents": [
-      "analytical_mechanics"
-    ],
-    "kids": [
-    ]
   }
 ]
