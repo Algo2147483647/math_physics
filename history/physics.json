@@ -202,7 +202,8 @@
       "persons": [
         "Jean le Rond d'Alembert"
       ],
-      "work": "Traité de Dynamique",
+      "paper": "Traité de Dynamique",
+      "work": "In his work *Traité de Dynamique*, he proposed formally transforming dynamic problems into static problems: ∑(Fᵢ - mᵢaᵢ)·δrᵢ = 0. This is a crucial step from vector mechanics to analytical mechanics, introducing the concept of \"virtual displacement\".",
       "concepts": [
         "D'Alembert's principle",
         "Virtual work",
@@ -290,7 +291,8 @@
       "persons": [
         "Joseph-Louis Lagrange"
       ],
-      "work": "Published his epoch-making work, *Analytical Mechanics*. The entire book uses no geometric diagrams, relying entirely on mathematical analysis. 1. Introduced generalized coordinates (qᵢ), freeing it from the constraints of Cartesian coordinates. 2. Defined the Lagrange function L = T - V. 3. Derived the Lagrange equation from d'Alembert's principle: d/dt(∂L/∂qᵢ) - ∂L/∂qᵢ = 0. This marked the formal birth of analytical mechanics, providing a universal method for dealing with complex constrained systems.",
+      "paper": "Mécanique Analytique",
+      "work": "Published his epoch-making work, *Mécanique Analytique*. The entire book uses no geometric diagrams, relying entirely on mathematical analysis. 1. Introduced generalized coordinates (qᵢ), freeing it from the constraints of Cartesian coordinates. 2. Defined the Lagrange function L = T - V. 3. Derived the Lagrange equation from d'Alembert's principle: d/dt(∂L/∂qᵢ) - ∂L/∂qᵢ = 0. This marked the formal birth of analytical mechanics, providing a universal method for dealing with complex constrained systems.",
       "concepts": [
         "Lagrangian function",
         "Euler-Lagrange equations",
@@ -408,7 +410,7 @@
         "Canonical equations",
         "Integrability conditions"
       ],
-      "work": "Sur les invariants differentiels des equations des corps solides"
+      "work": "Sur les invariants differentiels des equations des corps solides. Introducing the Poisson bracket operation for the Hamiltonian system: {f, g} = ∑ (∂f/∂qᵢ ∂g/∂pᵢ - ∂f/∂pᵢ ∂g/∂qᵢ). The canonical equations can be written as q̇ = {q, H}, ṗ = {p, H}. This operation profoundly reveals the algebraic structure of mechanical quantities and serves as a crucial bridge between classical mechanics and quantum mechanics (corresponding to commutators in quantum mechanics)."
     },
     "parents": [
       "analytical_mechanics"
@@ -567,7 +569,7 @@
         "William Rowan Hamilton"
       ],
       "works": [
-        "On a General Method in Dynamics"
+        "Hamilton's principle (the principle of steady action) is proposed: the true trajectory of motion causes the action S = ∫ L dt to reach an extreme value. This is the highest-level axiomatic statement in mechanics (and even physics). Introducing the conjugate momentum pᵢ = ∂L/∂q̇ᵢ, and through the Legendre transformation, the Hamiltonian function H(q,p,t) = ∑pᵢq̇ᵢ - L is obtained from the Lagrange function. The Hamiltonian canonical equations are derived: q̇ᵢ = ∂H/∂pᵢ, ṗᵢ = -∂H/∂qᵢ. The form is symmetrical and elegant, describing the state of the mechanical system as a point in the phase space (q, p)."
       ],
       "concepts": [
         "Hamiltonian formalism",
@@ -646,7 +648,7 @@
         "Canonical transformation to cyclic coordinates",
         "Separation of variables in mechanics"
       ],
-      "work": "Vorlesungen über Dynamik"
+      "work": "Vorlesungen über Dynamik. Building upon Hamilton's work, the Hamilton-Jacobi equation was proposed: H(q, ∂S/∂q, t) + ∂S/∂t = 0. Solving this partial differential equation yields the principal function S, transforming the solution of mechanical problems into finding a specific canonical transformation that makes the new Hamiltonian zero. This represents the pinnacle of analytical mechanics and serves as a mathematical link between classical mechanics and wave mechanics (the Schrödinger equation can be viewed as a quantization of the H-J equation)."
     },
     "parents": [
       "analytical_mechanics"
@@ -670,7 +672,8 @@
         "Liouville's theorem",
         "Phase space volume conservation",
         "Invariant integral"
-      ]
+      ],
+      "work": "Within the Hamiltonian framework, it is proven that the density of representative points in phase space is conserved during motion, i.e., dρ/dt = 0. This lays a solid mathematical foundation for statistical mechanics (Gibbs ensemble theory) and is a fundamental theorem connecting micromechanics and macroscopic statistics."
     },
     "parents": [
       "analytical_mechanics"
