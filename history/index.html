@@ -9,7 +9,7 @@
       margin: 0;
       padding: 10px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f4 100%);
       color: #333;
       overflow: auto;
     }
@@ -21,23 +21,36 @@
     }
     
     .controls {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     
     button {
-      margin: 0 3px;
-      padding: 6px 12px;
-      background-color: #3949ab;
+      margin: 0 5px;
+      padding: 8px 16px;
+      background: linear-gradient(to bottom, #4a6fa6, #3949ab);
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 20px;
       cursor: pointer;
       font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 2px 5px rgba(57, 73, 171, 0.3);
+      transition: all 0.3s ease;
     }
     
     button:hover {
-      background-color: #5a6268;
+      background: linear-gradient(to bottom, #5a6cb6, #4a59c0);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(57, 73, 171, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
     }
     
     #timeline-container {
@@ -45,24 +58,28 @@
       justify-content: center;
       overflow-x: auto;
       padding: 10px 0;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
     }
     
     #timeline-svg {
-      border: 1px solid #ddd;
+      border-radius: 12px;
       background-color: white;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
     }
     
     .event-title {
-      font-family: 'Georgia';
-      font-style: italic;
-      font-size: 16px;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      fill: #2c3e50;
     }
     
     .event-year {
       font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-      font-size: 12px;
-      fill: #3949ab;
+      font-size: 11px;
+      fill: #5a6268;
     }
     
     .event-persons {
@@ -79,31 +96,43 @@
     
     .timeline-line {
       stroke: #7986cb;
-      stroke-width: 3;
+      stroke-width: 4;
+      stroke-linecap: round;
     }
     
     .timeline-marker {
       fill: white;
       stroke: #3949ab;
-      stroke-width: 2;
+      stroke-width: 2.5;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    }
+    
+    .timeline-marker-bg {
+      fill: #3949ab;
+      opacity: 0.2;
     }
     
     .timeline-range {
-      stroke: #3949ab;
+      stroke: transparent;
       stroke-width: 1;
+      rx: 8px;
+      ry: 8px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
     
     .event-card {
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
     }
     
     .event-card:hover {
-      filter: brightness(1.05);
+      filter: brightness(1.05) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
     }
     
     .event-card-bg {
       transition: all 0.3s ease;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+      stroke: rgba(57, 73, 171, 0.3);
     }
   </style>
 </head>

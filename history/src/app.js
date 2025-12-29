@@ -74,6 +74,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   // 初始化SVG
   svgElement = document.getElementById('timeline-svg');
+  
+  // Add defs element for gradients
+  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  svgElement.appendChild(defs);
 
   // Render timeline
   renderTimeline();

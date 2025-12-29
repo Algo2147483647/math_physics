@@ -19,9 +19,10 @@ function getRandomColor() {
 // Function to generate soft colors for timeline ranges
 function getSoftColor() {
   // Generate soft pastel colors with more consistency
-  const hue = Math.floor(Math.random() * 360);
-  const saturation = 20 + Math.floor(Math.random() * 30); // Lower saturation for softer look
-  const lightness = 80 + Math.floor(Math.random() * 15); // Higher lightness for softer look
+  // Using a more limited hue range for better visual harmony
+  const hue = 200 + Math.floor(Math.random() * 160); // Blues, purples, pinks, greens
+  const saturation = 25 + Math.floor(Math.random() * 25); // Lower saturation for softer look
+  const lightness = 85 + Math.floor(Math.random() * 10); // Higher lightness for softer look
 
   return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
