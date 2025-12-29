@@ -120,7 +120,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       const rectY = Math.min(event.startY, event.endY);
 
       // Determine the width of the rectangle based on whether this is a parent
-      let rectWidth = 16; // Default width
+      let rectWidth = 24; // Default width
       let rectX = x - 8;  // Default x position
 
       // Check if this event has children and adjust width accordingly
@@ -128,11 +128,11 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       if (rightmostX && rightmostX > event.x) {
         // This event is a parent, expand its rectangle to cover its children
         rectX = x - 8; // Left edge at parent's position
-        rectWidth = (rightmostX - x) + 16; // Width to cover up to rightmost child
+        rectWidth = (rightmostX - x) + 24; // Width to cover up to rightmost child
       } else {
         // Regular event with default width
         rectX = x - 8;
-        rectWidth = 16;
+        rectWidth = 24;
       }
 
       // Generate softer color for time range rectangle
@@ -230,7 +230,7 @@ function drawSinglePoints(singlePoints, margin, height) {
       const markerBg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       markerBg.setAttribute('cx', x);
       markerBg.setAttribute('cy', event.startY);
-      markerBg.setAttribute('r', 12);
+      markerBg.setAttribute('r', 10);
       markerBg.setAttribute('class', 'timeline-marker-bg');
       svgElement.appendChild(markerBg);
 

@@ -1,6 +1,6 @@
 // Calculate horizontal positions for time ranges and single points to avoid conflicts using DFS
 function calculateHorizontalPositions(events, margin) {
-  const minSpacing = 16; // Minimum spacing between events
+  const minSpacing = 24; // Minimum spacing between events
 
   // Create a map of all events for easy lookup
   const allEventsMap = new Map();
