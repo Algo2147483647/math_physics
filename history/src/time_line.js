@@ -42,7 +42,9 @@ function drawVerticalTimeline(height, margin) {
   timelineLine.setAttribute('y1', margin.top);
   timelineLine.setAttribute('x2', margin.left);
   timelineLine.setAttribute('y2', height - margin.bottom);
-  timelineLine.setAttribute('class', 'timeline-line');
+  timelineLine.setAttribute('stroke', '#7986cb');
+  timelineLine.setAttribute('stroke-width', 4);
+  timelineLine.setAttribute('stroke-linecap', 'round');
   svgElement.appendChild(timelineLine);
 }
 
