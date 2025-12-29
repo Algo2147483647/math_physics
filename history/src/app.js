@@ -8,7 +8,7 @@ window.verticalScaleValue = 10; // Global vertical unit length accessible by oth
 // Load data from math.json
 async function loadData() {
   try {
-    const response = await fetch('physics.json');
+    const response = await fetch('math.json'); // files: physics, math
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
