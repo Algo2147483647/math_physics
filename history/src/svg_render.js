@@ -136,7 +136,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       }
 
       // Generate softer color for time range rectangle
-      const softColor = getSoftColor();
+      const fillColor = getSoftColor();
 
       // Time range rectangle
       const rangeRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -144,7 +144,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       rangeRect.setAttribute('y', rectY);
       rangeRect.setAttribute('width', rectWidth);
       rangeRect.setAttribute('height', rectHeight);
-      rangeRect.setAttribute('fill', softColor);
+      rangeRect.setAttribute('fill', fillColor);
       rangeRect.setAttribute('stroke', 'transparent');
       rangeRect.setAttribute('stroke-width', 1);
       rangeRect.setAttribute('rx', 8);
@@ -168,12 +168,12 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       
       const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
       stop1.setAttribute('offset', '0%');
-      stop1.setAttribute('stop-color', softColor);
+      stop1.setAttribute('stop-color', fillColor);
       stop1.setAttribute('stop-opacity', '0.8');
       
       const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
       stop2.setAttribute('offset', '100%');
-      stop2.setAttribute('stop-color', softColor);
+      stop2.setAttribute('stop-color', fillColor);
       stop2.setAttribute('stop-opacity', '0.4');
       
       gradient.appendChild(stop1);

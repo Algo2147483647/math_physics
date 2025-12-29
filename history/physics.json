@@ -1379,34 +1379,6 @@
     "kids": []
   },
   {
-    "key": "bose_einstein_statistics",
-    "time": [
-      "1924"
-    ],
-    "space": [
-      "India",
-      "Switzerland"
-    ],
-    "data": {
-      "persons": [
-        "Satyendra Nath Bose",
-        "Albert Einstein"
-      ],
-      "event": "Bose-Einstein Statistics",
-      "concepts": [
-        "Bose-Einstein statistics",
-        "Bosons"
-      ],
-      "significance": "Statistical description for particles that can share the same quantum state, leading to understanding of bosons"
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": [
-      "bose_einstein_condensate"
-    ]
-  },
-  {
     "key": "matter_wave_hypothesis",
     "time": [
       "1924"
@@ -1480,33 +1452,6 @@
         "Non-commuting quantities"
       ],
       "significance": "Created the first complete quantum mechanics formalism using matrix mathematics to describe physical quantities"
-    },
-    "parents": [
-      "quantum_mechanics"
-    ],
-    "kids": []
-  },
-  {
-    "key": "fermi_dirac_statistics",
-    "time": [
-      "1926"
-    ],
-    "space": [
-      "Italy",
-      "United Kingdom"
-    ],
-    "data": {
-      "persons": [
-        "Enrico Fermi",
-        "Paul Dirac"
-      ],
-      "event": "Fermi-Dirac Statistics",
-      "concepts": [
-        "Fermi-Dirac statistics",
-        "Fermions",
-        "Pauli exclusion principle"
-      ],
-      "significance": "Statistical description for particles that cannot share the same quantum state, leading to understanding of fermions"
     },
     "parents": [
       "quantum_mechanics"
