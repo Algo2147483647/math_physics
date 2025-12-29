@@ -220,7 +220,7 @@
   },
   {
     "key": "calculus",
-    "time": ["1684"],
+    "time": ["1684", "1854"],
     "space": [],
     "data": {
       "persons": ["Newton", "Leibniz"],
@@ -1231,5 +1231,93 @@
       "significance": "Extended Itô integration to integration with respect to general local martingales and semimartingales, establishing a complete modern framework of stochastic analysis, making it applicable to a wider range of stochastic processes."
     },
     "parents": ["probability_theory"]
+  },
+  {
+    "key": "newton_fluxions",
+    "time": ["1665", "1666"],
+    "space": [],
+    "data": {
+      "persons": ["Isaac Newton"],
+      "event": "Method of Fluxions (Differentiation and Integration)",
+      "significance": "Proposed \"fluxions and fluents\", studied rates of change and area problems, establishing the core ideas of calculus."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "leibniz_notation",
+    "time": ["1675", "1684"],
+    "space": [],
+    "data": {
+      "persons": ["Gottfried Leibniz"],
+      "event": "Differential and Integral Notation",
+      "significance": "Introduced the d/dx and ∫ notations, established the operational system, the notation system is still in use today."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "brachistochrone_problem",
+    "time": ["1696"],
+    "space": [],
+    "data": {
+      "persons": ["Johann Bernoulli"],
+      "event": "Brachistochrone Problem",
+      "significance": "Demonstrated that calculus could solve entirely new types of problems, leading to the calculus of variations."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "euler_higher_derivatives",
+    "time": ["1700", "1750"],
+    "space": [],
+    "data": {
+      "persons": ["Euler"],
+      "event": "Higher Derivatives and Series",
+      "significance": "Systematically studied Taylor series, exponential functions, and trigonometric functions."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "euler_function_concept",
+    "time": ["1730", "1740"],
+    "space": [],
+    "data": {
+      "persons": ["Euler"],
+      "event": "Function Concept and Analysis",
+      "significance": "Clarified the \"function\" concept, systematically organized differentiation and integration calculation rules, making calculus an independent branch of analysis."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "cauchy_limit_definition",
+    "time": ["1821"],
+    "space": [],
+    "data": {
+      "persons": ["Cauchy"],
+      "event": "Analysis Rigorization: Limit Definition",
+      "significance": "In \"Cours d'analyse\" defined derivatives and integrals based on limits, reducing dependence on intuition."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "weierstrass_epsilon_delta",
+    "time": ["1854", "1872"],
+    "space": [],
+    "data": {
+      "persons": ["Weierstrass"],
+      "event": "Establishment of ε–δ Language",
+      "significance": "Completely formalized limits and continuity, establishing the modern rigorous foundation of calculus."
+    },
+    "parents": ["calculus"]
+  },
+  {
+    "key": "riemann_integral",
+    "time": ["1854"],
+    "space": [],
+    "data": {
+      "persons": ["Bernhard Riemann"],
+      "event": "Riemann Integral",
+      "significance": "Defined integration using interval partitions, generalized the concept of integration, laying the foundation for real analysis."
+    },
+    "parents": ["calculus"]
   }
 ]
