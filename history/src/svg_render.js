@@ -21,6 +21,20 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       rangeRect.setAttribute('rx', 8);
       rangeRect.setAttribute('ry', 8);
       rangeRect.setAttribute('class', 'timeline-range');
+      
+      // Add event listeners for hover
+      rangeRect.addEventListener('mouseenter', (e) => {
+        showEventCard(event, e.clientX, e.clientY);
+      });
+      
+      rangeRect.addEventListener('mouseleave', () => {
+        hideEventCard();
+      });
+      
+      rangeRect.addEventListener('mousemove', (e) => {
+        updateEventCardPosition(e.clientX, e.clientY);
+      });
+      
       svgElement.appendChild(rangeRect);
     }
   });
@@ -51,6 +65,20 @@ function drawSinglePoints(singlePoints, margin, height) {
       marker.setAttribute('cy', event.startY);
       marker.setAttribute('r', 8);
       marker.setAttribute('class', 'timeline-marker');
+      
+      // Add event listeners for hover
+      marker.addEventListener('mouseenter', (e) => {
+        showEventCard(event, e.clientX, e.clientY);
+      });
+      
+      marker.addEventListener('mouseleave', () => {
+        hideEventCard();
+      });
+      
+      marker.addEventListener('mousemove', (e) => {
+        updateEventCardPosition(e.clientX, e.clientY);
+      });
+      
       svgElement.appendChild(marker);
     }
   });
