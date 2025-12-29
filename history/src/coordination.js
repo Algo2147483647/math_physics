@@ -1,15 +1,13 @@
 // Calculate horizontal positions for time ranges and single points to avoid conflicts using DFS
-function calculateHorizontalPositions(events, margin) {
+function calculateHorizontalPositions(events) {
   // Create a map of all events for easy lookup
   const allEventsMap = new Map();
   events.forEach(event => allEventsMap.set(event.key, event));
 
-  const roots = getRoots(events);
-
-  virtualRoot = {
+  const virtualRoot = {
     key: 'virtualRoot',
     parents: [],
-    kids: roots.map(root => root.key),
+    kids: getRoots(events).map(root => root.key),
     startTime: -Infinity,
     endTime: Infinity,
   };
@@ -40,7 +38,7 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
   });
 
   // 3. get width
-  width = 0
+  let width = 0
   for (const item of positionedEventsTmp) {
     if (item.x + item.width - 1 > width) {
       width = item.x + item.width - 1;
@@ -64,7 +62,7 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
 // Helper function to find a non-conflicting x position for an event
 function findNonConflictingXPositionForEvent(event, positionedEvents) {
   // Start with initial x position
-  x = 0;
+  event.x = 0;
 
   // Check against all existing positioned events to avoid conflicts
   let hasConflict;
@@ -72,18 +70,16 @@ function findNonConflictingXPositionForEvent(event, positionedEvents) {
     hasConflict = false;
 
     for (const item of positionedEvents) {
-      if (isConflict(event, item, x)) {
-        x = item.x + item.width; // Move x position past the conflicting event
+      if (isConflict(event, item)) {
+        event.x = item.x + item.width; // Move x position past the conflicting event
         hasConflict = true;
         break;
       }
     }
   } while (hasConflict);
-
-  event.x = x;
 }
 
-// Helper function to determine if two events conflict at a given x position
+// Helper function to determine if two events conflict
 function isConflict(a, b) {
   const yOverlap = a.endTime >= b.startTime && a.startTime <= b.endTime;
   const xOverlap = a.x + a.width - 1 >= b.x && a.x <= b.x + b.width - 1;
