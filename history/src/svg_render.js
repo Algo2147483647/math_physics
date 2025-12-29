@@ -44,6 +44,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
 function drawSinglePoints(singlePoints, margin, height) {
   widthUnit = 24;
 
+  // First, draw all connector lines (dashed lines)
   singlePoints.forEach((event) => {
     const x = event.x * widthUnit + margin.left + 16;
 
@@ -58,7 +59,14 @@ function drawSinglePoints(singlePoints, margin, height) {
       connector.setAttribute('stroke-width', 2);
       connector.setAttribute('stroke-dasharray', '6,4');
       svgElement.appendChild(connector);
+    }
+  });
 
+  // Then, draw all event dots on top
+  singlePoints.forEach((event) => {
+    const x = event.x * widthUnit + margin.left + 16;
+
+    if (event.startY >= margin.top && event.startY <= height - margin.bottom) {
       // Draw event dot
       const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       marker.setAttribute('cx', x);
