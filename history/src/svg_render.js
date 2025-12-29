@@ -5,7 +5,7 @@ function clearSVG() {
 
 // Draw time ranges
 function drawTimeRanges(timeRanges, margin, height, yearScale) {
-  widthUnit = 24;
+  widthUnit = window.yearScaleValue; // Use global variable from app.js
 
   timeRanges.forEach((event) => {
     if (event.startY >= margin.top && event.startY <= height - margin.bottom) {
@@ -42,7 +42,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
 
 // Draw single points
 function drawSinglePoints(singlePoints, margin, height) {
-  widthUnit = 24;
+  widthUnit = window.yearScaleValue; // Use global variable from app.js
 
   // First, draw all connector lines (dashed lines)
   singlePoints.forEach((event) => {

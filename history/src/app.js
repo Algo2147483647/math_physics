@@ -2,6 +2,7 @@
 let historyData = [];
 let svgElement;
 let timelineData = [];
+window.yearScaleValue = 24; // Global year unit length accessible by other scripts
 
 // Load data from math.json
 async function loadData() {
@@ -175,6 +176,37 @@ function setupEventListeners() {
   document.getElementById('zoom-out').addEventListener('click', () => {
     scale = Math.max(scale / 1.2, 0.5);
     svgElement.style.transform = `scale(${scale})`;
+  });
+  
+  // Settings button functionality
+  const settingsBtn = document.getElementById('settings-btn');
+  const settingsPanel = document.getElementById('settings-panel');
+  
+  settingsBtn.addEventListener('click', () => {
+    settingsPanel.classList.toggle('active');
+  });
+  
+  // Close settings panel when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!settingsPanel.contains(event.target) && 
+        !settingsBtn.contains(event.target)) {
+      settingsPanel.classList.remove('active');
+    }
+  });
+  
+  // Year scale control
+  const yearScaleSlider = document.getElementById('year-scale');
+  const yearScaleValueDisplay = document.getElementById('year-scale-value');
+  
+  yearScaleValueDisplay.textContent = yearScaleValue;
+  yearScaleSlider.value = yearScaleValue;
+  
+  yearScaleSlider.addEventListener('input', (e) => {
+    yearScaleValue = parseInt(e.target.value);
+    yearScaleValueDisplay.textContent = yearScaleValue;
+    
+    // Re-render the timeline with new scale
+    renderTimeline();
   });
   
   // Add scroll event listener to update card position
