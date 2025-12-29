@@ -13,7 +13,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       const rangeRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
       rangeRect.setAttribute('x', event.x * widthUnit + margin.left + 4);
       rangeRect.setAttribute('y', Math.min(event.startY, event.endY));
-      rangeRect.setAttribute('width', event.width * widthUnit);
+      rangeRect.setAttribute('width', event.width * widthUnit - 4);
       rangeRect.setAttribute('height', Math.abs(event.endY - event.startY));
       rangeRect.setAttribute('fill', getRandomColor());
       rangeRect.setAttribute('stroke', 'transparent');
