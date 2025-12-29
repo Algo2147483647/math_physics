@@ -15,7 +15,7 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       rangeRect.setAttribute('y', Math.min(event.startY, event.endY));
       rangeRect.setAttribute('width', event.width * widthUnit - 4);
       rangeRect.setAttribute('height', Math.abs(event.endY - event.startY));
-      rangeRect.setAttribute('fill', getRandomColor());
+      rangeRect.setAttribute('fill', getRandomColor(event.x, event.width));
       rangeRect.setAttribute('stroke', 'transparent');
       rangeRect.setAttribute('stroke-width', 1);
       rangeRect.setAttribute('rx', 8);
