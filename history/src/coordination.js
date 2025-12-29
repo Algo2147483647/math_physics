@@ -37,6 +37,8 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
     }
   });
 
+  console.log(event.key, positionedEventsTmp)
+
   // 3. get width
   let width = 0
   for (const item of positionedEventsTmp) {
@@ -45,8 +47,10 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
     }
   }
 
+  console.log(event.key, width)
+
   // 4. findNonConflictingXPositionForEvent
-  event.width = width + 1;
+  event.width = width + 2;
   findNonConflictingXPositionForEvent(event, positionedEvents);
   for (const item of positionedEventsTmp) {
     item.x = item.x + event.x + 1;

@@ -31,14 +31,14 @@ function drawSinglePoints(singlePoints, margin, height) {
   widthUnit = 24;
 
   singlePoints.forEach((event) => {
-    const x = event.x * widthUnit + margin.left + 4;
+    const x = event.x * widthUnit + margin.left + 16;
 
     if (event.startY >= margin.top && event.startY <= height - margin.bottom) {
       // Draw event connector line
       const connector = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       connector.setAttribute('x1', margin.left);
       connector.setAttribute('y1', event.startY);
-      connector.setAttribute('x2', x - 15);
+      connector.setAttribute('x2', x);
       connector.setAttribute('y2', event.startY);
       connector.setAttribute('stroke', '#c5d0e6');
       connector.setAttribute('stroke-width', 2);
