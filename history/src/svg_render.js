@@ -3,88 +3,6 @@ function clearSVG() {
   svgElement.innerHTML = '';
 }
 
-// Create event card SVG group
-function createEventCard(event, x, y, isTimeRange = false) {
-  const cardGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-  cardGroup.setAttribute('class', 'event-card');
-  cardGroup.addEventListener('click', () => showEventDetails(event));
-
-  // Card background (initially hidden)
-  const cardBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-  cardBg.setAttribute('x', x - 100);
-  cardBg.setAttribute('y', y - 40);
-  cardBg.setAttribute('width', 200);
-  cardBg.setAttribute('height', 70);
-  cardBg.setAttribute('rx', 12);
-  cardBg.setAttribute('ry', 12);
-  cardBg.setAttribute('fill', 'white');
-  cardBg.setAttribute('stroke', 'transparent');
-  cardBg.setAttribute('stroke-width', 1);
-  cardBg.setAttribute('class', 'event-card-bg');
-  cardBg.style.display = 'none'; // Initially hidden
-  cardGroup.appendChild(cardBg);
-
-  // Event title (always visible)
-  const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  title.setAttribute('x', x);
-  title.setAttribute('y', y - 20);
-  title.setAttribute('text-anchor', 'middle');
-  title.setAttribute('class', 'event-title');
-  title.textContent = truncateText(event.key || 'N/A', 25);
-  cardGroup.appendChild(title);
-
-  // Year label (initially hidden)
-  const yearLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-  yearLabel.setAttribute('x', x);
-  yearLabel.setAttribute('y', y);
-  yearLabel.setAttribute('text-anchor', 'middle');
-  yearLabel.setAttribute('class', 'event-year');
-  yearLabel.style.display = 'none'; // Initially hidden
-
-  let yearDisplay;
-  if (isTimeRange) {
-    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) + ' ~ ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : event.endTime) : event.startTime + ' ~ ' + (event.endTime < 0 ? '-' + Math.abs(event.endTime) : event.endTime);
-  } else {
-    yearDisplay = event.startTime < 0 ? '-' + Math.abs(event.startTime) : event.startTime;
-  }
-  yearLabel.textContent = yearDisplay;
-  cardGroup.appendChild(yearLabel);
-
-  // Person information (initially hidden)
-  let personsElement = null;
-  if (event.data.persons) {
-    personsElement = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    personsElement.setAttribute('x', x);
-    personsElement.setAttribute('y', y + 15);
-    personsElement.setAttribute('text-anchor', 'middle');
-    personsElement.setAttribute('class', 'event-persons');
-    personsElement.style.display = 'none'; // Initially hidden
-    personsElement.textContent = truncateText(Array.isArray(event.data.persons) ? event.data.persons.join(', ') : event.data.persons, 25);
-    cardGroup.appendChild(personsElement);
-  }
-
-  // Add event listeners for hover effect
-  cardGroup.addEventListener('mouseenter', () => {
-    // Show all elements
-    cardBg.style.display = 'block';
-    yearLabel.style.display = 'block';
-    if (personsElement) {
-      personsElement.style.display = 'block';
-    }
-  });
-
-  cardGroup.addEventListener('mouseleave', () => {
-    // Hide all elements except the title
-    cardBg.style.display = 'none';
-    yearLabel.style.display = 'none';
-    if (personsElement) {
-      personsElement.style.display = 'none';
-    }
-  });
-
-  return cardGroup;
-}
-
 // Draw time ranges
 function drawTimeRanges(timeRanges, margin, height, yearScale) {
   // First, we need to calculate the rightmost position for each parent event
@@ -151,60 +69,6 @@ function drawTimeRanges(timeRanges, margin, height, yearScale) {
       rangeRect.setAttribute('ry', 8);
       rangeRect.setAttribute('class', 'timeline-range');
       svgElement.appendChild(rangeRect);
-
-      // Add gradient overlay to time range for better visual effect
-      const gradientId = `gradient-${event.key.replace(/[^a-zA-Z0-9]/g, '')}`;
-      const defs = svgElement.querySelector('defs') || document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-      if (!svgElement.querySelector('defs')) {
-        svgElement.appendChild(defs);
-      }
-      
-      const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-      gradient.setAttribute('id', gradientId);
-      gradient.setAttribute('x1', '0%');
-      gradient.setAttribute('y1', '0%');
-      gradient.setAttribute('x2', '100%');
-      gradient.setAttribute('y2', '0%');
-      
-      const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-      stop1.setAttribute('offset', '0%');
-      stop1.setAttribute('stop-color', fillColor);
-      stop1.setAttribute('stop-opacity', '0.8');
-      
-      const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-      stop2.setAttribute('offset', '100%');
-      stop2.setAttribute('stop-color', fillColor);
-      stop2.setAttribute('stop-opacity', '0.4');
-      
-      gradient.appendChild(stop1);
-      gradient.appendChild(stop2);
-      defs.appendChild(gradient);
-      
-      // Event card - position it at the start of the time range
-      const cardGroup = createEventCard(event, x, event.startY, true);
-      svgElement.appendChild(cardGroup);
-
-      // Add hover effect to the range rectangle to show/hide the card
-      rangeRect.addEventListener('mouseenter', () => {
-        const cardBg = cardGroup.querySelector('.event-card-bg');
-        const yearLabel = cardGroup.querySelector('.event-year');
-        const personsElement = cardGroup.querySelector('.event-persons');
-        const paperElement = cardGroup.querySelector('.event-paper');
-
-        if (cardBg) cardBg.style.display = 'block';
-        if (yearLabel) yearLabel.style.display = 'block';
-        if (personsElement) personsElement.style.display = 'block';
-      });
-
-      rangeRect.addEventListener('mouseleave', () => {
-        const cardBg = cardGroup.querySelector('.event-card-bg');
-        const yearLabel = cardGroup.querySelector('.event-year');
-        const personsElement = cardGroup.querySelector('.event-persons');
-
-        if (cardBg) cardBg.style.display = 'none';
-        if (yearLabel) yearLabel.style.display = 'none';
-        if (personsElement) personsElement.style.display = 'none';
-      });
     }
   });
 }
@@ -226,47 +90,13 @@ function drawSinglePoints(singlePoints, margin, height) {
       connector.setAttribute('stroke-dasharray', '6,4');
       svgElement.appendChild(connector);
 
-      // Draw event marker background circle for better visual
-      const markerBg = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      markerBg.setAttribute('cx', x);
-      markerBg.setAttribute('cy', event.startY);
-      markerBg.setAttribute('r', 10);
-      markerBg.setAttribute('class', 'timeline-marker-bg');
-      svgElement.appendChild(markerBg);
-
       // Draw event dot
       const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
       marker.setAttribute('cx', x);
       marker.setAttribute('cy', event.startY);
-      marker.setAttribute('r', 6);
+      marker.setAttribute('r', 8);
       marker.setAttribute('class', 'timeline-marker');
       svgElement.appendChild(marker);
-
-      // Event card
-      const cardGroup = createEventCard(event, x, event.startY, false);
-      svgElement.appendChild(cardGroup);
-
-      // Add hover effect to the marker to show/hide the card
-      marker.addEventListener('mouseenter', () => {
-        const cardBg = cardGroup.querySelector('.event-card-bg');
-        const yearLabel = cardGroup.querySelector('.event-year');
-        const personsElement = cardGroup.querySelector('.event-persons');
-        const paperElement = cardGroup.querySelector('.event-paper');
-
-        if (cardBg) cardBg.style.display = 'block';
-        if (yearLabel) yearLabel.style.display = 'block';
-        if (personsElement) personsElement.style.display = 'block';
-      });
-
-      marker.addEventListener('mouseleave', () => {
-        const cardBg = cardGroup.querySelector('.event-card-bg');
-        const yearLabel = cardGroup.querySelector('.event-year');
-        const personsElement = cardGroup.querySelector('.event-persons');
-
-        if (cardBg) cardBg.style.display = 'none';
-        if (yearLabel) yearLabel.style.display = 'none';
-        if (personsElement) personsElement.style.display = 'none';
-      });
     }
   });
 }
