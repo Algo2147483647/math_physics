@@ -715,5 +715,103 @@
       "event": "Proof of Poincaré Conjecture"
     },
     "parents": []
+  },
+  {
+    "key": "hilbert_space_l2",
+    "time": ["1906"],
+    "space": [],
+    "data": {
+      "persons": ["David Hilbert"],
+      "event": "Hilbert Space Precursor: l² Space",
+      "significance": "In studying integral equations, Hilbert systematically studied the space of square-summable sequences (later called l²) and introduced the concept of spectrum. His student Schmidt developed the geometric language (orthogonality, projection), essentially creating the first concrete infinite-dimensional inner product space."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "lebesgue_integration_lp_spaces",
+    "time": ["1907"],
+    "space": [],
+    "data": {
+      "persons": ["Henri Lebesgue", "Frigyes Riesz"],
+      "event": "Lebesgue Integration and L^p Spaces",
+      "significance": "Lebesgue integration breakthroughs the limitations of Riemann integration, making function space theory possible. Riesz and others systematically studied L^p spaces (spaces of p-integrable functions), proving their completeness and providing another core concrete model for functional analysis."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "riesz_representation_theorem",
+    "time": ["1907"],
+    "space": [],
+    "data": {
+      "persons": ["Frigyes Riesz"],
+      "event": "Riesz Representation Theorem",
+      "significance": "Proved that continuous linear functionals on L^p spaces can all be represented by an L^q function (1/p + 1/q = 1). This was the first important manifestation of the dual space concept, revealing profound connections between a space and its dual, and is one of the fundamental theorems of functional analysis."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "linear_operators_abstract_definition",
+    "time": ["1910"],
+    "space": [],
+    "data": {
+      "persons": ["Erhard Schmidt"],
+      "event": "Abstract Definition of Linear Operators",
+      "significance": "First clearly defined linear operators from one function space to another function space, and introduced the concept of operator norm. Operators began to be studied as independent research objects."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "normed_linear_spaces_banach_spaces",
+    "time": ["1920","1922"],
+    "space": [],
+    "data": {
+      "persons": ["Stefan Banach", "Hans Hahn", "Eduard Helly"],
+      "event": "Axiomatization of Normed Linear Spaces and Banach Spaces",
+      "significance": "Banach systematically proposed the complete axiomatic system of normed linear spaces (complete ones called Banach spaces) in his doctoral thesis. This marked the transition of functional analysis from studying concrete spaces to studying abstract spaces and their general theory, becoming an independent branch of mathematics."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "dual_spaces_weak_topology",
+    "time": ["1927","1929"],
+    "space": [],
+    "data": {
+      "persons": ["Hans Hahn", "Stefan Banach"],
+      "event": "Dual Spaces and Weak Topology",
+      "significance": "The Hahn-Banach theorem (norm-preserving extension theorem) was proved. Banach systematically studied dual spaces and introduced weak topology and weak* topology, providing key tools for studying convergence and compactness in infinite-dimensional spaces."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "axiomatic_hilbert_spaces_quantum_mechanics",
+    "time": ["1927","1930"],
+    "space": [],
+    "data": {
+      "persons": ["John von Neumann"],
+      "event": "Axiomatization of Hilbert Spaces and Mathematical Foundation of Quantum Mechanics",
+      "significance": "Von Neumann independently of the Hilbert school gave the modern axiomatic definition of Hilbert spaces (complete inner product spaces) and systematically developed operator theory on them (especially spectral theory of unbounded self-adjoint operators). He explicitly stated that the state space of quantum mechanics is precisely Hilbert space, and observables are self-adjoint operators. This made functional analysis an indispensable rigorous mathematical framework for quantum mechanics."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "generalized_functions_distribution_theory",
+    "time": ["1948"],
+    "space": [],
+    "data": {
+      "persons": ["Laurent Schwartz"],
+      "event": "Generalized Functions (Distribution Theory)",
+      "significance": "To solve difficulties in partial differential equations and Fourier transforms, Schwartz systematically established distribution theory. He strictly defined objects such as the Dirac delta function as continuous linear functionals on a certain function space (the space of test functions), i.e., generalized functions. This greatly extended the function concept and revolutionized analysis."
+    },
+    "parents": ["functional_analysis"]
+  },
+  {
+    "key": "functional_analysis",
+    "time": ["1906","1930"],
+    "space": [],
+    "data": {
+      "persons": ["David Hilbert", "Frigyes Riesz", "Stefan Banach", "John von Neumann"],
+      "event": "Functional Analysis"
+    },
+    "parents": []
   }
 ]
