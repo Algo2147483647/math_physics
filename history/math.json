@@ -1,12 +1,5 @@
 [
-  {
-    "key": "group_theory",
-    "time": ["1824","1980"],
-    "space": [],
-    "data": {
-    },
-    "parents": []
-  },
+
   {
     "key": "early_math2",
     "time": ["1495","2800"],
@@ -432,6 +425,61 @@
     "data": {
       "persons": ["Fourier"],
       "event": "Fourier series"
+    },
+    "parents": []
+  },
+  {
+    "key": "abel_galois_theory",
+    "time": ["1824","1846"],
+    "space": [],
+    "data": {
+      "persons": ["Abel", "Galois"],
+      "event": "Group Theory - Equation Solvability Problem",
+      "significance": "Abel proved that general equations of degree five and above have no radical solutions. Galois (the decisive contribution) introduced the concept of 'group' (though not explicitly defined), relating equations to the permutation group of roots (Galois group), and proved that an equation is solvable by radicals if and only if its Galois group is a solvable group. This marks the birth of group theory as an independent branch of mathematics, and its ideas were far ahead of its time."
+    },
+    "parents": []
+  },
+  {
+    "key": "abstract_group_axioms",
+    "time": ["1854"],
+    "space": [],
+    "data": {
+      "persons": ["Cayley"],
+      "event": "Axiomatic Definition of Abstract Group",
+      "significance": "It is the first to give a modern definition of an abstract finite group: a set and operations that satisfy closure, associativity, identity, and inverse. This liberates group theory from concrete transformations (permutations, geometric symmetries) and allows it to focus on purely mathematical objects."
+    },
+    "parents": []
+  },
+  {
+    "key": "erlangen_program",
+    "time": ["1872"],
+    "space": [],
+    "data": {
+      "persons": ["Klein"],
+      "event": "Erlangen Program - Unifying Geometry via Group Theory",
+      "significance": "Geometry studies properties that remain invariant under a given transformation group. For example, Euclidean geometry studies invariants under a rigid body motion group; projective geometry studies invariants under a projective transformation group. This elevates groups (especially continuous transformation groups) to the core principle of unified geometry."
+    },
+    "parents": []
+  },
+  {
+    "key": "lie_groups_lie_algebras",
+    "time": ["1880","1894"],
+    "space": [],
+    "data": {
+      "persons": ["Lie"],
+      "event": "Continuous Groups (Lie Groups) and Lie Algebras",
+      "significance": "To systematically study the integrability and symmetry of differential equations, the theory of continuous transformation groups (later called Lie groups) and Lie algebras composed of infinitesimal generators were established. This provides a powerful tool for analyzing continuous systems (such as mechanics and field theory) using symmetry.。"
+    },
+    "parents": []
+  },
+  {
+    "key": "finite_simple_groups_classification",
+    "time": ["1896","1980"],
+    "space": [],
+    "data": {
+      "persons": ["Burnside", "et al."],
+      "event": "Finite Simple Groups Classification",
+      "significance": "The systematic study of finite simple groups (the 'atoms' of a group) began. Bernside proposed the famous Bernside conjecture, which propelled the development of representation theory. This launched a century-long project to classify finite simple groups. In 1980, the classification theorem for finite simple groups was announced: all finite simple groups can be divided into 18 infinite families (such as cyclic groups and alternating groups) and 26 scattered simple groups (such as the giant 'magic group'). This was the most massive collaborative proof in the history of mathematics, hailed as the 'Mozara of mathematics'."
     },
     "parents": []
   },
