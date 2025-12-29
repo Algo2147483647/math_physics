@@ -77,6 +77,10 @@ function showEventCard(event, x, y) {
   eventCard.innerHTML = content;
   eventCard.style.display = 'block';
   
+  // Store mouse coordinates for scroll updates
+  eventCard.setAttribute('data-mouse-x', x);
+  eventCard.setAttribute('data-mouse-y', y);
+  
   // Position the card near the mouse, making sure it stays within the viewport
   const cardWidth = eventCard.offsetWidth;
   const cardHeight = eventCard.offsetHeight;
@@ -112,12 +116,18 @@ function showEventCard(event, x, y) {
 function hideEventCard() {
   const eventCard = document.getElementById('event-card');
   eventCard.style.display = 'none';
+  eventCard.removeAttribute('data-mouse-x');
+  eventCard.removeAttribute('data-mouse-y');
 }
 
 // Update event card position when scrolling
 function updateEventCardPosition(x, y) {
   const eventCard = document.getElementById('event-card');
   if (eventCard.style.display !== 'none') {
+    // Store mouse coordinates for scroll updates
+    eventCard.setAttribute('data-mouse-x', x);
+    eventCard.setAttribute('data-mouse-y', y);
+    
     // Position the card near the mouse, making sure it stays within the viewport
     const cardWidth = eventCard.offsetWidth;
     const cardHeight = eventCard.offsetHeight;
@@ -168,14 +178,22 @@ function setupEventListeners() {
   });
   
   // Add scroll event listener to update card position
-  window.addEventListener('scroll', () => {
-    const eventCard = document.getElementById('event-card');
-    if (eventCard.style.display !== 'none') {
-      // We'll need to track the last mouse position to update the card
-      // For now, just hide the card when scrolling
-      hideEventCard();
+  window.addEventListener('scroll', updateCardPositionOnScroll, { passive: true });
+  window.addEventListener('resize', updateCardPositionOnScroll, { passive: true });
+}
+
+// Function to update card position when scrolling occurs
+function updateCardPositionOnScroll() {
+  const eventCard = document.getElementById('event-card');
+  if (eventCard.style.display !== 'none') {
+    // Re-position the card using stored mouse coordinates
+    const storedMouseX = eventCard.getAttribute('data-mouse-x');
+    const storedMouseY = eventCard.getAttribute('data-mouse-y');
+    
+    if (storedMouseX && storedMouseY) {
+      updateEventCardPosition(parseInt(storedMouseX), parseInt(storedMouseY));
     }
-  });
+  }
 }
 
 // Initialize page
