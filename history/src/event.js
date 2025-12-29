@@ -79,7 +79,7 @@ function calculateDimensions() {
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
   const width = 1200;
-  const height = Math.max(2000, (maxYear - minYear) * 20);
+  const height = (maxYear - minYear) * window.verticalScaleValue;
   svgElement.setAttribute('height', height);
   const margin = { top: 50, right: 50, bottom: 50, left: 150 };
   const innerWidth = width - margin.left - margin.right;

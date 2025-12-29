@@ -2,7 +2,8 @@
 let historyData = [];
 let svgElement;
 let timelineData = [];
-window.yearScaleValue = 24; // Global year unit length accessible by other scripts
+window.horizontalScaleValue = 24; // Global horizontal unit length accessible by other scripts
+window.verticalScaleValue = 10; // Global vertical unit length accessible by other scripts
 
 // Load data from math.json
 async function loadData() {
@@ -194,16 +195,31 @@ function setupEventListeners() {
     }
   });
   
-  // Year scale control
-  const yearScaleSlider = document.getElementById('year-scale');
-  const yearScaleValueDisplay = document.getElementById('year-scale-value');
+  // Horizontal scale control
+  const horizontalScaleSlider = document.getElementById('horizontal-scale');
+  const horizontalScaleValueDisplay = document.getElementById('horizontal-scale-value');
   
-  yearScaleValueDisplay.textContent = yearScaleValue;
-  yearScaleSlider.value = yearScaleValue;
+  horizontalScaleValueDisplay.textContent = window.horizontalScaleValue;
+  horizontalScaleSlider.value = window.horizontalScaleValue;
   
-  yearScaleSlider.addEventListener('input', (e) => {
-    yearScaleValue = parseInt(e.target.value);
-    yearScaleValueDisplay.textContent = yearScaleValue;
+  horizontalScaleSlider.addEventListener('input', (e) => {
+    window.horizontalScaleValue = parseInt(e.target.value);
+    horizontalScaleValueDisplay.textContent = window.horizontalScaleValue;
+    
+    // Re-render the timeline with new scale
+    renderTimeline();
+  });
+  
+  // Vertical scale control
+  const verticalScaleSlider = document.getElementById('vertical-scale');
+  const verticalScaleValueDisplay = document.getElementById('vertical-scale-value');
+  
+  verticalScaleValueDisplay.textContent = window.verticalScaleValue;
+  verticalScaleSlider.value = window.verticalScaleValue;
+  
+  verticalScaleSlider.addEventListener('input', (e) => {
+    window.verticalScaleValue = parseInt(e.target.value);
+    verticalScaleValueDisplay.textContent = window.verticalScaleValue;
     
     // Re-render the timeline with new scale
     renderTimeline();
