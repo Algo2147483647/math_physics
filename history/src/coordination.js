@@ -14,8 +14,7 @@ function calculateHorizontalPositions(events, margin) {
     endTime: Infinity,
   };
 
-  const positionedEvents = [];
-  processEventDFS(virtualRoot, allEventsMap, positionedEvents);
+  processEventDFS(virtualRoot, allEventsMap, []);
 }
 
 // Process an event and its children using DFS
@@ -28,8 +27,6 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
     positionedEvents.push(event);
     return;
   }
-
-  console.log(event.key,  kids)
 
   kids.sort((a, b) => allEventsMap.get(a).startTime - allEventsMap.get(b).startTime);
   
@@ -45,9 +42,8 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
   // 3. get width
   width = 0
   for (const item of positionedEventsTmp) {
-    tmp = item.x + item.width - 1 + 1;
-    if (tmp > width) {
-      width = tmp;
+    if (item.x + item.width - 1 > width) {
+      width = item.x + item.width - 1;
     }
   }
 
@@ -60,7 +56,7 @@ function processEventDFS(event, allEventsMap, positionedEvents) {
 
   // 5. update positionedEvents
   positionedEvents.push(event);
-  positionedEvents.push(...positionedEvents);
+  positionedEvents.push(...positionedEventsTmp);
   return;
 }
 
