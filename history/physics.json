@@ -290,7 +290,7 @@
       "persons": [
         "Joseph-Louis Lagrange"
       ],
-      "work": "Mécanique Analytique",
+      "work": "Published his epoch-making work, *Analytical Mechanics*. The entire book uses no geometric diagrams, relying entirely on mathematical analysis. 1. Introduced generalized coordinates (qᵢ), freeing it from the constraints of Cartesian coordinates. 2. Defined the Lagrange function L = T - V. 3. Derived the Lagrange equation from d'Alembert's principle: d/dt(∂L/∂qᵢ) - ∂L/∂qᵢ = 0. This marked the formal birth of analytical mechanics, providing a universal method for dealing with complex constrained systems.",
       "concepts": [
         "Lagrangian function",
         "Euler-Lagrange equations",
@@ -1347,6 +1347,312 @@
     },
     "parents": [
       "relativity"
+    ],
+    "kids": []
+  },
+  {
+    "key": "quantum_hypothesis",
+    "time": [
+      "1900"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Max Planck"
+      ],
+      "event": "Quantum Hypothesis",
+      "concepts": [
+        "Energy quantization",
+        "Discrete energy packets",
+        "Blackbody radiation"
+      ],
+      "significance": "Energy can only be emitted or absorbed in discrete packets called quanta, marking the birth of quantum physics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "light_quantum_hypothesis",
+    "time": [
+      "1905"
+    ],
+    "space": [
+      "Switzerland"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein"
+      ],
+      "event": "Light Quantum Hypothesis",
+      "concepts": [
+        "Photons",
+        "Photoelectric effect",
+        "Energy quantization of light"
+      ],
+      "significance": "Proposed light consists of discrete energy packets (photons), successfully explaining the photoelectric effect and reinforcing the concept of energy quantization"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "bohr_atomic_model",
+    "time": [
+      "1913"
+    ],
+    "space": [
+      "Denmark"
+    ],
+    "data": {
+      "persons": [
+        "Niels Bohr"
+      ],
+      "event": "Bohr Atomic Model",
+      "concepts": [
+        "Quantized electron orbits",
+        "Electron transitions",
+        "Atomic spectra"
+      ],
+      "significance": "Introduced quantum conditions to atomic structure, proposing electrons orbit in specific paths and emit/absorb light at specific frequencies during transitions, explaining atomic spectra"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "matter_wave_hypothesis",
+    "time": [
+      "1924"
+    ],
+    "space": [
+      "France"
+    ],
+    "data": {
+      "persons": [
+        "Louis de Broglie"
+      ],
+      "event": "Matter Wave Hypothesis",
+      "concepts": [
+        "Wave-particle duality",
+        "de Broglie wavelength λ=h/p",
+        "Matter waves"
+      ],
+      "significance": "Proposed all matter (like electrons) exhibits wave-particle duality, laying the foundation for wave mechanics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "matrix_mechanics",
+    "time": [
+      "1925"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Werner Heisenberg",
+        "Max Born",
+        "Pascual Jordan"
+      ],
+      "event": "Matrix Mechanics",
+      "concepts": [
+        "Matrix mathematics",
+        "Quantum mechanical formalism",
+        "Non-commuting quantities"
+      ],
+      "significance": "Created the first complete quantum mechanics formalism using matrix mathematics to describe physical quantities"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "wave_mechanics",
+    "time": [
+      "1926"
+    ],
+    "space": [
+      "Austria"
+    ],
+    "data": {
+      "persons": [
+        "Erwin Schrödinger"
+      ],
+      "event": "Wave Mechanics",
+      "concepts": [
+        "Schrödinger equation",
+        "Wave function",
+        "Mathematical equivalence to matrix mechanics"
+      ],
+      "significance": "Provided a more intuitive framework by proposing the Schrödinger equation and proving its mathematical equivalence to matrix mechanics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "uncertainty_principle",
+    "time": [
+      "1927"
+    ],
+    "space": [
+      "Germany"
+    ],
+    "data": {
+      "persons": [
+        "Werner Heisenberg"
+      ],
+      "event": "Uncertainty Principle",
+      "concepts": [
+        "Δx·Δp ≥ ħ/2",
+        "Conjugate variables",
+        "Fundamental measurement limits"
+      ],
+      "significance": "Established that conjugate variables like position and momentum cannot be simultaneously measured precisely, a core feature of quantum mechanics"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "complementarity_principle",
+    "time": [
+      "1927"
+    ],
+    "space": [
+      "Denmark"
+    ],
+    "data": {
+      "persons": [
+        "Niels Bohr"
+      ],
+      "event": "Complementarity Principle",
+      "concepts": [
+        "Wave-particle duality",
+        "Complementary concepts",
+        "Copenhagen interpretation"
+      ],
+      "significance": "Stated that classical concepts like wave and particle nature are mutually exclusive yet complementary, becoming a philosophical foundation of the Copenhagen interpretation"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "solvay_conference_1927",
+    "time": [
+      "1927"
+    ],
+    "space": [
+      "Belgium"
+    ],
+    "data": {
+      "persons": [
+        "Multiple physicists",
+        "Albert Einstein",
+        "Niels Bohr"
+      ],
+      "event": "Fifth Solvay Conference on Electrons and Photons",
+      "concepts": [
+        "Quantum mechanics debates",
+        "Einstein-Bohr debates",
+        "Quantum completeness"
+      ],
+      "significance": "Einstein and Bohr began their first public debate about quantum mechanics completeness, profoundly influencing the field"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "dirac_equation",
+    "time": [
+      "1928"
+    ],
+    "space": [
+      "England"
+    ],
+    "data": {
+      "persons": [
+        "Paul Dirac"
+      ],
+      "event": "Dirac Equation",
+      "concepts": [
+        "Relativistic quantum mechanics",
+        "Electron description",
+        "Prediction of antimatter"
+      ],
+      "significance": "Combined quantum mechanics with special relativity to describe electrons and predicted the existence of antimatter (positrons)"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "erp_paradox",
+    "time": [
+      "1935"
+    ],
+    "space": [
+      "United States"
+    ],
+    "data": {
+      "persons": [
+        "Albert Einstein",
+        "Boris Podolsky",
+        "Nathan Rosen"
+      ],
+      "event": "EPR Paradox",
+      "concepts": [
+        "Quantum entanglement",
+        "Non-classical correlations",
+        "Quantum mechanics completeness"
+      ],
+      "significance": "Famous thought experiment arguing for quantum mechanics incompleteness, with quantum entanglement as the core non-classical correlation"
+    },
+    "parents": [
+      "quantum_mechanics"
+    ],
+    "kids": []
+  },
+  {
+    "key": "bell_inequality",
+    "time": [
+      "1964"
+    ],
+    "space": [
+      "Northern Ireland"
+    ],
+    "data": {
+      "persons": [
+        "John Bell"
+      ],
+      "event": "Bell's Inequality",
+      "concepts": [
+        "Local hidden variables",
+        "Experimental test for quantum mechanics",
+        "Mathematical inequality"
+      ],
+      "significance": "Proposed a mathematically testable inequality that, if violated, would confirm quantum mechanics over local hidden variable theories"
+    },
+    "parents": [
+      "quantum_mechanics"
     ],
     "kids": []
   }
