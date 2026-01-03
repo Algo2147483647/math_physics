@@ -3,12 +3,12 @@ let historyData = [];
 let svgElement;
 let timelineData = [];
 window.horizontalScaleValue = 24; // Global horizontal unit length accessible by other scripts
-window.verticalScaleValue = 10; // Global vertical unit length accessible by other scripts
+window.verticalScaleValue = 20; // Global vertical unit length accessible by other scripts
 
 // Load data from math.json
 async function loadData() {
   try {
-    const response = await fetch('math.json'); // files: physics, math
+    const response = await fetch('physics.json'); // files: physics, math
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

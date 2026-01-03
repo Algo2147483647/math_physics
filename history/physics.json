@@ -15,12 +15,12 @@
       "event": "Heliocentric Model"
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "classical_mechanics",
+    "key": "classical mechanics",
     "time": [
       "1543",
       "1788"
@@ -46,7 +46,7 @@
     "kids": []
   },
   {
-    "key": "tycho_observations",
+    "key": "tycho observations",
     "time": [
       "1576"
     ],
@@ -64,12 +64,12 @@
       ]
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "planetary_motion",
+    "key": "kepler's law",
     "time": [
       "1609",
       "1619"
@@ -88,12 +88,12 @@
       "event": "Kepler's Laws of Planetary Motion"
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "snells_law",
+    "key": "snells law",
     "time": [
       "1621"
     ],
@@ -113,12 +113,12 @@
       "significance": "Law describing the relationship between angles of incidence and refraction when light passes through different media"
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "galilean_mechanics",
+    "key": "galilean mechanics",
     "time": [
       "1632"
     ],
@@ -139,12 +139,12 @@
       ]
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "huygens_mechanics",
+    "key": "huygens mechanics",
     "time": [
       "1673"
     ],
@@ -162,12 +162,12 @@
       ]
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "newtonian_mechanics",
+    "key": "newtonian mechanics",
     "time": [
       "1687"
     ],
@@ -186,12 +186,12 @@
       ]
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "d'alembert_principle",
+    "key": "d'alembert principle",
     "time": [
       "1743"
     ],
@@ -211,12 +211,12 @@
       ]
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "analytical_mechanics",
+    "key": "analytical mechanics",
     "time": [
       "1743",
       "1866"
@@ -245,7 +245,7 @@
     "kids": []
   },
   {
-    "key": "coulomb_law",
+    "key": "coulomb law",
     "time": [
       "1785"
     ],
@@ -278,7 +278,7 @@
     "kids": []
   },
   {
-    "key": "lagrangian_mechanics",
+    "key": "lagrangian mechanics",
     "time": [
       "1788"
     ],
@@ -299,12 +299,12 @@
       ]
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "heat_engines",
+    "key": "heat engines",
     "time": [
       "1798"
     ],
@@ -323,7 +323,7 @@
     "kids": []
   },
   {
-    "key": "celestial_mechanics",
+    "key": "celestial mechanics",
     "time": [
       "1799"
     ],
@@ -341,12 +341,12 @@
       ]
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "voltaic_pile",
+    "key": "voltaic pile",
     "time": [
       "1800"
     ],
@@ -366,7 +366,7 @@
     "kids": []
   },
   {
-    "key": "wave_optics",
+    "key": "wave optics",
     "time": [
       "1801",
       "1818"
@@ -387,12 +387,12 @@
       ]
     },
     "parents": [
-      "classical_mechanics"
+      "classical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "poisson_bracket",
+    "key": "poisson bracket",
     "time": [
       "1809"
     ],
@@ -411,12 +411,12 @@
       "work": "Sur les invariants differentiels des equations des corps solides. Introducing the Poisson bracket operation for the Hamiltonian system: {f, g} = ∑ (∂f/∂qᵢ ∂g/∂pᵢ - ∂f/∂pᵢ ∂g/∂qᵢ). The canonical equations can be written as q̇ = {q, H}, ṗ = {p, H}. This operation profoundly reveals the algebraic structure of mechanical quantities and serves as a crucial bridge between classical mechanics and quantum mechanics (corresponding to commutators in quantum mechanics)."
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "oersted_discovery",
+    "key": "electric current creates magnetic field",
     "time": [
       "1820"
     ],
@@ -438,7 +438,7 @@
     "kids": []
   },
   {
-    "key": "biot_savart_law",
+    "key": "biot savart law",
     "time": [
       "1820"
     ],
@@ -460,7 +460,7 @@
     "kids": []
   },
   {
-    "key": "electric_motor_generator",
+    "key": "electric motor generator",
     "time": [
       "1821",
       "1832"
@@ -484,7 +484,7 @@
     "kids": []
   },
   {
-    "key": "ampere_law",
+    "key": "ampere law",
     "time": [
       "1823"
     ],
@@ -506,7 +506,7 @@
     "kids": []
   },
   {
-    "key": "carnot_theorem",
+    "key": "carnot theorem",
     "time": [
       "1824"
     ],
@@ -558,7 +558,7 @@
     "kids": []
   },
   {
-    "key": "faraday_induction",
+    "key": "faraday induction",
     "time": [
       "1831"
     ],
@@ -581,7 +581,7 @@
     "kids": []
   },
   {
-    "key": "hamiltonian_mechanics",
+    "key": "hamiltonian mechanics",
     "time": [
       "1834"
     ],
@@ -602,12 +602,12 @@
       ]
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "canonical_transformations",
+    "key": "canonical transformations",
     "time": [
       "1835",
       "1840"
@@ -627,15 +627,14 @@
       ]
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "gauss_laws",
+    "key": "gauss laws",
     "time": [
-      "1835",
-      "1867"
+      1835
     ],
     "space": [
       "Germany"
@@ -655,7 +654,7 @@
     "kids": []
   },
   {
-    "key": "hamilton_jacobi_theory",
+    "key": "hamilton jacobi theory",
     "time": [
       "1837",
       "1866"
@@ -675,12 +674,12 @@
       "work": "Vorlesungen über Dynamik. Building upon Hamilton's work, the Hamilton-Jacobi equation was proposed: H(q, ∂S/∂q, t) + ∂S/∂t = 0. Solving this partial differential equation yields the principal function S, transforming the solution of mechanical problems into finding a specific canonical transformation that makes the new Hamiltonian zero. This represents the pinnacle of analytical mechanics and serves as a mathematical link between classical mechanics and wave mechanics (the Schrödinger equation can be viewed as a quantization of the H-J equation)."
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "liouville_theorem",
+    "key": "liouville theorem",
     "time": [
       "1838",
       "1853"
@@ -700,12 +699,12 @@
       "work": "Within the Hamiltonian framework, it is proven that the density of representative points in phase space is conserved during motion, i.e., dρ/dt = 0. This lays a solid mathematical foundation for statistical mechanics (Gibbs ensemble theory) and is a fundamental theorem connecting micromechanics and macroscopic statistics."
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "first_law_thermodynamics",
+    "key": "first law thermodynamics",
     "time": [
       "1840"
     ],
@@ -734,7 +733,7 @@
     "kids": []
   },
   {
-    "key": "second_law_thermodynamics",
+    "key": "second law thermodynamics",
     "time": [
       "1850",
       "1851"
@@ -763,7 +762,7 @@
     "kids": []
   },
   {
-    "key": "statistical_mechanics",
+    "key": "statistical mechanics",
     "time": [
       "1859",
       "1905"
@@ -789,7 +788,7 @@
     "kids": []
   },
   {
-    "key": "maxwell_equations",
+    "key": "maxwell equations",
     "time": [
       "1861",
       "1865"
@@ -818,7 +817,7 @@
     "kids": []
   },
   {
-    "key": "entropy_concept",
+    "key": "entropy concept",
     "time": [
       "1865"
     ],
@@ -844,7 +843,7 @@
     "kids": []
   },
   {
-    "key": "action_angle_variables",
+    "key": "action angle variables",
     "time": [
       "1866",
       "1916"
@@ -865,12 +864,12 @@
       ]
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "boltzmann_equation",
+    "key": "boltzmann equation",
     "time": [
       "1870"
     ],
@@ -891,12 +890,12 @@
       "significance": "From statistical assumptions about molecular collisions, derived the Boltzmann equation and H-theorem, attempting to prove that entropy increase corresponds to increased molecular disorder (probability), providing a microscopic statistical interpretation of entropy"
     },
     "parents": [
-      "statistical_mechanics"
+      "statistical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "maxwell_demon",
+    "key": "maxwell demon",
     "time": [
       "1870"
     ],
@@ -917,12 +916,12 @@
       "significance": "Proposed a hypothetical 'demon' that could challenge the second law of thermodynamics, sparking a century-long debate about the relationship between information, entropy, and energy, eventually leading to the concept of information entropy"
     },
     "parents": [
-      "statistical_mechanics"
+      "statistical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "boltzmann_entropy_formula",
+    "key": "boltzmann entropy formula",
     "time": [
       "1877"
     ],
@@ -943,12 +942,12 @@
       "significance": "Proposed the famous formula: the entropy S of a system is proportional to the logarithm of the number of microstates W, establishing S = k_B ln W, bridging macroscopic thermodynamics and microscopic statistics, becoming the cornerstone of statistical mechanics"
     },
     "parents": [
-      "statistical_mechanics"
+      "statistical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "stefan_boltzmann_law",
+    "key": "stefan boltzmann law",
     "time": [
       "1884"
     ],
@@ -969,12 +968,12 @@
       "significance": "Derived from thermodynamic theory that the total radiation of a blackbody is proportional to the fourth power of temperature (J = σT⁴), unifying Josef Stefan's experimental discovery and demonstrating the power of statistical theory"
     },
     "parents": [
-      "statistical_mechanics"
+      "statistical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "electromagnetic_waves",
+    "key": "electromagnetic waves",
     "time": [
       "1887"
     ],
@@ -997,7 +996,7 @@
     "kids": []
   },
   {
-    "key": "michelson_morley",
+    "key": "michelson morley",
     "time": [
       "1887"
     ],
@@ -1018,7 +1017,7 @@
     "kids": []
   },
   {
-    "key": "lorentz_transformations",
+    "key": "lorentz transformations",
     "time": [
       "1892",
       "1904"
@@ -1042,7 +1041,7 @@
     "kids": []
   },
   {
-    "key": "atomic_structure",
+    "key": "atomic structure",
     "time": [
       "1897",
       "1911"
@@ -1061,12 +1060,12 @@
       ]
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "quantum_hypothesis",
+    "key": "quantum hypothesis",
     "time": [
       "1900"
     ],
@@ -1086,12 +1085,12 @@
       "significance": "Energy can only be emitted or absorbed in discrete packets called quanta, marking the birth of quantum physics"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "quantum_mechanics",
+    "key": "quantum mechanics",
     "time": [
       "1900",
       "1994"
@@ -1123,7 +1122,7 @@
     "kids": []
   },
   {
-    "key": "statistical_ensemble_theory",
+    "key": "statistical ensemble theory",
     "time": [
       "1902"
     ],
@@ -1145,12 +1144,12 @@
       "significance": "Published 'Elementary Principles in Statistical Mechanics', establishing systematic and elegant statistical ensemble theory, shifting the focus from molecular motion models to ensemble averages of system states, making the theory more universal and mathematically rigorous, becoming the standard framework of modern statistical mechanics"
     },
     "parents": [
-      "statistical_mechanics"
+      "statistical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "special_relativity",
+    "key": "special relativity",
     "time": [
       "1905"
     ],
@@ -1175,7 +1174,7 @@
     "kids": []
   },
   {
-    "key": "light_quantum_hypothesis",
+    "key": "light quantum hypothesis",
     "time": [
       "1905"
     ],
@@ -1195,12 +1194,12 @@
       "significance": "Proposed light consists of discrete energy packets (photons), successfully explaining the photoelectric effect and reinforcing the concept of energy quantization"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "brownian_motion_theory",
+    "key": "brownian motion theory",
     "time": [
       "1905"
     ],
@@ -1221,7 +1220,7 @@
       "significance": "Explained Brownian motion using statistical theory of molecular collisions and provided prediction formulas, later verified by Jean Perrin's experiments, providing the most direct evidence for the real existence of atoms and molecules, and opening the study of random processes"
     },
     "parents": [
-      "statistical_mechanics"
+      "statistical mechanics"
     ],
     "kids": []
   },
@@ -1250,7 +1249,7 @@
     "kids": []
   },
   {
-    "key": "third_law_thermodynamics",
+    "key": "third law thermodynamics",
     "time": [
       "1906"
     ],
@@ -1276,7 +1275,7 @@
     "kids": []
   },
   {
-    "key": "bohr_atomic_model",
+    "key": "bohr atomic model",
     "time": [
       "1913"
     ],
@@ -1296,12 +1295,12 @@
       "significance": "Introduced quantum conditions to atomic structure, proposing electrons orbit in specific paths and emit/absorb light at specific frequencies during transitions, explaining atomic spectra"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "general_relativity",
+    "key": "general relativity",
     "time": [
       "1915"
     ],
@@ -1324,7 +1323,7 @@
     "kids": []
   },
   {
-    "key": "schwarzschild_solution",
+    "key": "schwarzschild solution",
     "time": [
       "1916"
     ],
@@ -1349,7 +1348,7 @@
     "kids": []
   },
   {
-    "key": "noether_theorem",
+    "key": "noether theorem",
     "time": [
       "1918"
     ],
@@ -1372,12 +1371,12 @@
       "significance": "Proved the one-to-one correspondence between continuous symmetries and conservation laws, at the heart of analytical mechanics (variational principles), unifying physics' two pillars - symmetry and conservation laws - with impact throughout modern physics"
     },
     "parents": [
-      "analytical_mechanics"
+      "analytical mechanics"
     ],
     "kids": []
   },
   {
-    "key": "matter_wave_hypothesis",
+    "key": "matter wave hypothesis",
     "time": [
       "1924"
     ],
@@ -1397,12 +1396,12 @@
       "significance": "Proposed all matter (like electrons) exhibits wave-particle duality, laying the foundation for wave mechanics"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "bose_einstein_statistics",
+    "key": "bose einstein statistics",
     "time": [
       "1924"
     ],
@@ -1425,12 +1424,12 @@
       "significance": "Bose proposed new statistical method for photon gas, Einstein extended to identical particles, predicting Bose-Einstein condensation, revealing quantum statistical behavior of particles that do not obey Pauli exclusion principle (bosons)"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "matrix_mechanics",
+    "key": "matrix mechanics",
     "time": [
       "1925"
     ],
@@ -1452,12 +1451,12 @@
       "significance": "Created the first complete quantum mechanics formalism using matrix mathematics to describe physical quantities"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "wave_mechanics",
+    "key": "wave mechanics",
     "time": [
       "1926"
     ],
@@ -1477,12 +1476,12 @@
       "significance": "Provided a more intuitive framework by proposing the Schrödinger equation and proving its mathematical equivalence to matrix mechanics"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "fermi_dirac_statistics",
+    "key": "fermi dirac statistics",
     "time": [
       "1926"
     ],
@@ -1505,12 +1504,12 @@
       "significance": "Independently proposed quantum statistical method for particles obeying Pauli exclusion principle (fermions, like electrons), successfully explaining problems like electron specific heat in metals, fundamental to understanding solid state physics and stellar evolution"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "uncertainty_principle",
+    "key": "uncertainty principle",
     "time": [
       "1927"
     ],
@@ -1530,12 +1529,12 @@
       "significance": "Established that conjugate variables like position and momentum cannot be simultaneously measured precisely, a core feature of quantum mechanics"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "complementarity_principle",
+    "key": "complementarity principle",
     "time": [
       "1927"
     ],
@@ -1555,12 +1554,12 @@
       "significance": "Stated that classical concepts like wave and particle nature are mutually exclusive yet complementary, becoming a philosophical foundation of the Copenhagen interpretation"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "solvay_conference_1927",
+    "key": "solvay conference 1927",
     "time": [
       "1927"
     ],
@@ -1582,12 +1581,12 @@
       "significance": "Einstein and Bohr began their first public debate about quantum mechanics completeness, profoundly influencing the field"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "quantum_electrodynamics",
+    "key": "quantum electrodynamics",
     "time": [
       "1927",
       "1949"
@@ -1614,12 +1613,12 @@
       ]
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "quantum_field_theory",
+    "key": "quantum field theory",
     "time": [
       "1927",
       "1949"
@@ -1644,12 +1643,12 @@
       ]
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "bigbang_cosmology",
+    "key": "bigbang cosmology",
     "time": [
       "1927",
       "1965"
@@ -1675,7 +1674,7 @@
     "kids": []
   },
   {
-    "key": "dirac_equation",
+    "key": "dirac equation",
     "time": [
       "1928"
     ],
@@ -1695,12 +1694,12 @@
       "significance": "Combined quantum mechanics with special relativity to describe electrons and predicted the existence of antimatter (positrons)"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "erp_paradox",
+    "key": "erp paradox",
     "time": [
       "1935"
     ],
@@ -1722,12 +1721,12 @@
       "significance": "Famous thought experiment arguing for quantum mechanics incompleteness, with quantum entanglement as the core non-classical correlation"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "pi_mesons",
+    "key": "pi mesons",
     "time": [
       "1947"
     ],
@@ -1749,12 +1748,12 @@
       "significance": "First true mesons discovered, confirming Yukawa's prediction of force-carrying particles between nucleons"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "kaon_discovery",
+    "key": "kaon discovery",
     "time": [
       "1947"
     ],
@@ -1775,12 +1774,12 @@
       "significance": "Discovery of strange particles, leading to understanding of strangeness quantum number"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "phi_mesons",
+    "key": "phi mesons",
     "time": [
       "1952"
     ],
@@ -1800,12 +1799,12 @@
       "significance": "Discovery of phi meson, composed of strange and anti-strange quarks"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "standard_model",
+    "key": "standard model",
     "time": [
       "1961",
       "1973"
@@ -1829,12 +1828,12 @@
       ]
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "bell_inequality",
+    "key": "bell inequality",
     "time": [
       "1964"
     ],
@@ -1854,12 +1853,12 @@
       "significance": "Proposed a mathematically testable inequality that, if violated, would confirm quantum mechanics over local hidden variable theories"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "string_theory",
+    "key": "string theory",
     "time": [
       "1968",
       "1984"
@@ -1883,12 +1882,12 @@
       ]
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "j_psi_discovery",
+    "key": "j psi discovery",
     "time": [
       "1974"
     ],
@@ -1909,12 +1908,12 @@
       "significance": "Discovery of J/Psi meson, confirming existence of charm quark, leading to 'November Revolution' in particle physics"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "quantum_computing",
+    "key": "quantum computing",
     "time": [
       "1980",
       "1994"
@@ -1936,12 +1935,12 @@
       ]
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "higgs_discovery",
+    "key": "higgs discovery",
     "time": [
       "2012"
     ],
@@ -1955,12 +1954,12 @@
       "event": "Higgs boson discovery at LHC"
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "gravitational_waves",
+    "key": "gravitational waves",
     "time": [
       "2015"
     ],
@@ -1980,7 +1979,7 @@
     "kids": []
   },
   {
-    "key": "zeeman_effect",
+    "key": "zeeman effect",
     "time": [
       "1896"
     ],
@@ -2001,12 +2000,12 @@
       "significance": "Discovered that atomic spectral lines split into multiple components when placed in a strong magnetic field. Lorentz's classical electron theory could only explain the normal Zeeman effect (splitting into three lines), but failed completely for the more complex splitting (anomalous Zeeman effect) observed in many atoms. This became the first strong experimental indication for the introduction of the spin concept."
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "stern_gerlach_experiment",
+    "key": "stern gerlach experiment",
     "time": [
       "1922"
     ],
@@ -2028,12 +2027,12 @@
       "significance": "Demonstrated that silver atoms have an inherent magnetic moment that can only take two discrete orientations in an external magnetic field, providing the first direct experimental evidence for electron spin. Silver atom beams passing through an inhomogeneous magnetic field showed two clear, discrete deposition lines on the screen instead of the continuous distribution predicted by classical theory."
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "electron_spin_hypothesis",
+    "key": "electron spin hypothesis",
     "time": [
       "1925"
     ],
@@ -2055,12 +2054,12 @@
       "significance": "Proposed that electrons possess an intrinsic angular momentum (spin) with magnitude ħ/2 to explain the anomalous Zeeman effect and the Stern-Gerlach experiment. The spin has a projection of ±ħ/2 in space and an associated intrinsic magnetic moment. This was the formal birth of the spin concept, initially viewed as an electron \"self-rotation\" but quickly recognized as a purely quantum property."
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   },
   {
-    "key": "giant_magnetoresistance",
+    "key": "giant magnetoresistance",
     "time": [
       "1988"
     ],
@@ -2082,7 +2081,7 @@
       "significance": "Discovered that material resistance can change dramatically with magnetic field, with the physical basis being spin-dependent scattering. This directly gave rise to spintronics and drove the revolution in high-density hard disk read heads, earning the 2007 Nobel Prize in Physics."
     },
     "parents": [
-      "quantum_mechanics"
+      "quantum mechanics"
     ],
     "kids": []
   }
