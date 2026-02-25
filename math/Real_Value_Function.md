@@ -338,6 +338,8 @@ $$
 
 Let the function $y = f(x)$ be defined in a certain neighborhood of the point $x_0$, if $\lim\limits_{x\rightarrow x_0}f(x)=f(x_0)$, then the function $f(x)$ is said to be continuous at the point $x_0$. Formally, for any positive number $\epsilon > 0$, if there exists a positive number $\delta > 0$ such that whenever $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$, the function is said to be continuous at $a$. Intuitively, the continuity of a function at a point means that the graph of the function is unbroken at that point.
 
+(*Any desired output accuracy can be achieved by choosing the input sufficiently close.*)
+
 #### Discontinuity classification
 
 - **Removable Discontinuity**: If $\lim\limits_{x\rightarrow x_0^{-}}f(x)=\lim\limits_{x\rightarrow x_0^{+}}f(x) = L$, but $f(x_0)$ is either not defined or $f(x_0)\neq L$, then $x_0$ is a removable discontinuity point.
