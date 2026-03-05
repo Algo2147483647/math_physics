@@ -17,8 +17,19 @@ Intersection points of Ray-Surface refer to the solution of ray and surface equa
 
 - $t$: The distance from the origin of the ray to the intersection of ray-surface.
 
-
 ## Include
+
+| Shape                                        |                          Expression                          |
+| :------------------------------------------- | :----------------------------------------------------------: |
+| ***Plane***                                  |      $\boldsymbol A \boldsymbol x + \boldsymbol b = 0$       |
+| ***Sphere***                                 |         $\|\boldsymbol x - \boldsymbol x_c \|_2 = r$         |
+| ***Quadratic Polynomial Equation Surface***  | $\boldsymbol x^T \boldsymbol A \boldsymbol x + \boldsymbol b^T \boldsymbol x + c = 0$ |
+| ***Four-Order Polynomial Equation Surface*** | $f(\boldsymbol x) = \sum\limits_{i_1=0}^{\dim} \sum\limits_{i_2=i_1}^{\dim} \sum\limits_{i_3=i_2}^{\dim} \sum\limits_{i_4=i_3}^{\dim} a_{i_1 i_2 i_3 i_4} \cdot x_{i_1} x_{i_2} x_{i_3} x_{i_4}$ |
+| ***Cuboid***                                 |          $(\boldsymbol P_\min, \boldsymbol P_\max)$          |
+| ***Triangle***                               |    $(\boldsymbol P_1, \boldsymbol P_2, \boldsymbol P_3)$     |
+| ***Circle***                                 |                                                              |
+| ***Implicit Equation***                      |                    $f(\boldsymbol x) = 0$                    |
+| ***Parametric Equation***                    |               $f: (u, v) \to \mathbb R^{\dim}$               |
 
 ### Ray-Plane
 
