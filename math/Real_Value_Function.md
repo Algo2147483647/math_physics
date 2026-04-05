@@ -288,10 +288,10 @@ A partial differential equation relates an unknown function $u$ of several varia
 
 ## Include
 
-- [Elliptic_Integral](./Elliptic_Integral.md):
+- [Elliptic_Integral](./Elliptic_Integral.md): subtype_of
 
 ## Parents
 
-- [Function](./Function.md): is-a
+- [Function](./Function.md): subtype_of
 
-- [Real_Field](./Real_Field.md):
+- [Real_Field](./Real_Field.md): defined_on

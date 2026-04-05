@@ -69,9 +69,8 @@ Clebsch diagonal cubic is a hyperplane cross-section in the complex projective s
 
 ## Include
 
-- [Elliptic_Curve](./Elliptic_Curve.md): 
+- [Elliptic_Curve](./Elliptic_Curve.md): defined_on
 
 ## Parents
 
-- [Polynomial_Function](./Polynomial_Function.md): is-a
-
+- [Polynomial_Function](./Polynomial_Function.md): subtype_of

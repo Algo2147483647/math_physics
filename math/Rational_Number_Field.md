@@ -39,15 +39,12 @@ Rational number field is a [field](./Field.md) of rational numbers is the set of
 
 ## Properties
 
-
-
 ## Include
 
-- [Real_Field](./Real_Field.md): 
+- [Real_Field](./Real_Field.md): defined_on
 
 ## Parents
 
-- [Field](./Field.md): is-a
+- [Field](./Field.md): subtype_of
 
-- [Integer_Ring](./Integer_Ring.md): 
-
+- [Integer_Ring](./Integer_Ring.md): defined_on

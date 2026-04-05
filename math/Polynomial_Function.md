@@ -55,15 +55,14 @@ Every non-constant single-variable polynomial with complex coefficients has at l
 
 ## Include
 
-- [Cubic_Function](./Cubic_Function.md): is-a
+- [Cubic_Function](./Cubic_Function.md): subtype_of
 
-- [Fourth-Order_Function](./Fourth-Order_Function.md): is-a (quartic / fourth-order)
+- [Fourth-Order_Function](./Fourth-Order_Function.md): subtype_of
 
-- [Linear_Function](./Linear_Function.md): is-a
+- [Linear_Function](./Linear_Function.md): subtype_of
 
-- [Quadratic_Function](./Quadratic_Function.md): is-a
+- [Quadratic_Function](./Quadratic_Function.md): subtype_of
 
 ## Parents
 
-- [Function](./Function.md): is-a
-
+- [Function](./Function.md): subtype_of

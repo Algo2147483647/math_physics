@@ -114,11 +114,10 @@ Poisson point process is a stochastic process that models the random spatial dis
 
 ## Include
 
-- [Markov_Process](./Markov_Process.md): is-a
+- [Markov_Process](./Markov_Process.md): subtype_of
 
-- [Martingale](./Martingale.md): 
+- [Martingale](./Martingale.md): subtype_of
 
 ## Parents
 
-- [Probability_Space](./Probability_Space.md): 
-
+- [Probability_Space](./Probability_Space.md): defined_on

@@ -49,13 +49,12 @@ The power set of a set $S$ is the set of all subsets of $S$, including $\emptyse
 
 ## Include
 
-- [Measurable_Space](./Measurable_Space.md): 
+- [Measurable_Space](./Measurable_Space.md): defined_on
 
-- [Sigma_Algebra](./Sigma_Algebra.md): 
+- [Sigma_Algebra](./Sigma_Algebra.md): subtype_of
 
-- [Topological_Space](./Topological_Space.md): 
+- [Topological_Space](./Topological_Space.md): defined_on
 
 ## Parents
 
-- [Set](./Set.md): is-a
-
+- [Set](./Set.md): subtype_of

@@ -101,15 +101,14 @@ Perfect Matching is a matching that all vertices of the graph are in it.
 
 ## Include
 
-- [Bipartite_Graph](./Bipartite_Graph.md): is-a
+- [Bipartite_Graph](./Bipartite_Graph.md): subtype_of
 
-- [Complete_Graph](./Complete_Graph.md): is-a, fully connected
+- [Complete_Graph](./Complete_Graph.md): subtype_of
 
-- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): is-a, directed, acyclic
+- [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): subtype_of
 
-- [Tree](./Tree.md): is-a, undirected, connected, acyclic
+- [Tree](./Tree.md): subtype_of
 
 ## Parents
 
-- [Set](./Set.md): 
-
+- [Set](./Set.md): defined_on

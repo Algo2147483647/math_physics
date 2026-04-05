@@ -45,29 +45,28 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 ## Include
 
-- [Bessel_Function](./Bessel_Function.md): is-a
+- [Bessel_Function](./Bessel_Function.md): subtype_of
 
-- [Complex_Value_Function](./Complex_Value_Function.md): is-a
+- [Complex_Value_Function](./Complex_Value_Function.md): subtype_of
 
-- [Dirac_Delta_Function](./Dirac_Delta_Function.md): is-a
+- [Dirac_Delta_Function](./Dirac_Delta_Function.md): subtype_of
 
-- [Exponential_Function](./Exponential_Function.md): is-a
+- [Exponential_Function](./Exponential_Function.md): subtype_of
 
-- [Hilbert_Transform](./Hilbert_Transform.md): is-a
+- [Hilbert_Transform](./Hilbert_Transform.md): subtype_of
 
-- [Laplace_Transform](./Laplace_Transform.md): is-a
+- [Laplace_Transform](./Laplace_Transform.md): subtype_of
 
-- [Linear_Transformation](./Linear_Transformation.md): is-a
+- [Linear_Transformation](./Linear_Transformation.md): subtype_of
 
-- [Polynomial_Function](./Polynomial_Function.md): is-a
+- [Polynomial_Function](./Polynomial_Function.md): subtype_of
 
-- [Radon_Translation](./Radon_Translation.md): is-a
+- [Radon_Translation](./Radon_Translation.md): subtype_of
 
-- [Real_Value_Function](./Real_Value_Function.md): is-a
+- [Real_Value_Function](./Real_Value_Function.md): subtype_of
 
-- [Sequence](./Sequence.md): is-a
+- [Sequence](./Sequence.md): subtype_of
 
 ## Parents
 
-- [Relation](./Relation.md): is-a
-
+- [Relation](./Relation.md): subtype_of

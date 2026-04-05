@@ -43,5 +43,4 @@ Groups formed by points on elliptic curves: The points on an elliptic curve form
 
 ## Parents
 
-- [Cubic_Function](./Cubic_Function.md): 
-
+- [Cubic_Function](./Cubic_Function.md): defined_on

@@ -16,8 +16,8 @@ A polyhedron is the intersection of finitely many half-spaces and hyperplanes.
 
 ## Include
 
-- [Simplex](./Simplex.md): is-a
+- [Simplex](./Simplex.md): subtype_of
 
 ## Parents
 
-- [Affine_Space](./Affine_Space.md):
+- [Affine_Space](./Affine_Space.md): defined_on

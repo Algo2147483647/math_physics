@@ -173,16 +173,16 @@ $$
 
 ## Include
 
-- [Affine_Space](./Affine_Space.md): is-a
+- [Affine_Space](./Affine_Space.md): defined_on
 
-- [Linear_Transformation](./Linear_Transformation.md):
+- [Linear_Transformation](./Linear_Transformation.md): defined_on
 
-- [Normed_Linear_Space](./Normed_Linear_Space.md): is-a
+- [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of
 
-- [Projective_Space](./Projective_Space.md): is-a
+- [Projective_Space](./Projective_Space.md): defined_on
 
-- [Tensor](./Tensor.md):
+- [Tensor](./Tensor.md): defined_on
 
 ## Parents
 
-- [Module](./Module.md): is-a
+- [Module](./Module.md): subtype_of

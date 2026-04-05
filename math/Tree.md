@@ -25,9 +25,8 @@ When the root node is set to a certain node of the tree, the hierarchical relati
 
 ## Include
 
-- [Binary_Tree](./Binary_Tree.md): is-a
+- [Binary_Tree](./Binary_Tree.md): subtype_of
 
 ## Parents
 
-- [Graph](./Graph.md): is-a, undirected, connected, acyclic
-
+- [Graph](./Graph.md): subtype_of

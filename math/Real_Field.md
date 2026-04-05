@@ -69,21 +69,18 @@ The **Real Field** $\mathbb{R}$ is a set equipped with addition $+$ and multipli
 
 ## Properties
 
-
-
 ## Include
 
-- [Complex_Field](./Complex_Field.md): is-a
+- [Complex_Field](./Complex_Field.md): defined_on
 
-- [Euclidean_Space](./Euclidean_Space.md): 
+- [Euclidean_Space](./Euclidean_Space.md): defined_on
 
-- [Quaternion_Ring](./Quaternion_Ring.md): 
+- [Quaternion_Ring](./Quaternion_Ring.md): defined_on
 
-- [Real_Value_Function](./Real_Value_Function.md): 
+- [Real_Value_Function](./Real_Value_Function.md): defined_on
 
 ## Parents
 
-- [Field](./Field.md): is-a
+- [Field](./Field.md): subtype_of
 
-- [Rational_Number_Field](./Rational_Number_Field.md): 
-
+- [Rational_Number_Field](./Rational_Number_Field.md): defined_on

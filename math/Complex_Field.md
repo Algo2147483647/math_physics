@@ -57,10 +57,10 @@ $$
 
 ## Include
 
-- [Complex_Value_Function](./Complex_Value_Function.md):
+- [Complex_Value_Function](./Complex_Value_Function.md): defined_on
 
 ## Parents
 
-- [Field](./Field.md): is-a
+- [Field](./Field.md): subtype_of
 
-- [Real_Field](./Real_Field.md): is-a
+- [Real_Field](./Real_Field.md): defined_on

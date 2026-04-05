@@ -28,11 +28,10 @@ $\left<x, y \right>$ means the length of $x$ projection toward $y$ multiply leng
 
 ## Include
 
-- [Convolution](./Convolution.md): 
+- [Convolution](./Convolution.md): defined_on
 
-- [Hilbert_Space](./Hilbert_Space.md): is-a
+- [Hilbert_Space](./Hilbert_Space.md): subtype_of
 
 ## Parents
 
-- [Normed_Linear_Space](./Normed_Linear_Space.md): is-a
-
+- [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of

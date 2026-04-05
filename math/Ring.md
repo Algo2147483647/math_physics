@@ -78,13 +78,12 @@ $$
 
 ## Include
 
-- [Integer_Ring](./Integer_Ring.md): is-a
+- [Integer_Ring](./Integer_Ring.md): subtype_of
 
-- [Module](./Module.md): is-a
+- [Module](./Module.md): defined_on
 
-- [Quaternion_Ring](./Quaternion_Ring.md): is-a
+- [Quaternion_Ring](./Quaternion_Ring.md): subtype_of
 
 ## Parents
 
-- [Algebra_Structure](./Algebra_Structure.md): is-a
-
+- [Algebra_Structure](./Algebra_Structure.md): subtype_of

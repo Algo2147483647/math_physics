@@ -32,10 +32,8 @@ $$
 \text{dn}^2(a) + k^2 \text{sn}^2(a) = 1
 $$
 
-
 ## Include
 
 ## Parents
 
-- [Real_Value_Function](./Real_Value_Function.md): 
-
+- [Real_Value_Function](./Real_Value_Function.md): subtype_of

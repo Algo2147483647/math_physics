@@ -20,6 +20,6 @@ Associated to a Lie group is its Lie algebra, which can be identified with the t
 
 ## Parents
 
-- [Group](./Group.md):
+- [Group](./Group.md): subtype_of
 
-- [Manifold](./Manifold.md):
+- [Manifold](./Manifold.md): subtype_of

@@ -23,8 +23,8 @@ such that for all $r, s \in R$ and $x, y \in M$,
 
 ## Include
 
-- [Linear_Space](./Linear_Space.md): is-a
+- [Linear_Space](./Linear_Space.md): subtype_of
 
 ## Parents
 
-- [Ring](./Ring.md): is-a
+- [Ring](./Ring.md): defined_on

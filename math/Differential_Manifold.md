@@ -141,9 +141,8 @@ $$
 
 ## Include
 
-- [Euclidean_Space](./Euclidean_Space.md): is-a
+- [Euclidean_Space](./Euclidean_Space.md): subtype_of
 
 ## Parents
 
-- [Manifold](./Manifold.md): is-a
-
+- [Manifold](./Manifold.md): subtype_of

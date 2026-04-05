@@ -239,9 +239,8 @@ Algorithm: 逐次平方法
 
 ## Include
 
-- [Prime](./Prime.md): 
+- [Prime](./Prime.md): defined_on
 
 ## Parents
 
-- [Integer_Ring](./Integer_Ring.md): 
-
+- [Integer_Ring](./Integer_Ring.md): property_of

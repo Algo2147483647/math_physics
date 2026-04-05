@@ -109,9 +109,8 @@ $$
 
 ## Include
 
-- [Polyhedron](./Polyhedron.md): 
+- [Polyhedron](./Polyhedron.md): defined_on
 
 ## Parents
 
-- [Linear_Space](./Linear_Space.md): is-a
-
+- [Linear_Space](./Linear_Space.md): defined_on

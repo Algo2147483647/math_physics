@@ -31,8 +31,8 @@ $$
 
 ## Include
 
-- [Probability_Space](./Probability_Space.md): is-a
+- [Probability_Space](./Probability_Space.md): subtype_of
 
 ## Parents
 
-- [Power_Set](./Power_Set.md):
+- [Power_Set](./Power_Set.md): defined_on

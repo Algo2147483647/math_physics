@@ -101,5 +101,4 @@ $$
 
 ## Parents
 
-- [Polynomial_Function](./Polynomial_Function.md): is-a
-
+- [Polynomial_Function](./Polynomial_Function.md): subtype_of

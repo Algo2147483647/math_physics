@@ -125,15 +125,14 @@ A Penrose tiling is an example of an aperiodic tiling.
 
 ## Include
 
-- [Convex_Hull](./Convex_Hull.md): 
+- [Convex_Hull](./Convex_Hull.md): defined_on
 
-- [Knot](./Knot.md): 
+- [Knot](./Knot.md): defined_on
 
 ## Parents
 
-- [Differential_Manifold](./Differential_Manifold.md): is-a
+- [Differential_Manifold](./Differential_Manifold.md): subtype_of
 
-- [Hilbert_Space](./Hilbert_Space.md): is-a
+- [Hilbert_Space](./Hilbert_Space.md): subtype_of
 
-- [Real_Field](./Real_Field.md): 
-
+- [Real_Field](./Real_Field.md): defined_on

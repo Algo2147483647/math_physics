@@ -45,5 +45,4 @@ Simplex represents the simplest possible polytope in any given dimension. Specif
 
 ## Parents
 
-- [Polyhedron](./Polyhedron.md): is-a
-
+- [Polyhedron](./Polyhedron.md): subtype_of

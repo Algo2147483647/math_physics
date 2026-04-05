@@ -32,13 +32,10 @@ Natural numbers $\mathbb{N}$ are formally defined by the **Peano's axioms**, whi
 
 ## Properties
 
-
-
 ## Include
 
-- [Integer_Ring](./Integer_Ring.md): 
+- [Integer_Ring](./Integer_Ring.md): defined_on
 
 ## Parents
 
-- [Set](./Set.md): 
-
+- [Set](./Set.md): subtype_of

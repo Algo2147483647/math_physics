@@ -324,9 +324,8 @@ $$
 
 ## Include
 
-- [Moment](./Moment.md): 
+- [Moment](./Moment.md): property_of
 
 ## Parents
 
-- [Probability_Space](./Probability_Space.md): 
-
+- [Probability_Space](./Probability_Space.md): defined_on

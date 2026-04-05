@@ -41,5 +41,4 @@ $$
 
 ## Parents
 
-- [Complex_Value_Function](./Complex_Value_Function.md): is-a
-
+- [Complex_Value_Function](./Complex_Value_Function.md): subtype_of

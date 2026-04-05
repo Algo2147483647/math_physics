@@ -115,5 +115,4 @@ $X_{n, i}$: a random variable denoting the number of direct successors of member
 
 ## Parents
 
-- [Stochastic_Process](./Stochastic_Process.md): is-a
-
+- [Stochastic_Process](./Stochastic_Process.md): subtype_of

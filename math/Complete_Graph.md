@@ -19,5 +19,4 @@ A complete graph containing $n$ vertices,
 
 ## Parents
 
-- [Graph](./Graph.md): is-a, fully connected
-
+- [Graph](./Graph.md): subtype_of

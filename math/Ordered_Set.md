@@ -102,5 +102,4 @@ Include
 
 ## Parents
 
-- [Set](./Set.md): is-a
-
+- [Set](./Set.md): subtype_of

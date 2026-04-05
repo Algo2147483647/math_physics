@@ -56,5 +56,4 @@ Knot invariants are used to determine whether two knots are equivalent or not.
 
 ## Parents
 
-- [Euclidean_Space](./Euclidean_Space.md): 
-
+- [Euclidean_Space](./Euclidean_Space.md): defined_on

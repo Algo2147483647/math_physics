@@ -104,9 +104,8 @@ Binary Relation $R$ over set $X, Y$ is a subset of the Cartesian product $X \tim
 
 ## Include
 
-- [Function](./Function.md): is-a
+- [Function](./Function.md): subtype_of
 
 ## Parents
 
-- [Set](./Set.md): 
-
+- [Set](./Set.md): subtype_of

@@ -52,5 +52,4 @@ Where $w_i$ is a similarity transformation with a scaling factor less than 1, th
 
 ## Parents
 
-- [Set](./Set.md): 
-
+- [Set](./Set.md): subtype_of

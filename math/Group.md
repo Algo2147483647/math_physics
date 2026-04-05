@@ -207,9 +207,8 @@ Properties:
 
 ## Include
 
-- [Lie_Group](./Lie_Group.md): 
+- [Lie_Group](./Lie_Group.md): subtype_of
 
 ## Parents
 
-- [Algebra_Structure](./Algebra_Structure.md): is-a
-
+- [Algebra_Structure](./Algebra_Structure.md): subtype_of

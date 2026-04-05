@@ -72,13 +72,10 @@ $$
 
 ## Include
 
-- [Complex_Field](./Complex_Field.md): is-a
+- [Complex_Field](./Complex_Field.md): subtype_of
 
-- [Rational_Number_Field](./Rational_Number_Field.md): is-a
+- [Rational_Number_Field](./Rational_Number_Field.md): subtype_of
 
-- [Real_Field](./Real_Field.md): is-a
+- [Real_Field](./Real_Field.md): subtype_of
 
 ## Parents
-
-- [Integer_Ring](./Integer_Ring.md): is-a
-

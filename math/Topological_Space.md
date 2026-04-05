@@ -101,11 +101,10 @@ A function $f: X \to Y$ between two topological spaces is a homeomorphism if it 
 
 ## Include
 
-- [Hausdorff_Space](./Hausdorff_Space.md): is-a
+- [Hausdorff_Space](./Hausdorff_Space.md): subtype_of
 
-- [Metric_Space](./Metric_Space.md): is-a
+- [Metric_Space](./Metric_Space.md): subtype_of
 
 ## Parents
 
-- [Power_Set](./Power_Set.md): 
-
+- [Power_Set](./Power_Set.md): defined_on

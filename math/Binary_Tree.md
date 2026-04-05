@@ -46,5 +46,4 @@ Post-order Traversal: The left subtree is visited first, then the right subtree,
 
 ## Parents
 
-- [Tree](./Tree.md): is-a
-
+- [Tree](./Tree.md): subtype_of

@@ -102,10 +102,10 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 ## Include
 
-- [Random_Variable](./Random_Variable.md):
+- [Random_Variable](./Random_Variable.md): defined_on
 
-- [Stochastic_Process](./Stochastic_Process.md):
+- [Stochastic_Process](./Stochastic_Process.md): defined_on
 
 ## Parents
 
-- [Measurable_Space](./Measurable_Space.md): is-a
+- [Measurable_Space](./Measurable_Space.md): subtype_of

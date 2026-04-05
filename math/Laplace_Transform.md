@@ -17,11 +17,8 @@ A type of [function](./Function.md)
 
 ## Properties
 
-
-
 ## Include
 
 ## Parents
 
-- [Function](./Function.md): is-a
-
+- [Function](./Function.md): subtype_of

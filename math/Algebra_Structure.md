@@ -14,13 +14,12 @@ An automorphism is simply a bijective homomorphism of a mathematical object with
 
 ## Include
 
-- [Group](./Group.md): is-a
+- [Group](./Group.md): subtype_of
 
-- [Lattice](./Lattice.md): is-a
+- [Lattice](./Lattice.md): subtype_of
 
-- [Ring](./Ring.md): is-a
+- [Ring](./Ring.md): subtype_of
 
 ## Parents
 
-- [Set](./Set.md): 
-
+- [Set](./Set.md): defined_on

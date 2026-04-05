@@ -15,11 +15,8 @@ A set of points in a Euclidean space is defined to be convex if it contains the 
 
 ## Properties
 
-
-
 ## Include
 
 ## Parents
 
-- [Euclidean_Space](./Euclidean_Space.md): 
-
+- [Euclidean_Space](./Euclidean_Space.md): defined_on

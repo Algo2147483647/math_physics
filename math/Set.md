@@ -257,19 +257,18 @@ Property:
 
 ## Include
 
-- [Algebra_Structure](./Algebra_Structure.md): 
+- [Algebra_Structure](./Algebra_Structure.md): defined_on
 
-- [Fractal](./Fractal.md): 
+- [Fractal](./Fractal.md): subtype_of
 
-- [Graph](./Graph.md): 
+- [Graph](./Graph.md): defined_on
 
-- [Natural_Number](./Natural_Number.md): 
+- [Natural_Number](./Natural_Number.md): subtype_of
 
-- [Ordered_Set](./Ordered_Set.md): is-a
+- [Ordered_Set](./Ordered_Set.md): subtype_of
 
-- [Power_Set](./Power_Set.md): is-a
+- [Power_Set](./Power_Set.md): subtype_of
 
-- [Relation](./Relation.md): 
+- [Relation](./Relation.md): subtype_of
 
 ## Parents
-

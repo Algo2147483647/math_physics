@@ -281,7 +281,6 @@ $$
 
 ## Parents
 
-- [Function](./Function.md): is-a
+- [Function](./Function.md): subtype_of
 
-- [Linear_Space](./Linear_Space.md): 
-
+- [Linear_Space](./Linear_Space.md): defined_on

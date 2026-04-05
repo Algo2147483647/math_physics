@@ -19,13 +19,10 @@ Lattice is a concept of partially ordered sets, which is a special type of [alge
 
 ## Properties
 
-
-
 ## Include
 
-- [Boolean_Algebra](./Boolean_Algebra.md): is-a
+- [Boolean_Algebra](./Boolean_Algebra.md): subtype_of
 
 ## Parents
 
-- [Algebra_Structure](./Algebra_Structure.md): is-a
-
+- [Algebra_Structure](./Algebra_Structure.md): subtype_of
