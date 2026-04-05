@@ -5,13 +5,14 @@
 ## Define
 
 $$
-<Ω, \mathcal F, \mathbb P>  \tag{Probability Space}
+(\Omega, \mathcal F, \mathbb P)  \tag{Probability Space}
 $$
-Probability Space is a [measure space](./Measurable_Space.md) including, 
 
-- $Ω$: sample space
-- $\mathbb P$: Probability, a measure of the sample space $Ω$.
-- $\mathcal F$: a $\sigma$-algebra of the sample space $Ω$.
+A probability space is a [measure space](./Measurable_Space.md) consisting of
+
+- $\Omega$: sample space
+- $\mathcal F$: a $\sigma$-algebra on $\Omega$
+- $\mathbb P$: a probability measure on $(\Omega, \mathcal F)$
 
 ### Probability
 
@@ -19,86 +20,92 @@ $$
 \mathbb P: \mathcal F \to [0, 1]  \tag{Probability}
 $$
 
-Probability is a set function, a measure of a set, and satisfies (Kolmogorov axiomatization):
+Probability is a set function satisfying the Kolmogorov axioms:
 
-- Nonnegativity $\mathbb P(A) \in [0, 1] \quad ; \forall A \in F$
-- Normative $\mathbb P(Ω) = 1$
-- Countable Additivity 
+- Nonnegativity: $\mathbb P(A) \in [0, 1]$ for all $A \in \mathcal F$
+- Normalization: $\mathbb P(\Omega) = 1$
+- Countable additivity: for pairwise disjoint events $(A_i)_{i=1}^{\infty} \subseteq \mathcal F$,
 $$
-\mathbb P \left(\bigcup_i A_i \right) = \sum_i \mathbb P(A_i)
+\mathbb P \left(\bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mathbb P(A_i)
 $$
 
 ## Properties
 
-### Large number theorem
+### Law of Large Numbers
 
+For i.i.d. random variables $X_1, X_2, \dots$ with mean $\mu$,
 $$
-\begin{align*}
-\lim\limits_{n \to ∞} \mathbb P \left(\left|\frac{1}{N} \sum_{k=1}^n X_k-μ \right|<ε \right) = 1  \tag{Weak large number theorem}\\
-\lim\limits_{n \to ∞} \mathbb P\left(\left|\frac{f_A}{n}-p \right|<ε\right) = 1  \tag{Bernoulli large number theorem}
-\end{align*}
+\lim_{n \to \infty} \mathbb P \left(\left|\frac{1}{n} \sum_{k=1}^n X_k - \mu \right| < \varepsilon \right) = 1
+\tag{Weak law of large numbers}
+$$
+
+For Bernoulli trials with success probability $p$ and empirical frequency $f_A / n$,
+$$
+\lim_{n \to \infty} \mathbb P\left(\left|\frac{f_A}{n} - p \right| < \varepsilon\right) = 1
+\tag{Bernoulli law of large numbers}
 $$
 
 ### Central Limit Theorem
 
+For i.i.d. random variables $X_1, X_2, \dots$ with mean $\mu$ and variance $\sigma^2$,
 $$
-\begin{align*}
-  \lim\limits_{n \to ∞} F_n(x) &= \lim\limits_{n \to ∞} \mathbb P \left(\frac{\sum\limits_{k=1}^n X_k - n μ}{\sqrt{n} σ} ≤ x \right)  \\
-  &= \int_{-∞}^x \frac{1}{\sqrt{2 π}} e^{-t^2 / 2} \mathrm d t  \\
-  &= \Phi(x)
-\end{align*}
+\lim_{n \to \infty} \mathbb P \left(\frac{\sum_{k=1}^n X_k - n \mu}{\sqrt{n}\sigma} \le x \right)
+= \Phi(x)
+= \int_{-\infty}^x \frac{1}{\sqrt{2 \pi}} e^{-t^2 / 2} \, \mathrm d t
+\tag{Central Limit Theorem}
 $$
 
 ### Joint Probability
 
 $$
-\mathbb P(A B)
+\mathbb P(A \cap B)
 $$
-The probability of A and B occurring together.
+
+The probability of $A$ and $B$ occurring together.
 
 ### Conditional Probability
 
 $$
-\mathbb P(B | A)
+\mathbb P(B \mid A)
 $$
+
 Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 #### Property
 
-- Independence 
+- Independence
   $$
-  Independence \Leftrightarrow \mathbb P(A B) = \mathbb P(A) \mathbb P(B)
+  A \text{ and } B \text{ are independent} \Leftrightarrow \mathbb P(A \cap B) = \mathbb P(A) \mathbb P(B)
   $$
-  The occurrence of $A$ and $B$ does not affect each other.
 
-- relationship between Joint \& Conditional probability
+- Relationship between joint and conditional probability
   $$
   \begin{align*}
-    \mathbb P(B | A) &= \frac{\mathbb P(A B)}{\mathbb P(A)}  \\
-    \mathbb P(A B) &= \mathbb P(B | A) \mathbb P(A) = \mathbb P(A | B) \mathbb P(B)
+    \mathbb P(B \mid A) &= \frac{\mathbb P(A \cap B)}{\mathbb P(A)}  \\
+    \mathbb P(A \cap B) &= \mathbb P(B \mid A) \mathbb P(A) = \mathbb P(A \mid B) \mathbb P(B)
   \end{align*}
   $$
 
-- Theorem -- Total Probability Theorem
+- Total probability theorem
   $$
-  \mathbb P(A) = \sum_i \mathbb P(A|B_i) \mathbb P(B_i) \quad; \sum_i A_i = Ω
+  \mathbb P(A) = \sum_i \mathbb P(A \mid B_i) \mathbb P(B_i)
   $$
+  where $(B_i)$ is a partition of $\Omega$.
 
-- Bayes formula
+- Bayes' formula
   $$
   \begin{align*}
-    \mathbb P(A | B) &= \frac{\mathbb P(B | A) \mathbb P(A)}{\mathbb P(B)}  \\
-    \mathbb P(A_i | B) &= \frac{\mathbb P(B | A_i) \mathbb P(A_i)}{\sum\limits_j \mathbb P(B|A_j) \mathbb P(A_j)}; \sum_j A_j = Ω
+    \mathbb P(A \mid B) &= \frac{\mathbb P(B \mid A) \mathbb P(A)}{\mathbb P(B)}  \\
+    \mathbb P(A_i \mid B) &= \frac{\mathbb P(B \mid A_i) \mathbb P(A_i)}{\sum\limits_j \mathbb P(B \mid A_j) \mathbb P(A_j)}
   \end{align*}
   $$
 
 ## Include
 
-- [Random_Variable](./Random_Variable.md): 
+- [Random_Variable](./Random_Variable.md):
 
-- [Stochastic_Process](./Stochastic_Process.md): 
+- [Stochastic_Process](./Stochastic_Process.md):
 
 ## Parents
 
 - [Measurable_Space](./Measurable_Space.md): is-a
-

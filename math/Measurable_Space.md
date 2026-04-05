@@ -4,34 +4,27 @@
 
 ## Define
 
-A Measurable Space is a pair $(E, \mathcal E)$, where $E$ is a set and $\mathcal E$ is its [$\sigma$-algebra](./Power_Set.md).
+A measurable space is a pair $(E, \mathcal E)$, where $E$ is a set and $\mathcal E$ is a [$\sigma$-algebra](./Sigma_Algebra.md) on $E$.
 
-A Measure Space is a pair $(E, \mathcal E, \mu)$, where $E$ is a set and $\mathcal E$ is its $\sigma$-algebra, $\mu$ is a Measure on $(E, \mathcal E)$
+A measure space is a triple $(E, \mathcal E, \mu)$, where $E$ is a set, $\mathcal E$ is a $\sigma$-algebra on $E$, and $\mu$ is a measure on $(E, \mathcal E)$.
 
-### Measurex
+### Measure
 
-A Measure on a measurable space $(E, \mathcal E)$ is a function $\mu: \mathcal E \to [0, \infty)$ such that 
+A measure on a measurable space $(E, \mathcal E)$ is a function $\mu: \mathcal E \to [0, \infty]$ such that
 
-- $\mu (\emptyset) = 0$
-- Countable additivity: For any disjoint sequence $(A_1, ..., A_n), A_i \in \mathcal E$, then
+- $\mu(\emptyset) = 0$
+- Countable additivity: for any pairwise disjoint sequence $(A_i)_{i=1}^{\infty}$ with $A_i \in \mathcal E$,
 $$
-\mu \left(\bigcup_i A_i\right) = \sum_i \mu(A_i)
+\mu \left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} \mu(A_i)
 $$
 
 ## Properties
 
-- Lebesgue Measure 
-  For a measurable subset $E \subseteq \mathbb{R}^n$, $E$ is Lebesgue measurable, if for any $\epsilon > 0$, there exist a finite number of open boxes $Q_1, Q_2, \ldots, Q_m$ and their volumes $\text{vol}(Q_i)$, such that
+- Lebesgue measure  
+  For a measurable subset $E \subseteq \mathbb{R}^n$, the Lebesgue measure $\mathrm m(E)$ can be defined by
   $$
-  E \subset \bigcup_{i=1}^m Q_i
-  $$
-  $$
-  \sum_{i=1}^m \text{vol}(Q_i) < \text{vol}(E) + \epsilon  \tag{Lebesgue measurable}
-  $$
-
-  And Lebesgue measure $\text{m}(E)$ of a measurable subset $E$ is defined as,
-  $$
-  \text{m}(E) = \inf\left\{\sum_{i=1}^\infty \text{vol}(Q_i) \ \middle|\ E \subset \bigcup_{i=1}^\infty Q_i \right\}  \tag{Lebesgue Measure}
+  \mathrm m(E) = \inf\left\{\sum_{i=1}^\infty \mathrm{vol}(Q_i) \ \middle|\ E \subseteq \bigcup_{i=1}^\infty Q_i,\ Q_i \text{ are open boxes}\right\}
+  \tag{Lebesgue Measure}
   $$
 
 - Probability
@@ -42,5 +35,4 @@ $$
 
 ## Parents
 
-- [Power_Set](./Power_Set.md): 
-
+- [Power_Set](./Power_Set.md):

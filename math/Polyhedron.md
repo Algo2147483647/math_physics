@@ -5,14 +5,14 @@
 ## Define
 
 $$
-\{\boldsymbol x \ |\ \boldsymbol a_j^T \boldsymbol x ≤ b_j, j = 1,...,m,\ \boldsymbol c_j^T \boldsymbol x = d_j, j = 1,...,p\}
+\{\boldsymbol x \mid \boldsymbol a_j^T \boldsymbol x \le b_j,\ j = 1,\dots,m,\ \boldsymbol c_j^T \boldsymbol x = d_j,\ j = 1,\dots,p\}
 $$
 
-Polyhedron is the intersection of a finite hyperplane and a half space.
+A polyhedron is the intersection of finitely many half-spaces and hyperplanes.
 
 ## Properties
 
-- Polyhedron is a convex set.
+- A polyhedron is a convex set.
 
 ## Include
 
@@ -20,5 +20,4 @@ Polyhedron is the intersection of a finite hyperplane and a half space.
 
 ## Parents
 
-- [Affine_Space](./Affine_Space.md): 
-
+- [Affine_Space](./Affine_Space.md):

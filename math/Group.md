@@ -41,11 +41,6 @@ structure Group where
 
 - The inverse of each element is unique.
 
-- Absorbing Element
-  $$
-  x \cdot 0 = 0 \cdot x = 0  \quad; \forall x \in G  \tag{absorbing element}
-  $$
-
 - 
   - $\forall a \in G, (a^{-1})^{-1} = a$
   - $\forall a,b \in G, (a \cdot b)^{-1} = b^{-1} \cdot a^{-1}$
@@ -62,7 +57,7 @@ For a group $(G, \cdot)$ and a nonempty subset $H$ of $G$, if $(H, \cdot)$ is al
 
 Property:
 - $1 \le G, G \le G$
-* **Lagrange's Theorem**: The size of any subgroup $H$ of a finite group $G$ can be divided by the size of $G$, $|H| \ |\ |G|$. *(Proofed by Coset.)*
+* **Lagrange's Theorem**: The size of any subgroup $H$ of a finite group $G$ divides the size of $G$, written $|H| \mid |G|$. *(Proved using cosets.)*
   $$
   \begin{align*}
   \text{number of coset}(G, H) &= \frac{|G|}{|H|}
@@ -176,7 +171,7 @@ G = ⟨g⟩ &= (\{k \cdot g \ |\ k \in \mathbb Z\}, +)
 \end{align*}
 $$
 
-A group $G$ is called cyclic if there exists an element $a \in G$ such that every element of $G$ can be expressed as a power of $a$. ln other words, every element in $G$ is of the form $a$ for some integer $k$. The element a is called a generator of the group.
+A group $G$ is called cyclic if there exists an element $a \in G$ such that every element of $G$ can be expressed as a power of $a$. In other words, every element in $G$ is of the form $a^k$ for some integer $k$. The element $a$ is called a generator of the group.
 
 Properties:
 

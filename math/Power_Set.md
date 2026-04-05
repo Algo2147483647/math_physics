@@ -7,7 +7,7 @@
 $$
 P(S) = \{X \ |\ X \subseteq S\}  \tag{Power Set}
 $$
-The Power Set of a set $S$ is the set of all subset of $S$, including $\emptyset$ and $S$ itself.
+The power set of a set $S$ is the set of all subsets of $S$, including $\emptyset$ and $S$ itself.
 
 <img src="./assets/Hasse_diagram_of_powerset_of_3.svg" alt="Hasse_diagram_of_powerset_of_3" style="zoom: 40%;" />
 
@@ -23,21 +23,21 @@ The Power Set of a set $S$ is the set of all subset of $S$, including $\emptyset
 
 - Define
   $$
-  f_\text{Conbination}(S, k) = \{ X \ |\ X \subseteq S , |X| = k\}  \tag{Conbination}
+  f_\text{Combination}(S, k) = \{ X \ |\ X \subseteq S , |X| = k\}  \tag{Combination}
   $$
-  Combination, is the selection of $k$ elements from a set of $n$ elements without any regard to the order in which they are chosen.
+  A combination is the selection of $k$ elements from a set of $n$ elements without regard to order.
 
-  The number of Combination $C(n, r)$,
+  The number of combinations is
   $$
-  C(n, r) = |f_\text{Conbination}(S, k)| = \frac{n!}{(n - m)! m!}  \tag{number of Conbination}
+  C(n, k) = |f_\text{Combination}(S, k)| = \frac{n!}{(n - k)! k!}  \tag{number of combinations}
   $$
 
 - Property    
   - $C(n,r) = C(n-1,r-1) + C(n-1,r)$
   - $C(n,r) = C(n,n-r)$
-  - The union of all Combination of a set $S$ is the power set $P(S)$ of the set $S$.
+  - The union of all combinations of a set $S$ is the power set $P(S)$ of the set $S$.
     $$
-    \bigcup_{k=0}^n f_\text{Conbination}(S, k) = P(S)
+    \bigcup_{k=0}^n f_\text{Combination}(S, k) = P(S)
     $$
     $$
     \begin{align*}

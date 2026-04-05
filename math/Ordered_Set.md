@@ -76,7 +76,7 @@ Include
 - Define  
   Permutation, is the arrangement of $k$ elements from a set of $n$ elements in a particular order. 
 
-  The number of Conbination and Permutation Subsets
+  The number of combination and permutation subsets
   $$A(n, k) = \frac{n!}{(n - k)!}  \tag{Permutation}$$
 
 - Property

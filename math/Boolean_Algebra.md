@@ -16,8 +16,8 @@ The value of boolean algebra belongs to $\{\text{true}, \text{false}\}$, usually
   
   |$a$|$\neg a$|
   |---|---|
-  | 0 | 0 |
-  | 1 | 1 |
+  | 0 | 1 |
+  | 1 | 0 |
   
 - AND $\wedge$, OR $\vee$
   AND, OR are two binary operators.  

@@ -103,7 +103,7 @@ Perfect Matching is a matching that all vertices of the graph are in it.
 
 - [Bipartite_Graph](./Bipartite_Graph.md): is-a
 
-- [Complete_Graph](./Complete_Graph.md): is-a, full connected
+- [Complete_Graph](./Complete_Graph.md): is-a, fully connected
 
 - [Directed_Acyclic_Graph](./Directed_Acyclic_Graph.md): is-a, directed, acyclic
 

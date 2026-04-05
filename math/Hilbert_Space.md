@@ -4,7 +4,7 @@
 
 ## Define
 
-Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md) and [Inner Product Space](./Inner_Product_Space.md).
+A Hilbert space is a complete [inner product space](./Inner_Product_Space.md), equivalently an inner product space that is complete with respect to the metric induced by its inner product.
 
 ## Properties
 

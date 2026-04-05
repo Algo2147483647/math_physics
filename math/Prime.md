@@ -5,9 +5,10 @@
 ## Define
 
 $$
-\nexists a \in (\mathbb N - \{1, p\}), \text{ let } a | p  \tag{Prime}
+p > 1 \text{ and the only positive divisors of } p \text{ are } 1 \text{ and } p
+\tag{Prime}
 $$
-Prime is a number $p$ that can only be divided by $1$ and itself.
+A prime number is a natural number $p > 1$ that is divisible only by $1$ and itself.
 
 ## Properties
 
@@ -22,7 +23,7 @@ $$
 $$
 a^{p-1} \equiv 1 \mod p
 $$
-Where $p$ is a prime and $a$ is an any integer that is not a multiple of $p$.
+Where $p$ is a prime and $a$ is any integer that is not a multiple of $p$.
 
 Property:
 $$

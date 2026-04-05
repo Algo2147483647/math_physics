@@ -251,7 +251,7 @@ $$
 Empty Set is a set without any element. 
 
 Property:
-- $\emptyset \in S, \forall \text{ set } S$
+- $\emptyset \subseteq S, \forall \text{ set } S$
 - $A \cap \emptyset = \emptyset$
 - $A \cup \emptyset = A$
 
