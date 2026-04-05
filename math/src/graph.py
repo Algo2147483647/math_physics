@@ -11,7 +11,6 @@ class Node:
 
     def to_dict(self):
         return {
-            "key": self.key,
             "define": self.define,
             "properties": self.properties,
             "kids": self.kids,

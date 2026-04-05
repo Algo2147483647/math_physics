@@ -57,7 +57,7 @@ Every non-constant single-variable polynomial with complex coefficients has at l
 
 - [Cubic_Function](./Cubic_Function.md): subtype_of
 
-- [Fourth-Order_Function](./Fourth-Order_Function.md): subtype_of
+- [Fourth_Order_Function](./Fourth_Order_Function.md): subtype_of
 
 - [Linear_Function](./Linear_Function.md): subtype_of
 

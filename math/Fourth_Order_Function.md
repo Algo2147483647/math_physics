@@ -1,4 +1,4 @@
-# Fourth-Order Function
+# Fourth Order Function
 
 [TOC]
 
