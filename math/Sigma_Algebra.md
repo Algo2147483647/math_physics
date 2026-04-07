@@ -33,6 +33,8 @@ The Borel $\sigma$-algebra on a topological space $X$ is the smallest $\sigma$-a
 
 ## Include
 
+- [Borel_Sigma_Algebra](./Borel_Sigma_Algebra.md): subtype_of
+
 ## Parents
 
 - [Power_Set](./Power_Set.md): subtype_of

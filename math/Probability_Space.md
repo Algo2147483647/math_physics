@@ -5,102 +5,51 @@
 ## Define
 
 $$
-(\Omega, \mathcal F, \mathbb P)  \tag{Probability Space}
+(\Omega, \mathcal F, \mathbb P)
+\tag{Probability Space}
 $$
 
-A probability space is a [measure space](./Measurable_Space.md) consisting of
+A probability space is a [measure space](./Measure_Space.md) whose measure is a [probability measure](./Probability_Measure.md). It consists of
 
 - $\Omega$: sample space
-- $\mathcal F$: a $\sigma$-algebra on $\Omega$
+- $\mathcal F$: a $\sigma$-algebra of events
 - $\mathbb P$: a probability measure on $(\Omega, \mathcal F)$
-
-### Probability
-
-$$
-\mathbb P: \mathcal F \to [0, 1]  \tag{Probability}
-$$
-
-Probability is a set function satisfying the Kolmogorov axioms:
-
-- Nonnegativity: $\mathbb P(A) \in [0, 1]$ for all $A \in \mathcal F$
-- Normalization: $\mathbb P(\Omega) = 1$
-- Countable additivity: for pairwise disjoint events $(A_i)_{i=1}^{\infty} \subseteq \mathcal F$,
-$$
-\mathbb P \left(\bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mathbb P(A_i)
-$$
 
 ## Properties
 
-### Law of Large Numbers
+### Structural Meaning
 
-For i.i.d. random variables $X_1, X_2, \dots$ with mean $\mu$,
-$$
-\lim_{n \to \infty} \mathbb P \left(\left|\frac{1}{n} \sum_{k=1}^n X_k - \mu \right| < \varepsilon \right) = 1
-\tag{Weak law of large numbers}
-$$
+- $\Omega$ contains the possible outcomes.
+- $\mathcal F$ specifies which subsets of $\Omega$ are meaningful events.
+- $\mathbb P$ assigns probabilities to those events.
 
-For Bernoulli trials with success probability $p$ and empirical frequency $f_A / n$,
-$$
-\lim_{n \to \infty} \mathbb P\left(\left|\frac{f_A}{n} - p \right| < \varepsilon\right) = 1
-\tag{Bernoulli law of large numbers}
-$$
+### Basic Probability Laws
 
-### Central Limit Theorem
+- Every event $A \in \mathcal F$ has probability $\mathbb P(A)$.
 
-For i.i.d. random variables $X_1, X_2, \dots$ with mean $\mu$ and variance $\sigma^2$,
+- If $A_1, A_2, \dots$ are pairwise disjoint events, then
 $$
-\lim_{n \to \infty} \mathbb P \left(\frac{\sum_{k=1}^n X_k - n \mu}{\sqrt{n}\sigma} \le x \right)
-= \Phi(x)
-= \int_{-\infty}^x \frac{1}{\sqrt{2 \pi}} e^{-t^2 / 2} \, \mathrm d t
-\tag{Central Limit Theorem}
+\mathbb P\left(\bigcup_{n=1}^{\infty} A_n\right)
+=
+\sum_{n=1}^{\infty} \mathbb P(A_n)
 $$
 
-### Joint Probability
-
+- The whole sample space has probability one:
 $$
-\mathbb P(A \cap B)
-$$
-
-The probability of $A$ and $B$ occurring together.
-
-### Conditional Probability
-
-$$
-\mathbb P(B \mid A)
+\mathbb P(\Omega) = 1
 $$
 
-Probability of occurrence of $B$ under the condition that $A$ occurs.
+### Canonical Examples
 
-#### Property
-
-- Independence
-  $$
-  A \text{ and } B \text{ are independent} \Leftrightarrow \mathbb P(A \cap B) = \mathbb P(A) \mathbb P(B)
-  $$
-
-- Relationship between joint and conditional probability
-  $$
-  \begin{align*}
-    \mathbb P(B \mid A) &= \frac{\mathbb P(A \cap B)}{\mathbb P(A)}  \\
-    \mathbb P(A \cap B) &= \mathbb P(B \mid A) \mathbb P(A) = \mathbb P(A \mid B) \mathbb P(B)
-  \end{align*}
-  $$
-
-- Total probability theorem
-  $$
-  \mathbb P(A) = \sum_i \mathbb P(A \mid B_i) \mathbb P(B_i)
-  $$
-  where $(B_i)$ is a partition of $\Omega$.
-
-- Bayes' formula
-  $$
-  \begin{align*}
-    \mathbb P(A \mid B) &= \frac{\mathbb P(B \mid A) \mathbb P(A)}{\mathbb P(B)}  \\
-    \mathbb P(A_i \mid B) &= \frac{\mathbb P(B \mid A_i) \mathbb P(A_i)}{\sum\limits_j \mathbb P(B \mid A_j) \mathbb P(A_j)}
-  \end{align*}
-  $$
+- Finite models such as dice and card experiments
+- Countable sequence spaces such as coin-toss processes
+- Continuous spaces such as $(\mathbb R, \mathcal B(\mathbb R), \mu)$ where $\mu$ is a probability measure
 
 ## Include
+
+- [Event](./Event.md): defined_on
+
+- [Filtration](./Filtration.md): defined_on
 
 - [Random_Variable](./Random_Variable.md): defined_on
 
@@ -108,4 +57,4 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 ## Parents
 
-- [Measurable_Space](./Measurable_Space.md): subtype_of
+- [Measure_Space](./Measure_Space.md): subtype_of

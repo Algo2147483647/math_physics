@@ -47,6 +47,8 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 - [Bessel_Function](./Bessel_Function.md): subtype_of
 
+- [Measurable_Function](./Measurable_Function.md): subtype_of
+
 - [Complex_Value_Function](./Complex_Value_Function.md): subtype_of
 
 - [Dirac_Delta_Function](./Dirac_Delta_Function.md): subtype_of
