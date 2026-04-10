@@ -6,20 +6,20 @@ class Node:
         self.key = key
         self.define = ""
         self.properties = []
-        self.kids = {}
+        self.children = {}
         self.parents = {}
 
     def to_dict(self):
         return {
             "define": self.define,
             "properties": self.properties,
-            "kids": self.kids,
+            "children": self.children,
             "parents": self.parents
         }
 
 
 def build_edge_in_graph(graph, a, b, weight=""):
-    graph[a].kids[b] = weight
+    graph[a].children[b] = weight
     graph[b].parents[a] = weight
 
 
@@ -55,7 +55,7 @@ def json_to_graph(json_file):
                 node = Node(key=node_key)
                 node.define = node_info.get("define", "")
                 node.properties = node_info.get("properties", [])
-                node.kids = node_info.get("kids", {})
+                node.children = node_info.get("children", {})
                 node.parents = node_info.get("parents", {})
                 graph[node_key] = node
             return graph
@@ -83,7 +83,7 @@ def build_common_root(dag):
 def get_all_roots(dag):
     res = set(dag.keys())
     for value in dag.values():
-        for kid in value.kids:
+        for kid in value.children:
             res.discard(kid)
     return list(res)
 

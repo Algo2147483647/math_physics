@@ -80,7 +80,7 @@ function RenderNodeCoordinate(dag) {
 
 function RenderByDFS(dag, svg, nodeKey, visited) {
     visited.add(nodeKey);
-    Object.keys(dag[nodeKey]["kids"]).forEach(kidKey => {
+    Object.keys(dag[nodeKey]["children"]).forEach(kidKey => {
         if (!dag[nodeKey].hasOwnProperty('coordinate')) {
             console.log(nodeKey);
         }
@@ -92,7 +92,7 @@ function RenderByDFS(dag, svg, nodeKey, visited) {
         RenderEdge(svg,
             dag[nodeKey]["coordinate_SVG"][0] + radius, dag[nodeKey]["coordinate_SVG"][1],
             dag[kidKey] ["coordinate_SVG"][0] - radius, dag[kidKey] ["coordinate_SVG"][1],
-            dag[nodeKey].kids[kidKey]);
+            dag[nodeKey].children[kidKey]);
 
         if (!visited.has(kidKey)) {
             RenderByDFS(dag, svg, kidKey, visited);
