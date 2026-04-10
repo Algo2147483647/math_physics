@@ -22,7 +22,7 @@ def build_markdown_from_graph(graph):
                 file.write(property + "\n\n")
 
             file.write("## Include\n\n")
-            for kid, value in node.kids.items():
+            for kid, value in node.children.items():
                 if kid == "root":
                     continue
                 file.write("- [%s](./%s.md): %s\n\n" % (kid, kid, value))
