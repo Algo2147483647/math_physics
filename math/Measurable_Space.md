@@ -20,14 +20,26 @@ $$
 
 ## Properties
 
-- Lebesgue measure  
-  For a measurable subset $E \subseteq \mathbb{R}^n$, the Lebesgue measure $\mathrm m(E)$ can be defined by
-  $$
-  \mathrm m(E) = \inf\left\{\sum_{i=1}^\infty \mathrm{vol}(Q_i) \ \middle|\ E \subseteq \bigcup_{i=1}^\infty Q_i,\ Q_i \text{ are open boxes}\right\}
-  \tag{Lebesgue Measure}
-  $$
+### Lebesgue measure  
+For a measurable subset $E \subseteq \mathbb{R}^n$, the Lebesgue measure $\mathrm m(E)$ can be defined by
+$$
+\mathrm m(E) = \inf\left\{\sum_{i=1}^\infty \mathrm{vol}(Q_i) \ \middle|\ E \subseteq \bigcup_{i=1}^\infty Q_i,\ Q_i \text{ are open boxes}\right\}
+\tag{Lebesgue Measure}
+$$
 
-- Probability
+### Probability
+
+### Product Measure
+
+Let $(X, \mathcal A, \mu)$ and $(Y, \mathcal B, \nu)$ be [measure spaces](./Measure_Space.md). The product measure
+$$
+\mu \otimes \nu
+$$
+is the measure on the product measurable space $(X \times Y, \mathcal A \otimes \mathcal B)$ characterized by
+$$
+(\mu \otimes \nu)(A \times B) = \mu(A)\nu(B)
+$$
+for measurable rectangles $A \in \mathcal A$, $B \in \mathcal B$.
 
 ## Include
 

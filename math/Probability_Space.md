@@ -4,6 +4,8 @@
 
 ## Define
 
+### Probability Space
+
 $$
 (\Omega, \mathcal F, \mathbb P)  \tag{Probability Space}
 $$
