@@ -8,7 +8,6 @@ from markdown import *
 
 def build_graph_json_from_markdown_folder(folder_path):
     result = build_graph_from_markdown_folder(folder_path)
-    result = build_common_root(result)
 
     json_file = graph_to_json(result)
     return json_file

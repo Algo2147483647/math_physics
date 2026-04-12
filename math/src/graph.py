@@ -66,20 +66,6 @@ def json_to_graph(json_file):
     return []
 
 
-def build_common_root(dag):
-    roots = get_all_roots(dag)
-    dag["root"] = Node(
-        key="root",
-    )
-
-    for root in roots:
-        if root == "root":
-            continue
-        build_edge_in_graph(dag, "root", root, "")
-
-    return dag
-
-
 def get_all_roots(dag):
     res = set(dag.keys())
     for value in dag.values():
