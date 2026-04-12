@@ -10,7 +10,7 @@ $$
 (\Omega, \mathcal F, \mathbb P)  \tag{Probability Space}
 $$
 
-A probability space is a [measure space](./Measurable_Space.md) consisting of
+A probability space is a [measure space](./Measure_Space.md) consisting of
 
 - $\Omega$: sample space
 - $\mathcal F$: a $\sigma$-algebra on $\Omega$
@@ -104,11 +104,13 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 ## Include
 
+- [Filtered_Probability_Space](./Filtered_Probability_Space.md): subtype_of
+
 - [Random_Variable](./Random_Variable.md): defined_on
 
 - [Stochastic_Process](./Stochastic_Process.md): defined_on
 
 ## Parents
 
-- [Measurable_Space](./Measurable_Space.md): subtype_of
+- [Measure_Space](./Measure_Space.md): subtype_of
 

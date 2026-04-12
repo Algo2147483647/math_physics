@@ -10,7 +10,7 @@ $$
 
 A **Topological space** is a pair $(S, \tau)$,  where $S$ is a set and $\tau$ is a **topology** on $S$. A topology $\tau$ is a collection of subsets of a set $S$ (so $\tau$ is a subset of [power set](./Power_Set.md) $P(S)$) that satisfies the following axioms. The elements of $\tau$ are called **open sets** of the topological space, and the selection of open sets determines the topological structure on $S$. Thus, a topological space fundamentally defines which subsets of $S$ are considered open.
 
-(*Topological Space is a space in which open sets are defined.*)
+> *Topological Space is a space in which open sets are defined.*
 
 - The empty set and the whole set $S$ itself belong to $\tau$.
 $$
@@ -27,18 +27,6 @@ $$
 \bigcup_{\alpha\in I}U_{\alpha}\in\tau
 $$
 
-```
-import Set
-import CompleteBooleanAlgebra
-
-class TopologicalSpace (X : Type u) where
-  IsOpen : Set X → Prop
-  
-  isOpen_univ : IsOpen univ
-  isOpen_inter : ∀ s t, IsOpen s → IsOpen t → IsOpen (s ∩ t)
-  isOpen_sUnion : ∀ s, (∀ t ∈ s, IsOpen t) → IsOpen (⋃₀ s)
-```
-
 ## Properties
 
 ### Closed Set
@@ -52,7 +40,8 @@ A topological space $X$ is compact if every open cover of $X$ has a finite subco
 - Open cover: A collection of open sets $\{U_\alpha\}$ such that $X \subseteq \bigcup\limits_\alpha U_\alpha$.
 - Finite subcover: A finite subset $\{U_1, U_2, \cdots, U_n\}$ of the open cover that still satisfies $X \subseteq \bigcup\limits_{i=1}^n U_i$
 
-
+> Compactness is not about whether a set can be covered, but about whether every way of covering it can be reduced to finitely many pieces. Arbitrarily much local information can always be reduced to finitely much information without losing the whole.
+>
 
 Properties:
 
