@@ -249,7 +249,9 @@
     "parents": {
       "Probability_Space": "subtype_of"
     },
-    "properties": []
+    "properties": [
+      ""
+    ]
   },
   "Fourth_Order_Function": {
     "children": {},
@@ -542,7 +544,9 @@
     "parents": {
       "Power_Set": "defined_on"
     },
-    "properties": []
+    "properties": [
+      ""
+    ]
   },
   "Measure_Space": {
     "children": {
@@ -744,12 +748,12 @@
     "children": {
       "Probability_Distribution": "property_of"
     },
-    "define": "**Random Variable**:\n$$\nX: \u03a9 \\to \\mathbb R  \\tag{Random Variable}\n$$\na random variable $X$ is a function from a sample space $\u03a9$ to the real numbers $\\mathbb R$.\n\nSymbol:\n  - $\u03a9$: sample space\n  - $\\mathbb R$: the field of real numbers\n\n- Note  \n  event set $\\{\u03b6 | X(\u03b6) \u2264 x\\}$, shorthand as $\\{X \u2264 x\\}$.\n\n**Random Vector , Multivariate random variable**:\n$$\n\\boldsymbol X = (X_1, ... , X_n)^T  \\tag{Random Vector}\n$$",
+    "define": "### Random Variable\n\n$$\nX: \u03a9 \\to \\mathbb R  \\tag{Random Variable}\n$$\na random variable $X$ is a function from a sample space $\u03a9$ to the real numbers $\\mathbb R$.\n\n  - $\u03a9$: sample space\n  - $\\mathbb R$: the field of real numbers\n\n- event set $\\{\u03b6 | X(\u03b6) \u2264 x\\}$, shorthand as $\\{X \u2264 x\\}$.\n\n### Random Vector , Multivariate random variable\n\n$$\n\\boldsymbol X = (X_1, ... , X_n)^T  \\tag{Random Vector}\n$$",
     "parents": {
       "Probability_Space": "defined_on"
     },
     "properties": [
-      "### Moment\n\nK-order Moment & K-order Central Moment:\n$$\n\\begin{align*}\n  \\mathbb E(X^k) &= \\sum_i x_i^k \\mathbb P_X(x_i)  \\tag{Moment (Discrete)}  \\\\\n    &= \\int_{-\\infty}^\\infty x^k f_X(x) \\mathrm d x  \\tag{Moment (Continuous)}  \\\\\n  \\mathbb E((X-\\mu_x)^k) &= \\sum_i (x_i-\\mu_x)^k \\mathbb P_X(x_i)  \\tag{Central Moment (Discrete)}  \\\\\n    &= \\int_{-\\infty}^\\infty (x-\\mu_x)^k f_X(x) \\mathrm d x  \\tag{Central Moment (Continuous)}\n\\end{align*}\n$$\n\nSymbol: $\\mu_x = \\mathbb E(X)$\n\n### Expectation\n\n$$\n\\begin{align*}\n  \\mathbb E(X) = \\mu_x &= \\sum x_i \\mathbb P_X(x_i)  \\tag{Discrete}  \\\\\n    &= \\int_{-\\infty}^\\infty x f_X(x) \\mathrm d x  \\tag{Continuous}  \\\\\n  \\mathbb E(\\boldsymbol X) &= \\left(\\begin{matrix} \\bar X_i \\\\ \\vdots \\end{matrix}\\right) \n\\end{align*}\n$$\n\n- Property\n  $$\n  \\begin{align*}\n    \\mathbb E(Y) &= \\int_{-\\infty}^\\infty g(x) f_X(x) \\mathrm d x  \\\\\n    Y &= g(X)  \\tag{$g$ is a measurable function}\n  \\end{align*}\n  $$\n\n### Variance & Standard Deviation\n\n$$\n\\begin{align*}\n  Var(X) = \\sigma_x^2 &= \\mathbb E((X - \\mu_x)^2)  \\tag{Variance}\\\\\n  \\sigma_x &= \\sqrt{\\mathbb E((X - \\mu_x)^2)}  \\tag{Standard Deviation}\n\\end{align*}\n$$\n\n- Property\n  - $Var(X) = \\mathbb E((X - \\mu_x)^2) = \\mathbb E(X^2) - \\mathbb E(X)^2$\n\n### Skewness  \n\n$$\n\\mathbb E\\left(\\frac{(X - \\mu_x)^3}{\\sigma_x^3}\\right)  \\tag{3-order Central Moment}\n$$\n\n### Kurtosis  \n\n$$\n\\mathbb E\\left(\\frac{(X - \\mu_x)^4}{\\sigma_x^4}\\right)  \\tag{4-order Central Moment}\n$$\n\n### Mixed Moment  \n\n$$\n\\begin{align*}\n  &\\mathbb E(X^i Y^j) \\tag{$ij$-order Joint Moment}  \\\\\n  &\\mathbb E((X-\\bar X)^i (Y-\\bar Y)^j) \\tag{$ij$-order Joint Central Moment}\n\\end{align*}\n$$"
+      "### Moment\n\nK-order Moment & K-order Central Moment:\n$$\n\\begin{align*}\n  \\mathbb E(X^k) &= \\sum_i x_i^k \\mathbb P_X(x_i)  \\tag{Moment (Discrete)}  \\\\\n    &= \\int_{-\\infty}^\\infty x^k f_X(x) \\mathrm d x  \\tag{Moment (Continuous)}  \\\\\n  \\mathbb E((X-\\mu_x)^k) &= \\sum_i (x_i-\\mu_x)^k \\mathbb P_X(x_i)  \\tag{Central Moment (Discrete)}  \\\\\n    &= \\int_{-\\infty}^\\infty (x-\\mu_x)^k f_X(x) \\mathrm d x  \\tag{Central Moment (Continuous)}\n\\end{align*}\n$$\n\n- $\\mu_x = \\mathbb E(X)$\n\n### Expectation\n\n$$\n\\begin{align*}\n  \\mathbb E(X) = \\mu_x &= \\sum x_i \\mathbb P_X(x_i)  \\tag{Discrete}  \\\\\n    &= \\int_{-\\infty}^\\infty x f_X(x) \\mathrm d x  \\tag{Continuous}  \\\\\n  \\mathbb E(\\boldsymbol X) &= \\left(\\begin{matrix} \\bar X_i \\\\ \\vdots \\end{matrix}\\right) \n\\end{align*}\n$$\n\nProperty\n$$\n\\begin{align*}\n  \\mathbb E(Y) &= \\int_{-\\infty}^\\infty g(x) f_X(x) \\mathrm d x  \\\\\n  Y &= g(X)  \\tag{$g$ is a measurable function}\n\\end{align*}\n$$\n\n### Variance & Standard Deviation\n\n$$\n\\begin{align*}\n  Var(X) = \\sigma_x^2 &= \\mathbb E((X - \\mu_x)^2)  \\tag{Variance}\\\\\n  \\sigma_x &= \\sqrt{\\mathbb E((X - \\mu_x)^2)}  \\tag{Standard Deviation}\n\\end{align*}\n$$\n\nProperty\n- $Var(X) = \\mathbb E((X - \\mu_x)^2) = \\mathbb E(X^2) - \\mathbb E(X)^2$\n\n### Skewness  \n\n$$\n\\mathbb E\\left(\\frac{(X - \\mu_x)^3}{\\sigma_x^3}\\right)  \\tag{3-order Central Moment}\n$$\n\n### Kurtosis  \n\n$$\n\\mathbb E\\left(\\frac{(X - \\mu_x)^4}{\\sigma_x^4}\\right)  \\tag{4-order Central Moment}\n$$\n\n### Mixed Moment  \n\n$$\n\\begin{align*}\n  &\\mathbb E(X^i Y^j) \\tag{$ij$-order Joint Moment}  \\\\\n  &\\mathbb E((X-\\bar X)^i (Y-\\bar Y)^j) \\tag{$ij$-order Joint Central Moment}\n\\end{align*}\n$$"
     ]
   },
   "Rational_Number_Field": {

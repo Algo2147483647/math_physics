@@ -4,20 +4,20 @@
 
 ## Define
 
-**Random Variable**:
+### Random Variable
+
 $$
 X: Ω \to \mathbb R  \tag{Random Variable}
 $$
 a random variable $X$ is a function from a sample space $Ω$ to the real numbers $\mathbb R$.
 
-Symbol:
   - $Ω$: sample space
   - $\mathbb R$: the field of real numbers
 
-- Note  
-  event set $\{ζ | X(ζ) ≤ x\}$, shorthand as $\{X ≤ x\}$.
+- event set $\{ζ | X(ζ) ≤ x\}$, shorthand as $\{X ≤ x\}$.
 
-**Random Vector , Multivariate random variable**:
+### Random Vector , Multivariate random variable
+
 $$
 \boldsymbol X = (X_1, ... , X_n)^T  \tag{Random Vector}
 $$
@@ -36,7 +36,7 @@ $$
 \end{align*}
 $$
 
-Symbol: $\mu_x = \mathbb E(X)$
+- $\mu_x = \mathbb E(X)$
 
 ### Expectation
 
@@ -48,13 +48,13 @@ $$
 \end{align*}
 $$
 
-- Property
-  $$
-  \begin{align*}
-    \mathbb E(Y) &= \int_{-\infty}^\infty g(x) f_X(x) \mathrm d x  \\
-    Y &= g(X)  \tag{$g$ is a measurable function}
-  \end{align*}
-  $$
+Property
+$$
+\begin{align*}
+  \mathbb E(Y) &= \int_{-\infty}^\infty g(x) f_X(x) \mathrm d x  \\
+  Y &= g(X)  \tag{$g$ is a measurable function}
+\end{align*}
+$$
 
 ### Variance & Standard Deviation
 
@@ -65,8 +65,8 @@ $$
 \end{align*}
 $$
 
-- Property
-  - $Var(X) = \mathbb E((X - \mu_x)^2) = \mathbb E(X^2) - \mathbb E(X)^2$
+Property
+- $Var(X) = \mathbb E((X - \mu_x)^2) = \mathbb E(X^2) - \mathbb E(X)^2$
 
 ### Skewness  
 
