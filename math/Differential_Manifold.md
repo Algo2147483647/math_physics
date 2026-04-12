@@ -47,6 +47,8 @@ The tangent space $T_p M$ at a point $p$ on a differential manifold $M$ is a vec
 - $C^{\infty}$  is the space of differential real-valued functions on manifold
 - Leibniz rule: $D(fg) = f(p) D(g) + g(p) D(f)$
 
+> Tangent Space is the linear space that best approximates the manifold near that point.
+
 #### Tangent vector
 
 $$
@@ -100,7 +102,7 @@ For the set $\mathcal F_M$ represents the all $C^\infty \ (k, l)$-tensor field o
 
 Example:
 
-- $\nabla_a f = T_a$, 梯度场是一个对偶矢量场.
+- $\nabla_a f = T_a$, the gradient field is a dual vector field.
 
 #### Christoffel Symbol
 
