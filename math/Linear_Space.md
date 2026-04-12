@@ -4,6 +4,8 @@
 
 ## Define
 
+> A linear space is a set of vectors closed under addition and scalar multiplication over a field.
+
 $$
 (F, V, +, \cdot)  \tag{Linear Space}
 $$

@@ -4,6 +4,8 @@
 
 ## Define
 
+> A simplex is the simplest convex polytope in a given dimension.
+
 $$
 C = \text{conv} (\{v_1, ..., v_k\}) = \left\{\sum_{i=1}^k \theta_i v_i \ |\ \theta ⪰ 0, \boldsymbol 1^T \theta=1 \right\}
 $$

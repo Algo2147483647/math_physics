@@ -4,6 +4,8 @@
 
 ## Define
 
+> An affine space is a space of points where differences are vectors but no origin is intrinsically chosen.
+
 $$
 (\mathcal{A}, V, \phi)
 $$
@@ -19,11 +21,6 @@ that associates to each point $p \in \mathcal{A}$ and each vector $v \in V$ a po
 1. For every point $p \in \mathcal{A}$, $p + 0 = p$, where $0$ is the zero vector in $V$.
 2. For every point $p \in \mathcal{A}$ and all vectors $u, v \in V$, $p + (u + v) = (p + u) + v$.
 3. For any two points $p, q \in \mathcal{A}$, there exists a unique vector $v \in V$ such that $q = p + v$.
-
-
-
-> *Affine space is extended on the basis of vector space, removing the uniqueness of the origin. Its basic idea is to liberate geometric research from specific numerical values (i.e. vector coordinates) and instead focus on the relative positions and arrangements between points.*
-
 ## Properties
 
 ### Affine Set

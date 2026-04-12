@@ -4,6 +4,8 @@
 
 ## Define
 
+> The Dirac delta is a generalized function that represents unit mass concentrated at a single point.
+
 Dirac delta function $\delta(x)$ is a type of [generalized function](./Function.md). 
 $$
 \delta(x) = \left\{\begin{matrix}+\infty,& x = 0\\0, & x \neq 0\end{matrix}\right.\\

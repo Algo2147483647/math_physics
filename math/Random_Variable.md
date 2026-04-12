@@ -4,6 +4,8 @@
 
 ## Define
 
+> A random variable is a real-valued random element.
+
 ### Random Variable
 
 $$

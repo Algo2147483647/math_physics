@@ -4,6 +4,8 @@
 
 ## Define
 
+> A function assigns each input in its domain exactly one output in its codomain.
+
 $$
 f: X \to Y  \tag{Function}
 $$

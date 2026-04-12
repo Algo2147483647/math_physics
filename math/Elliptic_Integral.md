@@ -4,6 +4,8 @@
 
 ## Define
 
+> Elliptic integrals are integrals involving square roots of cubic or quartic polynomials that generally cannot be expressed by elementary functions.
+
 Elliptic integrals are integrals that cannot be expressed in terms of elementary functions. Elliptic integrals are most commonly expressed in three fundamental types, known as the Legendre canonical forms.
 $$
 \begin{align*}

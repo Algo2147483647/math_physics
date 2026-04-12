@@ -4,6 +4,8 @@
 
 ## Define
 
+> A quadratic function is a polynomial function whose highest-degree term has degree two.
+
 $$
 \begin{align*}
   f(x) &= a x^2 + b x + c  \tag{Univariate Quadratic}  \\

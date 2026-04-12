@@ -4,6 +4,8 @@
 
 ## Define
 
+> A bipartite graph is a graph whose vertices can be split into two parts so that every edge connects the two parts.
+
 $$
 (X, Y, E)  \tag{Bipartite Graph}
 $$

@@ -4,6 +4,8 @@
 
 ## Define
 
+> Logic studies formal rules for valid reasoning and truth-preserving inference.
+
 ### Proposition
 
 A proposition is a declarative sentence that can be judged true or false, but cannot be both true and false.

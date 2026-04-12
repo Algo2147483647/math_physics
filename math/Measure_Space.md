@@ -4,6 +4,8 @@
 
 ## Define
 
+> A measure space is a measurable space equipped with a measure assigning sizes to measurable sets.
+
 ### Measure Space
 
 $$

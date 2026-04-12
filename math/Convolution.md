@@ -4,6 +4,8 @@
 
 ## Define
 
+> Convolution combines two functions by measuring their overlap as one is shifted across the other.
+
 Cross Correlation and Convolution, are a measure of similarity (through [inner product](./Inner_Product_Space.md)) of two functions $f, g$ of the displacement $t \in \mathbb R$ of one relative to the other.
 $$
 \begin{align*}

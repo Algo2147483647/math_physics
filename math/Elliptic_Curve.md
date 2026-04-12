@@ -4,6 +4,8 @@
 
 ## Define
 
+> An elliptic curve is a smooth cubic curve equipped with a natural abelian group structure.
+
 $$
 y^2 = x^3 + a x + b
 $$

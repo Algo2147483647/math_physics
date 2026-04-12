@@ -4,6 +4,8 @@
 
 ## Define
 
+> A normed linear space is a vector space equipped with a norm that measures vector length.
+
 $$
 (X, ||·||)
 $$

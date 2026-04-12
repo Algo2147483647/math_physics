@@ -4,6 +4,8 @@
 
 ## Define
 
+> A Lie group is a group whose operations vary smoothly with respect to a manifold structure.
+
 A real Lie group is a [group](./Group.md) that is also a finite-dimensional real smooth [manifold](./Manifold.md), in which the group operations of multiplication and inversion are smooth maps.
 
 $$

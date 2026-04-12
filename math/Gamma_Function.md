@@ -4,6 +4,8 @@
 
 ## Define
 
+> The Gamma function extends the factorial function from positive integers to complex and real arguments.
+
 The gamma function is defined for all complex numbers except the non-positive integers. ([Complex Value Function](./Complex_Value_Function.md)) For every positive integer $n$,
 $$
 \Gamma(n) = (n-1)!

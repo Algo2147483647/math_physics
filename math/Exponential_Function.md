@@ -4,6 +4,8 @@
 
 ## Define
 
+> The exponential function is the function whose rate of change is proportional to its current value.
+
 Trigonometric functions $f: \mathbb R \to \mathbb R$ are a set of mathematical [functions](./Function.md) that relate angles $\theta$ to the ratios of the sides (opposite $a$, adjacent $b$, hypotenuse $c$) of a right-angled triangle. Where hypotenuse is the length of the side opposite the right angle, opposite represents the side opposite the given angle $\theta$, adjacent represents the side between the angle $\theta$ and the right angle.
 
 $$

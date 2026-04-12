@@ -4,6 +4,8 @@
 
 ## Define
 
+> A tensor is a multilinear object that generalizes scalars, vectors, covectors, and linear maps.
+
 $$
 T:\underbrace{V^*\times\cdots\times V^*}_{k\text{ times}}\times\underbrace{V\times\cdots\times V}_{l\text{ times}}\to\mathbb{R}
 $$

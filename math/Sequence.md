@@ -4,6 +4,8 @@
 
 ## Define
 
+> A sequence is a function whose domain is usually the natural numbers, listing objects in order.
+
 $$
 f: \mathbb N \to S  \tag{Sequence}
 $$

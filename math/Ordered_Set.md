@@ -4,6 +4,8 @@
 
 ## Define
 
+> An ordered set is a set equipped with a relation that compares elements according to a specified order.
+
 An ordered set, or more formally, a partially ordered set (poset), is a pair $(S, \le)$ consisting of a set $S$ and  a binary relation $\le$ that satisfies the following properties for all $a, b, c \in S$:
 
 1. Reflexivity: $a \le a$.

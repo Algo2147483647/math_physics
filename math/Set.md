@@ -4,6 +4,8 @@
 
 ## Define
 
+> A set is a collection of distinct objects considered as a single mathematical object.
+
 $$
 \{\cdot\}
 $$

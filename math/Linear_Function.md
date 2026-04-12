@@ -4,6 +4,8 @@
 
 ## Define
 
+> A linear function preserves addition and scalar multiplication.
+
 $$
 \begin{align*}
   f(x) &= a x + b \tag{Univariate}  \\

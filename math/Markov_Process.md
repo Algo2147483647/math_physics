@@ -4,6 +4,8 @@
 
 ## Define
 
+> A Markov process is a stochastic process whose future depends on the present state and not on the past history.
+
 A [stochastic process](./Stochastic_Process.md) where the future state depends only on the current state and not on any past states.
 
 ## Properties

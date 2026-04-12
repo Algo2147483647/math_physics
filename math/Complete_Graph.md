@@ -4,6 +4,8 @@
 
 ## Define
 
+> A complete graph is a graph in which every pair of distinct vertices is connected by an edge.
+
 Complete Graph is a undirected graph in which every pair of vertices is adjacent.
 
 <img src="./assets/11-simplex_graph.svg" alt="11-simplex_graph" style="zoom:30%;" />

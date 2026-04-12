@@ -4,6 +4,8 @@
 
 ## Define
 
+> Division with remainder decomposes an integer into a quotient part and a smaller remainder.
+
 
 
 ## Properties

@@ -4,6 +4,8 @@
 
 ## Define
 
+> Bessel functions are special functions that naturally arise as radial solutions of differential equations with cylindrical symmetry.
+
 [**Bessel functions**](./Function.md) are canonical solutions $y(x)$ of Bessel's differential equation
 $$
 x^{2}{\frac {\mathrm{d}^{2}y}{\mathrm{d}x^{2}}}+x{\frac {\mathrm{d}y}{\mathrm{d}x}}+\left(x^{2}-\alpha ^{2}\right)y=0\\

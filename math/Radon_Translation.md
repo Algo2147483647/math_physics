@@ -4,6 +4,8 @@
 
 ## Define
 
+> The Radon transform represents a function by its integrals over affine hyperplanes.
+
 For a function $f(\boldsymbol x)$ that satisfies the three regularity conditions as above, **Radon Translation** $\mathcal R f$ is is a [function](./Function.md) (integral transform) defined on the space of straight lines $L \subset \mathbb R^2$ by the line integral along each such line as, 
 
 - $f(x)$ is continuous.

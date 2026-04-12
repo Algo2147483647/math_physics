@@ -4,6 +4,8 @@
 
 ## Define
 
+> A martingale is a stochastic process whose conditional future value equals its present value.
+
 Martingale is a discrete-time [stochastic process](./Stochastic_Process.md) that satisfies for any time $n$,
 $$
 \mathbb E(|X_n|) < \infty

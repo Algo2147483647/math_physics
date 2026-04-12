@@ -4,6 +4,8 @@
 
 ## Define
 
+> The convex hull of a set is the smallest convex set containing that set.
+
 A set of points in a Euclidean space is defined to be convex if it contains the line segments connecting each pair of its points. The convex hull of a given set $S$ may be defined as
 
 - The (unique) minimal convex set containing $S$

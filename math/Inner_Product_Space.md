@@ -4,6 +4,8 @@
 
 ## Define
 
+> An inner product space is a vector space with a product that defines length, angle, and orthogonality.
+
 The [Normed Linear Space](./Normed_Linear_Space.md) of inner product is defined.
 
 ### Inner Product

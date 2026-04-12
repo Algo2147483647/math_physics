@@ -4,6 +4,8 @@
 
 ## Define
 
+> The Riemann zeta function packages the arithmetic of positive integers into a complex analytic function.
+
 $$
 \zeta(s)=\sum_{n=1}^{\infty} \frac{1}{n^{s}}=\frac{1}{\Gamma(s)} \int_{0}^{\infty} \frac{x^{s-1}}{e^{x}-1} \mathrm{~d} x
 $$

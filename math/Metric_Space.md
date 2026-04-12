@@ -4,6 +4,8 @@
 
 ## Define
 
+> A metric space is a set equipped with a distance function satisfying the basic rules of distance.
+
 A metric space is a pair $(X, d)$ where $X$ is a set and $d: X \times X \to \mathbb R$  is a metric on $X$ satisfying the following axioms $\forall x, y, z \in X$:
 
 - Non-negativity, with equality if and only if $x = y$

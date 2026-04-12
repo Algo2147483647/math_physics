@@ -4,6 +4,8 @@
 
 ## Define
 
+> A prime number is a natural number greater than one whose only positive divisors are one and itself.
+
 $$
 p > 1 \text{ and the only positive divisors of } p \text{ are } 1 \text{ and } p
 \tag{Prime}

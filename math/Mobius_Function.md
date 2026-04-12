@@ -4,6 +4,8 @@
 
 ## Define
 
+> The Mobius function is an arithmetic function that records the square-free prime factor structure of an integer.
+
 $$
 \mu(n) = \left\{\begin{matrix}
   1 & n = 1\\

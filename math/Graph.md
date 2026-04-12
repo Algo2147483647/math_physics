@@ -4,6 +4,8 @@
 
 ## Define
 
+> A graph is a structure made of vertices and edges that records pairwise relationships.
+
 $$
 \begin{align*}
 G &= (V, E)  \tag{Graph} \\

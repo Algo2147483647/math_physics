@@ -4,6 +4,8 @@
 
 ## Define
 
+> A real-valued function assigns a real number to each point of its domain.
+
 $$
 f: \mathbb R \to \mathbb R
 $$

@@ -4,6 +4,8 @@
 
 ## Define
 
+> The power set of a set is the set of all its subsets.
+
 $$
 P(S) = \{X \ |\ X \subseteq S\}  \tag{Power Set}
 $$

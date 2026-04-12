@@ -4,6 +4,8 @@
 
 ## Define
 
+> A group is an algebraic structure that captures reversible composition with an identity element.
+
 $$
 (G, \cdot)
 $$

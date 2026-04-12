@@ -4,6 +4,8 @@
 
 ## Define
 
+> A relation records which ordered tuples of elements are considered related.
+
 $$
 R(A_1, A_2, \cdots, A_n) \subseteq A_1 \times A_2 \times \cdots \times A_n  \tag{Relation}
 $$

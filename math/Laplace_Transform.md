@@ -4,6 +4,8 @@
 
 ## Define
 
+> The Laplace transform converts a function of time into a function of complex frequency.
+
 Laplace Transform $f: (f: \mathbb C \to \mathbb C) \times \mathbb C \to \mathbb C$
 $$
 \mathcal L_{f(t)}(s) = \int_0^{\infty} f(t) e^{-st} \mathrm d t

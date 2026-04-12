@@ -4,6 +4,8 @@
 
 ## Define
 
+> Natural numbers are the discrete numbers used for counting and indexing.
+
 $$
 \mathbb N
 $$

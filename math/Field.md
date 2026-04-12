@@ -4,6 +4,8 @@
 
 ## Define
 
+> A field is an algebraic structure where addition, subtraction, multiplication, and division by nonzero elements are all possible.
+
 $$
 (G, +, \cdot)
 $$

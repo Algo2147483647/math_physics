@@ -4,6 +4,8 @@
 
 ## Define
 
+> Hypergeometric functions are special functions defined by power series whose coefficient ratios are rational functions of the index.
+
 $$
 {}_pF_q(a_1, \cdots, a_p;b_1, \cdots, b_q;z) = \sum_{n=0}^\infty \frac{(a_1)_n (a_2)_n  \cdots (a_p)_n}{(b_1)_n (b_2)_n \cdots (b_q)_n} \frac{z^n}{n!}
 $$

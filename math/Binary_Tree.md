@@ -4,6 +4,8 @@
 
 ## Define
 
+> A binary tree is a rooted tree in which each node has at most two children.
+
 A tree in which each node has at most two children, which are referred to as the left child and the right child.
 
 <img src="./assets/Binary_tree_v2.svg" alt="Binary_tree_v2" style="zoom: 25%;" />

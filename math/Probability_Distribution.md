@@ -4,6 +4,8 @@
 
 ## Define
 
+> A probability distribution is the law induced by a random element on its state space.
+
 ### Probability Distribution
 
 Let $X$ be a [random element](./Random_Element.md)
@@ -24,8 +26,6 @@ It is also written as
 $$
 \mathcal L(X)=\mathbb P_X=X_\#\mathbb P.
 $$
-
-> A random element is a measurable function from the sample space to a state space. Its distribution is the probability measure induced on the state space.
 
 ## Properties
 

@@ -4,6 +4,8 @@
 
 ## Define
 
+> A knot is an embedding of a circle in three-dimensional space, studied up to continuous deformation.
+
 A knot is an embedding of the circle into [three-dimensional Euclidean space](./Euclidean_Space.md) $S^1 \to \mathbb R^3$, or the 3-sphere $S^3$, since the 3-sphere is compact. Two knots are defined to be equivalent if there is an ambient isotopy between them.
 
 <img src="./assets/78a8406c7fac2177fb53bb8c5099e4d3.jpg" alt="img" style="zoom: 35%;" />

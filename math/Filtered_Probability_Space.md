@@ -4,6 +4,8 @@
 
 ## Define
 
+> A filtered probability space is a probability space equipped with an increasing family of sigma-algebras representing information over time.
+
 $$
 (\Omega, \mathcal F, (\mathcal F_i)_{i \in I}, P)  \tag{Filtered Probability Space}
 $$

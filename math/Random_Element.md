@@ -4,6 +4,8 @@
 
 ## Define
 
+> A random element is a measurable map from a probability space into a measurable state space.
+
 ### Random Element
 
 For a probability space $(\Omega, \mathcal F, \mathbb P)$ and a measurable space $(E, \mathcal E)$, a random element is a measurable function

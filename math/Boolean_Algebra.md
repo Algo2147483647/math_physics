@@ -4,6 +4,8 @@
 
 ## Define
 
+> Boolean algebra is an algebraic structure that formalizes logical operations such as and, or, and not.
+
 Boolean Algebra is a [Lattice](./Lattice.md) including value and its operators,
 $$
 (\{0, 1\}, \neg, \wedge, \vee)

@@ -4,6 +4,8 @@
 
 ## Define
 
+> A sigma-algebra is a collection of subsets closed under complements and countable unions.
+
 $$
   \Sigma \subseteq P(S)  \tag{$\sigma$-algebra}
 $$

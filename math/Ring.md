@@ -4,6 +4,8 @@
 
 ## Define
 
+> A ring is an algebraic structure with addition, subtraction, and multiplication, where multiplication need not be commutative or invertible.
+
 $$
 (G, +, \cdot)
 $$

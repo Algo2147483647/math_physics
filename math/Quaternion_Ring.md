@@ -4,6 +4,8 @@
 
 ## Define
 
+> The quaternion ring extends complex numbers with three imaginary units whose multiplication is noncommutative.
+
 $$
 q = a + b i + c j + d k
 $$

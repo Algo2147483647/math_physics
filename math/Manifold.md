@@ -4,6 +4,8 @@
 
 ## Define
 
+> A manifold is a space that may be globally curved or complicated but locally looks like Euclidean space.
+
 Manifold $M$ is a second countable [Hausdorff space](./Hausdorff_Space.md) that is locally homeomorphic to a [Euclidean space](./Euclidean_Space.md).
 
 - Hausdorff, $\forall x, y \in M$, there exists open neighborhoods $U_x, U_y \subseteq M$ with $x \in U_x, y \in U_y$ and $U_x \cap U_y = \emptyset$.   

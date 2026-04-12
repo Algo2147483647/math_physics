@@ -4,6 +4,8 @@
 
 ## Define
 
+> A complex-valued function assigns a complex number to each point of its domain.
+
 $$
 f: \mathbb C \to \mathbb C
 $$

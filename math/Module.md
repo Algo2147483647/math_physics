@@ -4,6 +4,8 @@
 
 ## Define
 
+> A module is a vector-space-like structure whose scalars come from a ring rather than necessarily from a field.
+
 $$
 (R, M, +, \cdot)
 $$

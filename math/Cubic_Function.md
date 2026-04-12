@@ -4,6 +4,8 @@
 
 ## Define
 
+> A cubic function is a polynomial function whose highest-degree term has degree three.
+
 $$
 \begin{align*}
 f(x) &= \sum_{i=0}^{3} a_i x^i  \tag{Univariate} \\

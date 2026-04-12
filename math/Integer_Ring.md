@@ -4,6 +4,8 @@
 
 ## Define
 
+> The integer ring is the ring of whole numbers under ordinary addition and multiplication.
+
 Ring of Integers is a kind of Integral Domain (整环).
 $$
 \mathbb Z

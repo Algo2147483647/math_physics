@@ -4,6 +4,8 @@
 
 ## Define
 
+> The rational number field consists of ratios of integers with nonzero denominator under ordinary arithmetic.
+
 $$
 \mathbb{Q} = \left\{ \frac{a}{b} \mid a, b \in \mathbb{Z} \text{ and } b \neq 0 \right\}
 $$

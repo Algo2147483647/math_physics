@@ -4,6 +4,8 @@
 
 ## Define
 
+> The real field is the complete ordered field that models the continuous number line.
+
 $$
 \mathbb R
 $$

@@ -4,6 +4,8 @@
 
 ## Define
 
+> A holomorphic function is a complex function that is complex differentiable in a neighborhood of every point of its domain.
+
 A holomorphic function is a complex-valued function on an open set $U$ if it is complex differentiable at every point of $U$.
 $$
 f'(z_0) = \lim\limits_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h}

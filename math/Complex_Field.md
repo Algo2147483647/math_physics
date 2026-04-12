@@ -4,6 +4,8 @@
 
 ## Define
 
+> The complex field extends the real numbers by adjoining a square root of $-1$.
+
 $$
 \mathbb C
 $$

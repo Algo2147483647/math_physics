@@ -4,6 +4,8 @@
 
 ## Define
 
+> A linear transformation is a structure-preserving map between vector spaces.
+
 $$
 T(k \boldsymbol x + l \boldsymbol y) = k(T \boldsymbol x) + l(T \boldsymbol y)
 $$

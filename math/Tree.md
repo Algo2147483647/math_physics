@@ -4,6 +4,8 @@
 
 ## Define
 
+> A tree is a connected acyclic graph.
+
 Tree is a class of connected undirected graphs without loops.
 
 ### Rooted Tree

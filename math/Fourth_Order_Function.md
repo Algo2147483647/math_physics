@@ -4,6 +4,8 @@
 
 ## Define
 
+> A fourth-order function is a polynomial function whose highest-degree term has degree four.
+
 $$
 f(x) = \sum_{i=0}^{4} a_i x^i  \tag{Univariate}
 $$

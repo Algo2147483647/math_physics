@@ -4,6 +4,8 @@
 
 ## Define
 
+> A directed acyclic graph is a directed graph with no directed cycles.
+
 Directed acyclic graph is directed graph without loops.
 
 ## Properties

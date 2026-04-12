@@ -4,9 +4,9 @@
 
 ## Define
 
-### Euclidean n-space
-
 > Euclidean space is the standard model of flat finite-dimensional geometry.
+
+### Euclidean n-space
 
 The $n$-dimensional Euclidean space is
 $$
