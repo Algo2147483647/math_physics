@@ -118,3 +118,9 @@ The boundary conditions can be deduced form the Maxwell's equations.
 
 ### Insulators
 
+
+## Connections
+
+- [electromagnetic field](./electromagnetic%20field.md)
+- [electromagnetic green functions and radiation](./electromagnetic%20green%20functions%20and%20radiation.md)
+- [electromagnetic waves waveguides and antennas](./electromagnetic%20waves%20waveguides%20and%20antennas.md)

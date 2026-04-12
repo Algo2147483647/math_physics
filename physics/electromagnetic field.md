@@ -2,211 +2,412 @@
 
 [TOC]
 
-## Principles
+## Conventions
 
-### Electromagnetic four-potential
+Unless stated otherwise, this note uses SI units, metric signature $(+,-,-,-)$, and spacetime coordinates
 
 $$
-A^i = \left(\begin{matrix}\varphi \\ \boldsymbol A \end{matrix}\right)
+x^\mu=(ct,x,y,z).
 $$
 
-The electromagnetic field is described by the electromagnetic four-potential $A^i$, it combines the electric potential $\varphi$ and magnetic vector potential $\boldsymbol A$ into a single four-vector. The electromagnetic four-potential are related to the observable quantities $\boldsymbol E, \boldsymbol B$ between the electric field and the magnetic field as follows:
+The four-current is
+
+$$
+J^\mu=(c\rho,\mathbf J),
+$$
+
+where $\rho$ is charge density and $\mathbf J$ is current density.
+
+## Potentials and Gauge Structure
+
+### Scalar and vector potentials
+
+The electromagnetic field can be described by a scalar potential $\phi$ and a vector potential $\mathbf A$:
+
+$$
+\mathbf B = \nabla\times\mathbf A,\qquad
+\mathbf E = -\nabla\phi-\frac{\partial\mathbf A}{\partial t}.
+$$
+
+These equations automatically imply the homogeneous Maxwell equations:
+
+$$
+\nabla\cdot\mathbf B=0,\qquad
+\nabla\times\mathbf E+\frac{\partial\mathbf B}{\partial t}=0.
+$$
+
+### Four-potential
+
+The scalar and vector potentials combine into a four-potential
+
+$$
+A^\mu=\left(\frac{\phi}{c},\mathbf A\right).
+$$
+
+The potential is not unique. The physical fields are unchanged by the three-vector gauge transformation
+
+$$
+\mathbf A\to \mathbf A+\nabla\chi,\qquad
+\phi\to\phi-\frac{\partial\chi}{\partial t}.
+$$
+
+Equivalently, after the conventional sign choice for the gauge function is fixed, the covariant statement may be written as
+
+$$
+A_\mu \to A_\mu+\partial_\mu\chi .
+$$
+
+Gauge freedom means that $A_\mu$ contains redundant description. The observable object is the field strength.
+
+## Field Tensor
+
+### Definition
+
+The electromagnetic field tensor is
+
+$$
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu.
+$$
+
+It is antisymmetric:
+
+$$
+F_{\mu\nu}=-F_{\nu\mu}.
+$$
+
+With the convention above, one convenient matrix form is
+
+$$
+F^{\mu\nu} =
+\begin{pmatrix}
+0 & -E_x/c & -E_y/c & -E_z/c \\
+E_x/c & 0 & -B_z & B_y \\
+E_y/c & B_z & 0 & -B_x \\
+E_z/c & -B_y & B_x & 0
+\end{pmatrix}.
+$$
+
+The dual tensor is
+
+$$
+\tilde F^{\mu\nu}
+=
+\frac12\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}.
+$$
+
+### Lorentz invariants
+
+Two scalar invariants can be formed from $F_{\mu\nu}$:
+
+$$
+F_{\mu\nu}F^{\mu\nu}=2\left(B^2-\frac{E^2}{c^2}\right),
+$$
+
+$$
+F_{\mu\nu}\tilde F^{\mu\nu}
+=
+-\frac{4}{c}\mathbf E\cdot\mathbf B .
+$$
+
+These quantities are unchanged under Lorentz transformations.
+
+## Maxwell Equations
+
+### Covariant form
+
+Maxwell's equations in vacuum are
+
+$$
+\partial_\mu F^{\mu\nu}=\mu_0 J^\nu,
+$$
+
+$$
+\partial_\mu \tilde F^{\mu\nu}=0.
+$$
+
+The first equation contains Gauss's law and the Ampere-Maxwell law. The second equation contains the absence of magnetic monopoles and Faraday's law.
+
+### Vector form
+
 $$
 \begin{align*}
-\mathbf{B} &= \nabla \times \mathbf{A}\\
-\mathbf{E} &= -\nabla \varphi - \frac{\partial \mathbf{A}}{\partial t}
+\nabla\cdot\mathbf E &= \frac{\rho}{\varepsilon_0},\\
+\nabla\cdot\mathbf B &= 0,\\
+\nabla\times\mathbf E+\frac{\partial\mathbf B}{\partial t} &= 0,\\
+\nabla\times\mathbf B-\mu_0\varepsilon_0\frac{\partial\mathbf E}{\partial t} &= \mu_0\mathbf J.
 \end{align*}
 $$
 
-### Electromagnetic field tensor
+The speed of electromagnetic waves in vacuum is
 
 $$
-F^{ik} = \frac{\partial A_k}{\partial x^i}-\frac{\partial A_i}{\partial x^k}
+c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}.
+$$
+
+### Charge conservation
+
+Taking $\partial_\nu$ of $\partial_\mu F^{\mu\nu}=\mu_0J^\nu$ gives
+
+$$
+\partial_\nu J^\nu=0,
+$$
+
+because $F^{\mu\nu}$ is antisymmetric. In vector form,
+
+$$
+\frac{\partial\rho}{\partial t}+\nabla\cdot\mathbf J=0.
+$$
+
+This is the local conservation law for charge.
+
+## Gauge Choices
+
+Gauge conditions choose one representative from the equivalence class of potentials.
+
+### Lorenz gauge
+
+The Lorenz gauge is
+
+$$
+\partial_\mu A^\mu=0,
+$$
+
+or
+
+$$
+\nabla\cdot\mathbf A+\frac{1}{c^2}\frac{\partial\phi}{\partial t}=0.
+$$
+
+In Lorenz gauge, the potentials satisfy decoupled wave equations:
+
+$$
+\left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right)\phi
+=
+-\frac{\rho}{\varepsilon_0},
 $$
 
 $$
-F_{\mu\nu} =
-\begin{pmatrix}
-0 & -E_x & -E_y & -E_z \\
-E_x & 0 & B_z & -B_y \\
-E_y & -B_z & 0 & B_x \\
-E_z & B_y & -B_x & 0
-\end{pmatrix}
+\left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right)\mathbf A
+=
+-\mu_0\mathbf J.
 $$
 
-The field tensor provides a unified description of the electric and magnetic fields. The components of the tensor are antisymmetric, meaning $F_{\mu\nu} = -F_{\nu\mu}$, so the diagonal elements are always zero.
+Lorenz gauge is manifestly Lorentz covariant and is the natural gauge for retarded potentials and relativistic field theory.
 
-### Reference frame transformation
+### Coulomb gauge
 
-$$
-E= E+ \frac{1}{c}H'\times V\\
-H = H' - \frac{1}{c}E'\times V\\
-$$
-
-### Conservation of charge
+The Coulomb gauge is
 
 $$
-\frac{\mathrm d Q}{\mathrm d t} = 0
+\nabla\cdot\mathbf A=0.
 $$
 
-Charge can neither be created nor destroyed, it can only be transferred from one object to another. The net amount of electric charge within a closed system does not change.
+Then the scalar potential satisfies the instantaneous Poisson equation
+
+$$
+\nabla^2\phi=-\frac{\rho}{\varepsilon_0},
+$$
+
+while the vector potential carries the transverse radiative degrees of freedom. Coulomb gauge is useful in radiation theory, nonrelativistic quantum mechanics, and canonical quantization.
 
 ## Action
 
-###  Action of Electromagnetic field
+### Field and source action
+
+The electromagnetic field action with external current is
 
 $$
-S = \sum\int mc \mathrm ds - \sum \int \frac{e}{c} A_k \mathrm dx^k - \frac{1}{16 \pi c} \int F_{ik}F^{ik} \mathrm d \Omega
+S[A]
+=
+\int
+\left(
+-\frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
+-J_\mu A^\mu
+\right)\mathrm d^4x .
 $$
 
-This action combines the dynamics of charged particles interacting with the electromagnetic field and the field itself.
-
-- $\sum\int mc \mathrm ds$: The total action for a system of particles with mass $m$.
-- $- \sum \int \frac{e}{c} A_k \mathrm dx^k$: interaction of the charged particles with the electromagnetic field.
-- $- \frac{1}{16 \pi c} \int F_{ik}F^{ik} \mathrm d \Omega$: The action of electromagnetic field itself.
-
-
-### Equation of motion: Lorentz force law
+Varying $A_\mu$ gives
 
 $$
-m c \frac{\mathrm{d} u^i}{\mathrm{d} s} = \frac{e}{c} F^{ik} u_k
+\partial_\mu F^{\mu\nu}=\mu_0J^\nu.
 $$
 
-The **Lorentz force law** describing the motion of a charged particle in an electromagnetic field. The electromagnetic field tensor $F^{ik}$ acts on the four-dimensional velocity $u_k$ of the particle, producing acceleration (i.e., the rate of change of the four-dimensional velocity). The result, multiplied by the charge $e$ and the speed of light $c$, is equal to the mass $m$ of the particle and the speed of light $c$ multiplied by the rate of change of the four-dimensional velocity.
-
-(**Vector form of Lorentz force law**)
-$$
-\begin{align*}
-\frac{\mathrm{d} \boldsymbol p}{\mathrm{d} t} &= e \boldsymbol E + \frac{e}{c} \boldsymbol v \times \boldsymbol H \\
-\frac{\mathrm{d} \mathrm E_{kin}}{\mathrm{d} t} &= e \boldsymbol E \cdot \boldsymbol v
-\end{align*}
-$$
-
-
-### Maxwell’s equations
+Gauge invariance of the source term requires charge conservation:
 
 $$
-\begin{align*}
-\partial _\mu F^{\mu\nu}&=\frac{4\pi}{c}J^{\nu}\\
-\partial _\mu \bar F^{\mu\nu}&=0  
-\end{align*}  \tag{Maxwell’s equations}
+\partial_\mu J^\mu=0.
 $$
 
-The first equation that relates the divergence of the field strength tensor to the current density. The change in the electromagnetic field is caused by the presence of charges and currents. The second equation expresses the **absence of magnetic monopoles**. It states that the divergence of the dual field strength tensor is zero, meaning that there are no isolated sources of the magnetic field, which is a key assumption in classical electromagnetism
+### Charged particle action
 
-(**Vector form of Maxwell’s equations**)
-$$
-\begin{align*}
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0}\\
-\nabla \cdot \mathbf{B} &= 0 \\
-\nabla \times \mathbf{E} + \frac{\partial \mathbf{B}}{\partial t}&= 0\\
-\nabla \times \mathbf{B} - \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}&=  \mu_0 \mathbf{J} 
-\end{align*}
-$$
-
-- **Gauss's law for electricity**: Electric fields are produced by electric charges.
-- **Gauss's law for magnetism**: There are no magnetic monopoles; magnetic fields always form closed loops.
-- **Faraday's law of induction**: A changing magnetic field induces an electric field.
-- **Ampère's law (with Maxwell's correction)**: Electric currents and changing electric fields generate magnetic fields.
-
-#### Wave Equation: d'Alembert's equations
+For a point charge $q$ moving on a worldline $x^\mu(\tau)$,
 
 $$
-\begin{align*}
-\nabla^2 \mathbf{A} - \frac{1}{c^2} \frac{\partial \mathbf{A}}{\partial t^2} &= - \mu_0 \mathbf{J} \\
-\nabla^2 \Phi - \frac{1}{c^2} \frac{\partial^2 \Phi}{\partial t^2} &= -\frac{\rho}{\varepsilon_0}
-\end{align*}
+S
+=
+-mc^2\int\mathrm d\tau
++q\int A_\mu\,\mathrm d x^\mu .
 $$
 
-d'Alembert's equation describes the propagation of electromagnetic waves. 
-
-### Conservation of mechanics
-
-
-#### Energy & Energy flow density vector: Poynting vector
+In three-vector form the Lagrangian is
 
 $$
-\boldsymbol S = \boldsymbol E \times \boldsymbol H
+L
+=
+-mc^2\sqrt{1-\frac{v^2}{c^2}}
++q\mathbf A\cdot\mathbf v
+-q\phi .
 $$
 
-The Poynting vector $\boldsymbol S$ ($W/m^2$) represents the direction and magnitude of the flow of electromagnetic energy per unit area per unit time.
+## Lorentz Force
 
-#### Momentum
-
-$$
-\frac{\partial}{\partial t}(\vec{g}+\vec{g}_{mech})+\nabla\cdot\overleftrightarrow{T} = 0
-$$
-
-Maxwell's stress tensor $\overleftrightarrow{T}$ is a second-order tensor.
-$$
-T_{ij}=\epsilon_{0}(E_{i}E_{j}-\frac{1}{2}\delta_{ij}E^{2})+\frac{1}{\mu_{0}}(B_{i}B_{j}-\frac{1}{2}\delta_{ij}B^{2})
-$$
-
-- $\delta_{ij}$ is the Kronecker delta, which is equal to 1 when $i = j$ and 0 otherwise.
-
-#### Angular momentum
-
-
-## Electromagnetic Wave
-
-#### Speed of electromagnetic waves in vacuum: Speed of light
+The covariant Lorentz force law is
 
 $$
-\begin{align*}
-c &= \frac{1}{\sqrt{\mu_0 \epsilon_0}} \\
-&\approx \frac{1}{\sqrt{(4\pi \times 10^{-7} \, \text{N/A}^2)(8.854 \times 10^{-12} \, \text{F/m})}} \\
-&\approx 2.99792458 \times 10^8 \, \text{m/s}
-\end{align*}
+\frac{\mathrm d p^\mu}{\mathrm d\tau}
+=
+qF^{\mu\nu}u_\nu.
 $$
 
-## Appendix
-
-### Proof of Lorentz force law
-Action of a charged particle moving in electromagnetic field: The action of a charged particle moving in an electromagnetic field, 描述粒子的自由运动 + 粒子与电磁场的相互作用.
-$$
-S = \int_a^b (-mc \mathrm{d} s - \frac{e}{c}A_i\mathrm{d}x^i)
-$$
-
-**Lagrangian**
-$$
-\begin{align*}
-L &= -mc^2\sqrt{1 - \frac{v^2}{c^2}} + \frac{e}{c}A\cdot v - e \varphi\\
-P &= \frac{mv}{\sqrt{1 - \frac{v^2}{c^2}}}+\frac{e}{c}A\\
-H &= \sqrt{m^2c^4 + c^2 (P-\frac{e}{c}A)^2}+e\varphi
-\end{align*}
-$$
-
-最小作用量原理, 
-$$
-\begin{align*}
-δ S &= 0\\
-δ\int_a^b (-mc \mathrm{d} s - \frac{e}{c}A_i\mathrm{d}x^i) &= 0\\
-δ\int_a^b (mc \sqrt{\mathrm{d} x_i\mathrm{d} x^i} + \frac{e}{c}A_i\mathrm{d}x^i) &= 0   \tag{$\mathrm{d} s = \sqrt{\mathrm{d} x_i\mathrm{d} x^i}$}\\
-\int_a^b (mc \frac{\mathrm{d} x_i\mathrm{d} δ x^i}{\mathrm{d} s} + \frac{e}{c}(A_iδ\mathrm{d}x^i + δA_i\mathrm{d}x^i)) &= 0\\
-\int_a^b \left(mc u_i \mathrm{d} δ x^i + \frac{e}{c}(A_iδ\mathrm{d}x^i + δA_i\mathrm{d}x^i)\right) &= 0 \tag{$u_i = \frac{\mathrm{d} x_i}{\mathrm{d} s}$}\\
-(mc u_i+\frac{e}{c}A_i)δ x^i - \int \left(mc \mathrm{d} u_i  δ x^i + \frac{e}{c}(\mathrm{d}A_iδx^i -  δA_i\mathrm{d}x^i) \right) &= 0 \tag{$\int u \mathrm{d} v = uv - \int v \mathrm{d} u$}\\
-\end{align*}
-$$
-
-因为$(mc u_i + \frac{e}{c}A_i)  δ x^i = 0$
-$$
-δA_i = \frac{\partial A_i}{\partial x^k} δ x^k\\
-\mathrm{d}A_i = \frac{\partial A_i}{\partial x^k} \mathrm{d}x^k\\
-$$
+The spatial part is
 
 $$
-\begin{align*}
-\Rightarrow\quad \int \left(mc \mathrm{d} u_i - \frac{e}{c}\mathrm{d}x^k(\frac{\partial A_k}{\partial x^i}-\frac{\partial A_i}{\partial x^k}) \right)δ x^i &= 0 \\
-\end{align*}
+\frac{\mathrm d\mathbf p}{\mathrm dt}
+=
+q(\mathbf E+\mathbf v\times\mathbf B).
 $$
 
-因为$δ x^i$ 任意, 所以被积函数为零
-$$
-\begin{align*}
-\Rightarrow\quad mc \mathrm{d} u_i&=\frac{e}{c}\mathrm{d}x^k(\frac{\partial A_k}{\partial x^i}-\frac{\partial A_i}{\partial x^k}) \\
-mc \mathrm{d} u_i&=\frac{e}{c}\mathrm{d}x^kF_{ik} \tag{$F_{ik} = (\frac{\partial A_k}{\partial x^i}-\frac{\partial A_i}{\partial x^k})$}\\
-mc \mathrm{d} \frac{\mathrm{d}u_i}{\mathrm{d}s}&=\frac{e}{c}u_kF_{ik}\\
-\end{align*}
-$$
-Q.E.D.
+The power delivered to the charge is
 
+$$
+\frac{\mathrm dE}{\mathrm dt}=q\mathbf E\cdot\mathbf v.
+$$
+
+## Energy, Momentum, and Stress
+
+### Poynting theorem
+
+The electromagnetic energy density is
+
+$$
+u
+=
+\frac12\varepsilon_0E^2+\frac{1}{2\mu_0}B^2.
+$$
+
+The Poynting vector is
+
+$$
+\mathbf S=\frac{1}{\mu_0}\mathbf E\times\mathbf B.
+$$
+
+Poynting's theorem is
+
+$$
+\frac{\partial u}{\partial t}
++\nabla\cdot\mathbf S
+=
+-\mathbf J\cdot\mathbf E.
+$$
+
+The right-hand side is the rate at which the field does work on charges.
+
+### Momentum density and Maxwell stress tensor
+
+The electromagnetic momentum density is
+
+$$
+\mathbf g=\frac{\mathbf S}{c^2}=\varepsilon_0\mathbf E\times\mathbf B.
+$$
+
+The Maxwell stress tensor is
+
+$$
+T_{ij}
+=
+\varepsilon_0\left(E_iE_j-\frac12\delta_{ij}E^2\right)
++
+\frac{1}{\mu_0}
+\left(B_iB_j-\frac12\delta_{ij}B^2\right).
+$$
+
+It expresses the flux of electromagnetic momentum.
+
+## Green Functions and Radiation
+
+In Lorenz gauge, the potentials obey wave equations. Their solutions can be written using Green functions:
+
+$$
+\left(\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right)G(\mathbf r,t;\mathbf r',t')
+=
+-\delta^3(\mathbf r-\mathbf r')\delta(t-t').
+$$
+
+The retarded Green function gives causal potentials; the advanced Green function gives acausal mathematical solutions useful in formal theory.
+
+More details: [electromagnetic green functions and radiation](./electromagnetic%20green%20functions%20and%20radiation.md).
+
+## Electromagnetic Waves
+
+In vacuum without sources,
+
+$$
+\nabla^2\mathbf E-\frac{1}{c^2}\frac{\partial^2\mathbf E}{\partial t^2}=0,
+\qquad
+\nabla^2\mathbf B-\frac{1}{c^2}\frac{\partial^2\mathbf B}{\partial t^2}=0.
+$$
+
+Plane waves are transverse:
+
+$$
+\mathbf k\cdot\mathbf E=0,\qquad
+\mathbf k\cdot\mathbf B=0,\qquad
+\mathbf B=\frac{1}{\omega}\mathbf k\times\mathbf E.
+$$
+
+Polarization, Stokes parameters, waveguides, resonant cavities, and antennas are covered in:
+
+- [electromagnetic waves waveguides and antennas](./electromagnetic%20waves%20waveguides%20and%20antennas.md)
+- [electromagnetic field in media](./electromagnetic%20field%20in%20media.md)
+
+## Differential Forms
+
+Electromagnetism has a compact coordinate-free form. Let
+
+$$
+A=A_\mu\,\mathrm d x^\mu
+$$
+
+be the electromagnetic potential one-form. The field strength two-form is
+
+$$
+F=\mathrm dA.
+$$
+
+Gauge transformation is
+
+$$
+A\to A+\mathrm d\chi.
+$$
+
+Since $\mathrm d^2=0$,
+
+$$
+\mathrm dF=0.
+$$
+
+This is the homogeneous Maxwell equation. The inhomogeneous equation is
+
+$$
+\mathrm d\star F=\mu_0\mathcal J,
+$$
+
+where $\star$ is the Hodge star and $\mathcal J$ is the current three-form. In this language, magnetic flux conservation and Faraday induction are both consequences of $F=\mathrm dA$.
+
+## Connections
+
+- [electromagnetic green functions and radiation](./electromagnetic%20green%20functions%20and%20radiation.md)
+- [electromagnetic waves waveguides and antennas](./electromagnetic%20waves%20waveguides%20and%20antennas.md)
+- [electromagnetic field in media](./electromagnetic%20field%20in%20media.md)
+- [basic principles of mechanics](./basic%20principles%20of%20mechanics.md)
+- [mechanics of flat spacetime](./mechanics%20of%20flat%20spacetime.md)
