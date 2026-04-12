@@ -17,8 +17,11 @@ A type of [function](./Function.md)
 
 ## Properties
 
+
+
 ## Include
 
 ## Parents
 
 - [Function](./Function.md): subtype_of
+

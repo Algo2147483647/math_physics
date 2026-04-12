@@ -109,3 +109,4 @@ Binary Relation $R$ over set $X, Y$ is a subset of the Cartesian product $X \tim
 ## Parents
 
 - [Set](./Set.md): subtype_of
+

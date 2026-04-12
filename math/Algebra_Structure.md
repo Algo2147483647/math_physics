@@ -14,6 +14,8 @@ An automorphism is simply a bijective homomorphism of a mathematical object with
 
 ## Include
 
+- [Field](./Field.md): 
+
 - [Group](./Group.md): subtype_of
 
 - [Lattice](./Lattice.md): subtype_of
@@ -23,3 +25,4 @@ An automorphism is simply a bijective homomorphism of a mathematical object with
 ## Parents
 
 - [Set](./Set.md): defined_on
+

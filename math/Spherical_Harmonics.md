@@ -95,3 +95,4 @@ Roots: All $n$ roots of $P_n(x)$ are real, distinct, and lie in (-1, 1).
 ## Parents
 
 - [Complex_Value_Function](./Complex_Value_Function.md): subtype_of
+

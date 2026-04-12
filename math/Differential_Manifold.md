@@ -146,3 +146,4 @@ $$
 ## Parents
 
 - [Manifold](./Manifold.md): subtype_of
+

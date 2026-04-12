@@ -13,9 +13,6 @@ E(\phi, k) &= \int_0^\phi \sqrt{1 - k^2 \sin \theta} \mathrm d \theta \tag{Secon
 \end{align*}
 $$
 
-
-
-
 ## Properties
 
 ### Jacobi Elliptic Functions
@@ -37,3 +34,4 @@ $$
 ## Parents
 
 - [Real_Value_Function](./Real_Value_Function.md): subtype_of
+

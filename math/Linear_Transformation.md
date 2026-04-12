@@ -284,3 +284,4 @@ $$
 - [Function](./Function.md): subtype_of
 
 - [Linear_Space](./Linear_Space.md): defined_on
+

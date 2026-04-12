@@ -39,11 +39,11 @@ def build_graph_from_markdown_file(file_path, graph):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-            links = re.findall(r'\]\((.*?\.md)\)', content)
             define_section = parse_section_in_markdown(content, "Define")
             property_section = parse_section_in_markdown(content, "Properties")
             include_section = parse_section_in_markdown(content, "Include")
             parents_section = parse_section_in_markdown(content, "Parents")
+            links = re.findall(r'\]\((.*?\.md)\)', include_section + "\n" + parents_section)
 
             graph[key].define = define_section
             graph[key].properties.append(property_section)

@@ -43,3 +43,4 @@ Where, $*$ is dirichlet convolution.
 ## Parents
 
 - [Integer_Ring](./Integer_Ring.md): has_domain
+

@@ -120,3 +120,4 @@ Hyperboloid of one sheet, Hyperboloid of two sheets, Conical surface in between
 ## Parents
 
 - [Polynomial_Function](./Polynomial_Function.md): subtype_of
+

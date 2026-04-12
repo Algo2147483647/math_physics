@@ -21,6 +21,8 @@ such that for all $r, s \in R$ and $x, y \in M$,
 
 ## Properties
 
+
+
 ## Include
 
 - [Linear_Space](./Linear_Space.md): subtype_of
@@ -28,3 +30,4 @@ such that for all $r, s \in R$ and $x, y \in M$,
 ## Parents
 
 - [Ring](./Ring.md): defined_on
+

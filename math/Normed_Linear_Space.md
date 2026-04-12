@@ -26,3 +26,4 @@ Symbol:
 ## Parents
 
 - [Linear_Space](./Linear_Space.md): subtype_of
+

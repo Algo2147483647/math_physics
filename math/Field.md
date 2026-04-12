@@ -79,3 +79,6 @@ $$
 - [Real_Field](./Real_Field.md): subtype_of
 
 ## Parents
+
+- [Algebra_Structure](./Algebra_Structure.md): 
+

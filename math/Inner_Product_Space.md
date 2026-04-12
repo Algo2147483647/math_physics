@@ -35,3 +35,4 @@ $\left<x, y \right>$ means the length of $x$ projection toward $y$ multiply leng
 ## Parents
 
 - [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of
+

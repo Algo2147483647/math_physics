@@ -12,6 +12,8 @@ $$
 
 ## Properties
 
+
+
 ## Include
 
 - [Manifold](./Manifold.md): subtype_of
@@ -19,3 +21,4 @@ $$
 ## Parents
 
 - [Topological_Space](./Topological_Space.md): subtype_of
+

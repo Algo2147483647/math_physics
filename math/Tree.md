@@ -30,3 +30,4 @@ When the root node is set to a certain node of the tree, the hierarchical relati
 ## Parents
 
 - [Graph](./Graph.md): subtype_of
+

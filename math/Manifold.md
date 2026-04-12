@@ -36,3 +36,4 @@ A geodesic is a curve representing in some sense the shortest path between two p
 ## Parents
 
 - [Hausdorff_Space](./Hausdorff_Space.md): subtype_of
+

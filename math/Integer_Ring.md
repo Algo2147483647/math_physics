@@ -77,3 +77,4 @@ No three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for 
 - [Natural_Number](./Natural_Number.md): defined_on
 
 - [Ring](./Ring.md): subtype_of
+

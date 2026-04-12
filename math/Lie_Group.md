@@ -23,3 +23,4 @@ Associated to a Lie group is its Lie algebra, which can be identified with the t
 - [Group](./Group.md): subtype_of
 
 - [Manifold](./Manifold.md): subtype_of
+

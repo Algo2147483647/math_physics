@@ -67,3 +67,4 @@ The contraction of a tensor is an operation that reduces the rank of a tensor by
 ## Parents
 
 - [Linear_Space](./Linear_Space.md): defined_on
+

@@ -70,3 +70,4 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 ## Parents
 
 - [Relation](./Relation.md): subtype_of
+

@@ -58,3 +58,4 @@ The power set of a set $S$ is the set of all subsets of $S$, including $\emptyse
 ## Parents
 
 - [Set](./Set.md): subtype_of
+

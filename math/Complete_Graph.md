@@ -20,3 +20,4 @@ A complete graph containing $n$ vertices,
 ## Parents
 
 - [Graph](./Graph.md): subtype_of
+

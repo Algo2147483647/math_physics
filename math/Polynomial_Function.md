@@ -66,3 +66,4 @@ Every non-constant single-variable polynomial with complex coefficients has at l
 ## Parents
 
 - [Function](./Function.md): subtype_of
+

@@ -8,6 +8,8 @@ A Hilbert space is a complete [inner product space](./Inner_Product_Space.md), e
 
 ## Properties
 
+
+
 ## Include
 
 - [Euclidean_Space](./Euclidean_Space.md): subtype_of
@@ -17,3 +19,4 @@ A Hilbert space is a complete [inner product space](./Inner_Product_Space.md), e
 - [Inner_Product_Space](./Inner_Product_Space.md): subtype_of
 
 - [Metric_Space](./Metric_Space.md): subtype_of
+
