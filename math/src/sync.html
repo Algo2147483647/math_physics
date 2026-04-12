@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Sync</title>
+  <style>
+    :root {
+      --ink: #18211f;
+      --muted: #52615c;
+      --line: #c8d5cf;
+      --paper: #f6f7f4;
+      --mint: #d8f0df;
+      --leaf: #1f6b4d;
+      --coral: #e76450;
+      --coral-dark: #bd3f30;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .hint {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    button {
+      min-height: 104px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    button strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    button span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    button:hover:not(:disabled) {
+      border-color: var(--leaf);
+      box-shadow: 0 8px 22px rgba(31, 107, 77, 0.12);
+      transform: translateY(-1px);
+    }
+
+    button.primary {
+      background: var(--mint);
+      border-color: #9fc9ae;
+    }
+
+    button.danger {
+      border-color: #f0b5aa;
+    }
+
+    button.danger:hover:not(:disabled) {
+      border-color: var(--coral-dark);
+      box-shadow: 0 8px 22px rgba(231, 100, 80, 0.13);
+    }
+
+    button:disabled {
+      cursor: wait;
+      opacity: 0.62;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 8px 14px;
+      margin: 0 0 22px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    dt {
+      color: var(--muted);
+    }
+
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 14px;
+    }
+
+    .status {
+      min-height: 48px;
+      margin: 0 0 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .status.ok {
+      border-color: #9fc9ae;
+      color: var(--leaf);
+    }
+
+    .status.error {
+      border-color: #f0b5aa;
+      color: var(--coral-dark);
+    }
+
+    pre {
+      min-height: 150px;
+      max-height: 360px;
+      margin: 0;
+      padding: 14px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #101614;
+      color: #dbe7df;
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        width: min(100% - 24px, 920px);
+        padding: 28px 0;
+      }
+
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+      dl {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Math Markdown / JSON 同步</h1>
+    <p class="hint">点击后直接写入本地文件。服务地址默认使用当前已启动的 Flask 服务。</p>
+
+    <section class="controls" aria-label="同步操作">
+      <button class="primary" id="markdownToJson" type="button">
+        <strong>Markdown 写入 JSON</strong>
+        <span>扫描 math 目录里的 Markdown，并重建 lib/math.json。</span>
+      </button>
+      <button class="danger" id="jsonToMarkdown" type="button">
+        <strong>JSON 写入 Markdown</strong>
+        <span>读取 lib/math.json，并重建 math 目录里的 Markdown。</span>
+      </button>
+    </section>
+
+    <dl>
+      <dt>服务</dt>
+      <dd id="endpoint"></dd>
+      <dt>Markdown</dt>
+      <dd id="markdownPath"></dd>
+      <dt>JSON</dt>
+      <dd id="jsonPath"></dd>
+    </dl>
+
+    <p class="status" id="status">等待操作。</p>
+    <pre id="log" aria-label="执行日志"></pre>
+  </main>
+
+  <script>
+    const config = {
+      endpoint: "http://127.0.0.1:5000/function",
+      markdownFolder: "D:/Algo/Notes/math_physics/math/",
+      jsonFile: "D:/Algo/Notes/math_physics/math/lib/math.json"
+    };
+
+    const buttons = [
+      document.getElementById("markdownToJson"),
+      document.getElementById("jsonToMarkdown")
+    ];
+    const statusNode = document.getElementById("status");
+    const logNode = document.getElementById("log");
+
+    document.getElementById("endpoint").textContent = config.endpoint;
+    document.getElementById("markdownPath").textContent = config.markdownFolder;
+    document.getElementById("jsonPath").textContent = config.jsonFile;
+
+    document.getElementById("markdownToJson").addEventListener("click", () => {
+      callService("Markdown 写入 JSON", "build_graph_json_from_markdown_folder", {
+        folder_path: config.markdownFolder
+      });
+    });
+
+    document.getElementById("jsonToMarkdown").addEventListener("click", () => {
+      callService("JSON 写入 Markdown", "build_markdown_from_graph_json", {
+        json_file: config.jsonFile
+      });
+    });
+
+    async function callService(label, functionName, params) {
+      setBusy(true);
+      setStatus(`${label} 执行中...`);
+      appendLog(`[${new Date().toLocaleString()}] ${label}`);
+      appendLog(`function: ${functionName}`);
+
+      try {
+        const response = await fetch(config.endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            function: functionName,
+            params
+          })
+        });
+
+        const payload = await response.json().catch(() => null);
+        if (!response.ok || !payload || payload.status !== "success") {
+          const message = payload && payload.message ? payload.message : `HTTP ${response.status}`;
+          throw new Error(message);
+        }
+
+        setStatus(`${label} 完成。`, "ok");
+        appendLog("status: success");
+        if (payload.data) {
+          appendLog(`data length: ${String(payload.data).length}`);
+        }
+      } catch (error) {
+        setStatus(`${label} 失败：${error.message}`, "error");
+        appendLog(`error: ${error.message}`);
+      } finally {
+        appendLog("");
+        setBusy(false);
+      }
+    }
+
+    function setBusy(isBusy) {
+      buttons.forEach((button) => {
+        button.disabled = isBusy;
+      });
+    }
+
+    function setStatus(message, type) {
+      statusNode.textContent = message;
+      statusNode.className = `status${type ? ` ${type}` : ""}`;
+    }
+
+    function appendLog(message) {
+      logNode.textContent += `${message}\n`;
+      logNode.scrollTop = logNode.scrollHeight;
+    }
+  </script>
+</body>
+</html>
