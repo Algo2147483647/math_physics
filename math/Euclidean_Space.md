@@ -4,104 +4,361 @@
 
 ## Define
 
-Euclidean space is a finite dimensional [Hilbert space](./Hilbert_Space.md) over a [real number field](./Real_Field.md), and has a standard dot product as its inner product. Let $n \in \mathbb{N}$ (the set of natural numbers). The $n$-dimensional Euclidean space, denoted as $\mathbb{R}^n$, is the set of all ordered $n$-tuples of real numbers. That is,
+### Euclidean n-space
+
+> Euclidean space is the standard model of flat finite-dimensional geometry.
+
+The $n$-dimensional Euclidean space is
 $$
-\mathbb{R}^n = \{(x_1, x_2, \dots, x_n) : x_i \in \mathbb{R} \text{ for } i = 1,2, \dots, n\}
+\mathbb R^n
+=
+\{(x_1,x_2,\cdots,x_n)\mid x_i\in\mathbb R,\ i=1,\cdots,n\}.
 $$
 
-In $\mathbb{R}^n$, we define the following operations:
+It is the standard finite-dimensional real space equipped with its usual vector space structure, inner product, norm, metric, topology, and smooth structure.
 
-1. **Vector Addition:** For any two vectors $\mathbf{v} = (v_1, v_2, \dots, v_n)$ and $\mathbf{w} = (w_1, w_2, \dots, w_n)$ in $\mathbb{R}^n$, their sum is given by:
-$$
-\mathbf{v} + \mathbf{w} = (v_1 + w_1, v_2 + w_2, \dots, v_n + w_n)
-$$
+### Standard Vector Space Structure
 
-2. **Scalar Multiplication:** For any scalar $c \in \mathbb{R}$ and vector $\mathbf{v} = (v_1, v_2, \dots, v_n)$ in $\mathbb{R}^n$, the scalar product is:
+For vectors
 $$
-c \cdot \mathbf{v} = (c v_1, c v_2, \dots, c v_n)
+x=(x_1,\cdots,x_n),\quad y=(y_1,\cdots,y_n)\in\mathbb R^n
 $$
-
-3. **Inner Product (Dot Product):** The inner product of two vectors $\mathbf{v} = (v_1, v_2, \dots, v_n)$ and $\mathbf{w} = (w_1, w_2, \dots, w_n)$ in $\mathbb{R}^n$ is defined as:
+and scalar $a\in\mathbb R$, vector addition and scalar multiplication are defined componentwise:
 $$
-\mathbf{v} \cdot \mathbf{w} = v_1 w_1 + v_2 w_2 + \dots + v_n w_n
+x+y=(x_1+y_1,\cdots,x_n+y_n),
 $$
-
-From this inner product, we can derive the **Euclidean norm** of a vector $\mathbf{v}$ as:
 $$
-||\mathbf{v}|| = \sqrt{\mathbf{v} \cdot \mathbf{v}}
+ax=(ax_1,\cdots,ax_n).
 $$
 
-With these operations, $\mathbb{R}^n$ becomes a **real inner product space**. The geometry induced by the inner product is the familiar Euclidean geometry, and the distance between two vectors $\mathbf{v}$ and $\mathbf{w}$ is given by the norm of their difference:
+With these operations, $\mathbb R^n$ is a real [linear space](./Linear_Space.md).
+
+### Standard Inner Product
+
+The standard Euclidean inner product is
 $$
-d(\mathbf{v}, \mathbf{w}) = ||\mathbf{v} - \mathbf{w}||
+\langle x,y\rangle
+=
+x\cdot y
+=
+\sum_{i=1}^n x_i y_i.
 $$
+
+This makes $\mathbb R^n$ a real [inner product space](./Inner_Product_Space.md). Since every finite-dimensional normed space is complete, $\mathbb R^n$ is also a finite-dimensional [Hilbert space](./Hilbert_Space.md).
+
+### Euclidean Norm and Metric
+
+The Euclidean norm induced by the inner product is
+$$
+\|x\|_2
+=
+\sqrt{\langle x,x\rangle}
+=
+\sqrt{\sum_{i=1}^n x_i^2}.
+$$
+
+The Euclidean distance between $x,y\in\mathbb R^n$ is
+$$
+d(x,y)=\|x-y\|_2
+=
+\sqrt{\sum_{i=1}^n (x_i-y_i)^2}.
+$$
+
+Thus $\mathbb R^n$ is also a [metric space](./Metric_Space.md).
 
 ## Properties
 
-### Classical geometric shapes
+### Standard Basis and Coordinates
 
-A table of the area and perimeter formulas for classic 2D geometric shapes:
+The standard basis of $\mathbb R^n$ is
+$$
+e_1=(1,0,\cdots,0),\quad
+e_2=(0,1,\cdots,0),\quad
+\cdots,\quad
+e_n=(0,\cdots,0,1).
+$$
 
-| Shape                         | Area (A)                              | Perimeter (P)                                      |
-| ----------------------------- | ------------------------------------- | -------------------------------------------------- |
-| **Square**                    | $A = a^2$                           | $P = 4a$                                         |
-| **Rectangle**                 | $A = l \times w$ | $P = 2(l + w)$                                   |
-| **Parallelogram**             | $A = b \times h$                    | $P = 2(a + b)$                                   |
-| **Rhombus**                   | $A = \frac{d_1 \times d_2}{2}$      | $P = 4a$                                         |
-| **Triangle**                  | $A = \frac{1}{2} b \times h$<br />$A=\sqrt{s(s-a)(s-b)(s-c)}, s = \frac{a+b+c}{2}$ | $P = a + b + c$                                  |
-| **Equilateral Triangle**      | $A = \frac{\sqrt{3}}{4} s^2$ | $P = 3s$                                         |
-| **Isosceles Triangle**        | $A = \frac{b}{4} \sqrt{4a^2 - b^2}$ | $P = 2a + b$                                     |
-| **Circle**                    | $A = \pi r^2$                       | $P = 2\pi r$                                     |
-| **Ellipse**                   | $A = \pi a b$                       | $P \approx \pi [ 3(a+b) - \sqrt{(3a+b)(a+3b)} ]$ |
-| **Trapezoid**                 | $A = \frac{1}{2} (b_1 + b_2) h$     | $P = a + b_1 + b_2 + c$                          |
-| **Regular Polygon (n sides)** | $A = \frac{1}{4} n a^2 \cot(\pi/n)$ | $P = n a$                                       |
+Every vector $x\in\mathbb R^n$ has a unique coordinate expansion
+$$
+x=x^1e_1+\cdots+x^ne_n.
+$$
 
-* $a$ = side length
-* $l, w$ = length, width
-* $a, b, c$ = triangle sides
-* $b_1, b_2$ = trapezoid bases
-* $h$ = height
-* $d_1, d_2$ = diagonals of rhombus
-* $r$ = radius of circle
-* $a, b$ = semi-axes of ellipse
-* $n$ = number of sides for a regular polygon
+The numbers $x^1,\cdots,x^n$ are the coordinates of $x$ in the standard basis.
 
+### Orthogonality and Angle
 
+Two vectors $x,y\in\mathbb R^n$ are orthogonal if
+$$
+\langle x,y\rangle=0.
+$$
 
-A table of **volume and surface area formulas** for classic 3D geometric solids:
+If $x\neq 0$ and $y\neq 0$, the angle $\theta$ between $x$ and $y$ is determined by
+$$
+\cos\theta
+=
+\frac{\langle x,y\rangle}{\|x\|_2\|y\|_2}.
+$$
 
-| Solid                                | Volume (V)                                         | Surface Area (S)                                                                                     |
-| ------------------------------------ | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Cube**                             | $V = s^3$                                        | $S = 6s^2$                                                                                         |
-| **Rectangular Prism (Cuboid)**       | $V = l \cdot w \cdot h$                          | $S = 2(lw + lh + wh)$                                                                              |
-| **Sphere**                           | $V = \frac{4}{3} \pi r^3$                        | $S = 4 \pi r^2$                                                                                    |
-| **Cylinder**                         | $V = \pi r^2 h$                                  | $S = 2 \pi r (r + h)$                                                                              |
-| **Cone**                             | $V = \frac{1}{3} \pi r^2 h$                      | $S = \pi r (r + l)$, $l = \sqrt{r^2 + h^2}$ (slant height)                                       |
-| **Rectangular Pyramid**              | $V = \frac{1}{3} l w h$                          | $S = lw + l \sqrt{(w/2)^2 + h^2} + w \sqrt{(l/2)^2 + h^2}$                                         |
-| **Square Pyramid**                   | $V = \frac{1}{3} s^2 h$                          | $S = s^2 + 2 s \sqrt{(s/2)^2 + h^2}$                                                               |
-| **Triangular Prism**                 | $V = \frac{1}{2} b h_{tri} \cdot L$              | $S = (b h_{tri}) + L(a + b + c)$                                                                   |
-| **Triangular Pyramid (Tetrahedron)** | $V = \frac{1}{3} \cdot \text{Base Area} \cdot h$ | $S = \text{sum of 4 triangular faces}$                                                             |
-| **Ellipsoid**                        | $V = \frac{4}{3} \pi a b c$                      | $S \approx 4 \pi \left( \frac{(a b)^p + (a c)^p + (b c)^p}{3} \right)^{1/p} ), ( p \approx 1.6075 )$ |
-| **Torus**                            | $V = 2 \pi^2 R r^2$                              | $S = 4 \pi^2 R r$                                                                                  |
+### Cauchy-Schwarz Inequality
 
-* $s$ = side length (cube, square pyramid)
-* $l, w, h$ = length, width, height (cuboid, pyramid)
-* $r$ = radius (sphere, cylinder, cone, torus)
-* $h$ = height (prism, cone, pyramid)
-* $l$ = slant height (cone, pyramid)
-* $a, b, c$ = axes of ellipsoid or sides of triangle
-* $R$ = major radius of torus (center to tube center)
-* $r$ = minor radius of torus (tube radius)
-* $L$ = length of prism
-* $h_{tri}$ = height of triangular base
+For all $x,y\in\mathbb R^n$,
+$$
+|\langle x,y\rangle|
+\le
+\|x\|_2\|y\|_2.
+$$
 
-### Tessellation
+This inequality guarantees that the angle formula is well-defined.
 
-A tessellation or tiling is the covering of a surface, often a plane, using one or more geometric shapes, called tiles, with no overlaps and no gaps.
+### Triangle Inequality
 
-#### Convex regular polygon tiling
+For all $x,y\in\mathbb R^n$,
+$$
+\|x+y\|_2\le \|x\|_2+\|y\|_2.
+$$
 
-There are three methods for dense tiling of a monohedral regular polygon in a plane: equilateral triangle, square, and regular hexagon.
+Consequently, the Euclidean distance satisfies the metric axioms.
+
+### Pythagorean Theorem
+
+If $x\perp y$, then
+$$
+\|x+y\|_2^2=\|x\|_2^2+\|y\|_2^2.
+$$
+
+### Parallelogram Law
+
+For all $x,y\in\mathbb R^n$,
+$$
+\|x+y\|_2^2+\|x-y\|_2^2
+=
+2\|x\|_2^2+2\|y\|_2^2.
+$$
+
+The parallelogram law characterizes norms induced by inner products.
+
+### Open Balls and Usual Topology
+
+The open ball centered at $x\in\mathbb R^n$ with radius $r>0$ is
+$$
+B_r(x)=\{y\in\mathbb R^n\mid \|y-x\|_2<r\}.
+$$
+
+The closed ball is
+$$
+\overline B_r(x)=\{y\in\mathbb R^n\mid \|y-x\|_2\le r\}.
+$$
+
+The sphere of radius $r$ centered at $x$ is
+$$
+S_r^{n-1}(x)=\{y\in\mathbb R^n\mid \|y-x\|_2=r\}.
+$$
+
+The usual topology on $\mathbb R^n$ is generated by open balls:
+$$
+U\subseteq\mathbb R^n \text{ is open}
+\quad\Leftrightarrow\quad
+\forall x\in U,\ \exists r>0,\ B_r(x)\subseteq U.
+$$
+
+This is the same usual topology discussed in [Topological_Space](./Topological_Space.md).
+
+### Completeness
+
+The metric space $(\mathbb R^n,d)$ is complete. Every Cauchy sequence in $\mathbb R^n$ converges to a point in $\mathbb R^n$.
+
+This follows from the completeness of $\mathbb R$ coordinate by coordinate.
+
+### Affine Structure
+
+As a vector space, $\mathbb R^n$ has a distinguished origin $0$.
+
+As an affine Euclidean space, points are primary and displacement vectors connect points:
+$$
+q-p\in\mathbb R^n.
+$$
+
+For a point $p\in\mathbb R^n$ and vector $v\in\mathbb R^n$, translation by $v$ gives another point
+$$
+p+v.
+$$
+
+This viewpoint connects Euclidean space with [affine space](./Affine_Space.md).
+
+### Linear and Affine Subspaces
+
+A linear subspace $W\subseteq\mathbb R^n$ is a subset closed under vector addition and scalar multiplication.
+
+An affine subspace is a translate of a linear subspace:
+$$
+p+W=\{p+w\mid w\in W\}.
+$$
+
+A hyperplane is an affine subspace of codimension $1$ and can be written as
+$$
+H=\{x\in\mathbb R^n\mid a^Tx=b\},
+$$
+where $a\neq 0$.
+
+### Orthogonal Projection
+
+For a linear subspace $W\subseteq\mathbb R^n$, every vector $x\in\mathbb R^n$ can be decomposed as
+$$
+x=P_Wx+(x-P_Wx),
+$$
+where
+$$
+P_Wx\in W,\quad x-P_Wx\in W^\perp.
+$$
+
+The vector $P_Wx$ is the orthogonal projection of $x$ onto $W$.
+
+### Isometries and Euclidean Group
+
+An isometry of Euclidean space is a map
+$$
+f:\mathbb R^n\to\mathbb R^n
+$$
+that preserves distance:
+$$
+d(f(x),f(y))=d(x,y).
+$$
+
+Every Euclidean isometry has the form
+$$
+f(x)=Qx+b,
+$$
+where $Q$ is an orthogonal matrix and $b\in\mathbb R^n$:
+$$
+Q^TQ=I.
+$$
+
+Translations, rotations, and reflections are Euclidean isometries.
+
+### Lebesgue Measure and Volume Element
+
+The standard measure on $\mathbb R^n$ is Lebesgue measure. It gives the usual notions of length in $\mathbb R$, area in $\mathbb R^2$, and volume in $\mathbb R^3$.
+
+The standard volume element is written as
+$$
+dx=dx^1\cdots dx^n.
+$$
+
+For an integrable function $f:\mathbb R^n\to\mathbb R$,
+$$
+\int_{\mathbb R^n}f(x)\,dx
+$$
+denotes integration with respect to Lebesgue measure.
+
+### Euclidean Space as a Smooth Manifold
+
+The space $\mathbb R^n$ has a canonical smooth structure with the identity chart
+$$
+\operatorname{id}:\mathbb R^n\to\mathbb R^n.
+$$
+
+At every point $p\in\mathbb R^n$,
+$$
+T_p\mathbb R^n\cong\mathbb R^n.
+$$
+
+With the standard Euclidean metric,
+$$
+g=\sum_{i=1}^n dx^i\otimes dx^i.
+$$
+
+In Cartesian coordinates, the Christoffel symbols vanish:
+$$
+\Gamma^k_{ij}=0.
+$$
+
+Therefore geodesics are straight lines:
+$$
+\gamma(t)=p+tv.
+$$
+
+### Examples
+
+#### Euclidean Line
+
+The Euclidean line is $\mathbb R^1$. Its distance is
+$$
+d(x,y)=|x-y|.
+$$
+
+#### Euclidean Plane
+
+The Euclidean plane is $\mathbb R^2$. It is the standard setting for plane geometry, including curves, polygons, circles, and planar regions.
+
+#### Euclidean Three-dimensional Space
+
+The usual physical three-dimensional space is modeled by $\mathbb R^3$ with the Euclidean distance.
+
+#### Classical Plane Geometry Formulas
+
+The following formulas are examples of geometric computations in the Euclidean plane $\mathbb R^2$.
+
+| Shape | Area (A) | Perimeter (P) |
+|---|---|---|
+| Square | $A=a^2$ | $P=4a$ |
+| Rectangle | $A=lw$ | $P=2(l+w)$ |
+| Parallelogram | $A=bh$ | $P=2(a+b)$ |
+| Rhombus | $A=\frac{d_1d_2}{2}$ | $P=4a$ |
+| Triangle | $A=\frac12bh$; $A=\sqrt{s(s-a)(s-b)(s-c)},\ s=\frac{a+b+c}{2}$ | $P=a+b+c$ |
+| Equilateral Triangle | $A=\frac{\sqrt3}{4}s^2$ | $P=3s$ |
+| Isosceles Triangle | $A=\frac b4\sqrt{4a^2-b^2}$ | $P=2a+b$ |
+| Circle | $A=\pi r^2$ | $P=2\pi r$ |
+| Ellipse | $A=\pi ab$ | $P\approx \pi\left[3(a+b)-\sqrt{(3a+b)(a+3b)}\right]$ |
+| Trapezoid | $A=\frac12(b_1+b_2)h$ | $P=a+b_1+b_2+c$ |
+| Regular Polygon with $n$ sides | $A=\frac14na^2\cot(\pi/n)$ | $P=na$ |
+
+Symbols:
+
+- $a$ is a side length.
+- $l,w$ are length and width.
+- $b,h$ are base and height.
+- $d_1,d_2$ are diagonals.
+- $r$ is radius.
+- $a,b$ are semi-axes of an ellipse.
+- $n$ is the number of sides of a regular polygon.
+
+#### Classical Solid Geometry Formulas
+
+The following formulas are examples of geometric computations in Euclidean three-dimensional space $\mathbb R^3$.
+
+| Solid | Volume (V) | Surface Area (S) |
+|---|---|---|
+| Cube | $V=s^3$ | $S=6s^2$ |
+| Rectangular Prism | $V=lwh$ | $S=2(lw+lh+wh)$ |
+| Sphere | $V=\frac43\pi r^3$ | $S=4\pi r^2$ |
+| Cylinder | $V=\pi r^2h$ | $S=2\pi r(r+h)$ |
+| Cone | $V=\frac13\pi r^2h$ | $S=\pi r(r+l)$, $l=\sqrt{r^2+h^2}$ |
+| Rectangular Pyramid | $V=\frac13lwh$ | $S=lw+l\sqrt{(w/2)^2+h^2}+w\sqrt{(l/2)^2+h^2}$ |
+| Square Pyramid | $V=\frac13s^2h$ | $S=s^2+2s\sqrt{(s/2)^2+h^2}$ |
+| Triangular Prism | $V=\frac12bh_{\text{tri}}L$ | $S=bh_{\text{tri}}+L(a+b+c)$ |
+| Triangular Pyramid | $V=\frac13\cdot\text{Base Area}\cdot h$ | $S=\text{sum of the areas of the four triangular faces}$ |
+| Ellipsoid | $V=\frac43\pi abc$ | $S\approx 4\pi\left(\frac{(ab)^p+(ac)^p+(bc)^p}{3}\right)^{1/p},\ p\approx1.6075$ |
+| Torus | $V=2\pi^2Rr^2$ | $S=4\pi^2Rr$ |
+
+Symbols:
+
+- $s$ is side length.
+- $l,w,h$ are length, width, and height.
+- $r$ is radius.
+- $R$ is the major radius of a torus.
+- $a,b,c$ are axes of an ellipsoid or side lengths of a triangle.
+- $L$ is the length of a prism.
+- $h_{\text{tri}}$ is the height of the triangular base.
+
+#### Tessellation
+
+A tessellation, or tiling, is a covering of a plane or space by geometric shapes with no overlaps and no gaps.
+
+Tessellation is not part of the definition of Euclidean space, but it is a typical topic studied inside Euclidean geometry.
+
+##### Convex Regular Polygon Tiling
+
+There are three regular monohedral tilings of the Euclidean plane: equilateral triangle, square, and regular hexagon.
 
 <img src="assets/1-uniform_n11.svg" alt="1-uniform_n11" style="zoom:8%;" /><img src="assets/1-uniform_n5.svg" alt="1-uniform_n5" style="zoom:20%;" /><img src="assets/1-uniform_n1.svg" alt="1-uniform_n1" style="zoom:8%;" />
 
@@ -109,15 +366,15 @@ There are 17 combinations of regular convex polygons that form 21 types of plane
 
 <img src="assets/image-20240209012125223.png" alt="image-20240209012125223" style="zoom: 33%;" />
 
-#### Space-Filling Polyhedron
+##### Space-Filling Polyhedron
 
 <img src="assets/SpaceFillingPolyhedra_1000.svg" alt="SpaceFillingPolyhedra" style="zoom: 25%;" />
 
-#### Monohedral Pentagonal tiling
+##### Monohedral Pentagonal Tiling
 
 <img src="assets/image-20240209013213739.png" alt="image-20240209013213739" style="zoom:20%;" />
 
-#### Penrose tiling
+##### Penrose Tiling
 
 A Penrose tiling is an example of an aperiodic tiling.
 
@@ -136,4 +393,3 @@ A Penrose tiling is an example of an aperiodic tiling.
 - [Hilbert_Space](./Hilbert_Space.md): subtype_of
 
 - [Real_Field](./Real_Field.md): defined_on
-

@@ -4,6 +4,8 @@
 
 ## Define
 
+>  A smooth manifold is a space that locally looks like $\mathbb R^n$, and whose overlapping coordinate systems transform smoothly into one another.
+
 A **differential manifold **$M$ of dimension $n$ is a [manifold](./Manifold.md) equipped with a differentiable structure.
 
 A differentiable structure on $M$ is represented by a **smooth atlas** (chart set) 
@@ -26,8 +28,6 @@ $$
 are smooth (infinitely differentiable $C^\infty$) map between open subsets of Euclidean spaces.
 
 <img src="./assets/Two_coordinate_charts_on_a_manifold.svg" alt="Two_coordinate_charts_on_a_manifold"  />
-
-> A smooth manifold is a space that locally looks like $\mathbb R^n$, and whose overlapping coordinate systems transform smoothly into one another.
 
 ## Properties
 
