@@ -18,6 +18,8 @@ A random variable is the special case where the state space is $(\mathbb R, \mat
 
 ## Properties
 
+
+
 ## Include
 
 - [Probability_Distribution](./Probability_Distribution.md): property_of
