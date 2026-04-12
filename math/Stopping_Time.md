@@ -6,8 +6,6 @@
 
 > A stopping time is a random time whose occurrence can be determined from the information available up to that time.
 
-### Stopping Time
-
 Stopping Time $\tau: \Sigma \to \bar T, \bar T = T \cup \{\infty\}$ is a random variable defined on the filtered probability space $(\Omega, \mathcal F, (\mathcal F_n)_{n \in \mathbb N}, P)$ with value in $T = [0, +\infty)$, such that 
 
 $$

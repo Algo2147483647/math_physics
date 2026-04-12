@@ -6,8 +6,6 @@
 
 > A probability distribution is the law induced by a random element on its state space.
 
-### Probability Distribution
-
 Let $X$ be a [random element](./Random_Element.md)
 $$
 X:(\Omega,\mathcal F,\mathbb P)\to(E,\mathcal E)
