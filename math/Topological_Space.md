@@ -37,6 +37,20 @@ $$
 
 Closed Set is the complementary set of Open Set. A set can be both closed and open at the same time.
 
+### Continuous
+
+Let $(X,\tau_X)$ and $(Y,\tau_Y)$ be topological spaces, and let $f:X\to Y$ be a map. $f$ is **continuous** if for every open set $U\in \tau_Y$, the preimage belongs to $\tau_X$.
+$$
+f^{-1}(U)={x\in X: f(x)\in U}
+$$
+Equivalently, $f$ is continuous if for every closed set $C\subseteq Y$, the preimage $f^{-1}(C)$ is closed in $X$. A pointwise formulation is also common: $f$ is continuous at $x\in X$ if for every open neighborhood $V$ of $f(x)$ in $Y$, there exists an open neighborhood $U$ of $x$ in $X$ such that
+
+$$
+f(U)\subseteq V.
+$$
+
+> When an open region in the target space is pulled back through the function, it does not turn into a broken or pathological set, but remains a well-behaved local region in the original space.
+
 ### Compact
 
 A topological space $X$ is compact if every open cover of $X$ has a finite subcover.
