@@ -116,6 +116,7 @@ d(x, y) = |x-y|.
 $$
 A basis of this topology is the collection of all open intervals $(a,b)$ with $a < b$.
 
+
 For $\mathbb R^n$, the usual topology is induced by the Euclidean metric
 $$
 d(\boldsymbol x, \boldsymbol y) = \|\boldsymbol x - \boldsymbol y\|_2 = \sqrt{\sum_{i=1}^n (x_i-y_i)^2}.
@@ -144,6 +145,38 @@ With this topology, $(\mathbb R^n, \tau_{\mathbb R^n})$ is a Hausdorff topologic
 $$
 \mathcal B(\mathbb R^n) = \sigma(\tau_{\mathbb R^n}).
 $$
+
+#### Local Neighborhood Characterization on $\mathbb R$
+
+That every point of the set is an interior point. Formally, for $U \subseteq \mathbb R$,
+$$
+U \in \tau_{\mathbb R}
+\quad\Leftrightarrow\quad
+\forall x \in U,\ \exists \varepsilon > 0,\ (x-\varepsilon, x+\varepsilon) \subseteq U.
+$$
+
+This is a local description of openness: whether $U$ is open can be checked point by point. A point $x \in U$ is not merely contained in $U$; it has some positive room around it that still does not leave $U$.
+
+> Proof:
+>
+> $(\Rightarrow)$ If $U$ is open in the usual topology, then $U$ is a union of basis open intervals. For any $x \in U$, there exists an open interval $(a,b)$ such that
+> $$
+> x \in (a,b) \subseteq U.
+> $$
+> Let
+> $$
+> \varepsilon = \min\{x-a,\ b-x\} > 0.
+> $$
+> Then
+> $$
+> (x-\varepsilon, x+\varepsilon) \subseteq (a,b) \subseteq U.
+> $$
+> $(\Leftarrow)$ If every $x \in U$ has some $\varepsilon_x > 0$ such that $(x-\varepsilon_x, x+\varepsilon_x) \subseteq U$, then
+> $$
+> U = \bigcup_{x \in U} (x-\varepsilon_x, x+\varepsilon_x).
+> $$
+> The right hand side is a union of open intervals, so it is open in the usual topology. Therefore $U \in \tau_{\mathbb R}$.
+
 
 ## Include
 
