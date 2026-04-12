@@ -6,22 +6,91 @@
 
 > A lattice is an ordered set in which every pair of elements has both a greatest lower bound and a least upper bound.
 
+A **lattice** can be defined in two equivalent ways: as an ordered structure or as an algebraic structure.
+
+### Order-theoretic Definition
+
+A lattice is a partially ordered set
 $$
-(L, \wedge, \vee)
+(L,\le)
+$$
+such that every pair of elements $a,b\in L$ has:
+
+- a greatest lower bound, called the meet and denoted $a\wedge b$;
+- a least upper bound, called the join and denoted $a\vee b$.
+
+That is,
+$$
+a\wedge b=\inf\{a,b\},
+\quad
+a\vee b=\sup\{a,b\}.
 $$
 
-Lattice is a concept of partially ordered sets, which is a special type of [algebraic structure](./Algebra_Structure.md) that can define minimum upper and maximum lower bounds on certain sets.一个格 $L$ 是一个集合，配合两个二元运算meet $\wedge$和 join $\vee$，满足以下公理：
+### Algebraic Definition
 
-1. **交换律**：$\forall a, b \in L$，有 $a \wedge b = b \wedge a$ 和 $a \vee b = b \vee a$
-2. **结合律**：$\forall a, b, c \in L$，有 $a \wedge (b \wedge c) = (a \wedge b) \wedge c$ 和 $a \vee (b \vee c) = (a \vee b) \vee c$
-3. **吸收律**：$\forall a, b \in L$，有 $a \wedge (a \vee b) = a$ 和 $a \vee (a \wedge b) = a$
-4. **幂等律**：$\forall a \in L$，有 $a \wedge a = a$ 和 $a \vee a = a$
+Equivalently, a lattice is a set $L$ equipped with two binary operations
+$$
+\wedge,\vee:L\times L\to L
+$$
+satisfying the following identities for all $a,b,c\in L$:
 
-在格中，任意两个元素 $a$ 和 $b$ 的“meet” $a \wedge b$ 是它们所有下界的最大者，而它们的“join” $a \vee b$ 是它们所有上界的最小者。
+- Commutativity:
+$$
+a\wedge b=b\wedge a,
+\quad
+a\vee b=b\vee a.
+$$
+
+- Associativity:
+$$
+a\wedge(b\wedge c)=(a\wedge b)\wedge c,
+\quad
+a\vee(b\vee c)=(a\vee b)\vee c.
+$$
+
+- Absorption:
+$$
+a\wedge(a\vee b)=a,
+\quad
+a\vee(a\wedge b)=a.
+$$
+
+- Idempotence:
+$$
+a\wedge a=a,
+\quad
+a\vee a=a.
+$$
 
 ## Properties
 
+### Meet and Join
 
+The meet $a\wedge b$ is the largest element below both $a$ and $b$.
+
+The join $a\vee b$ is the smallest element above both $a$ and $b$.
+
+### Bounded Lattice
+
+A lattice is bounded if it has a least element $0$ and a greatest element $1$:
+$$
+0\le a\le 1,\quad \forall a\in L.
+$$
+
+### Distributive Lattice
+
+A lattice is distributive if
+$$
+a\wedge(b\vee c)=(a\wedge b)\vee(a\wedge c),
+$$
+and equivalently
+$$
+a\vee(b\wedge c)=(a\vee b)\wedge(a\vee c).
+$$
+
+### Complete Lattice
+
+A lattice is complete if every subset $S\subseteq L$ has both an infimum and a supremum.
 
 ## Include
 
@@ -30,4 +99,3 @@ Lattice is a concept of partially ordered sets, which is a special type of [alge
 ## Parents
 
 - [Algebra_Structure](./Algebra_Structure.md): subtype_of
-

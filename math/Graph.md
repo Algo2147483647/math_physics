@@ -6,100 +6,142 @@
 
 > A graph is a structure made of vertices and edges that records pairwise relationships.
 
+A graph is a pair
 $$
-\begin{align*}
-G &= (V, E)  \tag{Graph} \\
-E &= \{(v_i, v_j)\ |\ v_i, v_j \in V\}  \tag{Edge set}
-\end{align*}
+G=(V,E),
 $$
+where $V$ is a set of vertices and $E$ is a set of edges connecting vertices.
 
-Graph is a pair consist of vertex set $V$ and edge set $E$ with weights of edges $w: E \to \mathbb R$.
-
-- $V$: Vertex set
-- $E$: Edge set, a set of paired vertices
-- $w: E \to \mathbb R$: weight of edge
-
-```lean
-import Set
-import Symmetric
-
-structure Graph (α β : Type*) where
-  vertexSet : Set α
-  IsLink : β → α → α → Prop
-  edgeSet : Set β := {e | ∃ x y, IsLink e x y}
-  
-  isLink_symm : ∀ ⦃e⦄, e ∈ edgeSet → (Symmetric <| IsLink e)
-  eq_or_eq_of_isLink_of_isLink : ∀ ⦃e x y v w⦄, IsLink e x y → IsLink e v w → x = v ∨ x = w
-  edge_mem_iff_exists_isLink : ∀ e, e ∈ edgeSet ↔ ∃ x y, IsLink e x y := by exact fun _ ↦ Iff.rfl
-  left_mem_of_isLink : ∀ ⦃e x y⦄, IsLink e x y → x ∈ vertexSet
-```
-
-### Undirected Graph & Directed Graph
-
+For a simple undirected graph,
 $$
-\begin{align*}
-E &= \{\{v_i, v_j\}\ |\ v_i, v_j \in V\}  \tag{Undirected Graph}\\
-E &= \{(v_i, v_j)\ |\ v_i, v_j \in V\}  \tag{Directed Graph}
-\end{align*}
+E\subseteq \big\{\{u,v\}\mid u,v\in V,\ u\neq v\big\}.
 $$
 
-Undirected Graph, is a type of graph that does not distinguish the direction of edges.
+For a directed graph,
+$$
+E\subseteq V\times V.
+$$
 
-Directed Graph, is a type of graph that distinguish the direction of edges and its edge set is a set of ordered pairs.
+Thus an undirected edge $\{u,v\}$ has no direction, while a directed edge $(u,v)$ points from $u$ to $v$.
+
+### Weighted Graph
+
+A weighted graph is a graph equipped with a weight function
+$$
+w:E\to W,
+$$
+where $W$ is usually $\mathbb R$ or $\mathbb R_{\ge 0}$.
+
+Weights are extra data; they are not part of the definition of a bare graph.
 
 ## Properties
 
+### Adjacency
+
+Two vertices are adjacent if they are connected by an edge.
+
+For a simple undirected graph, $u$ and $v$ are adjacent if
+$$
+\{u,v\}\in E.
+$$
+
+For a directed graph, $u$ points to $v$ if
+$$
+(u,v)\in E.
+$$
+
 ### Representation by Adjacency Matrix
-Due to the discreteness of vertices, we can represent the weight of edge $w: E \to \mathbb R$ by Matrix $\boldsymbol G \in \mathbb R^{n \times n}$.
 
+For a finite graph with vertices $v_1,\cdots,v_n$, the adjacency matrix is a matrix $A\in\mathbb R^{n\times n}$.
+
+For an unweighted graph,
 $$
-\boldsymbol G = \left(\begin{matrix} w(v_1, v_1) & \cdots & w(v_1, v_n) \\ \vdots&\ddots &\vdots \\ w(v_n, v_1) & \cdots & w(v_n, v_n) \end{matrix}\right)
+A_{ij}=
+\begin{cases}
+1, & \text{there is an edge from }v_i\text{ to }v_j,\\
+0, & \text{otherwise}.
+\end{cases}
 $$
 
+For a weighted graph,
+$$
+A_{ij}=w(v_i,v_j)
+$$
+when the edge exists.
+
+For a simple undirected graph, the adjacency matrix is symmetric.
 
 ### Degree
-Degree of a node refers to the number of edges connecting this node. 
+
+In an undirected graph, the degree of a vertex is the number of edges incident to it.
+
+In a directed graph, the in-degree and out-degree of a vertex $v$ are
+$$
+\deg^-(v)=|\{u\in V\mid (u,v)\in E\}|,
+$$
+$$
+\deg^+(v)=|\{u\in V\mid (v,u)\in E\}|.
+$$
+
+### Path
+
+A path is a sequence of vertices
+$$
+v_0,v_1,\cdots,v_k
+$$
+such that consecutive vertices are connected by edges.
+
+For a directed graph, the edges must follow the direction:
+$$
+(v_i,v_{i+1})\in E.
+$$
 
 ### Connectivity
 
-In an undirected graph $G=(V, E)$, the graph is said to be connected if there is a path between every pair of vertices. A path is a sequence of vertices where consecutive vertices are adjacent (connected by an edge).
+An undirected graph is connected if every pair of vertices is joined by a path.
 
-In a directed graph $G=(V, E)$, the graph is strongly connected if for every pair of vertices $u$ and $v$, there is a directed path from $u$ to $v$ and a directed path from $v$ to $u$.
-
-### Directivity
+A directed graph is strongly connected if for every pair of vertices $u,v\in V$, there is a directed path from $u$ to $v$ and a directed path from $v$ to $u$.
 
 ### Acyclicity
 
-### Euler Path & Euler Graph
+A graph is acyclic if it has no cycle.
 
-Euler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. 
+For directed graphs, acyclicity means there is no directed cycle.
+
+### Euler Path and Euler Graph
+
+An Euler path is a path that passes through every edge exactly once. If such a path starts and ends at the same vertex, it is called an Euler circuit.
+
+A graph with an Euler circuit is called Eulerian.
 
 <img src="./assets/48727417-28c3d500-ec58-11e8-9715-33b168a50b7c.png" alt="theory1" style="zoom:20%;" />
 
-#### Property
-The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
+For a connected undirected graph:
 
+- It has an Euler circuit if and only if every vertex has even degree.
+- It has an Euler path but not an Euler circuit if and only if exactly two vertices have odd degree.
 
 ### Matching of Graph
 
+A matching in a graph is a set of edges no two of which share a common endpoint:
 $$
-\forall e_i, e_j \in M \subseteq E, e_i \neq e_j \quad\Rightarrow\quad v(e_i, 1) \neq v(e_i, 2) \neq v(e_j, 1) \neq v(e_j, 2)  \tag{Matching}
+M\subseteq E,
+\quad
+e_i\cap e_j=\varnothing
+\quad
+(e_i\neq e_j).
 $$
-Matching of a graph is a set of edges $M \subseteq E$ that have no common points between any two edges.
 
 #### Maximum Matching
 
+A maximum matching is a matching with the largest possible number of edges:
 $$
-M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
+M^*=\arg\max_M |M|.
 $$
-Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
 
 #### Perfect Matching
 
-$$
-V^{(G)} = v(M^*)
-$$
-Perfect Matching is a matching that all vertices of the graph are in it.
+A perfect matching is a matching that covers every vertex of the graph.
 
 ## Include
 
@@ -114,4 +156,3 @@ Perfect Matching is a matching that all vertices of the graph are in it.
 ## Parents
 
 - [Set](./Set.md): defined_on
-

@@ -6,23 +6,54 @@
 
 > A directed acyclic graph is a directed graph with no directed cycles.
 
-Directed acyclic graph is directed graph without loops.
+A **directed acyclic graph** (DAG) is a directed [graph](./Graph.md)
+$$
+G=(V,E),\quad E\subseteq V\times V,
+$$
+such that there is no directed cycle. That is, there is no finite sequence of vertices
+$$
+v_0,v_1,\cdots,v_k
+$$
+with $k\ge 1$, $v_0=v_k$, and
+$$
+(v_i,v_{i+1})\in E,\quad i=0,\cdots,k-1.
+$$
+
+> A DAG can express dependency without circular dependency.
 
 ## Properties
 
-### Topological Sort  
+### Source and Sink
 
-Topological Sort aims to linear ordering of point sets of directed acyclic graphs, and satisfying as follows. Topological Sort can help determine whether a graph is a directed acyclic graph.  
-- Each point appears only once
-- If there is an edge from point A to point B, point A appears before point B in the sequence.
+A source is a vertex with no incoming edges. A sink is a vertex with no outgoing edges.
 
-#### Solution
+Every finite nonempty DAG has at least one source and at least one sink.
 
-Iterate and delete points with 0 incoming edge on the Graph, put these points into the output sequence in turn, until all points are removed from the graph. If there are no more nodes in the graph that can be delete, but the number of remaining points is not 0, then the graph has loops and is not a directed acyclic graph.
+### Topological Sort
+
+A topological sort of a DAG is a linear ordering of its vertices such that every directed edge points forward in the ordering.
+
+For an edge
+$$
+(u,v)\in E,
+$$
+the vertex $u$ appears before $v$ in the topological order.
+
+A finite directed graph has a topological ordering if and only if it is acyclic.
+
+#### Algorithm
+
+One standard algorithm repeatedly removes vertices with zero in-degree:
+
+1. Find all vertices with no incoming edges.
+2. Remove one such vertex and append it to the output order.
+3. Remove all outgoing edges from that vertex.
+4. Repeat until no vertices remain.
+
+If vertices remain but none has zero in-degree, then the directed graph contains a cycle and is not a DAG.
 
 ## Include
 
 ## Parents
 
 - [Graph](./Graph.md): subtype_of
-

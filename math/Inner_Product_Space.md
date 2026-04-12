@@ -6,27 +6,77 @@
 
 > An inner product space is a vector space with a product that defines length, angle, and orthogonality.
 
-The [Normed Linear Space](./Normed_Linear_Space.md) of inner product is defined.
+An **inner product space** is a [linear space](./Linear_Space.md) $V$ over $\mathbb R$ or $\mathbb C$ equipped with an inner product
+$$
+\langle\cdot,\cdot\rangle:V\times V\to F,
+\quad F\in\{\mathbb R,\mathbb C\}.
+$$
 
-### Inner Product
+For all $x,y,z\in V$ and $\alpha,\beta\in F$, the inner product satisfies:
 
-Operations that meet the following conditions:
-- Commutative:$\left<x, y\right> = \overline{\left<y, x\right>}$
-- Distributive:$\left<x, y+z\right> = \left<x , y\right> + \left<x, z\right>$
-- Homogeneity:$\left<k x, y\right> = k \left<x, y\right>$
-- Nonnegativity:$\left<x,x\right> ≥ 0$, if and only if $x = 0, \left<x,x\right> = 0$
+- Conjugate symmetry:
+$$
+\langle x,y\rangle=\overline{\langle y,x\rangle}.
+$$
+
+- Linearity in the first argument:
+$$
+\langle \alpha x+\beta y,z\rangle
+=
+\alpha\langle x,z\rangle+\beta\langle y,z\rangle.
+$$
+
+- Positive definiteness:
+$$
+\langle x,x\rangle\ge 0,
+\quad
+\langle x,x\rangle=0\iff x=0.
+$$
+
+For real vector spaces, conjugate symmetry becomes symmetry:
+$$
+\langle x,y\rangle=\langle y,x\rangle.
+$$
 
 ## Properties
 
-- $x, y \text{orthogonal} \Leftrightarrow \left<x,y\right> = 0$
-- $|\left<x, y\right>| ≤ |x| |y|$
-- $\left<x, y \right> = x^T y = |x| |y| cos(\theta_{x,y})$
-- Geometric Interpretation:  
-$\left<x, y \right>$ means the length of $x$ projection toward $y$ multiply length of $y$; or the length of $y$ projection toward $x$ multiply length of $x$.
-- Example
-  * Laplace Transform
-  * Wavelet Transform
-  * Cross Correlation & Convolution
+### Induced Norm
+
+Every inner product induces a norm
+$$
+\|x\|=\sqrt{\langle x,x\rangle}.
+$$
+
+Thus every inner product space is naturally a [normed linear space](./Normed_Linear_Space.md).
+
+### Orthogonality
+
+Two vectors $x,y\in V$ are orthogonal if
+$$
+\langle x,y\rangle=0.
+$$
+
+### Cauchy-Schwarz Inequality
+
+For all $x,y\in V$,
+$$
+|\langle x,y\rangle|\le \|x\|\,\|y\|.
+$$
+
+### Angle in a Real Inner Product Space
+
+For nonzero vectors $x,y$ in a real inner product space, the angle $\theta$ between them satisfies
+$$
+\cos\theta=
+\frac{\langle x,y\rangle}{\|x\|\|y\|}.
+$$
+
+### Geometric Interpretation
+
+The inner product measures alignment. In Euclidean space,
+$$
+\langle x,y\rangle=x^Ty=\|x\|\,\|y\|\cos\theta.
+$$
 
 ## Include
 
@@ -37,4 +87,3 @@ $\left<x, y \right>$ means the length of $x$ projection toward $y$ multiply leng
 ## Parents
 
 - [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of
-

@@ -6,8 +6,6 @@
 
 > A probability space is a measure space whose total measure is one.
 
-### Probability Space
-
 $$
 (\Omega, \mathcal F, \mathbb P)  \tag{Probability Space}
 $$
