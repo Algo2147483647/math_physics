@@ -70,6 +70,86 @@ $$
 $$
 Cardinality $|S|$ is the number of elements in a set $S$.
 
+Two sets $A$ and $B$ have the same cardinality if there exists a bijection between them:
+$$
+|A|=|B|
+\quad\Leftrightarrow\quad
+\exists f:A\to B \text{ such that } f \text{ is bijective}.
+$$
+
+#### Infinite Cardinality and Aleph Numbers
+
+The cardinality of the natural numbers is denoted by
+$$
+|\mathbb N|=\aleph_0
+$$
+
+$\aleph_0$ is the smallest infinite cardinal number. A set is countably infinite if its cardinality is $\aleph_0$.
+
+The next larger well-ordered cardinal is denoted by
+$$
+\aleph_1
+$$
+
+$\aleph_1$ is the smallest uncountable well-ordered cardinal number. It should not automatically be identified with the cardinality of the real numbers. The cardinality of the continuum is
+$$
+|\mathbb R|=2^{\aleph_0}.
+$$
+
+The continuum hypothesis states
+$$
+2^{\aleph_0}=\aleph_1
+$$
+but this statement is independent of the usual ZFC axioms.
+
+#### Uncountability of the Real Numbers
+
+The real numbers are uncountable:
+$$
+|\mathbb R|>\aleph_0.
+$$
+
+It is enough to prove that the interval $(0,1)$ is uncountable, because
+$$
+(0,1)\subseteq\mathbb R.
+$$
+
+> Proof: Cantor's diagonal argument.
+>
+> Suppose, for contradiction, that $(0,1)$ is countable. Then all real numbers in $(0,1)$ can be listed as
+> $$
+> x_1,x_2,x_3,\cdots.
+> $$
+> Write each number in decimal form, choosing the representation that does not end in an infinite string of $9$s:
+> $$
+> \begin{aligned}
+> x_1 &= 0.d_{11}d_{12}d_{13}\cdots\\
+> x_2 &= 0.d_{21}d_{22}d_{23}\cdots\\
+> x_3 &= 0.d_{31}d_{32}d_{33}\cdots\\
+> &\vdots
+> \end{aligned}
+> $$
+> Construct a new real number
+> $$
+> y=0.c_1c_2c_3\cdots
+> $$
+> by changing the diagonal digits:
+> $$
+> c_n=
+> \begin{cases}
+> 1, & d_{nn}\neq 1,\\
+> 2, & d_{nn}=1.
+> \end{cases}
+> $$
+> Then $y\in(0,1)$, and for every $n$, the $n$-th digit of $y$ is different from the $n$-th digit of $x_n$.
+> Hence
+> $$
+> y\neq x_n,\quad \forall n\in\mathbb N.
+> $$
+> So $y$ is a real number in $(0,1)$ that is not in the supposed complete list. This contradicts the assumption that $(0,1)$ is countable.
+>
+> Therefore $(0,1)$ is uncountable, and hence $\mathbb R$ is uncountable.
+
 #### Property
 
 * Addition theorem  
