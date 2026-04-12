@@ -2,192 +2,370 @@
 
 [TOC]
 
+## Purpose
+
+Statistical mechanics connects microscopic states with macroscopic thermodynamics. Its central objects are entropy, ensembles, partition functions, fluctuations, correlation functions, and the thermodynamic limit.
+
+This page is the entry point. More specialized topics are covered in:
+
+- [quantum statistical mechanics](./quantum%20statistical%20mechanics.md)
+- [phase transitions and critical phenomena](./phase%20transitions%20and%20critical%20phenomena.md)
+- [nonequilibrium statistical mechanics](./nonequilibrium%20statistical%20mechanics.md)
+
 ## Thermodynamic Quantities
 
 ### Entropy
 
+For an isolated macrostate with $\Omega$ compatible microstates,
 
 $$
-S = k \ln(\Omega)
+S=k_B\ln\Omega.
 $$
 
-Entropy is a measure of the number of available microstates.
+More generally, for probabilities $p_i$,
 
-- $S$: entropy of the system.
-- $k$: Boltzmann constant, $1.380649 \times 10^{-23} \, \text{J/K}$.
-- $\Omega$: the number of microstates (distinct ways the system can be arranged) corresponding to a particular macrostate (state defined by macroscopic variables such as energy, volume, etc.).
+$$
+S=-k_B\sum_i p_i\ln p_i.
+$$
 
+For a quantum density matrix $\rho$,
+
+$$
+S=-k_B\operatorname{Tr}(\rho\ln\rho).
+$$
 
 ### Temperature
 
-$$
-\frac{\mathrm{d}S}{\mathrm{d}U} = \frac{1}{T}
-$$
-
-If two systems are each in thermal equilibrium with a third, they are also in thermal equilibrium with each other.
-$$
-\mathrm{d}U = \mathrm{d}Q - \mathrm{d}W
-$$
-
-In a process without transfer of matter, the change in internal energy, $\Delta U$, of a thermodynamic system is equal to the energy gained as heat, $Q$, less the thermodynamic work, $W$, done by the system on its surroundings.
-$$
-\Delta U = Q-W
-$$
-
-As the temperature of a system approaches absolute zero, all processes cease and the entropy of the system approaches a minimum value.
-
-### Maxwell-Boltzmann Distribution
+For a simple system,
 
 $$
-f(v) = \left( \frac{m}{2\pi k_B T} \right)^{3/2} 4\pi v^2 \exp\left(-\frac{mv^2}{2k_B T}\right)
+\frac{1}{T}=
+\left(\frac{\partial S}{\partial U}\right)_{V,N}.
 $$
 
-### Boltzmann Distribution
+Temperature measures how entropy changes with internal energy.
+
+### Chemical potential
+
+The chemical potential is
 
 $$
-N_i \propto \exp\left(-\frac{E_i}{k_B T}\right)
+\mu=
+\left(\frac{\partial U}{\partial N}\right)_{S,V}.
 $$
 
-## Collection of microscopic systems: Ensemble
+It measures the free-energy cost of adding one particle. It controls particle exchange in the grand canonical ensemble.
 
-An ensemble in statistical mechanics is a large collection of virtual copies of a system, considered in different possible states. Each member of the ensemble represents a possible configuration (or microstate) of the system under certain conditions. The introduction of the ensemble is to describe the macroscopic thermodynamic behavior from a microscopic perspective, providing a bridge connecting the macroscopic and microscopic aspects through statistical methods.
+### Thermodynamic identity
+
+For a simple compressible system,
+
+$$
+\mathrm dU=T\,\mathrm dS-P\,\mathrm dV+\mu\,\mathrm dN.
+$$
+
+Useful thermodynamic potentials are
+
+$$
+F=U-TS,\qquad
+G=U-TS+PV,\qquad
+\Omega_G=U-TS-\mu N.
+$$
+
+Natural variables:
+
+$$
+F=F(T,V,N),\qquad
+G=G(T,P,N),\qquad
+\Omega_G=\Omega_G(T,V,\mu).
+$$
+
+## Ensembles
+
+An ensemble is a probability distribution over microscopic states. The common equilibrium ensembles differ by which macroscopic variables are fixed.
+
+| Ensemble | Fixed variables | Fluctuating variables | Partition function |
+| --- | --- | --- | --- |
+| Microcanonical | $E,V,N$ | none | $\Omega(E,V,N)$ |
+| Canonical | $T,V,N$ | $E$ | $Z(T,V,N)$ |
+| Grand canonical | $T,V,\mu$ | $E,N$ | $\Xi(T,V,\mu)$ |
+| Isothermal-isobaric | $T,P,N$ | $E,V$ | $\Delta(T,P,N)$ |
 
 ### Microcanonical ensemble
 
-Microcanonical ensemble is used for isolated systems, where energy, volume, and particle number are fixed. All microstates have the same energy, and the system is isolated from its surroundings.
-
-- Isolated System: The system does not exchange energy, particles, or volume with the environment. 
-- Fixed Energy (E): All microstates in the ensemble have the same energy. 
-- Fixed Volume (V): The volume of the system is constant. 
-- Fixed Number of Particles (N): The number of particles in the system remains constant. 
-- All Microstates are Equally Probable: In the microcanonical ensemble, all possible configurations of the system that satisfy the constraints of energy, volume, and number of particles are considered equally probable.
-
-#### Entropy
+For an isolated system, all accessible states with fixed energy are equally probable:
 
 $$
-S = k \ln(\Omega)
+p_i=\frac{1}{\Omega(E,V,N)}.
 $$
 
-Entropy is a measure of the number of available microstates.
+Entropy is
 
-- $S$: entropy of the system.
-- $k$: Boltzmann constant, $1.380649 \times 10^{-23} \, \text{J/K}$.
-- $\Omega$: the number of microstates (distinct ways the system can be arranged) corresponding to a particular macrostate (state defined by macroscopic variables such as energy, volume, etc.).
-
-
-Heat does not spontaneously flow from a colder body to a hotter body.
 $$
-\mathrm{d}S \ge \frac{\mathrm{d}Q}{T}
+S(E,V,N)=k_B\ln\Omega(E,V,N).
+$$
+
+Thermodynamics follows from derivatives of $S$:
+
+$$
+\frac{1}{T}=\left(\frac{\partial S}{\partial E}\right)_{V,N},
+\qquad
+\frac{P}{T}=\left(\frac{\partial S}{\partial V}\right)_{E,N},
+\qquad
+-\frac{\mu}{T}=\left(\frac{\partial S}{\partial N}\right)_{E,V}.
 $$
 
 ### Canonical ensemble
 
-Canonical ensemble describes a system in thermal equilibrium with a heat reservoir at a constant temperature $T$. The system can exchange energy with the reservoir but the number of particles and volume remain fixed.
-
-- System in Thermal Contact: The system can exchange energy with a large external reservoir (heat bath), so the energy of the system is not fixed.
-- Fixed Temperature (T): The system is maintained at a constant temperature by exchanging energy with the reservoir.
-- Fixed Volume (V): The volume of the system is constant.
-- Fixed Number of Particles (N): The number of particles in the system is constant.
-- Energy Fluctuations: The system can have fluctuating energy, but on average, it is determined by the temperature of the reservoir.
-
-#### Partition function
+For fixed $T,V,N$,
 
 $$
-Z = \sum_i e^{-\beta E_i}
+p_i=\frac{e^{-\beta E_i}}{Z},
+\qquad
+\beta=\frac{1}{k_BT},
 $$
 
-The canonical partition function $Z$ is the sum over all possible microstates of the system, weighted by their respective Boltzmann factors.
-
-- $\beta = \frac{1}{k_B T}$ is the inverse temperature
-- $E_i$ is the energy of the $i$-th microstate
-
-#### Free Energy
+with
 
 $$
-F = -k_B T \ln Z
+Z(T,V,N)=\sum_i e^{-\beta E_i}.
 $$
 
-The Helmholtz free energy $F$ is a central thermodynamic quantity that determines the equilibrium properties of the system at constant temperature and volume.
-
-#### Average Energy
+The Helmholtz free energy is
 
 $$
-\langle E \rangle = -\frac{\partial \ln Z}{\partial \beta}
+F=-k_BT\ln Z.
 $$
 
-The average energy $\langle E \rangle$ of the system.
-
-#### Entropy
+Average energy and heat capacity are
 
 $$
-S = -\left( \frac{\partial F}{\partial T} \right)_V = k_B \ln Z + \frac{\langle E \rangle}{T}
+\langle E\rangle=-\frac{\partial\ln Z}{\partial\beta},
 $$
 
-The entropy $S$ of the system.
-
-#### Pressure
-
 $$
-P = -\left( \frac{\partial F}{\partial V} \right)_T
-$$
-
-#### Specific heat
-
-$$
-\begin{align*}
-C_V &= \frac{\partial \langle E \rangle}{\partial T}\\
-&= \frac{\beta^2}{Z} \sum_i e^{-\beta E_i} (E_i - \langle E \rangle)^2
-\end{align*}
+C_V=
+\left(\frac{\partial\langle E\rangle}{\partial T}\right)_{V,N}
+=
+\frac{\langle E^2\rangle-\langle E\rangle^2}{k_BT^2}.
 $$
 
-#### Gibbs Distribution
-
-$$
-P(E_i) = \frac{e^{-\frac{E_i}{k_B T}}}{Z}
-$$
+Energy fluctuations are therefore thermodynamic response functions.
 
 ### Grand canonical ensemble
 
-Grand canonical ensemble is used for systems that can exchange both energy and particles with a reservoir. This is useful for systems where both the number of particles and the energy can fluctuate, such as gases in a container.
-
-- System in Contact with a Reservoir: The system can exchange both energy and particles with a large reservoir or bath. This implies that the system's energy and particle number can fluctuate, but the temperature $T$ and chemical potential $\mu$ of the system are fixed.
-- Fixed Temperature (T): The system is maintained at a constant temperature by exchanging heat with the reservoir.
-- Fixed Chemical Potential ($\mu$): The chemical potential, which controls the exchange of particles between the system and the reservoir, is fixed.
-- Energy and Particle Number Fluctuate: Unlike the microcanonical and canonical ensembles, both the energy and the number of particles of the system are allowed to fluctuate.
-- System Size: The number of particles in the system is not fixed and can change, which is different from the canonical ensemble, where the number of particles is constant.
-
-### Isothermal-Isobaric Ensemble
-
-Isothermal-isobaric ensemble describes a system at a constant temperature and pressure. This ensemble is often used in simulations where both temperature and pressure are controlled, such as in a thermodynamic system immersed in a reservoir with both thermal and mechanical exchange.
-
-- Energy: Fluctuates
-- Volume: Fluctuates (due to pressure)
-- Particle number: Fixed
-- Temperature: Fixed
-- Pressure: Fixed
-
-### Isoenthalpic-isobaric ensemble
-
-Isoenthalpic-isobaric ensemble is a statistical ensemble that describes a system at constant enthalpy (H) and constant pressure (P). This ensemble is less commonly discussed in traditional statistical mechanics compared to the more well-known canonical or grand canonical ensembles, but it has specific applications, particularly in the study of thermodynamic systems where both enthalpy and pressure are controlled.
-
-### Isothermal-Isovolumetric Ensemble
-
-Isothermal-isovolumetric ensemble describes a system with a fixed temperature and volume, but with the number of particles allowed to fluctuate. It is useful for studying systems like chemical reactions in a closed volume, where the volume is held constant but particles can be added or removed.
-
-- Energy: Fluctuates
-- Volume: Fixed
-- Particle number: Fluctuates
-- Temperature: Fixed
-
-
-## Ideal Gas
+For fixed $T,V,\mu$, both energy and particle number fluctuate:
 
 $$
-PV=nRT
+p_{i,N}
+=
+\frac{e^{-\beta(E_{i,N}-\mu N)}}{\Xi}.
 $$
 
-- $P$: pressure
-- $V$: volume
-- $T$: temperature
-- $n$: the amount of substance
-- $R$: the ideal gas constant.
+The grand partition function is
+
+$$
+\Xi(T,V,\mu)
+=
+\sum_{N=0}^{\infty}
+\sum_i
+e^{-\beta(E_{i,N}-\mu N)}.
+$$
+
+The grand potential is
+
+$$
+\Omega_G=-k_BT\ln\Xi.
+$$
+
+For a homogeneous system,
+
+$$
+\Omega_G=-PV.
+$$
+
+Average particle number is
+
+$$
+\langle N\rangle
+=
+\frac{1}{\beta}\frac{\partial\ln\Xi}{\partial\mu}.
+$$
+
+Number fluctuations are
+
+$$
+\langle(\Delta N)^2\rangle
+=
+k_BT
+\left(\frac{\partial\langle N\rangle}{\partial\mu}\right)_{T,V}.
+$$
+
+### Isothermal-isobaric ensemble
+
+For fixed $T,P,N$, the volume fluctuates. The partition function is
+
+$$
+\Delta(T,P,N)
+=
+\int_0^\infty \mathrm dV\,e^{-\beta PV}Z(T,V,N).
+$$
+
+The Gibbs free energy is
+
+$$
+G=-k_BT\ln\Delta.
+$$
+
+This ensemble is common in simulations and phase equilibrium.
+
+## Classical Ideal Gas
+
+For a classical monatomic ideal gas,
+
+$$
+PV=Nk_BT.
+$$
+
+The thermal de Broglie wavelength is
+
+$$
+\lambda_T=\frac{h}{\sqrt{2\pi mk_BT}}.
+$$
+
+The canonical partition function is
+
+$$
+Z_N
+=
+\frac{1}{N!}
+\left(\frac{V}{\lambda_T^3}\right)^N.
+$$
+
+The Helmholtz free energy is
+
+$$
+F
+=
+-Nk_BT
+\left[
+\ln\left(\frac{V}{N\lambda_T^3}\right)+1
+\right].
+$$
+
+The chemical potential is
+
+$$
+\mu
+=
+k_BT\ln(n\lambda_T^3),
+\qquad
+n=\frac{N}{V}.
+$$
+
+The classical regime requires
+
+$$
+n\lambda_T^3\ll1.
+$$
+
+When this condition fails, quantum statistics becomes important.
+
+## Maxwell-Boltzmann Distribution
+
+The speed distribution of a classical ideal gas is
+
+$$
+f(v)
+=
+4\pi v^2
+\left(\frac{m}{2\pi k_BT}\right)^{3/2}
+\exp\left(-\frac{mv^2}{2k_BT}\right).
+$$
+
+The Boltzmann weight for a state of energy $E_i$ is
+
+$$
+p_i\propto e^{-\beta E_i}.
+$$
+
+## Fluctuations and Correlations
+
+Statistical mechanics relates fluctuations to response. For an observable $A$,
+
+$$
+\langle A\rangle=\sum_i p_iA_i.
+$$
+
+The connected correlation function of two observables is
+
+$$
+\langle AB\rangle_c
+=
+\langle AB\rangle-\langle A\rangle\langle B\rangle.
+$$
+
+For a field $\phi(\mathbf x)$,
+
+$$
+G(\mathbf x-\mathbf y)
+=
+\langle\phi(\mathbf x)\phi(\mathbf y)\rangle_c.
+$$
+
+Correlation functions measure how microscopic fluctuations at different points are statistically linked. Near a continuous phase transition they often take the scaling form
+
+$$
+G(r)\sim \frac{e^{-r/\xi}}{r^{d-2+\eta}},
+$$
+
+where $\xi$ is the correlation length.
+
+More details:
+
+- [phase transitions and critical phenomena](./phase%20transitions%20and%20critical%20phenomena.md)
+- [nonequilibrium statistical mechanics](./nonequilibrium%20statistical%20mechanics.md)
+
+## Equilibrium, Phase Transitions, and Fields
+
+The thermodynamic limit
+
+$$
+N\to\infty,\qquad
+V\to\infty,\qquad
+\frac{N}{V}=n
+$$
+
+is essential because true nonanalytic phase transitions occur only in this limit.
+
+Modern statistical mechanics often rewrites the partition function as a functional integral:
+
+$$
+Z=\int \mathcal D\phi\,e^{-\beta \mathcal H[\phi]}.
+$$
+
+This is the bridge to statistical field theory, condensed matter theory, and Euclidean quantum field theory.
+
+More details: [phase transitions and critical phenomena](./phase%20transitions%20and%20critical%20phenomena.md).
+
+## Nonequilibrium Statistical Mechanics
+
+Equilibrium ensembles describe stationary distributions. Nonequilibrium theory studies relaxation, transport, noise, and entropy production.
+
+Core tools include:
+
+- Brownian motion.
+- Langevin equation.
+- Fokker-Planck equation.
+- Linear response and fluctuation-dissipation theorem.
+- Boltzmann equation and H-theorem.
+
+More details: [nonequilibrium statistical mechanics](./nonequilibrium%20statistical%20mechanics.md).
+
+## Connections
+
+- [quantum statistical mechanics](./quantum%20statistical%20mechanics.md)
+- [phase transitions and critical phenomena](./phase%20transitions%20and%20critical%20phenomena.md)
+- [nonequilibrium statistical mechanics](./nonequilibrium%20statistical%20mechanics.md)
+- [quantum field](./quantum%20field.md)
+- [electromagnetic field](./electromagnetic%20field.md)
