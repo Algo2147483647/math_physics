@@ -35,21 +35,9 @@ $$
 
 ### Closed Set
 
-Closed Set is the complementary set of Open Set. A set can be both closed and open at the same time.
+Closed Set is the complementary set of Open Set.
 
-### Continuous
-
-Let $(X,\tau_X)$ and $(Y,\tau_Y)$ be topological spaces, and let $f:X\to Y$ be a map. $f$ is **continuous** if for every open set $U\in \tau_Y$, the preimage belongs to $\tau_X$.
-$$
-f^{-1}(U)={x\in X: f(x)\in U}
-$$
-Equivalently, $f$ is continuous if for every closed set $C\subseteq Y$, the preimage $f^{-1}(C)$ is closed in $X$. A pointwise formulation is also common: $f$ is continuous at $x\in X$ if for every open neighborhood $V$ of $f(x)$ in $Y$, there exists an open neighborhood $U$ of $x$ in $X$ such that
-
-$$
-f(U)\subseteq V.
-$$
-
-> When an open region in the target space is pulled back through the function, it does not turn into a broken or pathological set, but remains a well-behaved local region in the original space.
+A set can be both closed and open at the same time.
 
 ### Compact
 
@@ -104,7 +92,10 @@ Euler Characteristic of sphere, in a polyhedra, the Euler characteristic was cla
 
 A function $f: X\rightarrow Y$ between two topological spaces $(X, \tau_X)$ and $(Y, \tau_Y)$ is said to be continuous if the pre-image of every open set in $Y$ is an open set in $X$.
 
-(*The pre-image of an open set retains its openness.*)
+> The pre-image of an open set retains its openness.
+>
+> When an open region in the target space is pulled back through the function, it does not turn into a broken or pathological set, but remains a well-behaved local region in the original space.
+
 $$
 f^{- 1}(U)\in\tau_X \quad (\forall U\subseteq \tau_Y)
 $$

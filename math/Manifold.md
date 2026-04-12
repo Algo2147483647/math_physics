@@ -23,6 +23,8 @@ $$
 \{(U_i, \phi_i)\}
 $$
 
+> Chart is mapping a small region of the manifold to a region in $\mathbb R^n$, and perform ordinary mathematical analysis within that region.
+
 ### Geodesic
 
 A geodesic is a curve representing in some sense the shortest path between two points in a Riemannian manifold.

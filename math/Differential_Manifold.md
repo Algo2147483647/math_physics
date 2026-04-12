@@ -126,18 +126,136 @@ $$
 
 Christoffel Symbols of the Second Kind is components of derivative operator (connection) in local coordinate system, obtained by raising the index of the first-kind symbols using the inverse metric.
 
-- **基底向量场的协变导数**：在坐标基底 $\{\partial_i\}$ 下，联络作用于基底向量场的表达式为：$\nabla_{\partial_i} \partial_j = \Gamma^k_{ij} \partial_k$. 这表明 $\Gamma^k_{ij}$ 描述了基底向量 $\partial_j$ 沿 $\partial_i$ 方向的变化率。
-- **协变导数的分量公式**：对任意向量场 $Y = Y^j \partial_j$，沿方向 $X = X^i \partial_i$ 的协变导数为 $(\nabla_X Y)^k = X^i \left( \partial_i Y^k + \Gamma^k_{ij} Y^j \right)$
-
+- **Covariant Derivative of Basis Vector Fields**: Under the coordinate basis $\{\partial_i\}$, the expression for the interaction acting on the basis vector field is: $\nabla_{\partial_i} \partial_j = \Gamma^k_{ij} \partial_k$. This shows that $\Gamma^k_{ij}$ describes the rate of change of the basis vector $\partial_j$ along the direction $\partial_i$.
+- **Component Formula of Covariant Derivative**: For any vector field $Y = Y^j \partial_j$, the covariant derivative along the direction $X = X^i \partial_i$ is $(\nabla_X Y)^k = X^i \left( \partial_i Y^k + \Gamma^k_{ij} Y^j \right)$
 
 ### Geodesic
 
+A geodesic is the curve that locally extremizes distance on a manifold.
 $$
 \frac{d^2 x^k}{d\tau^2} + \Gamma^k_{ij} \frac{dx^i}{d\tau} \frac{dx^j}{d\tau} = 0
 $$
 
-- $\frac{d^2 x^k}{d\tau^2}$: 加速度的二阶导数项
-- $\Gamma^k_{ij} \frac{dx^i}{d\tau} \frac{dx^j}{d\tau}$: Christoffel Symbol 的修正, 坐标系弯曲或非惯性效应的修正项
+- $\frac{d^2 x^k}{d\tau^2}$: Second derivative term of acceleration
+- $\Gamma^k_{ij} \frac{dx^i}{d\tau} \frac{dx^j}{d\tau}$: Christoffel symbol correction, correction term for coordinate system curvature or non-inertial effects
+
+> Proof.
+>
+> **Target**: In coordinates $x^\mu(\lambda)$, the metric is $ds^2 = g_{\mu\nu}(x)\, dx^\mu dx^\nu.$ We want the equation satisfied by a curve $x^\mu(\lambda)$ that makes the length stationary.
+>
+> **1. Length functional**
+>
+> For a curve parameterized by $\lambda$, the arc length is
+> $$
+> S[x] = \int ds = \int \sqrt{g_{\mu\nu}(x)\,\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda}}\, d\lambda.
+> $$
+>
+> Let $\dot{x}^\mu = \frac{dx^\mu}{d\lambda}.$ Then the Lagrangian is
+> $$
+> L = \sqrt{g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu }.
+> $$
+> So the variational problem is
+> $$
+> \delta \int L\, d\lambda = 0.
+> $$
+> **2. Euler–Lagrange equation**
+>
+> The Euler–Lagrange equations are
+> $$
+> \frac{d}{d\lambda}\left(\frac{\partial L}{\partial \dot{x}^\rho}\right) - \frac{\partial L}{\partial x^\rho} = 0.
+> $$
+> Derivative with respect to velocity, Since $L = \big(g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu\big)^{1/2},$ we get
+> $$
+> \frac{\partial L}{\partial \dot{x}^\rho} = \frac{1}{2L}\cdot 2g_{\rho\nu}\dot{x}^\nu = \frac{g_{\rho\nu}\dot{x}^\nu}{L}.
+> $$
+> Derivative with respect to position. Because the metric depends on $x$,
+> $$
+> \frac{\partial L}{\partial x^\rho} = \frac{1}{2L}\,\partial_\rho g_{\mu\nu}\,\dot{x}^\mu \dot{x}^\nu,
+> $$
+> where $\partial_\rho g_{\mu\nu} = \frac{\partial g_{\mu\nu}}{\partial x^\rho}.$ Substitute into Euler–Lagrange:
+> $$
+> \frac{d}{d\lambda}\left(\frac{g_{\rho\nu}\dot{x}^\nu}{L}\right) - \frac{1}{2L}\partial_\rho g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu = 0.
+> $$
+> This is already a correct geodesic equation, but it is not yet in the standard form.
+>
+> **3. Use an affine parameter**
+>
+> The square-root Lagrangian is inconvenient. A standard simplification is to choose an **affine parameter** $s$, often proper length or proper time, so that along the curve
+> $$
+> g_{\mu\nu}\frac{dx^\mu}{ds}\frac{dx^\nu}{ds} = \text{constant}.
+> $$
+> Then we may use the equivalent Lagrangian
+> $$
+> L' = \frac12 g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu,
+> $$
+> where now dot means $d/ds$. This gives the same geodesics up to reparameterization. The Euler–Lagrange equation becomes
+> $$
+> \frac{d}{ds}\left(\frac{\partial L'}{\partial \dot{x}^\rho}\right) - \frac{\partial L'}{\partial x^\rho} = 0.
+> $$
+> Compute:
+> $$
+> \begin{aligned}
+> \frac{\partial L'}{\partial \dot{x}^\rho} &= \frac12 \cdot 2 g_{\rho\nu}\dot{x}^\nu = g_{\rho\nu}\dot{x}^\nu \\
+> \frac{\partial L'}{\partial x^\rho} &= \frac12 \partial_\rho g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu
+> \end{aligned}
+> $$
+>
+> $$
+> \Rightarrow \frac{d}{ds}(g_{\rho\nu}\dot{x}^\nu) - \frac12 \partial_\rho g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu = 0.
+> $$
+>
+> Expand the total derivative:
+>
+> $$
+> \begin{aligned}
+> \partial_\sigma g_{\rho\nu}\,\dot{x}^\sigma \dot{x}^\nu + g_{\rho\nu}\ddot{x}^\nu - \frac12 \partial_\rho g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu &= 0.\\
+> \Rightarrow g_{\rho\nu}\ddot{x}^\nu + \partial_\sigma g_{\rho\nu}\,\dot{x}^\sigma \dot{x}^\nu - \frac12 \partial_\rho g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu &= 0.
+> \end{aligned}
+> $$
+>
+> **4. Isolate** $\ddot{x}^\mu$
+>
+> Multiply by the inverse metric $g^{\lambda\rho}$:
+> $$
+> \ddot{x}^\lambda + g^{\lambda\rho}\partial_\sigma g_{\rho\nu}\,\dot{x}^\sigma \dot{x}^\nu - \frac12 g^{\lambda\rho}\partial_\rho g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu = 0.
+> $$
+> Now symmetrize the second term in $\mu,\nu$. Since $\dot{x}^\mu \dot{x}^\nu$ is symmetric,
+> $$
+> g^{\lambda\rho}\partial_\sigma g_{\rho\nu}\,\dot{x}^\sigma \dot{x}^\nu = \frac12 g^{\lambda\rho}\left(\partial_\mu g_{\rho\nu} + \partial_\nu g_{\rho\mu}\right)\dot{x}^\mu \dot{x}^\nu.\\
+> \ddot{x}^\lambda + \frac12 g^{\lambda\rho}\left(\partial_\mu g_{\rho\nu} + \partial_\nu g_{\rho\mu} - \partial_\rho g_{\mu\nu}\right)\dot{x}^\mu \dot{x}^\nu = 0.
+> $$
+> Define the **Christoffel symbols**:
+> $$
+> \Gamma^\lambda_{\mu\nu} = \frac12 g^{\lambda\rho}\left(\partial_\mu g_{\rho\nu} + \partial_\nu g_{\rho\mu} - \partial_\rho g_{\mu\nu}\right).
+> $$
+> Then the geodesic equation takes its standard form, This is the **geodesic equation**.
+> $$
+> \frac{d^2 x^\lambda}{ds^2} + \Gamma^\lambda_{\mu\nu}\frac{dx^\mu}{ds}\frac{dx^\nu}{ds} = 0.
+> $$
+> **5. Interpretation**
+>
+> This equation says that the curve has zero covariant acceleration. In words, the tangent vector is parallel transported along the curve itself. In flat Cartesian coordinates, all Christoffel symbols vanish, so the equation reduces to $\frac{d^2 x^\lambda}{ds^2}=0,$ whose solutions are straight lines.
+> $$
+> \frac{D}{ds}\left(\frac{dx^\lambda}{ds}\right)=0.
+> $$
+> **6. Non-affine parameter form**
+>
+> If the curve is parameterized by a general parameter $\lambda$ rather than an affine one, the equation becomes
+> $$
+> \frac{d^2 x^\lambda}{d\lambda^2} + \Gamma^\lambda_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda} = f(\lambda)\frac{dx^\lambda}{d\lambda},
+> $$
+> for some function $f(\lambda)$. The extra term disappears when $\lambda$ is affine.
+>
+> **Final result**
+>
+> The geodesics of a metric $g_{\mu\nu}$ satisfy
+> $$
+> \frac{d^2 x^\lambda}{ds^2} + \Gamma^\lambda_{\mu\nu}\frac{dx^\mu}{ds}\frac{dx^\nu}{ds} = 0,
+> $$
+> with
+> $$
+> \Gamma^\lambda_{\mu\nu} = \frac12 g^{\lambda\rho}\left(\partial_\mu g_{\rho\nu} + \partial_\nu g_{\rho\mu} - \partial_\rho g_{\mu\nu}\right).
+> $$
 
 ## Include
 

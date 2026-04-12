@@ -65,11 +65,3 @@ def json_to_graph(json_file):
         print(f"无法解析 {json_file} 中的 JSON 数据。")
     return []
 
-
-def get_all_roots(dag):
-    res = set(dag.keys())
-    for value in dag.values():
-        for kid in value.children:
-            res.discard(kid)
-    return list(res)
-

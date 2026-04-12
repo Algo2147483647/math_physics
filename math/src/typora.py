@@ -4,7 +4,6 @@ import os
 
 
 def open_typora(path):
-    # 使用 asyncio 创建子进程
     os.system(
         "C:\\Software\\Typora\\Typora.exe " + path
     )
