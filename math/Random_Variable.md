@@ -7,16 +7,14 @@
 ### Random Variable
 
 $$
-X: Ω \to \mathbb R  \tag{Random Variable}
+X: \Omega \to \mathbb R  \tag{Random Variable}
 $$
-a random variable $X$ is a function from a sample space $Ω$ to the real numbers $\mathbb R$.
+A random variable is a real-valued [random element](./Random_Element.md), equivalently a measurable function from a probability space to the Borel measurable space $(\mathbb R, \mathcal B(\mathbb R))$.
 
-  - $Ω$: sample space
-  - $\mathbb R$: the field of real numbers
+- Note
+  The event set $\{\omega \in \Omega \mid X(\omega) \le x\}$ is often written as $\{X \le x\}$.
 
-- event set $\{ζ | X(ζ) ≤ x\}$, shorthand as $\{X ≤ x\}$.
-
-### Random Vector , Multivariate random variable
+### Random Vector, Multivariate Random Variable
 
 $$
 \boldsymbol X = (X_1, ... , X_n)^T  \tag{Random Vector}
@@ -91,9 +89,7 @@ $$
 
 ## Include
 
-- [Probability_Distribution](./Probability_Distribution.md): property_of
-
 ## Parents
 
-- [Probability_Space](./Probability_Space.md): defined_on
+- [Random_Element](./Random_Element.md): subtype_of
 

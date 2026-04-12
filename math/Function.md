@@ -63,6 +63,8 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 - [Radon_Translation](./Radon_Translation.md): subtype_of
 
+- [Random_Element](./Random_Element.md): subtype_of
+
 - [Real_Value_Function](./Real_Value_Function.md): subtype_of
 
 - [Sequence](./Sequence.md): subtype_of

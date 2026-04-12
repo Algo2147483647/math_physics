@@ -21,6 +21,8 @@ $$
 
 ## Properties
 
+
+
 ## Include
 
 - [Stopping_Time](./Stopping_Time.md): defined_on

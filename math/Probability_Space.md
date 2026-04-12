@@ -16,6 +16,14 @@ A probability space is a [measure space](./Measure_Space.md) consisting of
 - $\mathcal F$: a $\sigma$-algebra on $\Omega$
 - $\mathbb P$: a probability measure on $(\Omega, \mathcal F)$
 
+### Event
+
+An event is a measurable subset of the sample space:
+$$
+A \in \mathcal F \subseteq 2^\Omega.
+$$
+The probability of an event is the value $\mathbb P(A)$.
+
 ### Probability
 
 $$
@@ -106,7 +114,7 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 - [Filtered_Probability_Space](./Filtered_Probability_Space.md): subtype_of
 
-- [Random_Variable](./Random_Variable.md): defined_on
+- [Random_Element](./Random_Element.md): defined_on
 
 - [Stochastic_Process](./Stochastic_Process.md): defined_on
 

@@ -6,7 +6,7 @@
 
 ### Probability Distribution
 
-For a random variable $X: \Omega \to E$ defined on a probability space $(\Omega, \mathcal F, \mathbb P)$, the probability distribution (law) of $X$ is the pushforward probability measure
+For a random element $X: \Omega \to E$ defined on a probability space $(\Omega, \mathcal F, \mathbb P)$, the probability distribution (law) of $X$ is the pushforward probability measure
 $$
 \mathbb P_X(B) = \mathbb P(X^{-1}(B)) = \mathbb P(\{\omega \in \Omega \mid X(\omega) \in B\})
 $$
@@ -315,5 +315,5 @@ $$
 
 ## Parents
 
-- [Random_Variable](./Random_Variable.md): property_of
+- [Random_Element](./Random_Element.md): property_of
 
