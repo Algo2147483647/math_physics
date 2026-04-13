@@ -16,7 +16,7 @@ An automorphism is simply a bijective homomorphism of a mathematical object with
 
 ## Include
 
-- [Field](./Field.md): 
+- [Field](./Field.md): subtype_of
 
 - [Group](./Group.md): subtype_of
 

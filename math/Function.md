@@ -63,7 +63,7 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 
 - [Polynomial_Function](./Polynomial_Function.md): subtype_of
 
-- [Radon_Translation](./Radon_Translation.md): subtype_of
+- [Radon_Transform](./Radon_Transform.md): subtype_of
 
 - [Random_Element](./Random_Element.md): subtype_of
 

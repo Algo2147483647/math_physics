@@ -62,4 +62,5 @@ $$
 
 ## Parents
 
-- [Function](./Function.md): generalized_as
+- [Function](./Function.md): subtype_of
+

@@ -33,6 +33,12 @@ Integral ring is a nonzero commutative [ring](./Ring.md) in which the product of
 
 ### Division with Remainder & Factor
 
+For integers $a, b \in \mathbb Z$ with $b \neq 0$, there exist unique integers $q, r \in \mathbb Z$ such that
+$$
+a = qb + r, \quad 0 \le r < |b|.
+$$
+Division with remainder decomposes an integer into a quotient part and a smaller remainder.
+
 ### Multiplicative Function
 
 - Define  
@@ -68,9 +74,9 @@ No three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for 
 
 ## Include
 
-- [Division_With_Remainder](./Division_With_Remainder.md): property_of
-
 - [Mobius_Function](./Mobius_Function.md): has_domain
+
+- [Prime](./Prime.md): defined_on
 
 - [Rational_Number_Field](./Rational_Number_Field.md): defined_on
 

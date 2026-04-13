@@ -87,3 +87,4 @@ $$
 ## Parents
 
 - [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of
+

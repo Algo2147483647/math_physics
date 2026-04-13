@@ -57,3 +57,4 @@ If vertices remain but none has zero in-degree, then the directed graph contains
 ## Parents
 
 - [Graph](./Graph.md): subtype_of
+

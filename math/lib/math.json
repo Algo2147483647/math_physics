@@ -13,7 +13,7 @@
   },
   "Algebra_Structure": {
     "children": {
-      "Field": "",
+      "Field": "subtype_of",
       "Group": "subtype_of",
       "Lattice": "subtype_of",
       "Ring": "subtype_of"
@@ -171,18 +171,6 @@
       "### Source and Sink\n\nA source is a vertex with no incoming edges. A sink is a vertex with no outgoing edges.\n\nEvery finite nonempty DAG has at least one source and at least one sink.\n\n### Topological Sort\n\nA topological sort of a DAG is a linear ordering of its vertices such that every directed edge points forward in the ordering.\n\nFor an edge\n$$\n(u,v)\\in E,\n$$\nthe vertex $u$ appears before $v$ in the topological order.\n\nA finite directed graph has a topological ordering if and only if it is acyclic.\n\n#### Algorithm\n\nOne standard algorithm repeatedly removes vertices with zero in-degree:\n\n1. Find all vertices with no incoming edges.\n2. Remove one such vertex and append it to the output order.\n3. Remove all outgoing edges from that vertex.\n4. Repeat until no vertices remain.\n\nIf vertices remain but none has zero in-degree, then the directed graph contains a cycle and is not a DAG."
     ]
   },
-  "Division_With_Remainder": {
-    "children": {
-      "Prime": "defined_on"
-    },
-    "define": "> Division with remainder decomposes an integer into a quotient part and a smaller remainder.",
-    "parents": {
-      "Integer_Ring": "property_of"
-    },
-    "properties": [
-      ""
-    ]
-  },
   "Elliptic_Curve": {
     "children": {},
     "define": "> An elliptic curve is a smooth cubic curve equipped with a natural abelian group structure.\n\n$$\ny^2 = x^3 + a x + b\n$$\n\nAn elliptic curve over a field $K$ is defined by an equation of the form as above. where $a, b$ are elements in $K$, and the discriminant $ \\Delta = -16(4a^3 - 27b^2) \\neq 0$. The non-vanishing of the discriminant ensures that the curve has no singularities (i.e., no cusps or self-intersections). ([Cubic Function](./Cubic_Function.md))\n\n<img src=\"assets/EllipticCurveCatalog.svg\" alt=\"EllipticCurveCatalog\" style=\"zoom: 33%;\" />",
@@ -236,7 +224,7 @@
     },
     "define": "> A field is an algebraic structure where addition, subtraction, multiplication, and division by nonzero elements are all possible.\n\n$$\n(G, +, \\cdot)\n$$\n\nField is a [ring](./Ring.md) that satisfies the existence of multiplicative inverses for every nonzero element.\n\n- $(G, +)$ is a commutative group\n\n- $(G \\setminus\\{0\\}, \\cdot)$ is a commutative group\n\n- Distributive law: multiplication is distributive with respect to addition,\n  $$\n  \\begin{align*}\n    a \\cdot (b + c) &= a \\cdot b + a \\cdot c  \\\\\n    (b + c) \\cdot a &= b \\cdot a + c \\cdot a\n  \\end{align*}\n  $$",
     "parents": {
-      "Algebra_Structure": ""
+      "Algebra_Structure": "subtype_of"
     },
     "properties": [
       "### Field extension\n\n$$\nE/F\n$$\n\nA field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$.\n\n### Field Automorphism\n\n$$\n\\begin{align*}\nf(a + b) &= f(a) + f(b) \\\\\nf(a \\cdot b) &= f(a) \\cdot f(b)\n\\end{align*}\n$$\n\n\n\n### Galois Group\n\n$$\nGal(K/F) = (\\{\\phi: K \\to K \\ |\\ \\phi(a) = a, \\forall a \\in F\\}, \\circ)\n$$\n\n**Galois group** of a field extension $K/F$, is the group of all field automorphisms of $K$ that fix $F$ pointwise, and the group operation is function composition operator $\\circ$.\n\n#### Galois Correspondence\n\nFor a field extension $K/F$, **Galois Correspondence** is a one-to-one correspondence  $E \\longleftrightarrow H$ between intermediate fields $E$ (the subfields satisfying $F \\subseteq E \\subseteq K$) and subgroups $H$ of the Galois group $\\text{Gal}(K/F)$. Meanwhile, $E$ is the fixed field of $H$ in $K$, consisting of elements fixed by every automorphism in $H$. Conversely, $H$ is the Galois group $\\operatorname{Gal}(K/E)$, consisting of all $F$-automorphisms of $K$ that fix $E$ pointwise. Under this correspondence, larger subgroups correspond to smaller fixed fields, because a larger subgroup $H$ imposes more constraints (more automorphisms must fix an element), resulting in a smaller set $E$ of elements that can satisfy all these constraints. Galois group and correspondence serves as a bridge, establishing a precise correspondence between the  extension of fields and subgroups of groups.\n\n$$\n\\begin{matrix}\nF & \\subseteq & E & \\subseteq & K \\\\\n& & \\updownarrow\\\\\n\\text{Gal}(K/F) &\\ge & \\text{Gal} (K/E) & \\ge & \\{\\text{id}\\} \\\\\n\\end{matrix}\\\\\n$$\n\n$$\n\\begin{align*}\nE &=  \\{x \\in K \\ |\\ \\sigma(x) = x, \\forall \\sigma\\in \\text{Gal} (K/E)\\}  \\\\\n\\text{Gal} (K/E) &= \\{\\sigma \\in \\text{Gal}(K/F) \\ |\\ \\sigma (x) = x, \\forall x \\in E\\}\n\\end{align*}\n$$"
@@ -284,7 +272,7 @@
       "Laplace_Transform": "subtype_of",
       "Linear_Transformation": "subtype_of",
       "Polynomial_Function": "subtype_of",
-      "Radon_Translation": "subtype_of",
+      "Radon_Transform": "subtype_of",
       "Random_Element": "subtype_of",
       "Real_Value_Function": "subtype_of",
       "Sequence": "subtype_of"
@@ -404,8 +392,8 @@
   },
   "Integer_Ring": {
     "children": {
-      "Division_With_Remainder": "property_of",
       "Mobius_Function": "has_domain",
+      "Prime": "defined_on",
       "Rational_Number_Field": "defined_on"
     },
     "define": "> The integer ring is the ring of whole numbers under ordinary addition and multiplication.\n\nRing of Integers is a kind of Integral Domain (\u6574\u73af).\n$$\n\\mathbb Z\n$$\n\nAn **integer** can be defined as an equivalence class of ordered pairs of natural numbers $(a, b)$, where $a$ and $b$ are [natural numbers](./Natural_Number.md), under the following equivalence relation:\n\n- Two ordered pairs $(a, b)$ and $(c, d)$ are considered equivalent if and only if $a + d = b + c$. (the difference between two natural numbers)\n\n$$\n(\\mathbb Z, +, \\cdot)\n$$\n$$\n\\forall a, b \\in \\mathbb Z, a \\cdot b = 0 \\quad\\Rightarrow\\quad  (a = 0 \\vee b = 0)  \\tag{no zero divisor}\n$$\nIntegral ring is a nonzero commutative [ring](./Ring.md) in which the product of any two nonzero elements is nonzero.\n\n- **Addition:** To add two integers represented by $[a, b]$ and $[c, d]$, define their sum as $[a + c, b + d]$. This is equivalent to adding the two 'positive' parts and the two 'negative' parts separately.\n  \n- **Negation:** The negation of an integer represented by $[a, b]$ is $[b, a]$, reflecting the idea of $ -(a - b) = b - a $.\n  \n- **Multiplication:** To multiply two integers represented by $[a, b]$ and $[c, d]$, define their product as $[ac + bd, ad + bc]$. This captures the distributive property over the components of the ordered pairs.",
@@ -414,7 +402,7 @@
       "Ring": "subtype_of"
     },
     "properties": [
-      "### Division with Remainder & Factor\n\n### Multiplicative Function\n\n- Define  \n  A mapping $f: \\mathbb Z \\to \\mathbb R$, such that\n  $$\n  f(a \\times b) = f(a) f(b) \\quad \\text{when}\\ a, b \\in \\mathbb Z, gcd(a, b) = 1\n  $$\n\n- Property\n  - $f(1) = 1$\n\n- Example\n  * Eular Function\n    - Define  \n      The number of coprimes with $n$ in positive integers less than $n$.\n      $$\n      \\phi(n) = \\text{number}(\\{i\\ |\\ i \\in 1:n, \\text{GCD}(i, n) = 1\\})\n      $$\n\n    - Property\n      $$\n      \\begin{align*}\n        n &= \\prod_i p_i^{k_i}  \\\\\n        \\phi(n) &= n \\prod_{p|n} (1 - 1/p)  \n      \\end{align*}\n      $$\n\n  * [M\u00f6bius Function](./Mobius_Function.md)\n\n### Fermat's Last Theorem\n\nNo three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The cases $n = 1$ and $n = 2$ have been known since antiquity to have infinitely many solutions."
+      "### Division with Remainder & Factor\n\nFor integers $a, b \\in \\mathbb Z$ with $b \\neq 0$, there exist unique integers $q, r \\in \\mathbb Z$ such that\n$$\na = qb + r, \\quad 0 \\le r < |b|.\n$$\nDivision with remainder decomposes an integer into a quotient part and a smaller remainder.\n\n### Multiplicative Function\n\n- Define  \n  A mapping $f: \\mathbb Z \\to \\mathbb R$, such that\n  $$\n  f(a \\times b) = f(a) f(b) \\quad \\text{when}\\ a, b \\in \\mathbb Z, gcd(a, b) = 1\n  $$\n\n- Property\n  - $f(1) = 1$\n\n- Example\n  * Eular Function\n    - Define  \n      The number of coprimes with $n$ in positive integers less than $n$.\n      $$\n      \\phi(n) = \\text{number}(\\{i\\ |\\ i \\in 1:n, \\text{GCD}(i, n) = 1\\})\n      $$\n\n    - Property\n      $$\n      \\begin{align*}\n        n &= \\prod_i p_i^{k_i}  \\\\\n        \\phi(n) &= n \\prod_{p|n} (1 - 1/p)  \n      \\end{align*}\n      $$\n\n  * [M\u00f6bius Function](./Mobius_Function.md)\n\n### Fermat's Last Theorem\n\nNo three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The cases $n = 1$ and $n = 2$ have been known since antiquity to have infinitely many solutions."
     ]
   },
   "Knot": {
@@ -676,7 +664,7 @@
     "children": {},
     "define": "> A prime number is a natural number greater than one whose only positive divisors are one and itself.\n\n$$\np > 1 \\text{ and the only positive divisors of } p \\text{ are } 1 \\text{ and } p\n\\tag{Prime}\n$$\nA prime number is a natural number $p > 1$ that is divisible only by $1$ and itself.",
     "parents": {
-      "Division_With_Remainder": "defined_on"
+      "Integer_Ring": "defined_on"
     },
     "properties": [
       "### Fundamental Theorem of Arithmetic\nAny integer $n$ greater than $1$ can be uniquely expressed in the form of prime $p_i$ product.   \n$$\nn = \\prod_i p_i^{\\alpha_i} \\quad n \\in \\mathbb Z, n > 1\n$$\n\n### Fermat's Little Theorem\n\n$$\na^{p-1} \\equiv 1 \\mod p\n$$\nWhere $p$ is a prime and $a$ is any integer that is not a multiple of $p$.\n\nProperty:\n$$\n\\frac{a}{b} \\mod p \\equiv a \\times b^{p-2} \\mod p\n$$\n\n> Proof\n>\n>\n> $$\n> \\frac{a}{b} \\mod p = a \\times b^{-1} \\mod p  \\\\\n> b^{p-1} \\equiv 1 \\mod p \\\\\n> b \\times b^{p-1} \\equiv 1 \\mod p  \\\\\n> \\Rightarrow \\quad b^{-1} \\equiv b^{p-2}  \\mod p \\\\\n> \\Rightarrow \\quad \\frac{a}{b} \\mod p \\equiv a \\times b^{p-2} \\mod p\n> $$\n\n### Goldbach's Conjecture\n\nevery even natural number greater than 2 is the sum of two prime numbers.\n$$\n\\forall n \\in \\mathbb{Z}^+ \\, (\\, n > 2 \\, \\land \\, \\text{even}(n) \\, ) \\, \\exists \\, p, q \\in \\text{Primes} \\, (\\, n = p + q \\, )\n$$\n\n### Mersenne Prime\n\n$$\nM_n = 2^n - 1  \\tag{Mersenne number}\n$$\nMersenne Prime is a prime number that is one less than a power of two.\n\nProperty:\n- example of mersenne primes\n  |  n   |                                   value |\n  | :--: | --------------------------------------: |\n  |  2   |                                       3 |\n  |  3   |                                       7 |\n  |  5   |                                      31 |\n  |  7   |                                     127 |\n  |  13  |                                    8191 |\n  |  17  |                                  131071 |\n  |  19  |                                  524287 |\n  |  31  |                              2147483647 |\n  |  61  |                     2305843009213693951 |\n  |  89  |             618970019642690137449562111 |\n  | 107  |       162259276829213363391578010288127 |\n  | 127  | 170141183460469231731687303715884105727 |\n\n### Resolving prime factor\n\n- Pollard Rho algorithm\n\n\n### Filter Prime Number from a range of numbers\n\nEuler's Sieve\nFor a numbers range from $2$ to $n$, we aim to sift out all primes from them, through let each composite number be screened by its minimum prime factor.\n\n- Process\n  First, We traverse the numbers $x$ range from $2$ to $n$, we join $x$ into prime set $S_p$ if $x$ is not marked as non-prime.\n\n  Meanwhile, we traversing the current prime table $p \\in S_p$, and mark $p x$ as non-prime. When $p | x$, we should stop traversing the prime table, because that the primes $p' \\in S_p$ large than $p$ are no longer the minimum prime factor of $p' x$ ($p' x = p' p r$)."
@@ -737,9 +725,9 @@
       "- The conjugate of a quaternion is defined as: $q^* = a - b i - c j - d k$.\n\n- Quaternion & Rotation\n  $$\n  q = \\cos(\\frac{\\theta}{2}) + \\sin(\\frac{\\theta}{2})(xi + yj + zk)\n  $$\n  $\\theta$ is the angle of rotation, $x, y, z$ is the unit vector component of the axis of rotation.\n\n  - Spherical linear interpolation"
     ]
   },
-  "Radon_Translation": {
+  "Radon_Transform": {
     "children": {},
-    "define": "> The Radon transform represents a function by its integrals over affine hyperplanes.\n\nFor a function $f(\\boldsymbol x)$ that satisfies the three regularity conditions as above, **Radon Translation** $\\mathcal R f$ is is a [function](./Function.md) (integral transform) defined on the space of straight lines $L \\subset \\mathbb R^2$ by the line integral along each such line as, \n\n- $f(x)$ is continuous.\n- the double integral $\\iint \\frac{|f(x)|}{\\sqrt{x^2 + y^2}} \\mathrm{d}x\\mathrm{d}y$, extending over the whole plane, converges.\n- for any arbitrary point $(x, y)$ on the plane it holds that $\\lim\\limits_{r\\to\\infty} \\int\\limits_{0}^{2\\pi} f(x+r\\cos\\varphi, r + \\sin\\varphi) \\mathrm{d}\\varphi = 0$.\n\n$$\n\\begin{align*}\n\\mathcal R f(L) &= \\int_L f(\\boldsymbol x) |\\mathrm{d} \\boldsymbol x| \\\\\n\\mathcal R f(\\theta, r) &= \\int_{-\\infty}^{+\\infty} f(z \\sin \\theta + r \\cos \\theta, -z \\sin \\theta + r \\cos \\theta) \\mathrm{d} z\n\\end{align*}\n$$\n\n<img src=\"assets/894.png\" alt=\"img\" style=\"zoom:33%;\" />\n\n<img src=\"assets/Radon_transform_sinogram.gif\" alt=\"Radon_transform_sinogram\" style=\"zoom:33%;\" />",
+    "define": "> The Radon transform represents a function by its integrals over affine hyperplanes.\n\nFor a function $f(\\boldsymbol x)$ that satisfies the three regularity conditions as above, **Radon Transform** $\\mathcal R f$ is is a [function](./Function.md) (integral transform) defined on the space of straight lines $L \\subset \\mathbb R^2$ by the line integral along each such line as, \n\n- $f(x)$ is continuous.\n- the double integral $\\iint \\frac{|f(x)|}{\\sqrt{x^2 + y^2}} \\mathrm{d}x\\mathrm{d}y$, extending over the whole plane, converges.\n- for any arbitrary point $(x, y)$ on the plane it holds that $\\lim\\limits_{r\\to\\infty} \\int\\limits_{0}^{2\\pi} f(x+r\\cos\\varphi, r + \\sin\\varphi) \\mathrm{d}\\varphi = 0$.\n\n$$\n\\begin{align*}\n\\mathcal R f(L) &= \\int_L f(\\boldsymbol x) |\\mathrm{d} \\boldsymbol x| \\\\\n\\mathcal R f(\\theta, r) &= \\int_{-\\infty}^{+\\infty} f(z \\sin \\theta + r \\cos \\theta, -z \\sin \\theta + r \\cos \\theta) \\mathrm{d} z\n\\end{align*}\n$$\n\n<img src=\"assets/894.png\" alt=\"img\" style=\"zoom:33%;\" />\n\n<img src=\"assets/Radon_transform_sinogram.gif\" alt=\"Radon_transform_sinogram\" style=\"zoom:33%;\" />",
     "parents": {
       "Function": "subtype_of"
     },

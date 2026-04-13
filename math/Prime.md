@@ -93,5 +93,5 @@ For a numbers range from $2$ to $n$, we aim to sift out all primes from them, th
 
 ## Parents
 
-- [Division_With_Remainder](./Division_With_Remainder.md): defined_on
+- [Integer_Ring](./Integer_Ring.md): defined_on
 

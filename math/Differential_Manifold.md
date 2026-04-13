@@ -498,3 +498,4 @@ For a Riemannian metric, geodesics locally extremize length when parameterized a
 ## Parents
 
 - [Manifold](./Manifold.md): subtype_of
+

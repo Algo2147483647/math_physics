@@ -64,3 +64,4 @@ A complete normed linear space is called a Banach space.
 ## Parents
 
 - [Linear_Space](./Linear_Space.md): subtype_of
+

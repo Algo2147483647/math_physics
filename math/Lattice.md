@@ -99,3 +99,4 @@ A lattice is complete if every subset $S\subseteq L$ has both an infimum and a s
 ## Parents
 
 - [Algebra_Structure](./Algebra_Structure.md): subtype_of
+

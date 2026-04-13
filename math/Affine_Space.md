@@ -21,6 +21,7 @@ that associates to each point $p \in \mathcal{A}$ and each vector $v \in V$ a po
 1. For every point $p \in \mathcal{A}$, $p + 0 = p$, where $0$ is the zero vector in $V$.
 2. For every point $p \in \mathcal{A}$ and all vectors $u, v \in V$, $p + (u + v) = (p + u) + v$.
 3. For any two points $p, q \in \mathcal{A}$, there exists a unique vector $v \in V$ such that $q = p + v$.
+
 ## Properties
 
 ### Affine Set

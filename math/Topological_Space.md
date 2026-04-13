@@ -182,7 +182,6 @@ This is a local description of openness: whether $U$ is open can be checked poin
 > $$
 > The right hand side is a union of open intervals, so it is open in the usual topology. Therefore $U \in \tau_{\mathbb R}$.
 
-
 ## Include
 
 - [Hausdorff_Space](./Hausdorff_Space.md): subtype_of
