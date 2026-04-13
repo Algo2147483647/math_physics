@@ -79,6 +79,69 @@ $$
 c_{ij} = a_{ij} b_{ij}
 $$
 
+#### Matrix Decomposition
+
+Matrix decompositions rewrite a matrix representation of a linear transformation as a product of simpler matrices. They are coordinate-dependent computational tools for solving systems, finding invariant directions, and understanding rank or geometry.
+
+##### LU Decomposition
+
+$$
+A = LU
+$$
+
+The matrix $A$ is decomposed into the product of a lower triangular matrix $L$ and an upper triangular matrix $U$.
+
+##### LDL Decomposition
+
+$$
+A = L D L^T
+$$
+
+For suitable symmetric matrices, $A$ can be decomposed into a lower triangular matrix $L$, a diagonal matrix $D$, and $L^T$.
+
+##### Cholesky Decomposition
+
+$$
+A = G G^T
+$$
+
+If $A$ is symmetric positive definite, then $A$ can be decomposed into the product of a lower triangular matrix $G$ and its transpose.
+
+##### QR Decomposition
+
+$$
+A = QR
+$$
+
+The matrix $A$ is decomposed into the product of an orthogonal matrix $Q$ and an upper triangular matrix $R$.
+
+##### Full Rank Decomposition
+
+$$
+A = FG
+$$
+
+If $\operatorname{rank}(A)=r$, then $A$ can be written as the product of an $m\times r$ matrix $F$ and an $r\times n$ matrix $G$.
+
+##### Eigenvalue Decomposition
+
+For a square matrix $A\in F^{n\times n}$,
+$$
+A=Q\Lambda Q^{-1}.
+$$
+
+If $A$ is diagonalizable, $Q$ is formed from eigenvectors and $\Lambda$ is the diagonal matrix of eigenvalues.
+
+##### Singular Value Decomposition
+
+For a real or complex matrix $A\in F^{m\times n}$,
+$$
+A=U\Sigma V^{\mathrm H}.
+$$
+
+- $U$ and $V$ are orthogonal matrices over $\mathbb R$, or unitary matrices over $\mathbb C$.
+- $\Sigma$ is a diagonal rectangular matrix whose diagonal entries are the singular values.
+
 ### Range 
 $$
 Range(T)=\{T x | x \in V\}
