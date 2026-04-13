@@ -2,6 +2,8 @@
 
 [TOC]
 
+This page currently collects introductory quantum ideas and relativistic wave equations. For the systematic nonrelativistic framework, see [quantum mechanics](./quantum%20mechanics.md). For quantum ensembles and Bose/Fermi statistics, see [quantum statistical mechanics](./quantum%20statistical%20mechanics.md).
+
 
 
 ## Principles
@@ -154,3 +156,11 @@ $$
 $$
 E_n = - \frac{13.6 \, \text{eV}}{n^2}
 $$
+
+## Connections
+
+- [quantum mechanics](./quantum%20mechanics.md)
+- [quantum angular momentum and spin](./quantum%20angular%20momentum%20and%20spin.md)
+- [quantum approximation and scattering](./quantum%20approximation%20and%20scattering.md)
+- [quantum information and open systems](./quantum%20information%20and%20open%20systems.md)
+- [quantum statistical mechanics](./quantum%20statistical%20mechanics.md)

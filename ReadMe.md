@@ -28,7 +28,7 @@ The goal of this repository is not to collect isolated formulas. It is to keep c
 1. Start from [`math/Set.md`](./math/Set.md), [`math/Logic.md`](./math/Logic.md), and [`math/Relation.md`](./math/Relation.md) to enter the mathematical graph.
 2. Move through algebra, topology, measure/probability, functions, transformations, manifolds, and tensors as needed.
 3. Use [`applied mathematics/`](./applied%20mathematics/) when the question is problem-driven rather than structure-driven.
-4. For physics, begin with [`physics/basic principles of mechanics.md`](./physics/basic%20principles%20of%20mechanics.md), then read the spacetime and field notes.
+4. For physics, begin with [`physics/basic principles of mechanics.md`](./physics/basic%20principles%20of%20mechanics.md), then read the spacetime, field, statistical mechanics, and quantum mechanics notes.
 
 ## Mathematics
 
@@ -207,6 +207,7 @@ Symmetry gives conservation laws through Noether's theorem:
   $$
 
 - **Quantum field**: fields become the fundamental degrees of freedom.
+- **Quantum mechanics**: states live in Hilbert space, observables are operators, and probabilities follow from amplitudes.
 - **Gravitational field**: spacetime geometry becomes dynamical.
 
 ### Complex Systems
