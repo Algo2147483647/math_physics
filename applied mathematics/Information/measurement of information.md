@@ -1,184 +1,337 @@
-# Measurement of Information
+# Measurement Of Information
 
 [TOC]
 
+## Problem
 
-## Information Measurement of Event
+Information measurement is designed to solve the problem of **quantifying uncertainty, surprise, dependence, and information flow**.
+
+- How much information is gained when an event occurs?
+- How uncertain is a random variable before observing it?
+- How much does one variable tell us about another?
+- How much extra cost is paid when using the wrong probability model?
+
+Information theory assigns numerical quantities to probability distributions and statistical relationships.
+
+## Core Idea
+
+Information is tied to uncertainty.
+
+Rare events carry more self-information than common events. A distribution with many equally likely outcomes has more entropy than one concentrated on a few outcomes.
+
+The practical essence of information measurement is:
+
+1. **Measure surprise of one event with self-information**
+2. **Measure average uncertainty with entropy**
+3. **Measure dependence with mutual information**
+4. **Measure model mismatch with divergence or cross entropy**
+
+Unless otherwise stated, logarithms base $2$ give units of bits, and natural logarithms give units of nats.
+
+## Solution
 
 ### Self-Information
 
-If a sequence of symmetric functions $H_m(p1, p_2,..., p_m)$ satisfies the following properties:
-
-- Normalization: $H_2(1/2, 1/2) = 1$
-- Continuity: $H_2(p, 1 - p)$ is a continuous function of $p$
-- Grouping: $H_m(p_1, p_2,..., p_m) = H_{m-1}(p_1 + p_2, p_3, ..., p_m) + (p1 + p2) H_2(\frac{p_1}{p_1 + p_2},\frac{p_2}{p_1 + p_2})$ 
-
-prove that Hm must be of the form:
-
+For an event $x$ with probability $P(x)$, the self-information is:
 $$
-I(x) = -\log \mathbb P(x)
-$$
-Before an event occurs, Uncertainty of event occurrence; After an event occurs, the amount of information contained in the event, and the amount of information required to remove uncertainty.
-
-#### Joint Self-Information
-
-$$
-I(x, y) = -\log \mathbb P(x, y)
-$$
-The amount of information provided after events $x, y$ occur simultaneously.
-
-#### Conditional Self-Information
-
-$$
-I(x|y) = -\log \mathbb P(x|y)
-$$
-The amount of information that event x can provide when event y has occurred.
-
-### Mutual Information 
-
-$$
-I(x;y) = \log\frac{\mathbb P(x|y)}{\mathbb P(x)}
-$$
-The degree of statistical correlation between two random events $x, y$; 
-The amount of information about event $x$ that can be provided after event $y$ occurs; 
-Change of uncertainty of event $x$ after event $y$.
-
-#### Conditional Mutual Information
-
-$$
-I(x;y|z) = -\log\frac{\mathbb P(x|y, z)}{\mathbb P(x|z)}
+I(x) = -\log P(x)
 $$
 
-Property:
-- $I(x;y) = I(x) - I(x|y)$  
+Before the event occurs, this measures uncertainty. After the event occurs, it measures the information gained.
 
-## Information Measurement of Event Set 
+If $P(x)$ is small, then $I(x)$ is large.
 
-### Entropy, Average Self-Information
+### Joint Self-Information
 
+For two events $x$ and $y$:
 $$
-\begin{align*}
-  H(X) &= \mathbb E_{\mathbb P(x)} (I(x))  \tag{Discrete Set}\\
-    &= -\sum_x \mathbb P(x)\log \mathbb P(x)  \\
-  h(X) &= -\mathbb E_{\mathbb P(x)}(\log \mathbb P(x)) \tag{Differential Entropy, Continuous set}\\
-    &=-\int \mathbb P(x) \log \mathbb P(x) \mathrm d x
-\end{align*}
+I(x,y) = -\log P(x,y)
 $$
 
-For the Discrete set, the average uncertainty of the information source; the average amount of information provided by each source symbol; the amount of information required to remove the average uncertainty of the information source  
+This is the information gained when both events occur together.
 
-#### Property
+### Conditional Self-Information
 
-**Maximum entropy probability distribution**
-
-**Maximum Entropy with limited amplitude**: The Maximum entropy probability distribution with limited amplitude is Uniform distribution.
+Given that $y$ has occurred:
 $$
-h(X^N) ≤ \sum_{i=1}^N \log(b_i - a_i)
+I(x|y) = -\log P(x|y)
 $$
 
+This is the remaining surprise of $x$ after knowing $y$.
 
-**Maximum Entropy with limited power**: The Maximum entropy probability distribution with limited power is Gauss distribution. 
+### Entropy
+
+For a discrete random variable $X$:
 $$
-h(X^N) ≤ \frac{N}{2} \log(2 \pi |\sigma |^{\frac{1}{N}})
-$$
-#### Include
-
-* Joint Entropy 
-  $$
-  \begin{align*}
-    H(XY) &= \mathbb E_{\mathbb P(xy)} (I(xy))   \tag{Discrete Set}\\
-      &= -\sum_x \sum_y \mathbb P(xy) \log \mathbb P(xy)  \\
-    h(x^N) &=-E_{\mathbb P(x)}(\log \mathbb P(x))   \tag{Continuous set}\\
-      &=-\int_x \mathbb P(x) \log \mathbb P(x) \mathrm d x
-  \end{align*}
-  $$
-  
-* Conditional Entropy 
-  $$
-  \begin{align*}
-    H(Y|X) &= \mathbb E_{\mathbb P(xy)} (I(y|x))   \tag{Discrete Set}\\
-      &= -\sum_x \sum_y \mathbb P(xy) \log \mathbb P(y|x)  \\
-      &= \sum_x \mathbb P(x) H(Y|x)  \\
-    h(X|Y) &=-E_{\mathbb P(xy)}(\log \mathbb P(x|y))  \tag{Continuous set}\\
-      &=-\iint \mathbb P(xy) \log \mathbb P(x|y) \mathrm d x \mathrm d y
-  \end{align*}
-  $$
-  
-* Cross Entropy
-  $$
-  \begin{align*}
-    D(\mathbb P || \mathbb Q) &= \sum_x \mathbb P(x) \log \frac{\mathbb P(x)}{\mathbb Q(x)}  \tag{Discrete Set}\\
-    D(\mathbb P || \mathbb Q) &= \int \mathbb P(x) \log \frac{\mathbb P(x)}{\mathbb Q(x)}\mathrm d x  \tag{Continuous set}
-  \end{align*}
-  $$
-
-#### Example 
-
-- Entropy of discrete time Gauss information source
-    $$
-    \begin{align*}
-      h(X) &= \frac{1}{2} \log (2 \pi e \sigma ^2)  \tag{1D}\\
-      h(X) &= \frac{1}{2} \log (2 \pi e \sigma ^2)  \tag{Multi-dim independence}\\
-      h(x^N)&=\frac{N}{2} \log (2 \pi e |\sigma |^{\frac{1}{N}})  \tag{Multi-dim correlation}
-    \end{align*}
-    $$
-
-> Proof: **Entropy of discrete time Gauss information source**
-> 1D:  
-> $$
-> \begin{align*}
->   h(x) &= -E_{\mathbb P(x)} (\log \mathbb P(x))  \\
->     &= -E_{\mathbb P(x)} (-\frac{1}{2} \log(2\pi \sigma ^2) - \log e · \frac{(x-\mu)^2}{2\sigma ^2})  \\
->     &= \frac{1}{2} \log(2\pi \sigma ^2) + \log e · \frac{\mathbb E_{\mathbb P(x)} ((x-\mu)^2)}{2\sigma ^2}  \\
->     &= \frac{1}{2} \log(2\pi \sigma ^2) + \log e · \frac{\sigma ^2}{2 \sigma ^2}  \\
->     &= \frac{1}{2} \log(2\pi e \sigma ^2)
-> \end{align*}
-> $$
->
-> 
-
-### Average Mutual Information
-
-$$
-\begin{align*}
-  I(X;Y) &= \mathbb E_{\mathbb P(xy)} (I(x;y))   \tag{Discrete Set}\\
-    &= \sum_{x,y} \mathbb P(xy) I(x;y)  \\
-    &=\sum_{x, y} \mathbb P(x) \mathbb P(y|x) \log \frac{\mathbb P(y|x)}{\mathbb P(y)}  \\
-  I(X;Y) &= Sup_{P, Q} I([X]_P ;[Y]_Q)  \tag{Continuous set}
-\end{align*}
+H(X) = \mathbb{E}_{P(x)}[I(x)]
 $$
 
-### Set-Event Mutual Information
-
+so:
 $$
-I(X;Y) = \mathbb E_{\mathbb P(y|x)}(I(x;y)) = \sum_y \mathbb P(y|x) \log \frac{\mathbb P(y|x)}{\mathbb P(y)}
-$$
-
-The amount of information provided by event x about set Y.
-
-### Average Conditional Mutual Information
-
-$$
-\begin{align*}
-  I(X;Y|Z) &= \mathbb E_{\mathbb P(xyz)} (I(x;y|z))  \\
-    &=\sum_{x,y,z} \mathbb P(xyz) \log \frac{\mathbb P(x|yz)}{\mathbb P(x|z)}
-\end{align*}
+H(X) = -\sum_x P(x)\log P(x)
 $$
 
-### Mutual Information of Discrete Set & Continuous Set
+Entropy is the average uncertainty of the source.
 
-Mutual Information of Discrete Set & Continuous Set 
+### Differential Entropy
+
+For a continuous random variable $X$ with density $p(x)$:
 $$
-\begin{align*}
-  I(X;Y) &= \log \frac{q(x|y)}{p(x)}  \\
-    &= \log \frac{p(y|x)}{q(y)}
-\end{align*}
-$$
-Average Mutual Information of Discrete Set & Continuous Set 
-$$
-\begin{align*}
-  I(X;Y) &= \mathbb E_{p(x) p(y|x)}\left(\log \frac{p(y|x)}{q(y)}\right)  \\
-    &= \sum_x p(x) \int p(y|x) \log \frac{p(y|x)}{q(y)}\mathrm d y
-\end{align*}
+h(X) = -\int p(x)\log p(x)\,dx
 $$
 
+Differential entropy is not exactly the same kind of quantity as discrete entropy. It can be negative and is not invariant under changes of coordinates.
+
+### Joint Entropy
+
+For discrete random variables $X$ and $Y$:
+$$
+H(X,Y) = -\sum_x\sum_y P(x,y)\log P(x,y)
+$$
+
+It measures the uncertainty of the pair.
+
+### Conditional Entropy
+
+The conditional entropy of $Y$ given $X$ is:
+$$
+H(Y|X)
+=
+-\sum_x\sum_y P(x,y)\log P(y|x)
+$$
+
+It can also be written as:
+$$
+H(Y|X) = \sum_x P(x)H(Y|X=x)
+$$
+
+Conditional entropy measures the remaining uncertainty of $Y$ after observing $X$.
+
+### Chain Rule
+
+Entropy satisfies:
+$$
+H(X,Y) = H(X) + H(Y|X)
+$$
+
+More generally:
+$$
+H(X_1,\dots,X_n)
+=
+\sum_{i=1}^{n} H(X_i|X_1,\dots,X_{i-1})
+$$
+
+### Mutual Information
+
+The pointwise mutual information between events $x$ and $y$ is:
+$$
+i(x;y)
+=
+\log\frac{P(x,y)}{P(x)P(y)}
+=
+\log\frac{P(x|y)}{P(x)}
+=
+\log\frac{P(y|x)}{P(y)}
+$$
+
+It measures how much observing one event changes the likelihood of the other.
+
+The average mutual information is:
+$$
+I(X;Y)
+=
+\sum_{x,y}P(x,y)\log\frac{P(x,y)}{P(x)P(y)}
+$$
+
+Equivalently:
+$$
+I(X;Y) = H(X) - H(X|Y)
+$$
+
+and:
+$$
+I(X;Y) = H(Y) - H(Y|X)
+$$
+
+### Conditional Mutual Information
+
+The conditional mutual information is:
+$$
+I(X;Y|Z)
+=
+\sum_{x,y,z}P(x,y,z)
+\log
+\frac{P(x,y|z)}{P(x|z)P(y|z)}
+$$
+
+Equivalently:
+$$
+I(X;Y|Z) = H(X|Z) - H(X|Y,Z)
+$$
+
+It measures how much $Y$ tells us about $X$ after $Z$ is already known.
+
+### Kullback-Leibler Divergence
+
+The KL divergence from $Q$ to $P$ is:
+$$
+D(P\|Q)
+=
+\sum_x P(x)\log\frac{P(x)}{Q(x)}
+$$
+
+For continuous densities:
+$$
+D(P\|Q)
+=
+\int p(x)\log\frac{p(x)}{q(x)}\,dx
+$$
+
+It measures the extra coding cost, on average, when data generated by $P$ is modeled using $Q$.
+
+KL divergence is nonnegative, but it is not symmetric and is not a metric.
+
+### Cross Entropy
+
+The cross entropy of $P$ under model $Q$ is:
+$$
+H(P,Q) = -\sum_x P(x)\log Q(x)
+$$
+
+It relates to entropy and KL divergence:
+$$
+H(P,Q) = H(P) + D(P\|Q)
+$$
+
+### Gaussian Differential Entropy
+
+For a one-dimensional Gaussian:
+$$
+X \sim \mathcal{N}(\mu,\sigma^2)
+$$
+
+the differential entropy is:
+$$
+h(X) = \frac{1}{2}\log(2\pi e\sigma^2)
+$$
+
+For a multivariate Gaussian with covariance matrix $\Sigma$ in $\mathbb{R}^N$:
+$$
+h(X)
+=
+\frac{1}{2}\log\left((2\pi e)^N|\Sigma|\right)
+$$
+
+### Maximum Entropy
+
+Maximum entropy distributions depend on constraints.
+
+If a continuous variable is restricted to an interval $[a,b]$, the maximum entropy distribution is uniform:
+$$
+h(X) \le \log(b-a)
+$$
+
+For $N$ independent bounded variables $X_i \in [a_i,b_i]$:
+$$
+h(X^N) \le \sum_{i=1}^{N}\log(b_i-a_i)
+$$
+
+With fixed covariance $\Sigma$, the Gaussian distribution has maximum differential entropy:
+$$
+h(X)
+\le
+\frac{1}{2}\log\left((2\pi e)^N|\Sigma|\right)
+$$
+
+### Mixed Discrete And Continuous Variables
+
+If $X$ is discrete and $Y$ is continuous with conditional density $p(y|x)$, then:
+$$
+I(X;Y)
+=
+\sum_x P(x)\int p(y|x)
+\log\frac{p(y|x)}{p(y)}\,dy
+$$
+
+where:
+$$
+p(y) = \sum_x P(x)p(y|x)
+$$
+
+##  Boundaries
+
+### Logarithm Base Changes Units
+
+Base $2$ logarithms give bits. Natural logarithms give nats.
+
+Changing the base rescales all information values.
+
+### Zero Probabilities Need Care
+
+Terms with $P(x)=0$ are usually treated as contributing $0$ to entropy because:
+$$
+\lim_{p\to 0^+} p\log p = 0
+$$
+
+But KL divergence is infinite if $P(x)>0$ and $Q(x)=0$.
+
+### Differential Entropy Is Not Discrete Entropy
+
+Differential entropy can be negative and changes under coordinate transformations.
+
+Mutual information and KL divergence are usually more invariant and operationally meaningful for continuous variables.
+
+### Pointwise Mutual Information Can Be Negative
+
+Average mutual information is nonnegative, but pointwise mutual information $i(x;y)$ can be negative when observing $y$ makes $x$ less likely.
+
+### Independence Creates Zero Mutual Information
+
+If $X$ and $Y$ are independent:
+$$
+I(X;Y)=0
+$$
+
+The converse also holds for standard probability spaces.
+
+## Cost
+
+The main cost of information measurement lies in the trade-off between **precise probabilistic modeling** and **estimation from finite data**.
+
+### Time Cost
+
+For discrete distributions:
+
+- entropy over $n$ outcomes: **O(n)**
+- joint entropy over $n \times m$ outcomes: **O(nm)**
+- mutual information from a joint table: **O(nm)**
+
+For continuous variables, costs depend on density estimation, integration, or sampling methods.
+
+### Space Cost
+
+Storing a probability table over $n$ outcomes requires:
+$$
+O(n)
+$$
+
+A joint table over two variables with $n$ and $m$ states requires:
+$$
+O(nm)
+$$
+
+High-dimensional probability tables grow exponentially unless structure is used.
+
+### Engineering Cost
+
+In real systems, using information measures requires careful decisions about:
+
+- probability estimation
+- binning or density modeling
+- smoothing zero counts
+- logarithm base
+- discrete versus continuous variables
+- finite-sample bias
+- numerical stability
+
+So information formulas are compact, but reliable measurement depends on the quality of the probability model.

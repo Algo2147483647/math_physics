@@ -4,84 +4,236 @@
 
 ## Problem
 
-### Context
+Compressed sensing is designed to solve the problem of **recovering a sparse or compressible signal from far fewer linear measurements than its ambient dimension**.
 
-如何从少量的线性测量中重建一个稀疏或可压缩的信号？
+- How can a high-dimensional signal be reconstructed from a small number of measurements?
+- How should the measurement matrix be designed?
+- How can the sparse solution be recovered efficiently?
 
-
-
-- How to design $A$
-- How to solve $x$
-
-
+The measurement model is:
 $$
-\min_{\boldsymbol x} \quad & ||\boldsymbol x||_0 \\
-s.t. \quad & \boldsymbol A \boldsymbol x = \boldsymbol b
+b = Ax
 $$
 
-- $A \in \mathbb C^{m\times n}$
-- $\boldsymbol x \in \mathbb C^n$
-- $\boldsymbol b \in \mathbb C^m, m << n$
+where:
 
-求有无穷多解的线性方程问题.
+- $A \in \mathbb{C}^{m \times n}$ is the measurement matrix
+- $x \in \mathbb{C}^n$ is the unknown signal
+- $b \in \mathbb{C}^m$ is the observed measurement vector
+- $m \ll n$
 
-简化: L0范数非凸且问题为NP-hard, 通过转换为L1范数问题, 将问题简化:
+Since the system is underdetermined, there are usually infinitely many solutions without additional assumptions.
+
+## Core Idea
+
+Compressed sensing assumes that the desired signal is sparse, or sparse after a transform.
+
+A vector $x$ is $s$-sparse if it has at most $s$ nonzero entries:
 $$
-\min_{\boldsymbol x} \quad & ||\boldsymbol x||_1 = \sum_{i=1}^n |x_i|\\
-s.t. \quad & \boldsymbol A \boldsymbol x = \boldsymbol b
+\|x\|_0 \le s
 $$
 
-## Resolution
-
-Restricted Isometry Property
+The ideal recovery problem is:
 $$
-(1 - \delta) ||\boldsymbol x|| ≤ ||\boldsymbol A \boldsymbol x|| ≤ (1 + \delta) ||\boldsymbol x||
+\begin{aligned}
+\min_x \quad & \|x\|_0 \\
+\text{s.t.} \quad & Ax = b
+\end{aligned}
 $$
 
-- isometry constant
+However, $\ell_0$ minimization is non-convex and generally NP-hard.
+
+The practical essence of compressed sensing is:
+
+1. **Use fewer measurements than the signal dimension**
+2. **Exploit sparsity to make recovery possible**
+3. **Replace hard sparse recovery with convex or greedy algorithms**
+
+## Solution
+
+### Basis Pursuit
+
+A common relaxation replaces the $\ell_0$ objective with the $\ell_1$ norm:
+$$
+\begin{aligned}
+\min_x \quad & \|x\|_1 = \sum_{i=1}^{n}|x_i| \\
+\text{s.t.} \quad & Ax = b
+\end{aligned}
+$$
+
+This problem is convex and often recovers the same sparse solution when the measurement matrix is well behaved.
+
+### Noisy Measurements
+
+If measurements contain noise:
+$$
+b = Ax + e
+$$
+
+then exact equality is too strict. A common formulation is:
+$$
+\begin{aligned}
+\min_x \quad & \|x\|_1 \\
+\text{s.t.} \quad & \|Ax-b\|_2 \le \epsilon
+\end{aligned}
+$$
+
+Another common form is LASSO:
+$$
+\min_x \frac{1}{2}\|Ax-b\|_2^2 + \lambda\|x\|_1
+$$
+
+### Restricted Isometry Property
+
+The restricted isometry property states that $A$ approximately preserves the length of sparse vectors.
+
+For every $s$-sparse vector $x$:
+$$
+(1-\delta_s)\|x\|_2^2
+\le
+\|Ax\|_2^2
+\le
+(1+\delta_s)\|x\|_2^2
+$$
+
+where $\delta_s$ is the restricted isometry constant.
+
+This means sparse vectors do not collapse or distort too much under the measurement map.
 
 ### Orthogonal Matching Pursuit
 
-每次迭代选取一个与信号最匹配的解来逐步逼近原始信号，并计算信号的残差，然后从残差中找出最优的解。
+Orthogonal Matching Pursuit is a greedy sparse recovery algorithm.
 
+Let:
 $$
-\begin{align*}
-\boldsymbol A &= (\boldsymbol a_1, ..., \boldsymbol a_n)\\
-\hat{\boldsymbol A} &= (\frac{\boldsymbol a_1}{||\boldsymbol a_1||}, ..., \frac{\boldsymbol a_n}{||\boldsymbol a_n||})
-\end{align*}
-$$
-$$
-\boldsymbol w = \boldsymbol A^T \boldsymbol b = \left(\begin{matrix} \hat{\boldsymbol a_1}^T \boldsymbol b \\ \vdots \\ \hat{\boldsymbol a_n}^T \boldsymbol b \end{matrix}\right)
-$$
-**步骤**
-
-- 初始化
-$$
-\begin{align*}
-\boldsymbol r_0 &\gets \boldsymbol b\\
-Λ_0 &\gets \emptyset \\
-\boldsymbol x_0 &\gets \boldsymbol 0_{n}
-\end{align*}
-$$
-- 迭代
-$$
-for\ k \gets 1:s
-$$
-- 计算贡献度，并找到贡献最大的基向量，
-$$
-Λ_k = Λ_{k-1} \cap \{ \arg\max_{i \in 1:n, i \notin Λ_{k-1}} |\boldsymbol a_i^T \boldsymbol r_{k-1}| \}
-$$
-$$
-\boldsymbol A_k = \boldsymbol A_{Λ_k}
+A = (a_1,\dots,a_n)
 $$
 
-- 计算残差, 最小均方误差
-
+and assume the columns are normalized:
 $$
-\begin{align*}
-\boldsymbol x_k(i \in Λ_k) &\gets \arg\min_{\boldsymbol x} ||\boldsymbol A_k \boldsymbol x - \boldsymbol b||_2 = \boldsymbol A_k^+ \boldsymbol b\\
-\boldsymbol x_k(i \notin Λ_k) &\gets 0\\
-\boldsymbol r_k &\gets \boldsymbol b - \boldsymbol A \boldsymbol x_k
-\end{align*}
+\hat{a}_i = \frac{a_i}{\|a_i\|_2}
 $$
 
+OMP repeatedly chooses the column most correlated with the current residual.
+
+### OMP Algorithm
+
+Initialize:
+$$
+\begin{aligned}
+r_0 &\gets b \\
+\Lambda_0 &\gets \emptyset \\
+x_0 &\gets 0
+\end{aligned}
+$$
+
+For $k = 1,\dots,s$:
+
+1. Select the index with largest correlation:
+   $$
+   i_k =
+   \arg\max_{i \notin \Lambda_{k-1}}
+   |a_i^*r_{k-1}|
+   $$
+
+2. Update the support:
+   $$
+   \Lambda_k = \Lambda_{k-1} \cup \{i_k\}
+   $$
+
+3. Solve the least-squares problem on the selected support:
+   $$
+   x_k|_{\Lambda_k}
+   =
+   \arg\min_z \|A_{\Lambda_k}z-b\|_2
+   =
+   A_{\Lambda_k}^{+}b
+   $$
+
+4. Set unselected coefficients to zero:
+   $$
+   x_k|_{\Lambda_k^c} = 0
+   $$
+
+5. Update the residual:
+   $$
+   r_k = b - Ax_k
+   $$
+
+Stop when the sparsity level is reached, the residual is small, or the correlation is below a threshold.
+
+### Measurement Matrix Design
+
+Good compressed sensing matrices should make sparse signals distinguishable.
+
+Common choices include:
+
+- random Gaussian matrices
+- random Bernoulli matrices
+- partial Fourier matrices
+- incoherent sensing bases
+
+In practice, measurement design is often constrained by the physical system.
+
+##  Boundaries
+
+### Sparsity Is Required
+
+Compressed sensing works when the signal is sparse or compressible in a known basis.
+
+If the signal is dense in every useful basis, few measurements are not enough.
+
+### Matrix Quality Matters
+
+Recovery depends on properties such as:
+
+- restricted isometry
+- incoherence
+- low column correlation
+- sufficient number of measurements
+
+Poor measurement matrices can make different sparse signals produce the same measurements.
+
+### Noise Reduces Exact Recovery
+
+With noise, the goal becomes stable approximation rather than exact reconstruction.
+
+The recovered signal may be close but not identical.
+
+### Algorithms Have Different Trade-Offs
+
+Convex optimization methods are robust but may be expensive. Greedy methods are often faster but can fail when correlations are misleading.
+
+## Cost
+
+The main cost of compressed sensing lies in the trade-off between **fewer measurements** and **more difficult reconstruction**.
+
+### Time Cost
+
+- Forming measurements: depends on $A$
+- Basis pursuit: polynomial time, but often expensive for large $n$
+- LASSO solvers: iterative, cost depends on sparsity and conditioning
+- OMP with sparsity $s$: roughly **O(smn)** plus least-squares updates
+
+### Space Cost
+
+Storing a dense measurement matrix costs:
+$$
+O(mn)
+$$
+
+Structured matrices such as partial Fourier operators can reduce storage and accelerate multiplication.
+
+### Engineering Cost
+
+In real systems, compressed sensing requires careful decisions about:
+
+- sparsifying basis
+- measurement design
+- noise model
+- recovery algorithm
+- stopping criterion
+- regularization parameter
+- validation of reconstruction quality
+
+So compressed sensing saves measurements by spending structure, assumptions, and reconstruction computation.
