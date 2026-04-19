@@ -1,7 +1,17 @@
-# Numerical Calculations
+# Algorithm
 
 [TOC]
 
-Data structure is a collection of mathematical objects and their relationships.
+## Problem
 
-computer algorithm is characterized by seriality and linearity. Algorithms need to be executed serially step by step, while data structures are essentially linear tables.
+Data structure is a collection of mathematical objects and their relationships, while data structures are essentially linear tables.
+
+Algorithm is characterized by seriality and linearity. Algorithms need to be executed serially step by step.
+
+## Core Idea
+
+## Solution
+
+##  Boundaries
+
+## Cost
