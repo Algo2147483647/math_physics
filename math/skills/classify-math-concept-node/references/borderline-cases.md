@@ -22,7 +22,7 @@ This skill supports two policy levels. Default to `STRICT` unless explicitly tol
 
 Core object classes should become nodes by default.
 
-For specialized object classes, use a more tolerant default than before.
+`STRICT` is the default policy even when some specialized object classes become nodes. In this skill, `STRICT` already allows a specialized object class to become a node when it is mathematically classical, frequently used, or a stable subject of its own local theory.
 
 Create a node under `STRICT` when the specialized object class is:
 
@@ -52,7 +52,7 @@ Use `STRICT` when ontology compression and consistency are more important than d
 
 ### PERMISSIVE
 
-Allow specialized object classes to become nodes by default if they function as stable central discourse subjects in mathematical practice.
+Allow broader node creation for specialized object classes than `STRICT` does. If a specialized object class functions as a stable central discourse subject in mathematical practice, `PERMISSIVE` will usually create a node unless there is a strong repository-specific reason not to.
 
 Examples that may become nodes under `PERMISSIVE`:
 
@@ -62,7 +62,7 @@ Examples that may become nodes under `PERMISSIVE`:
 - `Lie group`
 - `Riemannian manifold`
 
-Use `PERMISSIVE` only if the repository explicitly allows specialized object classes as nodes.
+Use `PERMISSIVE` only if the repository explicitly allows broader splitting of specialized object classes into nodes.
 
 If policy is unspecified, use `STRICT`.
 
@@ -105,7 +105,9 @@ Practical defaults:
 - `Banach space` -> usually create node
 - `Hilbert space` -> usually create node
 
-If the repository has no explicit override, choose `STRICT`, but apply the tolerant rule above for classical or frequently used specialized object classes.
+If the repository has no explicit override, choose `STRICT`. That still means creating nodes for classical or frequently used specialized object classes; `PERMISSIVE` is only for broader splitting beyond that default.
+
+If a candidate sits near the boundary between specialized object class, attached structure, and standard construction, and the written policy does not settle the case, request human judgment instead of forcing an unstable default.
 
 ## Batch Consistency Rules
 

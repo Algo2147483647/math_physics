@@ -26,10 +26,10 @@ Apply the following defaults:
 
 ## Policy
 
-Default to `STRICT` unless the repository explicitly allows specialized object classes as nodes.
+Default to `STRICT`.
 
-- Use `STRICT` when ontology compression and consistency matter more than disciplinary convenience.
-- Use `PERMISSIVE` only when the repository explicitly allows specialized object classes to become nodes.
+- Under `STRICT`, create nodes for core object classes by default. Also allow a specialized object class to become a node when it is mathematically classical, frequently used, or a stable subject of mathematical discourse. Otherwise, merge it upward into the nearest appropriate parent object.
+- Use `PERMISSIVE` only when the repository explicitly allows broader node creation for specialized object classes beyond the `STRICT` default above.
 
 When classifying specialized or ambiguous concepts such as `Banach space`, `Hilbert space`, or `Riemannian manifold`, read [references/borderline-cases.md](references/borderline-cases.md).
 
@@ -120,7 +120,7 @@ If the concept is object-like but specialized or policy-sensitive, first classif
 
 Then apply the following rule:
 
-- If it is mathematically classical, frequently used, or a stable central discourse subject, you may create a node even under `STRICT`.
+- Under `STRICT`, if it is mathematically classical, frequently used, or a stable central discourse subject, create a node.
 - If it is niche, weakly independent, or mostly meaningful through its parent object, prefer merging upward under `STRICT`.
 - Under `PERMISSIVE`, prefer creating a node for specialized object classes unless there is a strong reason not to.
 
@@ -128,7 +128,9 @@ Consult [references/borderline-cases.md](references/borderline-cases.md) before 
 
 ### Step 7. Prefer compression when uncertain
 
-If classification remains ambiguous after the previous steps, prefer the smaller ontology and choose the least fragmenting merge that preserves meaning.
+If classification remains ambiguous after the previous steps, and the boundary between `specialized_object_class`, `structure_on_object`, and `stable_object_construction` is genuinely unclear, request human judgment before committing to a node-boundary decision.
+
+If no human judgment is available, prefer the smaller ontology and choose the least fragmenting merge that preserves meaning.
 
 ## Required Output
 
@@ -174,4 +176,4 @@ Use this navigation map to keep context small. Do not read every reference file 
 
 ## One-Sentence Operational Criterion
 
-Create a node only when the concept is a core mathematical object class; merge structures into objects, merge constructions into source objects, and store everything else as non-object information inside object nodes.
+Create a node when the concept is a core mathematical object class, or when it is a specialized object class that is mathematically classical, frequently used, or a stable discourse subject; merge structures into objects, merge constructions into source objects, store everything else as non-object information inside object nodes, and request human judgment when the boundary remains genuinely unclear.
