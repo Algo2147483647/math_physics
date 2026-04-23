@@ -76,6 +76,8 @@ $$
 
 - [Complex_Field](./Complex_Field.md): subtype_of
 
+- [Linear_Space](./Linear_Space.md): over_field
+
 - [Rational_Number_Field](./Rational_Number_Field.md): subtype_of
 
 - [Real_Field](./Real_Field.md): subtype_of

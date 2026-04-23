@@ -70,7 +70,7 @@ A meromorphic function on an open subset $D$ of the complex plane is a function 
 
 ## Parents
 
-- [Complex_Field](./Complex_Field.md): defined_on
+- [Complex_Field](./Complex_Field.md): has_codomain
 
 - [Function](./Function.md): subtype_of
 

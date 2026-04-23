@@ -59,11 +59,11 @@ $$
 
 ## Include
 
-- [Complex_Value_Function](./Complex_Value_Function.md): defined_on
+- [Complex_Value_Function](./Complex_Value_Function.md): has_codomain
 
 ## Parents
 
 - [Field](./Field.md): subtype_of
 
-- [Real_Field](./Real_Field.md): defined_on
+- [Real_Field](./Real_Field.md): field_extension_of
 

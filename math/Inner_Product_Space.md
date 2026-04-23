@@ -80,8 +80,6 @@ $$
 
 ## Include
 
-- [Convolution](./Convolution.md): defined_on
-
 - [Hilbert_Space](./Hilbert_Space.md): subtype_of
 
 ## Parents

@@ -10,26 +10,24 @@ $$
 (S, \tau)
 $$
 
-A **Topological space** is a pair $(S, \tau)$,  where $S$ is a set and $\tau$ is a **topology** on $S$. A topology $\tau$ is a collection of subsets of a set $S$ (so $\tau$ is a subset of [power set](./Power_Set.md) $P(S)$) that satisfies the following axioms. The elements of $\tau$ are called **open sets** of the topological space, and the selection of open sets determines the topological structure on $S$. Thus, a topological space fundamentally defines which subsets of $S$ are considered open.
+A **Topological space** is a pair $(S, \tau)$, where $S$ is a set and $\tau$ is a topology on $S$. The topology $\tau$ is a collection of subsets of $S$ satisfying the following axioms. The elements of $\tau$ are called open sets.
 
 - The empty set and the whole set $S$ itself belong to $\tau$.
 $$
 \{\emptyset, S\} \subseteq \tau
 $$
 
-- The intersection of any finite members of $\tau$ belongs to $\tau$. If $U_{1},U_{2},\cdots,U_{n}$ are sets in $\tau$, then 
+- The intersection of any finite members of $\tau$ belongs to $\tau$.
 $$
-\bigcap_{i = 1}^{n}U_{i}\in\tau
-$$
-
-- Any arbitrary (finite or infinite) union of members of $\tau$ belongs to $\tau$. If $\{U_{\alpha}\}_{\alpha\in I}$ is an arbitrary collection of sets in $\tau$, where $I$ is an index set, then 
-$$
-\bigcup_{\alpha\in I}U_{\alpha}\in\tau
+U_1, \dots, U_n \in \tau \Rightarrow \bigcap_{i=1}^n U_i \in \tau
 $$
 
->Finite intersections are open: the overlapping part of finitely many open regions is still open. But the intersection of infinitely many open sets need not be open. For example, in the usual topology on the real numbers, a sequence of nested open sets may shrink down to a single real point, and a single point is not open in the usual topology.
->
->Arbitrary unions are open: when many open sets are united, any point in the union must already lie in one of those open sets, so there is still a small neighborhood around that point entirely contained in the union. Hence the union is open.
+- Any arbitrary union of members of $\tau$ belongs to $\tau$.
+$$
+\{U_\alpha\}_{\alpha \in I} \subseteq \tau \Rightarrow \bigcup_{\alpha \in I} U_\alpha \in \tau
+$$
+
+Thus a topological space is a set equipped with a designated notion of openness.
 
 ## Properties
 
@@ -190,5 +188,5 @@ This is a local description of openness: whether $U$ is open can be checked poin
 
 ## Parents
 
-- [Power_Set](./Power_Set.md): defined_on
+- [Set](./Set.md): has_underlying_set
 

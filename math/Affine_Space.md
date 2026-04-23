@@ -26,90 +26,36 @@ that associates to each point $p \in \mathcal{A}$ and each vector $v \in V$ a po
 
 ### Affine Set
 
-- Define
-  Affine Set is a set such that the lines drawn by any two points in the set are still in the set.  
-
+An affine set is a subset closed under affine combinations:
 $$
-\forall \boldsymbol x_i \in C, θ_i \in R, \sum θ_i = 1 \quad \text{, then}\quad \sum θ_i x_i \in C
+\forall \boldsymbol x_i \in C,\ \theta_i \in \mathbb R,\ \sum \theta_i = 1
+\quad \Rightarrow \quad
+\sum \theta_i \boldsymbol x_i \in C.
 $$
 
-- Property
+### Affine Hull
 
-  - Affine Hull
-
-    - Define  
-      $$
-      \text{aff}(C) = \left\{\sum θ_i x_i\ |\ x_i\in C,theta_i \in R, \sum θ_i = 1  \right\}
-      $$
-      Affine Hull is a set such that affine combinations of all points in the set constitutes an affine hull.
-
-- Include
-
-  - Convex Set
-
-    - Define
-      $$
-      \forall \boldsymbol x_i \in C \subseteq \mathbb R^n, a_i \in [0,1], \sum a_i = 1 \quad \text{, then}\quad \sum a_i x_i \in C
-      $$
-
-      A convex set $C$ is a set such that the line segment between any two points in the set is still in the set. Convex sets are a special class of affine sets.
-
-    - Property
-
-      - Convex Set $C$的任意边界点, 均存在支撑超平面.
-
-      - Convex Hull
-        $$
-          \text{conv}(C) = \left\{\sum θ_i x_i\ |\ x_i\in C, θ_i \in [0,1], \sum θ_i = 1 \right\}
-        $$
-
-          A convex hull is a set of points is the smallest convex polygon that contain all the input points.
-
-          The set of convex combinations of all points in the set constitutes a convex hull This convex hull is also the smallest Convex Set containing all points in a given set.
-
-        $$
-          \mathcal X_{\text{Convex\ Hull}} \subseteq \mathcal X_{\text{input}}
-        $$
-        $$
-        \mathcal X_{\text{input}} \subseteq \text{Polygon}(\mathcal X_{\text{Convex\ Hull}})
-        $$
-
-
-
-### Cone
-- Define  
+For a subset $C$ of an affine space, the affine hull is the smallest affine subset containing $C$:
 $$
-\forall \boldsymbol x \in C, θ > 0, \quad \text{, then}\quad θ \boldsymbol x \in C
+\operatorname{aff}(C) = \left\{\sum \theta_i \boldsymbol x_i\ \middle|\ \boldsymbol x_i \in C,\ \theta_i \in \mathbb R,\ \sum \theta_i = 1\right\}.
 $$
-以零点为起点的射线的集合.
 
-- Include
-  * Convex Cone
-    - Define  
-    $$
-    \forall \boldsymbol x_1, \boldsymbol x_2 \in C, θ_1,θ_2 ≥ 0 \quad \text{, then}\quad θ_1 \boldsymbol x_1 + θ_2 \boldsymbol x_2 \in C
-    $$
+### Hyperplane and Half-Space
 
-### [Polyhedron](./Polyhedron.md)
+A hyperplane and a closed half-space in an affine coordinate model are given by
+$$
+\{\boldsymbol x \mid \boldsymbol a^T \boldsymbol x = b\}
+\quad \text{and} \quad
+\{\boldsymbol x \mid \boldsymbol a^T \boldsymbol x \le b\}.
+$$
 
-### Hyperplane & Half Space
-
-- Define
-  $$
-  \begin{align*}
-    \{\boldsymbol x \ |\ \boldsymbol a^T \boldsymbol x = b\}  \tag{Hyperplane}\\
-    \{\boldsymbol x \ |\ \boldsymbol a^T \boldsymbol x ≤ b\}  \tag{Half-Space}
-  \end{align*}
-  $$
-
-- Property
-  - Hyperplane & Half-Space is Convex Set
+Half-spaces are convex sets.
 
 ## Include
 
-- [Polyhedron](./Polyhedron.md): defined_on
+- [Convex_Set](./Convex_Set.md): has_ambient_space
 
 ## Parents
 
-- [Linear_Space](./Linear_Space.md): defined_on
+- [Linear_Space](./Linear_Space.md): modeled_on
 

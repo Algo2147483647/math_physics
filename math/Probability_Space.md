@@ -114,9 +114,9 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
 
 - [Filtered_Probability_Space](./Filtered_Probability_Space.md): subtype_of
 
-- [Random_Element](./Random_Element.md): defined_on
+- [Random_Element](./Random_Element.md): has_base_space
 
-- [Stochastic_Process](./Stochastic_Process.md): defined_on
+- [Stochastic_Process](./Stochastic_Process.md): has_base_space
 
 ## Parents
 

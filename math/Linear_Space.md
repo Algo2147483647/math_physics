@@ -225,18 +225,21 @@ This isomorphism depends on the chosen basis. Matrices and coordinate tuples des
 
 ## Include
 
-- [Affine_Space](./Affine_Space.md): defined_on
+- [Affine_Space](./Affine_Space.md): modeled_on
 
-- [Linear_Transformation](./Linear_Transformation.md): defined_on
+- [Cone](./Cone.md): has_ambient_space
+
+- [Linear_Transformation](./Linear_Transformation.md): maps_between
 
 - [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of
 
-- [Projective_Space](./Projective_Space.md): defined_on
+- [Projective_Space](./Projective_Space.md): projectivization_of
 
-- [Tensor](./Tensor.md): defined_on
+- [Tensor](./Tensor.md): over_vector_space
 
 ## Parents
 
-- [Field](./Field.md): defined_on
+- [Field](./Field.md): over_field
 
 - [Module](./Module.md): subtype_of
+

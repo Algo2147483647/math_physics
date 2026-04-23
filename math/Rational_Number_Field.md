@@ -45,11 +45,11 @@ Rational number field is a [field](./Field.md) of rational numbers is the set of
 
 ## Include
 
-- [Real_Field](./Real_Field.md): defined_on
+- [Real_Field](./Real_Field.md): field_extension_of
 
 ## Parents
 
 - [Field](./Field.md): subtype_of
 
-- [Integer_Ring](./Integer_Ring.md): defined_on
+- [Integer_Ring](./Integer_Ring.md): fraction_field_of
 

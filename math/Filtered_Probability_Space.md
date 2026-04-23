@@ -27,7 +27,7 @@ $$
 
 ## Include
 
-- [Stopping_Time](./Stopping_Time.md): defined_on
+- [Stopping_Time](./Stopping_Time.md): with_respect_to_filtration
 
 ## Parents
 

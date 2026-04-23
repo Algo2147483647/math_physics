@@ -317,7 +317,14 @@ For two sets $A, B$, cartesian product is the set of all ordered pairs such that
 Property:
 - $\text{number}(A \times B) = \text{number}(A) \cdot \text{number}(B)$
 
-### [Power Set](./Power_Set.md)
+### Power Set
+
+The power set of $A$ is the set of all subsets of $A$:
+$$
+\mathcal P(A)=\{B \mid B \subseteq A\}.
+$$
+
+This is stored here as a standard set construction rather than as a standalone node.
 
 ### Ordered Pair
 
@@ -339,19 +346,21 @@ Property:
 
 ## Include
 
-- [Algebra_Structure](./Algebra_Structure.md): defined_on
+- [Algebra_Structure](./Algebra_Structure.md): has_underlying_set
 
 - [Fractal](./Fractal.md): subtype_of
 
-- [Graph](./Graph.md): defined_on
+- [Graph](./Graph.md): has_underlying_set
+
+- [Measurable_Space](./Measurable_Space.md): has_underlying_set
 
 - [Natural_Number](./Natural_Number.md): subtype_of
 
 - [Ordered_Set](./Ordered_Set.md): subtype_of
 
-- [Power_Set](./Power_Set.md): subtype_of
-
 - [Relation](./Relation.md): subtype_of
+
+- [Topological_Space](./Topological_Space.md): has_underlying_set
 
 ## Parents
 

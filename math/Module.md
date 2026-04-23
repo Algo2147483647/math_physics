@@ -31,5 +31,5 @@ such that for all $r, s \in R$ and $x, y \in M$,
 
 ## Parents
 
-- [Ring](./Ring.md): defined_on
+- [Ring](./Ring.md): over_ring
 

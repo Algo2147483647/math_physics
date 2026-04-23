@@ -45,6 +45,31 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 * Inverse Function
   if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \Leftrightarrow f(a) = b$
 
+### Convolution
+
+When the relevant integrability conditions hold, the convolution of two functions is
+$$
+(f * g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t-\tau)\, d\tau.
+$$
+
+Convolution is an operation on functions rather than a standalone object node.
+
+### Hilbert Transform
+
+For a suitable function $u$, the Hilbert transform is the principal-value singular integral
+$$
+H(u)(t) = \operatorname{p.v.}\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{u(\tau)}{t-\tau}\, d\tau.
+$$
+
+### Laplace Transform
+
+For a suitable function $f$, the Laplace transform is
+$$
+\mathcal L f(s) = \int_0^{\infty} f(t) e^{-st}\, dt.
+$$
+
+These transforms are standard operations on functions, so they are stored here instead of as standalone nodes.
+
 ## Include
 
 - [Bessel_Function](./Bessel_Function.md): subtype_of
@@ -54,10 +79,6 @@ A map that is both injective and surjective. Each element $y$ in set $Y$ has a u
 - [Dirac_Delta_Function](./Dirac_Delta_Function.md): subtype_of
 
 - [Exponential_Function](./Exponential_Function.md): subtype_of
-
-- [Hilbert_Transform](./Hilbert_Transform.md): subtype_of
-
-- [Laplace_Transform](./Laplace_Transform.md): subtype_of
 
 - [Linear_Transformation](./Linear_Transformation.md): subtype_of
 

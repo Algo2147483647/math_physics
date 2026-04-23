@@ -27,5 +27,5 @@ Property:
 
 ## Parents
 
-- [Filtered_Probability_Space](./Filtered_Probability_Space.md): defined_on
+- [Filtered_Probability_Space](./Filtered_Probability_Space.md): with_respect_to_filtration
 

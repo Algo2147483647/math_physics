@@ -82,7 +82,7 @@ $$
 
 - [Integer_Ring](./Integer_Ring.md): subtype_of
 
-- [Module](./Module.md): defined_on
+- [Module](./Module.md): over_ring
 
 - [Quaternion_Ring](./Quaternion_Ring.md): subtype_of
 

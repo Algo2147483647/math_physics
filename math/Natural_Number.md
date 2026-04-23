@@ -38,7 +38,7 @@ Natural numbers $\mathbb{N}$ are formally defined by the **Peano's axioms**, whi
 
 ## Include
 
-- [Integer_Ring](./Integer_Ring.md): defined_on
+- [Integer_Ring](./Integer_Ring.md): extends_number_system
 
 ## Parents
 

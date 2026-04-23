@@ -24,7 +24,7 @@ A random variable is the special case where the state space is $(\mathbb R, \mat
 
 ## Include
 
-- [Probability_Distribution](./Probability_Distribution.md): property_of
+- [Probability_Distribution](./Probability_Distribution.md): induced_by
 
 - [Random_Variable](./Random_Variable.md): subtype_of
 
@@ -32,5 +32,5 @@ A random variable is the special case where the state space is $(\mathbb R, \mat
 
 - [Function](./Function.md): subtype_of
 
-- [Probability_Space](./Probability_Space.md): defined_on
+- [Probability_Space](./Probability_Space.md): has_base_space
 

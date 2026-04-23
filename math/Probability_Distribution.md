@@ -691,5 +691,5 @@ $$
 
 ## Parents
 
-- [Random_Element](./Random_Element.md): property_of
+- [Random_Element](./Random_Element.md): induced_by
 

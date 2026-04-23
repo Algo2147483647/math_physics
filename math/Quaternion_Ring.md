@@ -34,7 +34,7 @@ $$
 
 ## Parents
 
-- [Real_Field](./Real_Field.md): defined_on
+- [Real_Field](./Real_Field.md): over_field
 
 - [Ring](./Ring.md): subtype_of
 

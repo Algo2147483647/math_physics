@@ -26,5 +26,5 @@ An automorphism is simply a bijective homomorphism of a mathematical object with
 
 ## Parents
 
-- [Set](./Set.md): defined_on
+- [Set](./Set.md): has_underlying_set
 
