@@ -49,7 +49,11 @@ Specialized object classes such as stationary processes, Gaussian processes, and
 
 - [Martingale](./Martingale.md): subtype_of
 
-- [Poisson_Point_Process](./Poisson_Point_Process.md): subtype_of
+- [Point_Process](./Point_Process.md): subtype_of
+
+- [Random_Field](./Random_Field.md): subtype_of
+
+- [Semimartingale](./Semimartingale.md): subtype_of
 
 - [Stationary_Process](./Stationary_Process.md): subtype_of
 

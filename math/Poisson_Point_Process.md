@@ -28,5 +28,5 @@ Poisson point processes model randomly scattered events in time or space.
 
 ## Parents
 
-- [Stochastic_Process](./Stochastic_Process.md): subtype_of
+- [Point_Process](./Point_Process.md): subtype_of
 

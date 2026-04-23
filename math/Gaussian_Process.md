@@ -25,6 +25,8 @@ $$
 
 ## Include
 
+- [Brownian_Motion](./Brownian_Motion.md): subtype_of
+
 ## Parents
 
 - [Stochastic_Process](./Stochastic_Process.md): subtype_of
