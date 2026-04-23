@@ -139,15 +139,15 @@ confidence: high
 ```text
 candidate: Banach space
 policy: STRICT
-decision: DO_NOT_CREATE_NODE__MERGE_INTO_NORMED_SPACE
-classification: structure_on_object
+decision: CREATE_NODE
+classification: specialized_object_class
 reasoning:
-  - A Banach space is treated here as a normed space with additional completeness requirements.
-  - Under STRICT policy, specialized object classes are merged upward.
-merge_target: normed space
+  - A Banach space is narrower than `normed space`, so it is a specialized object class rather than a structure on an object.
+  - It is mathematically classical and frequently used as a stable discourse subject.
+  - Under the tolerant STRICT rule for classical specialized object classes, it may receive its own node.
+merge_target: null
 storage_location:
-  - special subclasses
-  - important object families
+  - main node
 confidence: medium
 ```
 
@@ -157,10 +157,11 @@ confidence: medium
 candidate: Banach space
 policy: PERMISSIVE
 decision: CREATE_NODE
-classification: core_object
+classification: specialized_object_class
 reasoning:
+  - A Banach space is a specialized object class under `normed space`.
   - In mathematical practice, Banach spaces often function as a stable central discourse subject.
-  - PERMISSIVE policy allows specialized object classes as nodes.
+  - PERMISSIVE policy favors separate nodes for such specialized object classes.
 merge_target: null
 storage_location:
   - main node

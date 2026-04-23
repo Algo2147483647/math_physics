@@ -88,7 +88,29 @@ A concept `C` counts as a `core object` only if:
 
 Only core objects may become nodes under the base rule.
 
-### 3. Structure on an Object
+### 3. Specialized Object Class
+
+A concept `C` counts as a `specialized object class` if:
+
+1. `C` is already an object under `O1-O4`.
+2. `C` is narrower than a more general parent object class.
+3. `C` is not merely extra attached structure and not merely a standard construction from another object.
+4. `C` may function as an independent discourse subject in mathematical practice even though it sits below a parent object class.
+
+Typical signals:
+
+- `Banach space` inside `normed space`
+- `Hilbert space` inside `inner product space`
+- `Riemannian manifold` inside `manifold`
+- `probability space` inside `measure space`
+
+Classification rule:
+
+- Do not classify these as `structure_on_object` unless the term really names the attached structure itself.
+- If the specialized object class is mathematically classical, frequently used, or supports a stable local theory, it may receive its own node.
+- Otherwise, merge it upward into the nearest appropriate parent object under a stricter ontology.
+
+### 4. Structure on an Object
 
 A concept `C` is a `structure on an object` if its meaning is fundamentally of the form:
 
@@ -106,7 +128,7 @@ Typical signals:
 
 Structures on objects are not standalone nodes. Merge them into the appropriate parent object node.
 
-### 4. Stable Object Construction
+### 5. Stable Object Construction
 
 A concept `C` is a `stable object construction` if its meaning is fundamentally of the form:
 
@@ -133,7 +155,10 @@ Stable object constructions are not standalone nodes. Merge them into the approp
 
 ## What Counts as a Node
 
-A concept may be a node only if it is a core object class.
+A concept may be a node if it is either:
+
+- a core object class, or
+- a specialized object class that is mathematically classical, frequently used, or treated as a stable central discourse subject
 
 Typical positive examples:
 
@@ -388,4 +413,4 @@ Before creating a node, verify all of the following:
 - The concept is not a representation or invariant.
 - The concept is not structure on a more basic object.
 - The concept is not a stable object construction.
-- The concept is a core object under the current policy.
+- The concept is a core object or an allowed specialized object class under the current policy.

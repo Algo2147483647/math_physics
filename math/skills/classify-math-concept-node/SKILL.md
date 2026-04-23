@@ -13,7 +13,10 @@ Use this skill to classify candidate concepts consistently under a narrow ontolo
 
 ## Core Rule
 
-Create a node if and only if the concept is a core mathematical object class under the active policy.
+Create a node if and only if the concept is:
+
+- a core mathematical object class, or
+- a specialized object class that is classical, frequently used, or a stable subject of mathematical discourse under the active policy
 
 Apply the following defaults:
 
@@ -36,6 +39,7 @@ Use these working definitions in the main procedure:
 
 - `object`: a concept that can naturally serve as the value of a quantified variable, has multiple instances, admits standard object-level comparisons, and supports stable mathematical discourse
 - `core object`: an object class that is not merely extra structure on a more basic object and not merely a standard construction from another object
+- `specialized object class`: an object class narrower than a parent object class, such as `Banach space` inside `normed space`; it may still deserve its own node when it is mathematically classical, frequently used, or supports a stable local theory
 - `structure on an object`: extra data, axioms, or organizing structure placed on an underlying object
 - `stable object construction`: a standard derived object whose meaning depends on a source object
 - `non-object information`: properties, relations, theorems, methods, procedures, representations, invariants, and similar content that should live inside object nodes
@@ -112,7 +116,15 @@ If the concept:
 
 then create a node.
 
-If the concept is object-like but specialized or policy-sensitive, apply the active policy and consult [references/borderline-cases.md](references/borderline-cases.md) before deciding.
+If the concept is object-like but specialized or policy-sensitive, first classify it as `specialized_object_class` rather than `structure_on_object`.
+
+Then apply the following rule:
+
+- If it is mathematically classical, frequently used, or a stable central discourse subject, you may create a node even under `STRICT`.
+- If it is niche, weakly independent, or mostly meaningful through its parent object, prefer merging upward under `STRICT`.
+- Under `PERMISSIVE`, prefer creating a node for specialized object classes unless there is a strong reason not to.
+
+Consult [references/borderline-cases.md](references/borderline-cases.md) before deciding.
 
 ### Step 7. Prefer compression when uncertain
 
@@ -126,7 +138,7 @@ Always return the following schema. The `decision` field must be one of the allo
 candidate: <normalized concept>
 policy: <STRICT | PERMISSIVE>
 decision: <CREATE_NODE | DO_NOT_CREATE_NODE__MERGE_INTO_<TARGET> | DO_NOT_CREATE_NODE__NON_OBJECT_INFORMATION>
-classification: <core_object | structure_on_object | stable_object_construction | property | relation | theorem | method | procedure | invariant | representation | other>
+classification: <core_object | specialized_object_class | structure_on_object | stable_object_construction | property | relation | theorem | method | procedure | invariant | representation | other>
 reasoning:
   - <brief rule-based justification>
 merge_target: <core object name or null>
