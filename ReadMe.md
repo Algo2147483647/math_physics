@@ -18,6 +18,7 @@ The goal of this repository is not to collect isolated formulas. It is to keep c
 | Path | Role |
 | --- | --- |
 | [`math/`](./math/) | Pure mathematical concepts organized as a directed knowledge graph. |
+| [`math/skills/`](./math/skills/) | Local ontology-maintenance skills for deciding math nodes and graph edges consistently. |
 | [`applied mathematics/`](./applied%20mathematics/) | Problem-oriented mathematical tools: algorithms, cryptography, differential equations, geometry, information, language, optimization, and statistics. |
 | [`physics/`](./physics/) | Physical theories, core principles, fields, spacetime models, fluids, statistical mechanics, and experiments. |
 | [`history/`](./history/) | Historical graph/data snapshots and conversion scripts. |
@@ -62,15 +63,6 @@ Important theorems, equivalent characterizations, operations, examples, and coun
 - [Parent_Concept](./Parent_Concept.md): edge_label
 ```
 
-### Edge Labels
-
-- **is-a**: Inheritance. The child concept inherits the definition, properties, or behavior of the parent concept.
-- **has-a**: Composition. The parent concept is built from, or contains, child concepts.
-- **defined_on**: The concept is defined on another structure.
-- **subtype_of**: The concept is a more specific version of another concept.
-
-Use short edge labels. The label should explain the relation, not repeat the file name.
-
 ### Graph Rules
 
 - A note should focus on one mathematical entity.
@@ -79,6 +71,59 @@ Use short edge labels. The label should explain the relation, not repeat the fil
 - `Include` lists lower-level or contained concepts.
 - `Parents` lists higher-level or prerequisite concepts.
 - Together, the notes are intended to form a directed acyclic graph.
+
+### Graph Maintenance Layout
+
+[`math/skills/`](./math/skills/) stores the repository rules used to maintain the math graph as an object-centered, sparse, and consistent ontology.
+
+| Path | Role |
+| --- | --- |
+| [`math/skills/classify-math-concept-node/`](./math/skills/classify-math-concept-node/) | Node-boundary policy: decide whether a concept becomes a standalone node, is merged upward, or is stored as non-object information. |
+| [`math/skills/classify-math-concept-node/references/`](./math/skills/classify-math-concept-node/references/) | Node examples, ontology rules, and borderline cases. |
+| [`math/skills/classify-math-object-edges/`](./math/skills/classify-math-object-edges/) | Edge-retention policy: decide whether an edge between approved object nodes should be kept and how it should be typed. |
+| [`math/skills/classify-math-object-edges/references/`](./math/skills/classify-math-object-edges/references/) | Canonical edge judgments and excluded edge categories. |
+
+Apply the policies in this order:
+
+1. Decide node boundaries first.
+2. Keep only approved object nodes.
+3. Classify edges only between retained nodes.
+
+### Node Decision Policy
+
+Use [`math/skills/classify-math-concept-node/SKILL.md`](./math/skills/classify-math-concept-node/SKILL.md) when deciding whether a term such as `group`, `compactness`, `dual space`, or `Banach space` should become its own note.
+
+- Default policy is `STRICT`.
+- Create a node only when the concept is a core mathematical object class, or a specialized object class that is mathematically classical, frequently used, or a stable subject of discourse.
+- Merge structures into their parent object node.
+- Merge standard constructions into their source object node.
+- Store properties, relations, theorems, methods, procedures, representations, and invariants inside object nodes instead of creating standalone nodes for them.
+- When the boundary between specialized object, structure on an object, and construction remains unclear, prefer the smaller ontology or request human judgment.
+
+The node classifier returns a normalized record with:
+
+- `decision`: create node, merge into a target object, or store as non-object information.
+- `classification`: core object, specialized object class, structure on object, construction, property, relation, theorem, method, procedure, invariant, representation, or related category.
+- `merge_target`, `storage_location`, and `confidence`.
+
+### Edge Decision Policy
+
+Use [`math/skills/classify-math-object-edges/SKILL.md`](./math/skills/classify-math-object-edges/SKILL.md) after node policy has already approved both endpoints as retained object nodes.
+
+- Default policy mode is `STRICT_DEFAULT`.
+- The default retained edge set is `is_a` and `defined_over`.
+- `modeled_on` is optional and should be enabled only for geometric objects whose identity depends on a standard local model.
+- `requires_object` is disabled by default and should be used only in explicitly expanded policies.
+- Add an edge only if it is object-level, semantically necessary, direct, non-redundant, and improves the global skeleton of the graph.
+- Reject theorem dependencies, proof methods, historical influence, pedagogical ordering, analogies, and other non-structural relations from the main DAG.
+- Prefer the nearest valid parent for `is_a`, and reject transitive shortcuts by default.
+
+The edge classifier returns a structured judgment with:
+
+- `decision`: add or reject the edge.
+- `edge_type`: one of `is_a`, `defined_over`, `modeled_on`, `requires_object`, or `null`.
+- `redundancy_check`: whether the edge violates nearest-parent, transitive, or low-value-edge rules.
+- `reasoning`, `notes`, and `confidence`.
 
 ## Graph Synchronization
 
@@ -115,23 +160,6 @@ curl --location 'http://localhost:5000/function' \
   "function": "build_markdown_from_graph_json",
   "params": {
     "json_file": "D:/Algo/Notes/math_physics/math/lib/math.json"
-  }
-}'
-```
-
-### Add A Child Node
-
-Add an edge in the graph and rebuild the Markdown files:
-
-```bash
-curl --location 'http://localhost:5000/function' \
---header 'Content-Type: application/json' \
---data '{
-  "function": "add_kid_for_graph",
-  "params": {
-    "json_file": "D:/Algo/Notes/math_physics/math/lib/math.json",
-    "key": "Set",
-    "kid_key": "Relation"
   }
 }'
 ```
