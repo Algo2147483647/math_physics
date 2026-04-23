@@ -26,6 +26,16 @@
       "### Automorphism \n\nAn automorphism is simply a bijective homomorphism of a mathematical object with itself."
     ]
   },
+  "Banach_Space": {
+    "children": {},
+    "define": "> A Banach space is a normed vector space in which every Cauchy sequence converges.\n\nA **Banach space** is a [normed linear space](./Normed_Linear_Space.md) that is complete with respect to the metric induced by its norm:\n$$\nd(x,y)=\\|x-y\\|.\n$$\n\nCompleteness means that if $(x_n)$ is a Cauchy sequence in the norm, then there exists $x$ in the space such that\n$$\n\\|x_n-x\\|\\to 0.\n$$",
+    "parents": {
+      "Normed_Linear_Space": "subtype_of"
+    },
+    "properties": [
+      "### Banach Fixed-point Principle\n\nIf $X$ is a Banach space and $T:X\\to X$ is a contraction, then $T$ has a unique fixed point.\n\n### Examples\n\nCommon examples include $\\ell^p$ spaces for $1\\le p\\le \\infty$ and spaces of continuous functions with the sup norm."
+    ]
+  },
   "Bessel_Function": {
     "children": {},
     "define": "> Bessel functions are special functions that naturally arise as radial solutions of differential equations with cylindrical symmetry.\n\n[**Bessel functions**](./Function.md) are canonical solutions $y(x)$ of Bessel's differential equation\n$$\nx^{2}{\\frac {\\mathrm{d}^{2}y}{\\mathrm{d}x^{2}}}+x{\\frac {\\mathrm{d}y}{\\mathrm{d}x}}+\\left(x^{2}-\\alpha ^{2}\\right)y=0\\\\\ny(x)=c_{1}J_{\\alpha }(x)+c_{2}Y_{\\alpha }(x)\n$$\n**Bessel function of the first kind** $J_{\\alpha}(x)$, are solutions of Bessel's differential equation. For integer or positive $\u03b1$, Bessel functions of the first kind are finite at the origin $(x = 0)$; while for negative non-integer $\u03b1$, Bessel functions of the first kind diverge as x approaches zero. The Bessel function can be defined by its Taylor series expansion at $x = 0$.\n$$\nJ_{\\alpha }(x)=\\sum _{m=0}^{\\infty }{\\frac {(-1)^{m}}{m!\\Gamma (m+\\alpha +1)}}{\\left({\\frac {x}{2}}\\right)}^{2m+\\alpha}\n$$\n**Bessel functions of the second kind** $Y_{\\alpha}(x)$, \n$$\nY_{\\alpha }(x)={\\frac {J_{\\alpha }(x)\\cos(\\alpha \\pi )-J_{-\\alpha }(x)}{\\sin(\\alpha \\pi )}}\n$$",
@@ -64,6 +74,25 @@
     },
     "properties": [
       "- \n\n  - $a \\wedge b = b \\wedge a$\n\n  - $a \\vee b = b \\vee a$\n\n  - $(a \\wedge b) \\wedge c = a \\wedge (b \\wedge c)$\n\n  - $(a \\vee b) \\vee c = a \\vee (b \\vee c)$\n\n  - $\\neg(a \\wedge b) = \\neg a \\vee \\neg b$\n\n  - $\\neg(a \\vee b) = \\neg a \\wedge \\neg b$\n\n  - $a \\wedge (a \\vee b) = a$\n\n  - $a \\vee (a \\wedge b) = a$\n\n  - $a \\wedge (b \\vee c) = (a \\wedge b) \\vee (a \\wedge c)$\n\n  - $a \\vee (b \\wedge c) = (a \\vee b) \\wedge (a \\vee c)$\n\n\n### XOR & XNOR\n\n- Define   \n  XOR $\\oplus$, XNOR $\\odot$ are two binary operators.  \n  \n  |$a$|$b$|$a \\oplus b$|$a \\odot b$|\n  |:---:|:---:|:---:|:---:|\n  | 0 | 0 | 0 | 1 | \n  | 0 | 1 | 1 | 0 | \n  | 1 | 0 | 1 | 0 | \n  | 1 | 1 | 0 | 1 | \n  |||\n  $$a \\oplus b = \\neg(a \\odot b)$$\n  $$a \\oplus b = (a \\wedge \\neg b) \\vee (\\neg a \\wedge b)$$\n  \n- Property\n  - $x \\oplus 0 = x$\n  - $x \\oplus 1 = \\neg x$\n  - $x \\oplus \\neg x = 1$\n  - $x \\oplus x = 0$\n  - $(a \\oplus b) \\oplus c = a \\oplus (b \\oplus c)$\n\n- |\n|$f(0, 0)$|$f(0, 1) = f(1, 0)$|$f(1, 1)$|operator|\n|:---:|:---:|:---:|:---:|\n| 0 | 0 | 0 | $a \\wedge 0$ |\n| 0 | 0 | 1 | $a \\wedge b$ |\n| 0 | 1 | 0 | $a \\oplus b = (a \\wedge \\neg b) \\vee (\\neg a \\wedge b)$ |\n| 0 | 1 | 1 | $a \\vee b$ |\n| 1 | 0 | 0 | $\\neg(a \\vee b)$ |\n| 1 | 0 | 1 | $a \\odot b = (a \\vee \\neg b) \\wedge (\\neg a \\vee b)$ |\n| 1 | 1 | 0 | $\\neg(a \\wedge b)$ |\n| 1 | 1 | 1 | $a \\vee 0$ |\n|||||"
+    ]
+  },
+  "Category": {
+    "children": {},
+    "define": "> A category is a collection of objects and morphisms together with associative composition and identity morphisms.\n\nA **category** $\\mathcal C$ consists of:\n\n- a class of objects $\\operatorname{Ob}(\\mathcal C)$,\n- for each pair of objects $X,Y$, a set of morphisms\n$$\n\\operatorname{Hom}_{\\mathcal C}(X,Y),\n$$\n- a composition law\n$$\n\\operatorname{Hom}(Y,Z)\\times\\operatorname{Hom}(X,Y)\\to\\operatorname{Hom}(X,Z),\n$$\n- identity morphisms $\\operatorname{id}_X\\in\\operatorname{Hom}(X,X)$.\n\nThese satisfy associativity and identity axioms.",
+    "parents": {},
+    "properties": [
+      "### Composition\n\nFor composable morphisms $f:X\\to Y$ and $g:Y\\to Z$, the composite is\n$$\ng\\circ f:X\\to Z.\n$$\n\n### Examples\n\nTypical examples are the category of sets, topological spaces, groups, and vector spaces."
+    ]
+  },
+  "Chain_Complex": {
+    "children": {},
+    "define": "> A chain complex is a sequence of modules or vector spaces linked by differentials whose successive composition is zero.\n\nA **chain complex** is a family of objects $(C_n)_{n\\in\\mathbb Z}$ together with morphisms\n$$\nd_n:C_n\\to C_{n-1}\n$$\nsuch that\n$$\nd_{n-1}\\circ d_n = 0\n\\quad \\text{for all } n.\n$$\n\nIn practice the terms are often modules, vector spaces, or abelian groups.",
+    "parents": {
+      "Module": "has_terms_in",
+      "Sequence": "structured_as"
+    },
+    "properties": [
+      "### Cycles, Boundaries, and Homology\n\nThe cycles and boundaries are\n$$\nZ_n=\\ker d_n,\n\\qquad\nB_n=\\operatorname{im} d_{n+1}.\n$$\nSince $d_n\\circ d_{n+1}=0$, one has $B_n\\subseteq Z_n$, and the homology is\n$$\nH_n(C)=Z_n/B_n.\n$$"
     ]
   },
   "Complete_Graph": {
@@ -145,7 +174,9 @@
   "Differential_Manifold": {
     "children": {
       "Euclidean_Space": "subtype_of",
-      "Lie_Group": "subtype_of"
+      "Lie_Group": "subtype_of",
+      "Riemannian_Manifold": "subtype_of",
+      "Symplectic_Manifold": "subtype_of"
     },
     "define": "> A smooth manifold is a space that locally looks like $\\mathbb R^n$, and whose overlapping coordinate systems transform smoothly into one another.\n\nA **differential manifold** $M$ of dimension $n$ is a [manifold](./Manifold.md) equipped with a differentiable structure.\n\nA differentiable structure on $M$ is represented by a **smooth atlas** (chart set) \n$$\n\\mathcal A = \\{(U_\\alpha, \\varphi_\\alpha)\\}\n$$\n\nwhere each chart $\\varphi_\\alpha:U_\\alpha\\to \\varphi_\\alpha(U_\\alpha)\\subseteq \\mathbb R^n$ is a homeomorphism onto an open subset of $\\mathbb R^n$, and the charts cover $M$ satisfy\n\n$$\n\\bigcup_\\alpha U_\\alpha=M\n$$\n\nFor any two overlapping charts $(U_{\\alpha},\\varphi_{\\alpha}), (U_{\\beta},\\varphi_{\\beta}) \\in \\mathcal A$ with $U_{\\alpha}\\cap U_{\\beta}\\neq\\varnothing$, the transition maps\n\n$$\n\\varphi_{\\beta}\\circ\\varphi_{\\alpha}^{-1}:\\varphi_{\\alpha}(U_{\\alpha}\\cap U_{\\beta})\\to\\varphi_{\\beta}(U_{\\alpha}\\cap U_{\\beta})\n$$\n\nare smooth (infinitely differentiable $C^\\infty$) map between open subsets of Euclidean spaces.\n\n<img src=\"./assets/Two_coordinate_charts_on_a_manifold.svg\" alt=\"Two_coordinate_charts_on_a_manifold\"  />",
     "parents": {
@@ -232,6 +263,18 @@
     },
     "properties": [
       "### Field extension\n\n$$\nE/F\n$$\n\nA field extension is a pair of fields $E$ and $F$ such that the operations of $F$ are those of $E$ restricted to $F$. In other words, $F$ is a subset of $E$, and the addition and multiplication of elements of $F$ in $E$ coincide with their addition and multiplication in $F$. When $F$ is a subfield of $E$, we often say that $E$ is an extension of $F$ and write $E/F$.\n\n### Field Automorphism\n\n$$\n\\begin{align*}\nf(a + b) &= f(a) + f(b) \\\\\nf(a \\cdot b) &= f(a) \\cdot f(b)\n\\end{align*}\n$$\n\n\n\n### Galois Group\n\n$$\nGal(K/F) = (\\{\\phi: K \\to K \\ |\\ \\phi(a) = a, \\forall a \\in F\\}, \\circ)\n$$\n\n**Galois group** of a field extension $K/F$, is the group of all field automorphisms of $K$ that fix $F$ pointwise, and the group operation is function composition operator $\\circ$.\n\n#### Galois Correspondence\n\nFor a field extension $K/F$, **Galois Correspondence** is a one-to-one correspondence  $E \\longleftrightarrow H$ between intermediate fields $E$ (the subfields satisfying $F \\subseteq E \\subseteq K$) and subgroups $H$ of the Galois group $\\text{Gal}(K/F)$. Meanwhile, $E$ is the fixed field of $H$ in $K$, consisting of elements fixed by every automorphism in $H$. Conversely, $H$ is the Galois group $\\operatorname{Gal}(K/E)$, consisting of all $F$-automorphisms of $K$ that fix $E$ pointwise. Under this correspondence, larger subgroups correspond to smaller fixed fields, because a larger subgroup $H$ imposes more constraints (more automorphisms must fix an element), resulting in a smaller set $E$ of elements that can satisfy all these constraints. Galois group and correspondence serves as a bridge, establishing a precise correspondence between the  extension of fields and subgroups of groups.\n\n$$\n\\begin{matrix}\nF & \\subseteq & E & \\subseteq & K \\\\\n& & \\updownarrow\\\\\n\\text{Gal}(K/F) &\\ge & \\text{Gal} (K/E) & \\ge & \\{\\text{id}\\} \\\\\n\\end{matrix}\\\\\n$$\n\n$$\n\\begin{align*}\nE &=  \\{x \\in K \\ |\\ \\sigma(x) = x, \\forall \\sigma\\in \\text{Gal} (K/E)\\}  \\\\\n\\text{Gal} (K/E) &= \\{\\sigma \\in \\text{Gal}(K/F) \\ |\\ \\sigma (x) = x, \\forall x \\in E\\}\n\\end{align*}\n$$"
+    ]
+  },
+  "Fiber_Bundle": {
+    "children": {
+      "Vector_Bundle": "subtype_of"
+    },
+    "define": "> A fiber bundle is a space that locally looks like a product of a base space with a typical fiber.\n\nA **fiber bundle** consists of a total space $E$, a base space $B$, a typical fiber $F$, and a projection\n$$\n\\pi:E\\to B\n$$\nsuch that for every point $b\\in B$ there exists an open neighborhood $U\\subseteq B$ with a homeomorphism\n$$\n\\pi^{-1}(U)\\cong U\\times F\n$$\ncompatible with the projection to $U$.",
+    "parents": {
+      "Topological_Space": "has_base_space"
+    },
+    "properties": [
+      "### Local Trivialization\n\nA local trivialization identifies the bundle over a small open set with a product space.\n\n### Section\n\nA section is a map\n$$\ns:B\\to E\n$$\nsuch that $\\pi\\circ s=\\operatorname{id}_B$."
     ]
   },
   "Filtered_Probability_Space": {
@@ -419,7 +462,9 @@
     ]
   },
   "Lie_Group": {
-    "children": {},
+    "children": {
+      "Lie_Algebra": "associated_to"
+    },
     "define": "> A Lie group is a group whose operations vary smoothly with respect to a manifold structure.\n\nA real Lie group is a [group](./Group.md) that is also a finite-dimensional real smooth [manifold](./Manifold.md), in which the group operations of multiplication and inversion are smooth maps.\n\n$$\n\\mu: G \\times G \\to G, \\quad \\mu(x,y) = xy\n$$",
     "parents": {
       "Differential_Manifold": "subtype_of",
@@ -427,7 +472,18 @@
       "Manifold": "subtype_of"
     },
     "properties": [
-      "### Lie Algebra\n\nAssociated to a Lie group is its Lie algebra, which can be identified with the tangent space at the identity together with the Lie bracket induced by the group structure."
+      "### Associated Lie Algebra\n\nAssociated to a Lie group is a [Lie algebra](./Lie_Algebra.md), identified with the tangent space at the identity together with the bracket induced by left-invariant vector fields."
+    ]
+  },
+  "Lie_Algebra": {
+    "children": {},
+    "define": "> A Lie algebra is a vector space equipped with a bilinear bracket satisfying antisymmetry and the Jacobi identity.\n\nA **Lie algebra** over a field $F$ is a [linear space](./Linear_Space.md) $\\mathfrak g$ together with a bilinear map\n$$\n[-,-]:\\mathfrak g\\times\\mathfrak g\\to\\mathfrak g\n$$\nsuch that for all $x,y,z\\in\\mathfrak g$:\n\n- antisymmetry:\n$$\n[x,y]=-[y,x],\n$$\n- Jacobi identity:\n$$\n[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.\n$$",
+    "parents": {
+      "Algebra_Structure": "subtype_of",
+      "Linear_Space": "subtype_of"
+    },
+    "properties": [
+      "### Adjoint Action\n\nEach element $x\\in\\mathfrak g$ defines a linear map\n$$\n\\operatorname{ad}_x(y)=[x,y].\n$$\n\n### Lie Algebra of a Lie Group\n\nFor a Lie group $G$, its Lie algebra is the tangent space at the identity with bracket induced by commutators of left-invariant vector fields."
     ]
   },
   "Linear_Function": {
@@ -444,10 +500,12 @@
     "children": {
       "Affine_Space": "modeled_on",
       "Cone": "has_ambient_space",
+      "Lie_Algebra": "subtype_of",
       "Linear_Transformation": "maps_between",
       "Normed_Linear_Space": "subtype_of",
       "Projective_Space": "projectivization_of",
-      "Tensor": "over_vector_space"
+      "Tensor": "over_vector_space",
+      "Vector_Bundle": "has_fiber_type"
     },
     "define": "> A linear space is a set whose elements can be added and scaled by elements of a field.\n\n$$\n+:V\\times V\\to V,\n\\quad\n\\cdot:F\\times V\\to V\n$$\n\nA **linear space** (or vector space) over a [field](./Field.md) $F$ is a nonempty set $V$ together with operations of vector addition $(+)$ and scalar multiplication $(\\cdot)$, satisfying the following axioms. A linear space is a special case of a [module](./Module.md) whose scalars come from a field.\n\n- Additive closure: $x + y \\in V$\n- Scalar multiplication closure: $k x \\in V$\n- Identity element of vector addition: $x + 0 = x$\n- Inverse elements of vector addition: $x + (-x) = 0$\n- Identity element of scalar multiplication: $1x = x$\n- Commutativity of vector addition: $x + y = y + x$\n- Associativity of vector addition: $x + (y + z) = (x + y) + z$\n- Compatibility of scalar multiplication with field multiplication: $a(bx) = (ab)x$\n- Distributivity of scalar multiplication with respect to vector addition: $a(x + y) = ax + ay$\n- Distributivity of scalar multiplication with respect to field addition: $(a + b)x = ax + bx$",
     "parents": {
@@ -592,6 +650,7 @@
   },
   "Normed_Linear_Space": {
     "children": {
+      "Banach_Space": "subtype_of",
       "Inner_Product_Space": "subtype_of"
     },
     "define": "> A normed linear space is a vector space equipped with a norm that measures vector length.\n\nA **normed linear space** is a [linear space](./Linear_Space.md) $V$ over a field $F$, usually $F=\\mathbb R$ or $F=\\mathbb C$, equipped with a norm\n$$\n\\|\\cdot\\|:V\\to\\mathbb R_{\\ge 0}.\n$$\n\nFor all $x,y\\in V$ and all scalars $\\alpha\\in F$, the norm satisfies:\n\n- Positive definiteness:\n$$\n\\|x\\|\\ge 0,\n\\quad\n\\|x\\|=0\\iff x=0.\n$$\n\n- Absolute homogeneity:\n$$\n\\|\\alpha x\\|=|\\alpha|\\,\\|x\\|.\n$$\n\n- Triangle inequality:\n$$\n\\|x+y\\|\\le \\|x\\|+\\|y\\|.\n$$",
@@ -599,7 +658,7 @@
       "Linear_Space": "subtype_of"
     },
     "properties": [
-      "### Metric Induced by a Norm\n\nEvery norm induces a metric\n$$\nd(x,y)=\\|x-y\\|.\n$$\n\nThus every normed linear space is naturally a metric space.\n\n### Unit Ball and Unit Sphere\n\nThe unit ball is\n$$\nB=\\{x\\in V\\mid \\|x\\|<1\\}.\n$$\n\nThe unit sphere is\n$$\nS=\\{x\\in V\\mid \\|x\\|=1\\}.\n$$\n\n### Complete Normed Linear Space\n\nA complete normed linear space is called a Banach space."
+      "### Metric Induced by a Norm\n\nEvery norm induces a metric\n$$\nd(x,y)=\\|x-y\\|.\n$$\n\nThus every normed linear space is naturally a metric space.\n\n### Unit Ball and Unit Sphere\n\nThe unit ball is\n$$\nB=\\{x\\in V\\mid \\|x\\|<1\\}.\n$$\n\nThe unit sphere is\n$$\nS=\\{x\\in V\\mid \\|x\\|=1\\}.\n$$\n\n### Complete Normed Linear Space\n\nA complete normed linear space is a [Banach space](./Banach_Space.md)."
     ]
   },
   "Ordered_Set": {
@@ -802,6 +861,17 @@
       "### Operations\n\n#### Set operations\n\nA relation is essentially a set, so it possesses the same operations as a set.\n\n- **Intersection** (\u2229): returns the rows that are common to both relations.\n\n$$\nR\\cap S=\\{t|t\\in R\\land t\\in S\\} \\text{ and } R\\cap S = R-(R - S)\n$$\n\n- **Union** (\u222a): combines the results of two relations. The relations must be union-compatible (i.e., they have the same number of columns with the same domains).\n\n$$\nR\\cup S = \\{t|t\\in R \\lor t\\in S\\}\n$$\n\n- **Set Difference** (\u2212): returns the rows that are in the first relation but not in the second.\n\n$$\nR - S = \\{t|t\\in R \\land t\\notin S\\}\n$$\n\n- **Cartesian Product** (\u00d7): combines each row of the first relation with every row of the second relation.\n\n$$\nR\\times S=\\{(r_1,r_2,\\cdots,r_m,s_1,s_2,\\cdots,s_n)|(r_1,r_2,\\cdots,r_m)\\in R\\land(s_1,s_2,\\cdots,s_n)\\in S\\}\n$$\n\n\n#### Select & Projection\n\n**Select** (\u03c3): filters rows based on a specified condition (predicate).\n$$\n\\sigma_\\text{condition}(R)=\\{t|t\\in R\\land F(t)=\\text{True}\\}\n$$\n\n**Projection** (\u03c0): selects specific columns from a relation.\n$$\n\\pi_{A}(R)=\\{t[A]|t\\in R\\}\n$$\n\n#### Join\n\n$$\nR\\Join_{A\\theta B}S=\\sigma_{A\\theta B}(R\\times S)  \\tag{join}\n$$\n\n**Join** ($\\Join$): combines related tuples from two relations based on a condition, typically a common attribute. Where A and B are groups of attributes of equal and comparable degree on R and S respectively, and $\\theta$ is a comparison operator.\n\n$$\n\\begin{align*}\nR\\Join_{L,\\theta}S &=\\{(r_1,\\cdots,r_m,s_1,\\cdots,s_n)\\mid (r_1,\\cdots,r_m)\\in R\\land((\\exists(s_1,\\cdots,s_n)\\in S: \\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n)))\\lor\\forall(s_1,\\cdots,s_n)\\in S:\\neg\\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n))\\land(s_1 = \\text{null},\\cdots,s_n=\\text{null}))\\}\\\\\nR\\Join_{R,\\theta}S &=\\{(r_1,\\cdots,r_m,s_1,\\cdots,s_n)\\mid (s_1,\\cdots,s_n)\\in S\\land((\\exists(r_1,\\cdots,r_m)\\in R: \\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n)))\\lor\\forall(r_1,\\cdots,r_m)\\in R:\\neg\\theta((r_1,\\cdots,r_m),(s_1,\\cdots,s_n))\\land(r_1 = \\text{null},\\cdots,r_m=\\text{null}))\\}\\\\\nR\\Join_{\\text{full},\\theta}S &=(R\\Join_{L,\\theta}S)\\cup(R\\Join_{R,\\theta}S)\n\\end{align*}    \\tag{outer join}\n$$\n\nOuter Join (Left, Right, Full): Joins relations but retains rows from one or both relations that do not meet the join condition, filling with nulls where necessary.\n\n- **Left Outer Join ($\\Join_L$)**: Keeps all rows from the left relation. For each row $r$ in $R$, if there is a row $s$ in $S$ such that $\\theta(r, s)$ holds, then the pair $(r, s)$ is in $R\\Join_{L,\\theta}S$. If there is no such row $s$ in $S$ that satisfies $\\theta(r, s)$, then the pair $(r, (\\text{null},\\cdots,\\text{null}))$ is in $R\\Join_{L,\\theta}S$.\n- **Right Outer Join ($\\Join_R$)**: Keeps all rows from the right relation. For each row $s$ in $S$, if there is a row $r$ in $R$ such that $\\theta(r, s)$ holds, then the pair $(r, s)$ is in $R\\Join_{R,\\theta}S$. If there is no such row $r$ in $R$ that satisfies $\\theta(r, s)$, then the pair $(( \\text{null},\\cdots,\\text{null}), s)$ is in $R\\Join_{R,\\theta}S$.\n- **Full Outer Join ($\\Join_\\text{full}$)**: Keeps rows from both relations.\n\n$$\nR\\bowtie S=\\left\\{(r_1,\\cdots,r_m,s_1,\\cdots,s_n)\\mid r\\in R\\land s\\in S\\land\\bigwedge_{i = 1}^{k}(r[C_i]=s[C_i])\\right\\}/_{\\sim}  \\tag{natural join}\n$$\n\n\n\nNatural join of relations $R$ and $S$ is an special join where the join condition is defined by common attributes having equal values, combines tuples from $R$ and $S$ where the values of the common attributes are equal. \n\n- $R$: The first relation, $R$ has attributes $A_1, A_2,\\cdots, A_m$.\n- $S$: The second relation, $S$ has attributes $B_1, B_2,\\cdots, B_n$\n- $C$: the set of common attributes between $R$ and $S$. $C = \\{C_1,C_2,\\cdots,C_k\\}\\subseteq\\{A_1,\\cdots,A_m\\}\\cap\\{B_1,\\cdots,B_n\\}$.\n- $\\theta$: the join condition (a boolean valued function on the attributes of $R, S$)\n- $\\sim$: represents an equivalence relation that removes the duplicate columns of the common attributes. That is, we only keep one copy of each common attribute in the final result.\n\n### Binary Relation\n\n\n$$\nX \\ R\\ Y \\subseteq X \\times Y  \\tag{Binary Relation}\n$$\nBinary Relation $R$ over set $X, Y$ is a subset of the Cartesian product $X \\times Y$. The set $X$ is called the domain, and set $Y$ the codomain."
     ]
   },
+  "Riemannian_Manifold": {
+    "children": {},
+    "define": "> A Riemannian manifold is a smooth manifold equipped with a positive definite metric tensor.\n\nA **Riemannian manifold** is a [differential manifold](./Differential_Manifold.md) $M$ together with a smooth symmetric bilinear form\n$$\ng_p:T_pM\\times T_pM\\to\\mathbb R\n$$\nfor each point $p\\in M$, such that\n$$\ng_p(v,v)>0\n\\quad \\text{for every } v\\neq 0.\n$$\nThe metric varies smoothly with $p$ and allows one to measure lengths, angles, areas, and volumes.",
+    "parents": {
+      "Differential_Manifold": "subtype_of",
+      "Tensor": "has_defining_structure"
+    },
+    "properties": [
+      "### Levi-Civita Connection\n\nA Riemannian manifold has a unique torsion-free connection compatible with the metric.\n\n### Geodesics\n\nGeodesics are curves satisfying\n$$\n\\nabla_{\\dot\\gamma}\\dot\\gamma=0.\n$$\nThey locally extremize length when parameterized affinely."
+    ]
+  },
   "Riemann_Zeta_Function": {
     "children": {},
     "define": "> The Riemann zeta function packages the arithmetic of positive integers into a complex analytic function.\n\n$$\n\\zeta(s)=\\sum_{n=1}^{\\infty} \\frac{1}{n^{s}}=\\frac{1}{\\Gamma(s)} \\int_{0}^{\\infty} \\frac{x^{s-1}}{e^{x}-1} \\mathrm{~d} x\n$$\n\nRiemann zeta function for $s$ where $\\Re(s) > 1$ is as described above ([Complex function](./Complex_Value_Function.md)). (This series is absolutely convergent in the above region.) The Riemann function is analytically extended to the complex plane, anywhere except for point $s=1$, achieved through a series of functional relationships and integral representations. At $s = 1$, the Riemannian function has a simple pole.\n\n![img](./assets/zeta_img7.png)",
@@ -816,7 +886,8 @@
     "children": {
       "Integer_Ring": "subtype_of",
       "Module": "over_ring",
-      "Quaternion_Ring": "subtype_of"
+      "Quaternion_Ring": "subtype_of",
+      "Scheme": "locally_modeled_by"
     },
     "define": "> A ring is an algebraic structure with addition, subtraction, and multiplication, where multiplication need not be commutative or invertible.\n\n$$\n(G, +, \\cdot)\n$$\n\nRing is an algebraic structure, where $G$ is a set, $\\cdot$ and $+$ are binary operations, and satisfy:  \n\n- $(G, +)$ is a commutative group\n- $(G, \\cdot)$ is a monoid\n  - $(G, \\cdot)$ satisfies associative law, $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$\n  - $(G, \\cdot)$ exists multiplicative identity, $\\exist 1: 1 \\cdot x = x \\cdot 1 = x, \\forall x \\in G$\n- Distributive law: multiplication is distributive with respect to addition,\n  $$\n  \\begin{align*}\n    a \\cdot (b + c) &= a \\cdot b + a \\cdot c  \\\\\n    (b + c) \\cdot a &= b \\cdot a + c \\cdot a\n  \\end{align*}\n  $$",
     "parents": {
@@ -827,13 +898,37 @@
     ]
   },
   "Sequence": {
-    "children": {},
+    "children": {
+      "Chain_Complex": "structured_as"
+    },
     "define": "> A sequence is a function whose domain is usually the natural numbers, listing objects in order.\n\n$$\nf: \\mathbb N \\to S  \\tag{Sequence}\n$$\n$$\n\\begin{align*}\n(a_1, a_2, \\cdots, a_n)  \\tag{Finite sequence}\\\\\n(a_1, a_2, \\cdots)  \\tag{Infinite sequence}\n\\end{align*}\n$$\n\nA sequence is a [function](./Function.md) $f: \\mathbb N \\to S$ which mapping the set of positive integers or non-negative integers $\\mathbb N$ (the positions of elements in the sequence) to the elements $S$ at each position.",
     "parents": {
       "Function": "subtype_of"
     },
     "properties": [
       "### Limitation\n\n$$\n\\lim_{n \\to \\infty} x_n=L \\Leftrightarrow |x_n-L|<\\epsilon, \\forall epsilon>0, \\exists N \\in Z_+, n > N  \\tag{Limit of Sequence}\n$$\n\nthe limit of the sequence $\\{x_{n}\\}$ as $n$ approaches infinity is $L$, written as $\\lim\\limits_{n\\rightarrow\\infty}x_{n} = L$ if for every positive number $\\epsilon> 0$, there exists a positive integer $N$ such that for all $n > N$, we have $\\vert a_{n}-L\\vert<\\epsilon$. If such a number $L$ exists, we say the sequence converges; otherwise, we say the sequence diverges.\n\n#### Basic Properties\n\n- **Uniqueness**:  If a sequence $\\{a_{n}\\}$ converges, then its limit is unique.\n\n$$\n\\lim_{n\\rightarrow\\infty}a_{n}=L_{1}, \\lim_{n\\rightarrow\\infty}a_{n}=L_{2} \\Rightarrow L_{1} = L_{2}\n$$\n\n- **Boundedness**: If a sequence $\\{a_{n}\\}$ converges, then the sequence is bounded. There exists a positive number $M$ such that $\\vert a_{n}\\vert\\leq M$ for all $n$. However, the converse is not necessarily true. A bounded sequence may not converge. \n- **Sign preservation**: If $\\lim\\limits_{n\\rightarrow\\infty}a_{n}=L$ and $L>0$ (or $L<0$), then there exists a positive integer $N$ such that for all $n > N$, $a_{n}>0$ (or $a_{n}<0$).\n\n- **Comparison Theorem**: If $a_{n}\\leq b_{n}$ for all $n$, then $\\lim\\limits_{n\\rightarrow\\infty}a_{n}\\leq \\lim\\limits_{n\\rightarrow\\infty}b_{n}$.\n- **Squeeze Theorem**: If $a_{n}\\leq c_{n}\\leq b_{n}$ for all $n$ and $\\lim\\limits_{n\\rightarrow\\infty}a_{n}=\\lim\\limits_{n\\rightarrow\\infty}b_{n}=L$, then $\\lim\\limits_{n\\rightarrow\\infty}c_{n}=L$.\n- **Subsequences of a Convergent Sequence**: If $\\lim\\limits_{n\\rightarrow\\infty}a_{n}=L$, the subsequence $\\{a_{n_k}\\}$ is also convergent and converges to the same limit $L$.\n\n#### Algebraic Properties\n- **Sum & DifferenceRule**: $\\lim\\limits_{n\\rightarrow\\infty}(a_{n} \\pm b_{n})=\\lim\\limits_{n\\rightarrow\\infty}a_{n} \\pm \\lim\\limits_{n\\rightarrow\\infty}b_{n}$.\n- **Product Rule**: $\\lim\\limits_{n\\rightarrow\\infty}(a_{n}\\times b_{n})=\\lim\\limits_{n\\rightarrow\\infty}a_{n}\\times\\lim\\limits_{n\\rightarrow\\infty}b_{n}$.\n- **Quotient Rule**: If $\\lim\\limits_{n\\rightarrow\\infty}b_{n}\\neq0$, then $\\lim\\limits_{n\\rightarrow\\infty}\\frac{a_{n}}{b_{n}}=\\frac{\\lim\\limits_{n\\rightarrow\\infty}a_{n}}{\\lim\\limits_{n\\rightarrow\\infty}b_{n}}$.\n\n### Classic Sequence\n\n#### Arithmetic Sequence\n\n$$\na_{n}-a_{n - 1}=d  \\quad (n\\geq2, n\\in \\mathbb N^+) \\\\\na_{n}=a_{1}+(n - 1)d\n$$\n\nIf starting from the second term of a sequence, the difference between each term and its preceding term is equal to the same constant, then this sequence is called an arithmetic sequence.\n\n- $d$: the common difference of the arithmetic sequence.\n\n##### Properties\n- **Arithmetic Mean**: If $a$, $b$, $c$ are in arithmetic sequence, then $2b = a + c$, and $b$ is called the arithmetic mean of $a$ and $c$.\n- **Sum Formula of the First $n$ Terms**: \n$$\nS_{n}=\\frac{n(a_{1}+a_{n})}{2}=na_{1}+\\frac{n(n - 1)}{2}d\n$$\n- $m + n = p + q \\Rightarrow a_{m}+a_{n}=a_{p}+a_{q}$\n- **Monotonicity**: When $d>0$, the sequence is an increasing sequence; when $d<0$, the sequence is a decreasing sequence; when $d = 0$, the sequence is a constant sequence.\n\n#### Geometric Sequence\n\n$$\n\\frac{a_{n}}{a_{n - 1}}=q  \\quad (n\\geq2, n\\in \\mathbb N^+, q \\neq 0)\\\\\na_{n}=a_{1}q^{n - 1}\n$$\n\nIf starting from the second term of a sequence, the ratio of each term to its preceding term is equal to the same constant, then this sequence is called a geometric sequence.\n\n- $q$: the common ratio of the geometric sequence\n\n##### Properties\n\n- **Geometric Mean**: If $a$, $b$, $c$ are in geometric sequence, then $b^{2}=ac$, and $b$ is called the geometric mean of $a$ and $c$, and $a$, $b$, $c$ are all non-zero.\n- **Sum Formula of the First $n$ Terms**: When $q = 1$, $S_{n}=na_{1}$; when $q\\neq1$, $S_{n}=\\frac{a_{1}(1 - q^{n})}{1 - q}=\\frac{a_{1}-a_{n}q}{1 - q}$.\n- $m + n = p + q \\Rightarrow a_{m}\\cdot a_{n}=a_{p}\\cdot a_{q}$\n- **Monotonicity**: When $a_{1}>0$, $q>1$ or $a_{1}<0$, $0<q<1$, the sequence is an increasing sequence; when $a_{1}>0$, $0<q<1$ or $a_{1}<0$, $q>1$, the sequence is a decreasing sequence; when $q = 1$, the sequence is a constant sequence; when $q<0$, the sequence is an oscillating sequence.\n\n### Series\n\nA series refers to the sum of the terms of a sequence. Given a sequence $a_n$, the series $S$ is given by:\n$$\nS = \\sum_{i=0}^\\infty a_i  \\\\\nS_n = \\sum_{i=0}^n a_i\n$$\n\n### Subsequence\n\nSubsequence of a sequence $(a_n)$ is $(a_{g(n)})$ where $g : \\mathbb N \\to \\mathbb N$ is strictly increasing.  \n\nProblem:\n* Sort\n\n* Maximum Subarray Sum\n  - Purpose  \n    For a given sequence $a$, we aim to find the maximum sum of a contiguous subarray.\n    $$\n    \\begin{align*}\n      \\max_{x \\subseteq a} \\sum x\n    \\end{align*}\n    $$\n\n  - Algorithm  \n    Dynamic Program,\n    $$\n    f_i = \\max(f_{i-1}, 0) + a_i\n    $$\n    $$\n    s^* = \\max_{i=1}^n(f_i)\n    $$\n    where $f_i$ refer to the maximum sum of a contiguous subarray ending at $a_i$. \n\n* Longest Subsequence Problem\n* Sequence Palindrome\n  - Include\n    * Longest Palindrome Subsequence \n      - Purpose \n        $$\n        \\begin{align*}\n          \\max_{x \\subseteq a} \\quad & n_x = \\text{number}(x)  \\\\\n          s.t. \\quad & x_i = x_{n_x - i + 1}  \\quad ; i = 1:n_x  \\tag{Palindrome}\n        \\end{align*}\n        $$\n\n      - Algorithm  \n        Dynamic programming,\n        $$\n        \\begin{align*}\n          f(s,e) &= \\left\\{\\begin{matrix}\n            f(s-1,e+1) + 2 \\quad & f(s,e) > 0 \\ \\text{and}\\  a_{s-1} = a_{e+1}  \\\\\n            0 \\quad & other.\n            \\end{matrix}\\right.  \\\\\n          f(s,s) &= 1  \\tag{initial}  \\\\\n          f(s,s+1) &= 2 \\quad ;a_s = a_{s+1}  \\\\\n        \\end{align*}\n        $$\n        $f()$: $a_{s:e}$\u7684\u56de\u6587\u5b57\u6570, \u4e0d\u662f\u56de\u6587\u5e8f\u5217\u5219\u4e3a0.\n\n    * Maximum Palindrome Prefix\n      - Purpose  \n        $$\n        \\begin{align*}\n          \\max_{x \\in 1:n_a} \\quad & x  \\\\\n          s.t. \\quad & a_i = x_{x - i + 1}  \\quad ; i = 1:x  \\tag{Palindrome}\n        \\end{align*}\n        $$\n\n* Sequence Matching\n  - Purpose  \n    For two given sequences $a, b$, where $\\text{number}(b) \\le \\text{number}(a)$, and we aim to find the first place where $b$ matching the successive subsequence of $a$.\n    $$\n    \\begin{align*}\n      \\min\\quad& k \\\\\n      s.t.\\quad& b = a_{k:k+n_b-1}\n    \\end{align*}\n    $$\n\n  - Property  \n    - The next place possible matched is $k+i-l_i$, from the place $k$ in $a$ and $b_{1:i} = a_{k:k+i-1}$.\n\n      $$\n      l_i = \\text{length}_\\text{Longest Prefix-Suffix}(b_{1:i})\n      $$\n      $$\n      \\begin{align*}\n        b_{1:i} = a_{k:k+i-1} \\Rightarrow\n        b_{1:l_i} &= a_{k+i-l_i:k+i-1}  \\tag{match}\\\\\n        b_{1:l'} &\u2260 a_{k+i-l':k+i-1}  \\quad ; l' > l_i  \\tag{mismatch}\n      \\end{align*}\n      $$\n\n  - Algorithm\n    * Knuth-Morris-Pratt Algorithm  \n      For a place $k$ in sequence $a$ and $b_{1:i} = a_{k:k+i-1}$, we judge whether is the matched place. If not, we use the property above to arrive the place $k'$ possible matched and do the same thing, untill find the answer.\n      $$\n      \\begin{matrix}\n        k \\gets& k+i-l_i \\quad; b_{i+1} \\neq a_{k+i}\\\\\n        i \\gets& i+1 \\quad; b_{i+1} = a_{k+i}\\\\\n      \\end{matrix}\n      $$\n\n* Dynamic Time Warping , DTW"
+    ]
+  },
+  "Sheaf": {
+    "children": {},
+    "define": "> A sheaf is a device for assigning local data to open sets in a way that can be uniquely glued from compatible local pieces.\n\nGiven a [topological space](./Topological_Space.md) $X$, a **sheaf** $\\mathcal F$ assigns to each open set $U\\subseteq X$ an object $\\mathcal F(U)$ and to each inclusion $V\\subseteq U$ a restriction map\n$$\n\\rho_{U,V}:\\mathcal F(U)\\to\\mathcal F(V),\n$$\nsatisfying locality and gluing axioms.",
+    "parents": {
+      "Topological_Space": "has_base_space"
+    },
+    "properties": [
+      "### Locality\n\nIf two sections on $U$ restrict to the same section on every member of an open cover, then they are equal.\n\n### Gluing\n\nCompatible local sections on an open cover glue to a unique global section."
+    ]
+  },
+  "Scheme": {
+    "children": {},
+    "define": "> A scheme is a space obtained by gluing together spectra of commutative rings.\n\nA **scheme** is a [topological space](./Topological_Space.md) together with a sheaf of rings, locally isomorphic to an affine scheme\n$$\n\\operatorname{Spec} A\n$$\nfor some commutative ring $A$.\n\nSchemes generalize algebraic varieties and allow nilpotents and arithmetic base rings in algebraic geometry.",
+    "parents": {
+      "Ring": "locally_modeled_by",
+      "Sheaf": "has_defining_structure",
+      "Topological_Space": "has_underlying_space"
+    },
+    "properties": [
+      "### Affine Scheme\n\nFor a commutative ring $A$, the affine scheme $\\operatorname{Spec} A$ has points corresponding to prime ideals of $A$.\n\n### Gluing\n\nGeneral schemes are built by gluing affine schemes along compatible open subsets."
     ]
   },
   "Set": {
@@ -871,6 +966,17 @@
     },
     "properties": [
       "Rotational invariance: \n\nOrthogonality:\n$$\n\\int_0^{2\\pi} \\int_0^\\pi Y_l^m(\\theta, \\phi)  \\left[ Y_{l'}^{m'}(\\theta, \\phi)\\right]^*  \\sin\\theta  \\mathrm d\\theta \\mathrm  d\\phi = \\delta_{ll'} \\delta_{mm'}\n$$\n\nCompleteness: \u5bf9\u4e8e\u4efb\u610f\u4e0e\u7403\u4f53\u540c\u80da\u7684\u51fd\u6570, \u53ef\u4ee5\u901a\u8fc7\u7403\u8c10\u51fd\u6570\u4f5c\u4e3a\u6807\u51c6\u6b63\u4ea4\u57fa\u5b9e\u73b0\u7ea7\u6570\u5c55\u5f00.\n$$\n\\begin{align*}\nf(\\theta,\\phi) &= \\sum_{l=0}^{\\infty} \\sum_{m=-l}^{l} c_{lm} Y_l^m(\\theta,\\phi)\\\\\nc_l^m &= \\int_{S^2} f(\\theta, \\phi) Y_l^{m*}(\\theta, \\phi) \\, d\\Omega\n\\end{align*}\n$$\n\n\n\nAssociated Legendre Polynomials\n$$\nP_n(-x) = (-1)^n P_n(x)\n$$\n\n\n$$\nP_l^{-m}(x) = (-1)^m \\frac{(l-m)!}{(l+m)!} P_l^m(x)\n$$\n\nOrthogonality:\n$$\n\\begin{align*}\n\\int_{-1}^1 P_l(x) P_{l'}(x) \\mathrm dx &= \\frac{2}{2l+1} \\delta_{ll'}\\\\\n\\int_{-1}^{1} P_k^m(x) P_l^m(x)  \\mathrm  dx &= \\frac{2}{2l + 1} \\frac{(l + m)!}{(l - m)!} \\delta_{kl}  \\\\\n\\end{align*}\n$$\n\nRoots: All $n$ roots of $P_n(x)$ are real, distinct, and lie in (-1, 1)."
+    ]
+  },
+  "Symplectic_Manifold": {
+    "children": {},
+    "define": "> A symplectic manifold is a smooth manifold equipped with a closed nondegenerate differential 2-form.\n\nA **symplectic manifold** is a [differential manifold](./Differential_Manifold.md) $M$ together with a smooth 2-form $\\omega$ such that\n$$\nd\\omega=0\n$$\nand for every nonzero tangent vector $v\\in T_pM$ there exists $w\\in T_pM$ with\n$$\n\\omega_p(v,w)\\neq 0.\n$$\nThe form $\\omega$ is called the symplectic form.",
+    "parents": {
+      "Differential_Manifold": "subtype_of",
+      "Tensor": "has_defining_structure"
+    },
+    "properties": [
+      "### Darboux Theorem\n\nLocally every symplectic manifold looks like the standard symplectic vector space.\n\n### Hamiltonian Vector Field\n\nFor a smooth function $H$, the Hamiltonian vector field $X_H$ is determined by\n$$\n\\iota_{X_H}\\omega=dH.\n$$"
     ]
   },
   "Stochastic_Process": {
@@ -919,10 +1025,24 @@
       "### Special Examples\n\n- vector is a $(1, 0)$-Tensor, $T: V^* \\to \\mathbb R$\n- dual vector is a $(0, 1)$-Tensor, $T: V \\to \\mathbb R$\n- matrix is a $(1, 1)$-tensor, $T: V^* \\times V \\to \\mathbb R$\n\nMatrix multiplied by vector: $\\boldsymbol A \\boldsymbol v = A_i^j v^i = w^j$\n\n### Basic Operations\n\n- Addition: \n\n$$\n(T + S)(\\alpha_1,\\cdots,\\alpha_k,v_1,\\cdots,v_l)=T(\\alpha_1,\\cdots,\\alpha_k,v_1,\\cdots,v_l)+S(\\alpha_1,\\cdots,\\alpha_k,v_1,\\cdots,v_l)\n$$\n\n- Tensor Product\n\n$$\n(T S)(\\alpha_1,\\cdots,\\alpha_{k_1 + k_2},v_1,\\cdots,v_{l_1 + l_2})=T(\\alpha_1,\\cdots,\\alpha_{k_1},v_1,\\cdots,v_{l_1})S(\\alpha_{k_1+1},\\cdots,\\alpha_{k_1 + k_2},v_{l_1 + 1},\\cdots,v_{l_1 + l_2})\n$$\n\n\n- $\\alpha_1,\\cdots,\\alpha_k\\in V^*$\n- $v_1,\\cdots,v_l\\in V$.\n\n### Contraction\n\n$$\nC\\left(T^{i_1\\cdots i_{k - 1}i_{k + 1}\\cdots i_m}_{j_1\\cdots j_{l - 1}j_{l + 1}\\cdots j_n}\\right)=\\sum_{r = 1}^{N}T^{i_1\\cdots r\\cdots i_m}_{j_1\\cdots r\\cdots j_n}\n$$\n\nThe contraction of a tensor is an operation that reduces the rank of a tensor by summing over a pair of indices. For a tensor $T^{i_1i_2\\cdots i_m}_{j_1j_2\\cdots j_n}$, if we contract over the indices $i_k$ and $j_l$, we sum over the values of these indices.\n\n- $N$ is the dimension of the vector space on which the tensor is defined."
     ]
   },
+  "Vector_Bundle": {
+    "children": {},
+    "define": "> A vector bundle is a fiber bundle whose fibers are vector spaces and whose local trivializations are linear on fibers.\n\nA **vector bundle** consists of a total space $E$, a base space $B$, and a projection\n$$\n\\pi:E\\to B\n$$\nsuch that each fiber $E_b=\\pi^{-1}(b)$ is a [linear space](./Linear_Space.md), and locally\n$$\n\\pi^{-1}(U)\\cong U\\times V\n$$\nwith transition maps that are linear in the $V$-direction.",
+    "parents": {
+      "Fiber_Bundle": "subtype_of",
+      "Linear_Space": "has_fiber_type"
+    },
+    "properties": [
+      "### Sections\n\nA section of a vector bundle is a map $s:B\\to E$ with $\\pi\\circ s=\\operatorname{id}_B$.\n\n### Tangent Bundle\n\nFor a smooth manifold $M$, the tangent bundle $TM$ is a standard example of a vector bundle."
+    ]
+  },
   "Topological_Space": {
     "children": {
+      "Fiber_Bundle": "has_base_space",
       "Hausdorff_Space": "subtype_of",
-      "Metric_Space": "subtype_of"
+      "Metric_Space": "subtype_of",
+      "Scheme": "has_underlying_space",
+      "Sheaf": "has_base_space"
     },
     "define": "> Topological Space is a space in which open sets are defined.\n\n$$\n(S, \\tau)\n$$\n\nA **Topological space** is a pair $(S, \\tau)$, where $S$ is a set and $\\tau$ is a topology on $S$. The topology $\\tau$ is a collection of subsets of $S$ satisfying the following axioms. The elements of $\\tau$ are called open sets.\n\n- The empty set and the whole set $S$ itself belong to $\\tau$.\n$$\n\\{\\emptyset, S\\} \\subseteq \\tau\n$$\n\n- The intersection of any finite members of $\\tau$ belongs to $\\tau$.\n$$\nU_1, \\dots, U_n \\in \\tau \\Rightarrow \\bigcap_{i=1}^n U_i \\in \\tau\n$$\n\n- Any arbitrary union of members of $\\tau$ belongs to $\\tau$.\n$$\n\\{U_\\alpha\\}_{\\alpha \\in I} \\subseteq \\tau \\Rightarrow \\bigcup_{\\alpha \\in I} U_\\alpha \\in \\tau\n$$\n\nThus a topological space is a set equipped with a designated notion of openness.",
     "parents": {

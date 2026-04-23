@@ -229,6 +229,8 @@ This isomorphism depends on the chosen basis. Matrices and coordinate tuples des
 
 - [Cone](./Cone.md): has_ambient_space
 
+- [Lie_Algebra](./Lie_Algebra.md): subtype_of
+
 - [Linear_Transformation](./Linear_Transformation.md): maps_between
 
 - [Normed_Linear_Space](./Normed_Linear_Space.md): subtype_of
@@ -236,6 +238,8 @@ This isomorphism depends on the chosen basis. Matrices and coordinate tuples des
 - [Projective_Space](./Projective_Space.md): projectivization_of
 
 - [Tensor](./Tensor.md): over_vector_space
+
+- [Vector_Bundle](./Vector_Bundle.md): has_fiber_type
 
 ## Parents
 

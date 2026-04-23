@@ -495,6 +495,10 @@ For a Riemannian metric, geodesics locally extremize length when parameterized a
 
 - [Lie_Group](./Lie_Group.md): subtype_of
 
+- [Riemannian_Manifold](./Riemannian_Manifold.md): subtype_of
+
+- [Symplectic_Manifold](./Symplectic_Manifold.md): subtype_of
+
 ## Parents
 
 - [Manifold](./Manifold.md): subtype_of

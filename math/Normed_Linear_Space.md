@@ -55,9 +55,11 @@ $$
 
 ### Complete Normed Linear Space
 
-A complete normed linear space is called a Banach space.
+A complete normed linear space is a [Banach space](./Banach_Space.md).
 
 ## Include
+
+- [Banach_Space](./Banach_Space.md): subtype_of
 
 - [Inner_Product_Space](./Inner_Product_Space.md): subtype_of
 

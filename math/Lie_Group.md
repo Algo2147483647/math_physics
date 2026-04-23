@@ -14,11 +14,13 @@ $$
 
 ## Properties
 
-### Lie Algebra
+### Associated Lie Algebra
 
-Associated to a Lie group is its Lie algebra, which can be identified with the tangent space at the identity together with the Lie bracket induced by the group structure.
+Associated to a Lie group is a [Lie algebra](./Lie_Algebra.md), identified with the tangent space at the identity together with the bracket induced by left-invariant vector fields.
 
 ## Include
+
+- [Lie_Algebra](./Lie_Algebra.md): associated_to
 
 ## Parents
 

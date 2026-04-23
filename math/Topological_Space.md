@@ -182,9 +182,15 @@ This is a local description of openness: whether $U$ is open can be checked poin
 
 ## Include
 
+- [Fiber_Bundle](./Fiber_Bundle.md): has_base_space
+
 - [Hausdorff_Space](./Hausdorff_Space.md): subtype_of
 
 - [Metric_Space](./Metric_Space.md): subtype_of
+
+- [Scheme](./Scheme.md): has_underlying_space
+
+- [Sheaf](./Sheaf.md): has_base_space
 
 ## Parents
 

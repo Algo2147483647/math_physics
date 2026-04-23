@@ -195,6 +195,8 @@ Problem:
 
 ## Include
 
+- [Chain_Complex](./Chain_Complex.md): structured_as
+
 ## Parents
 
 - [Function](./Function.md): subtype_of
