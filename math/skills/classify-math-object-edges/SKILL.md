@@ -3,7 +3,7 @@ name: classify-math-object-edges
 description: Decide whether an edge between two already-approved mathematical object nodes should appear in a strict object-centered knowledge graph, and assign the retained edge type or reject the edge. Use when reviewing a math ontology DAG, classifying proposed edges, removing redundant shortcuts, or enforcing policies such as is_a, defined_over, modeled_on, and requires_object.
 ---
 
-# Skill: Retained Edge Types Policy for an Object-Centered Mathematical Knowledge Graph
+# Skill: Classify Math Object Edges
 
 ## Purpose
 
@@ -411,25 +411,12 @@ Only true object-class specialization counts as parent-child.
 
 ---
 
-## Edge Types That Must Not Appear in the Main DAG
+## References
 
-The following edge types are not retained in the main object DAG under this skill.
+Use this navigation map to keep context small. Do not read every reference file by default.
 
-| Edge type | Why excluded | Where to place instead |
-|---|---|---|
-| `has_subobject` | subobjects are not standalone nodes under the node policy | inside the owner node under standard constructions |
-| `has_quotient` | quotient objects are not standalone nodes | inside the owner node under standard constructions |
-| `constructs` | stable constructions are merged into owner nodes | inside standard constructions |
-| `has_core_morphism` | morphisms are not retained object nodes | inside node section for morphisms |
-| `instance_of` | main DAG is class-level, not instance-level | examples database or examples section |
-| `generalizes` / `specializes` | too vague and overlaps with `is_a` | explanatory notes only |
-| `equivalent_to` | not naturally DAG-shaped and often symmetric | internal notes |
-| `analog_of` | analogy is not backbone structure | analogy map |
-| `motivates` | historical or conceptual, not structural | motivation/history notes |
-| `applies_to` | application relation, not object skeleton | application notes |
-| `contrasts_with` | contrast relation, not structural relation | confusion notes |
-| theorem dependency edges | different graph semantics entirely | theorem dependency graph |
-| learning prerequisite edges | pedagogical, not structural | learning path graph |
+- Read [references/canonical-judgments.md](references/canonical-judgments.md) when you need worked examples or precedent for ambiguous edge decisions.
+- Read [references/excluded-edge-types.md](references/excluded-edge-types.md) when a proposed edge label falls outside the retained policy or you need guidance on where rejected relations should live.
 
 ---
 
@@ -464,148 +451,6 @@ notes: <string or null>
 
 ---
 
-## Canonical Judgments
-
-### Example 1
-
-**Input**: `Hilbert space -> inner product space`
-
-```yaml
-source_node: Hilbert space
-target_node: inner product space
-policy_mode: STRICT_DEFAULT
-decision: add_edge
-edge_type: is_a
-confidence: high
-reasoning:
-  - Every Hilbert space is naturally an inner product space.
-  - The distinction is completeness, which is an extra restriction rather than a change of object role.
-  - This is the nearest valid parent object class.
-redundancy_check:
-  transitive_redundancy: false
-  nearest_parent_violation: false
-  low_value_edge: false
-notes: null
-```
-
-### Example 2
-
-**Input**: `Hilbert space -> vector space`
-
-```yaml
-source_node: Hilbert space
-target_node: vector space
-policy_mode: STRICT_DEFAULT
-decision: reject_edge
-edge_type: null
-confidence: high
-reasoning:
-  - Although every Hilbert space is a vector space, the direct edge skips the nearer parent inner product space.
-  - The relation is already captured by transitive structure.
-  - Keeping the shortcut would reduce DAG readability.
-redundancy_check:
-  transitive_redundancy: true
-  nearest_parent_violation: true
-  low_value_edge: false
-notes: null
-```
-
-### Example 3
-
-**Input**: `vector space -> field`
-
-```yaml
-source_node: vector space
-target_node: field
-policy_mode: STRICT_DEFAULT
-decision: add_edge
-edge_type: defined_over
-confidence: high
-reasoning:
-  - A vector space is not a subtype of field.
-  - Its definition explicitly requires a field as scalar source.
-  - The field is a retained external core object, not an internal technical ingredient.
-redundancy_check:
-  transitive_redundancy: false
-  nearest_parent_violation: false
-  low_value_edge: false
-notes: null
-```
-
-### Example 4
-
-**Input**: `ring -> group`
-
-```yaml
-source_node: ring
-target_node: group
-policy_mode: STRICT_DEFAULT
-decision: reject_edge
-edge_type: null
-confidence: high
-reasoning:
-  - The relation only holds after projecting to the additive structure of a ring.
-  - The whole ring object is not itself simply a group object in the retained parent-child sense.
-  - This does not satisfy the strict `is_a` criterion.
-redundancy_check:
-  transitive_redundancy: false
-  nearest_parent_violation: false
-  low_value_edge: false
-notes: Store additive-group content inside the ring node rather than as a main DAG edge.
-```
-
-### Example 5
-
-**Input**: `manifold -> Euclidean space`
-
-```yaml
-source_node: manifold
-target_node: Euclidean space
-policy_mode: STRICT_GEOMETRIC
-decision: add_edge
-edge_type: modeled_on
-confidence: medium
-reasoning:
-  - A manifold is locally modeled on Euclidean space.
-  - The local-model relation is part of the defining identity of manifolds.
-  - This is not subtype inclusion and not merely a scalar-parameter dependency.
-redundancy_check:
-  transitive_redundancy: false
-  nearest_parent_violation: false
-  low_value_edge: false
-notes: null
-```
-
-### Example 6
-
-**Input**: `topological space -> set`
-
-Possible judgments depend on repository strictness.
-
-Under a very sparse graph:
-
-```yaml
-source_node: topological space
-target_node: set
-policy_mode: STRICT_DEFAULT
-decision: reject_edge
-edge_type: null
-confidence: medium
-reasoning:
-  - The graph may treat set-level dependence as universal background rather than explicit structure.
-  - Keeping only higher-value object relations may improve readability.
-  - This edge is definitional but may be too low-level for the retained backbone.
-redundancy_check:
-  transitive_redundancy: false
-  nearest_parent_violation: false
-  low_value_edge: true
-notes: Keep set-level dependence in node internals if the repository suppresses universal background edges.
-```
-
-Under a repository that explicitly preserves foundational object dependencies, the same pair may be accepted as `defined_over`.
-
----
-
 ## Agent Behavior Requirements
 
 When applying this skill, the agent must:
@@ -635,7 +480,7 @@ Use this skill only after the node policy has already determined that the candid
 
 Recommended order:
 
-1. run the node-retention skill on candidate concepts;
+1. run the `classify-math-object-nodes` skill on candidate concepts;
 2. keep only valid retained nodes;
 3. apply this edge skill pairwise or to proposed edge lists;
 4. store accepted edges in the main DAG;
