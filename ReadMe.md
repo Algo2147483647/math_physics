@@ -18,7 +18,7 @@ The goal of this repository is not to collect isolated formulas. It is to keep c
 | Path | Role |
 | --- | --- |
 | [`math/`](./math/) | Pure mathematical concepts organized as a directed knowledge graph. |
-| [`math/skills/`](./math/skills/) | Local ontology-maintenance skills for deciding math nodes and graph edges consistently. |
+| [`math/skills/`](.agents/skills/) | Local ontology-maintenance skills for deciding math nodes and graph edges consistently. |
 | [`applied mathematics/`](./applied%20mathematics/) | Problem-oriented mathematical tools: algorithms, cryptography, differential equations, geometry, information, language, optimization, and statistics. |
 | [`physics/`](./physics/) | Physical theories, core principles, fields, spacetime models, fluids, statistical mechanics, and experiments. |
 | [`history/`](./history/) | Historical graph/data snapshots and conversion scripts. |
@@ -74,14 +74,14 @@ Important theorems, equivalent characterizations, operations, examples, and coun
 
 ### Graph Maintenance Layout
 
-[`math/skills/`](./math/skills/) stores the repository rules used to maintain the math graph as an object-centered, sparse, and consistent ontology.
+[`math/skills/`](.agents/skills/) stores the repository rules used to maintain the math graph as an object-centered, sparse, and consistent ontology.
 
 | Path | Role |
 | --- | --- |
-| [`math/skills/classify-math-concept-node/`](./math/skills/classify-math-concept-node/) | Node-boundary policy: decide whether a concept becomes a standalone node, is merged upward, or is stored as non-object information. |
-| [`math/skills/classify-math-concept-node/references/`](./math/skills/classify-math-concept-node/references/) | Node examples, ontology rules, and borderline cases. |
-| [`math/skills/classify-math-object-edges/`](./math/skills/classify-math-object-edges/) | Edge-retention policy: decide whether an edge between approved object nodes should be kept and how it should be typed. |
-| [`math/skills/classify-math-object-edges/references/`](./math/skills/classify-math-object-edges/references/) | Canonical edge judgments and excluded edge categories. |
+| [`math/skills/classify-math-concept-node/`](.agents/skills/classify-math-concept-node/) | Node-boundary policy: decide whether a concept becomes a standalone node, is merged upward, or is stored as non-object information. |
+| [`math/skills/classify-math-concept-node/references/`](.agents/skills/classify-math-concept-node/references/) | Node examples, ontology rules, and borderline cases. |
+| [`math/skills/classify-math-object-edges/`](.agents/skills/classify-math-object-edges/) | Edge-retention policy: decide whether an edge between approved object nodes should be kept and how it should be typed. |
+| [`math/skills/classify-math-object-edges/references/`](.agents/skills/classify-math-object-edges/references/) | Canonical edge judgments and excluded edge categories. |
 
 Apply the policies in this order:
 
@@ -91,7 +91,7 @@ Apply the policies in this order:
 
 ### Node Decision Policy
 
-Use [`math/skills/classify-math-concept-node/SKILL.md`](./math/skills/classify-math-concept-node/SKILL.md) when deciding whether a term such as `group`, `compactness`, `dual space`, or `Banach space` should become its own note.
+Use [`math/skills/classify-math-concept-node/SKILL.md`](.agents/skills/classify-math-concept-node/SKILL.md) when deciding whether a term such as `group`, `compactness`, `dual space`, or `Banach space` should become its own note.
 
 - Default policy is `STRICT`.
 - Create a node only when the concept is a core mathematical object class, or a specialized object class that is mathematically classical, frequently used, or a stable subject of discourse.
@@ -108,7 +108,7 @@ The node classifier returns a normalized record with:
 
 ### Edge Decision Policy
 
-Use [`math/skills/classify-math-object-edges/SKILL.md`](./math/skills/classify-math-object-edges/SKILL.md) after node policy has already approved both endpoints as retained object nodes.
+Use [`math/skills/classify-math-object-edges/SKILL.md`](.agents/skills/classify-math-object-edges/SKILL.md) after node policy has already approved both endpoints as retained object nodes.
 
 - Default policy mode is `STRICT_DEFAULT`.
 - The default retained edge set is `is_a` and `defined_over`.
