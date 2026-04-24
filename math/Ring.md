@@ -86,8 +86,6 @@ $$
 
 - [Quaternion_Ring](./Quaternion_Ring.md): subtype_of
 
-- [Scheme](./Scheme.md): locally_modeled_by
-
 ## Parents
 
 - [Algebra_Structure](./Algebra_Structure.md): subtype_of

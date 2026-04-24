@@ -45,6 +45,10 @@ Rational number field is a [field](./Field.md) of rational numbers is the set of
 
 ## Include
 
+- [Number_Field](./Number_Field.md): field_extension_of
+
+- [p_Adic_Number](./p_Adic_Number.md): field_extension_of
+
 - [Real_Field](./Real_Field.md): field_extension_of
 
 ## Parents

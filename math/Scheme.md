@@ -26,9 +26,11 @@ General schemes are built by gluing affine schemes along compatible open subsets
 
 ## Include
 
-## Parents
+- [Abelian_Variety](./Abelian_Variety.md): subtype_of
 
-- [Ring](./Ring.md): locally_modeled_by
+- [Modular_Curve](./Modular_Curve.md): subtype_of
+
+## Parents
 
 - [Sheaf](./Sheaf.md): has_defining_structure
 

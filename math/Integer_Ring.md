@@ -74,9 +74,9 @@ No three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for 
 
 ## Include
 
-- [Mobius_Function](./Mobius_Function.md): has_domain
+- [Dirichlet_Character](./Dirichlet_Character.md): has_domain
 
-- [Prime](./Prime.md): subtype_of
+- [Mobius_Function](./Mobius_Function.md): has_domain
 
 - [Rational_Number_Field](./Rational_Number_Field.md): fraction_field_of
 

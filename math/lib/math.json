@@ -11,6 +11,18 @@
       "### Affine Set\n\nAn affine set is a subset closed under affine combinations:\n$$\n\\forall \\boldsymbol x_i \\in C,\\ \\theta_i \\in \\mathbb R,\\ \\sum \\theta_i = 1\n\\quad \\Rightarrow \\quad\n\\sum \\theta_i \\boldsymbol x_i \\in C.\n$$\n\n### Affine Hull\n\nFor a subset $C$ of an affine space, the affine hull is the smallest affine subset containing $C$:\n$$\n\\operatorname{aff}(C) = \\left\\{\\sum \\theta_i \\boldsymbol x_i\\ \\middle|\\ \\boldsymbol x_i \\in C,\\ \\theta_i \\in \\mathbb R,\\ \\sum \\theta_i = 1\\right\\}.\n$$\n\n### Hyperplane and Half-Space\n\nA hyperplane and a closed half-space in an affine coordinate model are given by\n$$\n\\{\\boldsymbol x \\mid \\boldsymbol a^T \\boldsymbol x = b\\}\n\\quad \\text{and} \\quad\n\\{\\boldsymbol x \\mid \\boldsymbol a^T \\boldsymbol x \\le b\\}.\n$$\n\nHalf-spaces are convex sets."
     ]
   },
+  "Abelian_Variety": {
+    "children": {
+      "Elliptic_Curve": "subtype_of"
+    },
+    "define": "> An abelian variety is a complete algebraic group variety, central in arithmetic geometry.\n\nAn **abelian variety** over a field $K$ is a complete, connected algebraic group over $K$. Equivalently in classical language, it is a projective algebraic variety equipped with a compatible commutative group law.\n\nAbelian varieties generalize elliptic curves to higher dimension and are basic objects in arithmetic geometry.",
+    "parents": {
+      "Scheme": "subtype_of"
+    },
+    "properties": [
+      "### Dimension One Case\n\nAn elliptic curve over a field is an abelian variety of dimension $1$.\n\n### Arithmetic Role\n\nAbelian varieties carry rich structures such as torsion points, Galois actions on Tate modules, and height pairings."
+    ]
+  },
   "Algebra_Structure": {
     "children": {
       "Field": "subtype_of",
@@ -24,6 +36,18 @@
     },
     "properties": [
       "### Automorphism \n\nAn automorphism is simply a bijective homomorphism of a mathematical object with itself."
+    ]
+  },
+  "Automorphic_Form": {
+    "children": {
+      "Modular_Form": "subtype_of"
+    },
+    "define": "> An automorphic form is a highly symmetric complex-valued function on an arithmetic quotient of a reductive group.\n\nAutomorphic forms are complex-valued functions satisfying invariance, growth, and eigenfunction conditions with respect to arithmetic subgroups or adelic quotients. They organize spectral and arithmetic information and lie at the heart of modern number theory.",
+    "parents": {
+      "Complex_Value_Function": "subtype_of"
+    },
+    "properties": [
+      "### Arithmetic Role\n\nAutomorphic forms package Fourier coefficients, Hecke eigenvalues, and spectral data into objects that interact with $L$-functions and Galois representations."
     ]
   },
   "Banach_Space": {
@@ -120,10 +144,12 @@
   },
   "Complex_Value_Function": {
     "children": {
+      "Automorphic_Form": "subtype_of",
+      "Dirichlet_Series": "subtype_of",
       "Gamma_Function": "subtype_of",
       "Holomorphic_Function": "subtype_of",
       "Hypergeometric_Function": "subtype_of",
-      "Riemann_Zeta_Function": "subtype_of",
+      "L_Function": "subtype_of",
       "Spherical_Harmonics": "subtype_of"
     },
     "define": "> A complex-valued function assigns a complex number to each point of its domain.\n\n$$\nf: \\mathbb C \\to \\mathbb C\n$$\n\nA complex function $f: \\mathbb C \\to \\mathbb C$ is a [function](./Function.md) from [complex numbers](./Complex_Field.md) to complex numbers.",
@@ -160,9 +186,7 @@
     ]
   },
   "Cubic_Function": {
-    "children": {
-      "Elliptic_Curve": "zero_locus_of"
-    },
+    "children": {},
     "define": "> A cubic function is a polynomial function whose highest-degree term has degree three.\n\n$$\n\\begin{align*}\nf(x) &= \\sum_{i=0}^{3} a_i x^i  \\tag{Univariate} \\\\\nf(\\boldsymbol x) &= \\sum\\limits_{i_1=0}^{\\dim} \\sum\\limits_{i_2=i_1}^{\\dim} \\sum\\limits_{i_3=i_2}^{\\dim}a_{i_1 i_2 i_3} \\cdot x_{i_1} x_{i_2} x_{i_3}  \\quad \\text{where } x_0 = 1 \\\\\n\\end{align*}\n$$",
     "parents": {
       "Polynomial_Function": "subtype_of"
@@ -196,6 +220,27 @@
       "### Sampling Property\n\nFor a suitable function $f$,\n$$\n\\int_{-\\infty}^{\\infty} f(t)\\delta(t-T)\\,dt=f(T).\n$$\n\nMore generally,\n$$\n\\int_{\\mathbb R} f(x)\\,\\delta_a(dx)=f(a).\n$$\n\n### Shift\n\nThe shifted Dirac delta $\\delta(x-a)$ represents unit mass at $x=a$.\n\n### Scaling\n\nFor $c\\neq 0$,\n$$\n\\delta(cx)=\\frac1{|c|}\\delta(x).\n$$"
     ]
   },
+  "Dirichlet_Character": {
+    "children": {},
+    "define": "> A Dirichlet character is a periodic multiplicative arithmetic function modulo an integer.\n\nFor a positive integer $q$, a **Dirichlet character modulo $q$** is a function\n$$\n\\chi : \\mathbb Z \to \\mathbb C\n$$\nthat is periodic modulo $q$, completely multiplicative, and factors through the unit group $(\\mathbb Z / q \\mathbb Z)^\times$, with the standard extension by $0$ on integers not coprime to $q$.",
+    "parents": {
+      "Function": "subtype_of",
+      "Integer_Ring": "has_domain"
+    },
+    "properties": [
+      "### Basic Properties\n\nA Dirichlet character satisfies\n$$\n\\chi(mn)=\\chi(m)\\chi(n),\\qquad \\chi(n+q)=\\chi(n).\n$$\n\n### Arithmetic Role\n\nDirichlet characters are the basic coefficients used to form Dirichlet $L$-functions and to study primes in arithmetic progressions."
+    ]
+  },
+  "Dirichlet_Series": {
+    "children": {},
+    "define": "> A Dirichlet series is a complex-valued function given by a series of the form $\\sum a_n n^{-s}$.\n\nA **Dirichlet series** is a function of a complex variable $s$ of the form\n$$\n\\sum_{n=1}^{\\infty} \frac{a_n}{n^s},\n$$\nwhere $(a_n)$ is a sequence of complex coefficients. Such series are basic objects in analytic number theory.",
+    "parents": {
+      "Complex_Value_Function": "subtype_of"
+    },
+    "properties": [
+      "### Region of Convergence\n\nA Dirichlet series typically converges absolutely in some half-plane\n$$\n\\Re(s) > \\sigma_0.\n$$\n\n### Arithmetic Role\n\nMany arithmetic functions are encoded by Dirichlet series, which connect multiplicative structure with complex analysis."
+    ]
+  },
   "Directed_Acyclic_Graph": {
     "children": {},
     "define": "> A directed acyclic graph is a directed graph with no directed cycles.\n\nA **directed acyclic graph** (DAG) is a directed [graph](./Graph.md)\n$$\nG=(V,E),\\quad E\\subseteq V\\times V,\n$$\nsuch that there is no directed cycle. That is, there is no finite sequence of vertices\n$$\nv_0,v_1,\\cdots,v_k\n$$\nwith $k\\ge 1$, $v_0=v_k$, and\n$$\n(v_i,v_{i+1})\\in E,\\quad i=0,\\cdots,k-1.\n$$\n\n> A DAG can express dependency without circular dependency.",
@@ -208,9 +253,9 @@
   },
   "Elliptic_Curve": {
     "children": {},
-    "define": "> An elliptic curve is a smooth cubic curve equipped with a natural abelian group structure.\n\n$$\ny^2 = x^3 + a x + b\n$$\n\nAn elliptic curve over a field $K$ is defined by an equation of the form as above. where $a, b$ are elements in $K$, and the discriminant $ \\Delta = -16(4a^3 - 27b^2) \\neq 0$. The non-vanishing of the discriminant ensures that the curve has no singularities (i.e., no cusps or self-intersections). ([Cubic Function](./Cubic_Function.md))\n\n<img src=\"assets/EllipticCurveCatalog.svg\" alt=\"EllipticCurveCatalog\" style=\"zoom: 33%;\" />",
+    "define": "> An elliptic curve is a smooth projective genus-one curve with a chosen rational point, equivalently an abelian variety of dimension one.\n\n$$\ny^2 = x^3 + a x + b\n$$\n\nOver a field $K$ of characteristic not equal to $2$ or $3$, an elliptic curve can often be written in a Weierstrass form as above, where $a, b \\in K$ and the discriminant\n$$\n\\Delta = -16(4a^3 - 27b^2)\neq 0\n$$\nensures smoothness.\n\n<img src=\"assets/EllipticCurveCatalog.svg\" alt=\"EllipticCurveCatalog\" style=\"zoom: 33%;\" />",
     "parents": {
-      "Cubic_Function": "zero_locus_of"
+      "Abelian_Variety": "subtype_of"
     },
     "properties": [
       "Groups formed by points on elliptic curves: The points on an elliptic curve form an Abelian group through a defined \"addition\" operation. This addition operation is related to the intersection of a line and a curve, while the unit element is represented by a point at infinity.\n\n- Addition Operation: Given two points $P = (x_1, y_1), Q = (x_2, y_2)$ on $E$, their sum $P+Q=(x3, y3)$ is defined as follows: (Draw a straight line passing through points $P, Q$. This straight line will align with the curve at the third point $Q'$. By reflecting perpendicular to the x-axis from point $Q'$, you will obtain new points $C$, which is defined as $P + Q$.)\n\n  If $P \\neq Q$, the slope of the line through $P$ and $Q$ is:\n  $$\n  m = \\frac{y_2 - y_1}{x_2 - x_1}\n  $$\n  If $P = Q$, the slope of the tangent to the curve at $P$ is:\n  $$\n  m = \\frac{3x_1^2 + a}{2y_1}\n  $$\n  The coordinates $x_3$ and $y_3$ of $P + Q$ are given by:\n  $$\n  (x_3, y_3) = (m^2 - x_1 - x_2, m(x_1 - x_3) - y_1)\n  $$\n\n  Special cases:\n\n  if $P = O$, then $P +Q= Q$\n  if $Q = O$,then $P +Q = P$\n  if $P = (x_1, y_1), Q = (x_1, -y_1)$  (i.e., $Q$ is the reflection of $P$ over the x-axis), then $P + Q= O$.\n\n- Unit element: The unit element of this group is a special point at infinity, usually denoted as $O$. Any point on an elliptical curve plus O is equal to itself."
@@ -253,7 +298,10 @@
   "Field": {
     "children": {
       "Complex_Field": "subtype_of",
+      "Global_Field": "subtype_of",
+      "Galois_Representation": "over_field",
       "Linear_Space": "over_field",
+      "Local_Field": "subtype_of",
       "Rational_Number_Field": "subtype_of",
       "Real_Field": "subtype_of"
     },
@@ -314,8 +362,10 @@
       "Bessel_Function": "subtype_of",
       "Complex_Value_Function": "subtype_of",
       "Dirac_Delta_Function": "subtype_of",
+      "Dirichlet_Character": "subtype_of",
       "Exponential_Function": "subtype_of",
-      "Linear_Transformation": "subtype_of",
+      "Galois_Representation": "subtype_of",
+      "Linear_Transformation": "maps_between",
       "Polynomial_Function": "subtype_of",
       "Radon_Transform": "subtype_of",
       "Random_Element": "subtype_of",
@@ -330,6 +380,17 @@
       "* Inverse Function\n  if $f$ is a bijection, its inverse function is $f^{-1}(b) = a \\Leftrightarrow f(a) = b$\n\n### Convolution\n\nWhen the relevant integrability conditions hold, the convolution of two functions is\n$$\n(f * g)(t) = \\int_{-\\infty}^{\\infty} f(\\tau) g(t-\\tau)\\, d\\tau.\n$$\n\nConvolution is an operation on functions rather than a standalone object node.\n\n### Hilbert Transform\n\nFor a suitable function $u$, the Hilbert transform is the principal-value singular integral\n$$\nH(u)(t) = \\operatorname{p.v.}\\frac{1}{\\pi} \\int_{-\\infty}^{\\infty} \\frac{u(\\tau)}{t-\\tau}\\, d\\tau.\n$$\n\n### Laplace Transform\n\nFor a suitable function $f$, the Laplace transform is\n$$\n\\mathcal L f(s) = \\int_0^{\\infty} f(t) e^{-st}\\, dt.\n$$\n\nThese transforms are standard operations on functions, so they are stored here instead of as standalone nodes."
     ]
   },
+  "Galois_Representation": {
+    "children": {},
+    "define": "> A Galois representation is a homomorphism from a Galois group into a linear group over a coefficient field.\n\nA **Galois representation** is typically a continuous homomorphism\n$$\n\rho : \\operatorname{Gal}(\\overline K / K) \to \\operatorname{GL}_n(E),\n$$\nwhere $K$ is a field and $E$ is a coefficient field such as a finite extension of $\\mathbb Q_p$. Galois representations are central objects in modern arithmetic geometry.",
+    "parents": {
+      "Function": "subtype_of",
+      "Field": "over_field"
+    },
+    "properties": [
+      "### Arithmetic Role\n\nGalois representations encode arithmetic information coming from elliptic curves, modular forms, and etale cohomology.\n\n### Typical Coefficient Fields\n\nCommon choices of coefficient field include finite extensions of $\\mathbb Q_p$, finite fields, and sometimes $\\mathbb C$."
+    ]
+  },
   "Gamma_Function": {
     "children": {},
     "define": "> The Gamma function extends the factorial function from positive integers to complex and real arguments.\n\nThe gamma function is defined for all complex numbers except the non-positive integers. ([Complex Value Function](./Complex_Value_Function.md)) For every positive integer $n$,\n$$\n\\Gamma(n) = (n-1)!\n$$\nFor complex numbers with a positive real part, the gamma function is defined via a convergent improper integral,\n$$\n\\Gamma(z) = \\int_{0}^\\infty t^{z-1} e^{-t} \\mathrm d t \\quad, \\Re(z) > 0\n$$\n<img src=\"assets/Plot_of_gamma_function_in_complex_plane_in_3D_with_color_and_legend_and_1000_plot_points_created_with_Mathematica.svg\" alt=\"Plot_of_gamma_function_in_complex_plane_in_3D_with_color_and_legend_and_1000_plot_points_created_with_Mathematica\" style=\"zoom:12%;\" />",
@@ -338,6 +399,18 @@
     },
     "properties": [
       "- Recursion\n  $$\n  \\Gamma(z+1) = z \\Gamma(z)\n  $$\n  \n- Euler's reflection formula\n  $$\n  \\Gamma(1-z)\\Gamma(z) = \\frac{\\pi}{\\sin \\pi z}\n  $$\n\n- $$\n  2^{2 z-1} \\Gamma(z) \\Gamma\\left(z+ \\frac{1}{2}\\right)=\\sqrt{\\pi} \\Gamma(2 z)\n  $$\n  \n  - $$\n    \\Gamma\\left(\\frac{1}{2}\\right) = \\sqrt{\\pi}\n    $$\n  \n- Stirling's formula\n  $$\n  \\Gamma(n+1) = n! \\sim \\sqrt{2\\pi n} \\left(\\frac{n}{e}\\right)^n\n  $$\n  \n- $$\n  \\begin{align*}\n  \\Gamma(z) &=\\lim _{n \\rightarrow \\infty} \\frac{1 \\cdot 2 \\cdots n}{z(z+1) \\cdots(z+n)} n^{z}  \\\\\n  &= \\frac{e^{-\\gamma z}}{z} \\prod_{n=1}^{\\infty}\\left(1+\\frac{z}{n}\\right)^{-1} e^{\\frac{z}{n}}\n  \\end{align*}\n  $$"
+    ]
+  },
+  "Global_Field": {
+    "children": {
+      "Number_Field": "subtype_of"
+    },
+    "define": "> A global field is either a number field or a function field of one variable over a finite field.\n\nA **global field** is a field that belongs to one of the two standard arithmetic classes:\n\n- a finite extension of $\\mathbb Q$;\n- a finite extension of $\\mathbb F_q(t)$.\n\nGlobal fields provide the common framework for many statements in algebraic and analytic number theory.",
+    "parents": {
+      "Field": "subtype_of"
+    },
+    "properties": [
+      "### Two Families\n\nThe characteristic-zero global fields are number fields, while the positive-characteristic global fields are function fields of curves over finite fields.\n\n### Arithmetic Role\n\nGlobal fields admit completions at places, leading to local fields and local-global principles."
     ]
   },
   "Graph": {
@@ -426,8 +499,8 @@
   },
   "Integer_Ring": {
     "children": {
+      "Dirichlet_Character": "has_domain",
       "Mobius_Function": "has_domain",
-      "Prime": "subtype_of",
       "Rational_Number_Field": "fraction_field_of"
     },
     "define": "> The integer ring is the ring of whole numbers under ordinary addition and multiplication.\n\nRing of Integers is a kind of Integral Domain (\u6574\u73af).\n$$\n\\mathbb Z\n$$\n\nAn **integer** can be defined as an equivalence class of ordered pairs of natural numbers $(a, b)$, where $a$ and $b$ are [natural numbers](./Natural_Number.md), under the following equivalence relation:\n\n- Two ordered pairs $(a, b)$ and $(c, d)$ are considered equivalent if and only if $a + d = b + c$. (the difference between two natural numbers)\n\n$$\n(\\mathbb Z, +, \\cdot)\n$$\n$$\n\\forall a, b \\in \\mathbb Z, a \\cdot b = 0 \\quad\\Rightarrow\\quad  (a = 0 \\vee b = 0)  \\tag{no zero divisor}\n$$\nIntegral ring is a nonzero commutative [ring](./Ring.md) in which the product of any two nonzero elements is nonzero.\n\n- **Addition:** To add two integers represented by $[a, b]$ and $[c, d]$, define their sum as $[a + c, b + d]$. This is equivalent to adding the two 'positive' parts and the two 'negative' parts separately.\n  \n- **Negation:** The negation of an integer represented by $[a, b]$ is $[b, a]$, reflecting the idea of $ -(a - b) = b - a $.\n  \n- **Multiplication:** To multiply two integers represented by $[a, b]$ and $[c, d]$, define their product as $[ac + bd, ad + bc]$. This captures the distributive property over the components of the ordered pairs.",
@@ -447,6 +520,18 @@
     },
     "properties": [
       "### Knot Diagram\n\nA knot diagram is a visual representation of a knot, which is a projection of Knot on a plane, where each crossing point is marked as \"over\" or \"under\" to indicate which part is above and which part is below.\n\n<img src=\"./assets/2048px-TrefoilKnot_01.svg.png\" alt=\"img\" style=\"zoom:4%;\" />\n\n### Knot isotopy (Ambient isotopy)\n\nTwo knots are considered equivalent if one can be deformed into the other without cutting or gluing.\n\n### Reidemeister move\n\nReidemeister move are a set of three local transformations that can be applied to a knot diagram without changing the underlying knot's equivalence class. Each move operates on a small region of the diagram and is one of three types:\n\n1. Twist and untwist in either direction.\n2. Move one loop completely over another.\n3. Move a string completely over or under a crossing.\n\n<img src=\"./assets/Reidemeister-moves-Top-Row-Reidemeister-Moves-I-and-II-Bottom-Row-Reidemeister-Move.png\" alt=\"Reidemeister moves. Top Row: Reidemeister Moves I and II. Bottom Row ...\" style=\"zoom:25%;\" />\n\n- **Unknotting Theorem**: Any knot can be transformed into its simplified form through a series of Reidemeister movements.\n\n### Knot Invariants\n\nKnot invariants are used to determine whether two knots are equivalent or not.\n\n- **Jones Polynomial**\n\n  Given an oriented link diagram $D$, the Jones polynomial $V(D)$ can be defined recursively using the following relations:\n  1. $V(\\text{Unknot}) = 1$\n  2. $t^{-1} V(L_+) - t V(L_-) = (t^{1/2} - t^{-1/2}) V(L_0)$\n\n  Where $L_+, L_-, L_0$ are link diagrams that are identical outside a small region, and within that region look like:\n\n  - $L_+$: A positive crossing.\n  - $L_-$: A negative crossing.\n  - $L_0$: The two segments are resolved without a crossing.\n\n  The above recursive relations allow for the calculation of the Jones polynomial of a given link diagram by expanding it in terms of simpler diagrams until reaching the unknot.\n\n- **HOMFLY Polynomial**"
+    ]
+  },
+  "L_Function": {
+    "children": {
+      "Riemann_Zeta_Function": "subtype_of"
+    },
+    "define": "> An $L$-function is a complex analytic object that encodes arithmetic data through Euler products, Dirichlet series, and functional equations.\n\nAn **$L$-function** is a complex-valued function built from arithmetic data and expected to satisfy analytic continuation, a functional equation, and an Euler product in an appropriate region. $L$-functions unify objects from analytic number theory, automorphic forms, and arithmetic geometry.",
+    "parents": {
+      "Complex_Value_Function": "subtype_of"
+    },
+    "properties": [
+      "### Standard Features\n\nTypical $L$-functions are first presented by a Dirichlet series and an Euler product, then extended analytically beyond their initial half-plane of convergence.\n\n### Arithmetic Role\n\nThey connect primes, automorphic forms, and Galois representations inside a common framework."
     ]
   },
   "Lattice": {
@@ -525,6 +610,18 @@
     },
     "properties": [
       "### Representation of Linear transformation: Matrix\n\n$$\n\\mathbb R^{m \\times n}, m, n \\in \\mathbb Z\n$$\n\n$$\n\\boldsymbol A = \\left(\\begin{matrix} a_{11} & \\cdots & a_{1n} \\\\ \\vdots & \\ddots & \\vdots \\\\ a_{m1} & \\cdots & a_{mn} \\end{matrix}\\right)\n$$\n\n\nMatrix is the representation of Linear transformation. A matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns.\n\n##### Operations\n\n- Addition:\n\n$$\n\\boldsymbol A_{m \\times n} + \\boldsymbol B_{m \\times n} = \\boldsymbol C_{m \\times n}  \\tag{addition}\n$$\n$$\nc_{ij} = a_{ij} + b_{ij}\n$$\n\n- Scalar multiplication,\n\n$$\nk \\boldsymbol A_{m \\times n} = (k a_{ij})_{m \\times n}  \\tag{scalar multiplication}\n$$\n\n\n- multiplication\n$$\n\\boldsymbol A_{m \\times n} \\times \\boldsymbol B_{n \\times p} = \\boldsymbol C_{m \\times p}\n$$\n$$\nc_{ij} = \\sum_{k \\in 1:n} a_{ik} b_{kj}\n$$\n\n- multiplication of elements, Hadamard product\n$$\n\\boldsymbol A_{m \\times n} \\odot \\boldsymbol B_{m \\times n} = \\boldsymbol C_{m \\times n}\n$$\n$$\nc_{ij} = a_{ij} b_{ij}\n$$\n\n#### Matrix Decomposition\n\nMatrix decompositions rewrite a matrix representation of a linear transformation as a product of simpler matrices. They are coordinate-dependent computational tools for solving systems, finding invariant directions, and understanding rank or geometry.\n\n##### LU Decomposition\n\n$$\nA = LU\n$$\n\nThe matrix $A$ is decomposed into the product of a lower triangular matrix $L$ and an upper triangular matrix $U$.\n\n##### LDL Decomposition\n\n$$\nA = L D L^T\n$$\n\nFor suitable symmetric matrices, $A$ can be decomposed into a lower triangular matrix $L$, a diagonal matrix $D$, and $L^T$.\n\n##### Cholesky Decomposition\n\n$$\nA = G G^T\n$$\n\nIf $A$ is symmetric positive definite, then $A$ can be decomposed into the product of a lower triangular matrix $G$ and its transpose.\n\n##### QR Decomposition\n\n$$\nA = QR\n$$\n\nThe matrix $A$ is decomposed into the product of an orthogonal matrix $Q$ and an upper triangular matrix $R$.\n\n##### Full Rank Decomposition\n\n$$\nA = FG\n$$\n\nIf $\\operatorname{rank}(A)=r$, then $A$ can be written as the product of an $m\\times r$ matrix $F$ and an $r\\times n$ matrix $G$.\n\n##### Eigenvalue Decomposition\n\nFor a square matrix $A\\in F^{n\\times n}$,\n$$\nA=Q\\Lambda Q^{-1}.\n$$\n\nIf $A$ is diagonalizable, $Q$ is formed from eigenvectors and $\\Lambda$ is the diagonal matrix of eigenvalues.\n\n##### Singular Value Decomposition\n\nFor a real or complex matrix $A\\in F^{m\\times n}$,\n$$\nA=U\\Sigma V^{\\mathrm H}.\n$$\n\n- $U$ and $V$ are orthogonal matrices over $\\mathbb R$, or unitary matrices over $\\mathbb C$.\n- $\\Sigma$ is a diagonal rectangular matrix whose diagonal entries are the singular values.\n\n### Range \n$$\nRange(T)=\\{T x | x \\in V\\}\n$$\nIn linear space,\nthe set of results of all vectors after linear transformation; \nthe linear space after linear transformation.\n\n- Rank\n$$\n  rank(A) = \\dim Range(A) = \\dim Range(A^T)\n$$\n  The dimension of space after transformation.\n  The dimension of the range.\n\n### Null Space\n$$\nNull(T) = \\{x | T x = 0\\}\n$$\nIn linear space, the set of all original vectors that are linearly transformed into zero vectors.\n\n- $\\dim V = \\dim Range(A) + \\dim Null(A)$ \n\n\n### Invariant Subspace\n$$\n\\forall x \\in V_1, V_1 \\subseteq V, T x \\in V_1\n$$\n### Eigenvalues & Eigenvectors\n\n$$\n  \\boldsymbol A \\boldsymbol x = \u03bb \\boldsymbol x\n$$\n\n  - $x$: Eigenvectors, a vector whose direction does not change before and after linear transformation;  \n  - $\u03bb$: Eigenvalues, proportion of length change of eigenvector after linear transformation.\n\n- Property\n  * Eigenvalue Decomposition & Singular Value Decomposition\n  \n  - Characteristic polynomial\n$$\n    \\varphi(\u03bb) = |\u03bb I - A| = \u03bb^n + a_1 \u03bb^{n-1} + ... + a_{n-1} \u03bb + a_n\n$$\n\n  - Hamilton-Cayley Theorem\n    $$\n    \\varphi(A) = A^n + a_1 A^{n-1}+ ... +a_{n-1} A + a_n I = 0\n    $$\n    Matrix is the root of its characteristic polynomial.\n\n### Moore-Penrose Inverse\n\nThe solution satisfying the following equation,\n$$\n  \\left\\{\\begin{matrix}\n    A X A = A\\\\\n    X A X = X\\\\\n    (A X)^H = A X\\\\\n    (X A)^H = A X\\\\\n  \\end{matrix}\\right.\n$$\nWhen the rank of cols is full, $A^+ = (A^H A)^{-1} A^H$   \nWhen the rank of rows is full,  $A^+ = A^H (A A^H)^{-1}$\n\n- Property\n  - $rank(A) = rank(A^H A) = rank(A A^H)$\n  - \u6ee1\u79e9\u5206\u89e3\u7b97\u5e7f\u4e49\u9006 $A^+ = G^H (F^H A G^H)^{-1} F^H$\n\n### Similarity\n\n$A$ is similar to $B$, $A ~ B$:\n$$\n\\exists \\text{Nonsingular Matrix}P \\Rightarrow B = P^{-1} A P\n$$\n\n- Property \n  - $A ~ A$ \n  - $A ~ B \\Leftrightarrow B ~ A$ \n  - $A ~ B, B ~ C \\Leftrightarrow A ~ C$\n  - The eigenvalues and eigenvectors of similar matrices are the same.\n  - The trace of similar matrix is the same.\n\n### Transformation of linear transformation matrix under different bases\n\n$$\nA_Y = C^{-1} A_X C \\quad ; Y = C X\n$$\n\n- Proof\n  $$\n  \\begin{align*}\n    T Y &= Y A_Y     \\tag{Define}\\\\ \n    T X C &= X C A_Y   \\tag{$ Y = X C $}\\\\\n    X A_X C &= X C A_Y   \\tag{$ T X = X A_X $}\\\\\n    A_X C &= C A_Y  \\\\\n    A_Y &= C^{-1} A_X C\n  \\end{align*}\n  $$\n\n### Special linear transformation\n\n#### Identity transformation\n\n$$\nT x = x \\quad (\\forall x \\in V) \\\\\n$$\n\n#### Zero transformation\n\n$$\nT x = 0 \\quad (\\forall x \\in V)\n$$\n\n#### Orthogonal Transformation\n\n$$\n\\langle x, x \\rangle = \\langle T x, T x \\rangle\n$$\nOrthogonal Transformation is a linear transformation in the inner product space that keeps the length of any vector unchanged.\nOrthogonal matrix:\n$$\n\\boldsymbol A \\boldsymbol A^T = \\boldsymbol I  \\\\\n\\boldsymbol A \\boldsymbol A^H = \\boldsymbol I\n$$\n\n##### Rotation Transformation\n\nRotation Transformation Matrix:  \n\n$$\n\\boldsymbol A = \\left(\\begin{matrix}\n\\boldsymbol I \\\\ & cos \\theta |_{(i,i)}&  & \\sin \\theta |_{(i,j)} \\\\ & & \\boldsymbol  I \\\\ & -\\sin \\theta |_{(j,i)} & & \\cos \\theta |_{(j,j)} \\\\ & & & & \\boldsymbol  I\n\\end{matrix}\\right)\n$$\n\n- $\\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.\n\n##### Reflection Transformation\n\n$$\ny = H x = (I - 2 e_2 e_2^T) x\n$$\n- Proof  \n$$\n\\begin{align*}\nx - y &= e_2 \u00b7 (e_2^T x)  \\\\\n\\Rightarrow y &= (I-2 e_2 e_2^T) x\n\\end{align*}\n$$\n\n#### Symmetry Transformation\n\n$$\n\\langle T x, y \\rangle = \\langle x, T y \\rangle\n$$\nSymmetry Matrix:\n$$\n\\boldsymbol A^T = \\boldsymbol A  \\\\\n\\boldsymbol A^H = \\boldsymbol A\n$$\n\n#### Projection transformation & Orthogonal Projection transformation\n\nProjection transformation: Suppose the subspace $L$ of the linear space and its complement $M$, the projection transformation is the transformation of the projection of the linear space along $M$ to $L$.\n\nProjection matrix:  \n$$\nP_{L|M} = \\left(\\begin{matrix} X & 0 \\end{matrix}\\right) \\left(\\begin{matrix} X & Y \\end{matrix}\\right)^{-1}\n$$\n\nOrthogonal Projection transformation: Assume the subspace $L$ of the linear space and its orthogonal complement $L_\\bot$. The transformation of the projection of the linear space along $L_\\bot$ to $L$ is called orthogonal projection transformation.\n\nOrthogonal Projection matrix:  \n$$\nP_L = X(X^H X)^{-1}X^H\n$$\n- $X = (x_1, ... , x_r)$: basis of the projected subspace.\n\n- Property  \n  - $P_{L|M}^2 = P_{L|M}$ \n  - $P_L (a \\boldsymbol x + b \\boldsymbol y) = a (P_L \\boldsymbol x) + b (P_L \\boldsymbol y)$\n  - $x \\in L \\Leftrightarrow P_L x = x$\n  - $x \\in L_\\bot \\Leftrightarrow P_L x = 0$\n  - if $H$ is a inner product space, and $L$ is a subspace of $H$ with Orthonormal Basis $\\{u_1, ...u_n\\}$, then the projection of $x \\in H$ is\n    $$\n    \\hat x = \\sum_{i=1}^n \\frac{u_i^T x}{u_i^T u_i} u_i\n    $$\n\n#### Sheer transformation\n\nSheer transformation Matrix:  The $(i,j)-$th element of the identity matrix is changed to the shear ratio $a_{ij}$\n\n##### Scale Transformation\n\nScale Transformation Matrix:\n$$\nT = \\left(\\begin{matrix} \u0394x_1 \\\\ & \u0394x_2 \\\\ & & \\ddots \\\\ & & & \u0394x_n \\end{matrix}\\right)\n$$"
+    ]
+  },
+  "Local_Field": {
+    "children": {
+      "p_Adic_Number": "subtype_of"
+    },
+    "define": "> A local field is a field complete with respect to a nontrivial discrete valuation and having finite residue field.\n\nA **local field** is, in the arithmetic sense, a locally compact topological field with respect to a non-discrete topology. Standard examples include finite extensions of $\\mathbb Q_p$ and the Laurent series fields $\\mathbb F_q((t))$.",
+    "parents": {
+      "Field": "subtype_of"
+    },
+    "properties": [
+      "### Examples\n\nThe basic characteristic-zero example is $\\mathbb Q_p$, and the basic positive-characteristic example is $\\mathbb F_q((t))$.\n\n### Arithmetic Role\n\nLocal fields are the local building blocks attached to places of global fields."
     ]
   },
   "Logic": {
@@ -681,6 +778,26 @@
       "- Lipschitz Equivalent  \n  Metrics $d, d'$ on $X$ are said to be Lipschitz Equivalent if there are positive constants $A, B$ and $\\forall x, y \\in X$ such that\n  $$\n  A d(x, y) \\le d'(x, y) \\le B d(x, y)\n  $$\n\n- Convergence of Sequence  \n  A sequence $x_n \\in X$ is said to be converge to $x$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists K)(\\forall k > K) d(x_k, x) < \\epsilon\n  $$\n\n- Complete Metric Space  \n  A metric space $(X, d)$ is complete if all Cauchy sequences converge to a point in $X$. Cauchy sequence is a sequence satisfying \n  $$\n  (\\forall \\epsilon > 0)(\\exists N)(\\forall n, m \\ge N) d(x_n, x_m) < \\epsilon\n  $$\n\n- Continuity  \n  For metric spaces $(X, d), (X', d')$, a function $f: X \\to X'$ is continuous at $y \\in X$ if\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d'(f(x),f(y)) < \\epsilon\n  $$\n\n- Uniform Continuity\n  $$\n  (\\forall \\epsilon > 0)(\\exists \\delta > 0)(\\forall x) d(X, Y) < \\delta \\Rightarrow d(f(x),f(y)) < \\epsilon\n  $$\n\n- Lipschitz Continuity  \n  $$\n  d'(f(x), f(y)) \\le K d(x, y)\n  $$\n\n- Lipschitz Continuity $\\Rightarrow$ Uniform Continuity $\\Rightarrow$ Continuity\n\n- Contraction Mapping  \n  A mapping $f: X \\to X$ is contraction if there exists $\\lambda \\in [0, 1)$ such that\n  $$\n  d(f(x), f(y)) \\le \\lambda d(x, y)\n  $$\n\n- Contraction Mapping Theorem , Banach Fixed-point Theorem  \n  For a complete matric space, if $f: X \\to X$ is a contraction, then $f$ has a unique fixed point $x^* \\in X$,\n  $$\n  f(x^*) = x^*,\\quad \\lim\\limits_{n \\to \\infty} f^n(x_0) = x^* ,\\forall x_0 \\in X\n  $$"
     ]
   },
+  "Modular_Curve": {
+    "children": {},
+    "define": "> A modular curve is an algebraic curve that parametrizes elliptic curves equipped with level structure.\n\nA **modular curve** is an algebraic curve arising as a quotient of the upper half-plane by a congruence subgroup, together with its natural compactification. It plays a central role in the interaction between elliptic curves, modular forms, and Galois representations.",
+    "parents": {
+      "Scheme": "subtype_of"
+    },
+    "properties": [
+      "### Moduli Interpretation\n\nClassically, modular curves parametrize elliptic curves together with additional level structure.\n\n### Arithmetic Role\n\nThey provide the geometric setting for many modularity statements in arithmetic geometry."
+    ]
+  },
+  "Modular_Form": {
+    "children": {},
+    "define": "> A modular form is a holomorphic function on the upper half-plane satisfying a specific transformation law and growth condition.\n\nFor a congruence subgroup $\\Gamma$ and weight $k$, a **modular form** is a holomorphic function\n$$\nf : \\mathfrak H \to \\mathbb C\n$$\nsatisfying the standard modular transformation law for $\\Gamma$ and a holomorphy condition at the cusps.",
+    "parents": {
+      "Automorphic_Form": "subtype_of"
+    },
+    "properties": [
+      "### Fourier Expansion\n\nA modular form admits a $q$-expansion\n$$\nf(z)=\\sum_{n\\ge 0} a_n q^n,\\qquad q=e^{2\\pi i z}.\n$$\n\n### Arithmetic Role\n\nIts Fourier coefficients often carry deep arithmetic information and produce $L$-functions and Galois representations."
+    ]
+  },
   "Mobius_Function": {
     "children": {},
     "define": "> The Mobius function is an arithmetic function that records the square-free prime factor structure of an integer.\n\n$$\n\\mu(n) = \\left\\{\\begin{matrix}\n  1 & n = 1\\\\\n  (-1)^k & n = \\prod\\limits_{i=1}^k p_i\\ (p_i \\text{ is prime})\\\\\n  0 & other.\n\\end{matrix}\\right.  \\tag{M\u00f6bius Function}\n$$\n\nM\u00f6bius Function $f: \\mathbb Z^+ \\to \\{-1, 0, 1\\}$ is defined above. For positive integers without square factors, if $n$ has an odd number of different prime factors, then $\\mu(n) = -1$; if there are even numbers of of different prime factors, then $\\mu(n)=1$.",
@@ -705,7 +822,8 @@
   },
   "Natural_Number": {
     "children": {
-      "Integer_Ring": "extends_number_system"
+      "Integer_Ring": "extends_number_system",
+      "Prime": "subtype_of"
     },
     "define": "> Natural numbers are the discrete numbers used for counting and indexing.\n\n$$\n\\mathbb N\n$$\n\nNatural numbers $\\mathbb{N}$ are formally defined by the **Peano's axioms**, which specify the fundamental properties of natural numbers. Let $S(\\cdot)$ denote the **successor function**, mapping a number to its next number.\n\n1. $0$ is a natural number.\n\n   $$0 \\in \\mathbb N$$\n\n2. Every natural number has a successor in the natural numbers.\n\n   $$\\forall n \\in \\mathbb{N}, \\exists S(n) \\in \\mathbb{N}$$\n\n3. $0$ is not the successor of any natural number. \n\n   $$\\forall n \\in \\mathbb N, S(n) \\neq 0$$\n\n4. If the successor of two natural numbers is the same, then the two original numbers are the same. \n\n   $$\\forall m, n \\in \\mathbb N, S(m) = S(n) \\implies m = n$$\n\n5. **Mathematical Induction**: If a set contains $0$ and the successor of every number is in the set, then the set contains the natural numbers.\n\n   $$\\Big(\\varphi(0) \\land \\forall n , (\\varphi(n) \\implies \\varphi(S(n))) \\Big) \\implies \\forall n , \\varphi(n)$$",
     "parents": {
@@ -726,6 +844,17 @@
     },
     "properties": [
       "### Metric Induced by a Norm\n\nEvery norm induces a metric\n$$\nd(x,y)=\\|x-y\\|.\n$$\n\nThus every normed linear space is naturally a metric space.\n\n### Unit Ball and Unit Sphere\n\nThe unit ball is\n$$\nB=\\{x\\in V\\mid \\|x\\|<1\\}.\n$$\n\nThe unit sphere is\n$$\nS=\\{x\\in V\\mid \\|x\\|=1\\}.\n$$\n\n### Complete Normed Linear Space\n\nA complete normed linear space is a [Banach space](./Banach_Space.md)."
+    ]
+  },
+  "Number_Field": {
+    "children": {},
+    "define": "> A number field is a finite field extension of the rational numbers.\n\nA **number field** is a field $K$ such that\n$$\n[K : \\mathbb Q] < \\infty.\n$$\nNumber fields are the basic global objects of algebraic number theory.",
+    "parents": {
+      "Global_Field": "subtype_of",
+      "Rational_Number_Field": "field_extension_of"
+    },
+    "properties": [
+      "### Ring of Integers\n\nEach number field has a distinguished ring of integers, which plays the role of an arithmetic lattice inside the field.\n\n### Arithmetic Role\n\nPrime decomposition, ramification, class groups, and unit groups are studied inside number fields."
     ]
   },
   "Ordered_Set": {
@@ -769,7 +898,7 @@
     "children": {},
     "define": "> A prime number is a natural number greater than one whose only positive divisors are one and itself.\n\n$$\np > 1 \\text{ and the only positive divisors of } p \\text{ are } 1 \\text{ and } p\n\\tag{Prime}\n$$\nA prime number is a natural number $p > 1$ that is divisible only by $1$ and itself.",
     "parents": {
-      "Integer_Ring": "subtype_of"
+      "Natural_Number": "subtype_of"
     },
     "properties": [
       "### Fundamental Theorem of Arithmetic\nAny integer $n$ greater than $1$ can be uniquely expressed in the form of prime $p_i$ product.   \n$$\nn = \\prod_i p_i^{\\alpha_i} \\quad n \\in \\mathbb Z, n > 1\n$$\n\n### Fermat's Little Theorem\n\n$$\na^{p-1} \\equiv 1 \\mod p\n$$\nWhere $p$ is a prime and $a$ is any integer that is not a multiple of $p$.\n\nProperty:\n$$\n\\frac{a}{b} \\mod p \\equiv a \\times b^{p-2} \\mod p\n$$\n\n> Proof\n>\n>\n> $$\n> \\frac{a}{b} \\mod p = a \\times b^{-1} \\mod p  \\\\\n> b^{p-1} \\equiv 1 \\mod p \\\\\n> b \\times b^{p-1} \\equiv 1 \\mod p  \\\\\n> \\Rightarrow \\quad b^{-1} \\equiv b^{p-2}  \\mod p \\\\\n> \\Rightarrow \\quad \\frac{a}{b} \\mod p \\equiv a \\times b^{p-2} \\mod p\n> $$\n\n### Goldbach's Conjecture\n\nevery even natural number greater than 2 is the sum of two prime numbers.\n$$\n\\forall n \\in \\mathbb{Z}^+ \\, (\\, n > 2 \\, \\land \\, \\text{even}(n) \\, ) \\, \\exists \\, p, q \\in \\text{Primes} \\, (\\, n = p + q \\, )\n$$\n\n### Mersenne Prime\n\n$$\nM_n = 2^n - 1  \\tag{Mersenne number}\n$$\nMersenne Prime is a prime number that is one less than a power of two.\n\nProperty:\n- example of mersenne primes\n  |  n   |                                   value |\n  | :--: | --------------------------------------: |\n  |  2   |                                       3 |\n  |  3   |                                       7 |\n  |  5   |                                      31 |\n  |  7   |                                     127 |\n  |  13  |                                    8191 |\n  |  17  |                                  131071 |\n  |  19  |                                  524287 |\n  |  31  |                              2147483647 |\n  |  61  |                     2305843009213693951 |\n  |  89  |             618970019642690137449562111 |\n  | 107  |       162259276829213363391578010288127 |\n  | 127  | 170141183460469231731687303715884105727 |\n\n### Resolving prime factor\n\n- Pollard Rho algorithm\n\n\n### Filter Prime Number from a range of numbers\n\nEuler's Sieve\nFor a numbers range from $2$ to $n$, we aim to sift out all primes from them, through let each composite number be screened by its minimum prime factor.\n\n- Process\n  First, We traverse the numbers $x$ range from $2$ to $n$, we join $x$ into prime set $S_p$ if $x$ is not marked as non-prime.\n\n  Meanwhile, we traversing the current prime table $p \\in S_p$, and mark $p x$ as non-prime. When $p | x$, we should stop traversing the prime table, because that the primes $p' \\in S_p$ large than $p$ are no longer the minimum prime factor of $p' x$ ($p' x = p' p r$)."
@@ -797,6 +926,17 @@
     },
     "properties": [
       "### Law of Large Numbers\n\nFor i.i.d. random variables $X_1, X_2, \\dots$ with mean $\\mu$,\n$$\n\\lim_{n \\to \\infty} \\mathbb P \\left(\\left|\\frac{1}{n} \\sum_{k=1}^n X_k - \\mu \\right| < \\varepsilon \\right) = 1\n\\tag{Weak law of large numbers}\n$$\n\nFor Bernoulli trials with success probability $p$ and empirical frequency $f_A / n$,\n$$\n\\lim_{n \\to \\infty} \\mathbb P\\left(\\left|\\frac{f_A}{n} - p \\right| < \\varepsilon\\right) = 1\n\\tag{Bernoulli law of large numbers}\n$$\n\n### Central Limit Theorem\n\nFor i.i.d. random variables $X_1, X_2, \\dots$ with mean $\\mu$ and variance $\\sigma^2$,\n$$\n\\lim_{n \\to \\infty} \\mathbb P \\left(\\frac{\\sum_{k=1}^n X_k - n \\mu}{\\sqrt{n}\\sigma} \\le x \\right)\n= \\Phi(x)\n= \\int_{-\\infty}^x \\frac{1}{\\sqrt{2 \\pi}} e^{-t^2 / 2} \\, \\mathrm d t\n\\tag{Central Limit Theorem}\n$$\n\n### Joint Probability\n\n$$\n\\mathbb P(A \\cap B)\n$$\n\nThe probability of $A$ and $B$ occurring together.\n\n### Conditional Probability\n\n$$\n\\mathbb P(B \\mid A)\n$$\n\nProbability of occurrence of $B$ under the condition that $A$ occurs.\n\n#### Property\n\n- Independence\n  $$\n  A \\text{ and } B \\text{ are independent} \\Leftrightarrow \\mathbb P(A \\cap B) = \\mathbb P(A) \\mathbb P(B)\n  $$\n\n- Relationship between joint and conditional probability\n  $$\n  \\begin{align*}\n    \\mathbb P(B \\mid A) &= \\frac{\\mathbb P(A \\cap B)}{\\mathbb P(A)}  \\\\\n    \\mathbb P(A \\cap B) &= \\mathbb P(B \\mid A) \\mathbb P(A) = \\mathbb P(A \\mid B) \\mathbb P(B)\n  \\end{align*}\n  $$\n\n- Total probability theorem\n  $$\n  \\mathbb P(A) = \\sum_i \\mathbb P(A \\mid B_i) \\mathbb P(B_i)\n  $$\n  where $(B_i)$ is a partition of $\\Omega$.\n\n- Bayes' formula\n  $$\n  \\begin{align*}\n    \\mathbb P(A \\mid B) &= \\frac{\\mathbb P(B \\mid A) \\mathbb P(A)}{\\mathbb P(B)}  \\\\\n    \\mathbb P(A_i \\mid B) &= \\frac{\\mathbb P(B \\mid A_i) \\mathbb P(A_i)}{\\sum\\limits_j \\mathbb P(B \\mid A_j) \\mathbb P(A_j)}\n  \\end{align*}\n  $$"
+    ]
+  },
+  "p_Adic_Number": {
+    "children": {},
+    "define": "> The $p$-adic numbers form the basic characteristic-zero local field attached to a prime $p$.\n\nFor a prime number $p$, the **field of $p$-adic numbers** is denoted by\n$$\n\\mathbb Q_p.\n$$\nIt is obtained as the completion of $\\mathbb Q$ with respect to the $p$-adic absolute value.",
+    "parents": {
+      "Local_Field": "subtype_of",
+      "Rational_Number_Field": "field_extension_of"
+    },
+    "properties": [
+      "### Construction\n\nThe field $\\mathbb Q_p$ is the completion of $\\mathbb Q$ under the norm determined by the $p$-adic valuation.\n\n### Arithmetic Role\n\nThe $p$-adic numbers are the basic local objects for studying congruences, local Galois theory, and local-global principles."
     ]
   },
   "Point_Process": {
@@ -920,6 +1060,8 @@
   },
   "Rational_Number_Field": {
     "children": {
+      "Number_Field": "field_extension_of",
+      "p_Adic_Number": "field_extension_of",
       "Real_Field": "field_extension_of"
     },
     "define": "> The rational number field consists of ratios of integers with nonzero denominator under ordinary arithmetic.\n\n$$\n\\mathbb{Q} = \\left\\{ \\frac{a}{b} \\mid a, b \\in \\mathbb{Z} \\text{ and } b \\neq 0 \\right\\}\n$$\n\nRational number field is a [field](./Field.md) of rational numbers is the set of all numbers that can be expressed as the quotient of two [integers](./Integer_Ring.md), where the denominator is not zero. \n\n- Addition and Multiplication are Closed\n  $$\n  \\frac{p}{q} + \\frac{r}{s} = \\frac{ps + qr}{qs}\\\\\n  \\frac{p}{q} \\times \\frac{r}{s} = \\frac{pr}{qs}\n  $$\n\n- Additive and Multiplicative Identity: $0$ is the additive identity, $1$ is the multiplicative identity.\n\n- Additive and Multiplicative Inverses: Every rational number $p/q$ has an additive inverse $-p/q$, and a multiplicative inverse $q/p$.\n\n- Additive and Multiplicative Commutativity\n  $$\n  \\frac{p}{q} + \\frac{r}{s} = \\frac{r}{s} + \\frac{p}{q}  \\\\\n  \\frac{p}{q} \\times \\frac{r}{s} = \\frac{r}{s} \\times \\frac{p}{q}\n  $$\n\n- Additive and Multiplicative Associativity\n  $$\n  \\left( \\frac{p}{q} + \\frac{r}{s} \\right) + \\frac{t}{u} = \\frac{p}{q} + \\left( \\frac{r}{s} + \\frac{t}{u} \\right)  \\\\\n  \\left( \\frac{p}{q} \\times \\frac{r}{s} \\right) \\times \\frac{t}{u} = \\frac{p}{q} \\times \\left( \\frac{r}{s} \\times \\frac{t}{u} \\right)\n  $$\n\n- Distributivity\n  $$\n  \\frac{p}{q} \\times \\left( \\frac{r}{s} + \\frac{t}{u} \\right) = \\frac{p}{q} \\times \\frac{r}{s} + \\frac{p}{q} \\times \\frac{t}{u}\n  $$",
@@ -987,7 +1129,7 @@
     "children": {},
     "define": "> The Riemann zeta function packages the arithmetic of positive integers into a complex analytic function.\n\n$$\n\\zeta(s)=\\sum_{n=1}^{\\infty} \\frac{1}{n^{s}}=\\frac{1}{\\Gamma(s)} \\int_{0}^{\\infty} \\frac{x^{s-1}}{e^{x}-1} \\mathrm{~d} x\n$$\n\nRiemann zeta function for $s$ where $\\Re(s) > 1$ is as described above ([Complex function](./Complex_Value_Function.md)). (This series is absolutely convergent in the above region.) The Riemann function is analytically extended to the complex plane, anywhere except for point $s=1$, achieved through a series of functional relationships and integral representations. At $s = 1$, the Riemannian function has a simple pole.\n\n![img](./assets/zeta_img7.png)",
     "parents": {
-      "Complex_Value_Function": "subtype_of"
+      "L_Function": "subtype_of"
     },
     "properties": [
       "- the relationship with primes\n  $$\n  \\zeta(s) = \\prod_{p \\text{ is prime}} \\frac{1}{1 - p^{-s}}\n  $$\n\n- Riemann Hypothesis: Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part $\\frac{1}{2}$."
@@ -997,8 +1139,7 @@
     "children": {
       "Integer_Ring": "subtype_of",
       "Module": "over_ring",
-      "Quaternion_Ring": "subtype_of",
-      "Scheme": "locally_modeled_by"
+      "Quaternion_Ring": "subtype_of"
     },
     "define": "> A ring is an algebraic structure with addition, subtraction, and multiplication, where multiplication need not be commutative or invertible.\n\n$$\n(G, +, \\cdot)\n$$\n\nRing is an algebraic structure, where $G$ is a set, $\\cdot$ and $+$ are binary operations, and satisfy:  \n\n- $(G, +)$ is a commutative group\n- $(G, \\cdot)$ is a monoid\n  - $(G, \\cdot)$ satisfies associative law, $a \\cdot (b \\cdot c) = (a \\cdot b) \\cdot c$\n  - $(G, \\cdot)$ exists multiplicative identity, $\\exist 1: 1 \\cdot x = x \\cdot 1 = x, \\forall x \\in G$\n- Distributive law: multiplication is distributive with respect to addition,\n  $$\n  \\begin{align*}\n    a \\cdot (b + c) &= a \\cdot b + a \\cdot c  \\\\\n    (b + c) \\cdot a &= b \\cdot a + c \\cdot a\n  \\end{align*}\n  $$",
     "parents": {
@@ -1031,10 +1172,12 @@
     ]
   },
   "Scheme": {
-    "children": {},
+    "children": {
+      "Abelian_Variety": "subtype_of",
+      "Modular_Curve": "subtype_of"
+    },
     "define": "> A scheme is a space obtained by gluing together spectra of commutative rings.\n\nA **scheme** is a [topological space](./Topological_Space.md) together with a sheaf of rings, locally isomorphic to an affine scheme\n$$\n\\operatorname{Spec} A\n$$\nfor some commutative ring $A$.\n\nSchemes generalize algebraic varieties and allow nilpotents and arithmetic base rings in algebraic geometry.",
     "parents": {
-      "Ring": "locally_modeled_by",
       "Sheaf": "has_defining_structure",
       "Topological_Space": "has_underlying_space"
     },

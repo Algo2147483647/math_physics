@@ -93,5 +93,5 @@ For a numbers range from $2$ to $n$, we aim to sift out all primes from them, th
 
 ## Parents
 
-- [Integer_Ring](./Integer_Ring.md): subtype_of
+- [Natural_Number](./Natural_Number.md): subtype_of
 

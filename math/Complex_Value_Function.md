@@ -58,13 +58,17 @@ A meromorphic function on an open subset $D$ of the complex plane is a function 
 
 ## Include
 
+- [Automorphic_Form](./Automorphic_Form.md): subtype_of
+
+- [Dirichlet_Series](./Dirichlet_Series.md): subtype_of
+
 - [Gamma_Function](./Gamma_Function.md): subtype_of
 
 - [Holomorphic_Function](./Holomorphic_Function.md): subtype_of
 
 - [Hypergeometric_Function](./Hypergeometric_Function.md): subtype_of
 
-- [Riemann_Zeta_Function](./Riemann_Zeta_Function.md): subtype_of
+- [L_Function](./L_Function.md): subtype_of
 
 - [Spherical_Harmonics](./Spherical_Harmonics.md): subtype_of
 

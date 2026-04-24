@@ -76,7 +76,13 @@ $$
 
 - [Complex_Field](./Complex_Field.md): subtype_of
 
+- [Global_Field](./Global_Field.md): subtype_of
+
+- [Galois_Representation](./Galois_Representation.md): over_field
+
 - [Linear_Space](./Linear_Space.md): over_field
+
+- [Local_Field](./Local_Field.md): subtype_of
 
 - [Rational_Number_Field](./Rational_Number_Field.md): subtype_of
 

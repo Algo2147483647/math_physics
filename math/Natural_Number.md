@@ -40,6 +40,8 @@ Natural numbers $\mathbb{N}$ are formally defined by the **Peano's axioms**, whi
 
 - [Integer_Ring](./Integer_Ring.md): extends_number_system
 
+- [Prime](./Prime.md): subtype_of
+
 ## Parents
 
 - [Set](./Set.md): subtype_of

@@ -4,13 +4,18 @@
 
 ## Define
 
-> An elliptic curve is a smooth cubic curve equipped with a natural abelian group structure.
+> An elliptic curve is a smooth projective genus-one curve with a chosen rational point, equivalently an abelian variety of dimension one.
 
 $$
 y^2 = x^3 + a x + b
 $$
 
-An elliptic curve over a field $K$ is defined by an equation of the form as above. where $a, b$ are elements in $K$, and the discriminant $ \Delta = -16(4a^3 - 27b^2) \neq 0$. The non-vanishing of the discriminant ensures that the curve has no singularities (i.e., no cusps or self-intersections). ([Cubic Function](./Cubic_Function.md))
+Over a field $K$ of characteristic not equal to $2$ or $3$, an elliptic curve can often be written in a Weierstrass form as above, where $a, b \in K$ and the discriminant
+$$
+\Delta = -16(4a^3 - 27b^2)
+eq 0
+$$
+ensures smoothness.
 
 <img src="assets/EllipticCurveCatalog.svg" alt="EllipticCurveCatalog" style="zoom: 33%;" />
 
@@ -45,5 +50,5 @@ Groups formed by points on elliptic curves: The points on an elliptic curve form
 
 ## Parents
 
-- [Cubic_Function](./Cubic_Function.md): zero_locus_of
+- [Abelian_Variety](./Abelian_Variety.md): subtype_of
 

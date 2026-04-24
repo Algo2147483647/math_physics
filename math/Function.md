@@ -78,9 +78,13 @@ These transforms are standard operations on functions, so they are stored here i
 
 - [Dirac_Delta_Function](./Dirac_Delta_Function.md): subtype_of
 
+- [Dirichlet_Character](./Dirichlet_Character.md): subtype_of
+
 - [Exponential_Function](./Exponential_Function.md): subtype_of
 
-- [Linear_Transformation](./Linear_Transformation.md): subtype_of
+- [Galois_Representation](./Galois_Representation.md): subtype_of
+
+- [Linear_Transformation](./Linear_Transformation.md): maps_between
 
 - [Polynomial_Function](./Polynomial_Function.md): subtype_of
 
