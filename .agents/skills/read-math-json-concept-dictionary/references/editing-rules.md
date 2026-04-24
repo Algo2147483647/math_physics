@@ -2,7 +2,7 @@
 
 ## When To Read This File
 
-Read this file only for edit tasks on `D:\Algo\Notes\math_physics\math\lib\math.json`.
+Read this file only for edit tasks on `math_physics\math\lib\math.json`.
 
 Typical cases:
 

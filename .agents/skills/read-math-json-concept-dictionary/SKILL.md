@@ -1,13 +1,13 @@
 ---
 name: read-math-json-concept-dictionary
-description: Read and answer questions from `D:\Algo\Notes\math_physics\math\lib\math.json`, a large concept-dictionary JSON whose top-level keys are canonical math concept names and whose node fields are `define`, `parents`, `children`, and `properties`. Use when extracting a definition, hierarchy relation, child concept list, or property summary from this file and avoid re-discovering the schema each time.
+description: Use this when extracting a definition, hierarchy relation, child-concept list, or property summary from math_physics\math\lib\math.json. The file is a large concept-dictionary JSON whose top-level keys are canonical math concept names, and each node contains the fields define, parents, children, and properties.
 ---
 
 # Skill: Read `math.json` as a Concept Dictionary
 
 ## Scope
 
-Use this skill for requests grounded in `D:\Algo\Notes\math_physics\math\lib\math.json`.
+Use this skill for requests grounded in `math_physics\math\lib\math.json`.
 
 Treat that file as a stable concept dictionary, not as an unknown generic JSON blob. Do not spend tokens re-inferring the schema on each use unless there is evidence that the file format changed.
 
