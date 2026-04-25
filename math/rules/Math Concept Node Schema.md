@@ -7,7 +7,7 @@ Use this as the default schema for a concept node:
 
 ```json
 {
-  "Concept Name": {
+  "Concept_Name": {
     "define": "Markdown definition text with possible LaTeX",
     "parents": {
       "ParentConcept": "relation_label"
@@ -56,8 +56,6 @@ Reading Priority By Question Type:
   - answering "What is X?"
   - giving the formal or repository-native definition
   - extracting the main mathematical formula or setup
-- Current observed length range:
-  - roughly 225 to 4348 characters
 
 Read `define` first for almost every concept question.
 
@@ -65,10 +63,6 @@ Read `define` first for almost every concept question.
 
 - Type: object mapping `RelatedConcept -> relation_label`
 - Meaning: concept-level parent or dependency relations pointing upward or outward from the current concept
-- Typical content:
-  - `"Normed_Space": "subtype_of"`
-  - `"Field": "over_field"`
-  - `"Vector_Space": "modeled_on"`
 - Best use:
   - answering "What class does this belong to?"
   - identifying direct superconcepts or definitional dependencies
@@ -80,10 +74,6 @@ Do not flatten this into plain prose without keeping the relation label.
 
 - Type: object mapping `RelatedConcept -> relation_label`
 - Meaning: concept-level child or downstream relations from the current concept
-- Typical content:
-  - subtype children
-  - structured descendants
-  - other repository-defined outward relations
 - Best use:
   - answering "What specializations are listed under this concept?"
   - enumerating directly stored child concepts
