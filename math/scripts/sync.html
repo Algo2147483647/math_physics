@@ -265,8 +265,11 @@
 
         setStatus(`${label} 完成。`, "ok");
         appendLog("status: success");
-        if (payload.data) {
-          appendLog(`data length: ${String(payload.data).length}`);
+        if (payload.data !== undefined) {
+          const dataText = typeof payload.data === "string"
+            ? payload.data
+            : JSON.stringify(payload.data, null, 2);
+          appendLog(dataText);
         }
       } catch (error) {
         setStatus(`${label} 失败：${error.message}`, "error");

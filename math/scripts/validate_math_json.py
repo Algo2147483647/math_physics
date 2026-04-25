@@ -15,29 +15,6 @@ from _math_json_common import (
 )
 
 
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Validate math.json and emit a compact snapshot summary."
-    )
-    parser.add_argument(
-        "--path",
-        type=Path,
-        default=DEFAULT_MATH_JSON_PATH,
-        help="Path to math.json.",
-    )
-    parser.add_argument(
-        "--json",
-        action="store_true",
-        help="Emit machine-readable JSON.",
-    )
-    parser.add_argument(
-        "--strict",
-        action="store_true",
-        help="Exit non-zero on warnings as well as errors.",
-    )
-    return parser
-
-
 def validate_node_shape(key: str, node: Any) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -61,9 +38,7 @@ def validate_node_shape(key: str, node: Any) -> tuple[list[str], list[str]]:
         errors.append(f"{key}: children is {type(node['children']).__name__}, expected object")
     if "properties" in node:
         if not isinstance(node["properties"], list):
-            errors.append(
-                f"{key}: properties is {type(node['properties']).__name__}, expected array"
-            )
+            errors.append(f"{key}: properties is {type(node['properties']).__name__}, expected array")
         elif not all(isinstance(item, str) for item in node["properties"]):
             errors.append(f"{key}: properties contains non-string items")
 
@@ -84,9 +59,12 @@ def format_edge_issue(
     return f"{base}; reverse {reverse_field}={reverse_label}"
 
 
-def main() -> int:
-    args = build_parser().parse_args()
-    concepts = load_concepts(args.path)
+def validate_math_json(
+    *,
+    path: str | Path = DEFAULT_MATH_JSON_PATH,
+    strict: bool = False,
+) -> dict[str, object]:
+    concepts = load_concepts(path)
 
     errors: list[str] = []
     warnings: list[str] = []
@@ -141,6 +119,7 @@ def main() -> int:
                                 reverse_label,
                             )
                         )
+
             if isinstance(children, dict):
                 child_labels.update(children.values())
                 for target, label in children.items():
@@ -166,6 +145,7 @@ def main() -> int:
                                 reverse_label,
                             )
                         )
+
             if isinstance(properties, list):
                 property_lengths[len(properties)] += 1
 
@@ -175,9 +155,10 @@ def main() -> int:
         + one_sided_child_edges
         + mismatched_child_edges
     )
+    has_strict_issue = bool(errors or (strict and (warnings or broken_references or structural_issues)))
 
-    payload = {
-        "path": str(args.path),
+    return {
+        "path": str(Path(path).resolve()),
         "concept_count": len(concepts) if isinstance(concepts, dict) else 0,
         "parent_edge_count": sum(parent_labels.values()),
         "child_edge_count": sum(child_labels.values()),
@@ -194,7 +175,37 @@ def main() -> int:
         "structural_issues": structural_issues,
         "errors": errors,
         "warnings": warnings,
+        "strict": strict,
+        "exit_code": 1 if has_strict_issue else 0,
     }
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Validate math.json and emit a compact snapshot summary."
+    )
+    parser.add_argument(
+        "--path",
+        type=Path,
+        default=DEFAULT_MATH_JSON_PATH,
+        help="Path to math.json.",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit machine-readable JSON.",
+    )
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Exit non-zero on warnings as well as errors.",
+    )
+    return parser
+
+
+def main() -> int:
+    args = build_parser().parse_args()
+    payload = validate_math_json(path=args.path, strict=args.strict)
 
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -220,11 +231,7 @@ def main() -> int:
             print(f"- {label}: {count}")
 
         print("\nBroken references:")
-        if broken_references:
-            for item in broken_references:
-                print(f"- {item}")
-        else:
-            print("- <none>")
+        print("\n".join(f"- {item}" for item in payload["broken_references"]) or "- <none>")
 
         print("\nOne-sided parent edges:")
         print("\n".join(f"- {item}" for item in payload["one_sided_parent_edges"]) or "- <none>")
@@ -239,15 +246,11 @@ def main() -> int:
         print("\n".join(f"- {item}" for item in payload["mismatched_child_edges"]) or "- <none>")
 
         print("\nErrors:")
-        print("\n".join(f"- {item}" for item in errors) or "- <none>")
+        print("\n".join(f"- {item}" for item in payload["errors"]) or "- <none>")
         print("\nWarnings:")
-        print("\n".join(f"- {item}" for item in warnings) or "- <none>")
+        print("\n".join(f"- {item}" for item in payload["warnings"]) or "- <none>")
 
-    if errors:
-        return 1
-    if args.strict and (warnings or broken_references or structural_issues):
-        return 1
-    return 0
+    return payload["exit_code"]
 
 
 if __name__ == "__main__":

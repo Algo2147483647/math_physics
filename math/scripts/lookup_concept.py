@@ -14,6 +14,29 @@ from _math_json_common import (
 )
 
 
+def lookup_concept(
+    term: str,
+    *,
+    fields: list[str] | None = None,
+    path: str | Path = DEFAULT_MATH_JSON_PATH,
+    max_matches: int = 5,
+) -> dict[str, object]:
+    concepts = load_concepts(path)
+    match, candidates = resolve_concept(term, concepts, max_matches=max_matches)
+    payload = {
+        "query": term,
+        "resolved": match.to_dict() if match else None,
+        "candidates": [candidate.to_dict() for candidate in candidates],
+    }
+
+    if not match:
+        payload["error"] = "No concept passed the fuzzy-match cutoff."
+        return payload
+
+    payload["fields"] = select_fields(concepts[match.key], fields)
+    return payload
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Resolve a math.json concept key and print selected fields."
@@ -48,53 +71,31 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = build_parser().parse_args()
-    concepts = load_concepts(args.path)
-    match, candidates = resolve_concept(
+    payload = lookup_concept(
         args.term,
-        concepts,
+        fields=args.fields,
+        path=args.path,
         max_matches=args.max_matches,
     )
 
-    if not match:
-        if args.json:
-            print(
-                json.dumps(
-                    {
-                        "query": args.term,
-                        "resolved": None,
-                        "candidates": [candidate.to_dict() for candidate in candidates],
-                        "error": "No concept passed the fuzzy-match cutoff.",
-                    },
-                    ensure_ascii=False,
-                    indent=2,
-                )
-            )
-        else:
-            print(f"Query: {args.term}")
-            print("Resolved: <none>")
-            print("Candidates:")
-            for candidate in candidates:
-                print(f"- {candidate.key} ({candidate.match_type}, {candidate.score:.3f})")
-        return 2
-
-    node = concepts[match.key]
-    payload = {
-        "query": args.term,
-        "resolved": match.to_dict(),
-        "candidates": [candidate.to_dict() for candidate in candidates],
-        "fields": select_fields(node, args.fields),
-    }
-
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
-        return 0
+        return 0 if payload.get("resolved") else 2
 
-    print(f"Query: {args.term}")
-    print(f"Resolved: {match.key} ({match.match_type}, {match.score:.3f})")
-    if len(candidates) > 1:
+    print(f"Query: {payload['query']}")
+    if not payload.get("resolved"):
+        print("Resolved: <none>")
+        print("Candidates:")
+        for candidate in payload["candidates"]:
+            print(f"- {candidate['key']} ({candidate['match_type']}, {candidate['score']:.3f})")
+        return 2
+
+    resolved = payload["resolved"]
+    print(f"Resolved: {resolved['key']} ({resolved['match_type']}, {resolved['score']:.3f})")
+    if len(payload["candidates"]) > 1:
         print("Alternatives:")
-        for candidate in candidates[1:]:
-            print(f"- {candidate.key} ({candidate.match_type}, {candidate.score:.3f})")
+        for candidate in payload["candidates"][1:]:
+            print(f"- {candidate['key']} ({candidate['match_type']}, {candidate['score']:.3f})")
 
     fields = payload["fields"]
     if "define" in fields:
