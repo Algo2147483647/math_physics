@@ -34,6 +34,17 @@ Read only the fields needed for the user question.
 
 Do not load the whole file into context when one or a few nodes are enough.
 
+## Deterministic Helpers
+
+Use the bundled scripts before manual JSON inspection when the task is mostly lookup, comparison, or validation.
+
+- For concept key resolution or selective field reads, run `scripts/lookup_concept.py`.
+- For pairwise concept-relation comparison, run `scripts/compare_concepts.py`.
+- For edit-impact checks before changing or deleting a node, run `scripts/find_references.py`.
+- For schema validation, relation-label counts, and snapshot statistics, run `scripts/validate_math_json.py`.
+
+Prefer `--json` when another agent step needs structured output.
+
 ## Output Contract
 
 Prefer this response layout when answering from the file:

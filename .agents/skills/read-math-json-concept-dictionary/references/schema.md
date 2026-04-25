@@ -17,7 +17,7 @@ Typical reasons:
 - Role: large concept-dictionary JSON for mathematical terms
 - Current observed snapshot on 2026-04-24:
   - top-level type: object
-  - top-level keys: 100 concept names
+  - top-level keys: 112 concept names
   - every current node contains `define`, `parents`, `children`, and `properties`
   - current node field types are stable:
     - `define`: string
