@@ -127,5 +127,3 @@ This policy makes inconsistency a repair issue rather than a reason to erase rec
   - retrieving formulas and extended notes
   - surfacing non-core detail after the main definition
 
-Do not dump all of `properties` by default. Summarize first, then expand selectively.
-

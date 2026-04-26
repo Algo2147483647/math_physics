@@ -1,0 +1,4 @@
+interface:
+  display_name: "Math System Onboarding"
+  short_description: "Onboard AI to the math graph system"
+  default_prompt: "Use $math-system-onboarding to inspect the math subsystem before editing notes, graph JSON, or graph tooling."
