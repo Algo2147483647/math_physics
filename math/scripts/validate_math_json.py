@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Any
 
 from _math_json_common import (
-    DEFAULT_MATH_JSON_PATH,
     STANDARD_FIELDS,
     get_standard_field,
     load_concepts,
@@ -61,7 +60,7 @@ def format_edge_issue(
 
 def validate_math_json(
     *,
-    path: str | Path = DEFAULT_MATH_JSON_PATH,
+    path: str | Path,
     strict: bool = False,
 ) -> dict[str, object]:
     concepts = load_concepts(path)
@@ -155,7 +154,8 @@ def validate_math_json(
         + one_sided_child_edges
         + mismatched_child_edges
     )
-    has_strict_issue = bool(errors or (strict and (warnings or broken_references or structural_issues)))
+    has_blocking_issue = bool(errors or broken_references or structural_issues)
+    has_strict_issue = bool(strict and warnings)
 
     return {
         "path": str(Path(path).resolve()),
@@ -176,7 +176,7 @@ def validate_math_json(
         "errors": errors,
         "warnings": warnings,
         "strict": strict,
-        "exit_code": 1 if has_strict_issue else 0,
+        "exit_code": 1 if (has_blocking_issue or has_strict_issue) else 0,
     }
 
 
@@ -187,7 +187,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--path",
         type=Path,
-        default=DEFAULT_MATH_JSON_PATH,
+        required=True,
         help="Path to math.json.",
     )
     parser.add_argument(

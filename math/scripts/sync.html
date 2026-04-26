@@ -229,13 +229,15 @@
 
     document.getElementById("markdownToJson").addEventListener("click", () => {
       callService("Markdown 写入 JSON", "build_graph_json_from_markdown_folder", {
-        folder_path: config.markdownFolder
+        folder_path: config.markdownFolder,
+        output_path: config.jsonFile
       });
     });
 
     document.getElementById("jsonToMarkdown").addEventListener("click", () => {
       callService("JSON 写入 Markdown", "build_markdown_from_graph_json", {
-        json_file: config.jsonFile
+        json_file: config.jsonFile,
+        output_dir: config.markdownFolder
       });
     });
 

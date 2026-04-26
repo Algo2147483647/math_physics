@@ -6,7 +6,6 @@ import sys
 from pathlib import Path
 
 from _math_json_common import (
-    DEFAULT_MATH_JSON_PATH,
     load_concepts,
     render_relation_map,
     resolve_concept,
@@ -18,7 +17,7 @@ def lookup_concept(
     term: str,
     *,
     fields: list[str] | None = None,
-    path: str | Path = DEFAULT_MATH_JSON_PATH,
+    path: str | Path,
     max_matches: int = 5,
 ) -> dict[str, object]:
     concepts = load_concepts(path)
@@ -52,7 +51,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--path",
         type=Path,
-        default=DEFAULT_MATH_JSON_PATH,
+        required=True,
         help="Path to math.json.",
     )
     parser.add_argument(

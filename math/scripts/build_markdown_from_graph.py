@@ -5,13 +5,12 @@ import json
 import sys
 from pathlib import Path
 
-from graph import build_node_in_graph, graph_to_json, json_to_graph
-from paths import DEFAULT_MARKDOWN_ROOT, DEFAULT_MATH_JSON_PATH
+from graph import add_child_in_json, json_to_graph
 
 
 def build_markdown_from_graph_json(
-    json_file: str | Path = DEFAULT_MATH_JSON_PATH,
-    output_dir: str | Path = DEFAULT_MARKDOWN_ROOT,
+    json_file: str | Path,
+    output_dir: str | Path,
 ) -> dict[str, object]:
     graph = json_to_graph(json_file)
     return build_markdown_from_graph(graph, output_dir)
@@ -19,7 +18,7 @@ def build_markdown_from_graph_json(
 
 def build_markdown_from_graph(
     graph,
-    output_dir: str | Path = DEFAULT_MARKDOWN_ROOT,
+    output_dir: str | Path,
 ) -> dict[str, object]:
     target_dir = Path(output_dir).resolve()
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -74,15 +73,13 @@ def add_kid_for_graph(
     key: str,
     kid_key: str,
     weight: str = "",
-    output_dir: str | Path = DEFAULT_MARKDOWN_ROOT,
+    output_dir: str | Path | None = None,
 ) -> dict[str, object]:
+    add_child_in_json(json_file, key, kid_key, label=weight)
     graph = json_to_graph(json_file)
-    if key not in graph:
-        raise ValueError(f"Parent concept not found: {key}")
-
-    build_node_in_graph(graph, "kid", key, kid_key, weight)
-    graph_to_json(graph, json_file)
-    build_result = build_markdown_from_graph(graph, output_dir)
+    build_result = (
+        build_markdown_from_graph(graph, output_dir) if output_dir is not None else {}
+    )
     build_result.update(
         {
             "json_file": str(Path(json_file).resolve()),
@@ -91,6 +88,8 @@ def add_kid_for_graph(
             "weight": weight,
         }
     )
+    if output_dir is not None:
+        build_result["output_dir"] = str(Path(output_dir).resolve())
     return build_result
 
 
@@ -101,17 +100,8 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     build_parser = subparsers.add_parser("build", help="Write Markdown notes from math.json.")
-    build_parser.add_argument(
-        "json_file",
-        nargs="?",
-        default=str(DEFAULT_MATH_JSON_PATH),
-        help="Path to math.json.",
-    )
-    build_parser.add_argument(
-        "--output-dir",
-        default=str(DEFAULT_MARKDOWN_ROOT),
-        help="Directory where Markdown files will be written.",
-    )
+    build_parser.add_argument("json_file", help="Path to math.json.")
+    build_parser.add_argument("output_dir", help="Directory where Markdown files will be written.")
     build_parser.add_argument("--json", action="store_true", help="Print machine-readable JSON.")
 
     add_kid_parser = subparsers.add_parser("add-kid", help="Add a child node and rebuild outputs.")
@@ -125,7 +115,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     add_kid_parser.add_argument(
         "--output-dir",
-        default=str(DEFAULT_MARKDOWN_ROOT),
+        default=None,
         help="Directory where Markdown files will be written.",
     )
     add_kid_parser.add_argument("--json", action="store_true", help="Print machine-readable JSON.")

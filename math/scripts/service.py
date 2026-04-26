@@ -7,10 +7,18 @@ from flask_cors import CORS
 
 from build_graph_from_markdown import build_graph_json_from_markdown_folder
 from build_markdown_from_graph import add_kid_for_graph, build_markdown_from_graph_json
-from compare_concepts import compare_concepts
-from find_references import find_references
+from graph import (
+    add_child_in_json,
+    add_parent_in_json,
+    create_node_in_json,
+    delete_node_in_json,
+    get_node_in_json,
+    list_nodes_in_json,
+    remove_child_in_json,
+    remove_parent_in_json,
+    update_node_in_json,
+)
 from lookup_concept import lookup_concept
-from typora import open_typora
 from validate_math_json import validate_math_json
 
 
@@ -21,10 +29,16 @@ FUNCTIONS = {
     "build_graph_json_from_markdown_folder": build_graph_json_from_markdown_folder,
     "build_markdown_from_graph_json": build_markdown_from_graph_json,
     "add_kid_for_graph": add_kid_for_graph,
-    "open_typora": open_typora,
+    "list_nodes_in_json": list_nodes_in_json,
+    "get_node_in_json": get_node_in_json,
+    "create_node_in_json": create_node_in_json,
+    "update_node_in_json": update_node_in_json,
+    "delete_node_in_json": delete_node_in_json,
+    "add_child_in_json": add_child_in_json,
+    "add_parent_in_json": add_parent_in_json,
+    "remove_child_in_json": remove_child_in_json,
+    "remove_parent_in_json": remove_parent_in_json,
     "lookup_concept": lookup_concept,
-    "compare_concepts": compare_concepts,
-    "find_references": find_references,
     "validate_math_json": validate_math_json,
 }
 
