@@ -1,29 +1,29 @@
 from __future__ import annotations
 
-import argparse
-import json
-import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from _math_json_common import (
-    STANDARD_FIELDS,
-    get_standard_field,
-    load_concepts,
+from graph_store import (
+    DEFAULT_NODE_PAYLOAD,
+    create_backup_file,
+    load_raw_concepts,
+    normalize_node_payload,
+    write_json_payload,
 )
 
 
 def validate_node_shape(key: str, node: Any) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
+    standard_fields = tuple(DEFAULT_NODE_PAYLOAD.keys())
 
     if not isinstance(node, dict):
         errors.append(f"{key}: node is {type(node).__name__}, expected object")
         return errors, warnings
 
-    missing = [field for field in STANDARD_FIELDS if field not in node]
-    extra = [field for field in node if field not in STANDARD_FIELDS]
+    missing = [field for field in standard_fields if field not in node]
+    extra = [field for field in node if field not in standard_fields]
     if missing:
         errors.append(f"{key}: missing fields {missing}")
     if extra:
@@ -58,13 +58,12 @@ def format_edge_issue(
     return f"{base}; reverse {reverse_field}={reverse_label}"
 
 
-def validate_math_json(
+def validate_concepts_payload(
+    concepts: dict[str, Any],
     *,
-    path: str | Path,
     strict: bool = False,
+    path: str | Path | None = None,
 ) -> dict[str, object]:
-    concepts = load_concepts(path)
-
     errors: list[str] = []
     warnings: list[str] = []
     parent_labels: Counter[str] = Counter()
@@ -94,16 +93,23 @@ def validate_math_json(
             properties = node.get("properties", [])
 
             if isinstance(parents, dict):
-                parent_labels.update(parents.values())
+                parent_labels.update(
+                    label if isinstance(label, str) else str(label) for label in parents.values()
+                )
                 for target, label in parents.items():
                     if target not in concepts:
                         broken_references.append(f"{key}.parents -> {target} ({label})")
                         continue
+                    target_node = concepts[target]
+                    if not isinstance(target_node, dict):
+                        broken_references.append(f"{key}.parents -> {target} ({label})")
+                        continue
 
-                    reverse_label = get_standard_field(concepts[target], "children").get(key)
+                    reverse_value = target_node.get("children", {})
+                    reverse_label = reverse_value.get(key) if isinstance(reverse_value, dict) else None
                     if reverse_label is None:
                         one_sided_parent_edges.append(
-                            format_edge_issue(key, "parents", target, label, "children")
+                            format_edge_issue(key, "parents", target, str(label), "children")
                         )
                     elif reverse_label == label:
                         mirrored_parent_edges += 1
@@ -113,23 +119,30 @@ def validate_math_json(
                                 key,
                                 "parents",
                                 target,
-                                label,
+                                str(label),
                                 "children",
-                                reverse_label,
+                                str(reverse_label),
                             )
                         )
 
             if isinstance(children, dict):
-                child_labels.update(children.values())
+                child_labels.update(
+                    label if isinstance(label, str) else str(label) for label in children.values()
+                )
                 for target, label in children.items():
                     if target not in concepts:
                         broken_references.append(f"{key}.children -> {target} ({label})")
                         continue
+                    target_node = concepts[target]
+                    if not isinstance(target_node, dict):
+                        broken_references.append(f"{key}.children -> {target} ({label})")
+                        continue
 
-                    reverse_label = get_standard_field(concepts[target], "parents").get(key)
+                    reverse_value = target_node.get("parents", {})
+                    reverse_label = reverse_value.get(key) if isinstance(reverse_value, dict) else None
                     if reverse_label is None:
                         one_sided_child_edges.append(
-                            format_edge_issue(key, "children", target, label, "parents")
+                            format_edge_issue(key, "children", target, str(label), "parents")
                         )
                     elif reverse_label == label:
                         mirrored_child_edges += 1
@@ -139,9 +152,9 @@ def validate_math_json(
                                 key,
                                 "children",
                                 target,
-                                label,
+                                str(label),
                                 "parents",
-                                reverse_label,
+                                str(reverse_label),
                             )
                         )
 
@@ -158,7 +171,7 @@ def validate_math_json(
     has_strict_issue = bool(strict and warnings)
 
     return {
-        "path": str(Path(path).resolve()),
+        "path": str(Path(path).resolve()) if path is not None else None,
         "concept_count": len(concepts) if isinstance(concepts, dict) else 0,
         "parent_edge_count": sum(parent_labels.values()),
         "child_edge_count": sum(child_labels.values()),
@@ -180,78 +193,103 @@ def validate_math_json(
     }
 
 
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Validate math.json and emit a compact snapshot summary."
-    )
-    parser.add_argument(
-        "--path",
-        type=Path,
-        required=True,
-        help="Path to math.json.",
-    )
-    parser.add_argument(
-        "--json",
-        action="store_true",
-        help="Emit machine-readable JSON.",
-    )
-    parser.add_argument(
-        "--strict",
-        action="store_true",
-        help="Exit non-zero on warnings as well as errors.",
-    )
-    return parser
+def validate_math_json(
+    *,
+    path: str | Path,
+    strict: bool = False,
+) -> dict[str, object]:
+    concepts = load_raw_concepts(path, normalize=False)
+    return validate_concepts_payload(concepts, strict=strict, path=path)
 
 
-def main() -> int:
-    args = build_parser().parse_args()
-    payload = validate_math_json(path=args.path, strict=args.strict)
+def repair_concepts_payload(
+    concepts: dict[str, Any],
+    *,
+    prefer: str = "children",
+    drop_broken: bool = False,
+) -> tuple[dict[str, dict[str, object]], dict[str, object]]:
+    if prefer not in {"children", "parents"}:
+        raise ValueError("prefer must be 'children' or 'parents'")
 
-    if args.json:
-        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    normalized: dict[str, dict[str, object]] = {}
+    for key, node in concepts.items():
+        repaired_node = normalize_node_payload(key, node)
+        if isinstance(node, dict):
+            extras = {
+                extra_key: value
+                for extra_key, value in node.items()
+                if extra_key not in DEFAULT_NODE_PAYLOAD
+            }
+            repaired_node.update(extras)
+        normalized[key] = repaired_node
+
+    removed_broken_edges: list[str] = []
+
+    if drop_broken:
+        for key, node in normalized.items():
+            for field in ("children", "parents"):
+                relation_map = dict(node[field])
+                cleaned: dict[str, str] = {}
+                for target, label in relation_map.items():
+                    if target in normalized:
+                        cleaned[target] = label
+                    else:
+                        removed_broken_edges.append(f"{key}.{field} -> {target} ({label})")
+                node[field] = cleaned
+
+    if prefer == "children":
+        for node in normalized.values():
+            node["parents"] = {}
+        for source, node in normalized.items():
+            for target, label in node["children"].items():
+                if target in normalized:
+                    normalized[target]["parents"][source] = label
     else:
-        print(f"Path: {payload['path']}")
-        print(f"Concept count: {payload['concept_count']}")
-        print(f"Parent edges: {payload['parent_edge_count']}")
-        print(f"Child edges: {payload['child_edge_count']}")
-        print(f"Property list lengths: {payload['property_list_lengths']}")
-        print(f"Mirrored parent edges: {payload['mirrored_parent_edges']}")
-        print(f"One-sided parent edges: {len(payload['one_sided_parent_edges'])}")
-        print(f"Mismatched parent edges: {len(payload['mismatched_parent_edges'])}")
-        print(f"Mirrored child edges: {payload['mirrored_child_edges']}")
-        print(f"One-sided child edges: {len(payload['one_sided_child_edges'])}")
-        print(f"Mismatched child edges: {len(payload['mismatched_child_edges'])}")
+        for node in normalized.values():
+            node["children"] = {}
+        for target, node in normalized.items():
+            for source, label in node["parents"].items():
+                if source in normalized:
+                    normalized[source]["children"][target] = label
 
-        print("\nParent relation labels:")
-        for label, count in payload["parent_relation_labels"].items():
-            print(f"- {label}: {count}")
-
-        print("\nChild relation labels:")
-        for label, count in payload["child_relation_labels"].items():
-            print(f"- {label}: {count}")
-
-        print("\nBroken references:")
-        print("\n".join(f"- {item}" for item in payload["broken_references"]) or "- <none>")
-
-        print("\nOne-sided parent edges:")
-        print("\n".join(f"- {item}" for item in payload["one_sided_parent_edges"]) or "- <none>")
-
-        print("\nMismatched parent edges:")
-        print("\n".join(f"- {item}" for item in payload["mismatched_parent_edges"]) or "- <none>")
-
-        print("\nOne-sided child edges:")
-        print("\n".join(f"- {item}" for item in payload["one_sided_child_edges"]) or "- <none>")
-
-        print("\nMismatched child edges:")
-        print("\n".join(f"- {item}" for item in payload["mismatched_child_edges"]) or "- <none>")
-
-        print("\nErrors:")
-        print("\n".join(f"- {item}" for item in payload["errors"]) or "- <none>")
-        print("\nWarnings:")
-        print("\n".join(f"- {item}" for item in payload["warnings"]) or "- <none>")
-
-    return payload["exit_code"]
+    report = validate_concepts_payload(normalized, strict=False)
+    report.update(
+        {
+            "prefer": prefer,
+            "drop_broken": drop_broken,
+            "removed_broken_edges": removed_broken_edges,
+        }
+    )
+    return normalized, report
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+def repair_math_json(
+    *,
+    path: str | Path,
+    prefer: str = "children",
+    drop_broken: bool = False,
+    apply: bool = False,
+    backup: bool = True,
+    backup_path: str | Path | None = None,
+) -> dict[str, object]:
+    concepts = load_raw_concepts(path, normalize=False)
+    repaired_payload, report = repair_concepts_payload(
+        concepts,
+        prefer=prefer,
+        drop_broken=drop_broken,
+    )
+
+    result = {
+        "path": str(Path(path).resolve()),
+        "apply": apply,
+        "backup": backup,
+        "backup_path": None,
+        "report": {**report, "path": str(Path(path).resolve())},
+    }
+
+    if apply:
+        if backup:
+            result["backup_path"] = create_backup_file(path, backup_path=backup_path)
+        write_json_payload(repaired_payload, path)
+
+    return result

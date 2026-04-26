@@ -5,9 +5,8 @@ import argparse
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-from build_graph_from_markdown import build_graph_json_from_markdown_folder
-from build_markdown_from_graph import add_kid_for_graph, build_markdown_from_graph_json
-from graph import (
+from concept_lookup_core import lookup_concept
+from graph_store import (
     add_child_in_json,
     add_parent_in_json,
     create_node_in_json,
@@ -16,19 +15,50 @@ from graph import (
     list_nodes_in_json,
     remove_child_in_json,
     remove_parent_in_json,
+    rename_node_in_json,
     update_node_in_json,
 )
-from lookup_concept import lookup_concept
-from validate_math_json import validate_math_json
+from graph_validate_core import repair_math_json, validate_math_json
+from markdown_export import build_markdown_from_graph_json
+from markdown_import import build_graph_json_from_markdown_folder, diff_markdown_vs_json
 
 
 app = Flask(__name__)
 CORS(app)
 
+
+def import_markdown(**params):
+    return build_graph_json_from_markdown_folder(**params)
+
+
+def export_markdown(**params):
+    return build_markdown_from_graph_json(**params)
+
+
+def validate_graph(**params):
+    return validate_math_json(**params)
+
+
+def repair_graph(**params):
+    return repair_math_json(**params)
+
+
+def diff_graph(**params):
+    return diff_markdown_vs_json(**params)
+
+
+def rename_concept(**params):
+    return rename_node_in_json(**params)
+
+
 FUNCTIONS = {
-    "build_graph_json_from_markdown_folder": build_graph_json_from_markdown_folder,
-    "build_markdown_from_graph_json": build_markdown_from_graph_json,
-    "add_kid_for_graph": add_kid_for_graph,
+    "import_markdown": import_markdown,
+    "export_markdown": export_markdown,
+    "validate_graph": validate_graph,
+    "repair_graph": repair_graph,
+    "diff_graph": diff_graph,
+    "rename_concept": rename_concept,
+    "lookup_concept": lookup_concept,
     "list_nodes_in_json": list_nodes_in_json,
     "get_node_in_json": get_node_in_json,
     "create_node_in_json": create_node_in_json,
@@ -38,8 +68,6 @@ FUNCTIONS = {
     "add_parent_in_json": add_parent_in_json,
     "remove_child_in_json": remove_child_in_json,
     "remove_parent_in_json": remove_parent_in_json,
-    "lookup_concept": lookup_concept,
-    "validate_math_json": validate_math_json,
 }
 
 
@@ -55,13 +83,23 @@ def handle_exception(error):
     return jsonify({"status": "error", "message": str(error)}), 500
 
 
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok", "service": "math-tools"}), 200
+
+
+@app.route("/functions", methods=["GET"])
+def list_functions():
+    return jsonify({"status": "success", "data": sorted(FUNCTIONS)}), 200
+
+
 @app.route("/function", methods=["POST"])
 def service_function():
     function_name = "<unknown>"
     try:
         payload = request.get_json(silent=True) or {}
         function_name = get_param(payload, "function", required=True)
-        params = get_param(payload, "params", required=True)
+        params = get_param(payload, "params", default={})
 
         if function_name not in FUNCTIONS:
             raise ValueError(f"Function '{function_name}' is not defined or not callable.")
@@ -92,6 +130,11 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-if __name__ == "__main__":
+def main() -> int:
     args = build_parser().parse_args()
     app.run(host=args.host, port=args.port, debug=args.debug)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -28,6 +28,7 @@ Apply the template rules strictly:
 - use `""` for an empty `define`;
 - use `{}` for empty `parents` and `children`;
 - use `[]` for empty `properties`;
+- keep `parents` and `children` synchronized whenever possible;
 - do not use `null`;
 - do not replace `properties` with a bare string.
 
@@ -46,6 +47,9 @@ Reading Priority By Question Type:
 
 - Type: string
 - Meaning: the primary definition block for the concept
+- Recommended structure:
+  - begin with a short intuitive explanation in Markdown block quote format
+  - follow it with the full mathematically rigorous definition
 - Typical content:
   - Markdown paragraphs
   - block quotes
@@ -56,6 +60,16 @@ Reading Priority By Question Type:
   - answering "What is X?"
   - giving the formal or repository-native definition
   - extracting the main mathematical formula or setup
+
+Preferred writing pattern:
+
+```md
+> A short intuitive explanation of the concept.
+
+Then give the complete mathematical definition, with notation, assumptions, and formulas as needed.
+```
+
+The quoted opening should help a reader quickly understand the idea of the concept before reading the formal definition. The formal definition should then state the concept precisely enough for mathematical use.
 
 Read `define` first for almost every concept question.
 
@@ -80,6 +94,17 @@ Do not flatten this into plain prose without keeping the relation label.
   - showing outward structure from the current node
 
 Do not assume `children` means examples. It is a relation map, not an example list.
+
+#### Consistency Between `parents` And `children`
+
+- `parents` and `children` should be kept consistent whenever nodes are created or edited.
+- A relation recorded on either side is intended to be valid repository content.
+- If `A.parents` contains `B: r`, then ideally `B.children` should contain `A: r`.
+- If `A.children` contains `B: r`, then ideally `B.parents` should contain `A: r`.
+- If the two sides are temporarily inconsistent, resolve the relation by taking the union rather than discarding either side.
+- In other words, when `parents` and `children` disagree, treat both recorded entries as valid and use the combined set as the effective relation data until the notes are synchronized.
+
+This policy makes inconsistency a repair issue rather than a reason to erase recorded structure.
 
 ### `properties`
 

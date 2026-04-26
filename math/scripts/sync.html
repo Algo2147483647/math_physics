@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Sync</title>
+  <title>Math Graph Sync</title>
   <style>
     :root {
-      --ink: #18211f;
-      --muted: #52615c;
-      --line: #c8d5cf;
-      --paper: #f6f7f4;
-      --mint: #d8f0df;
-      --leaf: #1f6b4d;
-      --coral: #e76450;
-      --coral-dark: #bd3f30;
-      --white: #ffffff;
+      --ink: #19211f;
+      --muted: #566660;
+      --line: #cad7d1;
+      --paper: #f4f5f1;
+      --panel: #ffffff;
+      --mint: #d9f2e0;
+      --leaf: #22684d;
+      --leaf-soft: #9fcaaf;
+      --amber: #f4e2b9;
+      --amber-ink: #7a5b16;
+      --coral: #efb2a4;
+      --coral-ink: #a33a29;
+      --terminal: #0f1714;
+      --terminal-ink: #dfe8e2;
     }
 
     * {
@@ -25,156 +30,204 @@
       margin: 0;
       min-height: 100vh;
       color: var(--ink);
-      background: var(--paper);
-      font-family: Arial, "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(217, 242, 224, 0.9), transparent 32%),
+        linear-gradient(180deg, #fbfcfa 0%, var(--paper) 100%);
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
     }
 
     main {
-      width: min(920px, calc(100% - 32px));
+      width: min(1040px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 48px 0;
+      padding: 36px 0 48px;
     }
 
     h1 {
       margin: 0 0 10px;
-      font-size: 32px;
-      line-height: 1.2;
-      letter-spacing: 0;
+      font-size: 34px;
+      line-height: 1.15;
     }
 
     .hint {
       margin: 0 0 28px;
+      max-width: 820px;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
+      line-height: 1.75;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 14px 34px rgba(25, 33, 31, 0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .config {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--ink);
+      background: var(--panel);
+      font: inherit;
+    }
+
+    .checks {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .checks label {
+      grid-template-columns: 18px 1fr;
+      align-items: start;
+      gap: 10px;
+      color: var(--ink);
     }
 
     .controls {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 22px;
+      gap: 10px;
     }
 
     button {
-      min-height: 104px;
-      padding: 18px;
+      padding: 14px 16px;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
+      border-radius: 12px;
+      background: var(--panel);
       color: var(--ink);
       cursor: pointer;
       text-align: left;
-      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+      font: inherit;
+      transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
     }
 
     button strong {
       display: block;
-      margin-bottom: 8px;
-      font-size: 20px;
-      line-height: 1.25;
-      letter-spacing: 0;
+      margin-bottom: 4px;
+      font-size: 16px;
     }
 
     button span {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.5;
     }
 
     button:hover:not(:disabled) {
-      border-color: var(--leaf);
-      box-shadow: 0 8px 22px rgba(31, 107, 77, 0.12);
       transform: translateY(-1px);
+      border-color: var(--leaf);
+      box-shadow: 0 10px 24px rgba(34, 104, 77, 0.12);
     }
 
     button.primary {
       background: var(--mint);
-      border-color: #9fc9ae;
+      border-color: var(--leaf-soft);
     }
 
-    button.danger {
-      border-color: #f0b5aa;
-    }
-
-    button.danger:hover:not(:disabled) {
-      border-color: var(--coral-dark);
-      box-shadow: 0 8px 22px rgba(231, 100, 80, 0.13);
+    button.warning {
+      background: #fff8ea;
+      border-color: #ebd497;
     }
 
     button:disabled {
+      opacity: 0.6;
       cursor: wait;
-      opacity: 0.62;
     }
 
-    dl {
+    .status {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .status.ok {
+      border-color: var(--leaf-soft);
+      color: var(--leaf);
+    }
+
+    .status.warn {
+      border-color: var(--amber);
+      color: var(--amber-ink);
+    }
+
+    .status.error {
+      border-color: var(--coral);
+      color: var(--coral-ink);
+    }
+
+    .meta {
       display: grid;
-      grid-template-columns: 130px minmax(0, 1fr);
+      grid-template-columns: 120px minmax(0, 1fr);
       gap: 8px 14px;
-      margin: 0 0 22px;
-      padding: 16px 0;
+      margin-bottom: 14px;
+      padding: 14px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    dt {
+    .meta dt {
       color: var(--muted);
     }
 
-    dd {
+    .meta dd {
       margin: 0;
       overflow-wrap: anywhere;
       font-family: Consolas, "Courier New", monospace;
-      font-size: 14px;
-    }
-
-    .status {
-      min-height: 48px;
-      margin: 0 0 14px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--white);
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .status.ok {
-      border-color: #9fc9ae;
-      color: var(--leaf);
-    }
-
-    .status.error {
-      border-color: #f0b5aa;
-      color: var(--coral-dark);
+      font-size: 13px;
     }
 
     pre {
-      min-height: 150px;
-      max-height: 360px;
+      min-height: 460px;
       margin: 0;
-      padding: 14px;
+      padding: 16px;
       overflow: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #101614;
-      color: #dbe7df;
+      border-radius: 14px;
+      background: var(--terminal);
+      color: var(--terminal-ink);
+      font-family: Consolas, "Courier New", monospace;
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.55;
       white-space: pre-wrap;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 880px) {
       main {
-        width: min(100% - 24px, 920px);
-        padding: 28px 0;
+        width: min(100% - 24px, 1040px);
+        padding-top: 24px;
       }
 
-      .controls {
-        grid-template-columns: 1fr;
-      }
-
-      dl {
+      .layout {
         grid-template-columns: 1fr;
       }
     }
@@ -182,70 +235,140 @@
 </head>
 <body>
   <main>
-    <h1>Math Markdown / JSON 同步</h1>
-    <p class="hint">点击后直接写入本地文件。服务地址默认使用当前已启动的 Flask 服务。</p>
+    <h1>Math Markdown / JSON Sync</h1>
+    <p class="hint">
+      先看差异，再决定是否写入。这个页面通过本地 Flask 服务调用脚本库，适合手工同步
+      Markdown 笔记、<code>math.json</code>、以及关系修复检查。
+    </p>
 
-    <section class="controls" aria-label="同步操作">
-      <button class="primary" id="markdownToJson" type="button">
-        <strong>Markdown 写入 JSON</strong>
-        <span>扫描 math 目录里的 Markdown，并重建 lib/math.json。</span>
-      </button>
-      <button class="danger" id="jsonToMarkdown" type="button">
-        <strong>JSON 写入 Markdown</strong>
-        <span>读取 lib/math.json，并重建 math 目录里的 Markdown。</span>
-      </button>
+    <section class="layout">
+      <aside class="panel">
+        <h2>配置</h2>
+        <div class="config">
+          <label>
+            服务地址
+            <input id="endpoint" type="text" value="http://127.0.0.1:5000/function">
+          </label>
+          <label>
+            Markdown 根目录
+            <input id="markdownFolder" type="text" value="D:/Algo/Notes/math_physics/math/">
+          </label>
+          <label>
+            JSON 文件
+            <input id="jsonFile" type="text" value="D:/Algo/Notes/math_physics/math/lib/math.json">
+          </label>
+          <label>
+            索引文件
+            <input id="indexFile" type="text" value="D:/Algo/Notes/math_physics/math/lib/math.index.json">
+          </label>
+        </div>
+
+        <div class="checks">
+          <label>
+            <input id="dryRun" type="checkbox" checked>
+            <span>预演模式。先看计划，不直接写文件。</span>
+          </label>
+          <label>
+            <input id="prune" type="checkbox">
+            <span>导出 Markdown 时清理多余的旧文件。</span>
+          </label>
+          <label>
+            <input id="dropBroken" type="checkbox">
+            <span>修复时删除损坏引用，而不是保留它们。</span>
+          </label>
+        </div>
+
+        <div class="controls">
+          <button class="warning" id="diffButton" type="button">
+            <strong>检查差异</strong>
+            <span>比较 Markdown 和 JSON，列出新增、缺失和变更的概念。</span>
+          </button>
+          <button class="primary" id="markdownToJson" type="button">
+            <strong>Markdown 写入 JSON</strong>
+            <span>从笔记重建 <code>math.json</code>，并更新路径索引。</span>
+          </button>
+          <button id="jsonToMarkdown" type="button">
+            <strong>JSON 写入 Markdown</strong>
+            <span>从 <code>math.json</code> 回写概念笔记，可选清理陈旧文件。</span>
+          </button>
+          <button id="validateButton" type="button">
+            <strong>验证结构</strong>
+            <span>检查单边关系、标签不一致和损坏引用。</span>
+          </button>
+          <button id="repairButton" type="button">
+            <strong>修复关系</strong>
+            <span>按 children 或 parents 侧重重建镜像关系。</span>
+          </button>
+        </div>
+      </aside>
+
+      <section class="panel">
+        <h2>执行结果</h2>
+        <div class="status" id="status">等待操作。</div>
+        <dl class="meta">
+          <dt>Endpoint</dt>
+          <dd id="metaEndpoint"></dd>
+          <dt>Markdown</dt>
+          <dd id="metaMarkdown"></dd>
+          <dt>JSON</dt>
+          <dd id="metaJson"></dd>
+          <dt>Index</dt>
+          <dd id="metaIndex"></dd>
+        </dl>
+        <pre id="log" aria-label="执行日志"></pre>
+      </section>
     </section>
-
-    <dl>
-      <dt>服务</dt>
-      <dd id="endpoint"></dd>
-      <dt>Markdown</dt>
-      <dd id="markdownPath"></dd>
-      <dt>JSON</dt>
-      <dd id="jsonPath"></dd>
-    </dl>
-
-    <p class="status" id="status">等待操作。</p>
-    <pre id="log" aria-label="执行日志"></pre>
   </main>
 
   <script>
-    const config = {
-      endpoint: "http://127.0.0.1:5000/function",
-      markdownFolder: "D:/Algo/Notes/math_physics/math/",
-      jsonFile: "D:/Algo/Notes/math_physics/math/lib/math.json"
-    };
-
-    const buttons = [
-      document.getElementById("markdownToJson"),
-      document.getElementById("jsonToMarkdown")
-    ];
+    const buttons = Array.from(document.querySelectorAll("button"));
     const statusNode = document.getElementById("status");
     const logNode = document.getElementById("log");
 
-    document.getElementById("endpoint").textContent = config.endpoint;
-    document.getElementById("markdownPath").textContent = config.markdownFolder;
-    document.getElementById("jsonPath").textContent = config.jsonFile;
+    function getConfig() {
+      return {
+        endpoint: document.getElementById("endpoint").value.trim(),
+        markdownFolder: document.getElementById("markdownFolder").value.trim(),
+        jsonFile: document.getElementById("jsonFile").value.trim(),
+        indexFile: document.getElementById("indexFile").value.trim(),
+        dryRun: document.getElementById("dryRun").checked,
+        prune: document.getElementById("prune").checked,
+        dropBroken: document.getElementById("dropBroken").checked
+      };
+    }
 
-    document.getElementById("markdownToJson").addEventListener("click", () => {
-      callService("Markdown 写入 JSON", "build_graph_json_from_markdown_folder", {
-        folder_path: config.markdownFolder,
-        output_path: config.jsonFile
+    function refreshMeta() {
+      const config = getConfig();
+      document.getElementById("metaEndpoint").textContent = config.endpoint;
+      document.getElementById("metaMarkdown").textContent = config.markdownFolder;
+      document.getElementById("metaJson").textContent = config.jsonFile;
+      document.getElementById("metaIndex").textContent = config.indexFile;
+    }
+
+    function setBusy(isBusy) {
+      buttons.forEach((button) => {
+        button.disabled = isBusy;
       });
-    });
+    }
 
-    document.getElementById("jsonToMarkdown").addEventListener("click", () => {
-      callService("JSON 写入 Markdown", "build_markdown_from_graph_json", {
-        json_file: config.jsonFile,
-        output_dir: config.markdownFolder
-      });
-    });
+    function setStatus(message, type = "") {
+      statusNode.textContent = message;
+      statusNode.className = `status${type ? ` ${type}` : ""}`;
+    }
 
-    async function callService(label, functionName, params) {
+    function appendLog(message) {
+      logNode.textContent += `${message}\n`;
+      logNode.scrollTop = logNode.scrollHeight;
+    }
+
+    async function callService(label, functionName, params, okType = "ok") {
+      refreshMeta();
+      const config = getConfig();
       setBusy(true);
-      setStatus(`${label} 执行中...`);
+      setStatus(`${label} 进行中...`);
       appendLog(`[${new Date().toLocaleString()}] ${label}`);
       appendLog(`function: ${functionName}`);
+      appendLog(`params: ${JSON.stringify(params, null, 2)}`);
 
       try {
         const response = await fetch(config.endpoint, {
@@ -265,14 +388,9 @@
           throw new Error(message);
         }
 
-        setStatus(`${label} 完成。`, "ok");
+        setStatus(`${label} 完成。`, okType);
         appendLog("status: success");
-        if (payload.data !== undefined) {
-          const dataText = typeof payload.data === "string"
-            ? payload.data
-            : JSON.stringify(payload.data, null, 2);
-          appendLog(dataText);
-        }
+        appendLog(JSON.stringify(payload.data, null, 2));
       } catch (error) {
         setStatus(`${label} 失败：${error.message}`, "error");
         appendLog(`error: ${error.message}`);
@@ -282,21 +400,54 @@
       }
     }
 
-    function setBusy(isBusy) {
-      buttons.forEach((button) => {
-        button.disabled = isBusy;
+    document.getElementById("diffButton").addEventListener("click", () => {
+      const config = getConfig();
+      callService("检查差异", "diff_graph", {
+        folder_path: config.markdownFolder,
+        json_path: config.jsonFile
+      }, "warn");
+    });
+
+    document.getElementById("markdownToJson").addEventListener("click", () => {
+      const config = getConfig();
+      callService("Markdown 写入 JSON", "import_markdown", {
+        folder_path: config.markdownFolder,
+        output_path: config.jsonFile,
+        dry_run: config.dryRun,
+        index_path: config.indexFile
       });
-    }
+    });
 
-    function setStatus(message, type) {
-      statusNode.textContent = message;
-      statusNode.className = `status${type ? ` ${type}` : ""}`;
-    }
+    document.getElementById("jsonToMarkdown").addEventListener("click", () => {
+      const config = getConfig();
+      callService("JSON 写入 Markdown", "export_markdown", {
+        json_file: config.jsonFile,
+        output_dir: config.markdownFolder,
+        dry_run: config.dryRun,
+        prune: config.prune,
+        index_path: config.indexFile
+      });
+    });
 
-    function appendLog(message) {
-      logNode.textContent += `${message}\n`;
-      logNode.scrollTop = logNode.scrollHeight;
-    }
+    document.getElementById("validateButton").addEventListener("click", () => {
+      const config = getConfig();
+      callService("验证结构", "validate_graph", {
+        path: config.jsonFile
+      }, "warn");
+    });
+
+    document.getElementById("repairButton").addEventListener("click", () => {
+      const config = getConfig();
+      callService("修复关系", "repair_graph", {
+        path: config.jsonFile,
+        apply: !config.dryRun,
+        prefer: "children",
+        drop_broken: config.dropBroken
+      }, config.dryRun ? "warn" : "ok");
+    });
+
+    refreshMeta();
+    appendLog("Ready.");
   </script>
 </body>
 </html>

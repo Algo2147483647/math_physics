@@ -1,13 +1,11 @@
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any
 
-
-STANDARD_FIELDS = ("define", "parents", "children", "properties")
+from graph_store import DEFAULT_NODE_PAYLOAD, load_raw_concepts, normalize_node_payload
 
 
 @dataclass
@@ -25,35 +23,7 @@ class ConceptMatch:
 
 
 def load_concepts(path: str | Path) -> dict[str, Any]:
-    json_path = Path(path)
-    if not json_path.exists():
-        raise FileNotFoundError(f"JSON file not found: {json_path}")
-
-    try:
-        payload = json.loads(json_path.read_text(encoding="utf-8-sig"))
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Failed to parse JSON file: {json_path}") from exc
-
-    if not isinstance(payload, dict):
-        raise ValueError(f"Top-level JSON value must be an object: {json_path}")
-    return payload
-
-
-def get_standard_field(node: dict[str, Any], field: str) -> Any:
-    default_map = {
-        "define": "",
-        "parents": {},
-        "children": {},
-        "properties": [],
-    }
-    value = node.get(field, default_map[field])
-    if field in ("parents", "children") and not isinstance(value, dict):
-        return {}
-    if field == "properties" and not isinstance(value, list):
-        return []
-    if field == "define" and not isinstance(value, str):
-        return ""
-    return value
+    return load_raw_concepts(path, normalize=True)
 
 
 def render_relation_map(relations: dict[str, str]) -> list[str]:
@@ -63,11 +33,12 @@ def render_relation_map(relations: dict[str, str]) -> list[str]:
 
 
 def select_fields(node: dict[str, Any], fields: list[str] | None) -> dict[str, Any]:
+    normalized = normalize_node_payload("<inline>", node)
     if not fields or "all" in fields:
-        names = STANDARD_FIELDS
+        names = tuple(DEFAULT_NODE_PAYLOAD.keys())
     else:
         names = tuple(dict.fromkeys(fields))
-    return {name: get_standard_field(node, name) for name in names}
+    return {name: normalized.get(name, DEFAULT_NODE_PAYLOAD[name]) for name in names}
 
 
 def resolve_concept(
@@ -110,3 +81,26 @@ def resolve_concept(
     if best.score < 0.4:
         return None, candidates
     return best, candidates
+
+
+def lookup_concept(
+    term: str,
+    *,
+    fields: list[str] | None = None,
+    path: str | Path,
+    max_matches: int = 5,
+) -> dict[str, object]:
+    concepts = load_concepts(path)
+    match, candidates = resolve_concept(term, concepts, max_matches=max_matches)
+    payload = {
+        "query": term,
+        "resolved": match.to_dict() if match else None,
+        "candidates": [candidate.to_dict() for candidate in candidates],
+    }
+
+    if not match:
+        payload["error"] = "No concept passed the fuzzy-match cutoff."
+        return payload
+
+    payload["fields"] = select_fields(concepts[match.key], fields)
+    return payload
