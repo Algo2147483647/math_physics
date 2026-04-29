@@ -6,30 +6,18 @@
 
 This library is a concept-oriented notebook for mathematics, applied mathematics, and physics.
 
-- **Mathematics** is treated as a formal language built from axioms, definitions, structures, and logical consequences.
-- **Applied mathematics** records reusable mathematical tools for computation, modeling, information, optimization, geometry, statistics, and algorithms.
-- **Physics** records models of natural phenomena through observation, experiment, symmetry, variational principles, and mathematical fields.
-- **Engineering** uses proven knowledge to build systems that serve human society.
+- **Mathematics**: A formal language built from axioms, definitions, structures, and logical consequences.
+- **Applied mathematics**: The use and development of mathematical models, methods, and analyses to solve problems arising outside pure mathematics.
+- **Physics**: The study of natural phenomena by formulating mathematical models and validating them through observation and experiment.
+- **Engineering**: The application of proven knowledge to design, implement, verify, operate, and maintain systems that satisfy requirements under real-world constraints.
 
-The goal of this repository is not to collect isolated formulas. It is to keep concepts connected: each note should make clear what the object is, what it depends on, what it contains, and how it is used.
-
-## Map
+### Map
 
 | Path | Role |
-| --- | --- |
+| :---: | --- |
 | [`math/`](./math/) | Pure mathematical concepts organized as a directed knowledge graph. |
-| [`math/skills/`](.agents/skills/) | Local ontology-maintenance skills for deciding math nodes and graph edges consistently. |
 | [`applied mathematics/`](./applied%20mathematics/) | Problem-oriented mathematical tools: algorithms, cryptography, differential equations, geometry, information, language, optimization, and statistics. |
 | [`physics/`](./physics/) | Physical theories, core principles, fields, spacetime models, fluids, statistical mechanics, and experiments. |
-| [`history/`](./history/) | Historical graph/data snapshots and conversion scripts. |
-| [`tmp/`](./tmp/) | Draft notes waiting to be refined or moved into the main structure. |
-
-## Reading Order
-
-1. Start from [`math/Set.md`](./math/Set.md), [`math/Logic.md`](./math/Logic.md), and [`math/Relation.md`](./math/Relation.md) to enter the mathematical graph.
-2. Move through algebra, topology, measure/probability, functions, transformations, manifolds, and tensors as needed.
-3. Use [`applied mathematics/`](./applied%20mathematics/) when the question is problem-driven rather than structure-driven.
-4. For physics, begin with [`physics/basic principles of mechanics.md`](./physics/basic%20principles%20of%20mechanics.md), then read the spacetime, field, statistical mechanics, and quantum mechanics notes.
 
 ## Mathematics
 
