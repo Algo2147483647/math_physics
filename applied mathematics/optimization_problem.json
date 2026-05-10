@@ -1,7 +1,7 @@
 {
   "Optimization Problem": {
     "type": "problem",
-    "define": "",
+    "define": "An **optimization problem** is a mathematical problem of choosing a decision variable $x$ from a feasible set $\\mathcal{X}$ so as to minimize or maximize an objective function $f$.\n\nA general minimization problem can be written as\n\n$$\n\\min_{x \\in \\mathcal{X}} f(x)\n$$\n\nwhere $x$ is the **decision variable**, $\\mathcal{X}$ is the **feasible set**, and $f:\\mathcal{X}\\to\\mathbb{R}$ is the **objective function**.\n\nMore explicitly, an optimization problem with constraints can be defined as\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable vector**, representing the quantities to be chosen. The function $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the **objective function**, which assigns a numerical cost or value to each possible choice of $x$. The functions $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ define **inequality constraints**, while the functions $h_j:\\mathbb{R}^n \\to \\mathbb{R}$ define **equality constraints**.\n\nThe **feasible set** is the set of all points satisfying the constraints:\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,;\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}\n$$\n\nAn **optimal solution** is a feasible point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $f(x^\\star)$ is called the **optimal value** of the optimization problem.\n",
     "parents": {},
     "children": {
       "Deterministic Optimization": "subtype_of",
@@ -112,7 +112,6 @@
     },
     "children": {
       "Nonlinear Programming": "subtype_of",
-      "Linear Programming": "subtype_of",
       "Linear Fractional Programming": "subtype_of",
       "Quadratic Programming": "subtype_of",
       "Stochastic Programming": "subtype_of",
@@ -123,7 +122,7 @@
   },
   "Convex Optimization": {
     "type": "problem",
-    "define": "",
+    "define": "A **convex optimization problem** is an optimization problem of the form\n\n$$\n\\min_{x \\in \\mathcal{X}} f_0(x)\n$$\n\nwhere the feasible set $\\mathcal{X}$ is convex and the objective function $f_0$ is convex.\n\nA standard constrained form is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f_0(x) \\\\\n\\text{s.t.} \\quad & f_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p,\n\\end{aligned}\n$$\n\nwhere each $f_i : \\mathbb{R}^n \\to \\mathbb{R}$ is convex, and each $h_j : \\mathbb{R}^n \\to \\mathbb{R}$ is affine.\n\nThe feasible set is\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\nf_i(x) \\le 0,\\ i=1,\\dots,m,\\quad\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}.\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable**. The function $f_0(x)$ is the **objective function** to be minimized. The set $\\mathcal{X}$ is the **feasible set**, containing all points satisfying the constraints. The inequalities $f_i(x) \\le 0$ are **convex inequality constraints**, and the equalities $h_j(x)=0$ are **affine equality constraints**.\n\nA point $x^\\star \\in \\mathcal{X}$ is an **optimal solution** if\n\n$$\nf_0(x^\\star)  =\n\n\\inf_{x \\in \\mathcal{X}} f_0(x),\n$$\n\nor equivalently, if\n\n$$\nf_0(x^\\star) \\le f_0(x),\n\\quad \\forall x \\in \\mathcal{X}.\n$$\n\nThe corresponding optimal value is\n\n$$\np^\\star = f_0(x^\\star).\n$$\n",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -159,13 +158,18 @@
   },
   "Linear Optimization": {
     "type": "problem",
-    "define": "",
+    "define": "A **linear optimization problem** (Linear Programming) is an optimization problem in which the objective function and all constraint functions are linear in the decision variable $x$.\n\nA standard form is:\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b, \\\\\n& Ex = d.\n\\end{aligned}\n$$\n\nEquivalently, it can be written as:\n\n$$\n\\min_{x \\in \\mathcal{X}} c^\\top x\n$$\n\nwhere the feasible set $\\mathcal{X}$ is defined by linear constraints:\n\n$$\n\\mathcal{X} =\n\n\\left\\{\nx \\in \\mathbb{R}^n\n\\mid\nAx \\le b,\\ Ex = d\n\\right\\}.\n$$\n\nHere:\n\n* $x \\in \\mathbb{R}^n$ is the **decision variable**, whose value is to be determined.\n* $c^\\top x$ is the **linear objective function**, where $c \\in \\mathbb{R}^n$ is the cost vector.\n* $\\mathcal{X}$ is the **feasible set**, containing all decision variables satisfying the constraints.\n* $Ax \\le b$ represents **linear inequality constraints**, with $A \\in \\mathbb{R}^{m \\times n}$ and $b \\in \\mathbb{R}^m$.\n* $Ex = d$ represents **linear equality constraints**, with $E \\in \\mathbb{R}^{p \\times n}$ and $d \\in \\mathbb{R}^p$.\n* An **optimal solution** is a point $x^\\star \\in \\mathcal{X}$ such that:\n\n$$\nc^\\top x^\\star\n\\le\nc^\\top x\n\\quad\n\\forall x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $c^\\top x^\\star$ is called the **optimal objective value**.\n",
     "parents": {
       "Convex Optimization": "subtype_of"
     },
     "children": {
-      "Linear Programming": "subtype_of",
-      "Mixed-Integer Linear Programming": "subtype_of"
+      "Mixed-Integer Linear Programming": "subtype_of",
+      "Maximum Flow Problem": "related_to",
+      "Assignment Problem": "related_to",
+      "Robust Linear Programming": "related_to",
+      "LP Relaxation Problem": "related_to",
+      "Simplex Method": "related_to",
+      "Interior-Point Method": "related_to"
     }
   },
   "Quadratic Optimization": {
@@ -234,23 +238,6 @@
       "Nonlinear Programming": "subtype_of"
     },
     "children": {
-      "Interior-Point Method": "solved_by"
-    }
-  },
-  "Linear Programming": {
-    "type": "problem",
-    "define": "",
-    "parents": {
-      "Linear Optimization": "subtype_of",
-      "Constrained Optimization": "subtype_of",
-      "Charnes-Cooper Transform": "produces"
-    },
-    "children": {
-      "Maximum Flow Problem": "subtype_of",
-      "Assignment Problem": "subtype_of",
-      "Robust Linear Programming": "subtype_of",
-      "LP Relaxation Problem": "subtype_of",
-      "Simplex Method": "solved_by",
       "Interior-Point Method": "solved_by"
     }
   },
@@ -408,7 +395,7 @@
     "define": "",
     "parents": {
       "Network Optimization": "subtype_of",
-      "Linear Programming": "subtype_of"
+      "Linear Optimization": "related_to"
     },
     "children": {
       "Max-Flow Algorithm": "solved_by"
@@ -419,7 +406,7 @@
     "define": "",
     "parents": {
       "Network Optimization": "subtype_of",
-      "Linear Programming": "subtype_of",
+      "Linear Optimization": "related_to",
       "Integer Programming": "subtype_of"
     },
     "children": {
@@ -442,7 +429,7 @@
     "define": "",
     "parents": {
       "Robust Optimization": "subtype_of",
-      "Linear Programming": "subtype_of"
+      "Linear Optimization": "related_to"
     },
     "children": {
       "Interior-Point Method": "solved_by"
@@ -470,7 +457,7 @@
     "type": "problem",
     "define": "",
     "parents": {
-      "Linear Programming": "subtype_of",
+      "Linear Optimization": "related_to",
       "LP Relaxation": "produces"
     },
     "children": {
@@ -588,9 +575,7 @@
     "parents": {
       "Linear Fractional Programming": "reformulated_by"
     },
-    "children": {
-      "Linear Programming": "produces"
-    }
+    "children": {}
   },
   "LP Relaxation": {
     "type": "solution",
@@ -655,7 +640,7 @@
     "define": "",
     "parents": {
       "Convex Optimization": "solved_by",
-      "Linear Programming": "solved_by",
+      "Linear Optimization": "related_to",
       "Quadratic Programming": "solved_by",
       "Second-Order Cone Programming": "solved_by",
       "Semidefinite Programming": "solved_by",
@@ -676,7 +661,7 @@
     "type": "solution",
     "define": "",
     "parents": {
-      "Linear Programming": "solved_by",
+      "Linear Optimization": "related_to",
       "LP Relaxation Problem": "solved_by",
       "Node Relaxation Problem": "solved_by"
     },
