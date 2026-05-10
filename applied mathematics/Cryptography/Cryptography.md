@@ -1,6 +1,0 @@
-# Cryptography
-
-[TOC]
-
-## Define
-

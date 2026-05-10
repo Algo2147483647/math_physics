@@ -32,7 +32,7 @@ DEFAULT_NODE_PAYLOAD = {
     "define": "",
     "parents": {},
     "children": {},
-    "properties": [],
+    "properties": "",
 }
 
 GRAPH_LOCK_TIMEOUT_SECONDS = 10.0
@@ -138,10 +138,15 @@ def normalize_relation_map(value: Any) -> dict[str, str]:
     return normalized
 
 
-def normalize_properties(value: Any) -> list[str]:
-    if not isinstance(value, list):
-        return []
-    return [item if isinstance(item, str) else str(item) for item in value]
+def normalize_properties(value: Any) -> str:
+    if isinstance(value, str):
+        return value
+    if isinstance(value, list):
+        pieces = [item if isinstance(item, str) else str(item) for item in value]
+        return "\n\n".join(piece for piece in pieces if piece)
+    if value is None:
+        return ""
+    return str(value)
 
 
 def normalize_node_payload(key: str, node_info: Any) -> dict[str, object]:
@@ -155,7 +160,7 @@ def normalize_node_payload(key: str, node_info: Any) -> dict[str, object]:
 
     normalized["parents"] = normalize_relation_map(node_info.get("parents", {}))
     normalized["children"] = normalize_relation_map(node_info.get("children", {}))
-    normalized["properties"] = normalize_properties(node_info.get("properties", []))
+    normalized["properties"] = normalize_properties(node_info.get("properties", ""))
 
     return normalized
 
@@ -203,7 +208,7 @@ def json_to_graph(
         graph[node_key] = Node(
             key=node_key,
             define=node_info.get("define", ""),
-            properties=list(node_info.get("properties", [])),
+            properties=node_info.get("properties", ""),
             children=dict(node_info.get("children", {})),
             parents=dict(node_info.get("parents", {})),
         )
@@ -237,7 +242,7 @@ def create_node_in_json(
     key: str,
     *,
     define: str = "",
-    properties: list[str] | None = None,
+    properties: str = "",
     children: dict[str, str] | None = None,
     parents: dict[str, str] | None = None,
 ) -> dict[str, object]:
@@ -265,7 +270,7 @@ def update_node_in_json(
     key: str,
     *,
     define: str | None = None,
-    properties: list[str] | None = None,
+    properties: str | None = None,
     children: dict[str, str] | None = None,
     parents: dict[str, str] | None = None,
     merge_relations: bool = False,

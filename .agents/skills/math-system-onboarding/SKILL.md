@@ -84,7 +84,7 @@ Follow these graph rules:
 Follow these JSON/schema rules:
 
 - Keep all four node fields: `define`, `parents`, `children`, `properties`.
-- Use `""`, `{}`, and `[]` for empty values; do not use `null`.
+- Use `""` for `define` and `properties`, `{}` for `parents` and `children`, and do not use `null`.
 - Preserve relation labels when editing parent/child maps.
 
 Follow these code and module conventions:

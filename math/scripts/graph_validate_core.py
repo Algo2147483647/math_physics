@@ -35,11 +35,8 @@ def validate_node_shape(key: str, node: Any) -> tuple[list[str], list[str]]:
         errors.append(f"{key}: parents is {type(node['parents']).__name__}, expected object")
     if "children" in node and not isinstance(node["children"], dict):
         errors.append(f"{key}: children is {type(node['children']).__name__}, expected object")
-    if "properties" in node:
-        if not isinstance(node["properties"], list):
-            errors.append(f"{key}: properties is {type(node['properties']).__name__}, expected array")
-        elif not all(isinstance(item, str) for item in node["properties"]):
-            errors.append(f"{key}: properties contains non-string items")
+    if "properties" in node and not isinstance(node["properties"], str):
+        errors.append(f"{key}: properties is {type(node['properties']).__name__}, expected string")
 
     return errors, warnings
 
@@ -90,7 +87,7 @@ def validate_concepts_payload(
 
             parents = node.get("parents", {})
             children = node.get("children", {})
-            properties = node.get("properties", [])
+            properties = node.get("properties", "")
 
             if isinstance(parents, dict):
                 parent_labels.update(
@@ -158,7 +155,7 @@ def validate_concepts_payload(
                             )
                         )
 
-            if isinstance(properties, list):
+            if isinstance(properties, str):
                 property_lengths[len(properties)] += 1
 
     structural_issues = (
@@ -175,7 +172,7 @@ def validate_concepts_payload(
         "concept_count": len(concepts) if isinstance(concepts, dict) else 0,
         "parent_edge_count": sum(parent_labels.values()),
         "child_edge_count": sum(child_labels.values()),
-        "property_list_lengths": dict(sorted(property_lengths.items())),
+        "property_string_lengths": dict(sorted(property_lengths.items())),
         "parent_relation_labels": dict(parent_labels.most_common()),
         "child_relation_labels": dict(child_labels.most_common()),
         "mirrored_parent_edges": mirrored_parent_edges,

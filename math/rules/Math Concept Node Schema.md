@@ -15,9 +15,7 @@ Use this as the default schema for a concept node:
     "children": {
       "ChildConcept": "relation_label"
     },
-    "properties": [
-      "Supplementary Markdown content"
-    ]
+    "properties": "Supplementary Markdown content"
   }
 }
 ```
@@ -27,10 +25,10 @@ Apply the template rules strictly:
 - keep all four standard fields;
 - use `""` for an empty `define`;
 - use `{}` for empty `parents` and `children`;
-- use `[]` for empty `properties`;
+- use `""` for empty `properties`;
 - keep `parents` and `children` synchronized whenever possible;
 - do not use `null`;
-- do not replace `properties` with a bare string.
+- keep `properties` as one Markdown string, not an array.
 
 ## Field Semantics
 
@@ -108,8 +106,8 @@ This policy makes inconsistency a repair issue rather than a reason to erase rec
 
 ### `properties`
 
-- Type: array of strings
-- Meaning: supplementary content blocks associated with the concept
+- Type: string
+- Meaning: supplementary Markdown content associated with the concept
 - Typical content:
   - additional properties
   - formulas
@@ -117,11 +115,8 @@ This policy makes inconsistency a repair issue rather than a reason to erase rec
   - structured Markdown sections
   - lists, headings, image links, relative links, or local paths
 - Current observed shape:
-  - currently always a string array
-  - currently one array item per node in this snapshot
-  - that single string may be empty or very long
-- Current observed length range of a property block:
-  - roughly 0 to 13838 characters
+  - currently one Markdown string per node
+  - the string may be empty or very long
 - Best use:
   - answering "What properties or extra facts are recorded?"
   - retrieving formulas and extended notes

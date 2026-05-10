@@ -49,15 +49,15 @@ def _relation_args_to_dict(values: list[str] | None) -> dict[str, str] | None:
 
 
 def _resolve_optional_properties(
-    values: list[str] | None,
+    value: str | None,
     *,
     clear: bool,
-) -> list[str] | None:
-    if clear and values:
+) -> str | None:
+    if clear and value is not None:
         raise ValueError("Cannot combine --clear-properties with --property.")
     if clear:
-        return []
-    return values
+        return ""
+    return value
 
 
 def _resolve_optional_relations(
@@ -127,8 +127,7 @@ def build_parser() -> argparse.ArgumentParser:
     create_parser.add_argument(
         "--property",
         dest="properties",
-        action="append",
-        help="Property block text. Repeat to add multiple entries.",
+        help="Property section Markdown text.",
     )
     create_parser.add_argument(
         "--child",
@@ -151,8 +150,7 @@ def build_parser() -> argparse.ArgumentParser:
     update_parser.add_argument(
         "--property",
         dest="properties",
-        action="append",
-        help="Property block text. Repeat to replace with multiple entries.",
+        help="Replace the property section Markdown text.",
     )
     update_parser.add_argument(
         "--child",
@@ -169,7 +167,7 @@ def build_parser() -> argparse.ArgumentParser:
     update_parser.add_argument(
         "--clear-properties",
         action="store_true",
-        help="Replace properties with an empty list.",
+        help="Replace properties with an empty string.",
     )
     update_parser.add_argument(
         "--clear-children",

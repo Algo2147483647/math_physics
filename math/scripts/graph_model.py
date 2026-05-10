@@ -8,14 +8,14 @@ from typing import Literal
 class Node:
     key: str = ""
     define: str = ""
-    properties: list[str] = field(default_factory=list)
+    properties: str = ""
     children: dict[str, str] = field(default_factory=dict)
     parents: dict[str, str] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, object]:
         return {
             "define": self.define,
-            "properties": list(self.properties),
+            "properties": self.properties,
             "children": dict(self.children),
             "parents": dict(self.parents),
         }
@@ -192,7 +192,7 @@ def create_node_in_graph(
     key: str,
     *,
     define: str = "",
-    properties: list[str] | None = None,
+    properties: str = "",
     children: dict[str, str] | None = None,
     parents: dict[str, str] | None = None,
 ) -> Node:
@@ -201,7 +201,7 @@ def create_node_in_graph(
 
     node = ensure_node_in_graph(graph, key)
     node.define = define
-    node.properties = list(properties or [])
+    node.properties = properties
 
     for child_key, label in (children or {}).items():
         node.add_child(graph, child_key, label)
@@ -215,7 +215,7 @@ def update_node_in_graph(
     key: str,
     *,
     define: str | None = None,
-    properties: list[str] | None = None,
+    properties: str | None = None,
     children: dict[str, str] | None = None,
     parents: dict[str, str] | None = None,
     merge_relations: bool = False,
@@ -225,7 +225,7 @@ def update_node_in_graph(
     if define is not None:
         node.define = define
     if properties is not None:
-        node.properties = list(properties)
+        node.properties = properties
     if children is not None:
         if merge_relations:
             for child_key, label in children.items():

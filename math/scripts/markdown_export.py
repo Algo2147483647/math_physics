@@ -25,9 +25,7 @@ def _render_node_markdown(key: str, node: Any) -> str:
         "",
     ]
 
-    properties = node.properties or [""]
-    for item in properties:
-        lines.extend([item, ""])
+    lines.extend([node.properties, ""])
 
     lines.extend(["## Include", ""])
     for child, label in sorted(node.children.items()):

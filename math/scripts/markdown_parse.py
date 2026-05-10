@@ -35,12 +35,5 @@ def parse_kv_links(content: str) -> dict[str, str]:
     }
 
 
-def parse_properties_blocks(content: str) -> list[str]:
-    section = content.strip()
-    if not section:
-        return []
-
-    if re.search(r"^###\s+", section, re.MULTILINE):
-        pieces = re.split(r"(?=^###\s+)", section, flags=re.MULTILINE)
-        return [piece.strip() for piece in pieces if piece.strip()]
-    return [section]
+def parse_properties_text(content: str) -> str:
+    return content.strip()

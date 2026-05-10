@@ -1,0 +1,830 @@
+{
+  "Optimization Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {},
+    "children": {
+      "Deterministic Optimization": "subtype_of",
+      "Stochastic Optimization": "subtype_of",
+      "Robust Optimization": "subtype_of"
+    }
+  },
+  "Deterministic Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Optimization Problem": "subtype_of"
+    },
+    "children": {
+      "Continuous Optimization": "subtype_of",
+      "Discrete Optimization": "subtype_of",
+      "Mixed-Integer Optimization": "subtype_of",
+      "Distributed Optimization": "subtype_of",
+      "Network Optimization": "subtype_of"
+    }
+  },
+  "Continuous Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Deterministic Optimization": "subtype_of"
+    },
+    "children": {
+      "Unconstrained Optimization": "subtype_of",
+      "Constrained Optimization": "subtype_of",
+      "Convex Optimization": "subtype_of",
+      "Nonconvex Optimization": "subtype_of",
+      "Nonsmooth Optimization": "subtype_of",
+      "Quadratic Optimization": "subtype_of",
+      "Linear Fractional Programming": "subtype_of"
+    }
+  },
+  "Discrete Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Deterministic Optimization": "subtype_of"
+    },
+    "children": {
+      "Integer Programming": "subtype_of",
+      "Shortest Path Problem": "subtype_of"
+    }
+  },
+  "Mixed-Integer Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Deterministic Optimization": "subtype_of"
+    },
+    "children": {
+      "Mixed-Integer Linear Programming": "subtype_of",
+      "Mixed-Integer Quadratic Programming": "subtype_of",
+      "Mixed-Integer Nonlinear Programming": "subtype_of"
+    }
+  },
+  "Stochastic Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Optimization Problem": "subtype_of"
+    },
+    "children": {
+      "Stochastic Programming": "subtype_of"
+    }
+  },
+  "Robust Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Optimization Problem": "subtype_of"
+    },
+    "children": {
+      "Robust Linear Programming": "subtype_of"
+    }
+  },
+  "Distributed Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Deterministic Optimization": "subtype_of"
+    },
+    "children": {
+      "Consensus Optimization": "subtype_of"
+    }
+  },
+  "Unconstrained Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of"
+    },
+    "children": {
+      "Least Squares Optimization": "subtype_of",
+      "Gradient Descent": "solved_by",
+      "Newton's Method": "solved_by"
+    }
+  },
+  "Constrained Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of"
+    },
+    "children": {
+      "Nonlinear Programming": "subtype_of",
+      "Linear Programming": "subtype_of",
+      "Linear Fractional Programming": "subtype_of",
+      "Quadratic Programming": "subtype_of",
+      "Stochastic Programming": "subtype_of",
+      "Lagrangian Duality": "analyzed_by",
+      "KKT Conditions": "analyzed_by",
+      "Projected Gradient Method": "solved_by"
+    }
+  },
+  "Convex Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of"
+    },
+    "children": {
+      "Linear Optimization": "subtype_of",
+      "Conic Optimization": "subtype_of",
+      "Consensus Optimization": "subtype_of",
+      "Interior-Point Method": "solved_by",
+      "Subgradient Method": "solved_by",
+      "Proximal Gradient Method": "solved_by"
+    }
+  },
+  "Nonconvex Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of"
+    },
+    "children": {
+      "Convex Relaxation": "relaxed_by"
+    }
+  },
+  "Nonsmooth Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of"
+    },
+    "children": {
+      "Subgradient Method": "solved_by",
+      "Proximal Gradient Method": "solved_by"
+    }
+  },
+  "Linear Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Convex Optimization": "subtype_of"
+    },
+    "children": {
+      "Linear Programming": "subtype_of",
+      "Mixed-Integer Linear Programming": "subtype_of"
+    }
+  },
+  "Quadratic Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of"
+    },
+    "children": {
+      "Quadratic Programming": "subtype_of",
+      "Quadratically Constrained Quadratic Programming": "subtype_of",
+      "Mixed-Integer Quadratic Programming": "subtype_of"
+    }
+  },
+  "Conic Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Convex Optimization": "subtype_of"
+    },
+    "children": {
+      "Semidefinite Optimization": "subtype_of",
+      "Second-Order Cone Programming": "subtype_of"
+    }
+  },
+  "Semidefinite Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Conic Optimization": "subtype_of"
+    },
+    "children": {
+      "Semidefinite Programming": "subtype_of"
+    }
+  },
+  "Network Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Deterministic Optimization": "subtype_of"
+    },
+    "children": {
+      "Shortest Path Problem": "subtype_of",
+      "Maximum Flow Problem": "subtype_of",
+      "Assignment Problem": "subtype_of"
+    }
+  },
+  "Nonlinear Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Constrained Optimization": "subtype_of"
+    },
+    "children": {
+      "Convex Nonlinear Programming": "subtype_of",
+      "Quadratically Constrained Quadratic Programming": "subtype_of",
+      "Mixed-Integer Nonlinear Programming": "subtype_of",
+      "Sequential Quadratic Programming": "solved_by",
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Convex Nonlinear Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Nonlinear Programming": "subtype_of"
+    },
+    "children": {
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Linear Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Linear Optimization": "subtype_of",
+      "Constrained Optimization": "subtype_of",
+      "Charnes-Cooper Transform": "produces"
+    },
+    "children": {
+      "Maximum Flow Problem": "subtype_of",
+      "Assignment Problem": "subtype_of",
+      "Robust Linear Programming": "subtype_of",
+      "LP Relaxation Problem": "subtype_of",
+      "Simplex Method": "solved_by",
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Linear Fractional Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Continuous Optimization": "subtype_of",
+      "Constrained Optimization": "subtype_of"
+    },
+    "children": {
+      "Charnes-Cooper Transform": "reformulated_by"
+    }
+  },
+  "Quadratic Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Quadratic Optimization": "subtype_of",
+      "Constrained Optimization": "subtype_of"
+    },
+    "children": {
+      "Least Squares Optimization": "subtype_of",
+      "QP Subproblem": "subtype_of",
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Quadratically Constrained Quadratic Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Quadratic Optimization": "subtype_of",
+      "Nonlinear Programming": "subtype_of"
+    },
+    "children": {
+      "Semidefinite Relaxation": "relaxed_by"
+    }
+  },
+  "Second-Order Cone Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Conic Optimization": "subtype_of"
+    },
+    "children": {
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Semidefinite Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Semidefinite Optimization": "subtype_of"
+    },
+    "children": {
+      "Semidefinite Relaxation Problem": "subtype_of",
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Integer Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Discrete Optimization": "subtype_of"
+    },
+    "children": {
+      "Knapsack Problem": "subtype_of",
+      "Assignment Problem": "subtype_of",
+      "Branch-and-Bound": "solved_by",
+      "Cutting Plane Method": "solved_by"
+    }
+  },
+  "Mixed-Integer Linear Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Mixed-Integer Optimization": "subtype_of",
+      "Linear Optimization": "subtype_of"
+    },
+    "children": {
+      "LP Relaxation": "relaxed_by",
+      "Branch-and-Bound": "solved_by",
+      "Cutting Plane Method": "solved_by"
+    }
+  },
+  "Mixed-Integer Quadratic Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Mixed-Integer Optimization": "subtype_of",
+      "Quadratic Optimization": "subtype_of"
+    },
+    "children": {
+      "Branch-and-Bound": "solved_by"
+    }
+  },
+  "Mixed-Integer Nonlinear Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Mixed-Integer Optimization": "subtype_of",
+      "Nonlinear Programming": "subtype_of"
+    },
+    "children": {
+      "Branch-and-Bound": "solved_by"
+    }
+  },
+  "Least Squares Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Quadratic Programming": "subtype_of",
+      "Unconstrained Optimization": "subtype_of"
+    },
+    "children": {
+      "Gradient Descent": "solved_by",
+      "Newton's Method": "solved_by"
+    }
+  },
+  "Consensus Optimization": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Distributed Optimization": "subtype_of",
+      "Convex Optimization": "subtype_of"
+    },
+    "children": {
+      "Consensus Form Problem": "subtype_of",
+      "Variable Splitting": "decomposed_by"
+    }
+  },
+  "Knapsack Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Integer Programming": "subtype_of"
+    },
+    "children": {
+      "Dynamic Programming": "solved_by"
+    }
+  },
+  "Shortest Path Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Network Optimization": "subtype_of",
+      "Discrete Optimization": "subtype_of"
+    },
+    "children": {
+      "Dijkstra's Algorithm": "solved_by"
+    }
+  },
+  "Maximum Flow Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Network Optimization": "subtype_of",
+      "Linear Programming": "subtype_of"
+    },
+    "children": {
+      "Max-Flow Algorithm": "solved_by"
+    }
+  },
+  "Assignment Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Network Optimization": "subtype_of",
+      "Linear Programming": "subtype_of",
+      "Integer Programming": "subtype_of"
+    },
+    "children": {
+      "Hungarian Algorithm": "solved_by"
+    }
+  },
+  "Stochastic Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Stochastic Optimization": "subtype_of",
+      "Constrained Optimization": "subtype_of"
+    },
+    "children": {
+      "Benders Decomposition": "decomposed_by"
+    }
+  },
+  "Robust Linear Programming": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Robust Optimization": "subtype_of",
+      "Linear Programming": "subtype_of"
+    },
+    "children": {
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Dual Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Lagrangian Duality": "produces"
+    },
+    "children": {
+      "Subgradient Method": "solved_by"
+    }
+  },
+  "KKT System": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "KKT Conditions": "produces"
+    },
+    "children": {}
+  },
+  "LP Relaxation Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Linear Programming": "subtype_of",
+      "LP Relaxation": "produces"
+    },
+    "children": {
+      "Simplex Method": "solved_by",
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Semidefinite Relaxation Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Semidefinite Programming": "subtype_of",
+      "Semidefinite Relaxation": "produces"
+    },
+    "children": {
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Consensus Form Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Consensus Optimization": "subtype_of",
+      "Variable Splitting": "produces"
+    },
+    "children": {
+      "Alternating Direction Method of Multipliers": "solved_by"
+    }
+  },
+  "QP Subproblem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Quadratic Programming": "subtype_of",
+      "Sequential Quadratic Programming": "produces"
+    },
+    "children": {
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Master Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Benders Decomposition": "produces"
+    },
+    "children": {
+      "Cutting Plane Method": "solved_by"
+    }
+  },
+  "Scenario Subproblem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Benders Decomposition": "produces"
+    },
+    "children": {}
+  },
+  "Node Relaxation Problem": {
+    "type": "problem",
+    "define": "",
+    "parents": {
+      "Branch-and-Bound": "produces"
+    },
+    "children": {
+      "Simplex Method": "solved_by",
+      "Interior-Point Method": "solved_by"
+    }
+  },
+  "Lagrangian Duality": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Constrained Optimization": "analyzed_by"
+    },
+    "children": {
+      "Dual Problem": "produces"
+    }
+  },
+  "KKT Conditions": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Constrained Optimization": "analyzed_by"
+    },
+    "children": {
+      "KKT System": "produces"
+    }
+  },
+  "Convex Relaxation": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Nonconvex Optimization": "relaxed_by"
+    },
+    "children": {
+      "LP Relaxation": "specializes",
+      "Semidefinite Relaxation": "specializes"
+    }
+  },
+  "Semidefinite Relaxation": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Quadratically Constrained Quadratic Programming": "relaxed_by",
+      "Convex Relaxation": "specializes"
+    },
+    "children": {
+      "Semidefinite Relaxation Problem": "produces"
+    }
+  },
+  "Charnes-Cooper Transform": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Linear Fractional Programming": "reformulated_by"
+    },
+    "children": {
+      "Linear Programming": "produces"
+    }
+  },
+  "LP Relaxation": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Mixed-Integer Linear Programming": "relaxed_by",
+      "Convex Relaxation": "specializes"
+    },
+    "children": {
+      "LP Relaxation Problem": "produces"
+    }
+  },
+  "Variable Splitting": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Consensus Optimization": "decomposed_by"
+    },
+    "children": {
+      "Consensus Form Problem": "produces"
+    }
+  },
+  "Benders Decomposition": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Stochastic Programming": "decomposed_by"
+    },
+    "children": {
+      "Master Problem": "produces",
+      "Scenario Subproblem": "produces"
+    }
+  },
+  "Branch-and-Bound": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Integer Programming": "solved_by",
+      "Mixed-Integer Linear Programming": "solved_by",
+      "Mixed-Integer Quadratic Programming": "solved_by",
+      "Mixed-Integer Nonlinear Programming": "solved_by"
+    },
+    "children": {
+      "Node Relaxation Problem": "produces",
+      "Gurobi": "implemented_by"
+    }
+  },
+  "Cutting Plane Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Integer Programming": "solved_by",
+      "Mixed-Integer Linear Programming": "solved_by",
+      "Master Problem": "solved_by"
+    },
+    "children": {
+      "Gurobi": "implemented_by"
+    }
+  },
+  "Interior-Point Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Convex Optimization": "solved_by",
+      "Linear Programming": "solved_by",
+      "Quadratic Programming": "solved_by",
+      "Second-Order Cone Programming": "solved_by",
+      "Semidefinite Programming": "solved_by",
+      "Nonlinear Programming": "solved_by",
+      "LP Relaxation Problem": "solved_by",
+      "Semidefinite Relaxation Problem": "solved_by",
+      "QP Subproblem": "solved_by",
+      "Node Relaxation Problem": "solved_by",
+      "Convex Nonlinear Programming": "solved_by",
+      "Robust Linear Programming": "solved_by"
+    },
+    "children": {
+      "MOSEK": "implemented_by",
+      "IPOPT": "implemented_by"
+    }
+  },
+  "Simplex Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Linear Programming": "solved_by",
+      "LP Relaxation Problem": "solved_by",
+      "Node Relaxation Problem": "solved_by"
+    },
+    "children": {
+      "HiGHS": "implemented_by"
+    }
+  },
+  "Gradient Descent": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Unconstrained Optimization": "solved_by",
+      "Least Squares Optimization": "solved_by"
+    },
+    "children": {
+      "Projected Gradient Method": "specializes",
+      "Proximal Gradient Method": "specializes"
+    }
+  },
+  "Projected Gradient Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Constrained Optimization": "solved_by",
+      "Gradient Descent": "specializes"
+    },
+    "children": {}
+  },
+  "Subgradient Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Convex Optimization": "solved_by",
+      "Nonsmooth Optimization": "solved_by",
+      "Dual Problem": "solved_by"
+    },
+    "children": {}
+  },
+  "Proximal Gradient Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Convex Optimization": "solved_by",
+      "Nonsmooth Optimization": "solved_by",
+      "Gradient Descent": "specializes"
+    },
+    "children": {}
+  },
+  "Newton's Method": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Unconstrained Optimization": "solved_by",
+      "Least Squares Optimization": "solved_by"
+    },
+    "children": {}
+  },
+  "Sequential Quadratic Programming": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Nonlinear Programming": "solved_by"
+    },
+    "children": {
+      "QP Subproblem": "produces"
+    }
+  },
+  "Alternating Direction Method of Multipliers": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Consensus Form Problem": "solved_by"
+    },
+    "children": {
+      "OSQP": "implemented_by"
+    }
+  },
+  "Dynamic Programming": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Knapsack Problem": "solved_by"
+    },
+    "children": {}
+  },
+  "Dijkstra's Algorithm": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Shortest Path Problem": "solved_by"
+    },
+    "children": {}
+  },
+  "Max-Flow Algorithm": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Maximum Flow Problem": "solved_by"
+    },
+    "children": {}
+  },
+  "Hungarian Algorithm": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Assignment Problem": "solved_by"
+    },
+    "children": {}
+  },
+  "MOSEK": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Interior-Point Method": "implemented_by"
+    },
+    "children": {}
+  },
+  "Gurobi": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Branch-and-Bound": "implemented_by",
+      "Cutting Plane Method": "implemented_by"
+    },
+    "children": {}
+  },
+  "IPOPT": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Interior-Point Method": "implemented_by"
+    },
+    "children": {}
+  },
+  "OSQP": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Alternating Direction Method of Multipliers": "implemented_by"
+    },
+    "children": {}
+  },
+  "HiGHS": {
+    "type": "solution",
+    "define": "",
+    "parents": {
+      "Simplex Method": "implemented_by"
+    },
+    "children": {}
+  }
+}

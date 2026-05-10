@@ -8,7 +8,7 @@ from pathlib import Path
 from graph_model import Node, build_edge_in_graph, serialize_graph
 from graph_store import json_to_graph, write_json_payload
 from markdown_parse import (
-    parse_properties_blocks,
+    parse_properties_text,
     parse_relation_entries,
     parse_section_in_markdown,
 )
@@ -213,7 +213,7 @@ def build_graph_from_markdown_file(
     parents_section = parse_section_in_markdown(content, "Parents")
 
     node.define = define_section
-    node.properties = parse_properties_blocks(property_section)
+    node.properties = parse_properties_text(property_section)
 
     target_keys = known_keys or set(graph)
     unresolved_links = metadata["unresolved_links"] if metadata is not None else None

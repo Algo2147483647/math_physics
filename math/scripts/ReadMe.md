@@ -12,7 +12,7 @@ Compared with the previous version, the directory has been simplified by removin
 | `graph_cli.py` | Unified CLI | All graph, sync, diff, validate, repair, and lookup commands |
 | `graph_model.py` | In-memory graph model | Core node and relation mutation logic |
 | `graph_store.py` | JSON storage layer | Load, normalize, lock, backup, atomic write, JSON CRUD |
-| `markdown_parse.py` | Markdown parser | Section parsing, relation parsing, property block splitting |
+| `markdown_parse.py` | Markdown parser | Section parsing, relation parsing, property text normalization |
 | `markdown_import.py` | Markdown -> JSON | Build graph from notes, write `math.json`, write `math.index.json`, diff against JSON |
 | `markdown_export.py` | JSON -> Markdown | Export Markdown, support `dry-run`, `prune`, and indexed output paths |
 | `concept_lookup_core.py` | Lookup module | Exact, substring, and fuzzy concept resolution |
@@ -147,7 +147,7 @@ python service_app.py --host 127.0.0.1 --port 5000
 | `create_backup_file()` | Backup helper |
 | `load_json_payload()` | Raw JSON object loader |
 | `normalize_relation_map()` | Normalize relation maps |
-| `normalize_properties()` | Normalize property arrays |
+| `normalize_properties()` | Normalize property text |
 | `normalize_node_payload()` | Normalize raw node |
 | `load_raw_concepts()` | Load raw or normalized concept payloads |
 | `write_json_payload()` | Persist JSON payload |
@@ -171,7 +171,7 @@ python service_app.py --host 127.0.0.1 --port 5000
 | `parse_section_in_markdown()` | Extract `## Section` text |
 | `parse_relation_entries()` | Parse Markdown relation lines |
 | `parse_kv_links()` | Convert relation lines to `dict[key, label]` |
-| `parse_properties_blocks()` | Split `Properties` into multiple Markdown blocks |
+| `parse_properties_text()` | Normalize the `Properties` section as one Markdown string |
 
 ### `markdown_import.py`
 
@@ -256,7 +256,7 @@ python service_app.py --host 127.0.0.1 --port 5000
 
 | Topic | Current Behavior |
 | --- | --- |
-| Properties | Stored as `list[str]`; multiple `###` blocks split into multiple items |
+| Properties | Stored as one Markdown `str`; headings stay inline inside the same text block |
 | Path preservation | Uses `math.index.json` when present |
 | Dry-run | Supported for import and export |
 | Prune | Supported for Markdown export |
