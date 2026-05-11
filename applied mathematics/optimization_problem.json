@@ -1,7 +1,7 @@
 {
   "Optimization Problem": {
     "type": "problem",
-    "define": "An **optimization problem** is a mathematical problem of choosing a decision variable $x$ from a feasible set $\\mathcal{X}$ so as to minimize or maximize an objective function $f$.\n\nA general minimization problem can be written as\n\n$$\n\\min_{x \\in \\mathcal{X}} f(x)\n$$\n\nwhere $x$ is the **decision variable**, $\\mathcal{X}$ is the **feasible set**, and $f:\\mathcal{X}\\to\\mathbb{R}$ is the **objective function**.\n\nMore explicitly, an optimization problem with constraints can be defined as\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable vector**, representing the quantities to be chosen. The function $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the **objective function**, which assigns a numerical cost or value to each possible choice of $x$. The functions $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ define **inequality constraints**, while the functions $h_j:\\mathbb{R}^n \\to \\mathbb{R}$ define **equality constraints**.\n\nThe **feasible set** is the set of all points satisfying the constraints:\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,;\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}\n$$\n\nAn **optimal solution** is a feasible point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $f(x^\\star)$ is called the **optimal value** of the optimization problem.\n",
+    "description": "An **optimization problem** is a mathematical problem of choosing a decision variable $x$ from a feasible set $\\mathcal{X}$ so as to minimize or maximize an objective function $f$.\n\nA general minimization problem can be written as\n\n$$\n\\min_{x \\in \\mathcal{X}} f(x)\n$$\n\nwhere $x$ is the **decision variable**, $\\mathcal{X}$ is the **feasible set**, and $f:\\mathcal{X}\\to\\mathbb{R}$ is the **objective function**.\n\nMore explicitly, an optimization problem with constraints can be defined as\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable vector**, representing the quantities to be chosen. The function $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the **objective function**, which assigns a numerical cost or value to each possible choice of $x$. The functions $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ define **inequality constraints**, while the functions $h_j:\\mathbb{R}^n \\to \\mathbb{R}$ define **equality constraints**.\n\nThe **feasible set** is the set of all points satisfying the constraints:\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,;\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}\n$$\n\nAn **optimal solution** is a feasible point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $f(x^\\star)$ is called the **optimal value** of the optimization problem.\n",
     "parents": {},
     "children": {
       "Deterministic Optimization": "subtype_of",
@@ -11,7 +11,7 @@
   },
   "Deterministic Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Optimization Problem": "subtype_of"
     },
@@ -25,7 +25,7 @@
   },
   "Continuous Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Deterministic Optimization": "subtype_of"
     },
@@ -41,7 +41,7 @@
   },
   "Discrete Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Deterministic Optimization": "subtype_of"
     },
@@ -52,7 +52,7 @@
   },
   "Mixed-Integer Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Deterministic Optimization": "subtype_of"
     },
@@ -64,7 +64,7 @@
   },
   "Stochastic Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Optimization Problem": "subtype_of"
     },
@@ -74,7 +74,7 @@
   },
   "Robust Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Optimization Problem": "subtype_of"
     },
@@ -84,7 +84,7 @@
   },
   "Distributed Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Deterministic Optimization": "subtype_of"
     },
@@ -94,7 +94,7 @@
   },
   "Unconstrained Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -106,7 +106,7 @@
   },
   "Constrained Optimization": {
     "type": "problem",
-    "define": "A constrained optimization problem seeks a decision variable $x$ that minimizes or maximizes an objective function while satisfying prescribed constraints.\n\nA standard minimization form is\n\n$$\n\\begin{aligned}\nx^\\star \\in \\arg\\min_{x \\in \\mathcal{X}} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p .\n\\end{aligned}\n$$\n\nEquivalently, the feasible set may be written as\n\n$$\n\\mathcal{F}\n=\n\\left\\{\nx \\in \\mathcal{X}\n:\ng_i(x) \\le 0 \\ \\forall i = 1,\\dots,m,\n\\ h_j(x) = 0 \\ \\forall j = 1,\\dots,p\n\\right\\}.\n$$\n\nThus the problem is\n\n$$\n\\min_{x \\in \\mathcal{F}} f(x).\n$$\n\nHere, $x$ is the decision variable, $\\mathcal{X}$ is the ambient decision space, $f:\\mathcal{X}\\to\\mathbb{R}$ is the objective function, and $\\mathcal{F}\\subseteq\\mathcal{X}$ is the feasible set. The functions $g_i$ define inequality constraints, while the functions $h_j$ define equality constraints. An optimal solution $x^\\star$ is any feasible point satisfying\n\n$$\nf(x^\\star) \\le f(x)\n\\quad \\text{for all } x \\in \\mathcal{F}.\n$$",
+    "description": "A constrained optimization problem seeks a decision variable $x$ that minimizes or maximizes an objective function while satisfying prescribed constraints.\n\nA standard minimization form is\n\n$$\n\\begin{aligned}\nx^\\star \\in \\arg\\min_{x \\in \\mathcal{X}} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p .\n\\end{aligned}\n$$\n\nEquivalently, the feasible set may be written as\n\n$$\n\\mathcal{F}\n=\n\\left\\{\nx \\in \\mathcal{X}\n:\ng_i(x) \\le 0 \\ \\forall i = 1,\\dots,m,\n\\ h_j(x) = 0 \\ \\forall j = 1,\\dots,p\n\\right\\}.\n$$\n\nThus the problem is\n\n$$\n\\min_{x \\in \\mathcal{F}} f(x).\n$$\n\nHere, $x$ is the decision variable, $\\mathcal{X}$ is the ambient decision space, $f:\\mathcal{X}\\to\\mathbb{R}$ is the objective function, and $\\mathcal{F}\\subseteq\\mathcal{X}$ is the feasible set. The functions $g_i$ define inequality constraints, while the functions $h_j$ define equality constraints. An optimal solution $x^\\star$ is any feasible point satisfying\n\n$$\nf(x^\\star) \\le f(x)\n\\quad \\text{for all } x \\in \\mathcal{F}.\n$$",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -122,7 +122,7 @@
   },
   "Convex Optimization": {
     "type": "problem",
-    "define": "A **convex optimization problem** is an optimization problem of the form\n\n$$\n\\min_{x \\in \\mathcal{X}} f_0(x)\n$$\n\nwhere the feasible set $\\mathcal{X}$ is convex and the objective function $f_0$ is convex.\n\nA standard constrained form is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f_0(x) \\\\\n\\text{s.t.} \\quad & f_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p,\n\\end{aligned}\n$$\n\nwhere each $f_i : \\mathbb{R}^n \\to \\mathbb{R}$ is convex, and each $h_j : \\mathbb{R}^n \\to \\mathbb{R}$ is affine.\n\nThe feasible set is\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\nf_i(x) \\le 0,\\ i=1,\\dots,m,\\quad\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}.\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable**. The function $f_0(x)$ is the **objective function** to be minimized. The set $\\mathcal{X}$ is the **feasible set**, containing all points satisfying the constraints. The inequalities $f_i(x) \\le 0$ are **convex inequality constraints**, and the equalities $h_j(x)=0$ are **affine equality constraints**.\n\nA point $x^\\star \\in \\mathcal{X}$ is an **optimal solution** if\n\n$$\nf_0(x^\\star)  =\n\n\\inf_{x \\in \\mathcal{X}} f_0(x),\n$$\n\nor equivalently, if\n\n$$\nf_0(x^\\star) \\le f_0(x),\n\\quad \\forall x \\in \\mathcal{X}.\n$$\n\nThe corresponding optimal value is\n\n$$\np^\\star = f_0(x^\\star).\n$$\n",
+    "description": "A **convex optimization problem** is an optimization problem of the form\n\n$$\n\\min_{x \\in \\mathcal{X}} f_0(x)\n$$\n\nwhere the feasible set $\\mathcal{X}$ is convex and the objective function $f_0$ is convex.\n\nA standard constrained form is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f_0(x) \\\\\n\\text{s.t.} \\quad & f_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p,\n\\end{aligned}\n$$\n\nwhere each $f_i : \\mathbb{R}^n \\to \\mathbb{R}$ is convex, and each $h_j : \\mathbb{R}^n \\to \\mathbb{R}$ is affine.\n\nThe feasible set is\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\nf_i(x) \\le 0,\\ i=1,\\dots,m,\\quad\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}.\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable**. The function $f_0(x)$ is the **objective function** to be minimized. The set $\\mathcal{X}$ is the **feasible set**, containing all points satisfying the constraints. The inequalities $f_i(x) \\le 0$ are **convex inequality constraints**, and the equalities $h_j(x)=0$ are **affine equality constraints**.\n\nA point $x^\\star \\in \\mathcal{X}$ is an **optimal solution** if\n\n$$\nf_0(x^\\star)  =\n\n\\inf_{x \\in \\mathcal{X}} f_0(x),\n$$\n\nor equivalently, if\n\n$$\nf_0(x^\\star) \\le f_0(x),\n\\quad \\forall x \\in \\mathcal{X}.\n$$\n\nThe corresponding optimal value is\n\n$$\np^\\star = f_0(x^\\star).\n$$\n",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -137,7 +137,7 @@
   },
   "Nonconvex Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -147,7 +147,7 @@
   },
   "Nonsmooth Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -158,7 +158,7 @@
   },
   "Linear Optimization": {
     "type": "problem",
-    "define": "A **linear optimization problem** (Linear Programming) is an optimization problem in which the objective function and all constraint functions are linear in the decision variable $x$.\n\nA standard form is:\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b, \\\\\n& Ex = d.\n\\end{aligned}\n$$\n\nEquivalently, it can be written as:\n\n$$\n\\min_{x \\in \\mathcal{X}} c^\\top x\n$$\n\nwhere the feasible set $\\mathcal{X}$ is defined by linear constraints:\n\n$$\n\\mathcal{X} =\n\n\\left\\{\nx \\in \\mathbb{R}^n\n\\mid\nAx \\le b,\\ Ex = d\n\\right\\}.\n$$\n\nHere:\n\n* $x \\in \\mathbb{R}^n$ is the **decision variable**, whose value is to be determined.\n* $c^\\top x$ is the **linear objective function**, where $c \\in \\mathbb{R}^n$ is the cost vector.\n* $\\mathcal{X}$ is the **feasible set**, containing all decision variables satisfying the constraints.\n* $Ax \\le b$ represents **linear inequality constraints**, with $A \\in \\mathbb{R}^{m \\times n}$ and $b \\in \\mathbb{R}^m$.\n* $Ex = d$ represents **linear equality constraints**, with $E \\in \\mathbb{R}^{p \\times n}$ and $d \\in \\mathbb{R}^p$.\n* An **optimal solution** is a point $x^\\star \\in \\mathcal{X}$ such that:\n\n$$\nc^\\top x^\\star\n\\le\nc^\\top x\n\\quad\n\\forall x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $c^\\top x^\\star$ is called the **optimal objective value**.\n",
+    "description": "A **linear optimization problem** (Linear Programming) is an optimization problem in which the objective function and all constraint functions are linear in the decision variable $x$.\n\nA standard form is:\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b, \\\\\n& Ex = d.\n\\end{aligned}\n$$\n\nEquivalently, it can be written as:\n\n$$\n\\min_{x \\in \\mathcal{X}} c^\\top x\n$$\n\nwhere the feasible set $\\mathcal{X}$ is defined by linear constraints:\n\n$$\n\\mathcal{X} =\n\n\\left\\{\nx \\in \\mathbb{R}^n\n\\mid\nAx \\le b,\\ Ex = d\n\\right\\}.\n$$\n\nHere:\n\n* $x \\in \\mathbb{R}^n$ is the **decision variable**, whose value is to be determined.\n* $c^\\top x$ is the **linear objective function**, where $c \\in \\mathbb{R}^n$ is the cost vector.\n* $\\mathcal{X}$ is the **feasible set**, containing all decision variables satisfying the constraints.\n* $Ax \\le b$ represents **linear inequality constraints**, with $A \\in \\mathbb{R}^{m \\times n}$ and $b \\in \\mathbb{R}^m$.\n* $Ex = d$ represents **linear equality constraints**, with $E \\in \\mathbb{R}^{p \\times n}$ and $d \\in \\mathbb{R}^p$.\n* An **optimal solution** is a point $x^\\star \\in \\mathcal{X}$ such that:\n\n$$\nc^\\top x^\\star\n\\le\nc^\\top x\n\\quad\n\\forall x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $c^\\top x^\\star$ is called the **optimal objective value**.\n",
     "parents": {
       "Convex Optimization": "subtype_of"
     },
@@ -174,7 +174,7 @@
   },
   "Quadratic Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Continuous Optimization": "subtype_of"
     },
@@ -186,7 +186,7 @@
   },
   "Conic Optimization": {
     "type": "problem",
-    "define": "Conic optimization is the study of optimization problems in which the feasible region is described by affine constraints together with membership in a convex cone. A standard conic optimization problem has the form\n\n$$\n\\begin{aligned}\np^\\star\n&= \\inf_{x \\in \\mathbb{R}^n} c^\\top x \\\\\n&\\text{subject to } Ax + b \\in \\mathcal{K},\n\\end{aligned}\n$$\n\nwhere $x \\in \\mathbb{R}^n$ is the decision variable, $c \\in \\mathbb{R}^n$ defines the linear objective function $c^\\top x$, $A \\in \\mathbb{R}^{m \\times n}$ and $b \\in \\mathbb{R}^m$ define the affine constraint map, and $\\mathcal{K} \\subseteq \\mathbb{R}^m$ is a convex cone.\n\nThe feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{ x \\in \\mathbb{R}^n : Ax + b \\in \\mathcal{K} \\right\\}.\n$$\n\nThus, the problem can equivalently be written as\n\n$$\np^\\star\n=\n\\inf_{x \\in \\mathcal{X}} c^\\top x.\n$$\n\nThe constraint $Ax + b \\in \\mathcal{K}$ generalizes many familiar constraint classes. For example, if $\\mathcal{K} = \\mathbb{R}_+^m$, the problem becomes a linear program; if $\\mathcal{K}$ is a second-order cone, it becomes a second-order cone program; and if $\\mathcal{K}$ is the cone of positive semidefinite matrices, it becomes a semidefinite program.\n\nAn optimal solution is a point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nc^\\top x^\\star = p^\\star\n$$\n\nand\n\n$$\nc^\\top x^\\star \\leq c^\\top x\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nHere, $p^\\star$ is the optimal value, $x^\\star$ is an optimizer, the objective function measures the quantity being minimized, the feasible set $\\mathcal{X}$ contains all admissible decisions, and the conic constraint imposes generalized convex structure through the cone $\\mathcal{K}$.",
+    "description": "Conic optimization is the study of optimization problems in which the feasible region is described by affine constraints together with membership in a convex cone. A standard conic optimization problem has the form\n\n$$\n\\begin{aligned}\np^\\star\n&= \\inf_{x \\in \\mathbb{R}^n} c^\\top x \\\\\n&\\text{subject to } Ax + b \\in \\mathcal{K},\n\\end{aligned}\n$$\n\nwhere $x \\in \\mathbb{R}^n$ is the decision variable, $c \\in \\mathbb{R}^n$ defines the linear objective function $c^\\top x$, $A \\in \\mathbb{R}^{m \\times n}$ and $b \\in \\mathbb{R}^m$ define the affine constraint map, and $\\mathcal{K} \\subseteq \\mathbb{R}^m$ is a convex cone.\n\nThe feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{ x \\in \\mathbb{R}^n : Ax + b \\in \\mathcal{K} \\right\\}.\n$$\n\nThus, the problem can equivalently be written as\n\n$$\np^\\star\n=\n\\inf_{x \\in \\mathcal{X}} c^\\top x.\n$$\n\nThe constraint $Ax + b \\in \\mathcal{K}$ generalizes many familiar constraint classes. For example, if $\\mathcal{K} = \\mathbb{R}_+^m$, the problem becomes a linear program; if $\\mathcal{K}$ is a second-order cone, it becomes a second-order cone program; and if $\\mathcal{K}$ is the cone of positive semidefinite matrices, it becomes a semidefinite program.\n\nAn optimal solution is a point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nc^\\top x^\\star = p^\\star\n$$\n\nand\n\n$$\nc^\\top x^\\star \\leq c^\\top x\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nHere, $p^\\star$ is the optimal value, $x^\\star$ is an optimizer, the objective function measures the quantity being minimized, the feasible set $\\mathcal{X}$ contains all admissible decisions, and the conic constraint imposes generalized convex structure through the cone $\\mathcal{K}$.",
     "parents": {
       "Convex Optimization": "subtype_of"
     },
@@ -197,7 +197,7 @@
   },
   "Semidefinite Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Conic Optimization": "subtype_of"
     },
@@ -207,7 +207,7 @@
   },
   "Network Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Deterministic Optimization": "subtype_of"
     },
@@ -219,7 +219,7 @@
   },
   "Nonlinear Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Constrained Optimization": "subtype_of"
     },
@@ -233,7 +233,7 @@
   },
   "Convex Nonlinear Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Nonlinear Programming": "subtype_of"
     },
@@ -243,7 +243,7 @@
   },
   "Linear Fractional Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Continuous Optimization": "subtype_of",
       "Constrained Optimization": "subtype_of"
@@ -254,7 +254,7 @@
   },
   "Quadratic Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Quadratic Optimization": "subtype_of",
       "Constrained Optimization": "subtype_of"
@@ -267,7 +267,7 @@
   },
   "Quadratically Constrained Quadratic Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Quadratic Optimization": "subtype_of",
       "Nonlinear Programming": "subtype_of"
@@ -278,7 +278,7 @@
   },
   "Second-Order Cone Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Conic Optimization": "subtype_of"
     },
@@ -288,7 +288,7 @@
   },
   "Semidefinite Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Semidefinite Optimization": "subtype_of"
     },
@@ -299,7 +299,7 @@
   },
   "Integer Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Discrete Optimization": "subtype_of"
     },
@@ -312,7 +312,7 @@
   },
   "Mixed-Integer Linear Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Mixed-Integer Optimization": "subtype_of",
       "Linear Optimization": "subtype_of"
@@ -325,7 +325,7 @@
   },
   "Mixed-Integer Quadratic Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Mixed-Integer Optimization": "subtype_of",
       "Quadratic Optimization": "subtype_of"
@@ -336,7 +336,7 @@
   },
   "Mixed-Integer Nonlinear Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Mixed-Integer Optimization": "subtype_of",
       "Nonlinear Programming": "subtype_of"
@@ -347,7 +347,7 @@
   },
   "Least Squares Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Quadratic Programming": "subtype_of",
       "Unconstrained Optimization": "subtype_of"
@@ -359,7 +359,7 @@
   },
   "Consensus Optimization": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Distributed Optimization": "subtype_of",
       "Convex Optimization": "subtype_of"
@@ -371,7 +371,7 @@
   },
   "Knapsack Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Integer Programming": "subtype_of"
     },
@@ -381,7 +381,7 @@
   },
   "Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Optimization": "subtype_of",
       "Discrete Optimization": "subtype_of"
@@ -392,7 +392,7 @@
   },
   "Maximum Flow Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Optimization": "subtype_of",
       "Linear Optimization": "related_to"
@@ -403,7 +403,7 @@
   },
   "Assignment Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Optimization": "subtype_of",
       "Linear Optimization": "related_to",
@@ -415,7 +415,7 @@
   },
   "Stochastic Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Stochastic Optimization": "subtype_of",
       "Constrained Optimization": "subtype_of"
@@ -426,7 +426,7 @@
   },
   "Robust Linear Programming": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Robust Optimization": "subtype_of",
       "Linear Optimization": "related_to"
@@ -437,7 +437,7 @@
   },
   "Dual Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Lagrangian Duality": "produces"
     },
@@ -447,7 +447,7 @@
   },
   "KKT System": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "KKT Conditions": "produces"
     },
@@ -455,7 +455,7 @@
   },
   "LP Relaxation Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Linear Optimization": "related_to",
       "LP Relaxation": "produces"
@@ -467,7 +467,7 @@
   },
   "Semidefinite Relaxation Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Semidefinite Programming": "subtype_of",
       "Semidefinite Relaxation": "produces"
@@ -478,7 +478,7 @@
   },
   "Consensus Form Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Consensus Optimization": "subtype_of",
       "Variable Splitting": "produces"
@@ -489,7 +489,7 @@
   },
   "QP Subproblem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Quadratic Programming": "subtype_of",
       "Sequential Quadratic Programming": "produces"
@@ -500,7 +500,7 @@
   },
   "Master Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Benders Decomposition": "produces"
     },
@@ -510,7 +510,7 @@
   },
   "Scenario Subproblem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Benders Decomposition": "produces"
     },
@@ -518,7 +518,7 @@
   },
   "Node Relaxation Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Branch-and-Bound": "produces"
     },
@@ -529,7 +529,7 @@
   },
   "Lagrangian Duality": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Constrained Optimization": "analyzed_by"
     },
@@ -539,7 +539,7 @@
   },
   "KKT Conditions": {
     "type": "solution",
-    "define": "Consider the constrained optimization problem\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{s.t.} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p .\n\\end{aligned}\n$$\n\nThe decision variable is $x \\in \\mathbb{R}^n$. The objective function is $f : \\mathbb{R}^n \\to \\mathbb{R}$. The inequality constraints are $g_i(x) \\le 0$, and the equality constraints are $h_j(x) = 0$. The feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{\nx \\in \\mathbb{R}^n :\ng_i(x) \\le 0 \\ \\forall i,\n\\ h_j(x) = 0 \\ \\forall j\n\\right\\}.\n$$\n\nAn optimal solution $x^\\star \\in \\mathcal{X}$ satisfies\n\n$$\nf(x^\\star) \\le f(x)\n\\quad \\forall x \\in \\mathcal{X}.\n$$\n\nDefine the Lagrangian\n\n$$\n\\mathcal{L}(x,\\lambda,\\nu)\n=\nf(x)\n+\n\\sum_{i=1}^m \\lambda_i g_i(x)\n+\n\\sum_{j=1}^p \\nu_j h_j(x),\n$$\n\nwhere $\\lambda_i \\ge 0$ are multipliers for inequality constraints and $\\nu_j \\in \\mathbb{R}$ are multipliers for equality constraints.\n\nUnder a suitable constraint qualification, if $x^\\star$ is a local minimizer, then there exist multipliers $\\lambda^\\star \\in \\mathbb{R}^m$ and $\\nu^\\star \\in \\mathbb{R}^p$ such that the Karush-Kuhn-Tucker conditions hold:\n\n$$\n\\begin{aligned}\n\\text{Stationarity:} \\quad\n& \\nabla_x \\mathcal{L}(x^\\star,\\lambda^\\star,\\nu^\\star) = 0, \\\\\n\n\\text{Primal feasibility:} \\quad\n& g_i(x^\\star) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x^\\star) = 0, \\quad j = 1,\\dots,p, \\\\\n\n\\text{Dual feasibility:} \\quad\n& \\lambda_i^\\star \\ge 0, \\quad i = 1,\\dots,m, \\\\\n\n\\text{Complementary slackness:} \\quad\n& \\lambda_i^\\star g_i(x^\\star) = 0, \\quad i = 1,\\dots,m.\n\\end{aligned}\n$$\n\nStationarity states that the gradient of the Lagrangian vanishes at the optimum. Primal feasibility requires $x^\\star$ to satisfy all constraints. Dual feasibility requires nonnegative multipliers for inequality constraints. Complementary slackness means that each inequality constraint is either active, with $g_i(x^\\star)=0$, or has zero multiplier, with $\\lambda_i^\\star=0$.\n\nIf the problem is convex, meaning $f$ and $g_i$ are convex and $h_j$ are affine, then any point satisfying the KKT conditions is globally optimal.",
+    "description": "Consider the constrained optimization problem\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{s.t.} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p .\n\\end{aligned}\n$$\n\nThe decision variable is $x \\in \\mathbb{R}^n$. The objective function is $f : \\mathbb{R}^n \\to \\mathbb{R}$. The inequality constraints are $g_i(x) \\le 0$, and the equality constraints are $h_j(x) = 0$. The feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{\nx \\in \\mathbb{R}^n :\ng_i(x) \\le 0 \\ \\forall i,\n\\ h_j(x) = 0 \\ \\forall j\n\\right\\}.\n$$\n\nAn optimal solution $x^\\star \\in \\mathcal{X}$ satisfies\n\n$$\nf(x^\\star) \\le f(x)\n\\quad \\forall x \\in \\mathcal{X}.\n$$\n\nDefine the Lagrangian\n\n$$\n\\mathcal{L}(x,\\lambda,\\nu)\n=\nf(x)\n+\n\\sum_{i=1}^m \\lambda_i g_i(x)\n+\n\\sum_{j=1}^p \\nu_j h_j(x),\n$$\n\nwhere $\\lambda_i \\ge 0$ are multipliers for inequality constraints and $\\nu_j \\in \\mathbb{R}$ are multipliers for equality constraints.\n\nUnder a suitable constraint qualification, if $x^\\star$ is a local minimizer, then there exist multipliers $\\lambda^\\star \\in \\mathbb{R}^m$ and $\\nu^\\star \\in \\mathbb{R}^p$ such that the Karush-Kuhn-Tucker conditions hold:\n\n$$\n\\begin{aligned}\n\\text{Stationarity:} \\quad\n& \\nabla_x \\mathcal{L}(x^\\star,\\lambda^\\star,\\nu^\\star) = 0, \\\\\n\n\\text{Primal feasibility:} \\quad\n& g_i(x^\\star) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x^\\star) = 0, \\quad j = 1,\\dots,p, \\\\\n\n\\text{Dual feasibility:} \\quad\n& \\lambda_i^\\star \\ge 0, \\quad i = 1,\\dots,m, \\\\\n\n\\text{Complementary slackness:} \\quad\n& \\lambda_i^\\star g_i(x^\\star) = 0, \\quad i = 1,\\dots,m.\n\\end{aligned}\n$$\n\nStationarity states that the gradient of the Lagrangian vanishes at the optimum. Primal feasibility requires $x^\\star$ to satisfy all constraints. Dual feasibility requires nonnegative multipliers for inequality constraints. Complementary slackness means that each inequality constraint is either active, with $g_i(x^\\star)=0$, or has zero multiplier, with $\\lambda_i^\\star=0$.\n\nIf the problem is convex, meaning $f$ and $g_i$ are convex and $h_j$ are affine, then any point satisfying the KKT conditions is globally optimal.",
     "parents": {
       "Constrained Optimization": "analyzed_by"
     },
@@ -549,7 +549,7 @@
   },
   "Convex Relaxation": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Nonconvex Optimization": "relaxed_by"
     },
@@ -560,7 +560,7 @@
   },
   "Semidefinite Relaxation": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Quadratically Constrained Quadratic Programming": "relaxed_by",
       "Convex Relaxation": "specializes"
@@ -571,7 +571,7 @@
   },
   "Charnes-Cooper Transform": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Linear Fractional Programming": "reformulated_by"
     },
@@ -579,7 +579,7 @@
   },
   "LP Relaxation": {
     "type": "solution",
-    "define": "LP relaxation replaces an optimization problem with integrality or discrete constraints by a linear program obtained by enlarging the feasible set to a continuous polyhedron.\n\nConsider an integer linear program:\n\n$$\n\\begin{aligned}\nz_{\\mathrm{IP}}\n=\n\\min_{x \\in \\mathbb{Z}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b \\\\\n& x \\in \\mathcal{X}\n\\end{aligned}\n$$\n\nwhere $x$ is the decision variable, $c^\\top x$ is the linear objective function, $Ax \\le b$ are linear constraints, and $\\mathcal{X}$ denotes any additional structural constraints.\n\nThe LP relaxation is obtained by replacing the discrete constraint $x \\in \\mathbb{Z}^n$ with a continuous constraint, commonly $x \\in \\mathbb{R}^n$:\n\n$$\n\\begin{aligned}\nz_{\\mathrm{LP}}\n=\n\\min_{x \\in \\mathbb{R}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b \\\\\n& x \\in \\operatorname{relax}(\\mathcal{X})\n\\end{aligned}\n$$\n\nEquivalently, if the integer feasible set is\n\n$$\n\\mathcal{F}_{\\mathrm{IP}}\n=\n\\left\\{ x \\in \\mathbb{Z}^n : Ax \\le b,\\ x \\in \\mathcal{X} \\right\\},\n$$\n\nthen the relaxed feasible set is a continuous superset\n\n$$\n\\mathcal{F}_{\\mathrm{LP}}\n=\n\\left\\{ x \\in \\mathbb{R}^n : Ax \\le b,\\ x \\in \\operatorname{relax}(\\mathcal{X}) \\right\\},\n\\qquad\n\\mathcal{F}_{\\mathrm{IP}} \\subseteq \\mathcal{F}_{\\mathrm{LP}}.\n$$\n\nThe optimal solution of the integer program is\n\n$$\nx_{\\mathrm{IP}}^\\star\n\\in\n\\operatorname*{arg\\,min}_{x \\in \\mathcal{F}_{\\mathrm{IP}}} c^\\top x,\n$$\n\nwhile the optimal solution of the LP relaxation is\n\n$$\nx_{\\mathrm{LP}}^\\star\n\\in\n\\operatorname*{arg\\,min}_{x \\in \\mathcal{F}_{\\mathrm{LP}}} c^\\top x.\n$$\n\nFor a minimization problem, because the LP relaxation optimizes over a larger feasible set,\n\n$$\nz_{\\mathrm{LP}} \\le z_{\\mathrm{IP}}.\n$$\n\nThus, the LP relaxation gives a lower bound on the integer optimum. If $x_{\\mathrm{LP}}^\\star \\in \\mathbb{Z}^n$, then $x_{\\mathrm{LP}}^\\star$ is also feasible for the original integer problem and is therefore an optimal integer solution.",
+    "description": "LP relaxation replaces an optimization problem with integrality or discrete constraints by a linear program obtained by enlarging the feasible set to a continuous polyhedron.\n\nConsider an integer linear program:\n\n$$\n\\begin{aligned}\nz_{\\mathrm{IP}}\n=\n\\min_{x \\in \\mathbb{Z}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b \\\\\n& x \\in \\mathcal{X}\n\\end{aligned}\n$$\n\nwhere $x$ is the decision variable, $c^\\top x$ is the linear objective function, $Ax \\le b$ are linear constraints, and $\\mathcal{X}$ denotes any additional structural constraints.\n\nThe LP relaxation is obtained by replacing the discrete constraint $x \\in \\mathbb{Z}^n$ with a continuous constraint, commonly $x \\in \\mathbb{R}^n$:\n\n$$\n\\begin{aligned}\nz_{\\mathrm{LP}}\n=\n\\min_{x \\in \\mathbb{R}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b \\\\\n& x \\in \\operatorname{relax}(\\mathcal{X})\n\\end{aligned}\n$$\n\nEquivalently, if the integer feasible set is\n\n$$\n\\mathcal{F}_{\\mathrm{IP}}\n=\n\\left\\{ x \\in \\mathbb{Z}^n : Ax \\le b,\\ x \\in \\mathcal{X} \\right\\},\n$$\n\nthen the relaxed feasible set is a continuous superset\n\n$$\n\\mathcal{F}_{\\mathrm{LP}}\n=\n\\left\\{ x \\in \\mathbb{R}^n : Ax \\le b,\\ x \\in \\operatorname{relax}(\\mathcal{X}) \\right\\},\n\\qquad\n\\mathcal{F}_{\\mathrm{IP}} \\subseteq \\mathcal{F}_{\\mathrm{LP}}.\n$$\n\nThe optimal solution of the integer program is\n\n$$\nx_{\\mathrm{IP}}^\\star\n\\in\n\\operatorname*{arg\\,min}_{x \\in \\mathcal{F}_{\\mathrm{IP}}} c^\\top x,\n$$\n\nwhile the optimal solution of the LP relaxation is\n\n$$\nx_{\\mathrm{LP}}^\\star\n\\in\n\\operatorname*{arg\\,min}_{x \\in \\mathcal{F}_{\\mathrm{LP}}} c^\\top x.\n$$\n\nFor a minimization problem, because the LP relaxation optimizes over a larger feasible set,\n\n$$\nz_{\\mathrm{LP}} \\le z_{\\mathrm{IP}}.\n$$\n\nThus, the LP relaxation gives a lower bound on the integer optimum. If $x_{\\mathrm{LP}}^\\star \\in \\mathbb{Z}^n$, then $x_{\\mathrm{LP}}^\\star$ is also feasible for the original integer problem and is therefore an optimal integer solution.",
     "parents": {
       "Mixed-Integer Linear Programming": "relaxed_by",
       "Convex Relaxation": "specializes"
@@ -590,7 +590,7 @@
   },
   "Variable Splitting": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Consensus Optimization": "decomposed_by"
     },
@@ -600,7 +600,7 @@
   },
   "Benders Decomposition": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Stochastic Programming": "decomposed_by"
     },
@@ -611,7 +611,7 @@
   },
   "Branch-and-Bound": {
     "type": "solution",
-    "define": "Branch-and-Bound solves a constrained optimization problem of the form\n\n$$\n\\begin{aligned}\nz^\\star\n&= \\min_{x \\in \\mathcal{X}} f(x) \\\\\n\\mathcal{X}\n&= \\left\\{ x \\in \\mathcal{D} \\mid g_i(x) \\le 0,\\ i = 1,\\dots,m \\right\\}.\n\\end{aligned}\n$$\n\nHere, $x$ is the decision variable, $f:\\mathcal{D}\\to\\mathbb{R}$ is the objective function, $\\mathcal{X}$ is the feasible set, $\\mathcal{D}$ is the ambient decision domain, and the inequalities $g_i(x)\\le 0$ are the constraints. An optimal solution is any $x^\\star \\in \\mathcal{X}$ satisfying\n\n$$\nf(x^\\star)=z^\\star=\\min_{x\\in\\mathcal{X}} f(x).\n$$\n\nBranch-and-Bound maintains a collection of subproblems indexed by nodes $N$. Each node corresponds to a subset $\\mathcal{X}_N \\subseteq \\mathcal{X}$, with\n\n$$\n\\mathcal{X} = \\bigcup_{N \\in \\mathcal{T}} \\mathcal{X}_N.\n$$\n\nFor each node $N$, a relaxation is solved over a superset $\\mathcal{R}_N \\supseteq \\mathcal{X}_N$ to obtain a valid lower bound\n\n$$\nL_N\n=\n\\min_{x \\in \\mathcal{R}_N} f(x)\n\\le\n\\min_{x \\in \\mathcal{X}_N} f(x).\n$$\n\nThe algorithm also maintains an incumbent feasible solution $\\bar{x}\\in\\mathcal{X}$ with objective value\n\n$$\nU=f(\\bar{x}),\n$$\n\nwhich is a valid upper bound on $z^\\star$.\n\nA node $N$ is pruned if any of the following holds:\n\n$$\n\\begin{aligned}\n&\\mathcal{X}_N = \\varnothing, \\\\\n&L_N \\ge U, \\\\\n&\\text{or the relaxation solution is feasible for } \\mathcal{X}_N.\n\\end{aligned}\n$$\n\nIf a node cannot be pruned, it is branched into finitely many child nodes $N_1,\\dots,N_k$ such that\n\n$$\n\\mathcal{X}_N\n=\n\\bigcup_{j=1}^k \\mathcal{X}_{N_j},\n\\qquad\n\\mathcal{X}_{N_j} \\cap \\mathcal{X}_{N_\\ell} = \\varnothing\n\\quad \\text{for } j \\ne \\ell.\n$$\n\nAt termination, all remaining nodes have been pruned. Since every feasible solution belongs to some explored or pruned node, and no pruned node can contain a solution with objective value below the incumbent $U$, the incumbent satisfies\n\n$$\nf(\\bar{x}) = z^\\star.\n$$\n\nThus, Branch-and-Bound proves optimality by systematically partitioning the feasible region, computing valid bounds on subproblems, and eliminating regions that cannot contain a better feasible solution.",
+    "description": "Branch-and-Bound solves a constrained optimization problem of the form\n\n$$\n\\begin{aligned}\nz^\\star\n&= \\min_{x \\in \\mathcal{X}} f(x) \\\\\n\\mathcal{X}\n&= \\left\\{ x \\in \\mathcal{D} \\mid g_i(x) \\le 0,\\ i = 1,\\dots,m \\right\\}.\n\\end{aligned}\n$$\n\nHere, $x$ is the decision variable, $f:\\mathcal{D}\\to\\mathbb{R}$ is the objective function, $\\mathcal{X}$ is the feasible set, $\\mathcal{D}$ is the ambient decision domain, and the inequalities $g_i(x)\\le 0$ are the constraints. An optimal solution is any $x^\\star \\in \\mathcal{X}$ satisfying\n\n$$\nf(x^\\star)=z^\\star=\\min_{x\\in\\mathcal{X}} f(x).\n$$\n\nBranch-and-Bound maintains a collection of subproblems indexed by nodes $N$. Each node corresponds to a subset $\\mathcal{X}_N \\subseteq \\mathcal{X}$, with\n\n$$\n\\mathcal{X} = \\bigcup_{N \\in \\mathcal{T}} \\mathcal{X}_N.\n$$\n\nFor each node $N$, a relaxation is solved over a superset $\\mathcal{R}_N \\supseteq \\mathcal{X}_N$ to obtain a valid lower bound\n\n$$\nL_N\n=\n\\min_{x \\in \\mathcal{R}_N} f(x)\n\\le\n\\min_{x \\in \\mathcal{X}_N} f(x).\n$$\n\nThe algorithm also maintains an incumbent feasible solution $\\bar{x}\\in\\mathcal{X}$ with objective value\n\n$$\nU=f(\\bar{x}),\n$$\n\nwhich is a valid upper bound on $z^\\star$.\n\nA node $N$ is pruned if any of the following holds:\n\n$$\n\\begin{aligned}\n&\\mathcal{X}_N = \\varnothing, \\\\\n&L_N \\ge U, \\\\\n&\\text{or the relaxation solution is feasible for } \\mathcal{X}_N.\n\\end{aligned}\n$$\n\nIf a node cannot be pruned, it is branched into finitely many child nodes $N_1,\\dots,N_k$ such that\n\n$$\n\\mathcal{X}_N\n=\n\\bigcup_{j=1}^k \\mathcal{X}_{N_j},\n\\qquad\n\\mathcal{X}_{N_j} \\cap \\mathcal{X}_{N_\\ell} = \\varnothing\n\\quad \\text{for } j \\ne \\ell.\n$$\n\nAt termination, all remaining nodes have been pruned. Since every feasible solution belongs to some explored or pruned node, and no pruned node can contain a solution with objective value below the incumbent $U$, the incumbent satisfies\n\n$$\nf(\\bar{x}) = z^\\star.\n$$\n\nThus, Branch-and-Bound proves optimality by systematically partitioning the feasible region, computing valid bounds on subproblems, and eliminating regions that cannot contain a better feasible solution.",
     "parents": {
       "Integer Programming": "solved_by",
       "Mixed-Integer Linear Programming": "solved_by",
@@ -625,7 +625,7 @@
   },
   "Cutting Plane Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Integer Programming": "solved_by",
       "Mixed-Integer Linear Programming": "solved_by",
@@ -637,7 +637,7 @@
   },
   "Interior-Point Method": {
     "type": "solution",
-    "define": "Interior-Point Method (IPM) solves constrained optimization problems by generating iterates that remain in the interior of the feasible region and converge to an optimal solution.\n\nA standard convex optimization problem is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& Ax = b.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the decision variable, $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the objective function, $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ are inequality constraint functions, and $Ax=b$ represents affine equality constraints.\n\nThe feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,\\ Ax=b\n\\right\\}.\n$$\n\nAn optimal solution is a point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nInterior-Point Methods replace the constrained problem with a sequence of smooth unconstrained or equality-constrained barrier problems. For logarithmic barriers, the perturbed problem is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad\n& f(x) - \\mu \\sum_{i=1}^m \\log\\left(-g_i(x)\\right) \\\\\n\\text{subject to} \\quad\n& Ax=b,\n\\end{aligned}\n$$\n\nwhere $\\mu>0$ is the barrier parameter. The logarithmic term forces $g_i(x)<0$, so iterates remain strictly inside the feasible region.\n\nAs $\\mu \\downarrow 0$, the minimizers $x(\\mu)$ of the barrier problems trace the central path and, under appropriate convexity and regularity assumptions, converge to an optimal solution $x^\\star$ of the original constrained problem.\n\nAt each iteration, IPM typically applies Newton's method to the first-order optimality conditions of the barrier problem. The step direction $\\Delta x$ is chosen to reduce the perturbed optimality residual while preserving strict feasibility, and the barrier parameter $\\mu$ is gradually decreased.\n\nThus, IPM approaches the boundary of the feasible set from its interior, balancing objective minimization with increasing enforcement of the original inequality constraints.",
+    "description": "Interior-Point Method (IPM) solves constrained optimization problems by generating iterates that remain in the interior of the feasible region and converge to an optimal solution.\n\nA standard convex optimization problem is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& Ax = b.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the decision variable, $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the objective function, $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ are inequality constraint functions, and $Ax=b$ represents affine equality constraints.\n\nThe feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,\\ Ax=b\n\\right\\}.\n$$\n\nAn optimal solution is a point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nInterior-Point Methods replace the constrained problem with a sequence of smooth unconstrained or equality-constrained barrier problems. For logarithmic barriers, the perturbed problem is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad\n& f(x) - \\mu \\sum_{i=1}^m \\log\\left(-g_i(x)\\right) \\\\\n\\text{subject to} \\quad\n& Ax=b,\n\\end{aligned}\n$$\n\nwhere $\\mu>0$ is the barrier parameter. The logarithmic term forces $g_i(x)<0$, so iterates remain strictly inside the feasible region.\n\nAs $\\mu \\downarrow 0$, the minimizers $x(\\mu)$ of the barrier problems trace the central path and, under appropriate convexity and regularity assumptions, converge to an optimal solution $x^\\star$ of the original constrained problem.\n\nAt each iteration, IPM typically applies Newton's method to the first-order optimality conditions of the barrier problem. The step direction $\\Delta x$ is chosen to reduce the perturbed optimality residual while preserving strict feasibility, and the barrier parameter $\\mu$ is gradually decreased.\n\nThus, IPM approaches the boundary of the feasible set from its interior, balancing objective minimization with increasing enforcement of the original inequality constraints.",
     "parents": {
       "Convex Optimization": "solved_by",
       "Linear Optimization": "related_to",
@@ -659,7 +659,7 @@
   },
   "Simplex Method": {
     "type": "solution",
-    "define": "The simplex method solves a linear program by moving between extreme points of a polyhedral feasible set until an optimal extreme point is found.\n\nA linear program in standard minimization form is\n\n$$\n\\min_{x \\in \\mathbb{R}^n} c^\\top x\n$$\n\nsubject to\n\n$$\nAx = b, \\\\\nx \\ge 0.\n$$\n\nEquivalently, the feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{ x \\in \\mathbb{R}^n :\nAx = b, \\;\nx \\ge 0\n\\right\\}.\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the decision variable, $c^\\top x$ is the linear objective function, $A \\in \\mathbb{R}^{m \\times n}$ is the constraint matrix, $b \\in \\mathbb{R}^m$ is the right-hand-side vector, and $\\mathcal{X}$ is the feasible set.\n\nThe goal is to find an optimal solution\n\n$$\nx^\\star \\in \\arg\\min_{x \\in \\mathcal{X}} c^\\top x.\n$$\n\nThe simplex method exploits the fact that, if an optimal solution exists for a linear program over a nonempty bounded polyhedron, then at least one optimal solution is an extreme point of $\\mathcal{X}$.\n\nA basis is a set of indices $B \\subseteq \\left\\{1,\\dots,n\\right\\}$ with $|B|=m$ such that the submatrix $A_B$ is nonsingular. The associated basic feasible solution is defined by\n\n$$\nx_B = A_B^{-1} b, \\\\\nx_N = 0,\n$$\n\nwhere $N = \\left\\{1,\\dots,n\\right\\} \\setminus B$. If $x_B \\ge 0$, this solution is feasible.\n\nAt each iteration, the simplex method computes the reduced costs\n\n$$\n\\bar{c}_N^\\top\n=\nc_N^\\top - c_B^\\top A_B^{-1} A_N.\n$$\n\nFor a minimization problem, if\n\n$$\n\\bar{c}_j \\ge 0\n\\quad \\text{for all } j \\in N,\n$$\n\nthen the current basic feasible solution is optimal. Otherwise, an index with $\\bar{c}_j < 0$ enters the basis, and a leaving index is chosen by the minimum-ratio test to preserve feasibility.\n\nThus, the simplex method iteratively performs basis exchanges, moving from one feasible extreme point to an adjacent one, strictly improving the objective value under nondegeneracy, until the optimality condition is satisfied or unboundedness is detected.",
+    "description": "The simplex method solves a linear program by moving between extreme points of a polyhedral feasible set until an optimal extreme point is found.\n\nA linear program in standard minimization form is\n\n$$\n\\min_{x \\in \\mathbb{R}^n} c^\\top x\n$$\n\nsubject to\n\n$$\nAx = b, \\\\\nx \\ge 0.\n$$\n\nEquivalently, the feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{ x \\in \\mathbb{R}^n :\nAx = b, \\;\nx \\ge 0\n\\right\\}.\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the decision variable, $c^\\top x$ is the linear objective function, $A \\in \\mathbb{R}^{m \\times n}$ is the constraint matrix, $b \\in \\mathbb{R}^m$ is the right-hand-side vector, and $\\mathcal{X}$ is the feasible set.\n\nThe goal is to find an optimal solution\n\n$$\nx^\\star \\in \\arg\\min_{x \\in \\mathcal{X}} c^\\top x.\n$$\n\nThe simplex method exploits the fact that, if an optimal solution exists for a linear program over a nonempty bounded polyhedron, then at least one optimal solution is an extreme point of $\\mathcal{X}$.\n\nA basis is a set of indices $B \\subseteq \\left\\{1,\\dots,n\\right\\}$ with $|B|=m$ such that the submatrix $A_B$ is nonsingular. The associated basic feasible solution is defined by\n\n$$\nx_B = A_B^{-1} b, \\\\\nx_N = 0,\n$$\n\nwhere $N = \\left\\{1,\\dots,n\\right\\} \\setminus B$. If $x_B \\ge 0$, this solution is feasible.\n\nAt each iteration, the simplex method computes the reduced costs\n\n$$\n\\bar{c}_N^\\top\n=\nc_N^\\top - c_B^\\top A_B^{-1} A_N.\n$$\n\nFor a minimization problem, if\n\n$$\n\\bar{c}_j \\ge 0\n\\quad \\text{for all } j \\in N,\n$$\n\nthen the current basic feasible solution is optimal. Otherwise, an index with $\\bar{c}_j < 0$ enters the basis, and a leaving index is chosen by the minimum-ratio test to preserve feasibility.\n\nThus, the simplex method iteratively performs basis exchanges, moving from one feasible extreme point to an adjacent one, strictly improving the objective value under nondegeneracy, until the optimality condition is satisfied or unboundedness is detected.",
     "parents": {
       "Linear Optimization": "related_to",
       "LP Relaxation Problem": "solved_by",
@@ -671,7 +671,7 @@
   },
   "Gradient Descent": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Unconstrained Optimization": "solved_by",
       "Least Squares Optimization": "solved_by"
@@ -683,7 +683,7 @@
   },
   "Projected Gradient Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Constrained Optimization": "solved_by",
       "Gradient Descent": "specializes"
@@ -692,7 +692,7 @@
   },
   "Subgradient Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Convex Optimization": "solved_by",
       "Nonsmooth Optimization": "solved_by",
@@ -702,7 +702,7 @@
   },
   "Proximal Gradient Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Convex Optimization": "solved_by",
       "Nonsmooth Optimization": "solved_by",
@@ -712,7 +712,7 @@
   },
   "Newton's Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Unconstrained Optimization": "solved_by",
       "Least Squares Optimization": "solved_by"
@@ -721,7 +721,7 @@
   },
   "Sequential Quadratic Programming": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Nonlinear Programming": "solved_by"
     },
@@ -731,7 +731,7 @@
   },
   "Alternating Direction Method of Multipliers": {
     "type": "solution",
-    "define": "The Alternating Direction Method of Multipliers (ADMM) solves structured convex optimization problems of the form\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathcal{X},\\, z \\in \\mathcal{Z}} \\quad & f(x) + g(z) \\\\\n\\text{subject to} \\quad & Ax + Bz = c .\n\\end{aligned}\n$$\n\nHere, $x$ and $z$ are decision variables, $f:\\mathcal{X}\\to \\mathbb{R}\\cup\\left\\{+\\infty\\right\\}$ and $g:\\mathcal{Z}\\to \\mathbb{R}\\cup\\left\\{+\\infty\\right\\}$ are objective functions, $\\mathcal{X}$ and $\\mathcal{Z}$ are feasible sets, and $Ax+Bz=c$ is a linear coupling constraint. An optimal solution is a pair $(x^\\star,z^\\star)$ satisfying the constraint and attaining the minimum objective value.\n\nThe augmented Lagrangian is\n\n$$\n\\mathcal{L}_{\\rho}(x,z,y)\n=\nf(x)+g(z)+y^\\top(Ax+Bz-c)\n+\n\\frac{\\rho}{2}\\left\\|Ax+Bz-c\\right\\|_2^2,\n$$\n\nwhere $y$ is the Lagrange multiplier and $\\rho>0$ is the penalty parameter.\n\nADMM generates iterates by alternating minimization in $x$ and $z$, followed by a multiplier update:\n\n$$\n\\begin{aligned}\nx^{k+1}\n&=\n\\arg\\min_{x \\in \\mathcal{X}}\n\\mathcal{L}_{\\rho}(x,z^k,y^k), \\\\\n\nz^{k+1}\n&=\n\\arg\\min_{z \\in \\mathcal{Z}}\n\\mathcal{L}_{\\rho}(x^{k+1},z,y^k), \\\\\n\ny^{k+1}\n&=\ny^k+\\rho\\left(Ax^{k+1}+Bz^{k+1}-c\\right).\n\\end{aligned}\n$$\n\nThus, ADMM decomposes a constrained problem into simpler subproblems involving $f$ and $g$ separately, while enforcing feasibility through the dual variable $y$ and the quadratic penalty term.",
+    "description": "The Alternating Direction Method of Multipliers (ADMM) solves structured convex optimization problems of the form\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathcal{X},\\, z \\in \\mathcal{Z}} \\quad & f(x) + g(z) \\\\\n\\text{subject to} \\quad & Ax + Bz = c .\n\\end{aligned}\n$$\n\nHere, $x$ and $z$ are decision variables, $f:\\mathcal{X}\\to \\mathbb{R}\\cup\\left\\{+\\infty\\right\\}$ and $g:\\mathcal{Z}\\to \\mathbb{R}\\cup\\left\\{+\\infty\\right\\}$ are objective functions, $\\mathcal{X}$ and $\\mathcal{Z}$ are feasible sets, and $Ax+Bz=c$ is a linear coupling constraint. An optimal solution is a pair $(x^\\star,z^\\star)$ satisfying the constraint and attaining the minimum objective value.\n\nThe augmented Lagrangian is\n\n$$\n\\mathcal{L}_{\\rho}(x,z,y)\n=\nf(x)+g(z)+y^\\top(Ax+Bz-c)\n+\n\\frac{\\rho}{2}\\left\\|Ax+Bz-c\\right\\|_2^2,\n$$\n\nwhere $y$ is the Lagrange multiplier and $\\rho>0$ is the penalty parameter.\n\nADMM generates iterates by alternating minimization in $x$ and $z$, followed by a multiplier update:\n\n$$\n\\begin{aligned}\nx^{k+1}\n&=\n\\arg\\min_{x \\in \\mathcal{X}}\n\\mathcal{L}_{\\rho}(x,z^k,y^k), \\\\\n\nz^{k+1}\n&=\n\\arg\\min_{z \\in \\mathcal{Z}}\n\\mathcal{L}_{\\rho}(x^{k+1},z,y^k), \\\\\n\ny^{k+1}\n&=\ny^k+\\rho\\left(Ax^{k+1}+Bz^{k+1}-c\\right).\n\\end{aligned}\n$$\n\nThus, ADMM decomposes a constrained problem into simpler subproblems involving $f$ and $g$ separately, while enforcing feasibility through the dual variable $y$ and the quadratic penalty term.",
     "parents": {
       "Consensus Form Problem": "solved_by"
     },
@@ -741,7 +741,7 @@
   },
   "Dynamic Programming": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Knapsack Problem": "solved_by"
     },
@@ -749,7 +749,7 @@
   },
   "Dijkstra's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Shortest Path Problem": "solved_by"
     },
@@ -757,7 +757,7 @@
   },
   "Max-Flow Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Maximum Flow Problem": "solved_by"
     },
@@ -765,7 +765,7 @@
   },
   "Hungarian Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Assignment Problem": "solved_by"
     },
@@ -773,7 +773,7 @@
   },
   "MOSEK": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Interior-Point Method": "implemented_by"
     },
@@ -781,7 +781,7 @@
   },
   "Gurobi": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Branch-and-Bound": "implemented_by",
       "Cutting Plane Method": "implemented_by"
@@ -790,7 +790,7 @@
   },
   "IPOPT": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Interior-Point Method": "implemented_by"
     },
@@ -798,7 +798,7 @@
   },
   "OSQP": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Alternating Direction Method of Multipliers": "implemented_by"
     },
@@ -806,7 +806,7 @@
   },
   "HiGHS": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Simplex Method": "implemented_by"
     },

@@ -1,7 +1,7 @@
 {
   "Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {},
     "children": {
       "Directed Graph Problem": "subtype_of",
@@ -22,7 +22,7 @@
   },
   "Directed Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -35,7 +35,7 @@
   },
   "Undirected Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -48,7 +48,7 @@
   },
   "Weighted Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -56,7 +56,7 @@
   },
   "Unweighted Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -66,7 +66,7 @@
   },
   "Directed Acyclic Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Graph Problem": "subtype_of"
     },
@@ -79,7 +79,7 @@
   },
   "Bipartite Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Undirected Graph Problem": "subtype_of"
     },
@@ -90,7 +90,7 @@
   },
   "Flow Network Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -102,7 +102,7 @@
   },
   "Matching Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -112,7 +112,7 @@
   },
   "Connectivity Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Undirected Graph Problem": "subtype_of"
     },
@@ -123,7 +123,7 @@
   },
   "Reachability Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -134,7 +134,7 @@
   },
   "Cycle Detection Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -145,7 +145,7 @@
   },
   "Topological Ordering Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Graph Problem": "subtype_of",
       "Directed Acyclic Graph Problem": "subtype_of"
@@ -156,7 +156,7 @@
   },
   "Strongly Connected Components Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Graph Problem": "subtype_of"
     },
@@ -166,7 +166,7 @@
   },
   "Bridge and Articulation Point Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Undirected Graph Problem": "subtype_of"
     },
@@ -176,7 +176,7 @@
   },
   "Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -189,7 +189,7 @@
   },
   "Single-Source Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Shortest Path Problem": "subtype_of"
     },
@@ -202,7 +202,7 @@
   },
   "All-Pairs Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Shortest Path Problem": "subtype_of"
     },
@@ -212,7 +212,7 @@
   },
   "Unweighted Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Unweighted Graph Problem": "subtype_of",
       "Single-Source Shortest Path Problem": "subtype_of"
@@ -223,7 +223,7 @@
   },
   "DAG Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Acyclic Graph Problem": "subtype_of",
       "Single-Source Shortest Path Problem": "subtype_of"
@@ -234,7 +234,7 @@
   },
   "Negative-Weight Shortest Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Shortest Path Problem": "subtype_of",
       "Single-Source Shortest Path Problem": "subtype_of"
@@ -245,7 +245,7 @@
   },
   "Minimum Spanning Tree Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Undirected Graph Problem": "subtype_of"
     },
@@ -255,7 +255,7 @@
   },
   "Bipartite Recognition Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Bipartite Graph Problem": "subtype_of"
     },
@@ -265,7 +265,7 @@
   },
   "Bipartite Matching Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Bipartite Graph Problem": "subtype_of",
       "Matching Problem": "subtype_of"
@@ -276,7 +276,7 @@
   },
   "Maximum Flow Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Flow Network Problem": "subtype_of"
     },
@@ -287,7 +287,7 @@
   },
   "Minimum Cut Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Flow Network Problem": "subtype_of"
     },
@@ -297,7 +297,7 @@
   },
   "Eulerian Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -307,7 +307,7 @@
   },
   "Hamiltonian Path Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -318,7 +318,7 @@
   },
   "Graph Coloring Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -328,7 +328,7 @@
   },
   "Transitive Closure Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "subtype_of"
     },
@@ -338,7 +338,7 @@
   },
   "Residual Network Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Graph Problem": "subtype_of",
       "Flow Network Problem": "subtype_of",
@@ -350,7 +350,7 @@
   },
   "Level Graph Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Acyclic Graph Problem": "subtype_of",
       "Level Graph Construction": "produces"
@@ -361,7 +361,7 @@
   },
   "Condensation DAG Problem": {
     "type": "problem",
-    "define": "",
+    "description": "",
     "parents": {
       "Directed Acyclic Graph Problem": "subtype_of",
       "Strong Component Decomposition": "produces"
@@ -372,7 +372,7 @@
   },
   "Graph Traversal": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Graph Problem": "analyzed_by"
     },
@@ -383,7 +383,7 @@
   },
   "Breadth-First Search": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Reachability Problem": "solved_by",
       "Unweighted Shortest Path Problem": "solved_by",
@@ -398,7 +398,7 @@
   },
   "Depth-First Search": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Reachability Problem": "solved_by",
       "Connectivity Problem": "solved_by",
@@ -415,7 +415,7 @@
   },
   "Shortest Path Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Shortest Path Problem": "solved_by"
     },
@@ -429,7 +429,7 @@
   },
   "Relaxation Procedure": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Shortest Path Method": "decomposed_by",
       "Dijkstra's Algorithm": "implemented_by",
@@ -439,7 +439,7 @@
   },
   "Topological Sort": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Topological Ordering Problem": "solved_by",
       "Condensation DAG Problem": "solved_by",
@@ -451,7 +451,7 @@
   },
   "Kahn's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Topological Sort": "specializes"
     },
@@ -459,7 +459,7 @@
   },
   "Dijkstra's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Single-Source Shortest Path Problem": "solved_by",
       "Shortest Path Method": "specializes"
@@ -471,7 +471,7 @@
   },
   "Bellman-Ford Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Negative-Weight Shortest Path Problem": "solved_by",
       "Shortest Path Method": "specializes"
@@ -482,7 +482,7 @@
   },
   "Floyd-Warshall Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "All-Pairs Shortest Path Problem": "solved_by",
       "Transitive Closure Problem": "solved_by",
@@ -494,7 +494,7 @@
   },
   "Dynamic Programming on DAG": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "DAG Shortest Path Problem": "solved_by",
       "Shortest Path Method": "specializes"
@@ -505,7 +505,7 @@
   },
   "Minimum Spanning Tree Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Minimum Spanning Tree Problem": "solved_by"
     },
@@ -516,7 +516,7 @@
   },
   "Kruskal's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Minimum Spanning Tree Method": "specializes"
     },
@@ -526,7 +526,7 @@
   },
   "Prim's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Minimum Spanning Tree Method": "specializes"
     },
@@ -536,7 +536,7 @@
   },
   "Disjoint Set Union": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Connectivity Problem": "solved_by",
       "Cycle Detection Problem": "solved_by",
@@ -548,7 +548,7 @@
   },
   "Union-Find Forest": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Disjoint Set Union": "implemented_by"
     },
@@ -556,7 +556,7 @@
   },
   "Strong Component Decomposition": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Strongly Connected Components Problem": "solved_by"
     },
@@ -568,7 +568,7 @@
   },
   "Kosaraju's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Strong Component Decomposition": "specializes"
     },
@@ -578,7 +578,7 @@
   },
   "Tarjan's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Strong Component Decomposition": "specializes"
     },
@@ -588,7 +588,7 @@
   },
   "Low-Link Analysis": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Bridge and Articulation Point Problem": "solved_by"
     },
@@ -598,7 +598,7 @@
   },
   "Matching Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Bipartite Matching Problem": "solved_by"
     },
@@ -608,7 +608,7 @@
   },
   "Network Flow Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Maximum Flow Problem": "solved_by",
       "Minimum Cut Problem": "solved_by"
@@ -623,7 +623,7 @@
   },
   "Augmenting Path Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Residual Network Problem": "solved_by",
       "Network Flow Method": "decomposed_by"
@@ -632,7 +632,7 @@
   },
   "Residual Graph Construction": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Flow Method": "decomposed_by"
     },
@@ -642,7 +642,7 @@
   },
   "Ford-Fulkerson Method": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Flow Method": "specializes"
     },
@@ -650,7 +650,7 @@
   },
   "Edmonds-Karp Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Flow Method": "specializes"
     },
@@ -658,7 +658,7 @@
   },
   "Dinic's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Network Flow Method": "specializes"
     },
@@ -668,7 +668,7 @@
   },
   "Bipartite BFS Coloring": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Bipartite Recognition Problem": "solved_by"
     },
@@ -678,7 +678,7 @@
   },
   "Hopcroft-Karp Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Matching Method": "specializes"
     },
@@ -689,7 +689,7 @@
   },
   "Hierholzer's Algorithm": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Eulerian Path Problem": "solved_by"
     },
@@ -697,7 +697,7 @@
   },
   "Backtracking Search": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Hamiltonian Path Problem": "solved_by",
       "Graph Coloring Problem": "solved_by"
@@ -706,7 +706,7 @@
   },
   "Branch and Bound": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Hamiltonian Path Problem": "solved_by"
     },
@@ -714,7 +714,7 @@
   },
   "Priority Queue": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Dijkstra's Algorithm": "implemented_by",
       "Prim's Algorithm": "implemented_by"
@@ -723,7 +723,7 @@
   },
   "Adjacency List": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Breadth-First Search": "implemented_by",
       "Depth-First Search": "implemented_by"
@@ -732,7 +732,7 @@
   },
   "Adjacency Matrix": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Floyd-Warshall Algorithm": "implemented_by"
     },
@@ -740,7 +740,7 @@
   },
   "Minimum-Cut Maximum-Flow Theorem": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Maximum Flow Problem": "analyzed_by"
     },
@@ -748,7 +748,7 @@
   },
   "Level Graph Construction": {
     "type": "solution",
-    "define": "",
+    "description": "",
     "parents": {
       "Dinic's Algorithm": "decomposed_by"
     },

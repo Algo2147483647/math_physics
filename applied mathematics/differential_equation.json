@@ -1,0 +1,1048 @@
+{
+  "Differential_Equations": {
+    "description": "",
+    "parents": {},
+    "children": {
+      "ODE_Problems": "contains",
+      "PDE_Problems": "contains",
+      "Systems_Problems": "contains",
+      "Qualitative_Problems": "contains",
+      "Numerical_Problems": "contains",
+      "Exact_Methods": "related_to",
+      "Transform_Methods": "related_to",
+      "Series_Methods": "related_to",
+      "Qualitative_Methods": "related_to",
+      "Numerical_Methods": "related_to"
+    },
+    "type": "problem",
+    "title": "Differential Equations"
+  },
+  "ODE_Problems": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "contains"
+    },
+    "children": {
+      "First_Order_ODE_Problems": "contains",
+      "Second_Order_ODE_Problems": "contains",
+      "Linear_ODE_Problems": "contains",
+      "Nonlinear_ODE_Problems": "contains",
+      "ODE_Initial_Value_Problems": "contains",
+      "ODE_Boundary_Value_Problems": "contains"
+    },
+    "type": "problem",
+    "title": "Ordinary Differential Equation Problems"
+  },
+  "PDE_Problems": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "contains"
+    },
+    "children": {
+      "First_Order_PDE_Problems": "contains",
+      "Second_Order_PDE_Problems": "contains",
+      "PDE_Initial_Value_Problems": "contains",
+      "PDE_Boundary_Value_Problems": "contains"
+    },
+    "type": "problem",
+    "title": "Partial Differential Equation Problems"
+  },
+  "Systems_Problems": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "contains"
+    },
+    "children": {
+      "Linear_Systems": "contains",
+      "Nonlinear_Systems": "contains",
+      "Autonomous_Systems": "contains",
+      "Matrix_ODE_Systems": "contains"
+    },
+    "type": "problem",
+    "title": "Systems of Differential Equations"
+  },
+  "Qualitative_Problems": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "contains"
+    },
+    "children": {
+      "Direction_Field_Problems": "contains",
+      "Phase_Line_Problems": "contains",
+      "Phase_Plane_Problems": "contains",
+      "Stability_Problems": "contains",
+      "Bifurcation_Problems": "contains"
+    },
+    "type": "problem",
+    "title": "Qualitative Problems"
+  },
+  "Numerical_Problems": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "contains"
+    },
+    "children": {
+      "Numerical_ODE_Problems": "contains",
+      "Numerical_PDE_Problems": "contains",
+      "Error_And_Stability_Problems": "contains"
+    },
+    "type": "problem",
+    "title": "Numerical Problems"
+  },
+  "Eigenvalue_Methods": {
+    "description": "",
+    "parents": {
+      "Linear_Systems": "solved_by",
+      "Matrix_ODE_Systems": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Eigenvalue Methods"
+  },
+  "First_Order_ODE_Problems": {
+    "description": "",
+    "parents": {
+      "ODE_Problems": "contains"
+    },
+    "children": {
+      "Separable_ODE": "contains",
+      "Linear_First_Order_ODE": "contains",
+      "Exact_ODE": "contains",
+      "Bernoulli_ODE": "contains",
+      "Autonomous_First_Order_ODE": "contains"
+    },
+    "type": "problem",
+    "title": "First Order ODE Problems"
+  },
+  "Second_Order_ODE_Problems": {
+    "description": "",
+    "parents": {
+      "ODE_Problems": "contains"
+    },
+    "children": {
+      "Constant_Coefficient_ODE": "contains",
+      "Nonhomogeneous_ODE": "contains",
+      "Cauchy_Euler_ODE": "contains",
+      "Series_Solution_ODE": "contains"
+    },
+    "type": "problem",
+    "title": "Second Order ODE Problems"
+  },
+  "Linear_ODE_Problems": {
+    "description": "",
+    "parents": {
+      "ODE_Problems": "contains",
+      "Linear_Systems": "generalizes"
+    },
+    "children": {},
+    "type": "problem",
+    "title": "Linear ODE Problems"
+  },
+  "Nonlinear_ODE_Problems": {
+    "description": "",
+    "parents": {
+      "ODE_Problems": "contains",
+      "Nonlinear_Systems": "generalizes"
+    },
+    "children": {},
+    "type": "problem",
+    "title": "Nonlinear ODE Problems"
+  },
+  "ODE_Initial_Value_Problems": {
+    "description": "",
+    "parents": {
+      "ODE_Problems": "contains"
+    },
+    "children": {
+      "Laplace_Transform": "solved_by"
+    },
+    "type": "problem",
+    "title": "ODE Initial Value Problems"
+  },
+  "ODE_Boundary_Value_Problems": {
+    "description": "",
+    "parents": {
+      "ODE_Problems": "contains"
+    },
+    "children": {
+      "Sturm_Liouville_Problem": "contains",
+      "Eigenvalue_BVP": "contains",
+      "Shooting_Method": "solved_by",
+      "Green_Function_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "ODE Boundary Value Problems"
+  },
+  "Separable_ODE": {
+    "description": "",
+    "parents": {
+      "First_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by"
+    },
+    "type": "problem",
+    "title": "Separable ODE"
+  },
+  "Linear_First_Order_ODE": {
+    "description": "",
+    "parents": {
+      "First_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Integrating_Factor": "solved_by"
+    },
+    "type": "problem",
+    "title": "Linear First Order ODE"
+  },
+  "Exact_ODE": {
+    "description": "",
+    "parents": {
+      "First_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Exact_Differential_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Exact ODE"
+  },
+  "Bernoulli_ODE": {
+    "description": "",
+    "parents": {
+      "First_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Substitution_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Bernoulli ODE"
+  },
+  "Autonomous_First_Order_ODE": {
+    "description": "",
+    "parents": {
+      "First_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Phase_Line_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Autonomous First Order ODE"
+  },
+  "Constant_Coefficient_ODE": {
+    "description": "",
+    "parents": {
+      "Second_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Characteristic_Equation_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Constant Coefficient ODE"
+  },
+  "Nonhomogeneous_ODE": {
+    "description": "",
+    "parents": {
+      "Second_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Undetermined_Coefficients": "solved_by",
+      "Variation_Of_Parameters": "solved_by"
+    },
+    "type": "problem",
+    "title": "Nonhomogeneous ODE"
+  },
+  "Cauchy_Euler_ODE": {
+    "description": "",
+    "parents": {
+      "Second_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Characteristic_Equation_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Cauchy Euler ODE"
+  },
+  "Series_Solution_ODE": {
+    "description": "",
+    "parents": {
+      "Second_Order_ODE_Problems": "contains"
+    },
+    "children": {
+      "Power_Series_Method": "solved_by",
+      "Frobenius_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Series Solution ODE"
+  },
+  "Sturm_Liouville_Problem": {
+    "description": "",
+    "parents": {
+      "ODE_Boundary_Value_Problems": "contains",
+      "Eigenfunction_Expansion": "depends_on"
+    },
+    "children": {
+      "Eigenfunction_Expansion": "solved_by"
+    },
+    "type": "problem",
+    "title": "Sturm Liouville Problem"
+  },
+  "Eigenvalue_BVP": {
+    "description": "",
+    "parents": {
+      "ODE_Boundary_Value_Problems": "contains"
+    },
+    "children": {
+      "Eigenfunction_Expansion": "solved_by"
+    },
+    "type": "problem",
+    "title": "Eigenvalue Boundary Value Problem"
+  },
+  "First_Order_PDE_Problems": {
+    "description": "",
+    "parents": {
+      "PDE_Problems": "contains"
+    },
+    "children": {
+      "Transport_Equation": "contains",
+      "Conservation_Law": "contains"
+    },
+    "type": "problem",
+    "title": "First Order PDE Problems"
+  },
+  "Second_Order_PDE_Problems": {
+    "description": "",
+    "parents": {
+      "PDE_Problems": "contains"
+    },
+    "children": {
+      "Laplace_Equation": "contains",
+      "Poisson_Equation": "contains",
+      "Heat_Equation": "contains",
+      "Wave_Equation": "contains"
+    },
+    "type": "problem",
+    "title": "Second Order PDE Problems"
+  },
+  "PDE_Initial_Value_Problems": {
+    "description": "",
+    "parents": {
+      "PDE_Problems": "contains",
+      "Heat_Equation": "specializes",
+      "Wave_Equation": "specializes"
+    },
+    "children": {},
+    "type": "problem",
+    "title": "PDE Initial Value Problems"
+  },
+  "PDE_Boundary_Value_Problems": {
+    "description": "",
+    "parents": {
+      "PDE_Problems": "contains",
+      "Laplace_Equation": "specializes",
+      "Poisson_Equation": "specializes"
+    },
+    "children": {
+      "Dirichlet_Problem": "contains",
+      "Neumann_Problem": "contains",
+      "Robin_Problem": "contains"
+    },
+    "type": "problem",
+    "title": "PDE Boundary Value Problems"
+  },
+  "Transport_Equation": {
+    "description": "",
+    "parents": {
+      "First_Order_PDE_Problems": "contains"
+    },
+    "children": {
+      "Method_Of_Characteristics": "solved_by"
+    },
+    "type": "problem",
+    "title": "Transport Equation"
+  },
+  "Conservation_Law": {
+    "description": "",
+    "parents": {
+      "First_Order_PDE_Problems": "contains"
+    },
+    "children": {
+      "Method_Of_Characteristics": "solved_by"
+    },
+    "type": "problem",
+    "title": "Conservation Law"
+  },
+  "Laplace_Equation": {
+    "description": "",
+    "parents": {
+      "Second_Order_PDE_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by",
+      "Green_Function_Method": "solved_by",
+      "PDE_Boundary_Value_Problems": "specializes"
+    },
+    "type": "problem",
+    "title": "Laplace Equation"
+  },
+  "Poisson_Equation": {
+    "description": "",
+    "parents": {
+      "Second_Order_PDE_Problems": "contains"
+    },
+    "children": {
+      "Green_Function_Method": "solved_by",
+      "Finite_Element_Method": "solved_by",
+      "PDE_Boundary_Value_Problems": "specializes"
+    },
+    "type": "problem",
+    "title": "Poisson Equation"
+  },
+  "Heat_Equation": {
+    "description": "",
+    "parents": {
+      "Second_Order_PDE_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by",
+      "Fourier_Transform": "solved_by",
+      "PDE_Initial_Value_Problems": "specializes"
+    },
+    "type": "problem",
+    "title": "Heat Equation"
+  },
+  "Wave_Equation": {
+    "description": "",
+    "parents": {
+      "Second_Order_PDE_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by",
+      "Fourier_Transform": "solved_by",
+      "PDE_Initial_Value_Problems": "specializes"
+    },
+    "type": "problem",
+    "title": "Wave Equation"
+  },
+  "Dirichlet_Problem": {
+    "description": "",
+    "parents": {
+      "PDE_Boundary_Value_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by"
+    },
+    "type": "problem",
+    "title": "Dirichlet Problem"
+  },
+  "Neumann_Problem": {
+    "description": "",
+    "parents": {
+      "PDE_Boundary_Value_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by"
+    },
+    "type": "problem",
+    "title": "Neumann Problem"
+  },
+  "Robin_Problem": {
+    "description": "",
+    "parents": {
+      "PDE_Boundary_Value_Problems": "contains"
+    },
+    "children": {
+      "Separation_Of_Variables": "solved_by"
+    },
+    "type": "problem",
+    "title": "Robin Problem"
+  },
+  "Linear_Systems": {
+    "description": "",
+    "parents": {
+      "Systems_Problems": "contains",
+      "Matrix_ODE_Systems": "specializes"
+    },
+    "children": {
+      "Eigenvalue_Methods": "solved_by",
+      "Laplace_Transform": "solved_by",
+      "Linear_ODE_Problems": "generalizes"
+    },
+    "type": "problem",
+    "title": "Linear Systems"
+  },
+  "Nonlinear_Systems": {
+    "description": "",
+    "parents": {
+      "Systems_Problems": "contains",
+      "Phase_Plane_Problems": "depends_on"
+    },
+    "children": {
+      "Linearization_Method": "evaluated_by",
+      "Nonlinear_ODE_Problems": "generalizes"
+    },
+    "type": "problem",
+    "title": "Nonlinear Systems"
+  },
+  "Autonomous_Systems": {
+    "description": "",
+    "parents": {
+      "Systems_Problems": "contains"
+    },
+    "children": {
+      "Phase_Plane_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Autonomous Systems"
+  },
+  "Matrix_ODE_Systems": {
+    "description": "",
+    "parents": {
+      "Systems_Problems": "contains"
+    },
+    "children": {
+      "Eigenvalue_Methods": "solved_by",
+      "Linear_Systems": "specializes"
+    },
+    "type": "problem",
+    "title": "Matrix ODE Systems"
+  },
+  "Direction_Field_Problems": {
+    "description": "",
+    "parents": {
+      "Qualitative_Problems": "contains"
+    },
+    "children": {
+      "Direction_Field_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Direction Field Problems"
+  },
+  "Phase_Line_Problems": {
+    "description": "",
+    "parents": {
+      "Qualitative_Problems": "contains"
+    },
+    "children": {
+      "Phase_Line_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Phase Line Problems"
+  },
+  "Phase_Plane_Problems": {
+    "description": "",
+    "parents": {
+      "Qualitative_Problems": "contains"
+    },
+    "children": {
+      "Phase_Plane_Method": "solved_by",
+      "Nonlinear_Systems": "depends_on"
+    },
+    "type": "problem",
+    "title": "Phase Plane Problems"
+  },
+  "Stability_Problems": {
+    "description": "",
+    "parents": {
+      "Qualitative_Problems": "contains"
+    },
+    "children": {
+      "Linearization_Method": "evaluated_by",
+      "Lyapunov_Method": "evaluated_by"
+    },
+    "type": "problem",
+    "title": "Stability Problems"
+  },
+  "Bifurcation_Problems": {
+    "description": "",
+    "parents": {
+      "Qualitative_Problems": "contains"
+    },
+    "children": {
+      "Phase_Plane_Method": "evaluated_by"
+    },
+    "type": "problem",
+    "title": "Bifurcation Problems"
+  },
+  "Numerical_ODE_Problems": {
+    "description": "",
+    "parents": {
+      "Numerical_Problems": "contains"
+    },
+    "children": {
+      "Initial_Value_Numerics": "contains",
+      "Boundary_Value_Numerics": "contains"
+    },
+    "type": "problem",
+    "title": "Numerical ODE Problems"
+  },
+  "Numerical_PDE_Problems": {
+    "description": "",
+    "parents": {
+      "Numerical_Problems": "contains"
+    },
+    "children": {
+      "Discretized_PDE_Problems": "contains"
+    },
+    "type": "problem",
+    "title": "Numerical PDE Problems"
+  },
+  "Error_And_Stability_Problems": {
+    "description": "",
+    "parents": {
+      "Numerical_Problems": "contains"
+    },
+    "children": {
+      "Local_Error": "contains",
+      "Global_Error": "contains",
+      "Numerical_Stability": "contains"
+    },
+    "type": "problem",
+    "title": "Error and Stability Problems"
+  },
+  "Initial_Value_Numerics": {
+    "description": "",
+    "parents": {
+      "Numerical_ODE_Problems": "contains"
+    },
+    "children": {
+      "Euler_Method": "solved_by",
+      "Runge_Kutta_Method": "solved_by",
+      "Multistep_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Initial Value Numerics"
+  },
+  "Boundary_Value_Numerics": {
+    "description": "",
+    "parents": {
+      "Numerical_ODE_Problems": "contains"
+    },
+    "children": {
+      "Shooting_Method": "solved_by",
+      "Finite_Difference_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Boundary Value Numerics"
+  },
+  "Discretized_PDE_Problems": {
+    "description": "",
+    "parents": {
+      "Numerical_PDE_Problems": "contains"
+    },
+    "children": {
+      "Finite_Difference_Method": "solved_by",
+      "Finite_Element_Method": "solved_by"
+    },
+    "type": "problem",
+    "title": "Discretized PDE Problems"
+  },
+  "Local_Error": {
+    "description": "",
+    "parents": {
+      "Error_And_Stability_Problems": "contains"
+    },
+    "children": {
+      "Euler_Method": "evaluated_by",
+      "Runge_Kutta_Method": "evaluated_by"
+    },
+    "type": "problem",
+    "title": "Local Error"
+  },
+  "Global_Error": {
+    "description": "",
+    "parents": {
+      "Error_And_Stability_Problems": "contains"
+    },
+    "children": {
+      "Numerical_Methods": "evaluated_by"
+    },
+    "type": "problem",
+    "title": "Global Error"
+  },
+  "Numerical_Stability": {
+    "description": "",
+    "parents": {
+      "Error_And_Stability_Problems": "contains"
+    },
+    "children": {
+      "Numerical_Methods": "evaluated_by"
+    },
+    "type": "problem",
+    "title": "Numerical Stability"
+  },
+  "Exact_Methods": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "related_to"
+    },
+    "children": {
+      "Separation_Of_Variables": "contains",
+      "Integrating_Factor": "contains",
+      "Exact_Differential_Method": "contains",
+      "Substitution_Method": "contains",
+      "Characteristic_Equation_Method": "contains",
+      "Undetermined_Coefficients": "contains",
+      "Variation_Of_Parameters": "contains",
+      "Green_Function_Method": "contains",
+      "Method_Of_Characteristics": "contains"
+    },
+    "type": "solution",
+    "title": "Exact Methods"
+  },
+  "Transform_Methods": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "related_to"
+    },
+    "children": {
+      "Laplace_Transform": "contains",
+      "Fourier_Transform": "contains"
+    },
+    "type": "solution",
+    "title": "Transform Methods"
+  },
+  "Series_Methods": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "related_to"
+    },
+    "children": {
+      "Power_Series_Method": "contains",
+      "Frobenius_Method": "contains",
+      "Fourier_Series": "contains",
+      "Eigenfunction_Expansion": "contains"
+    },
+    "type": "solution",
+    "title": "Series Methods"
+  },
+  "Qualitative_Methods": {
+    "description": "",
+    "parents": {
+      "Differential_Equations": "related_to"
+    },
+    "children": {
+      "Direction_Field_Method": "contains",
+      "Phase_Line_Method": "contains",
+      "Phase_Plane_Method": "contains",
+      "Linearization_Method": "contains",
+      "Lyapunov_Method": "contains"
+    },
+    "type": "solution",
+    "title": "Qualitative Methods"
+  },
+  "Numerical_Methods": {
+    "description": "",
+    "parents": {
+      "Global_Error": "evaluated_by",
+      "Numerical_Stability": "evaluated_by",
+      "Differential_Equations": "related_to"
+    },
+    "children": {
+      "Euler_Method": "contains",
+      "Runge_Kutta_Method": "contains",
+      "Multistep_Method": "contains",
+      "Shooting_Method": "contains",
+      "Finite_Difference_Method": "contains",
+      "Finite_Element_Method": "contains"
+    },
+    "type": "solution",
+    "title": "Numerical Methods"
+  },
+  "Separation_Of_Variables": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Separable_ODE": "solved_by",
+      "Laplace_Equation": "solved_by",
+      "Heat_Equation": "solved_by",
+      "Wave_Equation": "solved_by",
+      "Dirichlet_Problem": "solved_by",
+      "Neumann_Problem": "solved_by",
+      "Robin_Problem": "solved_by"
+    },
+    "children": {
+      "Fourier_Series": "depends_on",
+      "Eigenfunction_Expansion": "depends_on"
+    },
+    "type": "solution",
+    "title": "Separation of Variables"
+  },
+  "Integrating_Factor": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Linear_First_Order_ODE": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Integrating Factor"
+  },
+  "Exact_Differential_Method": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Exact_ODE": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Exact Differential Method"
+  },
+  "Substitution_Method": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Bernoulli_ODE": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Substitution Method"
+  },
+  "Characteristic_Equation_Method": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Constant_Coefficient_ODE": "solved_by",
+      "Cauchy_Euler_ODE": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Characteristic Equation Method"
+  },
+  "Undetermined_Coefficients": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Nonhomogeneous_ODE": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Undetermined Coefficients"
+  },
+  "Variation_Of_Parameters": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Nonhomogeneous_ODE": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Variation of Parameters"
+  },
+  "Green_Function_Method": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "ODE_Boundary_Value_Problems": "solved_by",
+      "Laplace_Equation": "solved_by",
+      "Poisson_Equation": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Green Function Method"
+  },
+  "Method_Of_Characteristics": {
+    "description": "",
+    "parents": {
+      "Exact_Methods": "contains",
+      "Transport_Equation": "solved_by",
+      "Conservation_Law": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Method of Characteristics"
+  },
+  "Laplace_Transform": {
+    "description": "",
+    "parents": {
+      "Transform_Methods": "contains",
+      "ODE_Initial_Value_Problems": "solved_by",
+      "Linear_Systems": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Laplace Transform"
+  },
+  "Fourier_Transform": {
+    "description": "",
+    "parents": {
+      "Transform_Methods": "contains",
+      "Heat_Equation": "solved_by",
+      "Wave_Equation": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Fourier Transform"
+  },
+  "Power_Series_Method": {
+    "description": "",
+    "parents": {
+      "Series_Methods": "contains",
+      "Series_Solution_ODE": "solved_by",
+      "Frobenius_Method": "depends_on"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Power Series Method"
+  },
+  "Frobenius_Method": {
+    "description": "",
+    "parents": {
+      "Series_Methods": "contains",
+      "Series_Solution_ODE": "solved_by"
+    },
+    "children": {
+      "Power_Series_Method": "depends_on"
+    },
+    "type": "solution",
+    "title": "Frobenius Method"
+  },
+  "Fourier_Series": {
+    "description": "",
+    "parents": {
+      "Series_Methods": "contains",
+      "Separation_Of_Variables": "depends_on"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Fourier Series"
+  },
+  "Eigenfunction_Expansion": {
+    "description": "",
+    "parents": {
+      "Series_Methods": "contains",
+      "Sturm_Liouville_Problem": "solved_by",
+      "Eigenvalue_BVP": "solved_by",
+      "Separation_Of_Variables": "depends_on"
+    },
+    "children": {
+      "Sturm_Liouville_Problem": "depends_on"
+    },
+    "type": "solution",
+    "title": "Eigenfunction Expansion"
+  },
+  "Direction_Field_Method": {
+    "description": "",
+    "parents": {
+      "Qualitative_Methods": "contains",
+      "Direction_Field_Problems": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Direction Field Method"
+  },
+  "Phase_Line_Method": {
+    "description": "",
+    "parents": {
+      "Qualitative_Methods": "contains",
+      "Autonomous_First_Order_ODE": "solved_by",
+      "Phase_Line_Problems": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Phase Line Method"
+  },
+  "Phase_Plane_Method": {
+    "description": "",
+    "parents": {
+      "Qualitative_Methods": "contains",
+      "Autonomous_Systems": "solved_by",
+      "Phase_Plane_Problems": "solved_by",
+      "Bifurcation_Problems": "evaluated_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Phase Plane Method"
+  },
+  "Linearization_Method": {
+    "description": "",
+    "parents": {
+      "Qualitative_Methods": "contains",
+      "Nonlinear_Systems": "evaluated_by",
+      "Stability_Problems": "evaluated_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Linearization Method"
+  },
+  "Lyapunov_Method": {
+    "description": "",
+    "parents": {
+      "Qualitative_Methods": "contains",
+      "Stability_Problems": "evaluated_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Lyapunov Method"
+  },
+  "Euler_Method": {
+    "description": "",
+    "parents": {
+      "Numerical_Methods": "contains",
+      "Initial_Value_Numerics": "solved_by",
+      "Local_Error": "evaluated_by",
+      "Runge_Kutta_Method": "generalizes"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Euler Method"
+  },
+  "Runge_Kutta_Method": {
+    "description": "",
+    "parents": {
+      "Numerical_Methods": "contains",
+      "Initial_Value_Numerics": "solved_by",
+      "Local_Error": "evaluated_by",
+      "Multistep_Method": "contrasts_with"
+    },
+    "children": {
+      "Euler_Method": "generalizes"
+    },
+    "type": "solution",
+    "title": "Runge Kutta Method"
+  },
+  "Multistep_Method": {
+    "description": "",
+    "parents": {
+      "Numerical_Methods": "contains",
+      "Initial_Value_Numerics": "solved_by"
+    },
+    "children": {
+      "Runge_Kutta_Method": "contrasts_with"
+    },
+    "type": "solution",
+    "title": "Multistep Method"
+  },
+  "Shooting_Method": {
+    "description": "",
+    "parents": {
+      "Numerical_Methods": "contains",
+      "ODE_Boundary_Value_Problems": "solved_by",
+      "Boundary_Value_Numerics": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Shooting Method"
+  },
+  "Finite_Difference_Method": {
+    "description": "",
+    "parents": {
+      "Numerical_Methods": "contains",
+      "Boundary_Value_Numerics": "solved_by",
+      "Discretized_PDE_Problems": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Finite Difference Method"
+  },
+  "Finite_Element_Method": {
+    "description": "",
+    "parents": {
+      "Numerical_Methods": "contains",
+      "Poisson_Equation": "solved_by",
+      "Discretized_PDE_Problems": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "title": "Finite Element Method"
+  }
+}
