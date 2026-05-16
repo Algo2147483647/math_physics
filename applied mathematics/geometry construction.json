@@ -1,20 +1,20 @@
 {
   "Geometry Construction": {
     "type": "problem",
-    "define": "Geometry construction is the problem of producing explicit geometric objects from constraints, samples, fields, parameters, or procedural rules. Typical outputs include smooth curves, polygonal regions, triangle meshes, deformed shapes, and noise-driven geometric detail. A construction problem usually specifies an input representation, geometric constraints, and an output representation usable by rendering, simulation, modeling, or analysis systems. Main subproblems include smooth curve construction, geometry triangulation, deformation, and noise generation.",
+    "define": "Geometric construction is designed to solve the problem of **building usable geometric objects from mathematical descriptions, samples, and editing operations**.\n\n- How is a curve, surface, mesh, or solid represented?\n- How is a shape generated from equations, primitives, or control points?\n- How is continuous geometry converted into samples, polygons, voxels, or meshes?\n- How is geometry edited, deformed, repaired, or enriched with detail?\n\nTypical inputs include:\n\n- analytic equations\n- curves and surfaces\n- point clouds\n- scalar fields\n- polygonal boundaries\n- images and height fields\n- control points and deformation handles\n\nTypical outputs include:\n\n- point sets\n- polylines\n- triangle meshes\n- tetrahedral meshes\n- implicit fields\n- parametric surfaces\n- solid models\n\n## Core Idea\n\nGeometric construction is mostly a problem of choosing the right representation and converting between representations safely.\n\nDifferent operations are simple in different forms:\n\n- implicit fields are good for inside-outside tests and contour extraction\n- parametric curves are good for smooth evaluation and design control\n- meshes are good for rendering, simulation, and fabrication\n- point clouds are good for scanned or sampled data\n- voxels are good for volumetric processing\n- boundary representations are good for CAD solids\n\nThe practical essence of geometric construction is:\n\n1. **Choose a representation that matches the operation**\n2. **Generate or transform geometry in that representation**\n3. **Discretize continuous objects when computation requires finite data**\n4. **Validate topology and numerical robustness**\n5. **Convert to the representation needed by the next stage**\n\n\n## Representation\n\nDifferent algorithms become natural under different geometric representations.\n\n| Representation | Form | Good for | Common operations |\n| :--- | :--- | :--- | :--- |\n| Explicit graph | $z=f(x,y)$ | height fields, terrain | sampling, interpolation, displacement |\n| Implicit equation | $f(x)=0$ | closed curves and surfaces | inside-outside test, boolean operations, contouring |\n| Signed distance field | $\\phi(x)$ | robust solids, level sets | offset, blending, collision, ray marching |\n| Parametric curve | $\\gamma(t)$ | curves, trajectories | evaluation, subdivision, arc-length sampling |\n| Parametric surface | $x(u,v)$ | smooth surfaces | tessellation, texture coordinates, differential geometry |\n| Point cloud | $\\{p_i\\}_{i=1}^n$ | scanned or sampled geometry | reconstruction, normal estimation, registration |\n| Polygon or mesh | $(V,E,F)$ | rendering, simulation, fabrication | triangulation, smoothing, simplification, remeshing |\n| Voxel grid | $V[i,j,k]$ | volumetric data | morphology, marching cubes, flood fill |\n| Boundary representation | faces, edges, vertices with topology | CAD solids | trimming, sewing, boolean operations |\n| Constructive solid geometry | expression tree of primitives and booleans | procedural solids | union, intersection, difference |\n",
     "parents": {},
     "children": {
-      "Smooth Curve Construction": "subtype_of",
-      "Geometry Triangulation": "subtype_of",
       "Deformation": "subtype_of",
-      "Noise Generation": "subtype_of"
+      "Noise Generation": "subtype_of",
+      "Point Set Sampling": "related_to",
+      "Smooth Geometric Shape Construction": "related_to"
     }
   },
   "Smooth Curve Construction": {
     "type": "problem",
     "define": "Smooth curve construction is the problem of building a continuous curve from a finite description such as control points, interpolation constraints, tangent constraints, or sampled data. A useful curve representation should support predictable shape control, endpoint and tangent constraints, efficient evaluation, subdivision, segment continuity, and conversion to renderable polylines or mesh boundaries. Bézier curves are a basic solution because they combine intuitive control points with a simple polynomial basis.",
     "parents": {
-      "Geometry Construction": "subtype_of"
+      "Smooth Geometric Shape Construction": "related_to"
     },
     "children": {
       "Bézier Curve": "solved_by",
@@ -27,7 +27,9 @@
     "parents": {
       "Smooth Curve Construction": "solved_by"
     },
-    "children": {},
+    "children": {
+      "Bezier Surface": "related_to"
+    },
     "boundaries": "### Global Control\n\nMoving one control point can affect the entire curve. This is useful for broad shape design, but poor for local editing.\n\nB-splines and NURBS are often preferred when local control is important.\n\n### High Degree Is Expensive\n\nHigh-degree Bézier curves can be difficult to evaluate and may oscillate. Piecewise cubic curves are usually more stable.\n\n### No Exact General Offset\n\nThe offset of a Bézier curve is usually not another Bézier curve of the same degree. Offset curves often require approximation.\n\n### Parameter Is Not Arc Length\n\nUniform values of $t$ do not usually produce uniformly spaced points along the curve.\n\nIf equal arc-length spacing is needed, the curve must be reparameterized or sampled adaptively.",
     "cast": "The main cost of a Bézier curve lies in the trade-off between **simple control-point modeling** and **limited local control**.\n\n### Time Cost\n\n- Direct Bernstein evaluation of degree $n$: **O(n)**\n- de Casteljau evaluation of degree $n$: **O(n²)**\n- Subdivision at one parameter value: **O(n²)**\n- Sampling $m$ points directly: **O(mn)** or **O(mn²)**, depending on the evaluation method\n\n### Space Cost\n\nA degree-$n$ Bézier curve stores:\n$$\nO(n)\n$$\n\ncontrol points.\n\n### Engineering Cost\n\nIn real systems, implementing Bézier curves requires careful decisions about:\n\n- numerical stability\n- adaptive sampling tolerance\n- continuity between segments\n- arc-length parameterization\n- conversion to and from spline or polyline representations\n\nAlthough the formula is compact, robust curve modeling usually depends on sampling, subdivision, and continuity management."
   },
@@ -35,7 +37,7 @@
     "type": "problem",
     "define": "Geometry triangulation is the process of decomposing a geometric shape into a collection of triangular faces. In this process, a complex polygon, surface, or geometric model is converted into a set of triangles while preserving its original shape and structure as much as possible.\n\nThe main purpose of triangulation is to represent geometry in a simpler and more standardized form. Since triangles are the simplest polygonal faces and are always planar. After triangulation, the original geometry can be processed more easily by rendering engines, simulation systems, or mesh algorithms. they are widely used in computer graphics, computational geometry, mesh generation, physics simulation, and 3D rendering.\n\n\n**Input:**\nA geometric shape, polygon, surface, or mesh.\n\n**Output:**\nA set of triangular faces representing the original geometry.\n\n**Example Description:**\n\nA quadrilateral face can be split into two triangular faces. Similarly, a complex polygon with many vertices can be divided into multiple triangles. \n\n\n",
     "parents": {
-      "Geometry Construction": "subtype_of"
+      "Smooth Surface Construction": "related_to"
     },
     "children": {
       "Ear Clipping": "solved_by",
@@ -102,7 +104,8 @@
       "Smooth Curve Construction": "solved_by"
     },
     "children": {
-      "NURBS Curve": "related_to"
+      "NURBS Curve": "related_to",
+      "B-Spline Surface": "related_to"
     },
     "type": "solution",
     "boundaries": "B-splines do not generally interpolate their internal control points. Their parameter is not arc length. Poor knot placement can produce uneven speed or clustered detail. Exact circular arcs and general conics cannot be represented exactly without rational weights.",
@@ -113,7 +116,9 @@
     "parents": {
       "B-Spline Curve": "related_to"
     },
-    "children": {},
+    "children": {
+      "NURBS Surface": "related_to"
+    },
     "type": "solution",
     "boundaries": "NURBS curves are more expressive than polynomial B-splines but also harder to edit intuitively because weights interact with shape. Degenerate or very large weights can cause numerical instability. Like B-splines, NURBS parameters are not arc length and require reparameterization or adaptive sampling for uniform spacing.",
     "cost": "Evaluation has the same asymptotic basis cost as B-splines, plus weighted homogeneous normalization. A degree-p curve can be evaluated in O(p^2) per parameter value with de Boor-style evaluation. Robust CAD implementation requires careful knot insertion, trimming, tolerance management, and conversion between rational and homogeneous coordinates."
@@ -148,7 +153,8 @@
     },
     "children": {
       "Free-Form Deformation": "solved_by",
-      "Skeletal Deformation": "solved_by"
+      "Skeletal Deformation": "solved_by",
+      "As-Rigid-As-Possible Deformation": "solved_by"
     },
     "type": "problem",
     "boundaries": "Large rotations, foldovers, self-intersections, and nonmanifold input can make deformation difficult. Linear methods are fast but may lose local rigidity. Nonlinear methods are more faithful but require iterative solvers and convergence control.",
@@ -193,5 +199,121 @@
     "type": "solution",
     "boundaries": "Naive nearest-feature search is expensive. Grid hashing is usually required. The basic distance field has discontinuities at cell boundaries when returning nearest cell identity, while distance values may have nondifferentiable ridges. Feature distribution, distance metric, and jitter strongly affect visual quality.",
     "cost": "With spatial hashing, evaluation usually checks the current grid cell and neighboring cells, giving expected constant time per sample for fixed dimension and density. Storage can be implicit through hashing. Engineering cost is dominated by deterministic feature generation, neighbor bounds, distance metric selection, and antialiasing."
+  },
+  "Point Set Sampling": {
+    "type": "problem",
+    "define": "Point set sampling is the process of selecting or generating a set of points from a geometric object, surface, domain, or dataset. The goal is to represent the original shape or space using discrete points.\n\nFor example, in computer graphics or geometry processing, a 3D surface can be sampled into many points. These points can then be used for reconstruction, rendering, simulation, triangulation, or point cloud processing.",
+    "parents": {
+      "Geometry Construction": "related_to"
+    },
+    "children": {
+      "Uniform Point Set Sampling On Manifolds": "related_to"
+    }
+  },
+  "Uniform Point Set Sampling On Manifolds": {
+    "type": "problem",
+    "define": "Uniform sampling on manifolds is designed to solve the problem of **generating points whose probability follows intrinsic geometric volume**.\n\n- How can points be sampled evenly on a curve, surface, or higher-dimensional manifold?\n- Why is uniform sampling in parameter space often not uniform on the shape?\n- How can deterministic point sets cover a manifold evenly?\n\nFor a manifold $M$, uniform sampling means that for any measurable subset $A \\subset M$:\n$$\nP(A) \\propto \\operatorname{Vol}_M(A)\n$$\n\nwhere $\\operatorname{Vol}_M(A)$ is measured using the intrinsic geometry of $M$.\n\n## Core Idea\n\nUniformity should be measured on the manifold, not necessarily in the parameter domain.\n\nIf a parameterization stretches one region more than another, equal parameter-space area produces unequal manifold area.\n\nThe practical essence of manifold sampling is:\n\n1. **Understand the geometric volume element**\n2. **Correct for parameterization distortion**\n3. **Use random or deterministic samples with the desired density**\n\n## Solution\n\n### Sampling Via Parameterization\n\nLet:\n$$\n\\gamma : \\Omega \\subset \\mathbb{R}^n \\to M \\subset \\mathbb{R}^m\n$$\n\nbe a parameterization of the manifold.\n\nThe Jacobian matrix is:\n$$\nJ_\\gamma =\n\\frac{\\partial \\gamma}{\\partial x}\n$$\n\nThe local metric tensor is:\n$$\nG = J_\\gamma^T J_\\gamma\n$$\n\nThe intrinsic volume element is:\n$$\ndV_M = \\sqrt{\\det(J_\\gamma^T J_\\gamma)}\\,d\\boldsymbol{x}\n$$\n\nTherefore, a parameter point $\\boldsymbol{x} \\in \\Omega$ should be sampled with density:\n$$\nf_{\\boldsymbol{X}}(\\boldsymbol{x})\n=\n\\frac{\\sqrt{\\det(J_\\gamma^T J_\\gamma)}}{\n\\int_\\Omega \\sqrt{\\det(J_\\gamma^T J_\\gamma)}\\,d\\boldsymbol{x}}\n$$\n\n### Change Of Variables\n\nFor an invertible map $g : x \\to y$, densities transform according to:\n$$\nf_Y(y) =\n\\frac{1}{|\\det J_g|}\nf_X(g^{-1}(y))\n$$\n\nThis explains why a nonlinear parameterization changes density unless the Jacobian factor is considered.\n\n### Rejection Sampling\n\nIf the density is known but hard to sample directly:\n\n1. Sample a candidate point in parameter space.\n2. Compute the local area or volume factor.\n3. Accept the point with probability proportional to that factor.\n4. Map accepted points through $\\gamma$.\n\nThis is simple but may be inefficient when the density varies strongly.\n\n### Uniform Sampling On A Sphere\n\nFor a sphere of radius $r$, sample:\n$$\n\\xi_1, \\xi_2 \\sim \\operatorname{Uniform}[0,1]\n$$\n\nThen:\n$$\n\\theta = \\arccos(1 - 2\\xi_1)\n$$\n\n$$\n\\varphi = 2\\pi\\xi_2\n$$\n\nand:\n$$\n\\begin{align*}\nx &= r\\sin\\theta\\cos\\varphi \\\\\ny &= r\\sin\\theta\\sin\\varphi \\\\\nz &= r\\cos\\theta\n\\end{align*}\n$$\n\nThis avoids clustering near the poles.\n\n<img src=\"./assets/v2-ffb3519e0f18feacbd046cd7ce59696c_720w.webp\" alt=\"Uniform sphere sampling\" style=\"zoom:25%;\" />\n\n### Fibonacci Lattice\n\nRandom sampling is not the only option. Deterministic low-discrepancy sequences can distribute points evenly with less clumping.\n\nFor $i = 0,1,\\dots,N-1$:\n$$\nz_i = 1 - \\frac{2i+1}{N}\n$$\n\n$$\n\\theta_i = 2\\pi \\frac{i}{\\phi}\n$$\n\nwhere:\n$$\n\\phi = \\frac{1+\\sqrt{5}}{2}\n$$\n\nThen:\n$$\n\\begin{align*}\nx_i &= \\sqrt{1-z_i^2}\\cos\\theta_i \\\\\ny_i &= \\sqrt{1-z_i^2}\\sin\\theta_i \\\\\nz_i &= z_i\n\\end{align*}\n$$\n\n<img src=\"./assets/image-20240120160803978.png\" alt=\"Fibonacci lattice sampling\" style=\"zoom:33%;\" />\n\n##  Boundaries\n\n### Parameter Uniformity Is Often Wrong\n\nSampling $u,v$ uniformly on a parameter domain is only uniform on the surface when the parameterization has constant area distortion.\n\nMost parameterizations do not satisfy this.\n\n### Rejection Sampling Can Waste Work\n\nIf the maximum density is much larger than the average density, many candidates may be rejected.\n\n### Boundaries And Singularities Need Care\n\nPoles, seams, chart boundaries, and non-injective parameterizations can cause clustering or missing regions.\n\n### Mesh Sampling Is Different\n\nFor triangle meshes, uniform surface sampling usually means:\n\n1. Select a triangle with probability proportional to its area.\n2. Sample barycentric coordinates uniformly inside that triangle.\n\nThis avoids oversampling small triangles.\n\n## Cost\n\nThe main cost of uniform manifold sampling lies in the trade-off between **geometric correctness** and **sampling simplicity**.\n\n### Time Cost\n\n- Direct parameter sampling: **O(1)** per point\n- Density-corrected rejection sampling: expected cost depends on acceptance rate\n- Mesh area preprocessing: **O(F)** for $F$ faces\n- Mesh sampling after preprocessing: **O(log F)** or **O(1)** per point depending on the sampler\n- Fibonacci sphere sampling: **O(1)** per point\n\n### Space Cost\n\nFor analytic parameterizations, storage can be **O(1)**.\n\nFor mesh sampling, storing cumulative triangle areas costs:\n$$\nO(F)\n$$\n\n### Engineering Cost\n\nIn real systems, implementing uniform sampling requires careful decisions about:\n\n- parameterization distortion\n- random versus deterministic samples\n- boundary handling\n- chart stitching\n- mesh triangle area weighting\n- reproducibility through random seeds\n\nSo uniform sampling is less about making random numbers and more about matching the correct geometric measure.\n",
+    "parents": {
+      "Point Set Sampling": "related_to"
+    },
+    "children": {}
+  },
+  "Bezier Surface": {
+    "define": "A Bezier surface is a tensor-product polynomial surface controlled by a rectangular grid of control points. For degrees m and n, control points P_{ij}, and parameters u,v in [0,1], the surface is S(u,v)=sum_{i=0}^m sum_{j=0}^n B_{i,m}(u) B_{j,n}(v) P_{ij}, where B_{i,m} and B_{j,n} are Bernstein basis functions. The surface lies inside the convex hull of its control net, interpolates the four corner control points, and supports stable evaluation by repeated de Casteljau interpolation in two parameter directions. Bezier surfaces are fundamental for free-form modeling, patch-based CAD, animation surfaces, and conversion between higher-level spline representations and renderable meshes.",
+    "parents": {
+      "Smooth Surface Construction": "related_to",
+      "Bézier Curve": "related_to"
+    },
+    "children": {},
+    "type": "solution",
+    "boundaries": "A single high-degree Bezier surface has global control and can be hard to edit locally. Large models require many patches with continuity constraints across patch boundaries. Exact trimming, intersection, offsetting, and parameter-space singularities require additional machinery.",
+    "cost": "Direct evaluation of an m by n Bezier surface costs O(mn). Tensor-product de Casteljau evaluation costs O(m^2+n^2) when applied separably. Storage is O(mn) control points. Engineering cost is dominated by patch stitching, adaptive tessellation, normal evaluation, and continuity management."
+  },
+  "B-Spline Surface": {
+    "define": "A B-spline surface is a tensor-product piecewise polynomial surface controlled by a grid of control points and two knot vectors. For degrees p and q, basis functions N_{i,p}(u), M_{j,q}(v), and control points P_{ij}, the surface is S(u,v)=sum_i sum_j N_{i,p}(u) M_{j,q}(v) P_{ij}. Compared with Bezier surfaces, B-spline surfaces provide local control: moving one control point affects only the knot spans where its basis functions are nonzero. Knot multiplicity controls continuity, enabling smooth regions, creases, and patch boundaries in a unified representation.",
+    "parents": {
+      "B-Spline Curve": "related_to",
+      "Smooth Surface Construction": "related_to"
+    },
+    "children": {},
+    "type": "solution",
+    "boundaries": "B-spline surfaces generally do not interpolate internal control points. Tensor-product topology is naturally rectangular, so extraordinary vertices, arbitrary holes, and complex trimming require additional representation. Parameterization quality strongly affects distortion and sampling density.",
+    "cost": "Evaluation by separable de Boor algorithms is local in the active knot spans and depends mainly on degrees p and q, not on the total number of control points. Storage is O(nm+p+q) for the control grid and two knot vectors. Engineering cost includes knot conventions, trimming, tessellation, normal evaluation, and conversion to polygon meshes."
+  },
+  "NURBS Surface": {
+    "define": "A NURBS surface is a non-uniform rational B-spline surface. It extends a B-spline surface by attaching a weight w_{ij} to each control point. The surface is S(u,v)=sum_i sum_j N_{i,p}(u) M_{j,q}(v) w_{ij} P_{ij} / sum_i sum_j N_{i,p}(u) M_{j,q}(v) w_{ij}. Rational weights allow exact representation of conic sections, cylinders, spheres, tori patches, and free-form CAD surfaces in a single framework. NURBS surfaces are the standard representation for much of industrial CAD and geometric modeling.",
+    "parents": {
+      "NURBS Curve": "related_to",
+      "Smooth Surface Construction": "related_to"
+    },
+    "children": {},
+    "type": "solution",
+    "boundaries": "NURBS surfaces are powerful but complex. Weights can be unintuitive, trimming curves add topological complexity, and exact intersection or offset computation is difficult. Tensor-product parameterization can be awkward for arbitrary topology.",
+    "cost": "Evaluation has the local cost of B-spline basis evaluation plus rational homogeneous normalization. Storage includes control points, weights, and two knot vectors. Engineering cost is high because robust CAD systems require trimming, tolerance management, knot insertion, degree elevation, surface-surface intersection, and reliable tessellation."
+  },
+  "Subdivision Surface": {
+    "define": "A subdivision surface defines a smooth limit surface by repeatedly refining a polygonal control mesh. Each subdivision step inserts new vertices and updates old vertices using local averaging masks. After infinitely many refinements, the mesh converges to a continuous surface. Subdivision surfaces are especially useful for arbitrary topology because the input control mesh does not need to be a rectangular tensor-product grid. They bridge polygon modeling and smooth surface modeling, making them central in character modeling, animation, and geometric design.",
+    "parents": {
+      "Smooth Surface Construction": "related_to"
+    },
+    "children": {},
+    "type": "solution",
+    "boundaries": "Subdivision surfaces require special handling near boundaries, creases, corners, and extraordinary vertices. The exact limit surface can be difficult to evaluate directly. Different schemes are designed for different input mesh types, such as triangle meshes or quad meshes.",
+    "cost": "Each uniform subdivision step increases mesh size by a constant factor, so repeated global refinement can become expensive. Practical systems use adaptive refinement, limit evaluation, and GPU tessellation. Engineering cost is dominated by topology handling, crease rules, boundary rules, and normal evaluation."
+  },
+  "Smooth Surface Construction": {
+    "type": "problem",
+    "define": "Smooth curve construction is the problem of building a continuous curve from a finite description such as control points, interpolation constraints, tangent constraints, or sampled data. A useful curve representation should support predictable shape control, endpoint and tangent constraints, efficient evaluation, subdivision, segment continuity, and conversion to renderable polylines or mesh boundaries. Bézier curves are a basic solution because they combine intuitive control points with a simple polynomial basis.",
+    "parents": {
+      "Smooth Geometric Shape Construction": "related_to"
+    },
+    "children": {
+      "Subdivision Surface": "related_to",
+      "B-Spline Surface": "related_to",
+      "NURBS Surface": "related_to",
+      "Bezier Surface": "related_to",
+      "Geometry Triangulation": "related_to",
+      "Quad Mesh Generation": "related_to"
+    }
+  },
+  "Quad Mesh Generation": {
+    "define": "Quad mesh generation is the problem of constructing a mesh whose faces are primarily quadrilaterals. Quad meshes are important for subdivision surfaces, animation deformation, texture parameterization, CAD modeling, and finite element methods where directional structure matters. A good quad mesh aligns with geometric features, has low distortion, avoids unnecessary extraordinary vertices, and distributes singularities according to the shape's topology and curvature.",
+    "parents": {
+      "Smooth Surface Construction": "related_to"
+    },
+    "children": {},
+    "type": "problem",
+    "boundaries": "Pure all-quad meshing is constrained by topology and may require singularities. Feature alignment, boundary conditions, and anisotropic sizing can conflict. Automatic quad meshing is substantially harder than triangle meshing and often requires field design, parameterization, or post-processing.",
+    "cost": "Costs vary widely by method. Common pipelines compute orientation fields, parameterization, tracing, and remeshing, often involving sparse linear solves and nonlinear optimization. Engineering cost is high because robust quad meshing requires topology control, singularity placement, feature preservation, and cleanup."
+  },
+  "Smooth Solid Construction": {
+    "type": "problem",
+    "define": "Geometric construction is designed to solve the problem of **building usable geometric objects from mathematical descriptions, samples, and editing operations**.\n\n- How is a curve, surface, mesh, or solid represented?\n- How is a shape generated from equations, primitives, or control points?\n- How is continuous geometry converted into samples, polygons, voxels, or meshes?\n- How is geometry edited, deformed, repaired, or enriched with detail?\n\nTypical inputs include:\n\n- analytic equations\n- curves and surfaces\n- point clouds\n- scalar fields\n- polygonal boundaries\n- images and height fields\n- control points and deformation handles\n\nTypical outputs include:\n\n- point sets\n- polylines\n- triangle meshes\n- tetrahedral meshes\n- implicit fields\n- parametric surfaces\n- solid models\n\n## Core Idea\n\nGeometric construction is mostly a problem of choosing the right representation and converting between representations safely.\n\nDifferent operations are simple in different forms:\n\n- implicit fields are good for inside-outside tests and contour extraction\n- parametric curves are good for smooth evaluation and design control\n- meshes are good for rendering, simulation, and fabrication\n- point clouds are good for scanned or sampled data\n- voxels are good for volumetric processing\n- boundary representations are good for CAD solids\n\nThe practical essence of geometric construction is:\n\n1. **Choose a representation that matches the operation**\n2. **Generate or transform geometry in that representation**\n3. **Discretize continuous objects when computation requires finite data**\n4. **Validate topology and numerical robustness**\n5. **Convert to the representation needed by the next stage**\n\n\n## Representation\n\nDifferent algorithms become natural under different geometric representations.\n\n| Representation | Form | Good for | Common operations |\n| :--- | :--- | :--- | :--- |\n| Explicit graph | $z=f(x,y)$ | height fields, terrain | sampling, interpolation, displacement |\n| Implicit equation | $f(x)=0$ | closed curves and surfaces | inside-outside test, boolean operations, contouring |\n| Signed distance field | $\\phi(x)$ | robust solids, level sets | offset, blending, collision, ray marching |\n| Parametric curve | $\\gamma(t)$ | curves, trajectories | evaluation, subdivision, arc-length sampling |\n| Parametric surface | $x(u,v)$ | smooth surfaces | tessellation, texture coordinates, differential geometry |\n| Point cloud | $\\{p_i\\}_{i=1}^n$ | scanned or sampled geometry | reconstruction, normal estimation, registration |\n| Polygon or mesh | $(V,E,F)$ | rendering, simulation, fabrication | triangulation, smoothing, simplification, remeshing |\n| Voxel grid | $V[i,j,k]$ | volumetric data | morphology, marching cubes, flood fill |\n| Boundary representation | faces, edges, vertices with topology | CAD solids | trimming, sewing, boolean operations |\n| Constructive solid geometry | expression tree of primitives and booleans | procedural solids | union, intersection, difference |\n",
+    "parents": {
+      "Smooth Geometric Shape Construction": "related_to"
+    },
+    "children": {}
+  },
+  "Smooth Geometric Shape Construction": {
+    "type": "problem",
+    "define": "Geometric construction is designed to solve the problem of **building usable geometric objects from mathematical descriptions, samples, and editing operations**.\n\n- How is a curve, surface, mesh, or solid represented?\n- How is a shape generated from equations, primitives, or control points?\n- How is continuous geometry converted into samples, polygons, voxels, or meshes?\n- How is geometry edited, deformed, repaired, or enriched with detail?\n\nTypical inputs include:\n\n- analytic equations\n- curves and surfaces\n- point clouds\n- scalar fields\n- polygonal boundaries\n- images and height fields\n- control points and deformation handles\n\nTypical outputs include:\n\n- point sets\n- polylines\n- triangle meshes\n- tetrahedral meshes\n- implicit fields\n- parametric surfaces\n- solid models\n\n## Core Idea\n\nGeometric construction is mostly a problem of choosing the right representation and converting between representations safely.\n\nDifferent operations are simple in different forms:\n\n- implicit fields are good for inside-outside tests and contour extraction\n- parametric curves are good for smooth evaluation and design control\n- meshes are good for rendering, simulation, and fabrication\n- point clouds are good for scanned or sampled data\n- voxels are good for volumetric processing\n- boundary representations are good for CAD solids\n\nThe practical essence of geometric construction is:\n\n1. **Choose a representation that matches the operation**\n2. **Generate or transform geometry in that representation**\n3. **Discretize continuous objects when computation requires finite data**\n4. **Validate topology and numerical robustness**\n5. **Convert to the representation needed by the next stage**\n\n\n## Representation\n\nDifferent algorithms become natural under different geometric representations.\n\n| Representation | Form | Good for | Common operations |\n| :--- | :--- | :--- | :--- |\n| Explicit graph | $z=f(x,y)$ | height fields, terrain | sampling, interpolation, displacement |\n| Implicit equation | $f(x)=0$ | closed curves and surfaces | inside-outside test, boolean operations, contouring |\n| Signed distance field | $\\phi(x)$ | robust solids, level sets | offset, blending, collision, ray marching |\n| Parametric curve | $\\gamma(t)$ | curves, trajectories | evaluation, subdivision, arc-length sampling |\n| Parametric surface | $x(u,v)$ | smooth surfaces | tessellation, texture coordinates, differential geometry |\n| Point cloud | $\\{p_i\\}_{i=1}^n$ | scanned or sampled geometry | reconstruction, normal estimation, registration |\n| Polygon or mesh | $(V,E,F)$ | rendering, simulation, fabrication | triangulation, smoothing, simplification, remeshing |\n| Voxel grid | $V[i,j,k]$ | volumetric data | morphology, marching cubes, flood fill |\n| Boundary representation | faces, edges, vertices with topology | CAD solids | trimming, sewing, boolean operations |\n| Constructive solid geometry | expression tree of primitives and booleans | procedural solids | union, intersection, difference |\n",
+    "parents": {
+      "Geometry Construction": "related_to"
+    },
+    "children": {
+      "Smooth Solid Construction": "related_to",
+      "Smooth Surface Construction": "related_to",
+      "Smooth Curve Construction": "related_to"
+    }
+  },
+  "As-Rigid-As-Possible Deformation": {
+    "define": "As-rigid-as-possible deformation, usually abbreviated ARAP, deforms a mesh by minimizing local deviation from rigid transformations. The mesh is divided into local neighborhoods, each neighborhood estimates a best-fit rotation, and vertex positions are solved so that transformed edge vectors remain close to their original lengths and directions. A common energy is $E=sum_i sum_{j in N(i)} w_{ij} ||(x_i'-x_j') - R_i(x_i-x_j)||^2$, subject to handle constraints. ARAP is widely used for interactive shape editing because it preserves local detail better than purely Laplacian smoothing methods.",
+    "parents": {
+      "Mesh Deformation": "solved_by"
+    },
+    "children": {},
+    "type": "solution",
+    "boundaries": "ARAP is nonlinear because rotations depend on the unknown deformed shape. It usually requires local-global iteration and can converge to local minima. It does not automatically prevent self-intersections or guarantee global rigidity. Boundary constraints strongly affect the result.",
+    "cost": "Each iteration alternates local rotation fitting and a global sparse linear solve. With fixed topology and constraints, matrix factorization can often be reused. Engineering cost includes robust rotation estimation, constraint handling, cotangent weights, convergence criteria, and interactive solver performance."
   }
 }
