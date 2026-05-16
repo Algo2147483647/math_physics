@@ -1,0 +1,93 @@
+{
+  "Cryptography": {
+    "type": "problem",
+    "define": "Start building your graph from this root node.",
+    "parents": {},
+    "children": {
+      "Symmetric Encryption": "related_to",
+      "Asymmetric Encryption": "related_to",
+      "Hash": "related_to"
+    }
+  },
+  "Symmetric Encryption": {
+    "type": "problem",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Cryptography": "related_to"
+    },
+    "children": {
+      "Advanced Encryption Standard (AES)": "related_to",
+      "Data Encryption Standard (DES)": "related_to"
+    }
+  },
+  "Asymmetric Encryption": {
+    "type": "problem",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Cryptography": "related_to"
+    },
+    "children": {
+      "Elliptic Curve Cryptography": "related_to",
+      "Rivest Shamir Adleman (RSA)": "related_to"
+    }
+  },
+  "Advanced Encryption Standard (AES)": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Symmetric Encryption": "related_to"
+    },
+    "children": {}
+  },
+  "Data Encryption Standard (DES)": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Symmetric Encryption": "related_to"
+    },
+    "children": {}
+  },
+  "Elliptic Curve Cryptography": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Asymmetric Encryption": "related_to"
+    },
+    "children": {}
+  },
+  "Message Digest 5": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Hash": "related_to"
+    },
+    "children": {}
+  },
+  "Hash": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Cryptography": "related_to"
+    },
+    "children": {
+      "Message Digest 5": "related_to",
+      "Secure Hash Algorithms (SHA)": "related_to"
+    }
+  },
+  "Rivest Shamir Adleman (RSA)": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Asymmetric Encryption": "related_to"
+    },
+    "children": {}
+  },
+  "Secure Hash Algorithms (SHA)": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Hash": "related_to"
+    },
+    "children": {}
+  }
+}
