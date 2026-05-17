@@ -55,14 +55,6 @@
     },
     "children": {}
   },
-  "Message Digest 5": {
-    "type": "solution",
-    "define": "Start building your graph from this root node.",
-    "parents": {
-      "Hash": "related_to"
-    },
-    "children": {}
-  },
   "Hash": {
     "type": "solution",
     "define": "Start building your graph from this root node.",
@@ -70,8 +62,8 @@
       "Cryptography": "related_to"
     },
     "children": {
-      "Message Digest 5": "related_to",
-      "Secure Hash Algorithms (SHA)": "related_to"
+      "Secure Hash Algorithms (SHA)": "related_to",
+      "Message Digest 5 (MD5)": "related_to"
     }
   },
   "Rivest Shamir Adleman (RSA)": {
@@ -83,6 +75,14 @@
     "children": {}
   },
   "Secure Hash Algorithms (SHA)": {
+    "type": "solution",
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Hash": "related_to"
+    },
+    "children": {}
+  },
+  "Message Digest 5 (MD5)": {
     "type": "solution",
     "define": "Start building your graph from this root node.",
     "parents": {
