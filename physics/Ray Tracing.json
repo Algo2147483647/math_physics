@@ -1,0 +1,194 @@
+{
+  "Ray Tracing": {
+    "define": "Start building your graph from this root node.",
+    "parents": {},
+    "children": {
+      "Material": "related_to",
+      "Obejct Tree": "related_to"
+    }
+  },
+  "Material": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Ray Tracing": "related_to"
+    },
+    "children": {
+      "Surface": "related_to",
+      "Subsurface": "related_to",
+      "Volume": "related_to",
+      "Emission": "related_to",
+      "Textures": "related_to"
+    }
+  },
+  "Bidirectional Scattering Distribution Function": {
+    "define": "The Bidirectional Scattering Distribution Function (BSDF) describes both reflection and transmission of light at a surface point. While the BRDF only describes light reflected into directions on the same side of the surface, the BSDF describes all light scattered by the surface, including light reflected on the same side and light transmitted to the opposite side. The BSDF is defined by combines reflected and transmitted scattering:\n\n$$\nf_s(x, \\omega_i, \\omega_o)\n=\nf_r(x, \\omega_i, \\omega_o)\n+\nf_t(x, \\omega_i, \\omega_o)\n$$\n\n- the subscript $s$ means “scattering.”\n- $f_s$ is the Bidirectional Scattering Distribution Function.\n- $f_r$ is the Bidirectional Reflectance Distribution Function.\n- $f_t$ is the Bidirectional Transmittance Distribution Function.\n- $x$ is the surface point.\n- $\\omega_i$ is the incoming light direction.\n- $\\omega_o$ is the outgoing or viewing direction.\n- $\\mathbb{S}^2 =\\left\\{\\omega \\in \\mathbb{R}^3 : \\|\\omega\\|_2 = 1\\right\\}$: The unit sphere of directions .\n- $\\Omega_x^+ = \\left\\{ \\omega \\in \\mathbb{S}^2 : n(x) \\cdot \\omega > 0 \\right\\}$: The hemisphere above the surface at $x$\n- $\\Omega_x^-:=\\left\\{\\omega \\in \\mathbb{S}^2 : n(x) \\cdot \\omega < 0\\right\\}$: The hemisphere below the surface at $x$.\n- $\\mathbb{S}^2$ is the unit sphere of all directions in three-dimensional space.\n- $n(x) \\in \\mathbb{S}^2$ is the outward unit surface normal at $x$.\n- $\\Omega_x^+$ is the hemisphere on the side pointed to by the surface normal.\n- $\\Omega_x^-$ is the hemisphere on the opposite side of the surface.\n\nFor reflection, the incoming and outgoing directions lie on the same side of the surface:$\\omega_i,\\omega_o \\in \\Omega_x^+$ or $\\omega_i, \\omega_o \\in \\Omega_x^-$.\n\nFor transmission, the incoming and outgoing directions lie on opposite sides of the surface: $\\omega_i \\in \\Omega_x^+,\\omega_o \\in \\Omega_x^-$ or $\\omega_i \\in \\Omega_x^-,\\omega_o \\in \\Omega_x^+$.\n\n## Domain\n\nThe most general BSDF is defined on the sphere of directions:\n\n$$\nf_s : S^2 \\times S^2 \\to \\mathbb{R}^{k}\n$$\n\nwhere $S^2 = \\left\\{ \\omega \\in \\mathbb{R}^3 : \\|\\omega\\| = 1 \\right\\}$ and $k$ is the number of spectral channels.\n\nThe hemisphere around a normal $n$ is\n\n$$\nH^2(n) = \\left\\{ \\omega \\in S^2 : \\omega \\cdot n > 0 \\right\\}\n$$\n\nand the opposite hemisphere is\n\n$$\nH^2(-n) = \\left\\{ \\omega \\in S^2 : \\omega \\cdot n < 0 \\right\\}.\n$$\n\nA pure BRDF has both directions on the same side:\n\n$$\n\\omega_i, \\omega_o \\in H^2(n_s).\n$$\n\nA BTDF has the directions on opposite sides:\n\n$$\n\\omega_i \\in H^2(n_s), \\quad \\omega_o \\in H^2(-n_s)\n$$\n\nor the reverse, depending on which side the path is currently on.\n\nA BSDF is the union of reflection and transmission cases:\n\n$$\n(\\omega_i, \\omega_o) \\in\n\\left\\{\n\\begin{array}{ll}\nH^2(n_s) \\times H^2(n_s), & \\text{reflection}, \\\\\nH^2(n_s) \\times H^2(-n_s), & \\text{transmission}, \\\\\nH^2(-n_s) \\times H^2(n_s), & \\text{transmission from the reverse side}, \\\\\nH^2(-n_s) \\times H^2(-n_s), & \\text{reflection on the reverse side}.\n\\end{array}\n\\right.\n$$\n\n## Hemispherical versus spherical orientation\n\nA BRDF is hemispherical because only directions above the surface are valid:\n\n$$\n\\omega_i \\cdot n_s > 0,\n\\quad\n\\omega_o \\cdot n_s > 0.\n$$\n\nA BSDF is spherical because transmission requires directions on both sides of the surface:\n\n$$\n\\omega_i, \\omega_o \\in S^2.\n$$\n\nThus, the sign of $\\omega \\cdot n_s$ determines the side of the shading frame:\n\n$$\n\\operatorname{side}(\\omega) =\n\\operatorname{sign}(\\omega \\cdot n_s).\n$$\n\nReflection and transmission are distinguished by\n\n$$\n\\begin{array}{ll}\n(\\omega_i \\cdot n_s)(\\omega_o \\cdot n_s) > 0, & \\text{reflection}, \\\\\n(\\omega_i \\cdot n_s)(\\omega_o \\cdot n_s) < 0, & \\text{transmission}.\n\\end{array}\n$$\n\n## Normal Direction\n\nThe geometric normal $n_g$ is the true surface orientation and is usually chosen to point outward from a closed surface. The shading normal $n_s$ may be modified by interpolation or normal mapping.\n\nThe local BSDF frame usually satisfies\n\n$$\nn_s = (0,0,1)\n$$\n\nso that\n\n$$\n\\cos\\theta(\\omega) = \\omega \\cdot n_s = \\omega_z.\n$$\n\nFor physically valid evaluation, many renderers require consistency between $n_g$ and the path side. A common rule is\n\n$$\n(\\omega_i \\cdot n_g)(\\omega_o \\cdot n_g) > 0\n$$\n\nfor reflection and\n\n$$\n(\\omega_i \\cdot n_g)(\\omega_o \\cdot n_g) < 0\n$$\n\nfor transmission.\n\n## Incident and exit directions\n\nThere are two common conventions.\n\nConvention A: directions point away from the surface point\n\nThis is common in physically based rendering systems such as PBRT, Mitsuba, and many path tracers.\n\n$$\n\\omega_i = \\text{direction from } p \\text{ toward the light or previous vertex},\n$$\n\n$$\n\\omega_o = \\text{direction from } p \\text{ toward the camera or next vertex}.\n$$\n\nBoth $\\omega_i$ and $\\omega_o$ point away from $p$. The incident ray actually travels along $-\\omega_i$ before reaching the surface, but the BSDF argument is $\\omega_i$.\n\nThe scattering equation is\n\n$$\nL_o(p,\\omega_o)\n=\n\\int_{H^2(n_s)}\nf_r(p,\\omega_i,\\omega_o)\nL_i(p,\\omega_i)\n|\\omega_i \\cdot n_s|\n\\, d\\omega_i .\n$$\n\nHere $L_i(p,\\omega_i)$ denotes radiance arriving at $p$ from direction $\\omega_i$, even though the physical propagation direction is $-\\omega_i$.\n\nConvention B: incident direction points toward the surface\n\nThis appears in some optics, scattering, and engineering texts.\n\n$$\n\\hat{\\omega}_i = \\text{physical propagation direction of the incoming ray},\n$$\n\n$$\n\\hat{\\omega}_o = \\text{physical propagation direction of the outgoing ray}.\n$$\n\nThen\n\n$$\n\\hat{\\omega}_i = -\\omega_i,\n\\quad\n\\hat{\\omega}_o = \\omega_o.\n$$\n\nThe same BSDF written under Convention B must therefore flip the incident argument:\n\n$$\nf^{B}_s(p,\\hat{\\omega}_i,\\hat{\\omega}_o)\n=\nf^{A}_s(p,-\\hat{\\omega}_i,\\hat{\\omega}_o).\n$$\n\n## Differences in $\\omega_i$ and $\\omega_o$ notation\n\nThe most common source of BSDF errors is that different references assign $\\omega_i$ and $\\omega_o$ differently.\n\nIn rendering convention:\n\n$$\n\\omega_i = \\text{incoming light direction, pointing away from } p,\n$$\n\n$$\n\\omega_o = \\text{outgoing view direction, pointing away from } p.\n$$\n\nIn physical ray-direction convention:\n\n$$\n\\omega_i = \\text{incoming ray direction, pointing toward } p,\n$$\n\n$$\n\\omega_o = \\text{outgoing ray direction, pointing away from } p.\n$$\n\nThus the incoming direction differs by a sign:\n\n$$\n\\omega_i^{\\text{rendering}}\n=\n-\\omega_i^{\\text{ray}}.\n$$\n\nSome bidirectional or path-space renderers also use local path directions:\n\n$$\n\\omega_{\\text{prev}} = \\text{direction from } p \\text{ to the previous path vertex},\n$$\n\n$$\n\\omega_{\\text{next}} = \\text{direction from } p \\text{ to the next path vertex}.\n$$\n\nDepending on whether the path is traced from the camera or from the light,\n\n$$\n(\\omega_i,\\omega_o)\n=\n(\\omega_{\\text{prev}},\\omega_{\\text{next}})\n$$\n\nor\n\n$$\n(\\omega_i,\\omega_o)\n=\n(\\omega_{\\text{next}},\\omega_{\\text{prev}}).\n$$\n\nFor reciprocal BSDFs, this swap often does not change the value:\n\n$$\nf_s(p,\\omega_i,\\omega_o)\n=\nf_s(p,\\omega_o,\\omega_i),\n$$\n\nbut it can still affect PDFs, eta factors, adjoint BSDFs, shading-normal corrections, and transmission handling.\n\n## Practical convention table\n\n$$\n\\begin{array}{lll}\n\\text{System or text style} & \\omega_i & \\omega_o \\\\\n\\hline\n\\text{Rendering / PBRT-style} &\n\\text{toward source, away from } p &\n\\text{toward receiver, away from } p \\\\\n\\text{Optics / ray-physics style} &\n\\text{physical incident ray, toward } p &\n\\text{physical exit ray, away from } p \\\\\n\\text{Camera path tracing} &\n\\text{toward sampled light or previous light-side direction} &\n\\text{toward camera or previous camera vertex} \\\\\n\\text{Light tracing} &\n\\text{toward camera-side continuation} &\n\\text{toward light-side previous vertex} \\\\\n\\text{Bidirectional path tracing} &\n\\text{chosen by local evaluation convention} &\n\\text{chosen by local evaluation convention}\n\\end{array}\n$$\n\n## Safe implementation rule\n\nBefore evaluating a BSDF, convert all directions into one local convention. A robust rendering convention is\n\n$$\n\\omega_i = \\operatorname{normalize}(x_{\\text{prev}} - p),\n\\quad\n\\omega_o = \\operatorname{normalize}(x_{\\text{next}} - p),\n$$\n\nwhere both directions point away from $p$.\n\nThen compute\n\n$$\n\\cos_i = \\omega_i \\cdot n_s,\n\\quad\n\\cos_o = \\omega_o \\cdot n_s.\n$$\n\nUse\n\n$$\n\\begin{array}{ll}\n\\cos_i \\cos_o > 0, & \\text{reflection}, \\\\\n\\cos_i \\cos_o < 0, & \\text{transmission}.\n\\end{array}\n$$\n\nIf another source defines the incident vector as the physical ray direction, convert it by\n\n$$\n\\omega_i^{\\text{rendering}} = -\\omega_i^{\\text{physical}}.\n$$\n\nTherefore, the essential invariant is not the symbol name, but the orientation of each vector relative to the surface point and the normal.",
+    "parents": {
+      "BxDF functions": "related_to"
+    },
+    "children": {
+      "Bidirectional Reflectance Distribution Function": "related_to",
+      "Bidirectional Transmittance Distribution Function": "related_to",
+      "Fresnel Effect": "related_to"
+    }
+  },
+  "Surface": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Material": "related_to"
+    },
+    "children": {
+      "BxDF functions": "related_to"
+    }
+  },
+  "Subsurface": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Material": "related_to"
+    },
+    "children": {}
+  },
+  "Volume": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Material": "related_to"
+    },
+    "children": {}
+  },
+  "Emission": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Material": "related_to"
+    },
+    "children": {}
+  },
+  "Textures": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Material": "related_to"
+    },
+    "children": {}
+  },
+  "Bidirectional Subsurface Scattering Reflection Distribution Function": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "BxDF functions": "related_to"
+    },
+    "children": {}
+  },
+  "Obejct Tree": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Ray Tracing": "related_to"
+    },
+    "children": {}
+  },
+  "BxDF functions": {
+    "define": "Start building your graph from this root node.",
+    "parents": {
+      "Surface": "related_to"
+    },
+    "children": {
+      "Bidirectional Scattering Distribution Function": "related_to",
+      "Bidirectional Subsurface Scattering Reflection Distribution Function": "related_to"
+    }
+  },
+  "Bidirectional Reflectance Distribution Function": {
+    "define": "The bidirectional reflectance distribution function (BRDF) at $x$ is a function $f_r : X \\times \\Omega_x^+ \\times \\Omega_x^+ \\to \\mathbb{R}_{\\ge 0},$ defined as the ratio between differential outgoing radiance and differential incoming irradiance:\n$$\nf_r(x, \\omega_i, \\omega_o)\n:=\n\\frac{\\mathrm{d}L_o(x,\\omega_o)}\n{\\mathrm{d}E_i(x,\\omega_i)}.\n$$\n\n- $\\mathbb{S}^2 := \\left\\{ \\omega \\in \\mathbb{R}^3 : \\|\\omega\\|_2 = 1 \\right\\}$ is the unit sphere.\n- $n(x) \\in \\mathbb{S}^2$ denotes the outward unit surface normal at a surface point $x$.\n- $\\Omega_x^+ := \\left\\{ \\omega \\in \\mathbb{S}^2 : n(x) \\cdot \\omega > 0 \\right\\}$ is the upper hemisphere at $x$.\n- $\\omega_i, \\omega_o$ are directions on the hemisphere:\n  - $\\omega_i$ is the incoming light direction.\n  - $\\omega_o$ is the outgoing or viewing direction.\n- $f_r$ is the bidirectional reflectance distribution function. The subscript $r$ means “reflectance.”\n- $\\mathrm{d}L_o(\\omega_o)$ is the differential outgoing radiance in direction $\\omega_o$.\n- $\\mathrm{d}E_i(\\omega_i)$ is the differential irradiance arriving from direction $\\omega_i$.\n\n## Local reflection equation\n\nThe differential irradiance contributed by incoming radiance from direction $\\omega_i$ is:\n\n$$\ndE_i(\\omega_i)\n=\nL_i(\\omega_i)\\cos\\theta_i \\, d\\omega_i\n$$\n\n- $L_i(\\omega_i)$ is the incoming radiance from direction $\\omega_i$.\n- $\\theta_i$ is the angle between the surface normal $\\mathbf{n}$ and the incoming direction $\\omega_i$.\n- $\\cos\\theta_i$ is the Lambertian cosine factor, which accounts for the projected area of the surface.\n- $d\\omega_i$ is the differential solid angle around the incoming direction $\\omega_i$.\n\nSubstituting this irradiance expression into the BRDF definition gives the local reflection equation for a single incoming direction:\n\n$$\n\\begin{align*}\ndL_o(\\omega_o)\n&=\nf_r(\\omega_i, \\omega_o)\nL_i(\\omega_i)\n\\cos\\theta_i\n\\, d\\omega_i \\\\\n\n&=\nf_r(\\omega_i, \\omega_o)\nL_i(\\omega_i)\n\\max\\{0, \\mathbf{n} \\cdot \\omega_i\\}\n\\, d\\omega_i\n\\end{align*}\n$$\n\n- $\\mathbf{n}$ is the unit surface normal.\n- $\\mathbf{n} \\cdot \\omega_i = \\cos\\theta_i$ when $\\omega_i$ lies above the surface.\n- $\\max\\{0, \\mathbf{n} \\cdot \\omega_i\\}$ ensures that light arriving from below the surface does not contribute.\n\nThe cosine term appears because irradiance is measured per unit surface area. When light hits the surface head-on, the incoming energy is concentrated over a smaller surface area. When light arrives at a grazing angle, the same amount of incoming light is spread over a larger surface area. Therefore, grazing light contributes less irradiance. This geometric correction is represented by $\\cos\\theta_i = n \\cdot \\omega_i$.\n\n## The rendering equation\n\nFor a surface point, the total outgoing radiance in direction $\\omega_o$ is computed by integrating the contribution from all incoming light directions over the hemisphere above the surface:\n\n$$\nL_o(\\omega_o)\n=\n\\int_{\\Omega}\nf_r(\\omega_i,\\omega_o)\nL_i(\\omega_i)\n(n \\cdot \\omega_i)\n\\, d\\omega_i\n$$\n\n- $L_o(\\omega_o)$ is the outgoing radiance in direction $\\omega_o$.\n- $L_i(\\omega_i)$ is the incoming radiance from direction $\\omega_i$.\n- $\\Omega$ is the hemisphere of incoming directions above the surface.\n- $f_r(\\omega_i,\\omega_o)$ describes how much light from $\\omega_i$ is reflected toward $\\omega_o$.\n- $n \\cdot \\omega_i$ is the cosine factor.\n- $d\\omega_i$ is the differential solid angle.\n\nThe rendering equation says that outgoing radiance is the sum of reflected incoming radiance from every direction above the surface. Each incoming direction contributes according to three factors: the incoming radiance, the BRDF value for that pair of directions, and the cosine factor caused by surface projection.",
+    "parents": {
+      "Bidirectional Scattering Distribution Function": "related_to"
+    },
+    "children": {
+      "Perfect Mirror Reflection": "related_to",
+      "Diffuse Scattering": "related_to",
+      "Glossy Scattering": "related_to"
+    }
+  },
+  "Lambertian Reflection": {
+    "define": "**Lambertian reflection** is an idealized model of perfectly diffuse reflection. A Lambertian surface reflects incoming light equally in all outgoing directions when measured by **radiance**, so it appears equally bright from every viewing angle.\n$$\nf_r(x, \\omega_i, \\omega_o) = \\frac{\\rho}{\\pi}\n$$\n\n- $f_r$: the BRDF, meaning how much incoming light from direction $\\omega_i$ is reflected toward outgoing direction $\\omega_o$.\n- $x$: the surface point being shaded.\n- $\\omega_i$: the incoming light direction, pointing from the surface point toward the light source.\n- $\\omega_o$: the outgoing/view direction, pointing from the surface point toward the camera or observer.\n- $\\rho$: the diffuse reflectance, or albedo, of the surface; it says what fraction of incoming light the surface reflects.\n- $\\pi$: the normalization factor for an ideal Lambertian diffuse surface.\n\nClassic examples often used as approximations are matte chalk, unpolished paper, plaster, and dry matte paint.",
+    "parents": {
+      "Diffuse Scattering": "related_to"
+    },
+    "children": {},
+    "properties": "## Lambert’s cosine law\n\nLambert's cosine law states that the radiant intensity observed from an ideal diffuse surface is proportional to the cosine of the angle between the surface normal and the observation direction.\n\n$$\nI(\\theta) = I_0 \\cos \\theta\n$$\n\n- $I(\\theta)$ is the radiant intensity observed at angle $\\theta$.\n- $I_0$ is the radiant intensity observed along the surface normal.\n- $\\theta$ is the angle between the surface normal and the viewing direction.\n- $\\cos \\theta$ is the projection factor.\n\nFor an ideal Lambertian surface, the surface appears equally bright from all viewing directions because its radiance is constant. However, the total intensity emitted or reflected in a particular direction decreases as the viewing angle moves away from the normal.\n\nThe projected area of the surface is\n\n$$\nA_{\\mathrm{proj}} = A \\cos \\theta\n$$\n\n- $A$ is the actual surface area.\n- $A_{\\mathrm{proj}}$ is the apparent area seen from direction $\\theta$.\n- $\\theta$ is measured from the surface normal.\n\nThus, the cosine factor arises from geometric projection. When the surface is viewed directly, $\\theta = 0$, so\n\n$$\nI(0) = I_0 \\cos 0 = I_0\n$$\n\nWhen the surface is viewed at a grazing angle, $\\theta = 90^\\circ$, so\n\n$$\nI(90^\\circ) = I_0 \\cos 90^\\circ = 0\n$$\n\nIn vector notation, Lambert's cosine law is often written as\n\n$$\nI = I_0 \\max\\left\\{0, \\mathbf{n} \\cdot \\mathbf{l}\\right\\}\n$$\n\n- $\\mathbf{n}$ is the unit surface normal vector.\n- $\\mathbf{l}$ is the unit light direction vector.\n- $\\mathbf{n} \\cdot \\mathbf{l}$ is the dot product.\n- $\\mathbf{n} \\cdot \\mathbf{l} = \\cos \\theta$ when both vectors are unit vectors.\n- $\\max\\left\\{0, \\mathbf{n} \\cdot \\mathbf{l}\\right\\}$ prevents negative illumination when the light is behind the surface.\n\nFor diffuse reflection in computer graphics, the Lambertian shading model is commonly written as\n\n$$\nL_o = k_d L_i \\max\\left\\{0, \\mathbf{n} \\cdot \\mathbf{l}\\right\\}\n$$\n\n- $L_o$ is the outgoing reflected radiance.\n- $L_i$ is the incoming light radiance.\n- $k_d$ is the diffuse reflectance coefficient.\n- $\\mathbf{n}$ is the unit surface normal.\n- $\\mathbf{l}$ is the unit direction toward the light source."
+  },
+  "Bidirectional Transmittance Distribution Function": {
+    "define": "The Bidirectional Transmittance Distribution Function (BTDF) describes how incident radiance is transmitted through a surface into outgoing directions on the opposite side of the surface. For an incident direction $\\omega_i$ and transmitted outgoing direction $\\omega_o$, the BTDF is defined as\n\n\n$$\nf_t(\\omega_i,\\omega_o)\n=\n\\frac{dL_o(\\omega_o)}\n{dE_i(\\omega_i)}\n$$\n\n- $f_t(\\omega_i,\\omega_o)$ is the BTDF\n- $dL_o(\\omega_o)$ is the differential transmitted radiance in direction $\\omega_o$\n- $dE_i(\\omega_i)$ is the differential irradiance incident from direction $\\omega_i$.\n\nSince directional irradiance satisfies\n\n$$\ndE_i(\\omega_i)\n=\nL_i(\\omega_i)\\,|\\cos\\theta_i|\\,d\\omega_i\n$$\n\nthe transmitted radiance is\n\n$$\nL_o(\\omega_o)\n=\n\\int_{\\Omega_i}\nf_t(\\omega_i,\\omega_o)\nL_i(\\omega_i)\n|\\cos\\theta_i|\n\\,d\\omega_i\n$$\n- $\\Omega_i$ is the incident hemisphere\n- $L_i(\\omega_i)$ is the incident radiance\n- $\\theta_i$ is the incident angle relative to the surface normal\n- $d\\omega_i$ is the differential solid angle.\n\n## Hemispherical-directional transmittance\n\nThe directional-hemispherical transmittance is obtained by integrating the BTDF over all transmitted outgoing directions:\n$$\nT(\\omega_i)\n=\n\\int_{\\Omega_t}\nf_t(\\omega_i,\\omega_o)\n|\\cos\\theta_o|\n\\,d\\omega_o\n$$\n\n- $\\Omega_t$ is the transmitted hemisphere\n- $\\theta_o$ is the outgoing angle relative to the surface normal.\n\n## Non-negativity & Energy conservation\n\nFor a passive material, the BTDF satisfies non-negativity:\n$$\nf_t(\\omega_i,\\omega_o) \\geq 0\n$$\n\nand energy conservation:\n\n$$\n\\int_{\\Omega_t}\nf_t(\\omega_i,\\omega_o)\n|\\cos\\theta_o|\n\\,d\\omega_o\n\\leq 1\n$$\n\nIf both reflection and transmission are present, the full energy constraint is\n\n$$\n\\int_{\\Omega_r}\nf_r(\\omega_i,\\omega_o)\n|\\cos\\theta_o|\n\\,d\\omega_o\n+\n\\int_{\\Omega_t}\nf_t(\\omega_i,\\omega_o)\n|\\cos\\theta_o|\n\\,d\\omega_o\n\\leq 1\n$$\n\n- $f_r$ is the BRDF\n- $\\Omega_r$ is the reflected hemisphere.\n\n## Reciprocity\n\nFor reciprocal transmission between media with refractive indices $\\eta_i$ and $\\eta_o$, the BTDF satisfies\n$$\n\\eta_i^2 f_t(\\omega_i,\\omega_o)\n=\n\\eta_o^2 f_t(\\omega_o,\\omega_i)\n$$\n\nwhere the factors $\\eta_i^2$ and $\\eta_o^2$ account for radiance scaling across refractive boundaries.\n\nFor an ideal diffuse transmitting surface with transmittance $\\tau$, the BTDF is\n\n$$\nf_t(\\omega_i,\\omega_o)\n=\n\\frac{\\tau}{\\pi}\n$$\n\nwhere $\\tau \\in \\left\\{x \\in \\mathbb{R} \\mid 0 \\leq x \\leq 1\\right\\}$ is the total diffuse transmittance.\n\nFor an ideal specular transmitting surface, light is transmitted only in the refracted direction determined by Snell’s law:\n\n$$\n\\eta_i \\sin\\theta_i\n=\n\\eta_t \\sin\\theta_t\n$$\n\n- $\\eta_t$ is the refractive index of the transmitted medium \n- $\\theta_t$ is the transmitted angle.\n\nThus, the BTDF is a directional density that specifies how much incident light is transmitted into each outgoing direction. Its main properties are non-negativity, energy conservation, reciprocity, angular dependence, spectral dependence, and possible delta-distribution behavior for ideal specular transmission.",
+    "parents": {
+      "Bidirectional Scattering Distribution Function": "related_to"
+    },
+    "children": {
+      "Perfect Specular Transmission": "related_to"
+    }
+  },
+  "Fresnel Effect": {
+    "define": "The Fresnel effect describes the dependence of reflected light intensity on the viewing angle. A surface appears more reflective at grazing angles and less reflective when viewed near normal incidence.\n\nLet $\\theta$ be the angle between the view direction and the surface normal. The Fresnel reflectance is a function $F(\\theta)$ represents the fraction of incoming light reflected by the surface.\n\n$$\nF(\\theta) \\in \\left\\{ r \\in \\mathbb{R} \\mid 0 \\le r \\le 1 \\right\\}\n$$\n\nA common real-time approximation is Schlick's approximation:\n\n$$\nF(\\theta)\n=\nF_0\n+\n(1 - F_0)(1 - \\cos \\theta)^5\n$$\n\n- $F(\\theta)$: reflectance at angle $\\theta$\n- $F_0$: reflectance at normal incidence\n- $\\theta$: angle between the view direction and surface normal\n- $\\cos \\theta$: dot product of normalized view direction and normal\n\n\nUsing normalized vectors $\\mathbf{v}$ and $\\mathbf{n}$, the cosine term is\n\n$$\n\\cos \\theta = \\mathbf{v} \\cdot \\mathbf{n}\n$$\n\nso the approximation can be written as\n\n$$\nF(\\mathbf{v}, \\mathbf{n})\n=\nF_0\n+\n(1 - F_0)\n\\left(1 - \\max(0, \\mathbf{v} \\cdot \\mathbf{n})\\right)^5\n$$\n\nThe term $F_0$ controls the base reflectivity of the material. For dielectrics, $F_0$ is usually small, so the surface is weakly reflective when viewed head-on. For metals, $F_0$ is larger and may be color-dependent.\n\nAs $\\theta \\to 0$, the viewer looks nearly perpendicular to the surface, so $\\cos \\theta \\to 1$ and\n\n$$\nF(\\theta) \\to F_0\n$$\n\nAs $\\theta \\to \\frac{\\pi}{2}$, the viewer looks along the surface, so $\\cos \\theta \\to 0$ and\n\n$$\nF(\\theta) \\to 1\n$$\n\nThus, the Fresnel effect explains why surfaces become increasingly reflective near their silhouettes or edges.",
+    "parents": {
+      "Bidirectional Scattering Distribution Function": "related_to"
+    },
+    "children": {
+      "Dielectric Fresnel": "related_to",
+      "Conductor Fresnel": "related_to"
+    }
+  },
+  "Dielectric Fresnel": {
+    "define": "",
+    "parents": {
+      "Fresnel Effect": "related_to"
+    },
+    "children": {}
+  },
+  "Conductor Fresnel": {
+    "define": "",
+    "parents": {
+      "Fresnel Effect": "related_to"
+    },
+    "children": {}
+  },
+  "Perfect Mirror Reflection": {
+    "define": "Perfect mirror reflection describes the ideal specular reflection of an incident direction about a surface normal. Let $\\omega_i$ be the incident direction and let $n$ be the unit surface normal. The reflected direction $\\omega_r$ is obtained by reversing only the component of $\\omega_i$ that lies along $n$, while preserving the tangential component.\n\n$$\n\\omega_i\n=\n\\omega_i^{\\parallel}\n+\n\\omega_i^{\\perp}\n$$\n\nwhere\n\n$$\n\\omega_i^{\\perp}\n=\n(\\omega_i \\cdot n)n\n$$\n\nand\n\n$$\n\\omega_i^{\\parallel}\n=\n\\omega_i - (\\omega_i \\cdot n)n.\n$$\n\nFor a perfect mirror, the reflected direction is\n\n$$\n\\omega_r\n=\n\\omega_i^{\\parallel}\n-\n\\omega_i^{\\perp}.\n$$\n\nSubstituting the components gives\n\n$$\n\\begin{aligned}\n\\omega_r\n&=\n\\left(\\omega_i - (\\omega_i \\cdot n)n\\right)\n-\n(\\omega_i \\cdot n)n \\\\\n&=\n\\omega_i - 2(\\omega_i \\cdot n)n.\n\\end{aligned}\n$$\n\nThus, the perfect mirror reflection formula is\n\n$$\n\\boxed{\n\\omega_r = \\omega_i - 2(\\omega_i \\cdot n)n\n}\n$$\n\n- $\\omega_i$ is the incident direction vector.\n- $\\omega_r$ is the reflected direction vector.\n- $n$ is the unit normal vector of the reflecting surface.\n- $\\omega_i \\cdot n$ is the scalar projection of $\\omega_i$ onto $n$.\n- $(\\omega_i \\cdot n)n$ is the normal component of $\\omega_i$.\n\nThe law of perfect mirror reflection satisfies\n\n$$\n\\theta_i = \\theta_r,\n$$\n\nwhere $\\theta_i$ is the angle between the incident direction and the normal, and $\\theta_r$ is the angle between the reflected direction and the normal. The incident direction, reflected direction, and surface normal all lie in the same plane.\n\nIn set notation, the valid reflection configuration may be written as\n\n$$\n\\left\\{\n(\\omega_i, \\omega_r, n)\n\\;\\middle|\\;\n\\omega_r = \\omega_i - 2(\\omega_i \\cdot n)n,\\;\n\\|n\\| = 1\n\\right\\}.\n$$",
+    "parents": {
+      "Bidirectional Reflectance Distribution Function": "related_to"
+    },
+    "children": {}
+  },
+  "Perfect Specular Transmission": {
+    "define": "Perfect Specular Transmission\n\nPerfect specular transmission describes the ideal optical event in which an incident ray or wave passes through an interface without absorption, scattering, diffuse transmission, or reflection. The transmitted direction is uniquely determined by the specular law of refraction.\n\nLet an incident direction be $\\omega_i$ and a transmitted direction be $\\omega_t$. For an interface separating two media with refractive indices $\\eta_i$ and $\\eta_t$, perfect specular transmission is characterized by\n\n$$\nT(\\omega_i, \\omega_t)\n=\n\\left\\{\n\\begin{aligned}\n1, &\\quad \\omega_t = \\operatorname{refract}(\\omega_i, n, \\eta_i, \\eta_t), \\\\\n0, &\\quad \\text{otherwise}.\n\\end{aligned}\n\\right.\n$$\n\nHere:\n\n- $T(\\omega_i, \\omega_t)$ is the transmission response from incident direction $\\omega_i$ to outgoing transmitted direction $\\omega_t$.\n- $n$ is the surface normal at the point of incidence.\n- $\\eta_i$ is the refractive index of the incident medium.\n- $\\eta_t$ is the refractive index of the transmitted medium.\n- $\\operatorname{refract}(\\omega_i, n, \\eta_i, \\eta_t)$ denotes the unique direction satisfying Snell's law.\n- The value $1$ means all transmitted energy is concentrated in the specular direction.\n- The value $0$ means no energy is transmitted into any other direction.\n\nThe transmitted direction satisfies Snell's law:\n\n$$\n\\eta_i \\sin \\theta_i = \\eta_t \\sin \\theta_t\n$$\n\nwhere $\\theta_i$ is the angle between the incident direction and the normal, and $\\theta_t$ is the angle between the transmitted direction and the normal.\n\nIn distributional form, perfect specular transmission is often modeled using a Dirac delta distribution:\n\n$$\nf_t(\\omega_i, \\omega_t)\n=\n\\tau(\\omega_i)\n\\,\n\\delta\\left(\n\\omega_t\n-\n\\operatorname{refract}(\\omega_i, n, \\eta_i, \\eta_t)\n\\right)\n$$\n\nwhere:\n\n- $f_t(\\omega_i, \\omega_t)$ is the bidirectional transmission distribution function.\n- $\\tau(\\omega_i)$ is the transmitted energy coefficient.\n- $\\delta(\\cdot)$ is the Dirac delta distribution.\n- The delta term enforces that transmission occurs only in the refracted specular direction.\n\nThus, perfect specular transmission is deterministic: each incident direction maps to exactly one transmitted direction, with no angular spread.",
+    "parents": {
+      "Bidirectional Transmittance Distribution Function": "related_to"
+    },
+    "children": {}
+  },
+  "Diffuse Scattering": {
+    "define": "",
+    "parents": {
+      "Bidirectional Reflectance Distribution Function": "related_to"
+    },
+    "children": {
+      "Lambertian Reflection": "related_to",
+      "Disney Diffuse": "related_to"
+    }
+  },
+  "Disney Diffuse": {
+    "define": "Disney Diffuse models the diffuse BRDF of a non-metallic surface as\n\n$$\nf_d(\\omega_i,\\omega_o)\n=\n\\frac{c}{\\pi}\n\\left(1 + (F_{D90} - 1)(1 - n \\cdot \\omega_i)^5\\right)\n\\left(1 + (F_{D90} - 1)(1 - n \\cdot \\omega_o)^5\\right)\n$$\n\nwhere\n\n$$\nF_{D90}\n=\n0.5 + 2\\alpha (h \\cdot \\omega_i)^2\n$$\n\nand\n\n$$\nh\n=\n\\frac{\\omega_i + \\omega_o}{\\|\\omega_i + \\omega_o\\|}.\n$$\n\nThe valid directional domain is\n\n$$\n\\left\\{\n(\\omega_i,\\omega_o)\n\\;\\middle|\\;\nn \\cdot \\omega_i > 0,\\;\nn \\cdot \\omega_o > 0\n\\right\\}.\n$$\n\nComponents:\n\n- $f_d(\\omega_i,\\omega_o)$ is the diffuse BRDF value.\n- $\\omega_i$ is the incident light direction.\n- $\\omega_o$ is the outgoing view direction.\n- $n$ is the unit surface normal.\n- $h$ is the half-vector between $\\omega_i$ and $\\omega_o$.\n- $c$ is the base diffuse color, also called albedo.\n- $\\alpha$ is the perceptual roughness parameter.\n- $F_{D90}$ controls the diffuse response at grazing angles.\n- The factor $\\frac{c}{\\pi}$ is the Lambertian diffuse baseline.\n- The two fifth-power terms are Schlick-style angular corrections applied to the light and view directions.\n\nInterpretation:\n\nDisney Diffuse reduces to a Lambertian-like model when the angular correction is weak. As roughness increases, $F_{D90}$ increases, producing stronger grazing-angle diffuse reflection. This makes rough surfaces exhibit more realistic retroreflection than a purely Lambertian BRDF.",
+    "parents": {
+      "Diffuse Scattering": "related_to"
+    },
+    "children": {}
+  },
+  "Glossy Scattering": {
+    "define": "",
+    "parents": {
+      "Bidirectional Reflectance Distribution Function": "related_to"
+    },
+    "children": {
+      "Blinn-Phong BRDF": "related_to"
+    }
+  },
+  "Blinn-Phong BRDF": {
+    "define": "",
+    "parents": {
+      "Glossy Scattering": "related_to"
+    },
+    "children": {}
+  }
+}
