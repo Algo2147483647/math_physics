@@ -12,13 +12,13 @@ $$
 
 A probability space is a [measure space](./Measure_Space.md) consisting of
 
-- $\Omega$: sample space
-- $\mathcal F$: a $\sigma$-algebra on $\Omega$
-- $\mathbb P$: a probability measure on $(\Omega, \mathcal F)$
+- $\Omega$: Sample space. The set of all possible elementary outcomes; events are subsets of Ω.
+- $\mathcal F$: Event space, a $\sigma$-algebra on $\Omega$. The collection of events to which probabilities can be assigned, typically restricted to measurable subsets to avoid pathological cases.
+- $\mathbb P$: A probability measure on $(\Omega, \mathcal F)$. A function on the event space F that assigns each measurable event a probability in [0, 1].
 
 ### Event
 
-An event is a measurable subset of the sample space:
+An event is a measurable subset of the sample space $\Omega$:
 $$
 A \in \mathcal F \subseteq 2^\Omega.
 $$
@@ -38,6 +38,10 @@ Probability is a set function satisfying the Kolmogorov axioms:
 $$
 \mathbb P \left(\bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mathbb P(A_i)
 $$
+
+> Normalization: The sample space is certain to occur.
+>
+> Countable additivity: Probabilities are additive over mutually exclusive events. Since probability theory often deals with infinite procedures, which naturally give rise to countable unions of events, the additivity requirement is imposed at the countable level.
 
 ## Properties
 
@@ -73,15 +77,13 @@ $$
 
 The probability of $A$ and $B$ occurring together.
 
-### Conditional Probability
+## Conditional Probability
 
 $$
 \mathbb P(B \mid A)
 $$
 
 Probability of occurrence of $B$ under the condition that $A$ occurs.
-
-#### Property
 
 - Independence
   $$
@@ -102,10 +104,19 @@ Probability of occurrence of $B$ under the condition that $A$ occurs.
   $$
   where $(B_i)$ is a partition of $\Omega$.
 
-- Bayes' formula
-  $$
-  \begin{align*}
-    \mathbb P(A \mid B) &= \frac{\mathbb P(B \mid A) \mathbb P(A)}{\mathbb P(B)}  \\
-    \mathbb P(A_i \mid B) &= \frac{\mathbb P(B \mid A_i) \mathbb P(A_i)}{\sum\limits_j \mathbb P(B \mid A_j) \mathbb P(A_j)}
-  \end{align*}
-  $$
+
+### Bayes' formula
+
+$$
+\begin{align*}
+  \mathbb P(A \mid B) &= \frac{\mathbb P(B \mid A) \mathbb P(A)}{\mathbb P(B)}  \\
+  \mathbb P(A_i \mid B) &= \frac{\mathbb P(B \mid A_i) \mathbb P(A_i)}{\sum\limits_j \mathbb P(B \mid A_j) \mathbb P(A_j)}
+\end{align*}
+$$
+
+> - $P(A)$: the prior probability, namely the probability assigned to event $A$ before observing the new evidence.
+> - $P(B \mid A)$: the likelihood, namely the probability of observing evidence $B$ given that $A$ is true.
+> - $P(B)$: the marginal probability of the evidence, or the overall probability that evidence $B$ is observed.
+> - $P(A \mid B)$: the posterior probability, that is, the updated probability assigned to $A$ after observing evidence $B$.
+>
+> Bayes’ theorem understands rational judgment not as the production of a once-and-for-all conclusion, but as an ongoing process of revision. We approach the world with prior probabilities of some kind, and new evidence does not determine the truth in isolation. Rather, by indicating how strongly it supports competing hypotheses, evidence recalibrates the degree of credibility assigned to each of them. Bayes’ theorem therefore reveals a central mechanism of rational inference: preserving probability under uncertainty, revising belief in light of evidence, and moving toward more reliable judgment through the interaction between background probabilities and new information.
