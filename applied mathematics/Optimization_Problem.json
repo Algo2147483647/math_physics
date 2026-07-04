@@ -1,26 +1,12 @@
 {
   "Optimization Problem": {
     "children": {
-      "Deterministic Optimization": "subtype_of",
-      "Stochastic Optimization": "subtype_of",
-      "Robust Optimization": "subtype_of"
+      "Mixed-Integer Optimization": "related_to",
+      "Continuous Optimization": "related_to",
+      "Discrete Optimization": "related_to"
     },
     "parents": {},
     "description": "An **optimization problem** is a mathematical problem of choosing a decision variable $x$ from a feasible set $\\mathcal{X}$ so as to minimize or maximize an objective function $f$.\n\nA general minimization problem can be written as\n\n$$\n\\min_{x \\in \\mathcal{X}} f(x)\n$$\n\nwhere $x$ is the **decision variable**, $\\mathcal{X}$ is the **feasible set**, and $f:\\mathcal{X}\\to\\mathbb{R}$ is the **objective function**.\n\nMore explicitly, an optimization problem with constraints can be defined as\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& h_j(x) = 0, \\quad j = 1,\\dots,p.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the **decision variable vector**, representing the quantities to be chosen. The function $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the **objective function**, which assigns a numerical cost or value to each possible choice of $x$. The functions $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ define **inequality constraints**, while the functions $h_j:\\mathbb{R}^n \\to \\mathbb{R}$ define **equality constraints**.\n\nThe **feasible set** is the set of all points satisfying the constraints:\n\n$$\n\\mathcal{X} = \\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,;\nh_j(x)=0,\\ j=1,\\dots,p\n\\right\\}\n$$\n\nAn **optimal solution** is a feasible point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nThe corresponding value $f(x^\\star)$ is called the **optimal value** of the optimization problem.\n",
-    "type": "problem"
-  },
-  "Deterministic Optimization": {
-    "children": {
-      "Continuous Optimization": "subtype_of",
-      "Discrete Optimization": "subtype_of",
-      "Mixed-Integer Optimization": "subtype_of",
-      "Distributed Optimization": "subtype_of",
-      "Network Optimization": "subtype_of"
-    },
-    "parents": {
-      "Optimization Problem": "subtype_of"
-    },
-    "description": "",
     "type": "problem"
   },
   "Continuous Optimization": {
@@ -34,18 +20,17 @@
       "Linear Fractional Programming": "subtype_of"
     },
     "parents": {
-      "Deterministic Optimization": "subtype_of"
+      "Optimization Problem": "related_to"
     },
     "description": "",
     "type": "problem"
   },
   "Discrete Optimization": {
     "children": {
-      "Integer Programming": "subtype_of",
-      "Shortest Path Problem": "subtype_of"
+      "Integer Programming": "subtype_of"
     },
     "parents": {
-      "Deterministic Optimization": "subtype_of"
+      "Optimization Problem": "related_to"
     },
     "description": "",
     "type": "problem"
@@ -57,37 +42,7 @@
       "Mixed-Integer Nonlinear Programming": "subtype_of"
     },
     "parents": {
-      "Deterministic Optimization": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Stochastic Optimization": {
-    "children": {
-      "Stochastic Programming": "subtype_of"
-    },
-    "parents": {
-      "Optimization Problem": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Robust Optimization": {
-    "children": {
-      "Robust Linear Programming": "subtype_of"
-    },
-    "parents": {
-      "Optimization Problem": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Distributed Optimization": {
-    "children": {
-      "Consensus Optimization": "subtype_of"
-    },
-    "parents": {
-      "Deterministic Optimization": "subtype_of"
+      "Optimization Problem": "related_to"
     },
     "description": "",
     "type": "problem"
@@ -122,7 +77,6 @@
     "children": {
       "Linear Optimization": "subtype_of",
       "Conic Optimization": "subtype_of",
-      "Interior-Point Method": "solved_by",
       "Subgradient Method": "solved_by",
       "Proximal Gradient Method": "solved_by",
       "Convex Nonlinear Programming": "related_to"
@@ -158,12 +112,8 @@
   "Linear Optimization": {
     "children": {
       "Mixed-Integer Linear Programming": "subtype_of",
-      "Maximum Flow Problem": "related_to",
-      "Assignment Problem": "related_to",
-      "Robust Linear Programming": "related_to",
       "LP Relaxation Problem": "related_to",
-      "Simplex Method": "related_to",
-      "Interior-Point Method": "related_to"
+      "Simplex Method": "related_to"
     },
     "parents": {
       "Convex Optimization": "subtype_of"
@@ -204,22 +154,8 @@
     "description": "",
     "type": "problem"
   },
-  "Network Optimization": {
-    "children": {
-      "Shortest Path Problem": "subtype_of",
-      "Maximum Flow Problem": "subtype_of",
-      "Assignment Problem": "subtype_of"
-    },
-    "parents": {
-      "Deterministic Optimization": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
   "Convex Nonlinear Programming": {
-    "children": {
-      "Interior-Point Method": "solved_by"
-    },
+    "children": {},
     "parents": {
       "Convex Optimization": "related_to"
     },
@@ -239,12 +175,11 @@
   },
   "Quadratic Programming": {
     "children": {
-      "Least Squares Optimization": "subtype_of",
-      "Interior-Point Method": "solved_by"
+      "Least Squares Optimization": "subtype_of"
     },
     "parents": {
-      "Quadratic Optimization": "subtype_of",
-      "Constrained Optimization": "subtype_of"
+      "Constrained Optimization": "subtype_of",
+      "Quadratic Optimization": "subtype_of"
     },
     "description": "A Quadratic Program (QP) is an optimization problem of the form\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & \\frac{1}{2}x^\\top Qx + q^\\top x + r \\\\\n\\text{subject to} \\quad & Ax \\leq b, \\\\\n& Ex = h, \\\\\n& x \\in \\mathcal{X}.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the decision variable. The objective function is\n\n$$\nf(x) = \\frac{1}{2}x^\\top Qx + q^\\top x + r,\n$$\n\nwhere $Q \\in \\mathbb{R}^{n \\times n}$ is symmetric, $q \\in \\mathbb{R}^n$, and $r \\in \\mathbb{R}$. The feasible set is\n\n$$\n\\mathcal{F}\n=\n\\left\\{\nx \\in \\mathcal{X}\n\\mid\nAx \\leq b,\\;\nEx = h\n\\right\\},\n$$\n\nwhere $Ax \\leq b$ represents affine inequality constraints, $Ex = h$ represents affine equality constraints, and $\\mathcal{X} \\subseteq \\mathbb{R}^n$ may encode additional simple constraints such as bounds.\n\nAn optimal solution is any point $x^\\star \\in \\mathcal{F}$ satisfying\n\n$$\nf(x^\\star) \\leq f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{F}.\n$$\n\nIf $Q \\succeq 0$ and $\\mathcal{X}$ is convex, then the QP is convex. If $Q \\succ 0$ on the feasible directions and $\\mathcal{F}$ is nonempty, the optimal solution is unique.",
     "type": "problem"
@@ -260,9 +195,7 @@
     "type": "problem"
   },
   "Second-Order Cone Programming": {
-    "children": {
-      "Interior-Point Method": "solved_by"
-    },
+    "children": {},
     "parents": {
       "Conic Optimization": "subtype_of"
     },
@@ -271,8 +204,7 @@
   },
   "Semidefinite Programming": {
     "children": {
-      "Semidefinite Relaxation Problem": "subtype_of",
-      "Interior-Point Method": "solved_by"
+      "Semidefinite Relaxation Problem": "subtype_of"
     },
     "parents": {
       "Semidefinite Optimization": "subtype_of"
@@ -282,10 +214,7 @@
   },
   "Integer Programming": {
     "children": {
-      "Knapsack Problem": "subtype_of",
-      "Assignment Problem": "subtype_of",
-      "Branch-and-Bound": "solved_by",
-      "Cutting Plane Method": "solved_by"
+      "Branch-and-Bound": "solved_by"
     },
     "parents": {
       "Discrete Optimization": "subtype_of"
@@ -296,8 +225,7 @@
   "Mixed-Integer Linear Programming": {
     "children": {
       "LP Relaxation": "relaxed_by",
-      "Branch-and-Bound": "solved_by",
-      "Cutting Plane Method": "solved_by"
+      "Branch-and-Bound": "solved_by"
     },
     "parents": {
       "Mixed-Integer Optimization": "subtype_of",
@@ -333,92 +261,15 @@
       "Newton's Method": "solved_by"
     },
     "parents": {
-      "Quadratic Programming": "subtype_of",
-      "Unconstrained Optimization": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Consensus Optimization": {
-    "children": {
-      "Consensus Form Problem": "subtype_of",
-      "Variable Splitting": "decomposed_by"
-    },
-    "parents": {
-      "Distributed Optimization": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Knapsack Problem": {
-    "children": {
-      "Dynamic Programming": "solved_by"
-    },
-    "parents": {
-      "Integer Programming": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Shortest Path Problem": {
-    "children": {
-      "Dijkstra's Algorithm": "solved_by"
-    },
-    "parents": {
-      "Network Optimization": "subtype_of",
-      "Discrete Optimization": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Maximum Flow Problem": {
-    "children": {
-      "Max-Flow Algorithm": "solved_by"
-    },
-    "parents": {
-      "Network Optimization": "subtype_of",
-      "Linear Optimization": "related_to"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Assignment Problem": {
-    "children": {
-      "Hungarian Algorithm": "solved_by"
-    },
-    "parents": {
-      "Network Optimization": "subtype_of",
-      "Linear Optimization": "related_to",
-      "Integer Programming": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Stochastic Programming": {
-    "children": {
-      "Benders Decomposition": "decomposed_by"
-    },
-    "parents": {
-      "Stochastic Optimization": "subtype_of"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Robust Linear Programming": {
-    "children": {
-      "Interior-Point Method": "solved_by"
-    },
-    "parents": {
-      "Robust Optimization": "subtype_of",
-      "Linear Optimization": "related_to"
+      "Unconstrained Optimization": "subtype_of",
+      "Quadratic Programming": "subtype_of"
     },
     "description": "",
     "type": "problem"
   },
   "LP Relaxation Problem": {
     "children": {
-      "Simplex Method": "solved_by",
-      "Interior-Point Method": "solved_by"
+      "Simplex Method": "solved_by"
     },
     "parents": {
       "Linear Optimization": "related_to",
@@ -428,9 +279,7 @@
     "type": "problem"
   },
   "Semidefinite Relaxation Problem": {
-    "children": {
-      "Interior-Point Method": "solved_by"
-    },
+    "children": {},
     "parents": {
       "Semidefinite Programming": "subtype_of",
       "Semidefinite Relaxation": "produces"
@@ -438,39 +287,9 @@
     "description": "",
     "type": "problem"
   },
-  "Consensus Form Problem": {
-    "children": {
-      "Alternating Direction Method of Multipliers": "solved_by"
-    },
-    "parents": {
-      "Consensus Optimization": "subtype_of",
-      "Variable Splitting": "produces"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Master Problem": {
-    "children": {
-      "Cutting Plane Method": "solved_by"
-    },
-    "parents": {
-      "Benders Decomposition": "produces"
-    },
-    "description": "",
-    "type": "problem"
-  },
-  "Scenario Subproblem": {
-    "children": {},
-    "parents": {
-      "Benders Decomposition": "produces"
-    },
-    "description": "",
-    "type": "problem"
-  },
   "Node Relaxation Problem": {
     "children": {
-      "Simplex Method": "solved_by",
-      "Interior-Point Method": "solved_by"
+      "Simplex Method": "solved_by"
     },
     "parents": {
       "Branch-and-Bound": "produces"
@@ -529,27 +348,6 @@
     "description": "LP relaxation replaces an optimization problem with integrality or discrete constraints by a linear program obtained by enlarging the feasible set to a continuous polyhedron.\n\nConsider an integer linear program:\n\n$$\n\\begin{aligned}\nz_{\\mathrm{IP}}\n=\n\\min_{x \\in \\mathbb{Z}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b \\\\\n& x \\in \\mathcal{X}\n\\end{aligned}\n$$\n\nwhere $x$ is the decision variable, $c^\\top x$ is the linear objective function, $Ax \\le b$ are linear constraints, and $\\mathcal{X}$ denotes any additional structural constraints.\n\nThe LP relaxation is obtained by replacing the discrete constraint $x \\in \\mathbb{Z}^n$ with a continuous constraint, commonly $x \\in \\mathbb{R}^n$:\n\n$$\n\\begin{aligned}\nz_{\\mathrm{LP}}\n=\n\\min_{x \\in \\mathbb{R}^n} \\quad & c^\\top x \\\\\n\\text{s.t.} \\quad & Ax \\le b \\\\\n& x \\in \\operatorname{relax}(\\mathcal{X})\n\\end{aligned}\n$$\n\nEquivalently, if the integer feasible set is\n\n$$\n\\mathcal{F}_{\\mathrm{IP}}\n=\n\\left\\{ x \\in \\mathbb{Z}^n : Ax \\le b,\\ x \\in \\mathcal{X} \\right\\},\n$$\n\nthen the relaxed feasible set is a continuous superset\n\n$$\n\\mathcal{F}_{\\mathrm{LP}}\n=\n\\left\\{ x \\in \\mathbb{R}^n : Ax \\le b,\\ x \\in \\operatorname{relax}(\\mathcal{X}) \\right\\},\n\\qquad\n\\mathcal{F}_{\\mathrm{IP}} \\subseteq \\mathcal{F}_{\\mathrm{LP}}.\n$$\n\nThe optimal solution of the integer program is\n\n$$\nx_{\\mathrm{IP}}^\\star\n\\in\n\\operatorname*{arg\\,min}_{x \\in \\mathcal{F}_{\\mathrm{IP}}} c^\\top x,\n$$\n\nwhile the optimal solution of the LP relaxation is\n\n$$\nx_{\\mathrm{LP}}^\\star\n\\in\n\\operatorname*{arg\\,min}_{x \\in \\mathcal{F}_{\\mathrm{LP}}} c^\\top x.\n$$\n\nFor a minimization problem, because the LP relaxation optimizes over a larger feasible set,\n\n$$\nz_{\\mathrm{LP}} \\le z_{\\mathrm{IP}}.\n$$\n\nThus, the LP relaxation gives a lower bound on the integer optimum. If $x_{\\mathrm{LP}}^\\star \\in \\mathbb{Z}^n$, then $x_{\\mathrm{LP}}^\\star$ is also feasible for the original integer problem and is therefore an optimal integer solution.",
     "type": "solution"
   },
-  "Variable Splitting": {
-    "children": {
-      "Consensus Form Problem": "produces"
-    },
-    "parents": {
-      "Consensus Optimization": "decomposed_by"
-    },
-    "description": "",
-    "type": "solution"
-  },
-  "Benders Decomposition": {
-    "children": {
-      "Master Problem": "produces",
-      "Scenario Subproblem": "produces"
-    },
-    "parents": {
-      "Stochastic Programming": "decomposed_by"
-    },
-    "description": "",
-    "type": "solution"
-  },
   "Branch-and-Bound": {
     "children": {
       "Node Relaxation Problem": "produces"
@@ -561,33 +359,6 @@
       "Mixed-Integer Nonlinear Programming": "solved_by"
     },
     "description": "Branch-and-Bound solves a constrained optimization problem of the form\n\n$$\n\\begin{aligned}\nz^\\star\n&= \\min_{x \\in \\mathcal{X}} f(x) \\\\\n\\mathcal{X}\n&= \\left\\{ x \\in \\mathcal{D} \\mid g_i(x) \\le 0,\\ i = 1,\\dots,m \\right\\}.\n\\end{aligned}\n$$\n\nHere, $x$ is the decision variable, $f:\\mathcal{D}\\to\\mathbb{R}$ is the objective function, $\\mathcal{X}$ is the feasible set, $\\mathcal{D}$ is the ambient decision domain, and the inequalities $g_i(x)\\le 0$ are the constraints. An optimal solution is any $x^\\star \\in \\mathcal{X}$ satisfying\n\n$$\nf(x^\\star)=z^\\star=\\min_{x\\in\\mathcal{X}} f(x).\n$$\n\nBranch-and-Bound maintains a collection of subproblems indexed by nodes $N$. Each node corresponds to a subset $\\mathcal{X}_N \\subseteq \\mathcal{X}$, with\n\n$$\n\\mathcal{X} = \\bigcup_{N \\in \\mathcal{T}} \\mathcal{X}_N.\n$$\n\nFor each node $N$, a relaxation is solved over a superset $\\mathcal{R}_N \\supseteq \\mathcal{X}_N$ to obtain a valid lower bound\n\n$$\nL_N\n=\n\\min_{x \\in \\mathcal{R}_N} f(x)\n\\le\n\\min_{x \\in \\mathcal{X}_N} f(x).\n$$\n\nThe algorithm also maintains an incumbent feasible solution $\\bar{x}\\in\\mathcal{X}$ with objective value\n\n$$\nU=f(\\bar{x}),\n$$\n\nwhich is a valid upper bound on $z^\\star$.\n\nA node $N$ is pruned if any of the following holds:\n\n$$\n\\begin{aligned}\n&\\mathcal{X}_N = \\varnothing, \\\\\n&L_N \\ge U, \\\\\n&\\text{or the relaxation solution is feasible for } \\mathcal{X}_N.\n\\end{aligned}\n$$\n\nIf a node cannot be pruned, it is branched into finitely many child nodes $N_1,\\dots,N_k$ such that\n\n$$\n\\mathcal{X}_N\n=\n\\bigcup_{j=1}^k \\mathcal{X}_{N_j},\n\\qquad\n\\mathcal{X}_{N_j} \\cap \\mathcal{X}_{N_\\ell} = \\varnothing\n\\quad \\text{for } j \\ne \\ell.\n$$\n\nAt termination, all remaining nodes have been pruned. Since every feasible solution belongs to some explored or pruned node, and no pruned node can contain a solution with objective value below the incumbent $U$, the incumbent satisfies\n\n$$\nf(\\bar{x}) = z^\\star.\n$$\n\nThus, Branch-and-Bound proves optimality by systematically partitioning the feasible region, computing valid bounds on subproblems, and eliminating regions that cannot contain a better feasible solution.",
-    "type": "solution"
-  },
-  "Cutting Plane Method": {
-    "children": {},
-    "parents": {
-      "Integer Programming": "solved_by",
-      "Mixed-Integer Linear Programming": "solved_by",
-      "Master Problem": "solved_by"
-    },
-    "description": "",
-    "type": "solution"
-  },
-  "Interior-Point Method": {
-    "children": {},
-    "parents": {
-      "Convex Optimization": "solved_by",
-      "Linear Optimization": "related_to",
-      "Quadratic Programming": "solved_by",
-      "Second-Order Cone Programming": "solved_by",
-      "Semidefinite Programming": "solved_by",
-      "LP Relaxation Problem": "solved_by",
-      "Semidefinite Relaxation Problem": "solved_by",
-      "Node Relaxation Problem": "solved_by",
-      "Convex Nonlinear Programming": "solved_by",
-      "Robust Linear Programming": "solved_by"
-    },
-    "description": "Interior-Point Method (IPM) solves constrained optimization problems by generating iterates that remain in the interior of the feasible region and converge to an optimal solution.\n\nA standard convex optimization problem is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad & f(x) \\\\\n\\text{subject to} \\quad & g_i(x) \\le 0, \\quad i = 1,\\dots,m, \\\\\n& Ax = b.\n\\end{aligned}\n$$\n\nHere, $x \\in \\mathbb{R}^n$ is the decision variable, $f:\\mathbb{R}^n \\to \\mathbb{R}$ is the objective function, $g_i:\\mathbb{R}^n \\to \\mathbb{R}$ are inequality constraint functions, and $Ax=b$ represents affine equality constraints.\n\nThe feasible set is\n\n$$\n\\mathcal{X}\n=\n\\left\\{\nx \\in \\mathbb{R}^n\n\\mid\ng_i(x) \\le 0,\\ i=1,\\dots,m,\\ Ax=b\n\\right\\}.\n$$\n\nAn optimal solution is a point $x^\\star \\in \\mathcal{X}$ such that\n\n$$\nf(x^\\star) \\le f(x)\n\\quad\n\\text{for all } x \\in \\mathcal{X}.\n$$\n\nInterior-Point Methods replace the constrained problem with a sequence of smooth unconstrained or equality-constrained barrier problems. For logarithmic barriers, the perturbed problem is\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathbb{R}^n} \\quad\n& f(x) - \\mu \\sum_{i=1}^m \\log\\left(-g_i(x)\\right) \\\\\n\\text{subject to} \\quad\n& Ax=b,\n\\end{aligned}\n$$\n\nwhere $\\mu>0$ is the barrier parameter. The logarithmic term forces $g_i(x)<0$, so iterates remain strictly inside the feasible region.\n\nAs $\\mu \\downarrow 0$, the minimizers $x(\\mu)$ of the barrier problems trace the central path and, under appropriate convexity and regularity assumptions, converge to an optimal solution $x^\\star$ of the original constrained problem.\n\nAt each iteration, IPM typically applies Newton's method to the first-order optimality conditions of the barrier problem. The step direction $\\Delta x$ is chosen to reduce the perturbed optimality residual while preserving strict feasibility, and the barrier parameter $\\mu$ is gradually decreased.\n\nThus, IPM approaches the boundary of the feasible set from its interior, balancing objective minimization with increasing enforcement of the original inequality constraints.",
     "type": "solution"
   },
   "Simplex Method": {
@@ -651,41 +422,13 @@
   },
   "Alternating Direction Method of Multipliers": {
     "children": {},
-    "parents": {
-      "Consensus Form Problem": "solved_by"
-    },
+    "parents": {},
     "description": "The Alternating Direction Method of Multipliers (ADMM) solves structured convex optimization problems of the form\n\n$$\n\\begin{aligned}\n\\min_{x \\in \\mathcal{X},\\, z \\in \\mathcal{Z}} \\quad & f(x) + g(z) \\\\\n\\text{subject to} \\quad & Ax + Bz = c .\n\\end{aligned}\n$$\n\nHere, $x$ and $z$ are decision variables, $f:\\mathcal{X}\\to \\mathbb{R}\\cup\\left\\{+\\infty\\right\\}$ and $g:\\mathcal{Z}\\to \\mathbb{R}\\cup\\left\\{+\\infty\\right\\}$ are objective functions, $\\mathcal{X}$ and $\\mathcal{Z}$ are feasible sets, and $Ax+Bz=c$ is a linear coupling constraint. An optimal solution is a pair $(x^\\star,z^\\star)$ satisfying the constraint and attaining the minimum objective value.\n\nThe augmented Lagrangian is\n\n$$\n\\mathcal{L}_{\\rho}(x,z,y)\n=\nf(x)+g(z)+y^\\top(Ax+Bz-c)\n+\n\\frac{\\rho}{2}\\left\\|Ax+Bz-c\\right\\|_2^2,\n$$\n\nwhere $y$ is the Lagrange multiplier and $\\rho>0$ is the penalty parameter.\n\nADMM generates iterates by alternating minimization in $x$ and $z$, followed by a multiplier update:\n\n$$\n\\begin{aligned}\nx^{k+1}\n&=\n\\arg\\min_{x \\in \\mathcal{X}}\n\\mathcal{L}_{\\rho}(x,z^k,y^k), \\\\\n\nz^{k+1}\n&=\n\\arg\\min_{z \\in \\mathcal{Z}}\n\\mathcal{L}_{\\rho}(x^{k+1},z,y^k), \\\\\n\ny^{k+1}\n&=\ny^k+\\rho\\left(Ax^{k+1}+Bz^{k+1}-c\\right).\n\\end{aligned}\n$$\n\nThus, ADMM decomposes a constrained problem into simpler subproblems involving $f$ and $g$ separately, while enforcing feasibility through the dual variable $y$ and the quadratic penalty term.",
     "type": "solution"
   },
   "Dynamic Programming": {
     "children": {},
-    "parents": {
-      "Knapsack Problem": "solved_by"
-    },
-    "description": "",
-    "type": "solution"
-  },
-  "Dijkstra's Algorithm": {
-    "children": {},
-    "parents": {
-      "Shortest Path Problem": "solved_by"
-    },
-    "description": "",
-    "type": "solution"
-  },
-  "Max-Flow Algorithm": {
-    "children": {},
-    "parents": {
-      "Maximum Flow Problem": "solved_by"
-    },
-    "description": "",
-    "type": "solution"
-  },
-  "Hungarian Algorithm": {
-    "children": {},
-    "parents": {
-      "Assignment Problem": "solved_by"
-    },
+    "parents": {},
     "description": "",
     "type": "solution"
   }

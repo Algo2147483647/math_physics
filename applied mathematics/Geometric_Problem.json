@@ -1,0 +1,35 @@
+{
+  "Geometric Problem": {
+    "define": "Start building your graph from this root node.",
+    "parents": {},
+    "children": {
+      "Intersection": "related_to"
+    }
+  },
+  "Intersection": {
+    "define": "",
+    "parents": {
+      "Geometric Problem": "related_to"
+    },
+    "children": {
+      "Intersection of Ray-Surface in Flat Space": "related_to",
+      "Intersection of Ray-Surface in Curvature Space": "related_to"
+    }
+  },
+  "Intersection of Ray-Surface in Flat Space": {
+    "define": "",
+    "content": "./Intersection_of_Ray_Surface_in_Flat_Space.md",
+    "parents": {
+      "Intersection": "related_to"
+    },
+    "children": {}
+  },
+  "Intersection of Ray-Surface in Curvature Space": {
+    "define": "",
+    "content": "./Intersection_of_Ray_Surface_in_Curvature_Space.md",
+    "parents": {
+      "Intersection": "related_to"
+    },
+    "children": {}
+  }
+}
