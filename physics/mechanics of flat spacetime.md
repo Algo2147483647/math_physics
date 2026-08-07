@@ -49,7 +49,7 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 > ***Proof: Lorentz Transformation***
 >
 > Consider two inertial reference frames $S$ and $S'$. Let their spacetime coordinates of an event be $x^\mu = (ct, x, y, z)$ with Minkowski metric $\eta$. We choose the standard configuration: the spatial axes of $S$ and $S'$ are parallel, their origins coincide at $t=t'=0$, and $S'$ moves with constant velocity $V$ in the $+x$ direction relative to $S$.
-> 
+>
 > Our goal is to determine the coordinate transformation
 > $$
 > x'^\mu = F(x^\nu)
@@ -67,9 +67,9 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 > $$
 > 2. *Spatial isotropy.*
 >
-> There are no special spatial directions. Choose the Relative Motion Along the $x$-Axis. There is then no reason for the perpendicular coordinates $y$ and $z$ to mix with $t$ or $x$.
+> There are no special spatial directions. Choose the Relative Motion Along the $x$-Axis. There is then no reason for the perpendicular coordinates $y$ and $z$ to mix with $t$ or $x$. (Interval invariance can proof $k = 1$)
 > $$
-> \boldsymbol x' = \begin{pmatrix}a & b\\ c & d \\ & & I_2 \end{pmatrix}\boldsymbol x \\
+> \boldsymbol x' = \begin{pmatrix}a & b\\ c & d \\ & & kI_2 \end{pmatrix}\boldsymbol x \\
 > \boldsymbol A_{ct,x} = \begin{pmatrix}a & b\\ c & d  \end{pmatrix}
 > $$
 >
@@ -81,15 +81,17 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 > Δs^2 &= Δs'^2
 > \end{align*}
 > $$
-> We get $\boldsymbol η = \boldsymbol A^T \boldsymbol η \boldsymbol A$.
+> We get $\boldsymbol \eta = \boldsymbol A^T \boldsymbol \eta \boldsymbol A$.
 > $$
 > \begin{align*}
-> \boldsymbol x^T \boldsymbol η \boldsymbol x &= \boldsymbol x'^T \boldsymbol η \boldsymbol x'  \tag{simplified form}  \\
-> \boldsymbol x^T \boldsymbol η \boldsymbol x &= (\boldsymbol A \boldsymbol x)^T \boldsymbol η (\boldsymbol A \boldsymbol x)  \tag{substitution}  \\
-> \boldsymbol x^T \boldsymbol η \boldsymbol x &= \boldsymbol x^T \boldsymbol A^T \boldsymbol η \boldsymbol A \boldsymbol x  \tag{transposition}  \\
-> \boldsymbol η &= \boldsymbol A^T \boldsymbol η \boldsymbol A  \tag{matrix calculation}
+> \boldsymbol x^T \boldsymbol \eta \boldsymbol x &= \boldsymbol x'^T \boldsymbol \eta \boldsymbol x'  \tag{simplified form}  \\
+> \boldsymbol x^T \boldsymbol \eta \boldsymbol x &= (\boldsymbol A \boldsymbol x)^T \boldsymbol \eta (\boldsymbol A \boldsymbol x)  \tag{substitution}  \\
+> \boldsymbol x^T \boldsymbol \eta \boldsymbol x &= \boldsymbol x^T \boldsymbol A^T \boldsymbol\eta \boldsymbol A \boldsymbol x  \tag{transposition}  \\
+> \boldsymbol η &= \boldsymbol A^T \boldsymbol \eta \boldsymbol A  \tag{matrix calculation}
 > \end{align*}
 > $$
+> Meanwhile, $\det \boldsymbol  A = 1$.
+>
 > 4. *Combine 2 and 3*
 >
 > $$
@@ -109,7 +111,7 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 >
 > 5. *hyperbolic rotation is the solution.*
 >
-> Exclude invalid solutions such as spatial inversion and time reversal, the hyperbolic function $\cosh ^ 2 x - \sinh ^ 2 x=1$ is a solution that satisfies the system of equations, which is the rotation transformation matrix of the $t$-$x$ plane,
+> Exclude invalid solutions such as spatial inversion and time reversal, the hyperbolic function $\cosh ^ 2 x - \sinh ^ 2 x=1$ is the general solution that satisfies the system of equations, which is the rotation transformation matrix of the $t$-$x$ plane,
 > $$
 > \boldsymbol A_{t,x} = \begin{pmatrix} \cosh μ & -\sinh μ \\ -\sinh μ & \cosh μ \end{pmatrix}
 > $$
