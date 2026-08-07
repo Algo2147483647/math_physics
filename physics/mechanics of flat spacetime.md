@@ -220,8 +220,29 @@ $$
 > \boldsymbol A = \begin{pmatrix} \gamma & - \gamma \beta\\ - \gamma \beta & \gamma \\ && 1 \\ &&& 1\end{pmatrix}
 > $$
 
+### Relation Between Rest and Inertial Frames
+
+Let $S$ be a particle's own inertial frame (rest frame), in which the elapsed time is the particle's proper time $\tau$.
+$$
+\begin{pmatrix} ct' \\ x'\end{pmatrix} = \begin{pmatrix} \gamma & - \gamma \beta\\ - \gamma \beta & \gamma\end{pmatrix} \begin{pmatrix} c \tau \\ 0\end{pmatrix}
+$$
+
+$$
+t' = \gamma \tau
+$$
+
+Let $S$ be the rest frame of a rigid body. Its proper length $\Delta x$ is the time-independent separation between its stationary endpoints in $S$. In another inertial frame $S'$, the length $\Delta x'$ is defined by the separation of the two endpoints measured simultaneously in $S'$.
+
+$$
+\begin{pmatrix} 0 \\ \Delta x'\end{pmatrix} = \begin{pmatrix} \gamma & - \gamma \beta\\ - \gamma \beta & \gamma\end{pmatrix} \begin{pmatrix} ct \\ \Delta x\end{pmatrix}
+$$
+
+$$
+\Delta x' = \frac{1}{\gamma}  \Delta x
+$$
 
 ### Transform of speed
+
 $$
 \begin{align*}
 v_x &= \frac{v'_x + V}{1 + \frac{v'_x V}{c^2}}\\
