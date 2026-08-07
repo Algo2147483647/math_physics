@@ -78,7 +78,7 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 > The principle of constant speed of light preserves the Minkowski spacetime interval.
 > $$
 > \begin{align*}
-> Δs^2 &= Δs'^2
+> \mathrm d s^2 &= \mathrm d s'^2
 > \end{align*}
 > $$
 > We get $\boldsymbol \eta = \boldsymbol A^T \boldsymbol \eta \boldsymbol A$.
@@ -117,7 +117,7 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 > $$
 > 6. *Determine $\mu$ using relative velocity.*
 >
-> Because $S$ moves at velocity $V$ in the $+x$ direction relative to $S$. Then, we get
+> Because $S'$ moves at velocity $V$ in the $+x$ direction relative to $S$. Then, we get
 > $$
 > \left\{
 > \begin{aligned}
