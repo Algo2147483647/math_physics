@@ -2,9 +2,7 @@
 
 [TOC]
 
-## Flat relativity spacetime
-
-### Relativity principle
+## Relativity principle
 
 **The relativity principle**: All natural laws are the same in all inertial reference frames.
 
@@ -13,7 +11,7 @@ $$
 c = 2.998 × 10^8 m/s
 $$
 
-### Minkowski Space-time
+## Minkowski Space-time
 
 <img src="./assets/World_line.svg" alt="World_line" style="zoom: 50%;" />
 $$
@@ -22,7 +20,7 @@ $$
 
 Minkowski spacetime is a four-dimensional manifold that combines three-dimensional Euclidean space and time. 
 
-#### Space-Time Interval: Minkowski Metric
+### Space-Time Interval: Minkowski Metric
 
 the space-time interval between two events in Minkowski space is given by the equation:
 $$
@@ -33,17 +31,78 @@ $$
 $$
 
 
-### Lorentz Transformation
+## Lorentz Transformation
+
+Consider two inertial reference frames $S$ and $S'$. Let their spacetime coordinates of an event be $x^\mu = (ct, x, y, z)$ with Minkowski metric $\eta$. 
 
 $$
 \begin{align*}
-    \left(\begin{matrix} ct' \\ x' \\ y' \\ z' \end{matrix}\right) &= \left(\begin{matrix} 
-    \frac{1}{\sqrt{1-(\frac{V}{c})^2}} & \frac{-\frac{V}{c}}{\sqrt{1-( \frac{V}{c} )^2}}  \\
-    \frac{-\frac{V}{c}}{\sqrt{1-( \frac{V}{c} )^2}} & \frac{1}{\sqrt{1-( \frac{V}{c} )^2}} \\
-    & & 1\\ & & & 1 \end{matrix}\right)   \left(\begin{matrix} ct \\ x \\ y \\ z \end{matrix}\right)
-  \end{align*}
+\begin{pmatrix} ct' \\ x' \\ y' \\ z' \end{pmatrix}
+&= \Lambda(\mathbf V)
+\begin{pmatrix} ct \\ x \\ y \\ z \end{pmatrix}
+\end{align*}
 $$
-Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative to $K$ along the $x$-axis with velocity $V$.
+
+Lorentz transformation along the $x$-direction
+$$
+\begin{align*}
+\Lambda(\mathbf V) &=
+\begin{pmatrix} 
+\frac{1}{\sqrt{1-(\frac{V}{c})^2}} 
+& \frac{-\frac{V}{c}}{\sqrt{1-( \frac{V}{c} )^2}}
+\\
+\frac{-\frac{V}{c}}{\sqrt{1-( \frac{V}{c} )^2}} 
+& \frac{1}{\sqrt{1-( \frac{V}{c} )^2}}
+\\
+& & 1\\
+& & & 1 
+\end{pmatrix}
+\end{align*}
+$$
+Lorentz transformation in an arbitrary direction
+$$
+\begin{align*}
+\Lambda(\mathbf V) &=
+\begin{pmatrix}
+\gamma 
+& -\gamma\boldsymbol\beta^T
+\\
+-\gamma\boldsymbol\beta
+& I_3+\frac{\gamma-1}{\beta^2} \boldsymbol\beta\boldsymbol\beta^T
+\end{pmatrix} \\
+&= 
+\begin{pmatrix}
+\gamma 
+& -\gamma\beta_x 
+& -\gamma\beta_y 
+& -\gamma\beta_z
+\\
+-\gamma\beta_x 
+& 1+(\gamma-1)\dfrac{\beta_x^2}{\beta^2} 
+& (\gamma-1)\dfrac{\beta_x\beta_y}{\beta^2} 
+& (\gamma-1)\dfrac{\beta_x\beta_z}{\beta^2}
+\\
+-\gamma\beta_y 
+& (\gamma-1)\dfrac{\beta_y\beta_x}{\beta^2} 
+& 1+(\gamma-1)\dfrac{\beta_y^2}{\beta^2}
+& (\gamma-1)\dfrac{\beta_y\beta_z}{\beta^2}
+\\
+-\gamma\beta_z
+& (\gamma-1)\dfrac{\beta_z\beta_x}{\beta^2}
+& (\gamma-1)\dfrac{\beta_z\beta_y}{\beta^2}
+& 1+(\gamma-1)\dfrac{\beta_z^2}{\beta^2}
+\end{pmatrix}
+\end{align*}
+$$
+
+$$
+\left\{
+\begin{aligned}
+\boldsymbol \beta &= \frac{\boldsymbol V}{c},\\
+\gamma &= \frac{1}{\sqrt{1-\beta^2}}.
+\end{aligned}
+\right.
+$$
 
 
 > ***Proof: Lorentz Transformation***
@@ -162,7 +221,7 @@ Consider two inertial reference frames $K$ and $K'$, where $K'$ moves relative t
 > $$
 
 
-#### Transform of speed
+### Transform of speed
 $$
 \begin{align*}
 v_x &= \frac{v'_x + V}{1 + \frac{v'_x V}{c^2}}\\
@@ -171,9 +230,7 @@ v_z &= \frac{v'_z \sqrt{1 - \frac{V^2}{c^2}}}{1 + \frac{v'_x V}{c^2}}
 \end{align*}
 $$
 
-## Action
-
-### Action of flat relativity spacetime
+## Action of flat relativity spacetime
 
 $$
 S = \int L \, d\tau\\
