@@ -85,7 +85,45 @@ $$
 
 where $\rho$ is charge density and $\mathbf J$ is current density.
 
+**Charge conservation.** Taking $\partial_\nu$ of $\partial_\mu F^{\mu\nu}=\mu_0J^\nu$ gives
+$$
+\partial_\nu J^\nu=0,
+$$
+
+because $F^{\mu\nu}$ is antisymmetric. In vector form,
+
+$$
+\frac{\partial\rho}{\partial t}+\nabla\cdot\mathbf J=0.
+$$
+
+This is the local conservation law for charge.
+
 ## Field Equations: Maxwell Equations
+
+### Electromagnetic field action
+
+The electromagnetic field action with external current is
+
+$$
+S[A] = \int \left(
+-\frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
+-J_\mu A^\mu
+\right)\mathrm d^4x .
+$$
+
+Varying $A_\mu$ gives
+
+$$
+\partial_\mu F^{\mu\nu}=\mu_0J^\nu.
+$$
+
+Gauge invariance of the source term requires charge conservation:
+
+$$
+\partial_\mu J^\mu=0.
+$$
+
+### Field Equations: Maxwell Equations
 
 Fundamental Field Equations of Classical Electromagnetism, Maxwell's equations in vacuum are as follows. The first equation contains Gauss's law and the Ampere-Maxwell law. The second equation contains the absence of magnetic monopoles and Faraday's law.
 
@@ -93,7 +131,7 @@ Fundamental Field Equations of Classical Electromagnetism, Maxwell's equations i
 $$
 \begin{empheq}[left=\empheqlbrace]{align}
 \partial_\mu F^{\mu\nu} &=\mu_0 J^\nu,\\
-\partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\mu\lambda} &=0.
+\partial_\lambda F_{\mu\nu} + \partial_\mu F_{\nu\lambda} + \partial_\nu F_{\lambda\mu} &=0.
 \end{empheq}
 $$
 
@@ -120,37 +158,26 @@ $$
 3. A changing magnetic field induces an electric field.
 4. Currents and changing electric fields (displacement currents) generate magnetic fields.
 
-### Propagation speed of an electromagnetic field
+### Electromagnetic Waves: Propagation speed of an electromagnetic field
+
+$$
+\begin{empheq}[left=\empheqlbrace]{align}
+\nabla^2\mathbf E-\frac{1}{c^2}\frac{\partial^2\mathbf E}{\partial t^2}&=0,\\
+\nabla^2\mathbf B-\frac{1}{c^2}\frac{\partial^2\mathbf B}{\partial t^2}&=0.
+\end{empheq}
+$$
 
 Light is an electromagnetic field. The speed of electromagnetic waves in vacuum is
 $$
 c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}.
 $$
 
-### Field and source action
-
-The electromagnetic field action with external current is
+Plane waves are transverse:
 
 $$
-S[A]
-=
-\int
-\left(
--\frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
--J_\mu A^\mu
-\right)\mathrm d^4x .
-$$
-
-Varying $A_\mu$ gives
-
-$$
-\partial_\mu F^{\mu\nu}=\mu_0J^\nu.
-$$
-
-Gauge invariance of the source term requires charge conservation:
-
-$$
-\partial_\mu J^\mu=0.
+\mathbf k\cdot\mathbf E=0,\qquad
+\mathbf k\cdot\mathbf B=0,\qquad
+\mathbf B=\frac{1}{\omega}\mathbf k\times\mathbf E.
 $$
 
 
@@ -175,40 +202,6 @@ $$
 \mathbf B'_\perp&=\gamma\left(\mathbf B_\perp-\frac{\mathbf v\times \mathbf E}{c^2}\right)
 \end{empheq}
 $$
-
-## The effect of electromagnetic fields on electric charges
-
-### Lorentz force
-
-$$
-K^\mu = q F^{\mu}{}_{\nu}U^\nu
-$$
-
-The covariant Lorentz force law is
-
-$$
-\frac{\mathrm d p^\mu}{\mathrm d\tau}
-=
-qF^{\mu\nu}u_\nu.
-$$
-
-The spatial part is
-
-$$
-\frac{\mathrm d\mathbf p}{\mathrm dt}
-=
-q(\mathbf E+\mathbf v\times\mathbf B).
-$$
-
-The power delivered to the charge is
-
-$$
-\frac{\mathrm dE}{\mathrm dt}=q\mathbf E\cdot\mathbf v.
-$$
-
-
-
-## Electromagnetic Waves
 
 ### Energy: Poynting theorem
 
@@ -257,3 +250,54 @@ T_{ij}
 $$
 
 It expresses the flux of electromagnetic momentum.
+
+## The effect of electromagnetic fields on electric charges
+
+### Charged particle action
+
+For a point charge $q$ moving on a worldline $x^\mu(\tau)$,
+
+$$
+S
+=
+-mc^2\int\mathrm d\tau
++q\int A_\mu\,\mathrm d x^\mu .
+$$
+
+In three-vector form the Lagrangian is
+
+$$
+L
+=
+-mc^2\sqrt{1-\frac{v^2}{c^2}}
++q\mathbf A\cdot\mathbf v
+-q\phi .
+$$
+
+### Lorentz force
+
+The covariant Lorentz force law is
+$$
+K^\mu = q F^{\mu}{}_{\nu}U^\nu
+$$
+
+$$
+\frac{\mathrm d p^\mu}{\mathrm d\tau}
+=
+qF^{\mu\nu}u_\nu.
+$$
+
+The spatial part is
+
+$$
+\frac{\mathrm d\mathbf p}{\mathrm dt}
+=
+q(\mathbf E+\mathbf v\times\mathbf B).
+$$
+
+The power delivered to the charge is
+
+$$
+\frac{\mathrm dE}{\mathrm dt}=q\mathbf E\cdot\mathbf v.
+$$
+
