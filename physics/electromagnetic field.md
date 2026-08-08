@@ -6,8 +6,9 @@
 
 ### Four-potential
 
-The scalar potential $\phi$ and vector potential $\mathbf A$ combine into a four-potential $A^\mu$.
+The electric field $\mathbf E$ and magnetic field $\mathbf B$ are vector fields that characterize the electromagnetic state at each point in space and time. They can exist and propagate through regions devoid of matter, carrying energy and momentum. Their interaction with matter is manifested through charges and currents: $\mathbf E$ governs the force acting on electric charge independent of its motion, whereas $\mathbf B$ governs the velocity-dependent deflection of moving charges. 
 
+More fundamentally, the electric and magnetic fields are not independent entities, but two aspects of a single electromagnetic field. The decomposition of the electromagnetic field into $\mathbf{E}$ and $\mathbf{B}$ depends on the observer’s reference frame, and a field that appears purely electric or magnetic in one frame may generally appear as a combination of both in another. This motivates a unified relativistic description of electromagnetism in terms of the four-potential and the electromagnetic field tensor. Here, a scalar potential $\phi$ and a vector potential $\mathbf A$ combine into a four-potential $A^\mu$.
 $$
 A^\mu=\left(\frac{\phi}{c},\mathbf A\right).
 $$
@@ -16,6 +17,15 @@ $$
 \begin{empheq}[left=\empheqlbrace]{align}
 \mathbf B &= \nabla\times\mathbf A, \\
 \mathbf E &= -\nabla\phi-\frac{\partial\mathbf A}{\partial t}.
+\end{empheq}
+$$
+
+**Gauge freedom.** Different mathematical variables $\left(\frac{\phi}{c},\mathbf A\right)$ can represent the same physical electromagnetic field $\left(\mathbf  E,\mathbf B\right)$. The physical fields are unchanged by the three-vector gauge transformation. Equivalently, after the conventional sign choice for the gauge function is fixed, the covariant statement may be written as follows. Gauge freedom means that $A_\mu$ contains redundant description. The observable object is the field strength.
+$$
+\begin{empheq}[left=\empheqlbrace]{align}
+\mathbf A &\to \mathbf A+\nabla\chi, \\
+\phi &\to\phi-\frac{\partial\chi}{\partial t},\\
+A_\mu &\to A_\mu+\partial_\mu\chi .
 \end{empheq}
 $$
 
