@@ -110,7 +110,9 @@ $$
 3. A changing magnetic field induces an electric field.
 4. Currents and changing electric fields (displacement currents) generate magnetic fields.
 
-The speed of electromagnetic waves in vacuum is
+### Propagation speed of an electromagnetic field
+
+Light is an electromagnetic field. The speed of electromagnetic waves in vacuum is
 $$
 c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}.
 $$
@@ -143,10 +145,105 @@ $$
 
 
 
+### Transformation between inertial frames
+
+$$
+F'^{\mu\nu}= \Lambda^\mu{}_\alpha \Lambda^\nu{}_\beta F^{\alpha\beta} \\
+J'^\mu=\Lambda^\mu{}_\nu J^\nu
+$$
+
+(Vector form)
+$$
+\mathbf F' = \mathbf \Lambda \mathbf F \mathbf \Lambda^T
+$$
+
+$$
+\begin{empheq}[left=\empheqlbrace]{align}
+\mathbf E'_\parallel&=\mathbf E_\parallel,\\
+\mathbf B'_\parallel&=\mathbf B_\parallel,\\
+\mathbf E'_\perp&=\gamma(\mathbf E_\perp+\mathbf v\times \mathbf B),\\
+\mathbf B'_\perp&=\gamma\left(\mathbf B_\perp-\frac{\mathbf v\times \mathbf E}{c^2}\right)
+\end{empheq}
+$$
+
+## The effect of electromagnetic fields on electric charges
+
+### Lorentz force
 
 $$
 K^\mu = q F^{\mu}{}_{\nu}U^\nu
 $$
 
+The covariant Lorentz force law is
+
+$$
+\frac{\mathrm d p^\mu}{\mathrm d\tau}
+=
+qF^{\mu\nu}u_\nu.
+$$
+
+The spatial part is
+
+$$
+\frac{\mathrm d\mathbf p}{\mathrm dt}
+=
+q(\mathbf E+\mathbf v\times\mathbf B).
+$$
+
+The power delivered to the charge is
+
+$$
+\frac{\mathrm dE}{\mathrm dt}=q\mathbf E\cdot\mathbf v.
+$$
+
+
 
 ## Electromagnetic Waves
+
+### Energy: Poynting theorem
+
+The electromagnetic energy density is
+
+$$
+u
+=
+\frac12\varepsilon_0E^2+\frac{1}{2\mu_0}B^2.
+$$
+
+The Poynting vector is
+
+$$
+\mathbf S=\frac{1}{\mu_0}\mathbf E\times\mathbf B.
+$$
+
+Poynting's theorem is
+
+$$
+\frac{\partial u}{\partial t}
++\nabla\cdot\mathbf S
+=
+-\mathbf J\cdot\mathbf E.
+$$
+
+The right-hand side is the rate at which the field does work on charges.
+
+### Momentum density and Maxwell stress tensor
+
+The electromagnetic momentum density is
+
+$$
+\mathbf g=\frac{\mathbf S}{c^2}=\varepsilon_0\mathbf E\times\mathbf B.
+$$
+
+The Maxwell stress tensor is
+
+$$
+T_{ij}
+=
+\varepsilon_0\left(E_iE_j-\frac12\delta_{ij}E^2\right)
++
+\frac{1}{\mu_0}
+\left(B_iB_j-\frac12\delta_{ij}B^2\right).
+$$
+
+It expresses the flux of electromagnetic momentum.
